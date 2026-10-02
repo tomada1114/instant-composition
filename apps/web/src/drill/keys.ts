@@ -1,48 +1,53 @@
 import { isDefaultGradeKeys } from "../lib/grade-keys";
-import type { GradeKeys } from "../openapi";
+import type { Grade, GradeKeyTrio } from "../openapi";
 import type { DrillState } from "./drill-state";
 
 /** What a key or a control asks of the drill; the caller stamps it with the time. */
 export type DrillKeyAction =
-  | { readonly type: "start" | "flip" | "next" | "pause" | "resume" }
-  | { readonly type: "grade"; readonly result: "ok" | "ng" }
+  | { readonly type: "start" | "flip" | "pause" | "resume" }
+  | { readonly type: "grade"; readonly grade: Grade }
   | { readonly type: "scroll"; readonly direction: 1 | -1 };
 
 /** The two things `keyAction` reads off a `KeyboardEvent`. */
 export type KeyPress = Pick<KeyboardEvent, "key" | "code">;
 
-// Read by the character typed, as before the keys could be chosen: → and ←
-// with the home-row letters beside them.
-const DEFAULT_OK = new Set(["ArrowRight", "k", "K", "f", "F"]);
-const DEFAULT_NG = new Set(["ArrowLeft", "j", "J", "d", "D"]);
+// While the default is kept: × on ← and 1, △ on 2, ○ on → and 3, read by the
+// key or by the character typed, with the home-row letters J/D and K/F beside
+// × and ○ as before the keys could be chosen.
+const DEFAULTS: readonly (readonly [Grade, ReadonlySet<string>])[] = [
+  ["again", new Set(["ArrowLeft", "Digit1", "1", "j", "J", "d", "D"])],
+  ["hard", new Set(["Digit2", "2"])],
+  ["good", new Set(["ArrowRight", "Digit3", "3", "k", "K", "f", "F"])],
+];
 const PRIMARY_KEYS = new Set([" ", "Enter"]);
 const SCROLL: Readonly<Record<string, 1 | -1>> = { ArrowDown: 1, ArrowUp: -1 };
 
 /**
- * The grade `press` gives. The default pair also takes K/F and J/D; a pair
- * the learner chose is matched by `code` alone, so it holds whatever the
+ * The grade `press` gives. The default trio also takes 1, 3, J/D and K/F; a
+ * trio the learner chose is matched by `code` alone, so it holds whatever the
  * layout or input method types.
  */
-function gradeOf(press: KeyPress, keys: GradeKeys): "ok" | "ng" | undefined {
+function gradeOf(press: KeyPress, keys: GradeKeyTrio): Grade | undefined {
   if (isDefaultGradeKeys(keys)) {
-    if (DEFAULT_OK.has(press.key)) return "ok";
-    return DEFAULT_NG.has(press.key) ? "ng" : undefined;
+    return DEFAULTS.find(([, set]) => set.has(press.code) || set.has(press.key))?.[0];
   }
-  if (press.code === keys.ok) return "ok";
-  return press.code === keys.ng ? "ng" : undefined;
+  if (press.code === keys.ng) return "again";
+  if (press.code === keys.hard) return "hard";
+  return press.code === keys.ok ? "good" : undefined;
 }
 
 /**
  * Maps a key press to the drill's action in its current state, with `keys`
  * the learner's grade keys. While paused only Escape is taken, so Space and
  * Enter reach the dialog's focused button as a native press. `?` pauses too:
- * the pause dialog is where the keys are listed. A grade key never scrolls,
- * so ↑ or ↓ chosen as one leaves the card to the other arrow.
+ * the pause dialog is where the keys are listed. Space and Enter do nothing on
+ * a back, timed out or not: a grade cannot be skipped. A grade key never
+ * scrolls, so ↑ or ↓ chosen as one leaves the card to the other arrow.
  */
 export function keyAction(
   state: DrillState,
   press: KeyPress,
-  keys: GradeKeys,
+  keys: GradeKeyTrio,
 ): DrillKeyAction | undefined {
   const { phase } = state;
   const { key } = press;
@@ -56,12 +61,7 @@ export function keyAction(
   if (phase.kind !== "back") return undefined;
 
   const grade = gradeOf(press, keys);
-  if (phase.mode === "timeout" && (PRIMARY_KEYS.has(key) || grade === "ok")) {
-    return { type: "next" };
-  }
-  if (grade !== undefined) {
-    return phase.mode === "timeout" ? undefined : { type: "grade", result: grade };
-  }
+  if (grade !== undefined) return { type: "grade", grade };
   const direction = SCROLL[key];
   return direction === undefined ? undefined : { type: "scroll", direction };
 }

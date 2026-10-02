@@ -1,9 +1,13 @@
-import type { AnswerResult, Pass } from "../openapi";
+import type { Grade, Pass } from "../openapi";
 
 /**
  * The state of one round in the browser, and what can be read off it. The
- * reducer that moves it is `drill-machine.ts`.
+ * reducer that moves it is `drill-machine.ts`; which card comes next is
+ * `re-asks.ts`.
  */
+
+/** How a back was reached: flipped by the learner, or by the timer running out. */
+export type BackMode = "self" | "timeout";
 
 export type DrillPhase =
   | { readonly kind: "intro" }
@@ -17,31 +21,34 @@ export type DrillPhase =
     }
   | {
       readonly kind: "back";
-      readonly mode: "self" | "timeout";
+      readonly mode: BackMode;
       readonly elapsedMs: number;
       /** When the back appeared, for the grade-key lock. */
       readonly since: number;
     }
   | {
       readonly kind: "feedback";
-      readonly result: "ok" | "ng";
+      readonly mode: BackMode;
+      readonly grade: Grade;
       readonly fast: boolean;
       readonly elapsedMs: number;
     }
   | { readonly kind: "finishing" };
 
 /**
- * `at` is on the page's monotonic clock, which times the card. An event that
- * can record an answer also carries `wall`, the same moment on the wall clock
- * in epoch ms, which the answer reports as the time it was given.
+ * `at` is on the page's monotonic clock, which times the card. A grade also
+ * carries `wall`, the same moment on the wall clock in epoch ms, which the
+ * answer reports as the time it was given.
  */
 export type DrillEvent =
-  | { readonly type: "start" | "shown" | "next"; readonly at: number }
-  | { readonly type: "tick" | "flip"; readonly at: number; readonly wall: number }
-  | { readonly type: "advance" | "pause" | "hide" | "resume"; readonly at: number }
+  | {
+      readonly type: "start" | "shown" | "tick" | "flip" | "advance";
+      readonly at: number;
+    }
+  | { readonly type: "pause" | "hide" | "resume"; readonly at: number }
   | {
       readonly type: "grade";
-      readonly result: "ok" | "ng";
+      readonly grade: Grade;
       readonly at: number;
       readonly wall: number;
       /** A key is locked out for a moment after the flip; a pressed button is not. */
@@ -54,10 +61,25 @@ export interface AnswerInput {
   readonly roundId: string;
   readonly cardId: string;
   readonly pass: Pass;
-  readonly result: AnswerResult;
+  readonly grade: Grade;
+  /** The timer ran out before the flip; the grade still sets the schedule. */
+  readonly timedOut: boolean;
   readonly elapsedMs: number;
   /** Epoch ms on the wall clock; one stored by an earlier build of the queue may lack it. */
   readonly answeredAt?: number;
+}
+
+/** The card on screen: its first pass (`ask` 0), or its `ask`th re-ask. */
+export interface ShownCard {
+  readonly cardId: string;
+  readonly pass: Pass;
+  readonly ask: number;
+}
+
+/** A card waiting to come back, once the session has shown `due` cards. */
+export interface ReAsk {
+  readonly cardId: string;
+  readonly due: number;
 }
 
 export interface DrillInit {
@@ -67,11 +89,10 @@ export interface DrillInit {
   readonly limits: Readonly<Record<string, number>>;
   /** Each card's pace, which "fast" is judged by rather than the limit. */
   readonly paces: Readonly<Record<string, number>>;
-  readonly answered: readonly {
-    readonly cardId: string;
-    readonly pass: Pass;
-    readonly result: AnswerResult;
-  }[];
+  /** The cards new to the learner, which come back once more after their first ○. */
+  readonly isNew: Readonly<Record<string, boolean>>;
+  readonly answered: readonly { readonly cardId: string; readonly pass: Pass }[];
+  /** Whether misses come back in the session; a placement round has none. */
   readonly retries: boolean;
   readonly intro: boolean;
 }
@@ -81,14 +102,20 @@ export interface DrillState {
   readonly retries: boolean;
   readonly limits: Readonly<Record<string, number>>;
   readonly paces: Readonly<Record<string, number>>;
-  /** First-pass cards still to show when this session began. */
-  readonly queue: readonly string[];
-  readonly firstDone: number;
-  /** Cards missed on the first pass, in the order they came. */
-  readonly retryPile: readonly string[];
-  readonly pass: Pass;
-  /** Into `queue` on the first pass, into `retryPile` on the retry pass. */
-  readonly index: number;
+  readonly isNew: Readonly<Record<string, boolean>>;
+  /** First-pass cards not shown yet, in the deck's order. */
+  readonly fresh: readonly string[];
+  /** First passes shown in the round, the one on screen and those before this session included. */
+  readonly firstShown: number;
+  readonly card: ShownCard | undefined;
+  /** Re-asks waiting, in the order they were set. */
+  readonly reAsks: readonly ReAsk[];
+  /** Cards shown in this session, the one on screen included. */
+  readonly step: number;
+  /** Re-asks shown so far, per card. */
+  readonly asked: Readonly<Record<string, number>>;
+  /** ○ grades given so far in this session, per card. */
+  readonly goods: Readonly<Record<string, number>>;
   readonly combo: number;
   readonly paused: boolean;
   /** Answers given in this session, oldest first. */
@@ -96,9 +123,14 @@ export interface DrillState {
   readonly phase: DrillPhase;
 }
 
-/** Fixed by round, pass and card, so resending an answer cannot store it twice. */
-export function answerId(roundId: string, pass: Pass, cardId: string): string {
-  return `${roundId}:${pass === "first" ? "f" : "r"}:${cardId}`;
+/**
+ * Fixed by round, card and which showing of it this is, so resending an
+ * answer cannot store it twice: `f` for the first pass, `r<n>` for the nth
+ * re-ask. A reload drops waiting re-asks, so a card's re-asks all come in the
+ * session of its first pass and never reuse an id.
+ */
+export function answerId(roundId: string, cardId: string, ask: number): string {
+  return `${roundId}:${ask === 0 ? "f" : `r${String(ask)}`}:${cardId}`;
 }
 
 export const FRESH_FRONT: DrillPhase = {
@@ -108,27 +140,25 @@ export const FRESH_FRONT: DrillPhase = {
   now: null,
 };
 
-export function currentCard(
-  state: DrillState,
-): { readonly cardId: string; readonly pass: Pass } | undefined {
-  if (state.phase.kind === "finishing") return undefined;
-  const cardId = (state.pass === "first" ? state.queue : state.retryPile)[state.index];
-  return cardId === undefined ? undefined : { cardId, pass: state.pass };
+export function currentCard(state: DrillState): ShownCard | undefined {
+  return state.phase.kind === "finishing" ? undefined : state.card;
 }
 
-/** Where the drill stands: the card being shown, counted from 1. */
+/**
+ * Where the drill stands: first passes counted to the one on screen (or the
+ * last one shown, during a re-ask), out of all of them, and the re-asks
+ * still waiting.
+ */
 export function progress(state: DrillState): {
-  readonly pass: Pass;
   readonly position: number;
   readonly total: number;
+  readonly waiting: number;
 } {
-  return state.pass === "first"
-    ? {
-        pass: "first",
-        position: state.firstDone + state.index + 1,
-        total: state.firstDone + state.queue.length,
-      }
-    : { pass: "retry", position: state.index + 1, total: state.retryPile.length };
+  return {
+    position: state.firstShown,
+    total: state.firstShown + state.fresh.length,
+    waiting: state.reAsks.length,
+  };
 }
 
 export function limitOf(state: DrillState): number {

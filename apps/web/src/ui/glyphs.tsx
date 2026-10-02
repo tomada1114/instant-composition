@@ -158,6 +158,15 @@ export function RingGlyph({ className }: GlyphProps): ReactElement {
   );
 }
 
+/** △ — the unsure grade, drawn to the ring's weight, so it differs from ✕ by shape alone. */
+export function TriangleGlyph({ className }: GlyphProps): ReactElement {
+  return (
+    <Glyph className={className}>
+      <path d="M10 4.25l6 10.5H4z" strokeWidth="2.25" />
+    </Glyph>
+  );
+}
+
 /** A loop: the card comes back for review. */
 export function ReturnGlyph({ className }: GlyphProps): ReactElement {
   return (

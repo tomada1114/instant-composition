@@ -214,7 +214,8 @@ export function drillCard(id: string, overrides: Partial<DrillCard> = {}): Drill
     limitMs: 7000,
     paceMs: 7000,
     intervals: { again: 1, hard: 2, good: 3 },
-    isNew: true,
+    // A review: a card new to the learner comes back once more after its first ○.
+    isNew: false,
     ...overrides,
   };
 }

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { MAX_ROUND_ANSWERS } from "@instant-composition/contracts";
 import {
   isGradeKey as isDomainGradeKey,
   TALK_TUNING,
@@ -24,14 +25,16 @@ describe("the web client's tuning", () => {
     expect(TUNING.fastRatio).toBe(DOMAIN_TUNING.fastRatio);
   });
 
-  it("offers the domain's daily sizes and time limits and keeps its most focus subtopics", () => {
-    expect(TUNING.dailySizes).toStrictEqual(DOMAIN_TUNING.dailySizes);
+  it("offers the domain's daily limits and time limits and keeps its most focus subtopics", () => {
+    expect(TUNING.newPerDay).toStrictEqual(DOMAIN_TUNING.newPerDay);
+    expect(TUNING.reviewsPerDay).toStrictEqual(DOMAIN_TUNING.reviewsPerDay);
     expect(TUNING.limitSeconds).toStrictEqual(DOMAIN_TUNING.limitSeconds);
     expect(TUNING.maxFocus).toBe(DOMAIN_TUNING.maxFocus);
   });
 
   it("grades with the domain's default keys, and allows the grade keys the domain allows", () => {
     expect(TUNING.defaultGradeKeys).toStrictEqual(DOMAIN_TUNING.defaultGradeKeys);
+    expect(TUNING.defaultHardKey).toBe(DOMAIN_TUNING.hardKeys[0]);
     const codes = [
       ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => `Key${letter}`),
       ..."0123456789".split("").map((digit) => `Digit${digit}`),
@@ -42,6 +45,10 @@ describe("the web client's tuning", () => {
     expect(codes.map((code) => [code, isGradeKey(code)])).toStrictEqual(
       codes.map((code) => [code, isDomainGradeKey(code)]),
     );
+  });
+
+  it("sends at most the contract's answers in one request", () => {
+    expect(TUNING.maxRoundAnswers).toBe(MAX_ROUND_ANSWERS);
   });
 
   it("runs a talk for the domain's turns, each field taking the domain's most characters", () => {
@@ -67,10 +74,14 @@ describe("the grade keys as the client shows them", () => {
     expect(keyLabel(code)).toBe(label);
   });
 
-  it("tells the default pair from one the learner chose, even one with an arrow in it", () => {
-    expect(isDefaultGradeKeys({ ok: "ArrowRight", ng: "ArrowLeft" })).toBe(true);
-    expect(isDefaultGradeKeys({ ok: "ArrowLeft", ng: "ArrowRight" })).toBe(false);
-    expect(isDefaultGradeKeys({ ok: "ArrowRight", ng: "KeyJ" })).toBe(false);
+  it("tells the default trio from one the learner chose, even one with an arrow in it", () => {
+    const keys = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
+    expect(isDefaultGradeKeys(keys)).toBe(true);
+    expect(isDefaultGradeKeys({ ...keys, ok: "ArrowLeft", ng: "ArrowRight" })).toBe(
+      false,
+    );
+    expect(isDefaultGradeKeys({ ...keys, ng: "KeyJ" })).toBe(false);
+    expect(isDefaultGradeKeys({ ...keys, hard: "ArrowDown" })).toBe(false);
   });
 });
 

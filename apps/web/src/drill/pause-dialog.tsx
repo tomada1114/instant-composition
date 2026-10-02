@@ -4,27 +4,29 @@ import type { ReactElement } from "react";
 import { Button } from "../ui/button";
 import { isDefaultGradeKeys, keyLabel } from "../lib/grade-keys";
 import { TUNING } from "../lib/tuning";
-import type { GradeKeys } from "../openapi";
+import type { GradeKeyTrio } from "../openapi";
 import { Kbd } from "../ui/kbd";
 import { Dialog } from "../ui/dialog";
 
 /**
  * The drill's keys, listed only once the learner has used one (`keys`
- * variant): the default pair with the letters beside it, or the pair chosen.
+ * variant): the three grades' keys — the default ones with their digits
+ * beside the arrows, or the three chosen.
  */
-function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeys }>): ReactElement {
-  const t = useTranslations("Drill.card");
+function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeyTrio }>): ReactElement {
+  const t = useTranslations("Drill");
   const fallback = isDefaultGradeKeys(gradeKeys);
   const rows = [
-    ["Space", t("flip")],
-    [fallback ? "→  K  F" : keyLabel(gradeKeys.ok), t("said")],
-    [fallback ? "←  J  D" : keyLabel(gradeKeys.ng), t("notSaid")],
-    ["Esc  ?", t("pause")],
+    ["Space · Enter", t("card.flip")],
+    [fallback ? "← · 1" : keyLabel(gradeKeys.ng), t("grade.again")],
+    [fallback ? "2" : keyLabel(gradeKeys.hard), t("grade.hard")],
+    [fallback ? "→ · 3" : keyLabel(gradeKeys.ok), t("grade.good")],
+    ["Esc · ?", t("card.pause")],
   ] as const;
   return (
     <dl
       aria-hidden
-      className="hidden grid-cols-[5rem_1fr] gap-x-4 gap-y-2 border-t border-border pt-5 text-caption text-muted-foreground keys:grid"
+      className="hidden grid-cols-[8rem_1fr] gap-x-4 gap-y-2 border-t border-border pt-5 text-caption text-muted-foreground keys:grid"
     >
       {rows.map(([key, label]) => (
         <div key={key} className="contents">
@@ -46,7 +48,7 @@ export function PauseDialog({
   onContinue,
 }: Readonly<{
   position: number;
-  gradeKeys: GradeKeys;
+  gradeKeys: GradeKeyTrio;
   onQuit: () => void;
   onContinue: () => void;
 }>): ReactElement {

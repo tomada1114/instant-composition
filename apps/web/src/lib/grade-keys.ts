@@ -1,4 +1,4 @@
-import type { GradeKeys } from "../openapi";
+import type { Grade, GradeKeyTrio } from "../openapi";
 import { TUNING } from "./tuning";
 
 /**
@@ -15,15 +15,27 @@ const ARROWS: Readonly<Record<string, string>> = {
   ArrowRight: "→",
 };
 
+/** The three self-grades, left to right as the trio shows them. */
+export const GRADES: readonly Grade[] = ["again", "hard", "good"];
+
+/** The key field of `GradeKeyTrio` that holds each grade's key. */
+export const KEY_OF: Readonly<Record<Grade, keyof GradeKeyTrio>> = {
+  again: "ng",
+  hard: "hard",
+  good: "ok",
+};
+
 /** Whether the drill may grade with `code`. */
 export function isGradeKey(code: string): boolean {
   return GRADE_KEY.test(code);
 }
 
-/** Whether `keys` are the pair nobody chose, which K/F and J/D grade beside. */
-export function isDefaultGradeKeys(keys: GradeKeys): boolean {
+/** Whether `keys` are the three nobody chose, which 1, 3, J/D and K/F grade beside. */
+export function isDefaultGradeKeys(keys: GradeKeyTrio): boolean {
   return (
-    keys.ok === TUNING.defaultGradeKeys.ok && keys.ng === TUNING.defaultGradeKeys.ng
+    keys.ok === TUNING.defaultGradeKeys.ok &&
+    keys.ng === TUNING.defaultGradeKeys.ng &&
+    keys.hard === TUNING.defaultHardKey
   );
 }
 

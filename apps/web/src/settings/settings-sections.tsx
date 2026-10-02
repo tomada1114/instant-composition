@@ -2,14 +2,11 @@ import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { TUNING } from "../lib/tuning";
-import type { Settings, SubtopicRef, TopicInfo } from "../openapi";
+import type { SubtopicRef, TopicInfo } from "../openapi";
 import { ChoiceChip } from "../ui/choice-chip";
-import { Segmented } from "../ui/segmented";
 import { SelectCard } from "../ui/select-card";
 import { SettingsRow } from "./settings-row";
 import type { SettingsState } from "./use-settings";
-
-type DailySize = Settings["dailySize"];
 
 /** The topics, at least one kept: the last chosen card cannot be pressed off. */
 export function TopicsSection({
@@ -130,38 +127,6 @@ export function FocusSection({
       {state.removedFocus.length > 0 ? (
         <p role="status">{t("removed", { names: names(state.removedFocus) })}</p>
       ) : null}
-    </SettingsRow>
-  );
-}
-
-/** The daily size, applied to today's portion at once. */
-export function SizeSection({
-  state,
-}: Readonly<{ state: SettingsState }>): ReactElement {
-  const t = useTranslations("Settings.size");
-  return (
-    <SettingsRow
-      label={t("title")}
-      note={
-        state.completedToday ? (
-          <p role="status" className="text-caption text-muted-foreground">
-            {t("completed")}
-          </p>
-        ) : undefined
-      }
-    >
-      <Segmented<DailySize>
-        label={t("title")}
-        options={TUNING.dailySizes.map((size) => ({
-          value: size,
-          label: t("count", { count: size }),
-          text: String(size),
-        }))}
-        value={state.settings.dailySize}
-        onChange={(dailySize) => {
-          state.save({ dailySize });
-        }}
-      />
     </SettingsRow>
   );
 }

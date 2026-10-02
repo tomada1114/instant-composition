@@ -18,6 +18,7 @@ import {
 import { fakeTimers } from "./web-harness";
 
 const LIMIT = 7000;
+const DEFAULT_KEYS = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
 
 function fresh(): DrillState {
   return initDrill({
@@ -25,6 +26,7 @@ function fresh(): DrillState {
     deck: ["c1", "c2"],
     limits: { c1: LIMIT, c2: LIMIT },
     paces: { c1: LIMIT, c2: LIMIT },
+    isNew: {},
     answered: [],
     retries: true,
     intro: false,
@@ -40,7 +42,8 @@ function answer(cardId: string): AnswerInput {
     roundId: "r",
     cardId,
     pass: "first",
-    result: "ok",
+    grade: "good",
+    timedOut: false,
     elapsedMs: 900,
   };
 }
@@ -60,10 +63,12 @@ function useClockedDrill() {
 }
 
 describe("feedbackMs", () => {
-  it("holds a fast ○ longest, a ○ shorter, and × shortest, all within 320 ms", () => {
-    expect(feedbackMs({ result: "ok", fast: true })).toBe(320);
-    expect(feedbackMs({ result: "ok", fast: false })).toBe(240);
-    expect(feedbackMs({ result: "ng", fast: false })).toBe(160);
+  it("holds a fast ○ or △ longest, a ○ or △ shorter, and × shortest, all within 320 ms", () => {
+    expect(feedbackMs({ grade: "good", fast: true })).toBe(320);
+    expect(feedbackMs({ grade: "hard", fast: true })).toBe(320);
+    expect(feedbackMs({ grade: "good", fast: false })).toBe(240);
+    expect(feedbackMs({ grade: "hard", fast: false })).toBe(240);
+    expect(feedbackMs({ grade: "again", fast: false })).toBe(160);
   });
 });
 
@@ -92,17 +97,11 @@ describe("useDrillClock", () => {
     const { result } = renderHook(useClockedDrill);
     act(() => void vi.advanceTimersToNextFrame());
     act(() => void vi.advanceTimersByTime(4000));
-    act(() =>
-      result.current.dispatch({
-        type: "flip",
-        at: performance.now(),
-        wall: Date.now(),
-      }),
-    );
+    act(() => result.current.dispatch({ type: "flip", at: performance.now() }));
     act(() =>
       result.current.dispatch({
         type: "grade",
-        result: "ng",
+        grade: "again",
         at: performance.now(),
         wall: Date.now(),
         key: false,
@@ -110,7 +109,7 @@ describe("useDrillClock", () => {
     );
     expect(result.current.state.phase.kind).toBe("feedback");
     act(() => void vi.advanceTimersByTime(160));
-    expect(result.current.state.index).toBe(1);
+    expect(result.current.state.card?.cardId).toBe("c2");
 
     act(() => void vi.advanceTimersToNextFrame());
     act(() => void vi.advanceTimersByTime(LIMIT + 100));
@@ -121,9 +120,7 @@ describe("useDrillClock", () => {
 describe("useDrillKeys", () => {
   it("hands a mapped key to the handler and stops its default", () => {
     const onAction = vi.fn();
-    renderHook(() =>
-      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
-    );
+    renderHook(() => useDrillKeys(fresh(), DEFAULT_KEYS, onAction));
     const event = new KeyboardEvent("keydown", { key: " ", cancelable: true });
     window.dispatchEvent(event);
     expect(onAction).toHaveBeenCalledWith({ type: "flip" });
@@ -136,9 +133,7 @@ describe("useDrillKeys", () => {
     ["a key with no meaning here", { key: "x" }],
   ])("ignores %s", (_, init) => {
     const onAction = vi.fn();
-    renderHook(() =>
-      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
-    );
+    renderHook(() => useDrillKeys(fresh(), DEFAULT_KEYS, onAction));
     window.dispatchEvent(new KeyboardEvent("keydown", init));
     expect(onAction).not.toHaveBeenCalled();
   });
@@ -148,10 +143,10 @@ describe("useDrillKeys", () => {
     const flipped = drillReducer(drillReducer(fresh(), { type: "shown", at: 0 }), {
       type: "flip",
       at: 1000,
-      wall: 1000,
     });
     const { rerender } = renderHook(
-      ({ ok }: { ok: string }) => useDrillKeys(flipped, { ok, ng: "KeyA" }, onAction),
+      ({ ok }: { ok: string }) =>
+        useDrillKeys(flipped, { ok, ng: "KeyA", hard: "KeyS" }, onAction),
       { initialProps: { ok: "KeyL" } },
     );
     window.dispatchEvent(new KeyboardEvent("keydown", { key: "l", code: "KeyL" }));
@@ -160,16 +155,14 @@ describe("useDrillKeys", () => {
     window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", code: "KeyK" }));
     window.dispatchEvent(new KeyboardEvent("keydown", { key: "l", code: "KeyL" }));
     expect(onAction.mock.calls).toStrictEqual([
-      [{ type: "grade", result: "ok" }],
-      [{ type: "grade", result: "ok" }],
+      [{ type: "grade", grade: "good" }],
+      [{ type: "grade", grade: "good" }],
     ]);
   });
 
   it("pauses when the page is hidden, and does nothing when it shows again", () => {
     const onAction = vi.fn();
-    renderHook(() =>
-      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
-    );
+    renderHook(() => useDrillKeys(fresh(), DEFAULT_KEYS, onAction));
     const visibility = vi.spyOn(document, "visibilityState", "get");
     visibility.mockReturnValue("hidden");
     document.dispatchEvent(new Event("visibilitychange"));
@@ -183,10 +176,10 @@ describe("useQueuedDrill", () => {
   /** Shows, flips and grades the current card ○, as one burst of events. */
   function gradeOk(dispatch: (event: DrillEvent) => void, at: number): void {
     dispatch({ type: "shown", at });
-    dispatch({ type: "flip", at: at + 1000, wall: Date.now() });
+    dispatch({ type: "flip", at: at + 1000 });
     dispatch({
       type: "grade",
-      result: "ok",
+      grade: "good",
       at: at + 2000,
       wall: Date.now(),
       key: false,
@@ -215,7 +208,13 @@ describe("useQueuedDrill", () => {
       gradeOk(result.current[1], 0);
       expect(stored()).toStrictEqual(["r:f:c1"]);
       // Graded already: the reducer ignores a second grade, so nothing is queued twice.
-      result.current[1]({ type: "grade", result: "ng", at: 2100, wall: 0, key: false });
+      result.current[1]({
+        type: "grade",
+        grade: "again",
+        at: 2100,
+        wall: 0,
+        key: false,
+      });
     });
     await act(async () => {
       await vi.runAllTimersAsync();
@@ -322,7 +321,12 @@ describe("useRoundFinish", () => {
     const onDone = vi.fn();
     const { result, rerender } = renderHook(
       ({ finishing }: { finishing: boolean }) =>
-        useRoundFinish({ roundId: "r", finishing, answers: [answer("c1")], onDone }),
+        useRoundFinish({
+          roundId: "r",
+          finishing,
+          unrecorded: () => [answer("c1")],
+          onDone,
+        }),
       { initialProps: { finishing: false } },
     );
     expect(result.current.status).toBe("idle");

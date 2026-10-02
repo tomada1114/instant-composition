@@ -5,7 +5,7 @@ import { cn } from "../lib/utils";
 import { Eyebrow } from "../ui/eyebrow";
 import { ReturnGlyph } from "../ui/glyphs";
 
-import type { DrillCard } from "../openapi";
+import type { DrillCard, Grade } from "../openapi";
 import { playMotion } from "./motion";
 
 /**
@@ -17,7 +17,7 @@ const FRONT_LONG_AFTER = 48;
 
 /**
  * W4 and W4r: the prompt set large, centred on the card, with the "again"
- * mark on a retry; empty while paused. The whole card flips.
+ * mark on a re-ask; empty while paused. The whole card flips.
  */
 export function CardFront({
   card,
@@ -87,8 +87,6 @@ function BackFooter({
       <p className="flex items-center gap-2 text-label text-muted-foreground">
         <ReturnGlyph className="size-4" />
         <span>{t("timedOut")}</span>
-        <span aria-hidden>・</span>
-        <span>{t("review")}</span>
       </p>
     );
   }
@@ -107,10 +105,10 @@ function BackFooter({
 
 /**
  * W5, W6 and W7: the answer to read, top to bottom — the whole prompt, the
- * model answer, the alternates between
- * hairlines, the key point. Only this
- * area scrolls when it does not fit; it then takes focus, and ↑/↓ scroll it
- * by `data-part`.
+ * model answer, the alternates between hairlines, the key point. A ○ turns
+ * the answer `good-ink`, a △ leaves it `ink`, a × fades it. Only this area
+ * scrolls when it does not fit; it then takes focus, and ↑/↓ scroll it by
+ * `data-part`.
  */
 export function CardBack({
   card,
@@ -122,7 +120,7 @@ export function CardBack({
   card: DrillCard;
   mode: "self" | "timeout";
   elapsedMs: number;
-  feedback?: { readonly result: "ok" | "ng"; readonly fast: boolean };
+  feedback?: { readonly grade: Grade; readonly fast: boolean };
   hidden?: boolean;
 }>): ReactElement {
   const t = useTranslations("Drill.card");
@@ -151,8 +149,8 @@ export function CardBack({
           lang="en"
           className={cn(
             "font-latin text-answer transition-colors duration-160",
-            feedback?.result === "ok" && "text-good-ink",
-            feedback?.result === "ng" && "text-muted-foreground",
+            feedback?.grade === "good" && "text-good-ink",
+            feedback?.grade === "again" && "text-muted-foreground",
           )}
         >
           {card.text}

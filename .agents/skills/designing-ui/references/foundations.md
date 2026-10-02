@@ -169,7 +169,7 @@ One layout route renders the shell's navigation once; a screen renders its conte
 in the one `main`. The navigation appears only once a read has said who is signed in —
 home's skeleton and `/drill`'s wait show none.
 
-The actions sit directly under the content they act on — the grade pair and the timer
+The actions sit directly under the content they act on — the grade trio and the timer
 under the drill's card, at most 560 wide; a summary's actions under its hero, inside the
 first view — never pinned to the window's bottom edge, where a tall window would set
 them far from what they act on. A screen sizes itself from its content and `100dvh`,

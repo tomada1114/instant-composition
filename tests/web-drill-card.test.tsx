@@ -6,6 +6,7 @@ import {
   CardBack,
   CardFront,
   CatalogProvider,
+  GradeTrio,
   IntroScreen,
   PauseDialog,
   TimerBar,
@@ -91,10 +92,14 @@ describe("CardBack", () => {
     ).toBeInTheDocument();
   });
 
-  it("says timed out and to review in place of the seconds", () => {
-    renderWithMessages(<CardBack card={CARD} mode="timeout" elapsedMs={8000} />);
-    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
-    expect(screen.getByText(ja.Drill.card.review)).toBeInTheDocument();
+  it("says timed out in place of the seconds, sending nothing to review by itself", () => {
+    const { container } = renderWithMessages(
+      <CardBack card={CARD} mode="timeout" elapsedMs={8000} />,
+    );
+    expect(screen.getByText(ja.Drill.card.timedOut).parentElement).toHaveTextContent(
+      new RegExp(`^${ja.Drill.card.timedOut}$`, "u"),
+    );
+    expect(container).not.toHaveTextContent("復習");
     expect(
       screen.queryByText(fill(ja.Drill.card.seconds, { seconds: "8.0" })),
     ).not.toBeInTheDocument();
@@ -106,12 +111,41 @@ describe("CardBack", () => {
         card={CARD}
         mode="self"
         elapsedMs={2100}
-        feedback={{ result: "ok", fast: true }}
+        feedback={{ grade: "good", fast: true }}
       />,
     );
     expect(
       screen.getByText(fill(ja.Drill.card.fast, { seconds: "2.1" })),
     ).toBeInTheDocument();
+  });
+
+  it.each([
+    ["good", "text-good-ink"],
+    ["again", "text-muted-foreground"],
+  ] as const)("colours the answer for %s with %s", (grade, colour) => {
+    renderWithMessages(
+      <CardBack
+        card={CARD}
+        mode="self"
+        elapsedMs={4000}
+        feedback={{ grade, fast: false }}
+      />,
+    );
+    expect(screen.getByText(CARD.text)).toHaveClass(colour);
+  });
+
+  it("leaves the answer ink on △", () => {
+    renderWithMessages(
+      <CardBack
+        card={CARD}
+        mode="self"
+        elapsedMs={4000}
+        feedback={{ grade: "hard", fast: false }}
+      />,
+    );
+    const answer = screen.getByText(CARD.text);
+    expect(answer).not.toHaveClass("text-good-ink");
+    expect(answer).not.toHaveClass("text-muted-foreground");
   });
 
   it("leaves out the alternates block when a card has none", () => {
@@ -123,72 +157,72 @@ describe("CardBack", () => {
 });
 
 describe("TopStrip", () => {
-  it("names the pause button and shows the progress", () => {
+  it("names the pause button and shows the first passes counted", () => {
     const onPause = vi.fn();
     renderWithMessages(
       <TopStrip
-        pass="first"
         current={7}
         total={10}
+        filled={6}
+        waiting={0}
         combo={0}
-        lit={false}
         onPause={onPause}
       />,
     );
     expect(
       screen.getByText(fill(ja.Drill.card.progress, { current: 7, total: 10 })),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByText(fill(ja.Drill.card.reAsks, { count: 0 })),
+    ).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.card.pause }));
     expect(onPause).toHaveBeenCalledOnce();
   });
 
   it.each([
-    { current: 7, lit: false, width: "60%" },
-    { current: 7, lit: true, width: "70%" },
-    { current: 1, lit: false, width: "0%" },
-  ])(
-    "fills the progress bar to the share graded: $current, lit $lit",
-    ({ current, lit, width }) => {
-      const { container } = renderWithMessages(
-        <TopStrip
-          pass="first"
-          current={current}
-          total={10}
-          combo={0}
-          lit={lit}
-          onPause={vi.fn()}
-        />,
-      );
-      expect(container.querySelector("[data-part=progress-fill]")).toHaveStyle({
-        width,
-      });
-    },
-  );
+    { filled: 6, width: "60%" },
+    { filled: 7, width: "70%" },
+    { filled: 0, width: "0%" },
+  ])("fills the progress bar to the share graded: $filled", ({ filled, width }) => {
+    const { container } = renderWithMessages(
+      <TopStrip
+        current={7}
+        total={10}
+        filled={filled}
+        waiting={0}
+        combo={0}
+        onPause={vi.fn()}
+      />,
+    );
+    expect(container.querySelector("[data-part=progress-fill]")).toHaveStyle({
+      width,
+    });
+  });
 
-  it("shows the retry progress during the retry pass", () => {
+  it("follows the count with 「もう一度 n」 while re-asks wait", () => {
     renderWithMessages(
       <TopStrip
-        pass="retry"
-        current={1}
-        total={3}
+        current={7}
+        total={10}
+        filled={7}
+        waiting={1}
         combo={0}
-        lit={false}
         onPause={() => undefined}
       />,
     );
     expect(
-      screen.getByText(fill(ja.Drill.card.retryProgress, { current: 1, total: 3 })),
+      screen.getByText(fill(ja.Drill.card.reAsks, { count: 1 })),
     ).toBeInTheDocument();
   });
 
   it("shows the combo from 2 only", () => {
     const { container, rerender } = renderWithMessages(
       <TopStrip
-        pass="first"
         current={2}
         total={10}
+        filled={1}
+        waiting={0}
         combo={1}
-        lit={false}
         onPause={() => undefined}
       />,
     );
@@ -196,11 +230,11 @@ describe("TopStrip", () => {
     rerender(
       <CatalogProvider>
         <TopStrip
-          pass="first"
           current={3}
           total={10}
+          filled={3}
+          waiting={0}
           combo={3}
-          lit
           onPause={() => undefined}
         />
       </CatalogProvider>,
@@ -208,6 +242,49 @@ describe("TopStrip", () => {
     expect(container.querySelector("[data-part=combo]")).toHaveTextContent(
       `3${ja.Drill.card.comboLabel}`,
     );
+  });
+});
+
+const NAMES = { again: "忘れた", hard: "微妙", good: "覚えてた" } as const;
+const KEYS = { again: "ArrowLeft", hard: "Digit2", good: "ArrowRight" } as const;
+
+describe("GradeTrio", () => {
+  it("shows ×, △ and ○ left to right, each with its interval and its first key", () => {
+    const onGrade = vi.fn();
+    render(
+      <GradeTrio
+        names={NAMES}
+        intervals={{ again: "明日", hard: "3 日", good: "8 日" }}
+        keys={KEYS}
+        onGrade={onGrade}
+      />,
+    );
+    const buttons = screen.getAllByRole("button");
+    expect(buttons.map((button) => button.getAttribute("aria-label"))).toStrictEqual([
+      "忘れた 明日",
+      "微妙 3 日",
+      "覚えてた 8 日",
+    ]);
+    expect(buttons.map((button) => button.textContent)).toStrictEqual([
+      "忘れた明日←",
+      "微妙3 日2",
+      "覚えてた8 日→",
+    ]);
+    expect(buttons[2]).toHaveClass("bg-good");
+    expect(buttons[0]).not.toHaveClass("bg-good");
+    expect(buttons[0]?.querySelector("[data-slot=kbd]")).toHaveClass("left-3.5");
+    expect(buttons[1]?.querySelector("[data-slot=kbd]")).toHaveClass("right-3.5");
+    fireEvent.click(screen.getByRole("button", { name: "微妙 3 日" }));
+    expect(onGrade).toHaveBeenCalledWith("hard");
+  });
+
+  it("shows no intervals on a re-ask", () => {
+    render(
+      <GradeTrio names={NAMES} intervals={undefined} keys={KEYS} onGrade={vi.fn()} />,
+    );
+    expect(
+      screen.getAllByRole("button").map((button) => button.getAttribute("aria-label")),
+    ).toStrictEqual(["忘れた", "微妙", "覚えてた"]);
   });
 });
 
@@ -227,7 +304,7 @@ describe("TimerBar", () => {
   });
 });
 
-const DEFAULT_KEYS = { ok: "ArrowRight", ng: "ArrowLeft" };
+const DEFAULT_KEYS = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
 
 /** The key legend's rows, each as its keys and what they do. */
 function legend(container: HTMLElement): string[][] {
@@ -237,7 +314,7 @@ function legend(container: HTMLElement): string[][] {
 }
 
 describe("PauseDialog", () => {
-  it("lists → K F and ← J D while the learner keeps the default grade keys", () => {
+  it("lists the three grade keys, ← 1, 2 and → 3, while the learner keeps the default", () => {
     renderWithMessages(
       <PauseDialog
         position={1}
@@ -247,10 +324,11 @@ describe("PauseDialog", () => {
       />,
     );
     expect(legend(document.body)).toStrictEqual([
-      ["Space", ja.Drill.card.flip],
-      ["→  K  F", ja.Drill.card.said],
-      ["←  J  D", ja.Drill.card.notSaid],
-      ["Esc  ?", ja.Drill.card.pause],
+      ["Space · Enter", ja.Drill.card.flip],
+      ["← · 1", ja.Drill.grade.again],
+      ["2", ja.Drill.grade.hard],
+      ["→ · 3", ja.Drill.grade.good],
+      ["Esc · ?", ja.Drill.card.pause],
     ]);
   });
 
@@ -258,14 +336,15 @@ describe("PauseDialog", () => {
     renderWithMessages(
       <PauseDialog
         position={1}
-        gradeKeys={{ ok: "Digit1", ng: "ArrowUp" }}
+        gradeKeys={{ ok: "Digit1", ng: "ArrowUp", hard: "KeyS" }}
         onQuit={() => undefined}
         onContinue={() => undefined}
       />,
     );
-    expect(legend(document.body).slice(1, 3)).toStrictEqual([
-      ["1", ja.Drill.card.said],
-      ["↑", ja.Drill.card.notSaid],
+    expect(legend(document.body).slice(1, 4)).toStrictEqual([
+      ["↑", ja.Drill.grade.again],
+      ["S", ja.Drill.grade.hard],
+      ["1", ja.Drill.grade.good],
     ]);
   });
 

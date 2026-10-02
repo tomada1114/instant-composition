@@ -3,13 +3,13 @@ import { describe, expect, it } from "vitest";
 import {
   drillReducer,
   type DrillState,
-  type GradeKeys,
+  type GradeKeyTrio,
   initDrill,
   keyAction,
   type KeyPress,
 } from "@instant-composition/web";
 
-const DEFAULT: GradeKeys = { ok: "ArrowRight", ng: "ArrowLeft" };
+const DEFAULT: GradeKeyTrio = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
 const CODES: Readonly<Record<string, string>> = {
   " ": "Space",
   "?": "Slash",
@@ -23,7 +23,10 @@ const CODES: Readonly<Record<string, string>> = {
   F: "KeyF",
   l: "KeyL",
   a: "KeyA",
+  s: "KeyS",
   "1": "Digit1",
+  "2": "Digit2",
+  "3": "Digit3",
 };
 
 /** A press of `key` on a US layout, the code a browser would give it. */
@@ -37,6 +40,7 @@ function state(intro = false): DrillState {
     deck: ["c1", "c2"],
     limits: { c1: 7000, c2: 7000 },
     paces: { c1: 7000, c2: 7000 },
+    isNew: {},
     answered: [],
     retries: true,
     intro,
@@ -44,16 +48,18 @@ function state(intro = false): DrillState {
 }
 
 const front = drillReducer(state(), { type: "shown", at: 0 });
-const back = drillReducer(front, { type: "flip", at: 1000, wall: 1000 });
-const timedOut = drillReducer(front, { type: "tick", at: 7000, wall: 7000 });
+const back = drillReducer(front, { type: "flip", at: 1000 });
+const timedOut = drillReducer(front, { type: "tick", at: 7000 });
 const feedback = drillReducer(back, {
   type: "grade",
-  result: "ok",
+  grade: "good",
   at: 2000,
   wall: 2000,
   key: false,
 });
 const paused = drillReducer(front, { type: "pause", at: 500 });
+
+const grade = (given: "again" | "hard" | "good") => ({ type: "grade", grade: given });
 
 describe("keyAction", () => {
   it.each([
@@ -75,47 +81,54 @@ describe("keyAction", () => {
   });
 
   it.each([
-    ["ArrowRight", { type: "grade", result: "ok" }],
-    ["k", { type: "grade", result: "ok" }],
-    ["K", { type: "grade", result: "ok" }],
-    ["f", { type: "grade", result: "ok" }],
-    ["F", { type: "grade", result: "ok" }],
-    ["ArrowLeft", { type: "grade", result: "ng" }],
-    ["j", { type: "grade", result: "ng" }],
-    ["J", { type: "grade", result: "ng" }],
-    ["d", { type: "grade", result: "ng" }],
-    ["D", { type: "grade", result: "ng" }],
+    ["ArrowLeft", grade("again")],
+    ["1", grade("again")],
+    ["j", grade("again")],
+    ["J", grade("again")],
+    ["d", grade("again")],
+    ["D", grade("again")],
+    ["2", grade("hard")],
+    ["ArrowRight", grade("good")],
+    ["3", grade("good")],
+    ["k", grade("good")],
+    ["K", grade("good")],
+    ["f", grade("good")],
+    ["F", grade("good")],
     ["ArrowDown", { type: "scroll", direction: 1 }],
     ["ArrowUp", { type: "scroll", direction: -1 }],
     ["Escape", { type: "pause" }],
     [" ", undefined],
     ["Enter", undefined],
+    ["s", undefined],
   ])("on a flipped back maps %j", (key, action) => {
     expect(keyAction(back, on(key), DEFAULT)).toStrictEqual(action);
   });
 
   it.each([
-    [" ", { type: "next" }],
-    ["Enter", { type: "next" }],
-    ["k", { type: "next" }],
-    ["K", { type: "next" }],
-    ["f", { type: "next" }],
-    ["F", { type: "next" }],
-    ["ArrowRight", { type: "next" }],
-    ["ArrowLeft", undefined],
-    ["j", undefined],
-    ["J", undefined],
-    ["d", undefined],
-    ["D", undefined],
+    ["ArrowLeft", grade("again")],
+    ["2", grade("hard")],
+    ["k", grade("good")],
     ["ArrowDown", { type: "scroll", direction: 1 }],
     ["Escape", { type: "pause" }],
-  ])("on a timed-out back maps %j", (key, action) => {
+    [" ", undefined],
+    ["Enter", undefined],
+  ])("on a timed-out back maps %j, Space and Enter doing nothing", (key, action) => {
     expect(keyAction(timedOut, on(key), DEFAULT)).toStrictEqual(action);
+  });
+
+  it("grades by the default trio's digits whatever character the layout types", () => {
+    expect(keyAction(back, { key: "&", code: "Digit1" }, DEFAULT)).toStrictEqual(
+      grade("again"),
+    );
+    expect(keyAction(back, { key: "é", code: "Digit2" }, DEFAULT)).toStrictEqual(
+      grade("hard"),
+    );
   });
 
   it("only pauses during the feedback", () => {
     expect(keyAction(feedback, on("Escape"), DEFAULT)).toStrictEqual({ type: "pause" });
     expect(keyAction(feedback, on("k"), DEFAULT)).toBeUndefined();
+    expect(keyAction(feedback, on("2"), DEFAULT)).toBeUndefined();
   });
 
   it("only resumes on Escape while paused, leaving other keys to the dialog", () => {
@@ -131,23 +144,21 @@ describe("keyAction", () => {
     expect(keyAction(finishing, on("Escape"), DEFAULT)).toBeUndefined();
   });
 
-  describe("with a pair the learner chose", () => {
-    const CHOSEN: GradeKeys = { ok: "KeyL", ng: "KeyA" };
+  describe("with a trio the learner chose", () => {
+    const CHOSEN: GradeKeyTrio = { ok: "KeyL", ng: "KeyA", hard: "KeyS" };
 
     it.each([
-      [on("l"), { type: "grade", result: "ok" }],
-      [on("a"), { type: "grade", result: "ng" }],
-      [
-        { key: "L", code: "KeyL" },
-        { type: "grade", result: "ok" },
-      ],
-      [
-        { key: "Process", code: "KeyL" },
-        { type: "grade", result: "ok" },
-      ],
+      [on("l"), grade("good")],
+      [on("a"), grade("again")],
+      [on("s"), grade("hard")],
+      [{ key: "L", code: "KeyL" }, grade("good")],
+      [{ key: "Process", code: "KeyL" }, grade("good")],
       [{ key: "l", code: "KeyO" }, undefined],
       [on("ArrowRight"), undefined],
       [on("ArrowLeft"), undefined],
+      [on("1"), undefined],
+      [on("2"), undefined],
+      [on("3"), undefined],
       [on("k"), undefined],
       [on("j"), undefined],
       [on("f"), undefined],
@@ -157,32 +168,27 @@ describe("keyAction", () => {
       expect(keyAction(back, press, CHOSEN)).toStrictEqual(action);
     });
 
-    it("moves on from a timed-out back with the chosen ○, not the default", () => {
-      expect(keyAction(timedOut, on("l"), CHOSEN)).toStrictEqual({ type: "next" });
-      expect(keyAction(timedOut, on("a"), CHOSEN)).toBeUndefined();
+    it("grades a timed-out back with the chosen keys, not the default", () => {
+      expect(keyAction(timedOut, on("l"), CHOSEN)).toStrictEqual(grade("good"));
+      expect(keyAction(timedOut, on("s"), CHOSEN)).toStrictEqual(grade("hard"));
       expect(keyAction(timedOut, on("ArrowRight"), CHOSEN)).toBeUndefined();
       expect(keyAction(timedOut, on("k"), CHOSEN)).toBeUndefined();
     });
 
     it("grades with ↑ or ↓ chosen as a grade key, and scrolls with the other", () => {
-      const arrows: GradeKeys = { ok: "ArrowUp", ng: "Digit1" };
-      expect(keyAction(back, on("ArrowUp"), arrows)).toStrictEqual({
-        type: "grade",
-        result: "ok",
-      });
-      expect(keyAction(back, on("1"), arrows)).toStrictEqual({
-        type: "grade",
-        result: "ng",
-      });
+      const arrows: GradeKeyTrio = { ok: "ArrowUp", ng: "Digit1", hard: "Digit2" };
+      expect(keyAction(back, on("ArrowUp"), arrows)).toStrictEqual(grade("good"));
+      expect(keyAction(back, on("1"), arrows)).toStrictEqual(grade("again"));
       expect(keyAction(back, on("ArrowDown"), arrows)).toStrictEqual({
         type: "scroll",
         direction: 1,
       });
-      expect(keyAction(timedOut, on("ArrowUp"), arrows)).toStrictEqual({
-        type: "next",
+      const down: GradeKeyTrio = { ok: "KeyK", ng: "KeyJ", hard: "ArrowDown" };
+      expect(keyAction(timedOut, on("ArrowDown"), down)).toStrictEqual(grade("hard"));
+      expect(keyAction(timedOut, on("ArrowUp"), down)).toStrictEqual({
+        type: "scroll",
+        direction: -1,
       });
-      const down: GradeKeys = { ok: "KeyK", ng: "ArrowDown" };
-      expect(keyAction(timedOut, on("ArrowDown"), down)).toBeUndefined();
     });
 
     it("keeps Space, Enter, Esc and ? the drill's own", () => {
