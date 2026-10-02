@@ -1,27 +1,41 @@
-import { useEffect, useMemo, useRef, type ReactElement } from "react";
+import { useEffect, useMemo, useRef, type ReactElement, type ReactNode } from "react";
 import { useTranslations } from "use-intl";
 
 import { prefersReducedMotion } from "../drill/motion";
 import { FocusStrip } from "../lib/frame";
 import { usePrimaryKey } from "../lib/use-primary-key";
-import { Button } from "../ui/button";
+import { cn } from "../lib/utils";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import type { RoundKind, RoundSummary } from "../openapi";
-import { PrimaryButton } from "../ui/primary-button";
 import { countUpPlan, useElapsed, valueAt } from "./count-up";
 import { GrowthSection, ReviewSection } from "./growth-section";
 import { ReachRings } from "./reach-rings";
 import {
   DifficultyLine,
   PlacementCard,
-  PointsTotals,
   StreakBlock,
   TitleCards,
 } from "./summary-parts";
+import { PointsTotals, TotalsChart } from "./points-totals";
+import { SummaryActions } from "./summary-actions";
+
+/** One card of the summary's grid, spanning `span` of its 12 columns from `pc`. */
+function Panel({
+  span,
+  children,
+}: Readonly<{ span: string; children: ReactNode }>): ReactElement {
+  return (
+    <div className={cn("rounded-panel border-2 border-border bg-card p-6", span)}>
+      {children}
+    </div>
+  );
+}
 
 /**
- * W9 and its kin: what a round moved, top to bottom. `live` is the round
+ * W9 and its kin, at most 1120: the hero centred — the title, the streak,
+ * the week and the actions, inside the first view — then milestones, the
+ * cards on the grid and the difficulty line; one column below `pc`. `live` is the round
  * just finished — changed values count up and the buttons close it;
  * `recap` (W9r) re-reads today's last summary with every value final, and
  * Esc goes back. Either way the focus strip's ✕ (`onEnd`) closes it.
@@ -81,7 +95,7 @@ export function SummaryScreen({
   const placement = summary.placement;
 
   return (
-    <div className="mx-auto flex w-full max-w-reading flex-col pt-6">
+    <div className="mx-auto flex w-full max-w-dashboard flex-col gap-8 py-8">
       <FocusStrip
         close={
           <IconButton plain type="button" aria-label={t("close")} onClick={onEnd}>
@@ -89,7 +103,7 @@ export function SummaryScreen({
           </IconButton>
         }
       />
-      <header className="flex flex-col gap-6">
+      <header className="flex flex-col items-center gap-6 text-center">
         <h1
           ref={heading}
           tabIndex={-1}
@@ -97,85 +111,47 @@ export function SummaryScreen({
         >
           {title}
         </h1>
-      </header>
-      <div className="mt-4 flex flex-col divide-y divide-border *:py-8">
-        {placement?.first === true ? <PlacementCard toeic={placement.toeic} /> : null}
-        <GrowthSection growth={summary.growth} shown={shown} />
-        <ReviewSection rows={summary.review} shown={shown} />
         <StreakBlock summary={summary} shown={shown} />
-        {summary.difficulty !== null ? (
-          <DifficultyLine
-            change={summary.difficulty.change}
-            toeic={summary.difficulty.toeic}
+        {live ? (
+          <SummaryActions
+            summary={summary}
+            dailySize={dailySize}
+            onNext={onNext}
+            onEnd={onEnd}
           />
-        ) : placement !== null && !placement.first ? (
-          <DifficultyLine change={null} toeic={placement.toeic} />
         ) : null}
-        <ReachRings reach={summary.reach} shown={shown} />
-        <TitleCards
-          keys={summary.titles}
-          topicNames={summary.topicNames}
-          moving={moving}
-        />
-        <PointsTotals summary={summary} shown={shown} />
+      </header>
+      {placement?.first === true ? <PlacementCard toeic={placement.toeic} /> : null}
+      <TitleCards
+        keys={summary.titles}
+        topicNames={summary.topicNames}
+        moving={moving}
+      />
+      <div className="grid gap-6 pc:grid-cols-12">
+        <Panel span="pc:col-span-4">
+          <GrowthSection growth={summary.growth} shown={shown} />
+        </Panel>
+        <Panel span="pc:col-span-4">
+          <ReachRings reach={summary.reach} shown={shown} />
+        </Panel>
+        <Panel span="pc:col-span-4">
+          <PointsTotals summary={summary} shown={shown} />
+        </Panel>
+        <Panel span="pc:col-span-7">
+          <ReviewSection rows={summary.review} shown={shown} />
+        </Panel>
+        <Panel span="pc:col-span-5">
+          <TotalsChart summary={summary} shown={shown} />
+        </Panel>
       </div>
-      {live ? (
-        <SummaryActions
-          summary={summary}
-          dailySize={dailySize}
-          onNext={onNext}
-          onEnd={onEnd}
+      {summary.difficulty !== null ? (
+        <DifficultyLine
+          change={summary.difficulty.change}
+          toeic={summary.difficulty.toeic}
         />
+      ) : placement !== null && !placement.first ? (
+        <DifficultyLine change={null} toeic={placement.toeic} />
       ) : null}
     </div>
-  );
-}
-
-/** The buttons under a live summary: one more round, today's portion, or the end. */
-function SummaryActions({
-  summary,
-  dailySize,
-  onNext,
-  onEnd,
-}: Readonly<{
-  summary: RoundSummary;
-  dailySize: number;
-  onNext: (kind: RoundKind) => void;
-  onEnd: () => void;
-}>): ReactElement {
-  const t = useTranslations("Summary");
-  return (
-    <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
-      {summary.yesterday ? (
-        summary.todayOpen ? (
-          <>
-            <Button variant="secondary" onClick={onEnd}>
-              {t("actions.end")}
-            </Button>
-            <PrimaryButton
-              onPress={() => {
-                onNext("today");
-              }}
-            >
-              {t("actions.today")}
-            </PrimaryButton>
-          </>
-        ) : (
-          <PrimaryButton onPress={onEnd}>{t("actions.end")}</PrimaryButton>
-        )
-      ) : (
-        <>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              onNext("extra");
-            }}
-          >
-            {t("actions.more", { count: dailySize })}
-          </Button>
-          <PrimaryButton onPress={onEnd}>{t("actions.end")}</PrimaryButton>
-        </>
-      )}
-    </footer>
   );
 }

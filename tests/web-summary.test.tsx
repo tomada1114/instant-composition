@@ -160,6 +160,19 @@ describe("SummaryScreen, W9", () => {
     expect(onEnd).toHaveBeenCalledTimes(2);
   });
 
+  it("puts its actions under the hero, before the cards, with no sticky footer", () => {
+    renderSummary(makeSummary());
+    const end = screen.getByRole("button", {
+      name: new RegExp(ja.Summary.actions.end),
+    });
+    const growth = screen.getByRole("heading", { name: ja.Summary.growth.title });
+    expect(
+      end.compareDocumentPosition(growth) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(document.querySelector("footer")).toBeNull();
+    expect(document.querySelector(".sticky")).toBeNull();
+  });
+
   it("counts the changed values up, and only those", () => {
     stubReducedMotion(false);
     let now = 0;

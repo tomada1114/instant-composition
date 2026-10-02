@@ -4,13 +4,17 @@ import { useEffect, useRef, type ReactElement } from "react";
 import { playMotion } from "../drill/motion";
 import { WeekRow } from "../home/streak-figure";
 import { cn } from "../lib/utils";
+import { FlameGlyph } from "../ui/filled-glyphs";
 import type { RoundSummary } from "../openapi";
 import { parseTitleKey } from "./titles";
 
 /** A value as it stands now: counting up when this round changed it, final otherwise. */
 export type Shown = (key: string, final: number) => number;
 
-/** The run and the week; the figure and the day this round completed are lit. */
+/**
+ * The run and the week, centred in the hero; the figure and the day this
+ * round completed are lit — `stat/xl` beside a flame when the run grew.
+ */
 export function StreakBlock({
   summary,
   shown,
@@ -18,16 +22,18 @@ export function StreakBlock({
   const t = useTranslations("Summary");
   const { streak } = summary;
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex w-full flex-col items-center gap-5">
       {streak.restart ? (
         <p className="text-heading">{t("restartTitle")}</p>
       ) : (
-        <p className="flex items-baseline gap-3">
+        <p className="flex items-center gap-3">
+          {streak.changed ? <FlameGlyph className="size-12 text-energy" /> : null}
           <span
             className={cn(
-              "font-display text-number-lg",
-              streak.changed &&
-                "text-energy [paint-order:stroke_fill] [-webkit-text-stroke:0.375rem_var(--on-energy)]",
+              "font-display",
+              streak.changed
+                ? "text-number-xl text-energy [paint-order:stroke_fill] [text-shadow:0_0.5rem_0_var(--on-energy)] [-webkit-text-stroke:0.375rem_var(--on-energy)]"
+                : "text-number-lg",
             )}
           >
             {shown("streak", streak.value)}
@@ -35,7 +41,9 @@ export function StreakBlock({
           <span className="text-label text-muted-foreground">{t("streakUnit")}</span>
         </p>
       )}
-      <WeekRow dots={summary.week} lit={summary.filled} />
+      <div className="w-full max-w-sm">
+        <WeekRow dots={summary.week} lit={summary.filled} />
+      </div>
     </section>
   );
 }
@@ -124,62 +132,5 @@ export function TitleCards({
         </section>
       ))}
     </div>
-  );
-}
-
-/** This round's points and the running totals, with the last 14 days as bars. */
-export function PointsTotals({
-  summary,
-  shown,
-}: Readonly<{ summary: RoundSummary; shown: Shown }>): ReactElement {
-  const t = useTranslations("Summary");
-  const { points, totals } = summary;
-  const most = Math.max(1, ...totals.last14.map((bar) => bar.count));
-  return (
-    <section className="flex flex-col gap-4">
-      <p className="flex items-baseline justify-between">
-        {points.earned > 0 ? (
-          <span className="inline-flex h-8 items-center rounded-full bg-energy px-3 font-latin text-count text-on-energy shadow-lip shadow-energy-lip">
-            {t("points.earned", { points: points.earned })}
-          </span>
-        ) : (
-          <span />
-        )}
-        <span className="font-latin text-count text-muted-foreground">
-          {t("points.total", { points: shown("points", points.total) })}
-        </span>
-      </p>
-      <p>
-        {t("totals.line", {
-          said: shown("said", totals.said),
-          days: totals.practicedDays,
-        })}
-      </p>
-      <div
-        role="img"
-        aria-label={t("totals.chart")}
-        className="flex h-12 items-end gap-1.5"
-      >
-        {totals.last14.map((bar, index) => {
-          const today = index === totals.last14.length - 1;
-          const grown = today ? Math.min(bar.count, totals.added) : 0;
-          return (
-            <div
-              key={bar.day}
-              className="flex w-2 flex-col justify-end overflow-hidden rounded-full"
-              style={{ height: `${String((bar.count / most) * 100)}%` }}
-            >
-              {grown > 0 ? (
-                <div
-                  className="bg-good-ink"
-                  style={{ height: `${String((grown / bar.count) * 100)}%` }}
-                />
-              ) : null}
-              <div className="flex-1 bg-muted-foreground" />
-            </div>
-          );
-        })}
-      </div>
-    </section>
   );
 }
