@@ -11,7 +11,18 @@
       "ja": "出かける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:780d17ee569c1e0465e572c4e50b6c480bba740f0e770bf09fcf949b4b1b0266",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:72f1dab22a46ac9db9c98b1182f1bbf50118470219625165f2891d1c2473191c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2c8w3e7z",
@@ -122,10 +133,21 @@
     "example": "The firm uses a short test to {{weed}} {{out}} unsuitable applicants.",
     "example2": "She weeded out every error before the report went to print.",
     "meanings": {
-      "ja": "ふるい落とす"
+      "ja": "取り除く・ふるい落とす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bf897f5755f97e5b8fe0acc9af6107b2b041368a897ac488a339223957d2ee6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6e8e3a8890b0cbb1db51c638a10aa5c276604960a005b542cc0c6c6387cb3cfd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2w7b5m7v",
@@ -139,7 +161,18 @@
       "ja": "当座をしのがせる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09534b50e6e7068f0ad466ecae255196d4969b3c500bd5dbca536d7d4d3ed737",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9670fe84e049f6767a342a52fbe6497a87be81246bf3e602131910318ea5a73e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a3k2t7d",
@@ -178,7 +211,18 @@
       "ja": "ごまかす・さらりと流す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72628cc66b2c45254ef044a050e0e29145bcff7d43c1d1d87026008e4f4e062b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:37bd7c74df45137df24013ee93a454513e87e76a152cf5c3a167e1fd2042dde1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j7k7u6m",
@@ -242,7 +286,18 @@
       "ja": "実行する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36e8b0df42ad6e2120f789bdce2ca19d39b402e2a299a14c96eb5cfc89b29744",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9acaba25e0e44f2cccfe590d0c097858b3edce9dbadab57838d86e98b13a2393",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3w7w6g8x",
@@ -506,7 +561,18 @@
       "ja": "消す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e7cb4c4ad5be385a96dae926e6b82621723f5beb8ce4505c9436bbec1bf5835",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e711a74a5750d236c2211c861153eb6a79cf95bda0496c789223423cbb486ff4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9r9a3k",
@@ -545,7 +611,18 @@
       "ja": "仮の予定に入れる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58e261b31b73c456f6001cf2ef22255b65d2be9d0c3111cd54632be01d1d4238",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f5e9a9a7df9f9423da85acc24233fdb906c063440bf837a1c566288c426bc453",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6a9x8a2q",
@@ -603,13 +680,24 @@
     "level": 2,
     "headword": "come back",
     "definition": "to return to a place where you were before",
-    "example": "My father will {{come}} {{back}} from work at seven.",
-    "example2": "Come back soon, and tell me about the trip.",
+    "example": "Thanks for visiting; please {{come}} {{back}} again soon.",
+    "example2": "She left in March and came back in June.",
     "meanings": {
       "ja": "戻ってくる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be8681cdedb2169cb46aaacc618f6790ec3ac4bde85ab077f0e09e5cb182475a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c6ea4ef1bd15f3ac60ee21c41299d391d2d2101e7ddb5e1d496ae71da96f6949",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7f8d7x7c",
@@ -748,7 +836,18 @@
       "ja": "軽く見せる・控えめに言う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e9e4e33c377c0d777dfca7d90405ba5cc46893cbb2402322825f2be877fba8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:de9a5926d3152be7623bdc461a0e1afe1a11327f4f5f059e54955c13d52b62f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8k6j5e6y",
@@ -762,7 +861,18 @@
       "ja": "解決する・整理する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:701f7b2d445c2ee4fe4a3a951d0117e98979e9157bf08df46877ae2ecd8a88c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d1111f749731d282963d01a8798a8b79ef28a87d35fcb5242fb4b183ce7941ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8k7v4s2x",
@@ -801,7 +911,18 @@
       "ja": "抑制する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cd7b90b922f468ca2b93ee366a5edb51661cbedcd9770fe3425e052df3bcaae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4e9d0d214eb07243b5b0f1ac237b61689160b3b3ffa93fabc96f0f5359cb97e7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8t4c5s7z",
@@ -815,7 +936,18 @@
       "ja": "〜を見る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b287e48f349aec140a25647bac36286d6dad684b445ab9eb82671b4f0dee12fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8ae74a5dd74b44fb5e08e49c0d63e6bc3dd79a4f4f5e7242f287a8e6c98cea9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8y4a2t7q",
@@ -854,7 +986,18 @@
       "ja": "やってのける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2abf612e6e2d1c028ddbe5f3a30e67ab8790d7a7e0deccdf52f967f684a425f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fd08dcd2f20f06b97ee9e97bef6d44704a0a053cbf031266e14700982c467f83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9b6u2z3u",
@@ -868,7 +1011,18 @@
       "ja": "記入する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72150b9ffc1aad515f1fa29bb09967b83eb290acf9bce3d15be59a435caed61b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01930b52c4d14b5182bed0e4cd7d06f08b12748b1ff9ddf4ce33087193ab4b68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9b7a3q9z",
@@ -882,7 +1036,18 @@
       "ja": "片づける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d4f1f1af6eedef410cf357646b264e6c66e1b25362b430e57dc5e4819cc4b2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:54c9e139feb98b01945162040b2e91c43f5cd7d2c39607b360ef9f168bccfbc2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9e4y6u6f",
@@ -964,14 +1129,25 @@
     "category": "phrasal-verb",
     "level": 10,
     "headword": "hash out",
-    "definition": "to talk about a problem in detail until you reach an agreement",
-    "example": "They spent two hours trying to {{hash}} {{out}} the final terms.",
+    "definition": "to discuss a disagreement openly and in detail until it is settled",
+    "example": "The roommates sat down to {{hash}} {{out}} who would do which chores.",
     "example2": "Let's hash this out over lunch.",
     "meanings": {
       "ja": "徹底的に話し合って決める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a528148a8118b22f4303557c094183261d1c73a1c88690168f8cfe9528d53d99",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2a011e217836e21aa2bb33b79687a1a0ea35646a6c29de0d72325db1cbd9e147",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9k8s7q4q",
@@ -1010,7 +1186,18 @@
       "ja": "捨てる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0ccaf4cbce371d7629526c877a5ef620cb6f2fbd9ab1fd0fa2d5f85cd2e24d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:516bfb251152db853bcf48cb8553174d618b9df01c1c1ec1855f08cdfd5b19f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w5r7y4u",

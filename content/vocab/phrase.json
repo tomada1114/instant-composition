@@ -11,7 +11,18 @@
       "ja": "失礼、私の間違いでした"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d81659dba04bb9533730922b498d723c4ee8aa6482d300e055d42de66454998",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c415dc838b9301c1c8a88742fb452ad584fbe04686658b0e37ca9816709b2eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2k6g3h6b",
@@ -100,7 +111,18 @@
       "ja": "それはそうとしても"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9da4e23a130b64459cc3db9061969969105105d16b1eb7c2d124c1ddb94ded82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b6e56cef39d98ce80aaa5c4b452a0501993e8170c43cf5d267e9a7b8564d99ae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3k8t2v8b",
@@ -230,7 +252,7 @@
   {
     "id": "v_3w4h8e9j",
     "category": "phrase",
-    "level": 10,
+    "level": 8,
     "headword": "I hear you",
     "definition": "said to show you understand someone's feelings, even if you may not agree",
     "example": "A: I'm exhausted by all these meetings.\nB: {{I}} {{hear}} {{you}}.",
@@ -239,7 +261,18 @@
       "ja": "気持ちはわかるよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:24f86cb5e5f2ca31f9c852767a94e47f23b7db76193c30179e9744b65f2e2a9d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:401664fdc85a9da153eae3a6c86388dbf456eaa2e82e251ef067afcb306ded3d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3y9n7g8h",
@@ -353,7 +386,18 @@
       "ja": "お元気ですか？"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f92f83df9b895a3b22bef181788736c14cbdfb6e3e5886dd5dddd5a020a07566",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b398252435a5868238595a264e6cb23f8c65a6e7ddf7224a3b331f18f97a73da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4t5s2r2q",
@@ -367,7 +411,18 @@
       "ja": "私も参加します"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:96678b41ffa5f8c19108e17d36fdf7031d2fb532f437ae39b8dcc939c43e45f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:867c1488d897b12cbaa2e016cfe746d312221400a580e6de13add61948dc94eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4x4d2q7y",
@@ -406,21 +461,18 @@
       "ja": "言うまでもありません"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_4z9p3k4w",
-    "category": "phrase",
-    "level": 2,
-    "headword": "no problem",
-    "definition": "said politely after someone thanks you or says sorry for a small thing",
-    "example": "A: Thanks for helping me with my bag.\nB: {{No}} {{problem}}.",
-    "example2": "A: Sorry I'm late.\nB: No problem. We just started.",
-    "meanings": {
-      "ja": "どういたしまして"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c8bd1c0a9fc32e36be2e01d451cadbd066d9ae762e6035995a15f6e4f7dd000",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a0be31194cf583549fd2ea28138090522f44816fba28ab09678209079ecf2d09",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b2z6p6n",
@@ -459,7 +511,18 @@
       "ja": "そろそろ切りますね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17b21ebe4dd680060966353cb65aad542e675574a733e00cd0207a24587961d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:93d9dc34252aebd75eb278d351da95bf760f8ddcec1efc6abe879e92c8e43646",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5h8n5c2k",
@@ -537,20 +600,6 @@
     }
   },
   {
-    "id": "v_5x2c2p3m",
-    "category": "phrase",
-    "level": 2,
-    "headword": "see you soon",
-    "definition": "said when you leave someone you will meet again in a short time",
-    "example": "A: I have to go now.\nB: OK, {{see}} {{you}} {{soon}}!",
-    "example2": "A: Thanks for the visit.\nB: See you soon, Anna.",
-    "meanings": {
-      "ja": "また近いうちにね"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "v_5x2s5g7j",
     "category": "phrase",
     "level": 6,
@@ -603,7 +652,7 @@
   {
     "id": "v_6a4g6v9t",
     "category": "phrase",
-    "level": 8,
+    "level": 6,
     "headword": "if you say so",
     "definition": "said when you doubt something but will not argue about it",
     "example": "A: This road is definitely the fastest way.\nB: {{If}} {{you}} {{say}} {{so}}.",
@@ -612,7 +661,18 @@
       "ja": "あなたがそう言うなら"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f7e7503057fabbfb8d61e7b41b5db87f7c30f60fb279b7417582ca92207d6e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4b60930b5e2bf5536d97be8ad9606e8aa47c00556e2678c0941840901f41845f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6e3c4p3w",
@@ -651,7 +711,18 @@
       "ja": "場合によります"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:570a25881d8a9591ca9ce621948d264c38a233e14b8dfb1f978d0be9f185932b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c8535aac282ad8ae302bfa5af40e203497cef8994ae22ccb73656e4ef71907d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6p3b9p2t",
@@ -677,20 +748,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "v_6s8d8y9s",
-    "category": "phrase",
-    "level": 10,
-    "headword": "you're telling me",
-    "definition": "said to show you know exactly what the speaker means from your own bad experience",
-    "example": "A: This heat is unbearable.\nB: {{You're}} {{telling}} {{me}}!",
-    "example2": "A: Parking here is a nightmare.\nB: You're telling me. I circled for twenty minutes.",
-    "meanings": {
-      "ja": "まったくだよ、よくわかる"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "v_6u6m3n8c",
@@ -804,7 +861,18 @@
       "ja": "ご指摘はごもっとも"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cdd370902dd0e0e397f3f2930550b95d4e865d88c4b86b9d2ad73dbe21e610c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1df65683eff96e9c881fc986d92a22cbc626b4132877b5c964d937f3e388d094",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7w6d6h9r",
@@ -818,7 +886,18 @@
       "ja": "ああ、ほっとした"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36fc8dfcbd84ae30f44b4242df42c27eb8843de2a813f16d97a8700078718569",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d1580c21947b99718b89c8244db1f7c141fab4c6f3ae32a8247ed0cecdbf6f5b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8b2v2b2w",
@@ -973,7 +1052,7 @@
   {
     "id": "v_9n6u6f9t",
     "category": "phrase",
-    "level": 9,
+    "level": 7,
     "headword": "you can say that again",
     "definition": "said to agree very strongly with what someone has just said",
     "example": "A: This traffic is terrible today.\nB: {{You}} {{can}} {{say}} {{that}} {{again}}!",
@@ -982,7 +1061,18 @@
       "ja": "まったくその通り"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e9c354eaeef3b5b4928fd8a41bbb54bc561849b787fcf6d07263ca8ec636c0a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f023a52f39c569c55b9bf0870e40f25c98cec5a713028c66533bed1be26b3b59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9p5v9j3d",

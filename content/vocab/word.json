@@ -61,7 +61,18 @@
       "ja": "うれしい・幸せな"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:89aaf4dbd005996fecab7ae9bf4aefc50e0c6573f9310d29238a1e1382d3a5df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d974a1ee242aae134a5f3cc7bf38f0d3e79f5551b03ed8a7625b4e076d966fd3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2q8b5j5e",
@@ -143,28 +154,50 @@
     "category": "word",
     "level": 9,
     "headword": "equivocal",
-    "definition": "open to more than one meaning, so that it is unclear or evasive",
+    "definition": "so unclear that it fails to settle a question either way",
     "example": "The senator gave an {{equivocal}} answer to a simple question.",
     "example2": "The test results were equivocal, so the doctor ordered another one.",
     "meanings": {
       "ja": "あいまいな・どちらとも取れる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:161a798eaf563978226ee661bd4b7a6920990d690065d7a5439c3e854b696e0e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:50884d31a09cb49f21430b5e77087fa2f417106b89cbdbe33532c69059f477fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3r4z6s7g",
     "category": "word",
     "level": 4,
     "headword": "available",
-    "definition": "free to be used, bought or met at a certain time",
-    "example": "Is the conference room {{available}} on Thursday afternoon?",
+    "definition": "ready for you to use, buy or meet at a particular time",
+    "example": "Only two seats are still {{available}} on Thursday's flight.",
     "example2": "The new phone will be available in stores next month.",
     "meanings": {
       "ja": "利用できる・空いている"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c00af67b3a23ce38f8ee32877252307fcdd4a82c98fe7331faf27665149e3e46",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5df9e438cffdc692cfc9ab879ee682ec5b4da768cb0da4d1828eaf4a3b5c52a9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4d8k7b5k",
@@ -178,7 +211,18 @@
       "ja": "友だち"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5085dac4d05dadec76089709f16f24369b7b7afa149c9a72e04aa8b7769dc716",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:247b7b6f849f921a68a4d0fa6a11320d59e30a58749ab5bae38f06b1bab51a2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4p7z5k4j",
@@ -542,7 +586,18 @@
       "ja": "背が高い・高い"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1215f187f05632421d263ed392cb017c5d09b00cde8a4e5ba4f1c86a25097136",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:72eaa94a73212c3e499497568e90f46bf2342648e961799d0f2f84e3ee10e6cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6v5p3b6f",
@@ -649,14 +704,25 @@
     "category": "word",
     "level": 9,
     "headword": "exacerbate",
-    "definition": "to make a bad problem even worse",
+    "definition": "to make a problem, pain or bad situation more severe",
     "example": "Skipping sleep will only {{exacerbate}} your headaches.",
     "example2": "The heavy rain exacerbated the flooding in the valley.",
     "meanings": {
       "ja": "悪化させる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c947706d9f6217a2ea370bde5132cc2a984e50b36dd0decd201772c3b919eb4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1fc2171aef4b34a052b5d319781bcfb66da4dde0b1ff6f8f6c62e91c10508752",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7h2y2x2u",
@@ -670,7 +736,18 @@
       "ja": "十分な・まずまずの"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b877cf201d7485e646e4109fa59a048cfac6a3352ccc850521eb3e291742a59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1f8300a3f41d6deb46752b84e86ccc36b160901c113d30b67d19659b13004851",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7k9b2j9r",
@@ -734,7 +811,18 @@
       "ja": "ためらう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbbf2497243c2defd271c5406a8da067cdcbd90cfb6af4cd7d3f5e9d2a0c15f4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ffdf5ba7b500f6711722f05ed676ff98505089ee277b01e3e7fa1b6a89deb6af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8b8f4n7f",
@@ -795,10 +883,21 @@
     "example": "She is a {{consistent}} performer who rarely misses a target.",
     "example2": "Your story is not consistent with what the video shows.",
     "meanings": {
-      "ja": "一貫した"
+      "ja": "一貫した・矛盾のない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:007da0d06ad3b6876c3708da46ad2e59233d665dd7253c7ef4f30481664656b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5a07e151e9971c0840c2ef45981629e7be14ec905f1a4a544a0fbd1f2005b188",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8s5n5k7b",
@@ -837,7 +936,18 @@
       "ja": "予定・スケジュール"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e1b464107fa3bdc26c6da7bc4e49d723ff56fd19d389741d50187d8e86b7a65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b6a90bd75b58140c20025614587afb015cb66f235401c1ea5028e415e9689e22",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9a3r2n6p",
@@ -851,7 +961,18 @@
       "ja": "不満を言う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4826d2189ec3af5f9aeddda78e0d889d4ecaaae1dddd5dcd37ebf973bbba5d5e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:350b8ed36c3959593e3139b8441d3e784aa24a3e47adf4eae7096d985bee5cec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9a5j9t4w",
@@ -933,14 +1054,25 @@
     "category": "word",
     "level": 9,
     "headword": "perfunctory",
-    "definition": "done quickly without real care or interest, only because it is expected",
-    "example": "He gave the report a {{perfunctory}} glance and walked away.",
+    "definition": "done only because it is expected, without real care or interest",
+    "example": "The manager gave a {{perfunctory}} apology and hurried away.",
     "example2": "Her thank-you was perfunctory, and nobody believed it.",
     "meanings": {
       "ja": "おざなりな"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6e971a7f9f7f1bd996ab81b0c6f7a3cd2f9cba4a6c054addce949984b3a925c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:183d7d64495d9bc9688719b5098a273d4e0afb0beba4e4381e8cf7a009688b04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9h7e2z7v",

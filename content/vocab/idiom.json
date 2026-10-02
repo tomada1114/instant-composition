@@ -311,7 +311,18 @@
       "ja": "途中で基準を変える"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1346a190122b41f5a167f86b506b1ece685459503b987b1a42e79af4a70ee1f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ccb00ba86d5a391ee6a2f542aae54b29df7143b9a06ea3f84fe4d9f00c99479a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4h9e7b9k",
@@ -425,7 +436,18 @@
       "ja": "〜の前に"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cffb7a2358779bae7ba71e906a6ea69296bb893470d8f797791e9ec10b0f2a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:83b4ea19c1279d0a917f79b81ce9787a7b14ec7664632c3288b884320df97561",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5s4d6h3c",
@@ -464,7 +486,18 @@
       "ja": "夜遅くまで働く"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00c5b61cb0435ce894c3ccc16fa93e57e7558aa1c857e92cdad4fe7e81c8f682",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8070f509e6b7d2b0044e1d87ea2384c3f9f1b60ac6b016fbe107bfd51aaa3dbe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9f3m2t",
@@ -703,7 +736,18 @@
       "ja": "無駄な捜し回り"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09be45f0ac4ddee0175e2f778b6b2f2c0c76b88e6341a5303ea39091c4a64401",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9b684b259dc3bb9d235f26a1697adaa4a88137f79d6506d8723e6ce8ac933c9f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7u5p4x8m",
@@ -992,7 +1036,18 @@
       "ja": "少し"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b6135e190e7565d8f477384aaae518a22c9bcced3a5c6c75ab6d2bfb3c555d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:75ea308a242c0d66c3066601e34b90cf69064eb97181981bfc16260a6b3740a2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j7w5g6w",
@@ -1006,7 +1061,18 @@
       "ja": "一日中"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e329b45b629bb1729fb33c61a392e96b6dcf8338a9dd315cc77ae00079ae222",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dc2e7e8cf5a5caa4237112ff9d705caeb0b88858554916ae53ca498ab20a254f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w4n5z3w",
