@@ -129,22 +129,28 @@
   {
     "id": "c_3d3d4x5t",
     "ja": "売ってるパンはいい香りだ。",
-    "en": "Bread on offer smells heavenly.",
+    "en": "The bread for sale smells great.",
     "alternatives": [
-      "The available bread smells wonderful.",
-      "The bread for sale smells divine."
+      "The bread on sale smells wonderful.",
+      "The bread they sell smells good."
     ],
-    "point": "on offer は売られているという後ろからの説明。",
+    "point": "for sale は売られているという後ろからの説明。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:135fbec8229bf52f74a2825e55b1bc7a389ca4053ddc7e85f34ba515d7658fa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3e7f8s3f",
-    "ja": "彼女に支払いを頼んだ。",
+    "ja": "私は彼女に会計を頼んだ。",
     "en": "I asked her to pay.",
     "alternatives": ["I requested that she pay.", "I asked her to handle payment."],
     "point": "ask 人 to do で人に行動を頼む。",
@@ -153,7 +159,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c00cd749e520c7364dad33eaf78945106e67ba51bc567a0d3fe3ce7fd8f237f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j2w6j7m",
@@ -273,7 +285,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4218e5660a6bde73711050e3abbfb1669b7523731fa69958c4055cc68a355daa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4f5q7f3z",
@@ -606,7 +624,7 @@
   {
     "id": "c_7z5c4f6v",
     "ja": "料理は別々に出される。",
-    "en": "Dishes are served separately.",
+    "en": "The dishes are served separately.",
     "alternatives": [
       "Each dish is served separately.",
       "The dishes come out separately."
@@ -617,7 +635,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc7527e8557092e3b3bb171e03a35dbc8874f3036ba393c82960dab85a33a523",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8c8j7h7d",
@@ -722,16 +746,22 @@
   },
   {
     "id": "c_9f5w4h8h",
-    "ja": "私、注文を終えたよ。",
+    "ja": "私は注文を終えたよ。",
     "en": "I finished ordering.",
-    "alternatives": ["I have finished placing my order.", "I'm done ordering."],
+    "alternatives": ["I'm done ordering.", "I've finished placing my order."],
     "point": "finish の後は ordering の形。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb5489a2bb08aa4e854a04d082a70b1238c720a53e0f89ac3ee359457b140523",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g8t3u5p",
@@ -754,7 +784,7 @@
   },
   {
     "id": "c_9s5a3z6k",
-    "ja": "彼は注文が抜けたと言った。",
+    "ja": "彼は我々の注文が抜けたと言った。",
     "en": "He said our order got overlooked.",
     "alternatives": [
       "He said they missed our order.",
@@ -766,7 +796,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d85ab8a6986125b7855019b1ec27937f50622c09da1c49c8e460ac83c85eb2b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9v3a9c7r",

@@ -193,7 +193,13 @@
     "level": 10,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:985bcde730131cc3dc348e00e7e43b6cea9208e5d1e5ae8ed6ecfd5e34f0ea0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3k4a3r4k",
@@ -782,19 +788,25 @@
   },
   {
     "id": "c_7y5v5b4k",
-    "ja": "私たちがぐずぐずしてたら今は立ち往生だ。",
-    "en": "Had we dallied, we'd be stranded now.",
+    "ja": "ぐずぐずしてたら我々は今立ち往生だ。",
+    "en": "Had we dawdled, we'd be stranded now.",
     "alternatives": [
       "If we'd lingered, we'd be stuck now.",
       "We'd be stranded now if we'd dawdled."
     ],
-    "point": "過去の仮定と今の結果を結ぶ、dally はぐずぐずする。",
+    "point": "過去の仮定と今の結果を結ぶ、dawdle はぐずぐずする。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 9,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:030a81709b6e2799f47abe976be5c5836ee167de5795c5f178476f311e2ec48e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f3x5y2u",
@@ -947,22 +959,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_9q8h8y8f",
-    "ja": "彼女は遺跡が信じ難いほどすごいと言った。",
-    "en": "She said the ruins beggared belief.",
-    "alternatives": [
-      "She said the ruins were almost impossibly impressive.",
-      "She said the ruins were beyond belief."
-    ],
-    "point": "beggar belief は信じ難いほどすごい。",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 10,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_9y4w7y9m",

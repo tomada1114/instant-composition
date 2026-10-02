@@ -110,14 +110,20 @@
     "id": "c_3b7d2n8s",
     "ja": "私、結論を飛ばした。",
     "en": "I skipped the conclusion.",
-    "alternatives": ["I omitted the conclusion.", "I left the conclusion out."],
+    "alternatives": ["I left out the conclusion.", "I missed out the conclusion."],
     "point": "skip は扱わずに飛ばす。",
     "topic": "work",
     "subtopic": "presentations",
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0a8b77c611f554df84381847d8e448e7a5ae725157d3294f9ddd9d804e60105",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d8e3y6h",
@@ -465,23 +471,35 @@
     "point": "demonstrate は実際に動かして見せる。",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 2,
+    "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cd4227345397f790284a58ccf4f2f5068fb090037d935a59a718d61bb9898d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6n7p4r7g",
-    "ja": "図は省くべきだよ。",
+    "ja": "君は図を省くべきだよ。",
     "en": "You should omit diagrams.",
-    "alternatives": ["You ought to omit diagrams.", "You should leave diagrams out."],
+    "alternatives": ["You should leave out diagrams.", "You should skip the diagrams."],
     "point": "should は助言を表す。",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 2,
+    "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36de1742bbdf7419dac6d932383daa4dfd1e91cda98abbcc70efbe40a41c1616",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7b2y3n4k",

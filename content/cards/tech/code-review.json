@@ -20,11 +20,11 @@
   },
   {
     "id": "c_2d4h6x7u",
-    "ja": "君が反対してたら私たちは見送った。",
+    "ja": "君が反対してたら我々は見送ってた。",
     "en": "Had you pushed back, we'd have shelved it.",
     "alternatives": [
-      "If you'd objected, we would've set it aside.",
-      "We would've postponed it if you'd opposed it."
+      "If you'd objected, we'd have shelved it.",
+      "We'd have shelved it if you'd pushed back."
     ],
     "point": "Had you は if を使わない過去の仮定。",
     "topic": "tech",
@@ -32,7 +32,13 @@
     "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffd3b52920ebdc4ab44d99b559676098d98ae203f9d79b43ebee6c5208a62efd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2h4h2z6x",
@@ -140,19 +146,25 @@
   },
   {
     "id": "c_2r9w4b4b",
-    "ja": "私たちは重複処理を省くべきだ。",
+    "ja": "我々は重複処理を省くべきだ。",
     "en": "We should weed out duplicate logic.",
     "alternatives": [
-      "We ought to eliminate the duplicated logic.",
-      "We should get rid of redundant logic."
+      "We should eliminate duplicate logic.",
+      "We should remove the redundant logic."
     ],
     "point": "weed out は不要なものを選んで取り除く。",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 7,
-    "grammar": ["modal-obligation-advice"],
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:add0e394f9d841162a14e37f782c0bd21187d1014b8e4b036356511a8057d932",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y6f8r3h",
@@ -175,11 +187,11 @@
   },
   {
     "id": "c_2z7t8n5j",
-    "ja": "私たち、命名揃えるべきだった。",
+    "ja": "我々は命名を揃えるべきだった。",
     "en": "We should've standardized the naming.",
     "alternatives": [
-      "We ought to have made the naming consistent.",
-      "We should've used a consistent naming scheme."
+      "We should've kept the naming consistent.",
+      "We should've used consistent names."
     ],
     "point": "should have done は過去の行動への反省。",
     "topic": "tech",
@@ -187,7 +199,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b21cd0d7539d6a3312f8ed6c734e46be0d0725a902ec280f450de3204c91c571",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3a2w2t7x",
@@ -213,16 +231,22 @@
     "ja": "私たちは行間を読むべきだった。",
     "en": "We should've read between the lines.",
     "alternatives": [
-      "We should've picked up on the implicit meaning.",
-      "We ought to have inferred what wasn't stated."
+      "We should've picked up the unspoken meaning.",
+      "We should've noticed what wasn't said."
     ],
     "point": "read between the lines は言外の意味を読む。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 9,
+    "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7de5c3f6aea72aa4618bd05fea464be6097a4ca000f69318c80230650a327e6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3y8j9k4h",
@@ -264,27 +288,33 @@
   },
   {
     "id": "c_4k8r9p2x",
-    "ja": "彼は責任者を分かってないかも。",
-    "en": "I doubt he knows where responsibility lies.",
+    "ja": "彼が責任者を知ってるか私は疑問だ。",
+    "en": "I doubt he knows who is responsible.",
     "alternatives": [
-      "I'm not sure he knows who is accountable.",
-      "He may not know who bears responsibility."
+      "I'm not sure he knows who's in charge.",
+      "I doubt he knows who bears responsibility."
     ],
     "point": "doubt の中に knows、その中に where 節がある。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ff4ef13206a33312c3933fce04bbe4588860f4b28662ff5c374db8a5b1f4660",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4q4h8m5d",
-    "ja": "私たち、検査してたら見抜けた。",
+    "ja": "静的検査なら我々は見抜けたのに。",
     "en": "If we'd linted, we'd have caught it.",
     "alternatives": [
-      "We would've spotted it if we'd run lint.",
-      "Running lint would've helped us catch it."
+      "If we'd run lint, we'd have spotted it.",
+      "We'd have caught it if we'd linted."
     ],
     "point": "過去に実現しなかった条件は if と had done。",
     "topic": "tech",
@@ -292,7 +322,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e5ba55bea9dbb4b45909881902a8f9a428f99a253f8de606f5bae69f67ad03b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4v4t7r4d",

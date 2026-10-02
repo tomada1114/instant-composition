@@ -168,11 +168,11 @@
   },
   {
     "id": "c_3t2r8s3m",
-    "ja": "確認前に彼は引き下がっていた。",
-    "en": "He'd backed down before our review.",
+    "ja": "確認前に彼は引き下がってた。",
+    "en": "He'd backed down before the review.",
     "alternatives": [
-      "Before our review, he'd withdrawn his position.",
-      "He'd conceded before we reviewed it."
+      "He'd withdrawn his claim before the review.",
+      "He'd dropped his objection before the review."
     ],
     "point": "back down は主張を引っ込める。",
     "topic": "work",
@@ -180,15 +180,21 @@
     "level": 6,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b69a67813da9f11a529b86fc89578f21c83ed5b61e4e7ee5392218dae5a034e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3t6s3k6g",
     "ja": "保留中の資金が足かせです。",
     "en": "Funding on hold is a bottleneck.",
     "alternatives": [
-      "The suspended funding is holding us up.",
-      "Funding on hold is slowing us down."
+      "The funding on hold is delaying us.",
+      "The pending funding is holding us back."
     ],
     "point": "on hold は保留中、bottleneck は進行の妨げ。",
     "topic": "work",
@@ -196,7 +202,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9537ded959ca2595bb173c50c1dc6d96cea97c5ee9d9aa9855a17a5756bd4eaf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3w4a9t5d",
@@ -875,7 +887,13 @@
     "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:decc63f6427dfc93e6036c98e00ce2d818524cadb724fe8a008b5e6230963fb8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g4d4a3w",

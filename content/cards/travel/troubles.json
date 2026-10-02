@@ -29,7 +29,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d160b3a74f92297abaf932c52a80861f720cf239c33be7ba835604cda72e2b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2n8w7a9f",
@@ -147,10 +153,16 @@
     "point": "consulate は領事館。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 2,
+    "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9f9a17f38b651c3852f9477ff17eb3f8aa7b95f46c2f7d75dbdef6d2cfc407e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3w9t2t2m",
@@ -723,15 +735,21 @@
   {
     "id": "c_8w5g4w8q",
     "ja": "私、宿を探さなきゃ。",
-    "en": "I must find lodging.",
-    "alternatives": ["I must find somewhere to stay.", "I have to find lodging."],
-    "point": "lodging は宿泊先を指す。",
+    "en": "I must find accommodation.",
+    "alternatives": ["I have to find accommodation.", "I need somewhere to stay."],
+    "point": "accommodation は宿泊先を表す。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 2,
+    "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ded3ffd112bfa440a44efac5fc7ced7174f8b06c5a860c2b1742dac55124e54f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c5c5w2h",

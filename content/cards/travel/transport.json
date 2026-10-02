@@ -65,7 +65,7 @@
     "en": "What stumps me is changing trains.",
     "alternatives": [
       "Changing trains is what confuses me.",
-      "What I find baffling is changing trains."
+      "What confuses me is switching trains."
     ],
     "point": "stump は困らせて分からなくさせる。",
     "topic": "travel",
@@ -73,7 +73,13 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1eee045a4a2b0dbfdc6d3dcbe7268ac162a1de1bf92912c954a777d9a5250e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j2h5n9z",
@@ -242,7 +248,7 @@
   },
   {
     "id": "c_5q8n8k3p",
-    "ja": "私たち、タクシーは避けるべき。",
+    "ja": "私たちはタクシーを避けるべき。",
     "en": "We should steer clear of taxis.",
     "alternatives": ["We ought to avoid taxis.", "We should keep away from taxis."],
     "point": "steer clear of は関わらないよう避ける。",
@@ -251,7 +257,13 @@
     "level": 6,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8962886b1695f16b3096f9bda0bd751ca35d6338414351a5ea31a558343a9b2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5r5v8p9d",
@@ -535,9 +547,15 @@
     "topic": "travel",
     "subtopic": "transport",
     "level": 6,
-    "grammar": ["tense-contrast"],
+    "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:99ef183e5712d2d62cf5ef4f7b4bd0f86fdfa6aa9805e647bbd8926d5bfbd162",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f3u7z7u",

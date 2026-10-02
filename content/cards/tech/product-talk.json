@@ -43,19 +43,25 @@
   },
   {
     "id": "c_2e3c7y4r",
-    "ja": "私たちが出すのは試作品です。",
+    "ja": "我々が出すのは試作品です。",
     "en": "What we're shipping is a prototype.",
     "alternatives": [
       "We're releasing a prototype.",
-      "The product we're releasing is a prototype."
+      "Our upcoming release is a prototype."
     ],
     "point": "what 節で出すものをひとまとまりにする。",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["relative-clauses"],
+    "level": 5,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:05dd38be03ec11a5651ce093c8be1171b8c734571337d387f16dc0e8b9d036d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2n4d8c7a",
@@ -684,7 +690,7 @@
   },
   {
     "id": "c_8p9g5j6p",
-    "ja": "公開前に私たちは需要を測った。",
+    "ja": "公開前に我々は需要を測ってた。",
     "en": "We'd gauged demand before launch.",
     "alternatives": [
       "Before launch, we'd assessed demand.",
@@ -696,7 +702,13 @@
     "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6453b387ba86617ffb2ca1f67e7f26dd870294dd76d7e7827576296aa91c4e9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y7m7r5b",
@@ -808,18 +820,24 @@
   {
     "id": "c_9w5k9j2d",
     "ja": "新機能を試してもらえますか？",
-    "en": "Mind giving our feature a whirl?",
+    "en": "Mind giving the new feature a whirl?",
     "alternatives": [
-      "Could you try out our feature?",
-      "Would you try our new feature?"
+      "Could you try the new feature?",
+      "Could you give the new feature a try?"
     ],
-    "point": "give 人や物 a whirl は気軽に試す。",
+    "point": "give something a whirl は気軽に試す。",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 8,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59ecab4febf56479de70e6aff94d83958b5fd5fbbca5c33fe71ca7f661b9fac3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9x9g4h4c",

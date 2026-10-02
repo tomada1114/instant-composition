@@ -502,7 +502,13 @@
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cddd7e1f64cad62dff4cc9c68ca9416485b3f9b4ee23b69c977bee2b8c268dec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6m8f3z4v",
@@ -758,7 +764,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b95b1f828044e991dc53c17a3822bfb395ca64b62c75209c573779de179ec21a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9w3z8t7m",

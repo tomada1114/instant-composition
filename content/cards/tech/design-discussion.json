@@ -1,11 +1,11 @@
 [
   {
     "id": "c_2d4g8x7s",
-    "ja": "彼女は密結合が命取りと言った。",
-    "en": "She said tight coupling was our Achilles heel.",
+    "ja": "彼女は密結合が致命的な弱点と言った。",
+    "en": "She said tight coupling was an Achilles heel.",
     "alternatives": [
-      "She said our fatal weakness was tight coupling.",
-      "She said tightly coupled components were our critical weakness."
+      "She said tight coupling was a fatal weakness.",
+      "She said tight coupling was the weak point."
     ],
     "point": "Achilles heel は重大な弱点。",
     "topic": "tech",
@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c391b8f16bfa783f93eaf4985fa1b090f59666879d2f3d6f92c823ef99d3e9cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2m5c2c2k",
@@ -163,11 +169,11 @@
   },
   {
     "id": "c_4f8a8q9v",
-    "ja": "分けてたら私たちは窮地を免れた。",
+    "ja": "分けてたら我々は窮地を免れたのに。",
     "en": "If we'd split it, we'd have dodged trouble.",
     "alternatives": [
-      "We would've avoided trouble if we'd separated it.",
-      "Separating it would've kept us out of trouble."
+      "If we'd divided it, we'd have avoided trouble.",
+      "We'd have avoided trouble if we'd split it."
     ],
     "point": "dodge trouble は厄介な状況を避ける。",
     "topic": "tech",
@@ -175,7 +181,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bfc4b7a2d3701f57984f93831bca7e81f3b582963e643de7e62d87f391fef2a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4h5m5k9e",
@@ -347,18 +359,24 @@
   {
     "id": "c_5g3k3q2m",
     "ja": "承認待ちの設計が足かせだ。",
-    "en": "The design awaiting approval is a millstone.",
+    "en": "The design awaiting approval is a burden.",
     "alternatives": [
-      "The design pending approval is holding us back.",
-      "The design awaiting approval is weighing us down."
+      "The design pending approval is a hindrance.",
+      "The design awaiting approval is holding us back."
     ],
-    "point": "a millstone は重荷、awaiting approval は後置修飾。",
+    "point": "awaiting approval は承認待ち、a burden は重荷。",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 8,
+    "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5f7130c1db7daccb50b0026071f21c939837b4ed17d52b623a7950e43822f78",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5g6s5s6h",

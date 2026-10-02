@@ -91,17 +91,20 @@
     "id": "c_3g2s6n4y",
     "ja": "私は追加料金を払わないよ。",
     "en": "I won't cough up extra fees.",
-    "alternatives": [
-      "I'm not going to pay extra charges.",
-      "I refuse to pay the additional fees."
-    ],
+    "alternatives": ["I'm not paying extra fees.", "I refuse to pay extra charges."],
     "point": "cough up は渋々お金を出す。",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 6,
     "grammar": ["future-forms", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60682e5e65241e079e6f3581df6e4f2dc3bc92213a737bed3f030a3213990c04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3p8d7c2j",
@@ -299,11 +302,11 @@
   },
   {
     "id": "c_5f2n7g8d",
-    "ja": "到着前に宿は満室だった。",
+    "ja": "私の到着前に宿は埋まってた。",
     "en": "It'd filled up before I arrived.",
     "alternatives": [
-      "The hotel was full before I arrived.",
-      "The hotel had filled up before my arrival."
+      "The hotel had filled up before I arrived.",
+      "It'd become fully booked before I arrived."
     ],
     "point": "had filled up は到着より前に満室になったこと。",
     "topic": "travel",
@@ -311,7 +314,13 @@
     "level": 6,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b29c040a83444566f8f1bd6147783069e071f4999c4b3c92e38a25308957b013",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5j9b9r8g",
@@ -546,10 +555,10 @@
   {
     "id": "c_6p2e8b9x",
     "ja": "私の予約は勝手に取り消された。",
-    "en": "My reservation was canceled without authorization.",
+    "en": "My reservation was canceled without permission.",
     "alternatives": [
-      "My booking was canceled without my permission.",
-      "They canceled my reservation without my consent."
+      "My booking was canceled without my consent.",
+      "They canceled my reservation without asking me."
     ],
     "point": "without authorization は許可なく。",
     "topic": "travel",
@@ -557,7 +566,13 @@
     "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50eca19c14bf875ca8a90ab37554d8fcf3310d132f93dbe3d82fcc4e5dba5a16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7g6j8h2g",

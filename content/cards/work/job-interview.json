@@ -241,10 +241,16 @@
     "point": "have to は必要性を表す。",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 2,
+    "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:faf7a17e4c77a4c8eeba51a5e65b441b733ab6f067927cb8dcb6efb006bdabc6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4y9z2z9a",
@@ -491,10 +497,16 @@
     "point": "進行形で現在取り組んでいることを表す。",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 2,
+    "level": 4,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6eef91c6451c04924ae007aa77c04b70095c431702c7b36be0744f18ae3eeaf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7j6g3g7r",
@@ -849,6 +861,12 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e231095603d04c523dd31c7d7f15c9eab5f8582d0b992a9e2201ba4560796d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]
