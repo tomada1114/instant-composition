@@ -22,11 +22,13 @@ import {
 import { CardsError } from "./errors.mjs";
 import { DEFAULT_QUEUE_LIMIT, freshIds } from "./inspect.mjs";
 import { MAX_PER_CELL, planVocabGaps } from "./plan.mjs";
+import { fieldHash, readStamp } from "./schema.mjs";
 import { compareIds, loadStore } from "./store.mjs";
 import { findHeadwordDuplicates, lintVocabStore, vocabLabel } from "./vocab-rules.mjs";
 import {
   asTypedVocab,
   isVocabShown,
+  meaningStamp,
   randomVocabId,
   VOCAB_CATEGORIES,
   VOCAB_LANGUAGES,
@@ -235,7 +237,7 @@ export function runVocabShow(parsed, context) {
     const status = vocabStatusOf(
       entry.raw,
       findings.has(label),
-      store.lists.perspectivesVersion,
+      store.lists.vocabPerspectivesVersion,
     );
     const { headword, definition, example, example2, meanings } = entry.raw;
     context.out(`${label}  ${cellLabel(entry)}  ${status}`);
@@ -249,11 +251,44 @@ export function runVocabShow(parsed, context) {
   return 0;
 }
 
+/**
+ * @param {string | undefined} field - A `--field` or `--missing` value.
+ * @param {string} next - What to do instead, for the error.
+ * @returns {string | undefined} The language a `meanings.<lang>` names;
+ *   undefined for no value.
+ * @throws {CardsError} `ERR_CARDS_UNKNOWN_FIELD` for anything else.
+ */
+export function meaningLanguage(field, next) {
+  if (field === undefined) return undefined;
+  /** @type {readonly string[]} */
+  const languages = VOCAB_LANGUAGES;
+  const lang = field.startsWith("meanings.") ? field.slice("meanings.".length) : "";
+  if (!languages.includes(lang)) {
+    throw new CardsError(
+      "ERR_CARDS_UNKNOWN_FIELD",
+      `"${field}" is not a stampable vocab field.`,
+      {
+        expected: `one of: ${languages.map(meaningStamp).join(", ")}`,
+        actual: field,
+        next,
+      },
+    );
+  }
+  return lang;
+}
+
 /** @type {CommandSpec} */
 export const vocabQueueSpec = {
   usage:
-    "--kind vocab [category=…] [level=…] [--ids <id,…>] [--limit <n>] [--count] [--json]",
-  flags: { ids: "ids", limit: "int", count: "boolean", json: "boolean" },
+    "--kind vocab [category=…] [level=…] [--ids <id,…>] [--field meanings.<lang> | --missing meanings.<lang>] [--limit <n>] [--count] [--json]",
+  flags: {
+    ids: "ids",
+    field: "string",
+    missing: "string",
+    limit: "int",
+    count: "boolean",
+    json: "boolean",
+  },
   range: true,
   vocab: true,
   positionals: 0,
@@ -262,7 +297,8 @@ export const vocabQueueSpec = {
 /**
  * `cards:queue --kind vocab`: list vocabulary cards waiting for review, most
  * urgent first. A card waits while its core or any meaning it holds is not
- * current.
+ * current; `--field` instead lists the cards whose meaning in that language is
+ * unstamped or changed, and `--missing` the cards that lack it.
  *
  * @param {Parsed} parsed - Arguments.
  * @param {Context} context - Environment.
@@ -271,6 +307,14 @@ export const vocabQueueSpec = {
 export function runVocabQueue(parsed, context) {
   const store = loadStore(context.root);
   checkRange("queue", vocabQueueSpec, parsed.range, store.lists.topics);
+  const fieldFlag = stringFlag(parsed, "field");
+  const missingFlag = stringFlag(parsed, "missing");
+  if (fieldFlag !== undefined && missingFlag !== undefined) {
+    throw usageError("queue", vocabQueueSpec, "--field and --missing are exclusive");
+  }
+  const next = "rerun with a declared meanings.<lang>, or without the flag.";
+  const fieldLang = meaningLanguage(fieldFlag, next);
+  const missingLang = meaningLanguage(missingFlag, next);
   const ids = idsFlag(parsed, "ids");
   const pool = ids === undefined ? store.vocab : knownEntries(context, store, ids);
   const findings = vocabFindingsByCard(store);
@@ -282,9 +326,27 @@ export function runVocabQueue(parsed, context) {
     const status = vocabStatusOf(
       entry.raw,
       findings.has(vocabLabel(entry)),
-      store.lists.perspectivesVersion,
+      store.lists.vocabPerspectivesVersion,
     );
-    if (status !== "current" || ids !== undefined) {
+    const meanings = readKey(entry.raw, "meanings");
+    if (fieldLang !== undefined) {
+      const meaning = readKey(meanings, fieldLang);
+      if (meaning === undefined) continue;
+      const stamp = readStamp(entry.raw["stamps"], meaningStamp(fieldLang));
+      if (stamp === undefined)
+        queued.push({ entry, reason: "field-unstamped", rank: 0 });
+      else if (stamp.hash !== fieldHash(meaning)) {
+        queued.push({ entry, reason: "field-changed", rank: 1 });
+      }
+    } else if (missingLang !== undefined) {
+      if (readKey(meanings, missingLang) !== undefined) continue;
+      const shown = shownSomewhere(entry.raw);
+      queued.push({
+        entry,
+        reason: shown ? "missing (shown)" : "missing",
+        rank: shown ? 0 : 1,
+      });
+    } else if (status !== "current" || ids !== undefined) {
       queued.push({ entry, reason: status, rank: STATUS_ORDER.indexOf(status) });
     }
   }
@@ -354,7 +416,7 @@ export function runVocabStats(parsed, context) {
     const status = vocabStatusOf(
       entry.raw,
       findings.has(vocabLabel(entry)),
-      lists.perspectivesVersion,
+      lists.vocabPerspectivesVersion,
     );
     byStatus[status] = (byStatus[status] ?? 0) + 1;
     if (shownSomewhere(entry.raw)) shown += 1;
