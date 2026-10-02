@@ -8,12 +8,16 @@ import { ReturnGlyph } from "../ui/glyphs";
 import type { DrillCard } from "../openapi";
 import { playMotion } from "./motion";
 
-/** Past this many characters a prompt runs to a fourth line at `front`, so it drops to `front-long`. */
-const FRONT_LONG_AFTER = 36;
+/**
+ * Past this many characters a prompt runs to a third line at `front` (36px)
+ * on the 880 stage's card, about 24 characters a line, so it drops to
+ * `front-long` — `designing-ui`'s foundations hold the scale.
+ */
+const FRONT_LONG_AFTER = 48;
 
 /**
- * W4 and W4r: the prompt set large on the canvas itself — no card box — with
- * the "again" mark on a retry; empty while paused. The whole area flips.
+ * W4 and W4r: the prompt set large, centred on the card, with the "again"
+ * mark on a retry; empty while paused. The whole card flips.
  */
 export function CardFront({
   card,
@@ -37,10 +41,10 @@ export function CardFront({
     <div
       data-part="card"
       onClick={onFlip}
-      className="flex min-h-0 flex-1 flex-col justify-center pb-12"
+      className="flex min-h-56 flex-col items-center justify-center text-center"
     >
       {hidden ? null : (
-        <div ref={content} className="flex flex-col items-start gap-5">
+        <div ref={content} className="flex flex-col items-center gap-5">
           {retry ? (
             <Eyebrow className="flex items-center gap-1.5">
               <ReturnGlyph className="size-3.5" />
@@ -138,7 +142,7 @@ export function CardBack({
         data-part="back-scroll"
         tabIndex={overflowing ? 0 : undefined}
         className={cn(
-          "-mx-2 flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-2 pt-5 pb-2",
+          "-mx-2 flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-2",
           hidden && "invisible",
         )}
       >
@@ -181,7 +185,7 @@ export function CardBack({
       {overflowing ? (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b from-transparent to-background"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b from-transparent to-card"
         />
       ) : null}
     </div>
