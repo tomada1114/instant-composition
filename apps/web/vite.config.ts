@@ -16,7 +16,9 @@ const DEFAULT_API_PORT = "8787";
  * `false` reads the shell's `API_*` variables alone.
  */
 export default defineConfig(({ mode }) => {
-  const apiPort = loadEnv(mode, false, "API_")["API_PORT"] ?? DEFAULT_API_PORT;
+  // A blank value reads as unset, as it does for the API (`apps/api/src/env.ts`).
+  const configured = loadEnv(mode, false, "API_")["API_PORT"]?.trim() ?? "";
+  const apiPort = configured === "" ? DEFAULT_API_PORT : configured;
   const proxy = { "/api": `http://127.0.0.1:${apiPort}` };
   return {
     envDir: false,
