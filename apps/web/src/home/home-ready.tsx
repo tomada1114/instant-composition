@@ -5,7 +5,7 @@ import type { HomePreview, HomeView } from "../openapi";
 import { Eyebrow } from "../ui/eyebrow";
 import { PrimaryButton as Primary } from "../ui/primary-button";
 
-import type { Go } from "./home-panels";
+import { ACTIONS, PRIMARY, type Go } from "./home-panels";
 
 /** Review against new as one split bar, with the counts beside a swatch each, then the focus and the weak grammar dealt. */
 function Mix({ preview }: Readonly<{ preview: HomePreview }>): ReactElement {
@@ -13,7 +13,7 @@ function Mix({ preview }: Readonly<{ preview: HomePreview }>): ReactElement {
   const total = Math.max(1, preview.reviewCount + preview.newCount);
   return (
     <div className="flex flex-col gap-2.5">
-      <div aria-hidden className="flex h-1.5 gap-0.5">
+      <div aria-hidden className="flex h-2 gap-0.5">
         {preview.reviewCount > 0 ? (
           <span
             className="rounded-full bg-foreground"
@@ -76,13 +76,16 @@ export function ReadyPanel({
           ) : null}
         </div>
       )}
-      <Primary
-        onPress={() => {
-          go("today");
-        }}
-      >
-        {t("start")}
-      </Primary>
+      <div className={ACTIONS}>
+        <Primary
+          className={PRIMARY}
+          onPress={() => {
+            go("today");
+          }}
+        >
+          {t("start")}
+        </Primary>
+      </div>
     </>
   );
 }

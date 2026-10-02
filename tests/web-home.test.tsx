@@ -111,6 +111,14 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(where()).toBe("/drill?kind=today");
   });
 
+  it("sets the start at the panel's bottom right from pc, full width below it", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/");
+    const start = screen.getByRole("button", { name: ja.Home.today.start });
+    expect(start).toHaveClass("w-full", "pc:w-auto");
+    expect(start.parentElement).toHaveClass("pc:self-end", "pc:flex-row-reverse");
+  });
+
   it("leaves the focus and the weak grammar out of the mix when there are none, and a new-only mix unsplit", async () => {
     serveHome(
       homeView(
@@ -466,6 +474,23 @@ describe("the home screen, W3b: a portion under way", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Home.progress.resume }));
     await settle();
     expect(where()).toBe(`/drill?kind=${portion}`);
+  });
+
+  it("draws the portion's progress as a good pill on the bar track", async () => {
+    serveHome(
+      homeView({
+        kind: "in-progress",
+        portion: "today",
+        progress: 4,
+        target: 10,
+        resumeKind: "today",
+        streak: COUNT,
+      }),
+    );
+    await renderApp("/");
+    const bar = document.querySelector(".bg-good");
+    expect(bar).toHaveStyle({ width: "40%" });
+    expect(bar?.parentElement).toHaveClass("h-2", "bg-bar-track");
   });
 
   it("draws no progress for a portion with no target", async () => {
