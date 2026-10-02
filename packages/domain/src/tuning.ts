@@ -46,6 +46,20 @@ export const TUNING = {
   /** Days until the next review, indexed by box 0..5. */
   leitnerIntervalsDays: [1, 2, 4, 7, 14, 30],
   /**
+   * FSRS-6's long-term schedule (`fsrs.ts`): ts-fsrs 5.4.2's 21 default
+   * weights, the recall probability an interval aims at, and the longest
+   * interval it sets before the grades are spread apart.
+   */
+  fsrs: {
+    weights: [
+      0.212, 1.2931, 2.3065, 8.2956, 6.4133, 0.8334, 3.0194, 0.001, 1.8722, 0.1666,
+      0.796, 1.4835, 0.0614, 0.2629, 1.6483, 0.6014, 1.8729, 0.5425, 0.0912, 0.0658,
+      0.1542,
+    ],
+    desiredRetention: 0.9,
+    maximumIntervalDays: 365,
+  },
+  /**
    * The level the answers show, judged card level by card level over the
    * newest `window` first-pass answers, each card by its latest: a level is
    * cleared on at least `minPerLevel.clear` cards at `upOkRate` correct with

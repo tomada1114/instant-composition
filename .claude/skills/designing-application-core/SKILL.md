@@ -49,6 +49,12 @@ written under.
   schemas, not from classes.
 - Tunable values live in one object, as `TUNING` in `packages/domain/src/tuning.ts`
   does, never scattered as literals.
+- A rule that follows a published library is written into the domain rather than
+  imported, and pinned by golden vectors the library computed outside this repository.
+  The FSRS-6 schedule (`fsrs*.ts`) is the case: ts-fsrs 5.4.2 enters no manifest, its
+  MIT notice heads each adapted module, and `tests/fixtures/fsrs-golden.json` records
+  the options, the inputs and the script that made its vectors. A schedule counts days
+  as the difference of two `DayKey`s, never of wall-clock time.
 
 ## Commands and queries
 

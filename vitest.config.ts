@@ -32,6 +32,8 @@ const automationTests = [
   "tests/clean.test.ts",
   "tests/contracts-openapi.test.ts",
   "tests/dev.test.ts",
+  // Reads its golden vectors from tests/fixtures/, which nothing may import.
+  "tests/domain-fsrs.test.ts",
   "tests/env-example.test.ts",
   "tests/git-env.test.ts",
   "tests/infra-api-bundle.test.ts",
