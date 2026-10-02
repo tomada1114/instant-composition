@@ -16,14 +16,17 @@ import {
   withLock,
   writeVocabFiles,
 } from "./store.mjs";
-import { takenVocabIds, vocabFindingsByCard } from "./vocab-inspect.mjs";
+import {
+  meaningLanguage,
+  takenVocabIds,
+  vocabFindingsByCard,
+} from "./vocab-inspect.mjs";
 import { findHeadwordDuplicates, lintVocabCard } from "./vocab-rules.mjs";
 import {
   asTypedVocab,
   meaningStamp,
   randomVocabId,
   VOCAB_CORE_FIELDS,
-  VOCAB_LANGUAGES,
   vocabCoreHash,
 } from "./vocab-schema.mjs";
 
@@ -558,30 +561,6 @@ export function runVocabStamp(parsed, context) {
 }
 
 /**
- * @param {string | undefined} field - The `--field` given.
- * @returns {string | undefined} The language it names; undefined for none.
- * @throws {CardsError} `ERR_CARDS_UNKNOWN_FIELD` for anything else.
- */
-function fieldLanguage(field) {
-  if (field === undefined) return undefined;
-  /** @type {readonly string[]} */
-  const languages = VOCAB_LANGUAGES;
-  const lang = field.startsWith("meanings.") ? field.slice("meanings.".length) : "";
-  if (!languages.includes(lang)) {
-    throw new CardsError(
-      "ERR_CARDS_UNKNOWN_FIELD",
-      `"${field}" is not a stampable vocab field.`,
-      {
-        expected: `one of: ${languages.map(meaningStamp).join(", ")}`,
-        actual: field,
-        next: "rerun without --field to stamp the core and every meaning.",
-      },
-    );
-  }
-  return lang;
-}
-
-/**
  * The body of `cards:stamp --kind vocab`, run while the lock is held.
  *
  * @param {Parsed} parsed - Arguments.
@@ -592,7 +571,10 @@ function stampLocked(parsed, context) {
   const ids = idsFlag(parsed, "ids");
   if (ids === undefined || ids.length === 0)
     throw usageError("stamp", vocabStampSpec, "--ids is required");
-  const only = fieldLanguage(stringFlag(parsed, "field"));
+  const only = meaningLanguage(
+    stringFlag(parsed, "field"),
+    "rerun without --field to stamp the core and every meaning.",
+  );
   const store = loadStore(context.root);
   const { entries, unknown } = partitionIds(vocabSource(store), ids);
   const findings = vocabFindingsByCard(store);
@@ -605,7 +587,7 @@ function stampLocked(parsed, context) {
   const done = [];
   const stamp = (/** @type {string} */ hash) => ({
     hash,
-    perspectivesVersion: store.lists.perspectivesVersion,
+    perspectivesVersion: store.lists.vocabPerspectivesVersion,
     at: context.today(),
   });
 

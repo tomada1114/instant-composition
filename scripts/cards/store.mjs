@@ -79,7 +79,10 @@ const MAX_ALLOWANCE = { words: 2, jaChars: 4 };
  * @property {Map<number, Level>} levels
  * @property {GrammarItem[]} grammar
  * @property {Map<string, GrammarItem>} grammarById
- * @property {number} perspectivesVersion
+ * @property {number} perspectivesVersion - The drill's, from
+ *   `guides/review-perspectives.md`.
+ * @property {number} vocabPerspectivesVersion - Vocabulary cards', from
+ *   `guides/vocab-review-perspectives.md`.
  */
 
 /**
@@ -199,7 +202,7 @@ function arrayOf(value) {
 
 /**
  * Parse and cross-check taxonomy, levels and grammar, and read the current
- * `perspectivesVersion`.
+ * `perspectivesVersion` of each kind.
  *
  * @param {string} root - Content root.
  * @returns {Lists} The validated lists.
@@ -382,20 +385,16 @@ export function loadLists(root) {
   }
   if (grammar.length === 0) problems.push("grammar.json: `items` is empty or missing");
 
-  let perspectivesVersion = 0;
-  const perspectivesPath = path.join("guides", "review-perspectives.md");
-  try {
-    const match = /^perspectivesVersion:\s*(\d+)\s*$/mu.exec(
-      readFileSync(path.join(root, perspectivesPath), "utf8"),
-    );
-    if (match?.[1] === undefined) {
-      problems.push(`${perspectivesPath}: no \`perspectivesVersion: <int>\` line`);
-    } else {
-      perspectivesVersion = Number(match[1]);
-    }
-  } catch {
-    problems.push(`${perspectivesPath}: could not be read`);
-  }
+  const perspectivesVersion = readPerspectivesVersion(
+    root,
+    path.join("guides", "review-perspectives.md"),
+    problems,
+  );
+  const vocabPerspectivesVersion = readPerspectivesVersion(
+    root,
+    path.join("guides", "vocab-review-perspectives.md"),
+    problems,
+  );
 
   if (problems.length > 0) {
     throw new CardsError(
@@ -403,13 +402,41 @@ export function loadLists(root) {
       "The tag lists under the content root are inconsistent.",
       {
         expected:
-          "taxonomy.json, levels.json, grammar.json and guides/review-perspectives.md to parse and agree",
+          "taxonomy.json, levels.json, grammar.json, guides/review-perspectives.md and guides/vocab-review-perspectives.md to parse and agree",
         actual: problems.join("; "),
         next: "fix the listed entries (`git diff content/` shows recent edits), then rerun `pnpm cards:lint`.",
       },
     );
   }
-  return { topics, levels, grammar, grammarById, perspectivesVersion };
+  return {
+    topics,
+    levels,
+    grammar,
+    grammarById,
+    perspectivesVersion,
+    vocabPerspectivesVersion,
+  };
+}
+
+/**
+ * Read a review guide's `perspectivesVersion: <int>` line.
+ *
+ * @param {string} root - The content root.
+ * @param {string} relative - The guide, relative to the root.
+ * @param {string[]} problems - Collects what is wrong.
+ * @returns {number} The version, or 0 when it is missing.
+ */
+function readPerspectivesVersion(root, relative, problems) {
+  try {
+    const match = /^perspectivesVersion:\s*(\d+)\s*$/mu.exec(
+      readFileSync(path.join(root, relative), "utf8"),
+    );
+    if (match?.[1] !== undefined) return Number(match[1]);
+    problems.push(`${relative}: no \`perspectivesVersion: <int>\` line`);
+  } catch {
+    problems.push(`${relative}: could not be read`);
+  }
+  return 0;
 }
 
 /**
