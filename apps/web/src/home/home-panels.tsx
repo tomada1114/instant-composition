@@ -10,6 +10,11 @@ import { PrimaryButton as Primary } from "../ui/primary-button";
 
 export type Go = (kind: RoundKind) => void;
 
+/** A panel's actions: stacked full width below `pc`, from it a row at the panel's bottom right, the primary last. */
+export const ACTIONS = "flex flex-col gap-3 pc:flex-row-reverse pc:self-end";
+/** The primary inside `ACTIONS`: full width below `pc`, its own width from it. */
+export const PRIMARY = "pc:w-auto pc:min-w-56";
+
 function Deadline(): ReactElement {
   const t = useTranslations("Home");
   return (
@@ -39,20 +44,23 @@ export function ProgressPanel({
             {t("count", { done: state.progress, target: state.target })}
           </p>
         </div>
-        <div aria-hidden className="h-1.5 overflow-hidden rounded-full bg-border">
+        <div aria-hidden className="h-2 overflow-hidden rounded-full bg-bar-track">
           <div
-            className="h-full rounded-full bg-foreground"
+            className="h-full rounded-full bg-good"
             style={{ width: `${String(share * 100)}%` }}
           />
         </div>
       </div>
-      <Primary
-        onPress={() => {
-          go(state.resumeKind);
-        }}
-      >
-        {t("resume")}
-      </Primary>
+      <div className={ACTIONS}>
+        <Primary
+          className={PRIMARY}
+          onPress={() => {
+            go(state.resumeKind);
+          }}
+        >
+          {t("resume")}
+        </Primary>
+      </div>
     </>
   );
 }
@@ -89,35 +97,41 @@ export function DonePanel({
         )}
       </div>
       {state.restoresTo === null ? (
-        <Primary
-          onPress={() => {
-            go("extra");
-          }}
-        >
-          {more}
-        </Primary>
-      ) : (
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-col gap-1">
-            <p>{t("restores", { days: state.restoresTo })}</p>
-            <Deadline />
-          </div>
+        <div className={ACTIONS}>
           <Primary
+            className={PRIMARY}
             onPress={() => {
-              go("yesterday");
-            }}
-          >
-            {t("recover")}
-          </Primary>
-          <Button
-            variant="secondary"
-            onClick={() => {
               go("extra");
             }}
           >
             {more}
-          </Button>
+          </Primary>
         </div>
+      ) : (
+        <>
+          <div className="flex flex-col gap-1">
+            <p>{t("restores", { days: state.restoresTo })}</p>
+            <Deadline />
+          </div>
+          <div className={ACTIONS}>
+            <Primary
+              className={PRIMARY}
+              onPress={() => {
+                go("yesterday");
+              }}
+            >
+              {t("recover")}
+            </Primary>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                go("extra");
+              }}
+            >
+              {more}
+            </Button>
+          </div>
+        </>
       )}
     </>
   );
@@ -143,8 +157,9 @@ export function RecoverPanel({
         </p>
         <Deadline />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className={ACTIONS}>
         <Primary
+          className={PRIMARY}
           onPress={() => {
             go("yesterday");
           }}
