@@ -375,6 +375,19 @@
     }
   },
   {
+    "id": "c_4x8k4w6c",
+    "ja": "私は今話せるよ。",
+    "en": "I can talk now.",
+    "alternatives": ["I can chat now.", "I'm free to talk now."],
+    "point": "can で今話せる状況を伝える。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4y2z8a2u",
     "ja": "今、猫を飼ってるよ。",
     "en": "I have a cat.",
@@ -771,6 +784,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v9p5a2q",
+    "ja": "私は今歩いてる。",
+    "en": "I'm walking now.",
+    "alternatives": ["I'm out walking now.", "I'm taking a walk now."],
+    "point": "今進んでいる動作は am + walking。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y5x7k6w",
+    "ja": "私に新しい友達がいる",
+    "en": "I've got new friends.",
+    "alternatives": ["I have new friends.", "I have some new friends."],
+    "point": "複数の友達には friends を使う。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a9b4g2x",

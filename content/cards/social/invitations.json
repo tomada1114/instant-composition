@@ -126,6 +126,48 @@
     }
   },
   {
+    "id": "c_2z4t8z9d",
+    "ja": "私たちは君を歓迎。",
+    "en": "We welcome you.",
+    "alternatives": ["You're welcome with us.", "You're welcome to join."],
+    "point": "welcome を動詞にして歓迎を伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3a6a9b5e",
+    "ja": "みんな、遊びに来て。",
+    "en": "Everyone, come visit me.",
+    "alternatives": ["Everyone, come over.", "Everyone, come see me."],
+    "point": "come to my place は私の家に来る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d7x9r3m",
+    "ja": "私は今回は遠慮したいんだけど。",
+    "en": "I'd rather bow out this time.",
+    "alternatives": [
+      "I'd prefer to decline this time.",
+      "I'd sooner sit this one out."
+    ],
+    "point": "would rather と bow out で辞退の希望を柔らかく伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3k3x3g9v",
     "ja": "来るかどうか教えて。",
     "en": "Tell me if you're coming.",
@@ -187,6 +229,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3q2d6w2s",
+    "ja": "私はその誘いを見送るよ。",
+    "en": "I'll give that invitation a miss.",
+    "alternatives": ["I'll pass on that invitation.", "I'll sit that invitation out."],
+    "point": "give something a miss は今回は参加を見送る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3q7g4c3d",
@@ -329,6 +384,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4j9q9m5w",
+    "ja": "君は誰を誘ってる？",
+    "en": "Who are you inviting?",
+    "alternatives": ["Who are you asking?", "Who gets your invitation?"],
+    "point": "who で招待する相手を尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4q4m9v4m",
@@ -598,6 +666,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6r8y5u9m",
+    "ja": "君を誘い忘れなければよかった。",
+    "en": "I wish I hadn't overlooked you.",
+    "alternatives": [
+      "I wish I'd remembered to invite you.",
+      "If only I hadn't forgotten your invitation."
+    ],
+    "point": "wish + 過去完了で招待し忘れたことを悔やむ。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6x2k6u6v",

@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2b2p2e8c",
+    "ja": "浴室に水が出ない。",
+    "en": "There's no running water.",
+    "alternatives": ["The water is off.", "We have no running water."],
+    "point": "水が出ないときは no running water。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2d8s2s4u",
     "ja": "私もちょっと騒音に閉口してます。",
     "en": "I'm slightly put out by the noise too.",
@@ -42,6 +55,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2t5j8k9c",
+    "ja": "私の朝食はまだ届かない。",
+    "en": "My breakfast hasn't arrived yet.",
+    "alternatives": [
+      "My breakfast hasn't come yet.",
+      "I haven't received my breakfast yet."
+    ],
+    "point": "否定の現在完了に yet を添える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_2z5q8b2j",
@@ -217,6 +246,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4j3u3k7x",
+    "ja": "私は鍵をなくした。",
+    "en": "I lost my key.",
+    "alternatives": ["My key went missing.", "I misplaced my key."],
+    "point": "lost は lose の過去形。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4t5c9h2j",
@@ -509,6 +551,19 @@
     }
   },
   {
+    "id": "c_6j6b9a9t",
+    "ja": "私は今払わなきゃ。",
+    "en": "I must pay now.",
+    "alternatives": ["I have to pay now.", "I need to pay now."],
+    "point": "must で支払いの必要を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6j6p4a6p",
     "ja": "遅く着いたので、夕食を逃した。",
     "en": "Arriving late, I missed dinner.",
@@ -615,6 +670,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7n8e6t5h",
+    "ja": "ここに虫がいます。",
+    "en": "There's a bug here.",
+    "alternatives": ["A bug is here.", "We have a bug here."],
+    "point": "虫が一匹いるなら there is a bug。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7t6t7r8j",
@@ -847,5 +915,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9x9f4x4c",
+    "ja": "私は係員に来てほしい。",
+    "en": "I want someone to come.",
+    "alternatives": ["I'd like someone to come.", "I want someone sent here."],
+    "point": "want + 人 + to come で来てほしいと伝える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

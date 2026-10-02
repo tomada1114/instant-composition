@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2b4r5k4b",
+    "ja": "私は搭乗券を見せなきゃ？",
+    "en": "Must I show my pass?",
+    "alternatives": [
+      "Must I present my boarding pass?",
+      "Is showing my boarding pass required?"
+    ],
+    "point": "must I で必要かどうかを聞く。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2j5g5c8g",
     "ja": "隣の男性が、荷物を上げてくれた。",
     "en": "The man beside me lifted my bag.",
@@ -342,6 +358,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z3f6b8y",
+    "ja": "私はもう席を選びました。",
+    "en": "I've already chosen my seat.",
+    "alternatives": ["I've already picked a seat.", "I've already selected my seat."],
+    "point": "already と現在完了で席選びの完了を伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4z9k4b5b",
@@ -684,6 +713,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8a6d9g3y",
+    "ja": "鞄から靴を出して。",
+    "en": "Remove shoes from your bag.",
+    "alternatives": ["Take shoes out of your bag.", "Get shoes out of your bag."],
+    "point": "take + 物 + from で中から取り出す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8p9t5m3n",

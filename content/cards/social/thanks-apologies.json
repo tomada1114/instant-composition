@@ -436,6 +436,19 @@
     }
   },
   {
+    "id": "c_5c2p3f4a",
+    "ja": "私からお詫びしてもいい？",
+    "en": "May I offer an apology?",
+    "alternatives": ["Could I offer you an apology?", "Would it be okay to apologize?"],
+    "point": "offer an apology で丁寧にお詫びを申し出る。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5d4a7b7k",
     "ja": "夕飯おごってもいい？",
     "en": "Can I buy you dinner?",
@@ -557,6 +570,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5x6v7a3t",
+    "ja": "お礼の品をもう選びました。",
+    "en": "I've picked a thank-you gift.",
+    "alternatives": [
+      "I've chosen a gift of thanks.",
+      "I've selected a gift to thank you."
+    ],
+    "point": "thank-you を名詞の前に置いてお礼用と伝える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5z8k3p6x",
@@ -838,6 +867,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8n9z2q4y",
+    "ja": "私が埋め合わせすべきです。",
+    "en": "I should make amends.",
+    "alternatives": ["I ought to make amends.", "I should make things right."],
+    "point": "make amends は過ちの埋め合わせをする。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8s2u8v8r",

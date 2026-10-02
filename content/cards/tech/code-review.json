@@ -350,6 +350,19 @@
     }
   },
   {
+    "id": "c_4u3y4w3q",
+    "ja": "空の一覧があります。",
+    "en": "There's an empty list.",
+    "alternatives": ["We have an empty list.", "An empty list is present."],
+    "point": "母音で始まる empty の前は an。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4v4t7r4d",
     "ja": "引っかかるのは、この命名です。",
     "en": "What bothers me is this naming.",
@@ -586,6 +599,19 @@
     }
   },
   {
+    "id": "c_6q5p8n5z",
+    "ja": "私は名前を変えるよ。",
+    "en": "I'll change the name.",
+    "alternatives": ["I'll pick another name.", "I'll use a different name."],
+    "point": "will で修正を引き受ける意思を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6v9w2u8n",
     "ja": "変更点を見せて。",
     "en": "Show me the changes.",
@@ -669,6 +695,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8f7k9z4n",
+    "ja": "その行を残して。",
+    "en": "Keep that line.",
+    "alternatives": ["Leave that line in.", "Don't remove that line."],
+    "point": "keep でコードの行を消さずに残す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8f8x2n8k",

@@ -111,6 +111,19 @@
     }
   },
   {
+    "id": "c_3g9d4t5c",
+    "ja": "その写真を使って。",
+    "en": "Use that photo.",
+    "alternatives": ["Put that photo in.", "Include that photo."],
+    "point": "use の命令形で使うよう依頼する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3m2x3b7s",
     "ja": "構成は見直した方がいいかもね。",
     "en": "You might want to rethink the structure.",
@@ -305,6 +318,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5p5m5e7y",
+    "ja": "君の声は前より明瞭。",
+    "en": "Your voice is clearer.",
+    "alternatives": ["Your voice sounds clearer.", "You sound clearer now."],
+    "point": "clearer は clear の比較級。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5y2v9r6s",
@@ -636,6 +662,35 @@
     }
   },
   {
+    "id": "c_8m2d3j8t",
+    "ja": "君の文章は更に滑らかだ。",
+    "en": "Your prose flows more smoothly now.",
+    "alternatives": [
+      "Your writing flows more smoothly now.",
+      "Your prose reads even more smoothly."
+    ],
+    "point": "flows more smoothly は文章の流れが更に自然なこと。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t8w9r6j",
+    "ja": "君の図は役に立つ。",
+    "en": "Your chart helps.",
+    "alternatives": ["Your chart is helpful.", "Your chart is useful."],
+    "point": "helps は図が理解を助けるという意味。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8x3r6w3y",
     "ja": "原稿、見てくれてありがと。",
     "en": "Thanks for reviewing my draft.",
@@ -743,6 +798,22 @@
     }
   },
   {
+    "id": "c_9j6w3p3q",
+    "ja": "君の締めは磨く余地がある。",
+    "en": "Your closing has room to improve.",
+    "alternatives": [
+      "There's room to improve your closing.",
+      "Your closing could use some improvement."
+    ],
+    "point": "room to improve は改善の余地を表す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9k5h9e5t",
     "ja": "彼女は私の褒め方が少し偉そうと言った。",
     "en": "She said my praise sounded faintly patronizing.",
@@ -782,6 +853,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9v4j6w8t",
+    "ja": "要点が埋もれたら私が言う。",
+    "en": "I'll flag points if they're buried.",
+    "alternatives": [
+      "I'll flag any buried key points.",
+      "I'll point out any buried key points."
+    ],
+    "point": "get buried は大事な点が他の情報に埋もれる。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9w8u9g3a",

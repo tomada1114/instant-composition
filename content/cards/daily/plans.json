@@ -170,6 +170,22 @@
     }
   },
   {
+    "id": "c_3q7p6p8k",
+    "ja": "私は再会が楽しみ。",
+    "en": "I'm excited about meeting again.",
+    "alternatives": [
+      "I look forward to meeting again.",
+      "I'm looking forward to our reunion."
+    ],
+    "point": "look forward to の後は動名詞。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3t9j6j6z",
     "ja": "今週末はひまだよ。",
     "en": "I'm free this weekend.",
@@ -325,6 +341,19 @@
     }
   },
   {
+    "id": "c_4w4f2d8t",
+    "ja": "私が時間を決めるよ。",
+    "en": "I'll choose the time.",
+    "alternatives": ["I'll pick the time.", "I'll decide on a time."],
+    "point": "will はその場で引き受ける意思にも使う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4x9h7w9g",
     "ja": "早く言ってくれればよかったのに。",
     "en": "You could have told me sooner.",
@@ -345,6 +374,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5c7x4y2q",
+    "ja": "私は予定の中止を考えてる。",
+    "en": "I'm considering scrapping our plans.",
+    "alternatives": [
+      "I'm thinking about abandoning our plans.",
+      "I'm considering calling off our plans."
+    ],
+    "point": "scrap は計画を取りやめて白紙に戻す。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h8n9h6b",
+    "ja": "私は家族の予定を調整するよ。",
+    "en": "I'll coordinate plans with my family.",
+    "alternatives": [
+      "I'll align plans with my family.",
+      "I'll work out plans with my family."
+    ],
+    "point": "coordinate は複数人の予定を調整する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5n2y2p4f",
@@ -550,6 +611,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7a7y6p3g",
+    "ja": "私は彼に日程の融通を頼んだ。",
+    "en": "I asked him to accommodate us.",
+    "alternatives": ["I asked him to adjust for us.", "I asked him to fit us in."],
+    "point": "accommodate は相手の都合に合わせて調整する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7b9v5s8r",
@@ -786,6 +860,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8g5r8f5b",
+    "ja": "私は君に決めてほしい。",
+    "en": "I want you to decide.",
+    "alternatives": ["I'd like you to decide.", "I want you to choose."],
+    "point": "want + 人 + to で相手にしてほしいことを言う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8q8p2b7z",

@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_3j7e7v8t",
+    "ja": "私は締切の再交渉を避けたい。",
+    "en": "I'm keen to avoid renegotiating deadlines.",
+    "alternatives": [
+      "I'd really like to avoid reopening deadline negotiations.",
+      "I don't want to negotiate deadlines again."
+    ],
+    "point": "avoid の後は renegotiating のように動名詞。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3k7p2s6k",
     "ja": "いつなら空いていますか？",
     "en": "When are you free?",
@@ -207,6 +223,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4g2e4a4e",
+    "ja": "交渉中の日程はまだ流動的だ。",
+    "en": "The dates under negotiation remain fluid.",
+    "alternatives": [
+      "The dates being negotiated are still unsettled.",
+      "The dates we're negotiating remain subject to change."
+    ],
+    "point": "under negotiation で日程を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4j7b3c9e",
@@ -585,6 +617,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7c6s3n5d",
+    "ja": "私は余裕を持たせて組んだ。",
+    "en": "I've built slack into the schedule.",
+    "alternatives": [
+      "I've allowed extra time in the schedule.",
+      "I've included breathing room in the schedule."
+    ],
+    "point": "slack は遅れを吸収できる時間の余裕。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7k7u8w3t",

@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_2p2c9s8q",
+    "ja": "私は今日、変更を戻すよ。",
+    "en": "I'll roll back the changes today.",
+    "alternatives": ["I'll undo the changes today.", "I'll revert the changes today."],
+    "point": "roll back は変更を以前の状態に戻す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカー一つある。",
     "en": "There's one blocker today.",
@@ -222,6 +235,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5m3r2e5z",
+    "ja": "私の作業は予想より厄介。",
+    "en": "My task is trickier than expected.",
+    "alternatives": [
+      "My task is harder than anticipated.",
+      "My task is tougher than expected."
+    ],
+    "point": "trickier than expected は予想より扱いが難しい。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5m5t9k5u",
@@ -712,5 +741,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9v2a8u3g",
+    "ja": "私が直した不具合が再発した。",
+    "en": "The bug I fixed resurfaced.",
+    "alternatives": [
+      "The bug I repaired has returned.",
+      "The issue I fixed came back."
+    ],
+    "point": "resurface は消えた問題が再び現れる。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]
