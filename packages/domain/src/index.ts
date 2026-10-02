@@ -95,6 +95,8 @@ export {
   type PlacementInput,
 } from "./placement";
 export { roundPoints, totals, type Totals } from "./points";
+export { todaysQueue, type DailyLimit, type QueueCandidate } from "./queue";
+export type { QueuedCard, QueueInput, TodaysQueue } from "./queue";
 export type {
   CompositionDetail,
   DayTally,
