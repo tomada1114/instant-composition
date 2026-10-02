@@ -25,6 +25,20 @@
     }
   },
   {
+    "id": "v_2e2g5a9y",
+    "category": "idiom",
+    "level": 8,
+    "headword": "off the record",
+    "definition": "said privately, not to be quoted or reported",
+    "example": "{{Off}} {{the}} {{record}}, I think the plan will fail.",
+    "example2": "The senator spoke off the record to reporters.",
+    "meanings": {
+      "ja": "非公式に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2g2x4g7n",
     "category": "idiom",
     "level": 8,
@@ -75,6 +89,20 @@
     }
   },
   {
+    "id": "v_2m6w8n9t",
+    "category": "idiom",
+    "level": 2,
+    "headword": "a few",
+    "definition": "a small number of things or people",
+    "example": "I bought {{a}} {{few}} apples at the market.",
+    "example2": "A few of my friends live in Canada.",
+    "meanings": {
+      "ja": "いくつかの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3a9q9q9m",
     "category": "idiom",
     "level": 10,
@@ -98,6 +126,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3b3c8q9x",
+    "category": "idiom",
+    "level": 8,
+    "headword": "touch base",
+    "definition": "to contact someone briefly to share news or check progress",
+    "example": "Let's {{touch}} {{base}} on Friday before the meeting.",
+    "example2": "I'll touch base with the client this afternoon.",
+    "meanings": {
+      "ja": "連絡を取り合う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3h6c9b6z",
@@ -325,6 +367,34 @@
     }
   },
   {
+    "id": "v_4e8v8g5k",
+    "category": "idiom",
+    "level": 10,
+    "headword": "jump the gun",
+    "definition": "to act too early, before the right time",
+    "example": "Don't {{jump}} {{the}} {{gun}}; we haven't heard the results yet.",
+    "example2": "The company jumped the gun and announced the product early.",
+    "meanings": {
+      "ja": "先走る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4h3z2c4z",
+    "category": "idiom",
+    "level": 8,
+    "headword": "up in the air",
+    "definition": "not yet decided or settled",
+    "example": "Our holiday plans are still {{up}} {{in}} {{the}} {{air}}.",
+    "example2": "With the budget cut, the whole project is up in the air.",
+    "meanings": {
+      "ja": "未定で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4h9e7b9k",
     "category": "idiom",
     "level": 5,
@@ -348,6 +418,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4q8j9u9r",
+    "category": "idiom",
+    "level": 3,
+    "headword": "so far",
+    "definition": "up to now",
+    "example": "{{So}} {{far}}, this trip has been wonderful.",
+    "example2": "I've read two chapters so far.",
+    "meanings": {
+      "ja": "今のところ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4r5y9r6p",
+    "category": "idiom",
+    "level": 3,
+    "headword": "in a row",
+    "definition": "one after another, with no break",
+    "example": "Our team won five games {{in}} {{a}} {{row}}.",
+    "example2": "It rained for three days in a row.",
+    "meanings": {
+      "ja": "連続して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5b2t3h3b",
@@ -450,6 +548,20 @@
     }
   },
   {
+    "id": "v_5p6z5t9x",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a bone to pick",
+    "definition": "a complaint you want to discuss with someone",
+    "example": "I've got {{a}} {{bone}} {{to}} {{pick}} with you about the mess.",
+    "example2": "She had a bone to pick with the landlord.",
+    "meanings": {
+      "ja": "文句がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5s4d6h3c",
     "category": "idiom",
     "level": 7,
@@ -550,6 +662,20 @@
     }
   },
   {
+    "id": "v_5u7r8r5z",
+    "category": "idiom",
+    "level": 2,
+    "headword": "for free",
+    "definition": "without paying any money",
+    "example": "The museum lets children in {{for}} {{free}} on Sundays.",
+    "example2": "He fixed my bike for free.",
+    "meanings": {
+      "ja": "無料で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5w2d6t6t",
     "category": "idiom",
     "level": 8,
@@ -573,6 +699,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5w4w2y4y",
+    "category": "idiom",
+    "level": 10,
+    "headword": "throw someone under the bus",
+    "definition": "to blame someone unfairly to protect yourself",
+    "example": "He {{threw}} his coworker {{under}} {{the}} {{bus}} to save himself.",
+    "example2": "I'd never throw a friend under the bus like that.",
+    "meanings": {
+      "ja": "保身で人を見捨てる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6h4j7q3t",
@@ -625,6 +765,20 @@
     }
   },
   {
+    "id": "v_6q5j7w3v",
+    "category": "idiom",
+    "level": 2,
+    "headword": "all the time",
+    "definition": "very often, or without stopping",
+    "example": "My little brother asks me questions {{all}} {{the}} {{time}}.",
+    "example2": "It rains here all the time in June.",
+    "meanings": {
+      "ja": "いつも"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6r5h4d5z",
     "category": "idiom",
     "level": 3,
@@ -650,6 +804,34 @@
     }
   },
   {
+    "id": "v_7a4j7v4j",
+    "category": "idiom",
+    "level": 6,
+    "headword": "pull someone's leg",
+    "definition": "to tell someone something untrue as a joke",
+    "example": "Are you serious, or are you {{pulling}} my {{leg}}?",
+    "example2": "I was only pulling your leg about the test.",
+    "meanings": {
+      "ja": "人をからかう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7b6r5h5h",
+    "category": "idiom",
+    "level": 6,
+    "headword": "spill the beans",
+    "definition": "to tell a secret by mistake or too early",
+    "example": "Who {{spilled}} {{the}} {{beans}} about the surprise party?",
+    "example2": "Promise you won't spill the beans to Dad.",
+    "meanings": {
+      "ja": "秘密をうっかり漏らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7e5j5f8p",
     "category": "idiom",
     "level": 6,
@@ -673,6 +855,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7f3a5d6q",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in the end",
+    "definition": "after a long time or many events; finally",
+    "example": "We argued for hours, but {{in}} {{the}} {{end}} we agreed.",
+    "example2": "The trip was stressful, but fun in the end.",
+    "meanings": {
+      "ja": "結局"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7g4s2g5b",
@@ -750,6 +946,20 @@
     }
   },
   {
+    "id": "v_7s9c3r8z",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in charge of",
+    "definition": "having control of a group or task and being responsible for it",
+    "example": "Who is {{in}} {{charge}} {{of}} the new project?",
+    "example2": "Mr. Park left me in charge of the shop today.",
+    "meanings": {
+      "ja": "〜を担当して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7u5p4x8m",
     "category": "idiom",
     "level": 3,
@@ -773,6 +983,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7u7v9z9w",
+    "category": "idiom",
+    "level": 6,
+    "headword": "get cold feet",
+    "definition": "to become too nervous to do something you had planned",
+    "example": "He {{got}} {{cold}} {{feet}} a week before the wedding.",
+    "example2": "Don't get cold feet now; the interview will go well.",
+    "meanings": {
+      "ja": "怖気づく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7v7r8g3e",
@@ -873,6 +1097,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7y2f2u3m",
+    "category": "idiom",
+    "level": 4,
+    "headword": "on purpose",
+    "definition": "in a way that you planned, not by chance",
+    "example": "I'm sure he broke the cup {{on}} {{purpose}}.",
+    "example2": "She didn't do it on purpose; it was an accident.",
+    "meanings": {
+      "ja": "わざと"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8p7b4b4m",

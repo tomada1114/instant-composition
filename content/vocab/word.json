@@ -125,6 +125,34 @@
     }
   },
   {
+    "id": "v_2z9j4n3j",
+    "category": "word",
+    "level": 2,
+    "headword": "invite",
+    "definition": "to ask someone to come to a party or event",
+    "example": "She {{invited}} twenty friends to her birthday party.",
+    "example2": "Thank you for inviting me.",
+    "meanings": {
+      "ja": "招待する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3e8m9d3e",
+    "category": "word",
+    "level": 8,
+    "headword": "plausible",
+    "definition": "seeming likely to be true or reasonable",
+    "example": "His excuse sounded {{plausible}}, but nobody could check it.",
+    "example2": "That is a plausible explanation for the delay.",
+    "meanings": {
+      "ja": "もっともらしい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3j6h3q4z",
     "category": "word",
     "level": 7,
@@ -223,6 +251,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4n2d2m6s",
+    "category": "word",
+    "level": 10,
+    "headword": "obsequious",
+    "definition": "too eager to please someone powerful, in a way that seems fake",
+    "example": "The {{obsequious}} assistant laughed at every joke his boss told.",
+    "example2": "I found his obsequious bow embarrassing.",
+    "meanings": {
+      "ja": "媚びへつらう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4p7z5k4j",
@@ -375,6 +417,20 @@
     }
   },
   {
+    "id": "v_5e5g6a8n",
+    "category": "word",
+    "level": 3,
+    "headword": "polite",
+    "definition": "behaving in a kind way that shows respect for other people",
+    "example": "It is {{polite}} to say thank you when someone helps you.",
+    "example2": "The waiter was polite even when the guests were rude.",
+    "meanings": {
+      "ja": "礼儀正しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5m8b4y2w",
     "category": "word",
     "level": 10,
@@ -525,6 +581,20 @@
     }
   },
   {
+    "id": "v_6m7e7d5r",
+    "category": "word",
+    "level": 10,
+    "headword": "laconic",
+    "definition": "using very few words, sometimes in a way that seems blunt",
+    "example": "His {{laconic}} reply, just \"Fine,\" told us nothing.",
+    "example2": "The laconic farmer answered every question with a nod.",
+    "meanings": {
+      "ja": "言葉数の少ない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6n3j8m2m",
     "category": "word",
     "level": 2,
@@ -623,6 +693,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6v5x4k4q",
+    "category": "word",
+    "level": 10,
+    "headword": "capricious",
+    "definition": "likely to change mood or mind suddenly for no clear reason",
+    "example": "The {{capricious}} weather ruined our plans three days in a row.",
+    "example2": "The king was capricious and often changed his orders.",
+    "meanings": {
+      "ja": "気まぐれな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6x7y8m9z",
+    "category": "word",
+    "level": 3,
+    "headword": "habit",
+    "definition": "something you do often without thinking about it",
+    "example": "Biting your nails is a bad {{habit}}.",
+    "example2": "She has a habit of waking up at five.",
+    "meanings": {
+      "ja": "習慣"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7c9k6r9d",
@@ -775,6 +873,20 @@
     }
   },
   {
+    "id": "v_7m9a7k5k",
+    "category": "word",
+    "level": 2,
+    "headword": "angry",
+    "definition": "feeling very upset because someone did something wrong",
+    "example": "She was {{angry}} because her brother broke her phone.",
+    "example2": "Please don't be angry with me.",
+    "meanings": {
+      "ja": "怒った"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7p3u5z4y",
     "category": "word",
     "level": 10,
@@ -825,6 +937,34 @@
     }
   },
   {
+    "id": "v_7r6e2r9n",
+    "category": "word",
+    "level": 2,
+    "headword": "forget",
+    "definition": "to fail to remember something or someone",
+    "example": "I always {{forget}} his name when we meet.",
+    "example2": "Don't forget to lock the door.",
+    "meanings": {
+      "ja": "忘れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7r6v2r5y",
+    "category": "word",
+    "level": 8,
+    "headword": "concede",
+    "definition": "to admit that something is true, often after resisting",
+    "example": "After an hour, he finally {{conceded}} that she was right.",
+    "example2": "The team conceded defeat before the game ended.",
+    "meanings": {
+      "ja": "しぶしぶ認める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8b8f4n7f",
     "category": "word",
     "level": 9,
@@ -848,6 +988,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8d3g3r3q",
+    "category": "word",
+    "level": 8,
+    "headword": "ambivalent",
+    "definition": "having mixed feelings, both good and bad, about something",
+    "example": "She felt {{ambivalent}} about moving abroad for the job.",
+    "example2": "Voters remain ambivalent about the new law.",
+    "meanings": {
+      "ja": "相反する感情を持つ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8d6e9w8z",
@@ -1148,5 +1302,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9z3r6a9v",
+    "category": "word",
+    "level": 3,
+    "headword": "explain",
+    "definition": "to make something clear by giving details",
+    "example": "Can you {{explain}} how this machine works?",
+    "example2": "He explained why he was late.",
+    "meanings": {
+      "ja": "説明する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

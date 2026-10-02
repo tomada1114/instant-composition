@@ -50,6 +50,20 @@
     }
   },
   {
+    "id": "v_2u2e6m2v",
+    "category": "phrase",
+    "level": 2,
+    "headword": "what's wrong?",
+    "definition": "a question you ask when someone looks upset or worried",
+    "example": "A: {{What's}} {{wrong}}?\nB: I lost my keys again.",
+    "example2": "A: You look pale. What's wrong?\nB: I think I'm getting a cold.",
+    "meanings": {
+      "ja": "どうしたの？"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2w9m9u7f",
     "category": "phrase",
     "level": 6,
@@ -73,6 +87,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_2z5e8t6n",
+    "category": "phrase",
+    "level": 10,
+    "headword": "suffice it to say",
+    "definition": "used before a short statement when you will not give the full story",
+    "example": "A: How was the meeting?\nB: {{Suffice}} {{it}} {{to}} {{say}}, we didn't agree.",
+    "example2": "Suffice it to say, I won't be going back there.",
+    "meanings": {
+      "ja": "とだけ言っておこう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3b9b5f5m",
+    "category": "phrase",
+    "level": 3,
+    "headword": "I'm just looking",
+    "definition": "said to a shop worker when you do not need help yet",
+    "example": "A: Can I help you find anything?\nB: {{I'm}} {{just}} {{looking}}, thanks.",
+    "example2": "A: Are you buying a coat today?\nB: No, I'm just looking.",
+    "meanings": {
+      "ja": "見ているだけです"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3f4h2z5d",
@@ -150,6 +192,20 @@
     }
   },
   {
+    "id": "v_3n6n5t2d",
+    "category": "phrase",
+    "level": 1,
+    "headword": "good night",
+    "definition": "said to someone before they go to bed",
+    "example": "A: I'm going to bed now.\nB: {{Good}} {{night}}. See you tomorrow.",
+    "example2": "A: Good night, Mom.\nB: Sleep tight, sweetie.",
+    "meanings": {
+      "ja": "おやすみなさい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3p7w2p4u",
     "category": "phrase",
     "level": 1,
@@ -198,6 +254,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3r2u4v4f",
+    "category": "phrase",
+    "level": 10,
+    "headword": "mark my words",
+    "definition": "said to warn that you are sure something will happen later",
+    "example": "A: He says the shop will be fine.\nB: {{Mark}} {{my}} {{words}}, it'll close by spring.",
+    "example2": "Mark my words, this team will win the title.",
+    "meanings": {
+      "ja": "いいかい、見ていなよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3u3u4r8k",
@@ -300,6 +370,20 @@
     }
   },
   {
+    "id": "v_3z6u6t8g",
+    "category": "phrase",
+    "level": 3,
+    "headword": "that sounds fun",
+    "definition": "said when someone tells you about a plan you would enjoy",
+    "example": "A: We're going camping this weekend.\nB: {{That}} {{sounds}} {{fun}}!",
+    "example2": "A: Let's have a movie night.\nB: That sounds fun. I'll bring snacks.",
+    "meanings": {
+      "ja": "楽しそう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4a3e7s3b",
     "category": "phrase",
     "level": 3,
@@ -350,6 +434,20 @@
     }
   },
   {
+    "id": "v_4m3z3z6x",
+    "category": "phrase",
+    "level": 2,
+    "headword": "no thanks",
+    "definition": "a polite reply when you do not want what is offered",
+    "example": "A: Would you like some more cake?\nB: {{No}} {{thanks}}. I'm full.",
+    "example2": "A: Want a ride?\nB: No thanks, I'll walk.",
+    "meanings": {
+      "ja": "いえ、結構です"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4n9t2f2z",
     "category": "phrase",
     "level": 4,
@@ -373,6 +471,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4q4e8e4a",
+    "category": "phrase",
+    "level": 10,
+    "headword": "more power to you",
+    "definition": "said to approve of someone's plan, even if you would not do it",
+    "example": "A: I'm running a marathon in July.\nB: {{More}} {{power}} {{to}} {{you}}!",
+    "example2": "If you enjoy getting up at four, more power to you.",
+    "meanings": {
+      "ja": "立派だね、がんばれ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4t2y7x8r",
@@ -450,6 +562,20 @@
     }
   },
   {
+    "id": "v_4x8y4b7s",
+    "category": "phrase",
+    "level": 9,
+    "headword": "I rest my case",
+    "definition": "said after you give proof that you think settles an argument",
+    "example": "A: Every single time, she forgot. {{I}} {{rest}} {{my}} {{case}}.\nB: Okay, okay, you win.",
+    "example2": "A: See? He admitted it himself.\nB: Fine. You rest your case.",
+    "meanings": {
+      "ja": "これで証明されたね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4y6b3u9w",
     "category": "phrase",
     "level": 9,
@@ -473,6 +599,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5a5v8r5j",
+    "category": "phrase",
+    "level": 3,
+    "headword": "make yourself at home",
+    "definition": "said to a guest so they feel relaxed and free to use the place",
+    "example": "A: Thanks for having me.\nB: Come in and {{make}} {{yourself}} {{at}} {{home}}.",
+    "example2": "Please make yourself at home while I cook dinner.",
+    "meanings": {
+      "ja": "くつろいでください"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5b2z6p6n",
@@ -698,6 +838,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6e8u2h8c",
+    "category": "phrase",
+    "level": 1,
+    "headword": "nice to meet you",
+    "definition": "said politely when you are introduced to a new person",
+    "example": "A: This is my friend Mina.\nB: {{Nice}} {{to}} {{meet}} {{you}}, Mina.",
+    "example2": "A: I'm Ken. Nice to meet you.\nB: Nice to meet you too.",
+    "meanings": {
+      "ja": "はじめまして"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6h3v8d3m",
+    "category": "phrase",
+    "level": 9,
+    "headword": "that's neither here nor there",
+    "definition": "said when a point is not relevant to the main question",
+    "example": "A: But he's younger than the others.\nB: {{That's}} {{neither}} {{here}} {{nor}} {{there}}. Can he do the job?",
+    "example2": "Her age is neither here nor there; she's qualified.",
+    "meanings": {
+      "ja": "それは関係ない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6h5e8a6k",
+    "category": "phrase",
+    "level": 9,
+    "headword": "I'm not buying it",
+    "definition": "said when you do not believe an excuse or a story",
+    "example": "A: The dog ate my homework.\nB: {{I'm}} {{not}} {{buying}} {{it}}.",
+    "example2": "A: I just forgot to call.\nB: Sorry, I'm not buying it.",
+    "meanings": {
+      "ja": "信じないよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6n5d3k3w",
@@ -1000,6 +1182,20 @@
     }
   },
   {
+    "id": "v_8m4e2j9j",
+    "category": "phrase",
+    "level": 1,
+    "headword": "good morning",
+    "definition": "said to greet someone early in the day",
+    "example": "A: {{Good}} {{morning}}, Ms. Lee!\nB: Hi, Tom. Did you sleep well?",
+    "example2": "A: Good morning, everyone.\nB: Good morning!",
+    "meanings": {
+      "ja": "おはようございます"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9j2q5h8n",
     "category": "phrase",
     "level": 3,
@@ -1048,6 +1244,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9n2g2e4k",
+    "category": "phrase",
+    "level": 2,
+    "headword": "how about you?",
+    "definition": "a question that turns the same question back to the other person",
+    "example": "A: I'm having coffee. {{How}} {{about}} {{you}}?\nB: Just water, thanks.",
+    "example2": "A: I love hiking. How about you?\nB: I prefer swimming.",
+    "meanings": {
+      "ja": "あなたはどう？"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9n6u6f9t",
