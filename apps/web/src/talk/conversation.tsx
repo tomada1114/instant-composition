@@ -80,8 +80,7 @@ function TurnLines({
 /**
  * W3's conversation: the scene, then every turn in order, the current one in
  * white and earlier ones muted. It alone scrolls, carried to its bottom edge
- * when a line appears or a keyboard changes the height it has
- * (`useKeyboardLift`), and each new line fades in.
+ * when a line appears, and each new line fades in.
  */
 export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
   const t = useTranslations("Talk");

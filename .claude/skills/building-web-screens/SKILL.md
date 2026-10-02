@@ -31,17 +31,23 @@ Each area has its own directory under `apps/web/src/` (`home/`, `drill/`, `talk/
 `records/`, `settings/`, `summary/`), and a screen is three pieces there:
 
 - **The route**, in `apps/web/src/router.tsx`. The tree is written as code —
-  `createRoute` with `getParentRoute`, a `path` and a `component`, then added to
-  `rootRoute.addChildren` — and nothing generates it at build time. A search param is
-  read through `validateSearch` returning a total value, so a missing or unknown one
-  still yields a screen (`/drill`'s `kind` is the model).
+  `createRoute` with `getParentRoute`, a `path` and a `component`, then added to its
+  parent's `addChildren` — and nothing generates it at build time. A hub screen's parent
+  is the pathless `shell` layout route, a drill-like one's the `focus` layout route,
+  both in `apps/web/src/lib/frame.tsx`; the layout renders `main`, so a screen renders
+  its content only. A search param is read through `validateSearch` returning a total
+  value, so a missing or unknown one still yields a screen (`/drill`'s `kind` is the
+  model).
 - **The page** (`<Area>Page` in `<area>-page.tsx`) — the route's component. It reads its
   data, shows the loading and failed states (`PageLoading` and `PageLoadFailed` in
   `apps/web/src/lib/page-shell.tsx`), redirects with `Navigate`, and hands a finished
   view to the screen. Branching on what the API answered belongs here.
 - **The screen** (`<Area>Screen`) — renders the view it is handed, and nothing it
   renders reads the network on its own. A save made from the screen goes through a hook
-  beside it (`use-settings.ts`) that calls `endpoints.ts`.
+  beside it (`use-settings.ts`) that calls `endpoints.ts`. A hub screen calls
+  `useShellNav()` once a read has said who is signed in, which is what shows the
+  navigation; a screen that needs the focus layout renders a `FocusStrip`, which drops
+  it while the screen is mounted.
 
 Links and navigation are TanStack Router's `Link`, `Navigate` and `useNavigate`. The
 router registers its tree through `declare module "@tanstack/react-router"`, so a path

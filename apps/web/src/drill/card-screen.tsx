@@ -90,9 +90,8 @@ function Actions({
 }
 
 /**
- * W4 to W7: the ticks and top strip, the card, the timer under a front and
- * the actions, fixed top to bottom above the tab bar so the page itself never
- * scrolls.
+ * W4 to W7: the focus strip, then the card, the timer under a front and the
+ * actions, filling the stage top to bottom so the page itself never scrolls.
  */
 export function CardScreen({
   state,
@@ -113,7 +112,7 @@ export function CardScreen({
   const where = progress(state);
   const first = where.pass === "first";
   return (
-    <main className="mx-auto box-content flex h-[calc(var(--column-height)-var(--tab-bar-space)-1.5rem)] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(var(--tab-bar-space)+0.75rem)]">
+    <div className="mx-auto flex h-stage w-full max-w-reading flex-col gap-3 pt-3 pb-6">
       <TopStrip
         pass={where.pass}
         current={first ? round.offset + where.position : where.position}
@@ -152,6 +151,6 @@ export function CardScreen({
         ) : null}
       </div>
       <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
-    </main>
+    </div>
   );
 }

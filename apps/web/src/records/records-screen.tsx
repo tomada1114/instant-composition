@@ -3,9 +3,8 @@ import type { ReactElement, ReactNode } from "react";
 import { useFormatter, useTranslations } from "use-intl";
 
 import { RECORDS_TABS, searchFor, type RecordsTab } from "../lib/screen-tabs";
-import { SELF_SCROLL, TabbedScreen } from "../lib/tabbed-screen";
+import { TabbedScreen } from "../lib/tabbed-screen";
 import { useEscapeHome } from "../lib/use-escape-home";
-import { cn } from "../lib/utils";
 import type { RecordsView } from "../openapi";
 import { ReachRings } from "../summary/reach-rings";
 import { InfoTip } from "../ui/info-tip";
@@ -34,10 +33,7 @@ function Tile({
   );
 }
 
-/**
- * The run, the level and the totals as tiles, then the calendar and the
- * milestones; the milestones scroll inside what is left of the tab.
- */
+/** The run, the level and the totals as tiles, then the calendar and the milestones. */
 function History({ records }: Readonly<{ records: RecordsView }>): ReactElement {
   const t = useTranslations("Records");
   const format = useFormatter();
@@ -83,8 +79,8 @@ function History({ records }: Readonly<{ records: RecordsView }>): ReactElement 
 }
 
 /**
- * W10: the long view, under three tabs that each fit a phone — how far each
- * topic has come, the weak points, and the run and the totals. Nothing here
+ * W10: the long view, under three tabs — how far each topic has come, the
+ * weak points, and the run and the totals. Nothing here
  * was just earned, so nothing is lit. The tab is the URL's `?tab=`.
  */
 export function RecordsScreen({
@@ -108,15 +104,12 @@ export function RecordsScreen({
       }}
     >
       {tab === "overview" ? (
-        <div className="flex min-h-0 flex-1 flex-col gap-3">
+        <div className="flex flex-col gap-3">
           <ReachRings reach={records.reach} shown={final} />
-          {/* Inset by 6 so the rows' focus outline is not clipped by the scroll. */}
-          <div className={cn("-m-1.5 min-h-15 p-1.5", SELF_SCROLL)}>
-            <div className="flex flex-col border-t border-border">
-              {records.breakdown.map((topic) => (
-                <Breakdown key={topic.id} topic={topic} />
-              ))}
-            </div>
+          <div className="flex flex-col border-t border-border">
+            {records.breakdown.map((topic) => (
+              <Breakdown key={topic.id} topic={topic} />
+            ))}
           </div>
         </div>
       ) : null}

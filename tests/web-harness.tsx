@@ -106,6 +106,13 @@ export function navigations(): (readonly [string | null, string | null])[][] {
   );
 }
 
+/** The page's `navigation` and `main` landmarks, by role, in document order. */
+export function landmarks(): string[] {
+  return [...document.querySelectorAll("nav, main")].map((element) =>
+    element.localName === "nav" ? "navigation" : "main",
+  );
+}
+
 /** Mounts the whole app at `path`, and lets its first reads answer. */
 export async function renderApp(path: string): Promise<void> {
   // The router restores the scroll position on every navigation, and jsdom

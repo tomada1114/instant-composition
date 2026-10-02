@@ -11,12 +11,12 @@ import { RecordsScreen } from "./records-screen";
 export function RecordsPage({ tab }: Readonly<{ tab: RecordsTab }>): ReactElement {
   const records = useQuery({ ...RECORDS_QUERY, refetchOnMount: "always" });
 
-  if (!records.isFetchedAfterMount) return <PageLoading withTabBar />;
+  if (!records.isFetchedAfterMount) return <PageLoading withNav />;
   if (isSignedOut(records.error)) return <Navigate to="/" replace />;
   if (records.isError || records.data === undefined) {
     return (
       <PageLoadFailed
-        withTabBar
+        withNav
         onReload={() => {
           void records.refetch();
         }}

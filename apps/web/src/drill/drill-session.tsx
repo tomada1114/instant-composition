@@ -2,7 +2,6 @@ import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { TabBar } from "../lib/tab-bar";
 import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { initDrill } from "./drill-init";
@@ -129,21 +128,16 @@ export function DrillSession({
     const start = (): void => {
       act({ type: "start" }, false);
     };
-    return (
-      <>
-        {round.kind !== "placement" || round.answered.length + unsaved.length > 0 ? (
-          <ReadyScreen
-            kind={round.kind}
-            count={round.total}
-            where={progress(state)}
-            offset={round.offset}
-            onStart={start}
-          />
-        ) : (
-          <IntroScreen first={first} round={round} onStart={start} />
-        )}
-        <TabBar />
-      </>
+    return round.kind !== "placement" || round.answered.length + unsaved.length > 0 ? (
+      <ReadyScreen
+        kind={round.kind}
+        count={round.total}
+        where={progress(state)}
+        offset={round.offset}
+        onStart={start}
+      />
+    ) : (
+      <IntroScreen first={first} round={round} onStart={start} />
     );
   }
   if (phase.kind === "finishing")
@@ -170,7 +164,6 @@ export function DrillSession({
           act(action, false);
         }}
       />
-      <TabBar />
       {leave.asking ? (
         <LeaveSheet position={resumeAt} onLeave={leave.leave} onStay={resume} />
       ) : state.paused ? (

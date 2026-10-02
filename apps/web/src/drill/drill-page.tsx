@@ -8,22 +8,22 @@ import { DrillError } from "./drill-error";
 import { DrillScreen } from "./drill-screen";
 import { clearPressed, wasPressed } from "./pressed";
 
-const SHELL = "mx-auto box-content flex min-h-(--column-height) max-w-column px-4";
-
 /**
  * The `/drill` route: one round of the `?kind=` it names. The home view says
  * whether this is the first placement, whether sound is on, which keys grade
  * and how big "one more" is; it is read before the round starts, because
  * starting it changes what the home view says.
  */
-export function DrillPage({ kind }: Readonly<{ kind: RoundKind }>): ReactElement {
+export function DrillPage({
+  kind,
+}: Readonly<{ kind: RoundKind }>): ReactElement | null {
   const home = useQuery(HOME_QUERY);
   const navigate = useNavigate();
   // Spent on arrival, whatever this page shows next, so no later visit inherits it.
   const [pressed] = useState(wasPressed);
   useEffect(clearPressed, []);
 
-  if (home.isPending) return <main className={SHELL} />;
+  if (home.isPending) return null;
   if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   if (home.isError) {
     return (

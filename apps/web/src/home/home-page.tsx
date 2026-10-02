@@ -25,7 +25,7 @@ export function HomePage(): ReactElement {
   if (!home.isFetchedAfterMount) return <HomeSkeleton />;
   if (isSignedOut(home.error)) return <LandingScreen />;
   if (home.isError || home.data === undefined) {
-    return <PageLoadFailed onReload={reload} withTabBar />;
+    return <PageLoadFailed onReload={reload} withNav />;
   }
   const view = home.data;
   if (view.state.kind === "onboarding") return <Navigate to="/welcome" replace />;

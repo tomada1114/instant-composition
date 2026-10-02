@@ -1,7 +1,6 @@
 import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { SELF_SCROLL } from "../lib/tabbed-screen";
 import { cn } from "../lib/utils";
 import type { BreakdownTopic, Dot, TitleGroup, WeakPoints } from "../openapi";
 import { ChevronGlyph } from "../ui/glyphs";
@@ -94,7 +93,7 @@ export function DotCalendar({
 
 /**
  * `milestone-list`: the milestones taken, the streak's row first, then each
- * topic's. The rows take what height the tab leaves and scroll inside it.
+ * topic's.
  */
 export function MilestoneList({
   groups,
@@ -102,21 +101,16 @@ export function MilestoneList({
   const t = useTranslations("Records.titles");
   const id = useId();
   return (
-    <section aria-labelledby={id} className="flex min-h-0 flex-1 flex-col gap-4">
+    <section aria-labelledby={id} className="flex flex-col gap-4">
       <h2 id={id} className="text-muted-foreground">
         {t("title")}
       </h2>
       {groups.length === 0 ? (
         <p className="text-muted-foreground">{t("none")}</p>
       ) : (
-        // Focusable, so a keyboard can scroll the rows: none of them takes focus.
         <dl
-          tabIndex={0}
           aria-labelledby={id}
-          className={cn(
-            "grid min-h-6 grid-cols-[auto_1fr] content-start gap-x-6 gap-y-1",
-            SELF_SCROLL,
-          )}
+          className="grid grid-cols-[auto_1fr] content-start gap-x-6 gap-y-1"
         >
           {groups.map((group) => (
             <div

@@ -21,7 +21,7 @@ export function IntroScreen({
   const count = round.deck.length;
   const steps = [t("say"), t("flip"), t("grade")];
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-2.75rem)] max-w-column flex-col px-4 pt-8 pb-[calc(var(--tab-bar-space)+0.75rem)]">
+    <div className="mx-auto flex w-full max-w-reading flex-col py-6">
       <div className="flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
         <h1 className="text-heading">
@@ -46,6 +46,6 @@ export function IntroScreen({
         <ArrowGlyph className="size-4.5" />
         <Kbd>Space</Kbd>
       </Button>
-    </main>
+    </div>
   );
 }

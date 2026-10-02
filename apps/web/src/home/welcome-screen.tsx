@@ -107,7 +107,7 @@ export function WelcomeScreen({
 
   if (topics.length === 0) {
     return (
-      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
+      <main className="mx-auto flex min-h-dvh max-w-reading flex-col justify-center px-4 py-8">
         <LoadFailedPanel onReload={onReload} />
       </main>
     );
@@ -150,7 +150,7 @@ export function WelcomeScreen({
   }
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-2rem)] max-w-column flex-col gap-8 px-4 pt-8 pb-3">
+    <main className="mx-auto flex min-h-dvh max-w-reading flex-col gap-8 px-4 pt-8 pb-3">
       <div className="flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
         <h1 className="text-heading">{t("title")}</h1>
@@ -170,7 +170,7 @@ export function WelcomeScreen({
           </li>
         ))}
       </ul>
-      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-[calc(0.75rem+var(--safe-bottom))]">
+      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-3">
         <Button
           data-primary
           className="w-full"

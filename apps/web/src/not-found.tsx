@@ -8,14 +8,15 @@ import { Kbd } from "./ui/kbd";
 
 /**
  * A path this client has no screen for: the `empty-state` panel, centred in
- * the column, with home as its one way out. No tab bar: it is not a hub screen.
+ * the window, with home as its one way out. No navigation: it is not a hub
+ * screen, and it reads nothing, so it cannot know who is signed in.
  */
 export function NotFound(): ReactElement {
   const t = useTranslations("NotFound");
   usePrimaryKey();
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
+    <main className="mx-auto flex min-h-dvh max-w-dialog flex-col justify-center px-4 py-8">
       <section className="flex flex-col gap-5 rounded-card bg-card p-5">
         <div className="flex flex-col gap-1">
           <h1 className="text-heading">{t("title")}</h1>

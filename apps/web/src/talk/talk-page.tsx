@@ -15,11 +15,11 @@ import { TalkSession } from "./talk-session";
 export function TalkPage(): ReactElement {
   const home = useQuery(HOME_QUERY);
   if (home.data !== undefined) return <TalkSession sound={home.data.sound} />;
-  if (home.isPending) return <PageLoading withTabBar />;
+  if (home.isPending) return <PageLoading withNav />;
   if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   return (
     <PageLoadFailed
-      withTabBar
+      withNav
       onReload={() => {
         void home.refetch();
       }}

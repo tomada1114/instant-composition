@@ -7,6 +7,8 @@ import {
   fakeTimers,
   fill,
   ja,
+  landmarks,
+  navigations,
   press as pressKey,
   refusal,
   renderApp,
@@ -27,8 +29,8 @@ import {
 } from "./web-talk-harness";
 
 // The talk screen's failures — each row of ux-flows §4.4, none of them in red
-// — and W4, the question asked before a talk under way is left by ✕, Esc, a
-// tab or Back.
+// — and W4, the question asked before a talk under way is left by ✕, Esc or
+// Back.
 
 const TURNS = /\/turns$/u;
 const REPLY = /\/reply$/u;
@@ -40,6 +42,13 @@ function where(): string {
 
 function leaveSheet(): HTMLElement | null {
   return screen.queryByRole("dialog", { name: ja.Talk.leave.title });
+}
+
+/** The conversation, which alone holds the lines and the end mark. */
+function conversation(): HTMLElement {
+  const element = document.querySelector<HTMLElement>("[data-conversation]");
+  if (element === null) throw new Error("No conversation on screen.");
+  return element;
 }
 
 function toast(): string {
@@ -143,9 +152,7 @@ describe("the talk's failures", () => {
     press(ja.Talk.leave.end);
     await settle();
     expect(toast()).toBe(ja.Talk.toast.save);
-    expect(
-      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-    ).toBeInTheDocument();
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
   });
 
   it.each([
@@ -173,9 +180,7 @@ describe("the talk's failures", () => {
         press(ja.Talk.reply.retry);
         await settle();
       }
-      expect(
-        within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-      ).toBeInTheDocument();
+      expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
       expect(screen.queryByText(ja.Talk.reply.failed)).toBeNull();
       expect(screen.queryByRole("button", { name: ja.Talk.reply.retry })).toBeNull();
       expect(screen.queryByRole("button", { name: ja.Talk.strip.close })).toBeNull();
@@ -202,9 +207,7 @@ describe("the talk's failures", () => {
 
     press(ja.Talk.reply.retry);
     await settle();
-    expect(
-      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-    ).toBeInTheDocument();
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
     expect(toast()).toBe(ja.Talk.toast.save);
     expect(posted(calls, TURNS)).toHaveLength(2);
     expect(posted(calls, END)).toStrictEqual([]);
@@ -219,7 +222,7 @@ describe("the talk's failures", () => {
     expect(
       screen.getByRole("button", { name: ja.Talk.reply.retry }),
     ).toBeInTheDocument();
-    expect(within(screen.getByRole("main")).queryByText(ja.Talk.end.mark)).toBeNull();
+    expect(within(conversation()).queryByText(ja.Talk.end.mark)).toBeNull();
   });
 
   it("uses no red anywhere in a failure", async () => {
@@ -247,9 +250,7 @@ describe("W4, leaving a talk under way", () => {
     await settle();
     await settle(16);
     expect(leaveSheet()).toBeNull();
-    expect(
-      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-    ).toBeInTheDocument();
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
 
     press(ja.Talk.end.again);
     await settle();
@@ -304,9 +305,7 @@ describe("W4, leaving a talk under way", () => {
     await settle();
     expect(posted(calls, END)).toHaveLength(1);
     expect(leaveSheet()).toBeNull();
-    expect(
-      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-    ).toBeInTheDocument();
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: ja.Talk.strip.close })).toBeNull();
     expect(screen.getByRole("button", { name: ja.Talk.end.again })).toBeInTheDocument();
     expect(where()).toBe("/talk");
@@ -328,37 +327,26 @@ describe("W4, leaving a talk under way", () => {
     press(ja.Talk.strip.close);
     press(ja.Talk.leave.end);
     await settle();
-    expect(
-      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
-    ).toBeInTheDocument();
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
     expect(screen.queryByText("reply-6")).toBeNull();
   });
 
-  it("asks before a tab leaves, then goes there on 終える and ends the talk", async () => {
-    const calls = serveTalk();
+  it("trades the navigation for the focus strip from the first line to the end", async () => {
+    serveTalk();
     await renderApp("/talk");
+    expect(landmarks()).toStrictEqual(["navigation", "main"]);
     await begin();
-    fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
-    await settle();
-    expect(leaveSheet()).toBeInTheDocument();
-    expect(where()).toBe("/talk");
+    expect(navigations()).toStrictEqual([]);
+    expect(landmarks()).toStrictEqual(["main"]);
+    const close = screen.getByRole("button", { name: ja.Talk.strip.close });
+    expect(close.closest("[data-part=focus-strip]")).not.toBeNull();
+
+    press(ja.Talk.strip.close);
     press(ja.Talk.leave.end);
     await settle();
-    expect(where()).toBe("/records");
-    expect(posted(calls, END)).toHaveLength(1);
-  });
-
-  it("stays on the talk when 続ける answers a tab", async () => {
-    const calls = serveTalk();
-    await renderApp("/talk");
-    await begin();
-    fireEvent.click(screen.getByRole("link", { name: ja.Nav.settings }));
-    await settle();
-    press(ja.Talk.leave.stay);
-    await settle();
+    expect(navigations()).toStrictEqual([]);
+    expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
     expect(where()).toBe("/talk");
-    expect(screen.getByText(OPENING)).toBeInTheDocument();
-    expect(posted(calls, END)).toStrictEqual([]);
   });
 
   it("asks before Back leaves a talk, staying on 続ける and leaving on 終える", async () => {
@@ -392,9 +380,9 @@ describe("W4, leaving a talk under way", () => {
   });
 
   it.each([
-    ["before a talk", false],
-    ["after it ended", true],
-  ])("leaves at once by a tab %s", async (_, ended) => {
+    ["before a talk, by a section", false, ja.Nav.home],
+    ["after it ended, by the strip's ✕", true, ja.Nav.close],
+  ])("leaves at once %s", async (_, ended, link) => {
     serveTalk();
     await renderApp("/talk");
     if (ended) {
@@ -403,7 +391,7 @@ describe("W4, leaving a talk under way", () => {
       press(ja.Talk.leave.end);
       await settle();
     }
-    fireEvent.click(screen.getByRole("link", { name: ja.Nav.home }));
+    fireEvent.click(screen.getByRole("link", { name: link }));
     await settle();
     expect(leaveSheet()).toBeNull();
     expect(where()).toBe("/");

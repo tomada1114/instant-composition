@@ -13,6 +13,7 @@ import { DrillPage } from "./drill/drill-page";
 import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
 import { WelcomePage } from "./home/welcome-page";
+import { FocusLayout, ShellLayout } from "./lib/frame";
 import {
   RECORDS_TABS,
   SETTINGS_TABS,
@@ -31,21 +32,35 @@ import { TalkPage } from "./talk/talk-page";
 /**
  * The route tree, written as code rather than generated from files:
  * each route names its parent and its screen, and nothing runs at build time
- * to produce it.
+ * to produce it. Two pathless layout routes hold the screens: the shell (the
+ * hub screens, with the navigation) and the focus layout (`/drill` and
+ * `/recap`, without it). The welcome and a path with no screen use neither.
  */
 const rootRoute = createRootRoute({
   component: (): ReactElement => <Outlet />,
   notFoundComponent: NotFound,
 });
 
-const homeRoute = createRoute({
+const shellRoute = createRoute({
   getParentRoute: () => rootRoute,
+  id: "shell",
+  component: ShellLayout,
+});
+
+const focusRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  id: "focus",
+  component: FocusLayout,
+});
+
+const homeRoute = createRoute({
+  getParentRoute: () => shellRoute,
   path: "/",
   component: HomePage,
 });
 
 const drillRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => focusRoute,
   path: "drill",
   // An unknown or missing `?kind=` is today's portion, as it always was.
   validateSearch: (search: Record<string, unknown>): { kind: RoundKind } => ({
@@ -58,7 +73,7 @@ const drillRoute = createRoute({
 });
 
 const recordsRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => shellRoute,
   path: "records",
   // A missing `?tab=` is the first tab, and a link may leave it out; an
   // unknown one is replaced by the bare path.
@@ -74,13 +89,13 @@ const recordsRoute = createRoute({
 });
 
 const recapRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => focusRoute,
   path: "recap",
   component: RecapPage,
 });
 
 const settingsRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => shellRoute,
   path: "settings",
   validateSearch: (
     search: { tab?: SettingsTab } & SearchSchemaInput,
@@ -94,7 +109,7 @@ const settingsRoute = createRoute({
 });
 
 const talkRoute = createRoute({
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => shellRoute,
   path: "talk",
   component: TalkPage,
 });
@@ -106,12 +121,8 @@ const welcomeRoute = createRoute({
 });
 
 const routeTree = rootRoute.addChildren([
-  homeRoute,
-  drillRoute,
-  recordsRoute,
-  recapRoute,
-  settingsRoute,
-  talkRoute,
+  shellRoute.addChildren([homeRoute, recordsRoute, settingsRoute, talkRoute]),
+  focusRoute.addChildren([drillRoute, recapRoute]),
   welcomeRoute,
 ]);
 

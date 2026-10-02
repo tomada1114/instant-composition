@@ -141,7 +141,20 @@
   --radius-card: 1rem;
   --radius-panel: 1.25rem;
 
-  --container-column: 26.25rem;
+  /* The layout system's widths: a dashboard page (home, records), a reading
+   * or form page, the focus stage, its strip's progress, and a dialog or
+   * the toast. */
+  --container-dashboard: 70rem;
+  --container-reading: 45rem;
+  --container-stage: 55rem;
+  --container-progress: 35rem;
+  --container-dialog: 27.5rem;
+
+  /* Two breakpoints, by width alone: `sm` for the top bar's labels and
+   * two-across cards, `pc` for the sidebar and the PC layout. */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-pc: 64rem;
 
   --animate-*: initial;
 }
@@ -217,38 +230,12 @@
 @custom-variant keys (&:where([data-keys] *));
 
 /*
- * A PC or tablet window: wide and tall both. The height term is what keeps a
- * phone on its side (about 932 × 430) on the phone layout. Above it the
- * column stops at 720 tall and sits centered, `--column-inset` above and
- * below, so a screen keeps a phone's shape instead of stretching to the
- * window. A screen sizes itself from `--column-height`, never from `dvh`.
+ * The focus stage's height: the window under the focus strip's 64. A screen
+ * whose own region scrolls (the drill's back, the talk's conversation) takes
+ * exactly this; every other screen is as tall as its content.
  */
-@custom-variant wide (@media (width >= 48rem) and (height >= 40rem));
-
-:root {
-  --column-height: 100dvh;
-  --column-inset: 0px;
-  /* The tab bar's row along the column's bottom edge (home, records,
-   * settings), its hairline included. 49, an iOS tab bar's height, so the
-   * tallest home panel still fits a PC's 720. */
-  --tab-bar-height: 3.0625rem;
-  /* Whatever of a phone's home-indicator inset the column's own inset does
-   * not already cover: what anything resting on the column's bottom edge adds
-   * to its foot. Zero wherever `env()` reads 0, as on a desktop browser. */
-  --safe-bottom: max(0px, env(safe-area-inset-bottom) - var(--column-inset));
-  /* What a screen under the bar pads its foot by. */
-  --tab-bar-space: calc(var(--tab-bar-height) + var(--safe-bottom));
-  /* The part of the layout viewport an on-screen keyboard leaves visible,
-   * which iOS Safari never resizes the layout for: the talk screen's
-   * `useKeyboardLift` writes the real values onto its `main` while a field
-   * there has focus, and the screen sizes itself from them instead. */
-  --visible-top: 0px;
-  --visible-height: var(--column-height);
-
-  @variant wide {
-    --column-height: min(100dvh, 45rem);
-    --column-inset: calc((100dvh - var(--column-height)) / 2);
-  }
+@utility h-stage {
+  height: calc(100dvh - 4rem);
 }
 
 /*
@@ -266,7 +253,6 @@
 
   body {
     @apply bg-background font-sans text-body text-foreground tabular-nums antialiased;
-    padding-block: var(--column-inset);
   }
 
   h1 {

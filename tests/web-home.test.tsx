@@ -12,6 +12,7 @@ import {
   fill,
   homeView,
   ja,
+  landmarks,
   navigations,
   press,
   refusal,
@@ -178,6 +179,7 @@ describe("the home screen, W3a: today's portion not started", () => {
       ],
     ]);
     expect(screen.getByRole("navigation", { name: ja.Nav.label })).toBeInTheDocument();
+    expect(landmarks()).toStrictEqual(["navigation", "main"]);
     const settings = screen.getByRole("link", { name: ja.Nav.settings });
     fireEvent.click(settings);
     await settle();
@@ -437,11 +439,11 @@ describe("the home screen before and instead of the home view", () => {
         }),
     );
     await renderApp("/");
-    const main = document.querySelector("main");
-    expect(main).toHaveAttribute("aria-hidden", "true");
-    expect(main?.childElementCount).toBe(0);
+    const skeleton = document.querySelector("main")?.firstElementChild;
+    expect(skeleton).toHaveAttribute("aria-hidden", "true");
+    expect(skeleton?.childElementCount).toBe(0);
     await settle(TUNING.skeletonDelayMs);
-    expect(main?.childElementCount).toBe(3);
+    expect(skeleton?.childElementCount).toBe(3);
     answer(Response.json(homeView({ kind: "ready", streak: COUNT })));
     await settle();
     expect(
