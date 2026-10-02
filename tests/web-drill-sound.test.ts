@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   browserSound,
   createSoundPlayer,
+  roundSound,
   type ToneContext,
 } from "@instant-composition/web";
 
@@ -94,6 +95,31 @@ describe("createSoundPlayer", () => {
     const last = closing.at(-1);
     const first = closing[0];
     expect(first && last && last.stop - first.start).toBeCloseTo(0.6);
+  });
+
+  it("plays a fanfare of the close's three notes, then E6 for 0.3 s, about 900 ms", () => {
+    const fake = fakeContext("running");
+    const player = createSoundPlayer(() => fake.context);
+    player.unlock();
+    player.play("fanfare");
+    expect(fake.tones.map((tone) => tone.frequency)).toEqual([
+      659.25, 783.99, 1046.5, 1318.51,
+    ]);
+    const first = fake.tones[0];
+    const last = fake.tones.at(-1);
+    expect(last && last.stop - last.start).toBeCloseTo(0.3);
+    expect(first && last && last.stop - first.start).toBeCloseTo(0.9);
+  });
+
+  it.each([
+    [{ changed: true, titles: [] }, "fanfare"],
+    [{ changed: false, titles: ["streak:7"] }, "fanfare"],
+    [{ changed: true, titles: ["streak:7"] }, "fanfare"],
+    [{ changed: false, titles: [] }, "closing"],
+  ] as const)("chooses one sound for a finished round: %o -> %s", (round, sound) => {
+    expect(
+      roundSound({ streak: { changed: round.changed }, titles: round.titles }),
+    ).toBe(sound);
   });
 
   it("does nothing where the browser has no Web Audio", () => {

@@ -193,6 +193,69 @@ describe("SummaryScreen, W9", () => {
   });
 });
 
+describe("SummaryScreen, the celebration", () => {
+  function confetti(): Element | null {
+    return document.querySelector("[data-confetti]");
+  }
+
+  it("bursts 30 hidden, unclickable pieces when the streak grew, and pops the figure, the flame and today's disc", () => {
+    stubReducedMotion(false);
+    const animate = vi.fn();
+    Element.prototype.animate = animate;
+    renderSummary(makeSummary());
+    const layer = confetti();
+    expect(layer).not.toBeNull();
+    expect(layer).toHaveAttribute("aria-hidden", "true");
+    expect(layer).toHaveClass("pointer-events-none");
+    expect(layer?.querySelectorAll("[data-piece]")).toHaveLength(30);
+    const durations = animate.mock.calls.map(
+      (call) => (call[1] as KeyframeAnimationOptions).duration,
+    );
+    expect(durations).toEqual(expect.arrayContaining([600, 800, 500, 2500]));
+    Reflect.deleteProperty(Element.prototype, "animate");
+  });
+
+  it("clears the burst after 2.5 s", () => {
+    stubReducedMotion(false);
+    vi.useFakeTimers();
+    try {
+      renderSummary(makeSummary());
+      expect(confetti()).not.toBeNull();
+      act(() => {
+        vi.advanceTimersByTime(2500);
+      });
+      expect(confetti()).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("bursts for a milestone when the streak did not grow", () => {
+    stubReducedMotion(false);
+    renderSummary(
+      makeSummary({
+        streak: { value: 13, restart: false, changed: false },
+        titles: ["streak:7"],
+      }),
+    );
+    expect(confetti()).not.toBeNull();
+  });
+
+  it("does not burst when the streak did not grow and nothing was reached", () => {
+    stubReducedMotion(false);
+    renderSummary(
+      makeSummary({ streak: { value: 13, restart: false, changed: false } }),
+    );
+    expect(confetti()).toBeNull();
+  });
+
+  it("never mounts the confetti under reduced motion", () => {
+    renderSummary(makeSummary({ titles: ["streak:7"] }));
+    expect(confetti()).toBeNull();
+    expect(screen.getByText("13")).toBeInTheDocument();
+  });
+});
+
 describe("SummaryScreen, a round with nothing to compare or review", () => {
   it("says what was compared and what was new, with no big 0", () => {
     renderSummary(

@@ -1,7 +1,11 @@
 import { act, fireEvent, screen } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { HomeView, RoundSummary } from "@instant-composition/web";
+import {
+  browserSound,
+  type HomeView,
+  type RoundSummary,
+} from "@instant-composition/web";
 
 import {
   COUNT,
@@ -101,6 +105,16 @@ describe("the recap screen, W9r: re-reading today", () => {
       screen.queryByRole("button", { name: ja.Summary.actions.end }),
     ).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /もう/u })).not.toBeInTheDocument();
+  });
+
+  it("re-reads a round whose streak grew with no confetti and no sound", async () => {
+    const play = vi.spyOn(browserSound, "play");
+    serveRecap();
+    await renderApp("/recap");
+    expectRecap();
+    expect(document.querySelector("[data-confetti]")).toBeNull();
+    expect(play).not.toHaveBeenCalled();
+    play.mockRestore();
   });
 
   it("reads back a round finished in another browser, keeping nothing in this one", async () => {
