@@ -367,3 +367,87 @@ describe("another learner", () => {
     ).toBeNull();
   });
 });
+
+describe("what a vocabulary command refuses", () => {
+  it("answers a session the learner does not have as not found", async () => {
+    const h = makeHarness();
+    const notFound = { ok: false, error: { code: "ERR_SESSION_NOT_FOUND" } };
+
+    expect(
+      await recordVocabAnswers(h.deps, h.context(), { sessionId: "none", answers: [] }),
+    ).toStrictEqual(notFound);
+    expect(
+      await finishVocabSession(h.deps, h.context(), { sessionId: "none", answers: [] }),
+    ).toStrictEqual(notFound);
+  });
+
+  it("refuses a finish naming a card the session did not deal, and keeps it open", async () => {
+    const h = makeHarness();
+    await atLevel(h);
+    await started(h, "s1");
+
+    const finished = await finishVocabSession(h.deps, h.context(), {
+      sessionId: "s1",
+      answers: [
+        {
+          id: "a1",
+          cardId: "v_phrase-7-1",
+          pass: "first",
+          grade: "good",
+          elapsedMs: 1,
+        },
+      ],
+    });
+
+    expect(finished).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
+    expect(
+      (await h.stores.forLearner(h.learner).vocabSession("s1"))?.value.finishedAt,
+    ).toBeNull();
+  });
+
+  it("refuses every command while the catalog cannot be read", async () => {
+    let readable = true;
+    const snapshot = makeSnapshot();
+    const h = makeHarness({
+      snapshot: () =>
+        readable
+          ? Promise.resolve({ ok: true, value: snapshot })
+          : unreadableCatalog.snapshot(),
+    });
+    await atLevel(h);
+    const session = await started(h, "s1");
+    readable = false;
+    const unreadable = {
+      ok: false,
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "missing" },
+    };
+    const command = { sessionId: "s1", answers: gradedAll(session) };
+
+    expect(
+      await startVocabSession(h.deps, h.context(), { sessionId: "s2", kind: "today" }),
+    ).toStrictEqual(unreadable);
+    expect(await recordVocabAnswers(h.deps, h.context(), command)).toStrictEqual(
+      unreadable,
+    );
+    expect(await finishVocabSession(h.deps, h.context(), command)).toStrictEqual(
+      unreadable,
+    );
+  });
+
+  it("refuses an agent the learner granted none of them", async () => {
+    const h = makeHarness();
+    const context: RequestContext = {
+      ...h.context(),
+      actor: { kind: "agent", onBehalfOf: h.learner, grants: ["home"] },
+    };
+    const forbidden = { ok: false, error: { code: "ERR_FORBIDDEN" } };
+    const command = { sessionId: "s1", answers: [] };
+
+    expect(await vocabHub(h.deps, context)).toStrictEqual(forbidden);
+    expect(
+      await startVocabSession(h.deps, context, { sessionId: "s1", kind: "weak" }),
+    ).toStrictEqual(forbidden);
+    expect(await recordVocabAnswers(h.deps, context, command)).toStrictEqual(forbidden);
+    expect(await finishVocabSession(h.deps, context, command)).toStrictEqual(forbidden);
+  });
+});
