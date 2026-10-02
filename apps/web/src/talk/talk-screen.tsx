@@ -44,7 +44,7 @@ function TalkStrip({
   const turn = currentTurn(talk).n;
   const progress = <TurnPills done={ended ? keptTurns(talk) : turn - 1} />;
   const counters = (
-    <span className="font-latin text-count text-muted-foreground">
+    <span className="font-latin text-count whitespace-nowrap text-muted-foreground">
       {t("progress", { current: turn, total: TALK_TURNS })}
     </span>
   );
