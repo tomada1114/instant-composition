@@ -24,7 +24,7 @@ export interface ToneContext {
   };
 }
 
-export type SoundName = "ok" | "okFast" | "combo" | "closing";
+export type SoundName = "ok" | "okFast" | "combo" | "closing" | "fanfare";
 
 /** Frequency in Hz and length in seconds of each note, played back to back. */
 const NOTES: Readonly<Record<SoundName, readonly (readonly [number, number])[]>> = {
@@ -36,7 +36,24 @@ const NOTES: Readonly<Record<SoundName, readonly (readonly [number, number])[]>>
     [783.99, 0.2],
     [1046.5, 0.2],
   ],
+  fanfare: [
+    [659.25, 0.2],
+    [783.99, 0.2],
+    [1046.5, 0.2],
+    [1318.51, 0.3],
+  ],
 };
+
+/**
+ * The one sound a finished round plays: `fanfare` when the streak grew or a
+ * milestone was reached, in place of `closing`, never on top of it.
+ */
+export function roundSound(summary: {
+  readonly streak: { readonly changed: boolean };
+  readonly titles: readonly string[];
+}): "closing" | "fanfare" {
+  return summary.streak.changed || summary.titles.length > 0 ? "fanfare" : "closing";
+}
 
 const PEAK_GAIN = 0.15;
 const ATTACK_SECONDS = 0.005;

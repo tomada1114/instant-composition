@@ -8,10 +8,33 @@ import { Eyebrow } from "../ui/eyebrow";
 import { ArrowGlyph } from "../ui/glyphs";
 import { Kbd } from "../ui/kbd";
 
+/** The right column: a drill card's front as the product's own face, run part way down its timer. Decoration only. */
+function SampleCard(): ReactElement {
+  const t = useTranslations("Landing.sample");
+  return (
+    <div aria-hidden className="flex flex-col gap-6">
+      <div className="flex min-h-72 flex-col gap-6 rounded-panel border-2 border-border bg-card p-8">
+        <Eyebrow>{t("topic")}</Eyebrow>
+        <p className="my-auto text-center text-front text-balance">{t("prompt")}</p>
+      </div>
+      <div className="flex items-center gap-4">
+        <span className="h-3 flex-1 overflow-hidden rounded-full bg-bar-track">
+          <span className="block h-full w-3/5 rounded-full bg-energy" />
+        </span>
+        <span className="w-8 text-right font-display text-figure-sm tabular-nums">
+          18
+        </span>
+      </div>
+    </div>
+  );
+}
+
 /**
- * `/` for a visitor who is not signed in: what the drill is, as its three
- * moves, and sign-in as the one action. It reads nothing, so it has no
- * learner data to show, and it carries no navigation.
+ * `/` for a visitor who is not signed in: from `pc`, two columns inside the
+ * dashboard width — the brand, the name, the drill's three moves and sign-in
+ * as the one action at the left, a static sample card at the right; one
+ * column below. It reads nothing, so it has no learner data to show, and it
+ * carries no navigation.
  */
 export function LandingScreen(): ReactElement {
   const t = useTranslations("Landing");
@@ -19,33 +42,33 @@ export function LandingScreen(): ReactElement {
   usePrimaryKey();
 
   return (
-    <div className="mx-auto flex w-full max-w-reading flex-col">
-      <div className="flex flex-col gap-3">
-        <Eyebrow>{t("brand")}</Eyebrow>
-        <h1 className="text-heading">{t("title")}</h1>
+    <div className="mx-auto grid w-full max-w-dashboard grid-cols-1 gap-10 pc:min-h-[calc(100dvh-5rem)] pc:grid-cols-2 pc:content-center pc:items-center pc:gap-6">
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+          <p className="font-display text-figure-sm">{t("brand")}</p>
+          <h1 className="text-heading">{t("title")}</h1>
+        </div>
+        <ol className="flex flex-col gap-4">
+          {steps.map((step, index) => (
+            <li key={step} className="flex items-baseline gap-4">
+              <span aria-hidden className="w-6 font-display text-figure-sm">
+                {index + 1}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+        {/* A full-page navigation to the managed login, so a link rather than a
+            button: it says where it goes and opens in a new tab on request. */}
+        <Button asChild className="w-full sm:w-80">
+          <a href={LOGIN_URL} data-primary>
+            {t("signIn")}
+            <ArrowGlyph className="size-4.5" />
+            <Kbd>Space</Kbd>
+          </a>
+        </Button>
       </div>
-      <ol className="my-auto border-t border-border py-10">
-        {steps.map((step, index) => (
-          <li
-            key={step}
-            className="flex items-baseline gap-5 border-b border-border py-5"
-          >
-            <span aria-hidden className="font-latin text-count text-muted-foreground">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span className="text-heading">{step}</span>
-          </li>
-        ))}
-      </ol>
-      {/* A full-page navigation to the managed login, so a link rather than a
-          button: it says where it goes and opens in a new tab on request. */}
-      <Button asChild className="w-full">
-        <a href={LOGIN_URL} data-primary>
-          {t("signIn")}
-          <ArrowGlyph className="size-4.5" />
-          <Kbd>Space</Kbd>
-        </a>
-      </Button>
+      <SampleCard />
     </div>
   );
 }

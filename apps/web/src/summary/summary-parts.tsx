@@ -1,5 +1,5 @@
 import { useTranslations } from "use-intl";
-import { useEffect, useRef, type ReactElement } from "react";
+import { useEffect, useRef, type ReactElement, type RefObject } from "react";
 
 import { playMotion } from "../drill/motion";
 import { WeekRow } from "../home/streak-figure";
@@ -18,17 +18,43 @@ export type Shown = (key: string, final: number) => number;
 export function StreakBlock({
   summary,
   shown,
-}: Readonly<{ summary: RoundSummary; shown: Shown }>): ReactElement {
+  figure,
+  celebrate,
+}: Readonly<{
+  summary: RoundSummary;
+  shown: Shown;
+  figure: RefObject<HTMLParagraphElement | null>;
+  celebrate: boolean;
+}>): ReactElement {
   const t = useTranslations("Summary");
   const { streak } = summary;
+  const flame = useRef<HTMLSpanElement>(null);
+  const number = useRef<HTMLSpanElement>(null);
+  const week = useRef<HTMLDivElement>(null);
+  const today = summary.week.findIndex((dot) => dot.day === summary.filled);
+
+  useEffect(() => {
+    if (!celebrate) return;
+    playMotion(number.current, "pop");
+    playMotion(flame.current, "flame");
+    playMotion(week.current?.querySelectorAll("[data-state]")[today] ?? null, "check");
+  }, [celebrate, today]);
+
   return (
     <section className="flex w-full flex-col items-center gap-5">
       {streak.restart ? (
-        <p className="text-heading">{t("restartTitle")}</p>
+        <p ref={figure} className="text-heading">
+          {t("restartTitle")}
+        </p>
       ) : (
-        <p className="flex items-center gap-3">
-          {streak.changed ? <FlameGlyph className="size-12 text-energy" /> : null}
+        <p ref={figure} className="flex items-center gap-3">
+          {streak.changed ? (
+            <span ref={flame} className="inline-flex">
+              <FlameGlyph className="size-12 text-energy" />
+            </span>
+          ) : null}
           <span
+            ref={number}
             className={cn(
               "font-display",
               streak.changed
@@ -41,7 +67,7 @@ export function StreakBlock({
           <span className="text-label text-muted-foreground">{t("streakUnit")}</span>
         </p>
       )}
-      <div className="w-full max-w-sm">
+      <div ref={week} className="w-full max-w-sm">
         <WeekRow dots={summary.week} lit={summary.filled} />
       </div>
     </section>

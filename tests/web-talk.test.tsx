@@ -43,6 +43,10 @@ function announced(): string {
   return document.querySelector("[aria-live=polite]")?.textContent ?? "";
 }
 
+function doneTurns(): number {
+  return document.querySelectorAll("[data-part=focus-strip] [data-done]").length;
+}
+
 function progress(current: number): string {
   return fill(ja.Talk.strip.progress, { current, total: 6 });
 }
@@ -85,6 +89,22 @@ describe("W2, the talk tab before a talk", () => {
       ],
     ]);
     expect(landmarks()).toStrictEqual(["navigation", "main"]);
+  });
+
+  it("lays out a turn's six steps as one line under the panel", async () => {
+    serveTalk();
+    await renderApp("/talk");
+    const flow = screen.getByRole("list", { name: ja.Talk.start.flow });
+    expect(
+      [...flow.querySelectorAll("li")].map((step) => step.textContent),
+    ).toStrictEqual([
+      ja.Talk.speaker.partner,
+      ja.Talk.step.japanese,
+      ja.Talk.step.english,
+      ja.Talk.start.model,
+      ja.Talk.start.again,
+      ja.Talk.speaker.partner,
+    ]);
   });
 
   it("says 用意しています on a start that cannot be pressed again while the scene is made", async () => {
@@ -189,9 +209,11 @@ describe("one turn", () => {
     expect(announced()).toBe(ja.Talk.announce.fine);
     expect(screen.queryByRole("button", { name: ja.Talk.teacher.hide })).toBeNull();
 
+    expect(doneTurns()).toBe(0);
     await settle(320);
     expect(screen.getByText("reply-1")).toBeInTheDocument();
     expect(screen.getByText(progress(2))).toBeInTheDocument();
+    expect(doneTurns()).toBe(1);
     expect(
       screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
     ).toBeInTheDocument();

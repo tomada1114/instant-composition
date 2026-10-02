@@ -1,21 +1,31 @@
 import { useTranslations } from "use-intl";
-import type { ReactElement } from "react";
+import { useEffect, useRef, type ReactElement } from "react";
+
+import { playMotion } from "../drill/motion";
 
 import type { RoundSummary } from "../openapi";
 import type { Shown } from "./summary-parts";
 
-/** This round's points and the running total. */
+/** This round's points and the running total; "+N pt" pops in on a live summary. */
 export function PointsTotals({
   summary,
   shown,
-}: Readonly<{ summary: RoundSummary; shown: Shown }>): ReactElement {
+  moving,
+}: Readonly<{ summary: RoundSummary; shown: Shown; moving: boolean }>): ReactElement {
   const t = useTranslations("Summary");
   const { points } = summary;
+  const chip = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    if (moving) playMotion(chip.current, "points");
+  }, [moving]);
   return (
     <section className="flex flex-col gap-4">
       <p className="flex flex-wrap items-center justify-between gap-3">
         {points.earned > 0 ? (
-          <span className="inline-flex h-8 items-center rounded-full bg-energy px-3 font-latin text-count text-on-energy shadow-lip shadow-energy-lip">
+          <span
+            ref={chip}
+            className="inline-flex h-8 items-center rounded-full bg-energy px-3 font-latin text-count text-on-energy shadow-lip shadow-energy-lip"
+          >
             {t("points.earned", { points: points.earned })}
           </span>
         ) : (

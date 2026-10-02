@@ -10,6 +10,7 @@ import { IconButton } from "../ui/icon-button";
 import type { RoundKind, RoundSummary } from "../openapi";
 import { countUpPlan, useElapsed, valueAt } from "./count-up";
 import { GrowthSection, ReviewSection } from "./growth-section";
+import { Confetti } from "./confetti";
 import { ReachRings } from "./reach-rings";
 import {
   DifficultyLine,
@@ -61,6 +62,9 @@ export function SummaryScreen({
     [summary, live],
   );
   const elapsed = useElapsed(plan, moving);
+  const figure = useRef<HTMLParagraphElement>(null);
+  const grew = moving && summary.streak.changed;
+  const burst = grew || (moving && summary.titles.length > 0);
   usePrimaryKey();
 
   function shown(key: string, final: number): number {
@@ -104,14 +108,22 @@ export function SummaryScreen({
         }
       />
       <header className="flex flex-col items-center gap-6 text-center">
-        <h1
-          ref={heading}
-          tabIndex={-1}
-          className="text-heading focus-visible:outline-none"
-        >
-          {title}
-        </h1>
-        <StreakBlock summary={summary} shown={shown} />
+        <div className="relative flex w-full flex-col items-center gap-6">
+          {burst ? <Confetti origin={figure} /> : null}
+          <h1
+            ref={heading}
+            tabIndex={-1}
+            className="text-heading focus-visible:outline-none"
+          >
+            {title}
+          </h1>
+          <StreakBlock
+            summary={summary}
+            shown={shown}
+            figure={figure}
+            celebrate={grew}
+          />
+        </div>
         {live ? (
           <SummaryActions
             summary={summary}
@@ -135,7 +147,7 @@ export function SummaryScreen({
           <ReachRings reach={summary.reach} shown={shown} />
         </Panel>
         <Panel span="pc:col-span-4">
-          <PointsTotals summary={summary} shown={shown} />
+          <PointsTotals summary={summary} shown={shown} moving={moving} />
         </Panel>
         <Panel span="pc:col-span-7">
           <ReviewSection rows={summary.review} shown={shown} />

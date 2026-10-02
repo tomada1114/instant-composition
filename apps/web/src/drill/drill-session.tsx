@@ -12,7 +12,7 @@ import { IntroScreen } from "./intro-screen";
 import { LeaveSheet } from "./leave-sheet";
 import { PauseSheet } from "./pause-sheet";
 import { ReadyScreen } from "./ready-screen";
-import { browserSound } from "./sound";
+import { browserSound, roundSound } from "./sound";
 import { Toast } from "./toast";
 import { useAnnouncement } from "./use-announcement";
 import {
@@ -85,9 +85,9 @@ export function DrillSession({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",
     answers: [...unsaved, ...state.answers],
-    onDone: () => {
+    onDone: (summary) => {
       queue.clear();
-      if (sound) browserSound.play("closing");
+      if (sound) browserSound.play(roundSound(summary));
     },
   });
   const announcement = useAnnouncement(state, round);

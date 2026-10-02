@@ -2,50 +2,11 @@ import { useTranslations } from "use-intl";
 import { useEffect, useRef, type ReactElement } from "react";
 
 import { FocusStrip } from "../lib/frame";
-import { cn } from "../lib/utils";
 import type { Pass } from "../openapi";
 import { BoltGlyph } from "../ui/filled-glyphs";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import { playMotion } from "./motion";
-
-/** Past this many cards a tick would be thinner than it is tall, so the ticks give way to the count alone. */
-const MAX_TICKS = 30;
-
-/**
- * One tick per card of the pass: done in ink, the current one dimmed —
- * lit `good` the moment it is said — and the rest grooves. The talk
- * screen draws one per turn the same way.
- */
-export function Ticks({
-  current,
-  total,
-  lit,
-}: Readonly<{ current: number; total: number; lit: boolean }>): ReactElement | null {
-  if (total > MAX_TICKS) return null;
-  return (
-    <div aria-hidden className="flex gap-1">
-      {Array.from({ length: total }, (_, index) => {
-        const position = index + 1;
-        return (
-          <span
-            key={position}
-            className={cn(
-              "h-0.75 flex-1 rounded-full transition-colors duration-160",
-              position < current
-                ? "bg-foreground"
-                : position === current
-                  ? lit
-                    ? "bg-good"
-                    : "bg-muted-foreground"
-                  : "bg-border",
-            )}
-          />
-        );
-      })}
-    </div>
-  );
-}
 
 /**
  * The drill's progress: an 18-tall `good` pill on the bar track, the share of
