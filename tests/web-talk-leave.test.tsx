@@ -40,7 +40,7 @@ function where(): string {
   return window.location.pathname;
 }
 
-function leaveSheet(): HTMLElement | null {
+function leaveDialog(): HTMLElement | null {
   return screen.queryByRole("dialog", { name: ja.Talk.leave.title });
 }
 
@@ -246,33 +246,33 @@ describe("W4, leaving a talk under way", () => {
     write(ja.Talk.step.english, "I was swamped with work.");
     press(ja.Talk.step.send);
     press(ja.Talk.strip.close);
-    expect(leaveSheet()).not.toBeNull();
+    expect(leaveDialog()).not.toBeNull();
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
 
     press(ja.Talk.end.again);
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
   });
   it("asks from ✕ that the talk will not be kept with no turn, stays on 続ける, and opens on Esc too", async () => {
     serveTalk();
     await renderApp("/talk");
     await begin();
     press(ja.Talk.strip.close);
-    expect(leaveSheet()).toBeInTheDocument();
+    expect(leaveDialog()).toBeInTheDocument();
     expect(screen.getByText(ja.Talk.leave.lost)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: ja.Talk.leave.stay })).toHaveFocus();
     press(ja.Talk.leave.stay);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(screen.getByText(OPENING)).toBeInTheDocument();
 
     pressKey("Escape");
-    expect(leaveSheet()).toBeInTheDocument();
+    expect(leaveDialog()).toBeInTheDocument();
     pressKey("Escape");
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
   });
 
   it("leaves an Esc that cancels an input method's conversion to the input method", async () => {
@@ -288,7 +288,7 @@ describe("W4, leaving a talk under way", () => {
         }),
       );
     });
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
   });
 
   it("keeps the turns so far on 終える from ✕, and ends at おわり with no ✕", async () => {
@@ -304,7 +304,7 @@ describe("W4, leaving a talk under way", () => {
     press(ja.Talk.leave.end);
     await settle();
     expect(posted(calls, END)).toHaveLength(1);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(within(conversation()).getByText(ja.Talk.end.mark)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: ja.Talk.strip.close })).toBeNull();
     expect(screen.getByRole("button", { name: ja.Talk.end.again })).toBeInTheDocument();
@@ -364,7 +364,7 @@ describe("W4, leaving a talk under way", () => {
     };
 
     await back();
-    expect(leaveSheet()).toBeInTheDocument();
+    expect(leaveDialog()).toBeInTheDocument();
     press(ja.Talk.leave.stay);
     await settle();
     await settle(16);
@@ -393,7 +393,7 @@ describe("W4, leaving a talk under way", () => {
     }
     fireEvent.click(screen.getByRole("link", { name: link }));
     await settle();
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(where()).toBe("/");
   });
 });

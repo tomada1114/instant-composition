@@ -13,7 +13,7 @@ export {
 export { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./drill/answer-sync";
 export { CardBack, CardFront } from "./drill/flashcard";
 export { IntroScreen } from "./drill/intro-screen";
-export { PauseSheet } from "./drill/pause-sheet";
+export { PauseDialog } from "./drill/pause-dialog";
 export { TimerBar } from "./drill/timer-bar";
 export { TopStrip } from "./drill/top-strip";
 export { drillReducer } from "./drill/drill-machine";
@@ -115,7 +115,7 @@ export { ANSWER_FIELD_MAX, AnswerField } from "./ui/answer-field";
 export { Button } from "./ui/button";
 export { BoltGlyph, FlameGlyph, StarGlyph, TargetGlyph } from "./ui/filled-glyphs";
 export { HiddenAnswer } from "./ui/hidden-answer";
-export { Sheet } from "./ui/sheet";
+export { Dialog } from "./ui/dialog";
 export { Segmented } from "./ui/segmented";
 export { TalkLine, WaitingLine } from "./ui/talk-line";
 export {

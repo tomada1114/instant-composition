@@ -21,7 +21,7 @@ export interface LeaveGuard {
  * From the round's first front until it closes, holds every navigation away —
  * a tab, a link, Back — pausing the drill, until `leave` lets it through or
  * `stay` drops it. A navigation made with `ignoreBlocker` ("stop" on the pause
- * sheet) is not held, and a reload or a closed tab is not asked about: the
+ * dialog) is not held, and a reload or a closed tab is not asked about: the
  * round resumes after either. Should the round close while the question is
  * open, nothing is left to lose, so the navigation goes.
  */

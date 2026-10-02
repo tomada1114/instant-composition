@@ -561,10 +561,10 @@ describe("the settings screen, W12 measuring again", () => {
     await renderApp("/settings");
     expectLevel("auto", "730");
     fireEvent.click(retest());
-    const sheet = screen.getByRole("dialog", { name: ja.Settings.retest.title });
-    expect(within(sheet).getByText(ja.Settings.retest.body)).toBeInTheDocument();
+    const dialog = screen.getByRole("dialog", { name: ja.Settings.retest.title });
+    expect(within(dialog).getByText(ja.Settings.retest.body)).toBeInTheDocument();
     fireEvent.click(
-      within(sheet).getByRole("button", { name: ja.Settings.retest.confirm }),
+      within(dialog).getByRole("button", { name: ja.Settings.retest.confirm }),
     );
     await settle();
     expect(where()).toBe("/drill?kind=placement");

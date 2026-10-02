@@ -11,7 +11,7 @@ import {
  * 70% canvas scrim. It traps Tab inside itself, and puts focus on the element
  * marked `data-autofocus` when it opens.
  */
-export function Sheet({
+export function Dialog({
   titleId,
   children,
 }: Readonly<{ titleId: string; children: ReactNode }>): ReactElement {

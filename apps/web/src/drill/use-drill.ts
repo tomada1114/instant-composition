@@ -80,7 +80,7 @@ function inField(event: KeyboardEvent): boolean {
 
 /**
  * Routes the drill's keys to `onAction`, grading with `gradeKeys`, and pauses
- * when the page is hidden. A page shown again stays paused: the sheet waits
+ * when the page is hidden. A page shown again stays paused: the dialog waits
  * for "continue".
  */
 export function useDrillKeys(

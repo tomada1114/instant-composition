@@ -24,7 +24,7 @@ import {
 import { makeSummary } from "./web-summary-fixture";
 
 // The web client's drill, mounted as the whole app at `/drill` over a stand-in
-// API: a round run by keys and by taps to its summary, the pause sheet, the placement
+// API: a round run by keys and by taps to its summary, the pause dialog, the placement
 // intro, and each way a round cannot start or cannot be saved.
 
 const READY = homeView({ kind: "ready", streak: COUNT });
@@ -362,7 +362,7 @@ describe("the drill, a round run by taps", () => {
     await openRound("/drill?kind=today");
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.card.pause }));
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
     expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
   });
@@ -451,13 +451,13 @@ describe("the drill's start screen", () => {
   });
 });
 
-describe("the drill's pause sheet", () => {
+describe("the drill's pause dialog", () => {
   it("pauses on Escape with the card hidden, and continues on Escape", async () => {
     serve();
     await openRound("/drill?kind=today");
     press("Escape");
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
     expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
     press("Escape");
@@ -470,7 +470,7 @@ describe("the drill's pause sheet", () => {
     await openRound("/drill?kind=today");
     press("Escape");
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 1 })),
     ).toBeInTheDocument();
   });
 
@@ -478,7 +478,7 @@ describe("the drill's pause sheet", () => {
     serve();
     await openRound("/drill?kind=today");
     press("Escape");
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.quit }));
     await settle();
     expect(where()).toBe("/");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
@@ -492,7 +492,7 @@ describe("the drill's pause sheet", () => {
       document.dispatchEvent(new Event("visibilitychange"));
     });
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
   });
 
@@ -511,13 +511,13 @@ describe("the drill's pause sheet", () => {
     ).toBeInTheDocument();
     press("Escape");
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 4 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 4 })),
     ).toBeInTheDocument();
   });
 });
 
 describe("the drill's focus layout", () => {
-  function leaveSheet(): HTMLElement | null {
+  function leaveDialog(): HTMLElement | null {
     return screen.queryByRole("dialog", { name: ja.Drill.leave.title });
   }
 
@@ -555,7 +555,7 @@ describe("the drill's focus layout", () => {
     fireEvent.click(close);
     await settle(16);
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
   });
 
@@ -565,7 +565,7 @@ describe("the drill's focus layout", () => {
     fireEvent.click(screen.getByRole("link", { name: ja.Nav.close }));
     await settle();
     expect(where()).toBe("/");
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
   });
 
   it("pauses the timer mid-round and asks before Back leaves, staying on continue", async () => {
@@ -575,18 +575,18 @@ describe("the drill's focus layout", () => {
     back();
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeInTheDocument();
+    expect(leaveDialog()).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 1 })),
     ).toBeInTheDocument();
     expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
 
-    // Well past the card's 7 s while the sheet is open, and still not timed out.
+    // Well past the card's 7 s while the dialog is open, and still not timed out.
     await settle(10_000);
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.continue }));
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(where()).toBe("/drill?kind=today");
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
     await settle(4900);
@@ -601,11 +601,11 @@ describe("the drill's focus layout", () => {
     back();
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeInTheDocument();
+    expect(leaveDialog()).toBeInTheDocument();
     press("Escape");
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
     expect(screen.queryByRole("dialog")).toBeNull();
     expect(where()).toBe("/drill?kind=today");
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
@@ -634,7 +634,7 @@ describe("the drill's focus layout", () => {
     await settle();
     await settle(16);
     expect(where()).toBe("/");
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
 
     fireEvent.click(screen.getByRole("button", { name: ja.Home.progress.resume }));
     await settle();
@@ -660,8 +660,8 @@ describe("the drill's focus layout", () => {
     });
     await settle();
     await settle(16);
-    expect(leaveSheet()).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    expect(leaveDialog()).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.continue }));
     await settle();
     await settle(16);
     expect(where()).toBe("/drill?kind=today");
@@ -676,7 +676,7 @@ describe("the drill's focus layout", () => {
     await settle();
     await settle(16);
     expect(where()).toBe("/");
-    expect(leaveSheet()).toBeNull();
+    expect(leaveDialog()).toBeNull();
   });
 });
 

@@ -272,7 +272,7 @@ Japanese.
 - Requests follow the operations above: 「始める」 → `startTalk`; 「送る」 on the
   English or「わからない」 → `sendTurn`; the held reply shows after 「言えた」 or with
   the ○; W3g's「もう一度」 → `retryReply`; W4's 「終える」 → `endTalk`. Leaving mid-talk
-  goes through the drill's `useBlocker` pattern and the leave sheet's recipe.
+  goes through the drill's `useBlocker` pattern and the leave dialog's recipe.
 - A `sendTurn` that got no answer at all shows W3g as well, and its 「もう一度」 sends
   the same turn again rather than calling `retryReply`, which would answer the previous
   turn's reply; resending is safe, since a kept turn answers its stored result. The ○

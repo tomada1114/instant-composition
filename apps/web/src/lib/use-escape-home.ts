@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 /**
  * Esc goes to the start screen, unless `enabled` is off because something
- * above the screen (a sheet) takes Esc first.
+ * above the screen (a dialog) takes Esc first.
  */
 export function useEscapeHome(enabled = true): void {
   const navigate = useNavigate();

@@ -61,7 +61,7 @@ export function useTalkLeave(active: boolean): TalkLeave {
 /**
  * The talk screen's keys: Enter presses the screen's one primary action
  * (`data-primary`) unless focus is on a control, which takes its own Enter —
- * a field sends by itself — and while a sheet is up (`enter` off). Esc is
+ * a field sends by itself — and while a dialog is up (`enter` off). Esc is
  * `onEscape`.
  */
 export function useTalkKeys(onEscape: () => void, enter: boolean): void {

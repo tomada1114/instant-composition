@@ -4,14 +4,14 @@ import type { ReactElement } from "react";
 import { Button } from "../ui/button";
 import { TUNING } from "../lib/tuning";
 import { Kbd } from "../ui/kbd";
-import { Sheet } from "../ui/sheet";
+import { Dialog } from "../ui/dialog";
 
 /**
- * The pause sheet's recipe, asked when a tab or Back would leave a round
+ * The pause dialog's recipe, asked when a tab or Back would leave a round
  * under way: leave, as "stop" does, or go on; focus waits on "continue",
  * which Escape also presses.
  */
-export function LeaveSheet({
+export function LeaveDialog({
   position,
   onLeave,
   onStay,
@@ -22,13 +22,13 @@ export function LeaveSheet({
 }>): ReactElement {
   const t = useTranslations("Drill");
   return (
-    <Sheet titleId="leave-title">
+    <Dialog titleId="leave-title">
       <div className="flex flex-col gap-2">
         <h2 id="leave-title" className="text-heading">
           {t("leave.title")}
         </h2>
         <p className="font-latin text-count text-muted-foreground">
-          {t("sheet.hint", { hour: TUNING.dayBoundaryHour, position })}
+          {t("dialog.hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>
       <div className="grid grid-cols-2 gap-3">
@@ -36,10 +36,10 @@ export function LeaveSheet({
           {t("leave.go")}
         </Button>
         <Button className="w-full" data-autofocus onClick={onStay}>
-          {t("sheet.continue")}
+          {t("dialog.continue")}
           <Kbd>Esc</Kbd>
         </Button>
       </div>
-    </Sheet>
+    </Dialog>
   );
 }

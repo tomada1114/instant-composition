@@ -7,7 +7,7 @@ import {
   CardFront,
   CatalogProvider,
   IntroScreen,
-  PauseSheet,
+  PauseDialog,
   TimerBar,
   TopStrip,
   type DrillCard,
@@ -234,10 +234,10 @@ function legend(container: HTMLElement): string[][] {
   );
 }
 
-describe("PauseSheet", () => {
+describe("PauseDialog", () => {
   it("lists → K F and ← J D while the learner keeps the default grade keys", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -254,7 +254,7 @@ describe("PauseSheet", () => {
 
   it("lists only the keys the learner chose", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={{ ok: "Digit1", ng: "ArrowUp" }}
         onQuit={() => undefined}
@@ -269,7 +269,7 @@ describe("PauseSheet", () => {
 
   it("asks whether to stop here, and focuses continue", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={7}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -277,42 +277,44 @@ describe("PauseSheet", () => {
       />,
     );
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 7 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 7 })),
     ).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: ja.Drill.sheet.continue })).toHaveFocus();
+    expect(
+      screen.getByRole("button", { name: ja.Drill.dialog.continue }),
+    ).toHaveFocus();
   });
 
   it("quits and continues through its buttons", () => {
     const onQuit = vi.fn();
     const onContinue = vi.fn();
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={onQuit}
         onContinue={onContinue}
       />,
     );
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.quit }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.continue }));
     expect(onQuit).toHaveBeenCalledOnce();
     expect(onContinue).toHaveBeenCalledOnce();
   });
 
-  it("keeps Tab inside the sheet", () => {
+  it("keeps Tab inside the dialog", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
         onContinue={() => undefined}
       />,
     );
-    const quit = screen.getByRole("button", { name: ja.Drill.sheet.quit });
-    const resume = screen.getByRole("button", { name: ja.Drill.sheet.continue });
+    const quit = screen.getByRole("button", { name: ja.Drill.dialog.quit });
+    const resume = screen.getByRole("button", { name: ja.Drill.dialog.continue });
     fireEvent.keyDown(resume, { key: "Tab" });
     expect(quit).toHaveFocus();
     fireEvent.keyDown(quit, { key: "Tab", shiftKey: true });
