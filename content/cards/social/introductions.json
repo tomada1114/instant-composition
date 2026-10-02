@@ -366,6 +366,32 @@
     }
   },
   {
+    "id": "c_3y9p4r6r",
+    "ja": "私をサムと呼んで。",
+    "en": "Call me Sam.",
+    "alternatives": ["Use Sam for me.", "Please address me as Sam."],
+    "point": "call me + 名前で呼び方を伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_4g3y6n3s",
+    "ja": "私は先に挨拶すべき。",
+    "en": "I should say hello first.",
+    "alternatives": ["I ought to greet you first.", "I should first greet you."],
+    "point": "should で先に挨拶するのがよいと伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4n6z6c2x",
     "ja": "ピアノが弾けます。",
     "en": "I can play piano.",
@@ -613,6 +639,22 @@
     }
   },
   {
+    "id": "c_6c3b2a9f",
+    "ja": "型にはめられるのを嫌い私は肩書きを避ける。",
+    "en": "Resisting being pigeonholed, I dispense with job titles.",
+    "alternatives": [
+      "Avoiding being labeled, I do without professional titles.",
+      "Rejecting rigid categories, I avoid using job titles."
+    ],
+    "point": "dispense with は不要と考えて使わない。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6d6m9p8v",
     "ja": "私は先生です。",
     "en": "I'm a teacher.",
@@ -630,6 +672,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6f6c4v7q",
+    "ja": "私は英語を勉強中。",
+    "en": "I'm studying English.",
+    "alternatives": ["I'm learning English.", "I'm taking English classes."],
+    "point": "am studying で現在勉強していることを伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6g9a6h7j",
@@ -674,6 +729,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7e9r6q4e",
+    "ja": "私の得意分野は言外の意味を読むことです。",
+    "en": "What I do best is decipher what's left unsaid.",
+    "alternatives": [
+      "My strength is understanding what people leave unspoken.",
+      "I'm best at interpreting what isn't explicitly said."
+    ],
+    "point": "left unsaid は口にされないが含まれている意味。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7f5g2j9b",
@@ -756,6 +827,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7s4a3f5k",
+    "ja": "仕事で私は合わなそうな意見をまとめる。",
+    "en": "My work has me reconciling seemingly irreconcilable positions.",
+    "alternatives": [
+      "My job involves getting apparently incompatible viewpoints reconciled.",
+      "My work makes me reconcile seemingly incompatible positions."
+    ],
+    "point": "have 人 doing は仕事でその役割を担うことを表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7u9e5v5c",

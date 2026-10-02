@@ -682,6 +682,38 @@
     }
   },
   {
+    "id": "c_6g8c7q3q",
+    "ja": "私は気づかず君の善意を利用し続けてた。",
+    "en": "I've been trading on your goodwill without realizing.",
+    "alternatives": [
+      "I've been unknowingly taking advantage of your goodwill.",
+      "I've been unwittingly exploiting your generosity."
+    ],
+    "point": "trade on は相手の善意などを自分の利益に使う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_6m8t3w6m",
+    "ja": "彼は私の判断の過ちを見逃すと言った。",
+    "en": "He said he'd overlook my lapse in judgment.",
+    "alternatives": [
+      "He said he'd forgive my lapse in judgment.",
+      "He said he'd excuse my lapse in judgment."
+    ],
+    "point": "a lapse in judgment は一時的に判断を誤ったこと。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6y7z3w6x",
     "ja": "君のしてくれたことが、沁みたよ。",
     "en": "What you did really touched me.",
@@ -784,6 +816,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7u4v2b4f",
+    "ja": "君の厚意にどう報いるか私には分からない。",
+    "en": "I don't know how to reciprocate your generosity.",
+    "alternatives": [
+      "I'm unsure how I can repay your kindness.",
+      "I don't know how to return your generosity."
+    ],
+    "point": "reciprocate は受けた厚意に応える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7w7g3z2x",

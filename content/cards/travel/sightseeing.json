@@ -240,6 +240,19 @@
     }
   },
   {
+    "id": "c_3j3m8p5r",
+    "ja": "この塔の方が古い。",
+    "en": "This tower is older.",
+    "alternatives": ["This tower's been here longer.", "This is the older tower."],
+    "point": "older で建物の古さを比較する。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3k3p6c3c",
     "ja": "ここの本物らしさは見せかけだ。",
     "en": "What passes for authenticity here is window dressing.",
@@ -298,6 +311,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3p8m2a6e",
+    "ja": "私が入ってもいい？",
+    "en": "May I enter?",
+    "alternatives": ["Can I come in?", "Is entering allowed?"],
+    "point": "May I で入場してよいか尋ねる。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3q6v2v8g",
@@ -1082,6 +1108,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9x5s4m5f",
+    "ja": "この庭は静か。",
+    "en": "This garden is quiet.",
+    "alternatives": ["This garden's peaceful.", "This garden is calm."],
+    "point": "quiet は音が少なく静かな状態。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9y4w7y9m",

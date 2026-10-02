@@ -107,6 +107,22 @@
     }
   },
   {
+    "id": "c_2q8a5y5m",
+    "ja": "この招待は私にはほぼ安心を与えない。",
+    "en": "Little reassurance does this invitation offer me.",
+    "alternatives": [
+      "This invitation offers me very little reassurance.",
+      "I get scarcely any reassurance from this invitation."
+    ],
+    "point": "reassurance は数えず、little を前に出すと倒置する。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2w5c5n9u",
     "ja": "昨日カイを誘ったよ。",
     "en": "I invited Kai yesterday.",
@@ -748,6 +764,22 @@
     }
   },
   {
+    "id": "c_6w4n5x5n",
+    "ja": "彼女は私の沈黙は同意と見られると言った。",
+    "en": "She said my silence would pass for tacit consent.",
+    "alternatives": [
+      "She said my silence would be taken as consent.",
+      "She said silence would be interpreted as my consent."
+    ],
+    "point": "tacit consent は言葉にせず示した同意。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6x2k6u6v",
     "ja": "一番来てほしいのは、君なんだよ。",
     "en": "It's you I most want to come.",
@@ -998,6 +1030,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9g9m4u5p",
+    "ja": "君の軽い誘いは今や私を縛ってる。",
+    "en": "Your offhand invitation has since become binding.",
+    "alternatives": [
+      "Your casually offered invitation now feels obligatory to me.",
+      "The casual invitation you made has become my obligation."
+    ],
+    "point": "offhand は深く考えず軽く口にしたという含み。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9t5g4w9v",

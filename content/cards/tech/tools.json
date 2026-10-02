@@ -262,6 +262,22 @@
     }
   },
   {
+    "id": "c_3z6k7f2p",
+    "ja": "洗練されて見えてもこのツールには癖がある。",
+    "en": "Polished though it seems, this tool has quirks.",
+    "alternatives": [
+      "Although it looks polished, this tool has peculiarities.",
+      "This tool has idiosyncrasies despite appearing refined."
+    ],
+    "point": "polished はよく仕上がっているように見える。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4g6q5g5s",
     "ja": "先月、CIを乗り換えた。",
     "en": "We switched CI tools last month.",
@@ -713,6 +729,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7b9s6x4j",
+    "ja": "更新後に私は初めて隠れた代償を悟った。",
+    "en": "Only after updating did I grasp the hidden trade-off.",
+    "alternatives": [
+      "I understood the hidden trade-off only after updating.",
+      "Only following the update did I realize the concealed cost."
+    ],
+    "point": "only after の句を前に置くと did が主語の前に出る。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j3v5r2a",
+    "ja": "窓口は我々の試みは本題と無関係だと言った。",
+    "en": "Support claimed what we'd tried was beside the point.",
+    "alternatives": [
+      "Support said our attempts were irrelevant to the issue.",
+      "Support maintained that our attempts were irrelevant."
+    ],
+    "point": "beside the point は今の論点とは関係がない。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7p8t5b5a",

@@ -442,6 +442,22 @@
     }
   },
   {
+    "id": "c_5n4y4c5j",
+    "ja": "収まって見えても障害は未解決だ。",
+    "en": "Contained though it seems, this outage remains unresolved.",
+    "alternatives": [
+      "Although apparently contained, this outage still isn't resolved.",
+      "This outage remains unresolved despite seeming contained."
+    ],
+    "point": "contained は影響を抑えた状態で、解決済みとは限らない。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5p6v5a6c",
     "ja": "三時にアラートが鳴った。",
     "en": "The alert fired at three.",
@@ -820,6 +836,22 @@
     }
   },
   {
+    "id": "c_8h9e4w5t",
+    "ja": "担当は復旧らしいのは一時しのぎと言った。",
+    "en": "Ops said the apparent recovery was merely a reprieve.",
+    "alternatives": [
+      "Ops said the seeming recovery was just temporary relief.",
+      "Ops said it only looked recovered for the moment."
+    ],
+    "point": "reprieve は問題が消えたのでなく一時的に逃れた状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8j4z5g5u",
     "ja": "客が困ってるよ。",
     "en": "Customers are having trouble.",
@@ -1021,6 +1053,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9t8n6t5f",
+    "ja": "一時しのぎで我々を油断させないで。",
+    "en": "Don't let a stopgap lull us into complacency.",
+    "alternatives": [
+      "Don't let a stopgap fix give us false confidence.",
+      "Don't allow a temporary fix to make us complacent."
+    ],
+    "point": "lull 人 into complacency は安心させて警戒心を失わせる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9u5c5k9c",

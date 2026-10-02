@@ -445,6 +445,22 @@
     }
   },
   {
+    "id": "c_5k9t3k5t",
+    "ja": "私が選んだ日はもう埋まってる。",
+    "en": "The date I chose is booked.",
+    "alternatives": [
+      "The day I picked is already taken.",
+      "The date I selected has been booked."
+    ],
+    "point": "chose の過去と is の今の状態を分ける。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5m4j7y6v",
     "ja": "明日、空いてる？",
     "en": "Are you free tomorrow?",
@@ -547,6 +563,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6w6u5u2s",
+    "ja": "君が提案した日は空いてる。",
+    "en": "The date you suggested is available.",
+    "alternatives": [
+      "The day you proposed is open.",
+      "There's availability on the date you suggested."
+    ],
+    "point": "you suggested がどの日かを絞る。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6y3b2p9d",
@@ -966,6 +998,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q3z3k6u",
+    "ja": "私たちは候補日を絞るべき。",
+    "en": "We should narrow the dates.",
+    "alternatives": [
+      "We ought to reduce the date options.",
+      "We should choose fewer possible dates."
+    ],
+    "point": "narrow は候補の範囲を小さくする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8r9z9b5v",

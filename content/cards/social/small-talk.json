@@ -170,6 +170,22 @@
     }
   },
   {
+    "id": "c_3g9s3f8x",
+    "ja": "気乗りしなくても私も行くよ。",
+    "en": "Even if reluctant, I'll tag along.",
+    "alternatives": [
+      "I'll come along even if I'm reluctant.",
+      "I'll accompany you despite not being keen."
+    ],
+    "point": "tag along は他の人について一緒に行く。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j6e6m3j",
     "ja": "ここに人が来る理由、分かる？",
     "en": "Do you know what draws people here?",
@@ -468,6 +484,22 @@
     }
   },
   {
+    "id": "c_5g9d9r4d",
+    "ja": "我々が粘れば雨をやり過ごせたのに。",
+    "en": "If we'd persevered, we'd have outlasted the rain.",
+    "alternatives": [
+      "Had we persevered, we'd have outlasted the rain.",
+      "We'd have outlasted the rain if we'd persevered."
+    ],
+    "point": "outlast は何かが終わるまで持ちこたえる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5h6n2h9m",
     "ja": "私たちが座った途端、雨が降り出した。",
     "en": "Hardly had we sat down when it poured.",
@@ -548,6 +580,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6m9h6s7e",
+    "ja": "私は気まぐれに出かけ続けてる。",
+    "en": "I've been venturing out spontaneously.",
+    "alternatives": [
+      "I've been going out on a whim.",
+      "I've been making spontaneous outings."
+    ],
+    "point": "spontaneously は思いつくままに、その場の気持ちで。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6w6u7s6d",

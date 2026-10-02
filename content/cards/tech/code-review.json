@@ -731,6 +731,22 @@
     }
   },
   {
+    "id": "c_7h6q2d9w",
+    "ja": "私が嫌なのはこれが責任の所在を隠す点だ。",
+    "en": "What bothers me is how this disguises responsibility.",
+    "alternatives": [
+      "It's the way this conceals responsibility that bothers me.",
+      "What concerns me is this hiding who's responsible."
+    ],
+    "point": "what の強調で責任の所在を隠す点を取り出す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7p9g2z9w",
     "ja": "マージ前に誰か気づいてたらなあ。",
     "en": "I wish someone had caught this before merging.",
@@ -819,6 +835,22 @@
     }
   },
   {
+    "id": "c_8d7x6k2n",
+    "ja": "私は安全策の頼りなさを知っておけばな。",
+    "en": "If only I'd known how little that safeguard guaranteed.",
+    "alternatives": [
+      "I wish I'd realized how little that safeguard ensured.",
+      "If only I'd understood how unreliable that safeguard was."
+    ],
+    "point": "how little で安全策が保証する範囲の乏しさを表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["wishes-regrets", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8e7c8z4d",
     "ja": "彼女は我々の修正が表面的だと言った。",
     "en": "She said what we'd fixed was merely cosmetic.",
@@ -877,6 +909,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8m7q5r5m",
+    "ja": "便利でもこの近道は意図をぼかす。",
+    "en": "Handy though it is, this shortcut obscures intent.",
+    "alternatives": [
+      "Although handy, this shortcut makes the intent unclear.",
+      "This shortcut obscures intent despite being convenient."
+    ],
+    "point": "形容詞 + though の譲歩で便利さと不明瞭さを対比する。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8r6j2p7s",

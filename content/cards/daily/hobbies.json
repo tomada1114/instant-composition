@@ -523,6 +523,22 @@
     }
   },
   {
+    "id": "c_6h3t9g3s",
+    "ja": "私は失敗した写真を省くよ。",
+    "en": "I'll weed out unsuccessful shots.",
+    "alternatives": [
+      "I'll remove the failed photos.",
+      "I'll eliminate the unsuccessful photographs."
+    ],
+    "point": "weed out は不要なものを選んで取り除く。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6u3t3a4q",
     "ja": "週末は休むといいよ。",
     "en": "You should rest this weekend.",
@@ -562,6 +578,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z3e7j8b",
+    "ja": "私は絵の腕を磨きたい。",
+    "en": "I want to refine my painting.",
+    "alternatives": [
+      "I'd like to improve my painting skills.",
+      "I want to hone my painting skills."
+    ],
+    "point": "refine は細部を磨いて質を高める。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7a6e6z8j",
@@ -880,6 +912,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9b4x9t3p",
+    "ja": "私は兄に伴奏を頼んだ。",
+    "en": "I asked my brother to accompany me.",
+    "alternatives": [
+      "I asked my brother to provide accompaniment.",
+      "I asked my brother for musical accompaniment."
+    ],
+    "point": "accompany は歌に合わせて楽器で伴奏する。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9e4g2b2m",

@@ -464,6 +464,19 @@
     }
   },
   {
+    "id": "c_4v8g4f8d",
+    "ja": "私が二つを比べるよ。",
+    "en": "I'll compare both.",
+    "alternatives": ["I'll compare the two.", "I'll check both against each other."],
+    "point": "compare both は二つの選択肢を比べる。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4z2c9t4v",
     "ja": "私は案を既に比較してた。",
     "en": "I'd already weighed the options.",
@@ -616,6 +629,19 @@
     }
   },
   {
+    "id": "c_5x5v9a4s",
+    "ja": "この案を残して。",
+    "en": "Keep this option.",
+    "alternatives": ["Retain this option.", "Don't drop this plan."],
+    "point": "keep で設計の案を候補として残す。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5y3j4x3y",
     "ja": "キューに通せば、丈夫なのに。",
     "en": "If we queued it, it'd be sturdier.",
@@ -759,6 +785,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7s4z4w8k",
+    "ja": "我々は安全を考えなきゃ。",
+    "en": "We must consider safety.",
+    "alternatives": ["We have to consider safety.", "We need to consider safety."],
+    "point": "must で安全を考慮する必要を伝える。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7t9s9p3m",

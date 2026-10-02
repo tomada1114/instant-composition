@@ -107,6 +107,22 @@
     }
   },
   {
+    "id": "c_3f4s7j6t",
+    "ja": "彼女は我々に相違を整理させた。",
+    "en": "She had us reconcile our differences.",
+    "alternatives": [
+      "She made us resolve our disagreements.",
+      "She got us to settle our differences."
+    ],
+    "point": "reconcile differences は相違をすり合わせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3q2v6z6c",
     "ja": "議事録は私が取ります？",
     "en": "Shall I take the minutes?",
@@ -507,6 +523,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7h2k5w7a",
+    "ja": "我々が譲れば妥協点に達したのに。",
+    "en": "If we'd conceded, we'd have reached a compromise.",
+    "alternatives": [
+      "Had we conceded, we'd have reached a compromise.",
+      "We'd have found a compromise if we'd conceded."
+    ],
+    "point": "concede は争点について相手の言い分を認める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7h6n8z2r",

@@ -630,6 +630,22 @@
     }
   },
   {
+    "id": "c_6g2r3k9n",
+    "ja": "その台車を廊下に戻して。",
+    "en": "Return that cart to the hallway.",
+    "alternatives": [
+      "Put that cart back in the hallway.",
+      "Take that cart back to the hall."
+    ],
+    "point": "return + 物 + to で元の場所に戻す。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6k5e4d5g",
     "ja": "時間があれば手伝うのに。",
     "en": "If I had time, I'd help.",
@@ -669,6 +685,35 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6z7g3s7s",
+    "ja": "私は備品共有が好き。",
+    "en": "I like sharing office supplies.",
+    "alternatives": [
+      "I enjoy sharing workplace supplies.",
+      "I like letting others use office supplies."
+    ],
+    "point": "supplies は職場で使う消耗品や備品。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b8g9f8z",
+    "ja": "私が席を外してもいい？",
+    "en": "May I step away?",
+    "alternatives": ["Could I leave my desk?", "Would it be okay to step out?"],
+    "point": "step away は仕事の場所を一時離れる。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7d3x6d3j",
