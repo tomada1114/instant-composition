@@ -21,6 +21,7 @@ import {
   refusal,
   renderApp,
   settle,
+  SETTINGS_OPTIONS,
   type ApiCall,
   warmUp,
 } from "./web-harness";
@@ -74,6 +75,7 @@ const PAGE: SettingsPageView = {
   toeic: "730",
   difficulty: { mode: "auto", level: 5, toeic: "730" },
   levels: LEVELS,
+  options: SETTINGS_OPTIONS,
 };
 
 /** The same page with the level fixed by hand, where the levels are offered. */
@@ -212,6 +214,21 @@ describe("the settings screen, W11 topics", () => {
 });
 
 describe("the settings screen, W11 focus", () => {
+  it("stops picking at the focus cap returned by the API", async () => {
+    serveSettings({ ...PAGE, options: { ...SETTINGS_OPTIONS, maxFocus: 1 } });
+    await renderApp("/settings");
+    const focus = screen.getByRole("group", { name: ja.Settings.focus.title });
+    fireEvent.click(within(focus).getByRole("button", { name: "会議" }));
+    await settle();
+    expect(within(focus).getByRole("button", { name: "家" })).toBeDisabled();
+    expect(
+      screen.getByText(fill(ja.Settings.focus.count, { count: 1, max: 1 })),
+    ).toBeInTheDocument();
+    fireEvent.click(within(focus).getByRole("button", { name: "会議" }));
+    await settle();
+    expect(within(focus).getByRole("button", { name: "家" })).toBeEnabled();
+  });
+
   it("offers the chosen topics' subtopics and stops at two", async () => {
     const { patches } = serveSettings();
     await renderApp("/settings");
@@ -270,6 +287,30 @@ function limitRadio(group: string, count: number | null): HTMLElement {
 }
 
 describe("the settings screen, W11 daily limits and sound", () => {
+  it("offers exactly the daily and time limits returned by the API", async () => {
+    serveSettings({
+      ...PAGE,
+      options: {
+        ...SETTINGS_OPTIONS,
+        newPerDay: [3, 5],
+        reviewsPerDay: [20, null],
+        limitSeconds: [30, 60],
+      },
+    });
+    await renderApp("/settings");
+    for (const [name, values] of [
+      [ja.Settings.daily.newTitle, ["3", "5"]],
+      [ja.Settings.daily.reviewsTitle, ["20", ja.Settings.daily.unlimited]],
+      [ja.Settings.limit.title, ["30", "60"]],
+    ] as const) {
+      expect(
+        within(screen.getByRole("radiogroup", { name }))
+          .getAllByRole("radio")
+          .map((radio) => radio.textContent),
+      ).toStrictEqual(values);
+    }
+  });
+
   it("offers new sentences a day and saves one picked, saying when it completes today", async () => {
     const { patches } = serveSettings(PAGE, { completedToday: true });
     await renderApp("/settings");

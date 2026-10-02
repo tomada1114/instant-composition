@@ -87,8 +87,8 @@ export interface DrillInit {
   readonly deck: readonly string[];
   /** Each card's time limit: the one the round was dealt with. */
   readonly limits: Readonly<Record<string, number>>;
-  /** Each card's pace, which "fast" is judged by rather than the limit. */
-  readonly paces: Readonly<Record<string, number>>;
+  /** Each card's API threshold for a fast flip, independent of the limit. */
+  readonly fastThresholds: Readonly<Record<string, number>>;
   /** The cards new to the learner, which come back once more after their first ○. */
   readonly isNew: Readonly<Record<string, boolean>>;
   readonly answered: readonly { readonly cardId: string; readonly pass: Pass }[];
@@ -101,7 +101,7 @@ export interface DrillState {
   readonly roundId: string;
   readonly retries: boolean;
   readonly limits: Readonly<Record<string, number>>;
-  readonly paces: Readonly<Record<string, number>>;
+  readonly fastThresholds: Readonly<Record<string, number>>;
   readonly isNew: Readonly<Record<string, boolean>>;
   /** First-pass cards not shown yet, in the deck's order. */
   readonly fresh: readonly string[];
@@ -166,9 +166,9 @@ export function limitOf(state: DrillState): number {
   return card === undefined ? 0 : (state.limits[card.cardId] ?? 0);
 }
 
-export function paceOf(state: DrillState): number {
+export function fastThresholdOf(state: DrillState): number {
   const card = currentCard(state);
-  return card === undefined ? 0 : (state.paces[card.cardId] ?? 0);
+  return card === undefined ? 0 : (state.fastThresholds[card.cardId] ?? 0);
 }
 
 export function usedMs(

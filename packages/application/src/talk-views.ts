@@ -1,5 +1,6 @@
 import {
   isClosing,
+  TALK_TUNING,
   type Judgment,
   type Scene,
   type Talk,
@@ -13,6 +14,8 @@ export interface TalkOpened {
   readonly talkId: string;
   readonly scene: Scene;
   readonly opening: string;
+  /** Turns the client shows and follows for this talk. */
+  readonly turnCount: number;
 }
 
 /** The partner's reply to a turn; `closing` on the last turn's. */
@@ -33,7 +36,12 @@ export interface TalkEnded {
 }
 
 export function openedOf(talk: Talk): TalkOpened {
-  return { talkId: talk.id, scene: talk.scene, opening: talk.opening };
+  return {
+    talkId: talk.id,
+    scene: talk.scene,
+    opening: talk.opening,
+    turnCount: TALK_TUNING.turns,
+  };
 }
 
 export function turnResultOf(turn: Turn): TurnResult {

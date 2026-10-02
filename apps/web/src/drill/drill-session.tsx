@@ -39,7 +39,7 @@ function startDrill({
     roundId: round.id,
     deck: round.deck,
     limits: Object.fromEntries(cards.map((card) => [card.id, card.limitMs])),
-    paces: Object.fromEntries(cards.map((card) => [card.id, card.paceMs])),
+    fastThresholds: Object.fromEntries(cards.map((card) => [card.id, card.fastMs])),
     isNew: Object.fromEntries(cards.map((card) => [card.id, card.isNew])),
     answered,
     retries: round.retries,
@@ -55,6 +55,7 @@ export function DrillSession({
   sound,
   gradeKeys,
   dailySize,
+  dayBoundaryHour,
   onNext,
 }: Readonly<{
   round: RoundPayload;
@@ -63,6 +64,7 @@ export function DrillSession({
   sound: boolean;
   gradeKeys: GradeKeyTrio;
   dailySize: number;
+  dayBoundaryHour: number;
   onNext: (kind: RoundKind) => void;
 }>): ReactElement {
   const t = useTranslations("Drill");
@@ -166,9 +168,15 @@ export function DrillSession({
         }}
       />
       {leave.asking ? (
-        <LeaveDialog position={resumeAt} onLeave={leave.leave} onStay={resume} />
+        <LeaveDialog
+          dayBoundaryHour={dayBoundaryHour}
+          position={resumeAt}
+          onLeave={leave.leave}
+          onStay={resume}
+        />
       ) : state.paused ? (
         <PauseDialog
+          dayBoundaryHour={dayBoundaryHour}
           position={resumeAt}
           gradeKeys={gradeKeys}
           onQuit={goHome}

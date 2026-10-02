@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { TUNING } from "../lib/tuning";
 import type { HomeState, HomeView, RoundKind } from "../openapi";
 import { Button } from "../ui/button";
 import { ArrowGlyph, CheckGlyph } from "../ui/glyphs";
@@ -15,11 +14,11 @@ export const ACTIONS = "flex flex-col gap-3 pc:flex-row-reverse pc:self-end";
 /** The primary inside `ACTIONS`: full width below `pc`, its own width from it. */
 export const PRIMARY = "pc:w-auto pc:min-w-56";
 
-function Deadline(): ReactElement {
+function Deadline({ hour }: Readonly<{ hour: number }>): ReactElement {
   const t = useTranslations("Home");
   return (
     <p className="font-latin text-count text-muted-foreground">
-      {t("deadline", { hour: TUNING.dayBoundaryHour })}
+      {t("deadline", { hour })}
     </p>
   );
 }
@@ -111,7 +110,7 @@ export function DonePanel({
         <>
           <div className="flex flex-col gap-1">
             <p>{t("restores", { days: state.restoresTo })}</p>
-            <Deadline />
+            <Deadline hour={view.dayBoundaryHour} />
           </div>
           <div className={ACTIONS}>
             <Primary
@@ -155,7 +154,7 @@ export function RecoverPanel({
             minutes: view.preview?.minutes ?? 0,
           })}
         </p>
-        <Deadline />
+        <Deadline hour={view.dayBoundaryHour} />
       </div>
       <div className={ACTIONS}>
         <Primary

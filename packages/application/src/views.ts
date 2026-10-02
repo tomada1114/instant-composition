@@ -31,6 +31,8 @@ export interface DrillCard {
   readonly limitMs: number;
   /** What a flip is "fast" against, from the model answer's length. */
   readonly paceMs: number;
+  /** A flip at or before this threshold is fast; the client applies no ratio. */
+  readonly fastMs: number;
   /** Days until each grade of its first answer today brings the card back. */
   readonly intervals: GradeIntervals;
   /** Never answered in the drill when dealt; a card seen before FSRS is not new. */

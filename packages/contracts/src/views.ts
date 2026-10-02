@@ -36,6 +36,8 @@ export const drillCardSchema = z.object({
   limitMs: countSchema,
   /** What a flip is "fast" against, from the model answer's length. */
   paceMs: countSchema,
+  /** A flip at or before this threshold counts as fast. */
+  fastMs: countSchema,
   /** Days until each grade of its first answer today brings the card back. */
   intervals: gradeIntervalsSchema,
   /** Never answered in the drill when dealt; a card seen before three grades is not new. */

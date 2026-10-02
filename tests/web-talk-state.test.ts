@@ -27,6 +27,7 @@ function opened(talkId: string): TalkOpened {
       description: "カフェ。",
     },
     opening: "Hi there.",
+    turnCount: 6,
   };
 }
 
@@ -189,6 +190,17 @@ describe("the talk reducer", () => {
     const after = talkReducer(before, last);
     expect(step(after)).toBe(expected);
     expect(after).toBe(before);
+  });
+
+  it("ends at the turn count returned for this talk even without a closing reply", () => {
+    const state = run(
+      { type: "start" },
+      { type: "opened", opened: { ...opened(ID), turnCount: 1 } },
+      { type: "japanese", text: "日本語" },
+      { type: "english", text: "English." },
+      { type: "answered", talkId: ID, result: turnResult("failed", 1) },
+    );
+    expect(step(state)).toBe("ended");
   });
 
   it("ends after the sixth turn even when its reply does not say it closes", () => {

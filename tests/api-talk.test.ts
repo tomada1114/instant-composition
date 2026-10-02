@@ -15,7 +15,7 @@ import {
   talkOpenedSchema,
   turnResultSchema,
 } from "@instant-composition/contracts";
-import { err } from "@instant-composition/domain";
+import { err, TALK_TUNING } from "@instant-composition/domain";
 import type * as z from "zod";
 
 import { makeApi, subjectAuthenticator, type ApiHarness } from "./api-harness";
@@ -91,6 +91,7 @@ describe("a whole talk on the stand-in model", () => {
 
     const opened = await started(api);
     expect(opened.talkId).toBe("t1");
+    expect(opened.turnCount).toBe(TALK_TUNING.turns);
     expect(opened.opening).not.toBe("");
 
     for (const n of [1, 2, 3, 4, 5]) {

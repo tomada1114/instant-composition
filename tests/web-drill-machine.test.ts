@@ -16,8 +16,6 @@ import {
 } from "@instant-composition/web";
 
 const LIMIT = 7000;
-/** Each card's pace, which "fast" is judged by; equal to the limit unless a case says otherwise. */
-const PACE = 7000;
 /** The wall clock, in epoch ms, when the monotonic clock reads zero. */
 const WALL = 1_790_000_000_000;
 
@@ -37,7 +35,7 @@ function init(overrides: Partial<DrillInit> = {}): DrillState {
     roundId: "round-1",
     deck,
     limits: each(deck, LIMIT),
-    paces: each(deck, PACE),
+    fastThresholds: each(deck, 3500),
     isNew: {},
     answered: [],
     retries: true,
@@ -145,6 +143,16 @@ describe("the front's clock", () => {
 });
 
 describe("grading a back", () => {
+  it.each([
+    [1200, true],
+    [1201, false],
+  ])("grades a %i ms flip using the card's returned threshold", (elapsedMs, fast) => {
+    const state = init({ fastThresholds: each(ids(3), 1200) });
+    expect(grade(flipAfter(state, 0, elapsedMs), "good", 2000).phase).toMatchObject({
+      fast,
+    });
+  });
+
   it.each(["again", "hard", "good"] as const)(
     "ignores the %s key for 150 ms after the back appears",
     (given) => {
@@ -159,7 +167,7 @@ describe("grading a back", () => {
     expect(grade(back, "good", 2001).phase.kind).toBe("feedback");
   });
 
-  it("records the grade, counts the combo and marks a flip within half the pace as fast", () => {
+  it("records the grade, counts the combo and marks a flip within the API threshold as fast", () => {
     const state = grade(flipAfter(init(), 0, 2100), "good", 3000);
     expect(state.phase).toStrictEqual({
       kind: "feedback",
@@ -183,7 +191,7 @@ describe("grading a back", () => {
     ]);
   });
 
-  it("calls a △ within half the pace fast too, and a × never", () => {
+  it("calls a △ within the API threshold fast too, and a × never", () => {
     expect(grade(flipAfter(init(), 0, 2100), "hard", 3000).phase).toMatchObject({
       fast: true,
     });
@@ -206,12 +214,12 @@ describe("grading a back", () => {
     ]);
   });
 
-  it("does not call a flip past half the pace fast", () => {
+  it("does not call a flip past the API threshold fast", () => {
     const state = grade(flipAfter(init(), 0, 3600), "good", 4000);
     expect(state.phase).toMatchObject({ fast: false });
   });
 
-  it("judges fast against the card's pace, not a longer limit the round was dealt with", () => {
+  it("judges fast against the API threshold, not a longer limit the round was dealt with", () => {
     const long = init({ limits: each(ids(3), 60_000) });
     expect(grade(flipAfter(long, 0, 3600), "good", 4000).phase).toMatchObject({
       fast: false,

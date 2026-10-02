@@ -39,7 +39,7 @@ function state(intro = false): DrillState {
     roundId: "r",
     deck: ["c1", "c2"],
     limits: { c1: 7000, c2: 7000 },
-    paces: { c1: 7000, c2: 7000 },
+    fastThresholds: { c1: 3500, c2: 3500 },
     isNew: {},
     answered: [],
     retries: true,

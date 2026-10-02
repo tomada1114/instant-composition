@@ -25,7 +25,7 @@ function fresh(): DrillState {
     roundId: "r",
     deck: ["c1", "c2"],
     limits: { c1: LIMIT, c2: LIMIT },
-    paces: { c1: LIMIT, c2: LIMIT },
+    fastThresholds: { c1: 3500, c2: 3500 },
     isNew: {},
     answered: [],
     retries: true,

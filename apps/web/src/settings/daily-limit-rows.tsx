@@ -1,8 +1,7 @@
 import { useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { TUNING } from "../lib/tuning";
-import type { Settings } from "../openapi";
+import type { Settings, SettingsPageView } from "../openapi";
 import { InfoTip } from "../ui/info-tip";
 import { Segmented } from "../ui/segmented";
 import { SettingsRow } from "./settings-row";
@@ -20,7 +19,11 @@ type ReviewChoice = Exclude<Settings["reviewsPerDay"], null> | "unlimited";
  */
 export function DailyLimitRows({
   state,
-}: Readonly<{ state: SettingsState }>): ReactElement {
+  options,
+}: Readonly<{
+  state: SettingsState;
+  options: SettingsPageView["options"];
+}>): ReactElement {
   const t = useTranslations("Settings.daily");
   const [pressed, setPressed] = useState<"new" | "reviews" | null>(null);
   const completed = (row: "new" | "reviews"): ReactElement | undefined =>
@@ -44,7 +47,7 @@ export function DailyLimitRows({
       >
         <Segmented<NewPerDay>
           label={t("newTitle")}
-          options={TUNING.newPerDay.map((count) => ({
+          options={options.newPerDay.map((count) => ({
             value: count,
             label: t("count", { count }),
             text: String(count),
@@ -68,7 +71,7 @@ export function DailyLimitRows({
       >
         <Segmented<ReviewChoice>
           label={t("reviewsTitle")}
-          options={TUNING.reviewsPerDay.map((count) =>
+          options={options.reviewsPerDay.map((count) =>
             count === null
               ? { value: "unlimited", label: t("unlimited"), text: t("unlimited") }
               : { value: count, label: t("count", { count }), text: String(count) },

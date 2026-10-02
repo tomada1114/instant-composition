@@ -153,7 +153,9 @@ export class AppStack extends Stack {
     const sns = addObservability(this, { stage, api, handler, tableName, alarmEmail });
     addBedrockBudget(this, { stage, roles: [roleOf(handler)], topic: sns });
     if (webDist !== undefined) {
-      addSpaDeployment(this, { bucket: origin, distribution, webDist });
+      const entry = addSpaDeployment(this, { bucket: origin, distribution, webDist });
+      // A new bundle may require additive fields supplied by the updated API.
+      entry.node.addDependency(handler);
     }
 
     new CfnOutput(this, WEB_URL_OUTPUT, { value: webUrl });

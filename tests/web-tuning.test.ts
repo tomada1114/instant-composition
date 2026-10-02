@@ -9,29 +9,16 @@ import {
 import {
   ANSWER_FIELD_MAX,
   isDefaultGradeKeys,
-  isFast,
   isGradeKey,
   keyLabel,
   parseTitleKey,
   TUNING,
 } from "@instant-composition/web";
 
-// The web client imports no workspace package, so the rule values it shows or
-// applies are copies; this is what keeps each copy equal to its source.
+// The few values still mirrored in the browser stay equal to their owners.
+// Practice rule values now arrive through the API and are checked at that edge.
 
 describe("the web client's tuning", () => {
-  it("holds the practice rules' day boundary and fast share as the domain states them", () => {
-    expect(TUNING.dayBoundaryHour).toBe(DOMAIN_TUNING.dayBoundaryHour);
-    expect(TUNING.fastRatio).toBe(DOMAIN_TUNING.fastRatio);
-  });
-
-  it("offers the domain's daily limits and time limits and keeps its most focus subtopics", () => {
-    expect(TUNING.newPerDay).toStrictEqual(DOMAIN_TUNING.newPerDay);
-    expect(TUNING.reviewsPerDay).toStrictEqual(DOMAIN_TUNING.reviewsPerDay);
-    expect(TUNING.limitSeconds).toStrictEqual(DOMAIN_TUNING.limitSeconds);
-    expect(TUNING.maxFocus).toBe(DOMAIN_TUNING.maxFocus);
-  });
-
   it("grades with the domain's default keys, and allows the grade keys the domain allows", () => {
     expect(TUNING.defaultGradeKeys).toStrictEqual(DOMAIN_TUNING.defaultGradeKeys);
     expect(TUNING.defaultHardKey).toBe(DOMAIN_TUNING.hardKeys[0]);
@@ -51,14 +38,8 @@ describe("the web client's tuning", () => {
     expect(TUNING.maxRoundAnswers).toBe(MAX_ROUND_ANSWERS);
   });
 
-  it("runs a talk for the domain's turns, each field taking the domain's most characters", () => {
-    expect(TUNING.talkTurns).toBe(TALK_TUNING.turns);
+  it("allows the domain's most characters in a talk field", () => {
     expect(ANSWER_FIELD_MAX).toBe(TALK_TUNING.maxChars);
-  });
-
-  it("calls a flip fast up to half the pace, and not past it", () => {
-    expect(isFast(5_000, 10_000)).toBe(true);
-    expect(isFast(5_001, 10_000)).toBe(false);
   });
 });
 

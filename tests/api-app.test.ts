@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { MAX_REQUEST_BODY_BYTES } from "@instant-composition/api";
 import { learnerId, type RoundPayload } from "@instant-composition/application";
-import { addDays, isFast } from "@instant-composition/domain";
+import { addDays, isFast, TALK_TUNING, TUNING } from "@instant-composition/domain";
 import {
   errorResponseSchema,
   MESSAGE_BY_CODE,
@@ -46,6 +46,40 @@ async function finished(api: ApiHarness, roundId = "p1"): Promise<unknown> {
 }
 
 describe("the queries", () => {
+  it("serves the learner's day boundary and the domain's talk length", async () => {
+    const api = makeApi();
+    expect(
+      await contracted(await api.call("GET", "/v1/home"), "getHome"),
+    ).toMatchObject({
+      dayBoundaryHour: TUNING.dayBoundaryHour,
+      talkTurns: TALK_TUNING.turns,
+    });
+  });
+
+  it("serves the settings choices and focus cap from their rule owner", async () => {
+    const api = makeApi();
+    expect(
+      await contracted(await api.call("GET", "/v1/settings"), "getSettings"),
+    ).toMatchObject({
+      options: {
+        dailySizes: TUNING.dailySizes,
+        newPerDay: TUNING.newPerDay,
+        reviewsPerDay: TUNING.reviewsPerDay,
+        limitSeconds: TUNING.limitSeconds,
+        maxFocus: TUNING.maxFocus,
+      },
+    });
+  });
+
+  it("serves a card's fast threshold while preserving its pace", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    expect(Object.keys(round.cards).length).toBeGreaterThan(0);
+    for (const card of Object.values(round.cards)) {
+      expect(card.fastMs).toBe(card.paceMs * TUNING.fastRatio);
+    }
+  });
+
   it.each([
     ["getHome", "/v1/home"],
     ["getRecords", "/v1/records"],
@@ -190,7 +224,7 @@ describe("the commands", () => {
     );
     expect(new Set(shapes)).toStrictEqual(
       new Set([
-        "alternatives explanation id intervals isNew level limitMs paceMs prompt subtopic text topic words",
+        "alternatives explanation fastMs id intervals isNew level limitMs paceMs prompt subtopic text topic words",
       ]),
     );
   });

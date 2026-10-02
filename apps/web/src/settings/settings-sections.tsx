@@ -1,8 +1,7 @@
 import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { TUNING } from "../lib/tuning";
-import type { SubtopicRef, TopicInfo } from "../openapi";
+import type { SettingsPageView, SubtopicRef, TopicInfo } from "../openapi";
 import { ChoiceChip } from "../ui/choice-chip";
 import { SelectCard } from "../ui/select-card";
 import { SettingsRow } from "./settings-row";
@@ -63,17 +62,21 @@ function same(a: SubtopicRef, b: SubtopicRef): boolean {
 }
 
 /**
- * The chosen topics' subtopics as chips; two at most, then the rest stop
- * taking presses.
+ * The chosen topics' subtopics as chips; the API's cap stops further picks.
  */
 export function FocusSection({
   topics,
   state,
-}: Readonly<{ topics: readonly TopicInfo[]; state: SettingsState }>): ReactElement {
+  maxFocus,
+}: Readonly<{
+  topics: readonly TopicInfo[];
+  state: SettingsState;
+  maxFocus: SettingsPageView["options"]["maxFocus"];
+}>): ReactElement {
   const t = useTranslations("Settings.focus");
   const id = useId();
   const { focus } = state.settings;
-  const full = focus.length >= TUNING.maxFocus;
+  const full = focus.length >= maxFocus;
   const offered = topics
     .filter((topic) => state.settings.topics.includes(topic.id))
     .flatMap((topic) =>
@@ -97,7 +100,7 @@ export function FocusSection({
       wide
       id={id}
       label={t("title")}
-      aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
+      aside={t("count", { count: focus.length, max: maxFocus })}
     >
       <div
         role="group"
