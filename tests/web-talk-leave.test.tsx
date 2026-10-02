@@ -312,6 +312,28 @@ describe("W4, leaving a talk under way", () => {
     expect(where()).toBe("/talk");
   });
 
+  it("shows no held closing line when turn 6 is ended by 終える from ✕ before 言えた", async () => {
+    serveTalk({
+      turn: (body) =>
+        Response.json(turnResult(body.turn === 6 ? "corrected" : "fine", body.turn)),
+    });
+    await renderApp("/talk");
+    await begin();
+    for (let turn = 1; turn <= 5; turn += 1) {
+      await say(`日本語-${String(turn)}`, `English ${String(turn)}.`);
+      await settle(320);
+    }
+    await say("日本語-6", "English 6.");
+    expect(screen.getByText(MODEL_ANSWER)).toBeInTheDocument();
+    press(ja.Talk.strip.close);
+    press(ja.Talk.leave.end);
+    await settle();
+    expect(
+      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("reply-6")).toBeNull();
+  });
+
   it("asks before a tab leaves, then goes there on 終える and ends the talk", async () => {
     const calls = serveTalk();
     await renderApp("/talk");

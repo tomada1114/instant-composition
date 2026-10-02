@@ -42,6 +42,8 @@ export interface Talk {
   /** Every turn begun, the current one last. */
   readonly turns: readonly TalkTurn[];
   readonly step: TalkStep;
+  /** Set when W3h came from the last reply being shown, not from 終える. */
+  readonly closed?: true;
 }
 
 /** W2's three states, then the talk itself. */
@@ -97,7 +99,8 @@ function revealReply(talk: Talk): Talk {
   if (turn.reply === undefined || turn.reply === null) {
     return { ...talk, step: "replyFailed" };
   }
-  if (turn.reply.closing || turn.n >= TALK_TURNS) return { ...talk, step: "ended" };
+  if (turn.reply.closing || turn.n >= TALK_TURNS)
+    return { ...talk, step: "ended", closed: true };
   const next: TalkTurn = {
     n: turn.n + 1,
     partnerLine: turn.reply.line,

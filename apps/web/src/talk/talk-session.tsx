@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import type { ReactElement } from "react";
+import { useRef, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { Toast } from "../drill/toast";
@@ -8,6 +8,7 @@ import { TalkLeaveSheet } from "./talk-leave-sheet";
 import { TalkScreen } from "./talk-screen";
 import { TalkStart } from "./talk-start";
 import { keptTurns } from "./talk-state";
+import { useKeyboardLift } from "./use-keyboard-lift";
 import { useTalk } from "./use-talk";
 import { useTalkAnnouncement } from "./use-talk-announcement";
 import { useTalkKeys, useTalkLeave } from "./use-talk-guard";
@@ -15,7 +16,8 @@ import { useTalkKeys, useTalkLeave } from "./use-talk-guard";
 /**
  * The talk tab, held in React state alone so a reload loses the talk: W2
  * until a talk opens, then W3 until 「新しい会話」. From the first line until
- * it ends, ✕, Esc, a tab and Back all ask first (W4).
+ * it ends, ✕, Esc, a tab and Back all ask first (W4). While a keyboard
+ * covers a focused field, the tab bar steps aside for the lifted screen.
  */
 export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactElement {
   const t = useTranslations("Talk");
@@ -25,6 +27,8 @@ export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactEleme
   const active = talk !== undefined && talk.step !== "ended";
   const leave = useTalkLeave(active);
   const announcement = useTalkAnnouncement(state);
+  const main = useRef<HTMLElement>(null);
+  const lifted = useKeyboardLift(main, talk?.step);
 
   useTalkKeys(() => {
     if (leave.asking !== undefined) leave.stay();
@@ -46,9 +50,15 @@ export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactEleme
           onStart={actions.start}
         />
       ) : (
-        <TalkScreen talk={talk} actions={actions} onClose={leave.ask} />
+        <TalkScreen
+          talk={talk}
+          actions={actions}
+          onClose={leave.ask}
+          main={main}
+          lifted={lifted}
+        />
       )}
-      <TabBar />
+      {lifted ? null : <TabBar />}
       {leave.asking !== undefined && talk !== undefined ? (
         <TalkLeaveSheet turns={keptTurns(talk)} onLeave={end} onStay={leave.stay} />
       ) : null}
