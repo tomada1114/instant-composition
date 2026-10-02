@@ -82,7 +82,7 @@ export function SettingsScreen({
       }}
       notice={
         state.failed || level.failed || zoneFailed ? (
-          <p role="alert" className="rounded-tile bg-raised px-4 py-3">
+          <p role="alert" className="rounded-control bg-raised px-4 py-3">
             {t("saveFailed")}
           </p>
         ) : null

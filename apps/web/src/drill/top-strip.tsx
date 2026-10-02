@@ -11,8 +11,8 @@ import { playMotion } from "./motion";
 const MAX_TICKS = 30;
 
 /**
- * One tick per card of the pass: done in white, the current one dimmed —
- * lit with the accent the moment it is said — and the rest grooves. The talk
+ * One tick per card of the pass: done in ink, the current one dimmed —
+ * lit `good` the moment it is said — and the rest grooves. The talk
  * screen draws one per turn the same way.
  */
 export function Ticks({
@@ -34,7 +34,7 @@ export function Ticks({
                 ? "bg-foreground"
                 : position === current
                   ? lit
-                    ? "bg-accent"
+                    ? "bg-good"
                     : "bg-muted-foreground"
                   : "bg-border",
             )}
@@ -81,17 +81,17 @@ export function TopStrip({
         >
           <PauseGlyph />
         </IconButton>
-        <span className="font-mono text-mono-sm text-muted-foreground">
+        <span className="font-latin text-count text-muted-foreground">
           {pass === "first"
             ? t("progress", { current, total })
             : t("retryProgress", { current, total })}
         </span>
-        <span className="justify-self-end text-accent">
+        <span className="justify-self-end">
           {combo >= 2 ? (
             <span
               ref={comboRef}
               data-part="combo"
-              className="inline-flex items-baseline gap-1.5 font-mono text-mono-sm"
+              className="inline-flex items-baseline gap-1.5 rounded-full bg-energy px-3 py-0.5 font-latin text-count text-on-energy"
             >
               <span className="font-display text-figure-sm">{combo}</span>
               {t("comboLabel")}

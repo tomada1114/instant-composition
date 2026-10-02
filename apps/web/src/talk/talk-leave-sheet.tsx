@@ -21,7 +21,7 @@ export function TalkLeaveSheet({
         <h2 id="talk-leave-title" className="text-heading">
           {t("title")}
         </h2>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {turns > 0 ? t("kept", { count: turns }) : t("lost")}
         </p>
       </div>

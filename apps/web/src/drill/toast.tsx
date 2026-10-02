@@ -29,7 +29,7 @@ export function Toast({
       className="pointer-events-none fixed inset-x-0 bottom-[calc(var(--column-inset)+var(--tab-bar-space)+6rem)] z-20 mx-auto box-content max-w-column px-4"
     >
       {signal !== 0 && expired !== signal ? (
-        <div className="flex items-center gap-3 rounded-tile bg-raised px-4 py-3.5">
+        <div className="flex items-center gap-3 rounded-control bg-raised px-4 py-3.5">
           <NoticeGlyph />
           <p>{message}</p>
         </div>

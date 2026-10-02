@@ -15,7 +15,7 @@ export function StreakFigure({
     return (
       <div className="flex flex-col gap-2">
         <h1 className="text-heading">{t("restartTitle")}</h1>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {t("longest", { days: streak.longest })}
         </p>
       </div>
@@ -42,7 +42,7 @@ const BAR: Readonly<Record<Dot["state"], string>> = {
 /**
  * Monday to Sunday as seven bars, each over its weekday: filled (done),
  * outlined in white (open, can still be made up), dark (missed), dashed
- * (upcoming). `lit` is the day a round just completed, filled with the accent.
+ * (upcoming). `lit` is the day a round just completed, filled `energy`.
  */
 export function WeekRow({
   dots,
@@ -56,8 +56,8 @@ export function WeekRow({
           <span
             data-state={dot.state}
             className={cn(
-              "h-9 w-full rounded-bar",
-              dot.day === lit ? "bg-accent" : BAR[dot.state],
+              "h-9 w-full rounded-full",
+              dot.day === lit ? "bg-energy" : BAR[dot.state],
             )}
           />
           <span className="text-caption text-muted-foreground">

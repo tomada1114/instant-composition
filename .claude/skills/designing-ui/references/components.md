@@ -110,9 +110,9 @@ learner who has only used the mouse or touch.
   or a block ("Streak", "Today", "Placement", "Welcome"). Decorative when the figure
   beside it already has a Japanese name: then `aria-hidden`.
 
-Glyphs are drawn in `apps/web/src/ui/glyphs.tsx` on a 20 grid, round ends: outlines at
-1.75 strokes, and the filled set (flame, bolt, target, star) the lock names. There is no
-icon library.
+Glyphs are drawn on a 20 grid, round ends: outlines at 1.75 strokes in
+`apps/web/src/ui/glyphs.tsx`, and the filled set (flame, bolt, target, star) the lock
+names in `apps/web/src/ui/filled-glyphs.tsx`. There is no icon library.
 
 ## Shell: sidebar, top bar, skip link
 
@@ -261,13 +261,16 @@ Never `action`, `energy` or `good`.
 - `toggle`: 52 × 32. On: a `bg-foreground` track with a `bg-card` knob at the right.
   Off: a `bg-raised` track with a 2px `border-input` and a `bg-input` knob at the left.
   No "on"/"off" words: position and fill carry the state, and the switch role says it.
+  Hover steps the track once: off to `bg-border`, on to `bg-muted-foreground` (the knob
+  still measures as `ink-2` against `surface`).
 - `key-picker`: the × key then the ○ key, 8 apart, each a 44-tall `rounded-control`
   `bg-raised` tile at least 64 wide with a 2px `border-input`, its grade's glyph and the
-  key in `text-count` (an arrow as the arrow, a digit or letter as itself). Pressed, it
-  takes focus and waits: its border turns `border-foreground` and it reads "press a key"
-  in `label` — a selection, so ink. The next key pressed becomes that grade's key and
-  saves; one outside ↑ ↓ ← →, 0–9 and A–Z, or the other grade's, is refused in the row's
-  `status` line and the tile keeps waiting. Esc or leaving the tile gives up.
+  key in `text-count` (an arrow as the arrow, a digit or letter as itself); hover
+  `bg-card`. Pressed, it takes focus and waits: its border turns `border-foreground` and
+  it reads "press a key" in `label` — a selection, so ink. The next key pressed becomes
+  that grade's key and saves; one outside ↑ ↓ ← →, 0–9 and A–Z, or the other grade's, is
+  refused in the row's `status` line and the tile keeps waiting. Esc or leaving the tile
+  gives up.
 
 ## Talk parts
 
@@ -277,12 +280,12 @@ inside it, kept at its bottom, and the step panel rests on its foot.
 
 - **`answer-field`.** A `textarea` on `bg-card` with a 2px `border-input`,
   `rounded-control`, padding 12 / 16, `text-body` (16, never smaller: the behavior
-  reference); its placeholder `text-muted-foreground`; focus adds the global outline. It
-  starts one line tall (at least 44) and grows with its text. It takes at most 300
-  characters — input stops there — with spell checking, auto-correct and
-  auto-capitalising off. Enter sends and never breaks the line; the Enter that confirms
-  an input method's conversion (`isComposing`, or `keyCode` 229 on Safari) does not
-  send. Named by its step's label.
+  reference); its placeholder `text-muted-foreground`; hover `bg-raised`; focus adds the
+  global outline. It starts one line tall (at least 44) and grows with its text. It
+  takes at most 300 characters — input stops there — with spell checking, auto-correct
+  and auto-capitalising off. Enter sends and never breaks the line; the Enter that
+  confirms an input method's conversion (`isComposing`, or `keyCode` 229 on Safari) does
+  not send. Named by its step's label.
 - **`talk-line`.** One turn: the speaker's `eyebrow` over the body in `text-body`. No
   frame, no bubble, no fill; lines are parted by a 2px `border-border` hairline (none
   above the first) with 12 above and below. The current turn is `text-foreground`;

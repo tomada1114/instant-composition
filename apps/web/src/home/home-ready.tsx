@@ -63,7 +63,7 @@ export function ReadyPanel({
                 <span className="font-display text-number-md">{preview.size}</span>
                 <span className="text-label text-muted-foreground">{t("unit")}</span>
               </span>
-              <span className="font-mono text-mono-sm text-muted-foreground">
+              <span className="font-latin text-count text-muted-foreground">
                 {t("minutes", { minutes: preview.minutes })}
               </span>
             </p>

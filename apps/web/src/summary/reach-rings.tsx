@@ -12,7 +12,7 @@ const SEGMENT_GAP_PX = 2;
 
 /**
  * One ring's groove, its fill up to before this round, and this round's
- * segment in the accent after a 2px gap. `count` is the value shown now,
+ * segment in `good-ink` after a 2px gap. `count` is the value shown now,
  * so the new segment grows while the count climbs.
  */
 function Ring({
@@ -54,7 +54,7 @@ function Ring({
         ? arc(
             old * scale + (old > 0 ? gap : 0),
             (done - old) * scale - (old > 0 ? gap : 0),
-            "stroke-accent",
+            "stroke-good-ink",
           )
         : null}
     </g>
@@ -71,7 +71,7 @@ function Label({
       <span className="text-label text-muted-foreground">{topic.name}</span>
       <span className="font-display text-figure-sm">{count}</span>
       {topic.added > 0 ? (
-        <span className="text-label text-accent">
+        <span className="text-label text-good-ink">
           {t("added", { count: topic.added })}
         </span>
       ) : null}
@@ -138,7 +138,7 @@ export function ReachRings({
         </p>
       ) : reach.nearest === null ? null : (
         <p className="flex items-baseline gap-3">
-          <span className="font-mono text-eyebrow text-muted-foreground uppercase">
+          <span className="font-latin text-eyebrow text-muted-foreground uppercase">
             {t("next")}
           </span>
           <span>

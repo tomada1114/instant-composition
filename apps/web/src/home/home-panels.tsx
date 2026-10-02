@@ -13,7 +13,7 @@ export type Go = (kind: RoundKind) => void;
 function Deadline(): ReactElement {
   const t = useTranslations("Home");
   return (
-    <p className="font-mono text-mono-sm text-muted-foreground">
+    <p className="font-latin text-count text-muted-foreground">
       {t("deadline", { hour: TUNING.dayBoundaryHour })}
     </p>
   );
@@ -75,7 +75,7 @@ export function DonePanel({
             </span>
             {t("title")}
           </h2>
-          <p className="font-mono text-mono-sm text-muted-foreground">
+          <p className="font-latin text-count text-muted-foreground">
             {t("count", { rounds: view.todayRounds, cards: view.todayCards })}
           </p>
         </div>
@@ -134,7 +134,7 @@ export function RecoverPanel({
     <>
       <div className="flex flex-col gap-2">
         <p>{t("hint")}</p>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {t("size", {
             yesterday: size,
             today: size,

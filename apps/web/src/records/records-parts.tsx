@@ -52,7 +52,7 @@ export function Breakdown({
                   style={{ width: `${String((subtopic.count / most) * 100)}%` }}
                 />
               </span>
-              <span className="text-right font-mono text-mono-sm tabular-nums">
+              <span className="text-right font-latin text-count tabular-nums">
                 {subtopic.count}
               </span>
             </li>
@@ -70,7 +70,7 @@ const DOT: Readonly<Record<Dot["state"], string>> = {
   upcoming: "border border-border",
 };
 
-/** `dot-calendar`: twelve weeks as columns, Monday to Sunday down each; never the accent. */
+/** `dot-calendar`: twelve weeks as columns, Monday to Sunday down each; never a colour. */
 export function DotCalendar({
   weeks,
 }: Readonly<{ weeks: readonly (readonly Dot[])[] }>): ReactElement {
@@ -126,7 +126,7 @@ export function MilestoneList({
               <dt className="text-label text-muted-foreground">
                 {group.kind === "streak" ? t("streak") : group.name}
               </dt>
-              <dd className="font-mono text-mono-sm">{group.values.join(" · ")}</dd>
+              <dd className="font-latin text-count">{group.values.join(" · ")}</dd>
             </div>
           ))}
         </dl>
@@ -135,7 +135,7 @@ export function MilestoneList({
   );
 }
 
-/** `weak-list`: the weakest grammar and subtopics by name alone; no miss count, no rate, no accent. */
+/** `weak-list`: the weakest grammar and subtopics by name alone; no miss count, no rate, no colour. */
 export function WeakList({ weak }: Readonly<{ weak: WeakPoints }>): ReactElement {
   const t = useTranslations("Records.weak");
   const id = useId();

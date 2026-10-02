@@ -29,7 +29,7 @@ export function ReadyScreen({
       <div className="my-auto flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow", { kind })}</Eyebrow>
         <h1 className="text-heading">{t("title", { kind, count })}</h1>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {where.pass === "first"
             ? t("resume", { position: offset + where.position, total: count })
             : t("resumeRetry", { position: where.position, total: where.total })}

@@ -531,9 +531,10 @@ const APP_NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
     "hono/aws-lambda",
   ],
   web: [
-    "@fontsource-variable/inter-tight",
-    "@fontsource-variable/jetbrains-mono",
-    "@fontsource-variable/space-grotesk",
+    "@fontsource-variable/fredoka",
+    "@fontsource-variable/nunito",
+    "@fontsource/m-plus-rounded-1c/500.css",
+    "@fontsource/m-plus-rounded-1c/800.css",
     "@radix-ui/react-slot",
     "@tanstack/react-query",
     "@tanstack/react-router",

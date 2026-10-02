@@ -112,6 +112,7 @@ export { SummaryScreen } from "./summary/summary-screen";
 export { parseTitleKey, type ParsedTitle } from "./summary/titles";
 export { ANSWER_FIELD_MAX, AnswerField } from "./ui/answer-field";
 export { Button } from "./ui/button";
+export { BoltGlyph, FlameGlyph, StarGlyph, TargetGlyph } from "./ui/filled-glyphs";
 export { HiddenAnswer } from "./ui/hidden-answer";
 export { Sheet } from "./ui/sheet";
 export { Segmented } from "./ui/segmented";

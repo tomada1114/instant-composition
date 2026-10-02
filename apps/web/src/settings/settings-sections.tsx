@@ -24,7 +24,7 @@ export function Heading({
         {children}
       </h2>
       {aside === undefined ? null : (
-        <span className="font-mono text-mono-sm text-muted-foreground">{aside}</span>
+        <span className="font-latin text-count text-muted-foreground">{aside}</span>
       )}
     </div>
   );

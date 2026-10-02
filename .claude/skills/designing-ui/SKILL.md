@@ -155,7 +155,9 @@ size, or an arbitrary-value color.
   uses it, so `var()` against an unused one from hand-written CSS resolves to nothing.
   Declare such a block `@theme static` when raw CSS reads the tokens too.
 - Never give a size token and a color token the same name: with both, a bare
-  `text-<name>` always resolves to the color.
+  `text-<name>` always resolves to the color. `action` is the one name the design gives
+  both, so the violet is declared under `--background-color-*` rather than `--color-*`:
+  that makes `bg-action` and `bg-action-hover` and leaves `text-action` the type size.
 - `twMerge` knows only Tailwind's default theme. `apps/web/src/lib/utils.ts` extends it
   with every size, radius, shadow and container name `globals.css` declares; a new one
   is added in both places, plus a `cn` case in `tests/web-ui-primitives.test.tsx`.

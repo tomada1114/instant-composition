@@ -354,13 +354,14 @@ Traps that have cost time here:
 No check here boots a browser, and only one runs the whole stack: `pnpm run test:smoke`
 serves the last `pnpm web:build` with `vite preview` in front of the API, started as
 `pnpm api` starts it, on DynamoDB local, and asserts over `fetch` that the document is
-served dark-only and in Japanese, that any client route gets that same document, that it
-links a stylesheet carrying a Tailwind utility the client uses, and that a round trip
-through the `/api` proxy saves, starts, records and reads back — plus one contract
-refusal and the bare unmatched `404`. The stylesheet case is the only check that sees
-Tailwind run at all: a component test renders a `className` into the DOM whether or not
-any CSS was generated. That is the whole of what a running stack is checked for — the
-seams between the layers, not their behaviour, which each layer's own suite owns.
+served in light and dark (`color-scheme` and one `theme-color` per scheme) and in
+Japanese, that any client route gets that same document, that it links a stylesheet
+carrying a Tailwind utility the client uses, and that a round trip through the `/api`
+proxy saves, starts, records and reads back — plus one contract refusal and the bare
+unmatched `404`. The stylesheet case is the only check that sees Tailwind run at all: a
+component test renders a `className` into the DOM whether or not any CSS was generated.
+That is the whole of what a running stack is checked for — the seams between the layers,
+not their behaviour, which each layer's own suite owns.
 
 It runs from `check:source` and from ci.yml's `static` job, both times immediately after
 `Build the web client`, and from neither `pnpm test` nor `pnpm check:quick`: the bundle

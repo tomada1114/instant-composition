@@ -11,7 +11,8 @@ interface IconButtonProps extends ComponentProps<"button"> {
 }
 
 /**
- * `icon-button`: a 44 square with a 20 glyph on a surface tile. The caller
+ * `icon-button`: a 44 square with a 20 glyph on a surface tile inside a 2px
+ * control border, `raised` under the pointer and while pressed. The caller
  * gives it its accessible name.
  */
 export function IconButton({
@@ -25,8 +26,8 @@ export function IconButton({
     <Comp
       data-slot="icon-button"
       className={cn(
-        "flex size-11 shrink-0 items-center justify-center rounded-icon text-foreground active:bg-raised",
-        plain ? "-ml-2.5" : "bg-card",
+        "flex size-11 shrink-0 items-center justify-center rounded-control text-foreground hover:bg-raised active:bg-raised",
+        plain ? "-ml-2.5" : "border-2 border-input bg-card",
         className,
       )}
       {...props}

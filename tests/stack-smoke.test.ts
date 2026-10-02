@@ -420,14 +420,20 @@ afterAll(async () => {
 });
 
 describe("the built web client, served by `vite preview`", () => {
-  it("serves the document, dark-only and in Japanese", async () => {
+  it("serves the document, in light and dark and in Japanese", async () => {
     const response = await fetch(baseUrl);
 
     expect(response.status).toBe(200);
     expect(response.headers.get("content-type")).toContain("text/html");
     const document = await response.text();
     expect(document).toMatch(/<html[^>]*\slang="ja"/u);
-    expect(document).toMatch(/<meta name="color-scheme" content="dark"\s*\/?>/u);
+    expect(document).toMatch(/<meta name="color-scheme" content="light dark"\s*\/?>/u);
+    expect(document).toMatch(
+      /<meta name="theme-color" media="\(prefers-color-scheme: light\)" content="#FFFCF2"\s*\/?>/u,
+    );
+    expect(document).toMatch(
+      /<meta name="theme-color" media="\(prefers-color-scheme: dark\)" content="#18171C"\s*\/?>/u,
+    );
     expect(document).toContain('<div id="root"></div>');
   });
 

@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 /*
- * Design direction: "instrument" — a near-black canvas read like a precision
- * instrument: white and grey ink, big tightly set figures, small tracked mono
- * labels, hairline rules instead of boxes, and one lime that lights only what
- * is running or what moved in this session. Dark only: there is no light
- * theme and no OS-appearance switch. `designing-ui` holds the lock, the ledger
- * behind every value here, and the component recipes.
+ * Design direction: "Lemon Arcade" — a cream canvas in light, charcoal in
+ * dark, charcoal ink, rounded heavy type, flat cards with 2px borders, and
+ * chunky pressable buttons standing on a solid lip. Each colour has one job:
+ * a violet `action` for the one primary action, a yellow `energy` for the
+ * streak, points, the timer and the combo, a teal `good` / `good-ink` for ○
+ * and what grew; selection and focus are ink. Both themes follow the OS.
+ * `designing-ui` holds the lock, the ledger behind every value here, and the
+ * component recipes.
  *
  * The shape is shadcn/ui's: every color is a plain custom property on `:root`,
  * and `@theme inline` maps each one onto a Tailwind utility. The names are
  * shadcn's roles wherever shadcn has one, so a registry copy renders on-palette
- * before it is restyled; `raised`, `soft` and `disabled` are this app's own.
- * `accent` is the lime, not shadcn's hover wash — a registry `hover:bg-accent`
- * is rewritten to `hover:bg-raised` on the way in.
+ * before it is restyled. shadcn's hover wash is `raised` here: a registry
+ * copy's hover fill is rewritten to `hover:bg-raised` on the way in.
  *
  * Tailwind's default palette, radii, type sizes, shadows and animations are
  * cleared with `initial`, so what is declared below is the whole vocabulary:
@@ -32,144 +33,180 @@
   --color-secondary: var(--raised);
   --color-secondary-foreground: var(--ink);
   --color-muted: var(--raised);
-  --color-muted-foreground: var(--ink-secondary);
-  --color-soft: var(--ink-soft);
+  --color-muted-foreground: var(--ink-2);
   --color-disabled: var(--ink-disabled);
   --color-primary: var(--ink);
-  --color-primary-foreground: var(--canvas);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--on-accent);
-  --color-accent-pressed: color-mix(in srgb, var(--accent) 92%, black);
-  --color-border: var(--hairline);
-  --color-input: var(--ink-secondary);
+  --color-primary-foreground: var(--surface);
+  --color-border: var(--border);
+  --color-input: var(--control-border);
   --color-ring: var(--focus);
+  --color-bar-track: var(--bar-track);
+  --color-on-action: var(--on-action);
+  --color-action-lip: var(--action-lip);
+  --color-energy: var(--energy);
+  --color-energy-lip: var(--energy-lip);
+  --color-on-energy: var(--on-energy);
+  --color-good: var(--good);
+  --color-good-hover: color-mix(in oklab, var(--good), white 8%);
+  --color-good-lip: var(--good-lip);
+  --color-on-good: var(--on-good);
+  --color-good-ink: var(--good-ink);
+  /* Background-only, because `text-action` is the button type size: a color
+   * named `action` would take that utility over. */
+  --background-color-action: var(--action);
+  --background-color-action-hover: color-mix(in oklab, var(--action), white 8%);
 
   --font-*: initial;
-  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-  --font-latin: var(--font-inter-tight), system-ui, sans-serif;
+  --font-sans:
+    var(--font-m-plus-rounded), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", sans-serif;
+  --font-latin:
+    var(--font-nunito), var(--font-m-plus-rounded), "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
   --font-display:
-    var(--font-space-grotesk), var(--font-inter-tight), system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", monospace;
+    var(--font-fredoka), var(--font-nunito), var(--font-m-plus-rounded),
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+
+  /* The one shadow: a control's solid lip. Tailwind puts the color behind
+   * `--tw-shadow-color`, so `shadow-lip shadow-action-lip` paints it violet;
+   * bare, it is the control border's. */
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --shadow-lip: 0 0.25rem 0 var(--control-border);
 }
 
 /*
  * The type scale: one token per role, each carrying its size, line height,
  * weight and tracking. The family is not part of a size token, so a role in
- * the Latin, display or mono family is written with its family beside it
+ * the Latin or display family is written with its family beside it
  * (`text-answer font-latin`, `text-number-xl font-display`). `twMerge` does
  * not know these names until `apps/web/src/lib/utils.ts` tells it — keep
  * the two lists in step.
  */
 @theme {
   --text-*: initial;
-  --text-eyebrow: 0.6875rem;
+  --text-eyebrow: 0.8125rem;
   --text-eyebrow--line-height: 1.2;
-  --text-eyebrow--font-weight: 500;
-  --text-eyebrow--letter-spacing: 0.14em;
-  --text-caption: 0.75rem;
-  --text-caption--line-height: 1.4;
-  --text-caption--font-weight: 400;
+  --text-eyebrow--font-weight: 800;
+  --text-eyebrow--letter-spacing: 0.05em;
   --text-label: 0.8125rem;
   --text-label--line-height: 1.4;
-  --text-label--font-weight: 600;
-  --text-body: 0.9375rem;
+  --text-label--font-weight: 800;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+  --text-caption--font-weight: 500;
+  --text-count: 0.9375rem;
+  --text-count--line-height: 1.2;
+  --text-count--font-weight: 800;
+  --text-body: 1rem;
   --text-body--line-height: 1.6;
-  --text-body--font-weight: 400;
-  --text-point: 0.875rem;
-  --text-point--line-height: 1.7;
-  --text-point--font-weight: 400;
+  --text-body--font-weight: 500;
+  --text-point: 1.125rem;
+  --text-point--line-height: 1.6;
+  --text-point--font-weight: 500;
   --text-action: 1rem;
-  --text-action--line-height: 1.4;
-  --text-action--font-weight: 700;
-  --text-heading: 1.375rem;
-  --text-heading--line-height: 1.35;
-  --text-heading--font-weight: 700;
-  --text-front: 1.75rem;
-  --text-front--line-height: 1.55;
-  --text-front--font-weight: 700;
-  --text-front--letter-spacing: 0.01em;
-  --text-front-long: 1.4375rem;
-  --text-front-long--line-height: 1.55;
-  --text-front-long--font-weight: 700;
-  --text-front-long--letter-spacing: 0.01em;
-  --text-answer: 1.625rem;
-  --text-answer--line-height: 1.25;
-  --text-answer--font-weight: 600;
-  --text-answer--letter-spacing: -0.02em;
-  --text-alt: 1rem;
+  --text-action--line-height: 1.25;
+  --text-action--font-weight: 800;
+  --text-heading: 1.625rem;
+  --text-heading--line-height: 1.3;
+  --text-heading--font-weight: 800;
+  --text-front: 2.25rem;
+  --text-front--line-height: 1.45;
+  --text-front--font-weight: 800;
+  --text-front-long: 1.875rem;
+  --text-front-long--line-height: 1.5;
+  --text-front-long--font-weight: 800;
+  --text-answer: 1.875rem;
+  --text-answer--line-height: 1.3;
+  --text-answer--font-weight: 800;
+  --text-alt: 1.125rem;
   --text-alt--line-height: 1.45;
-  --text-alt--font-weight: 400;
-  --text-mono-sm: 0.8125rem;
-  --text-mono-sm--line-height: 1.2;
-  --text-mono-sm--font-weight: 500;
-  --text-figure-sm: 1.375rem;
+  --text-alt--font-weight: 700;
+  --text-figure-sm: 1.5rem;
   --text-figure-sm--line-height: 1;
   --text-figure-sm--font-weight: 600;
-  --text-figure-sm--letter-spacing: -0.02em;
   --text-number-md: 2.75rem;
   --text-number-md--line-height: 1;
   --text-number-md--font-weight: 600;
-  --text-number-md--letter-spacing: -0.03em;
   --text-number-lg: 4.5rem;
-  --text-number-lg--line-height: 0.9;
-  --text-number-lg--font-weight: 600;
-  --text-number-lg--letter-spacing: -0.04em;
-  --text-number-xl: 8rem;
-  --text-number-xl--line-height: 0.86;
-  --text-number-xl--font-weight: 600;
-  --text-number-xl--letter-spacing: -0.05em;
+  --text-number-lg--line-height: 0.95;
+  --text-number-lg--font-weight: 700;
+  --text-number-xl: 8.25rem;
+  --text-number-xl--line-height: 0.9;
+  --text-number-xl--font-weight: 700;
 
   --radius-*: initial;
-  --radius-card: 1.75rem;
-  --radius-control: 1.125rem;
-  --radius-tile: 1rem;
-  --radius-icon: 0.75rem;
-  --radius-bar: 0.5rem;
+  --radius-control: 1rem;
+  --radius-card: 1rem;
+  --radius-panel: 1.25rem;
 
   --container-column: 26.25rem;
-
-  /* No shadows at all: depth is the canvas / surface / raised steps. */
-  --shadow-*: initial;
-  --inset-shadow-*: initial;
-  --drop-shadow-*: initial;
 
   --animate-*: initial;
 }
 
 /*
- * The palette, under the design's own names. `ink-*` is the design's
- * `text/*`: named apart so no custom property here shares a spelling with a
- * Tailwind theme namespace. Every text pairing is measured in `designing-ui`'s
- * foundations reference; `hairline` and `ink-disabled` never carry
- * information a reader needs.
+ * The palette, under the design's own names: the light theme here, the dark
+ * one below it. Every text and control pairing is measured in `designing-ui`'s
+ * foundations reference; `border` and `ink-disabled` never carry information
+ * a reader needs.
  */
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 
-  --canvas: #0a0a0b;
-  --surface: #141416;
-  --raised: #1e1e21;
-  --hairline: #26262a;
-  --ink: #f4f4f2;
-  --ink-secondary: #939396;
-  --ink-soft: #cfcfcd;
-  --ink-disabled: #5c5c60;
-  --accent: #b8ff2c;
-  --on-accent: #0a0a0b;
-  --focus: #f4f4f2;
+  --canvas: #fffcf2;
+  --surface: #ffffff;
+  --raised: #f6f1e3;
+  --border: #e7e2d3;
+  --control-border: #8f8671;
+  --bar-track: #2b2924;
+  --ink: #2b2924;
+  --ink-2: #6b665a;
+  --ink-disabled: #aba596;
+  --action: #6e00f5;
+  --action-lip: #4a00a8;
+  --on-action: #ffffff;
+  --energy: #ffc500;
+  --energy-lip: #d9a400;
+  --on-energy: #2b2924;
+  --good: #21c6a9;
+  --good-lip: #12917b;
+  --on-good: #2b2924;
+  --good-ink: #0e7a66;
+  --focus: #2b2924;
 
-  /* The three self-hosted families `src/main.tsx` imports from
-   * `@fontsource-variable`, under the names the font stacks above read. */
-  --font-inter-tight: "Inter Tight Variable";
-  --font-space-grotesk: "Space Grotesk Variable";
-  --font-jetbrains-mono: "JetBrains Mono Variable";
+  /* The three self-hosted families `src/main.tsx` imports, under the names
+   * the font stacks above read. */
+  --font-fredoka: "Fredoka Variable";
+  --font-nunito: "Nunito Variable";
+  --font-m-plus-rounded: "M PLUS Rounded 1c";
 }
 
-/*
- * The app is always dark, so a registry copy's `dark:` classes always apply
- * rather than following the operating system's appearance.
- */
-@custom-variant dark (&:where(:root, :root *));
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #18171c;
+    --surface: #222127;
+    --raised: #2c2b32;
+    --border: #3a3942;
+    --control-border: #7a7986;
+    --bar-track: #2c2b32;
+    --ink: #f6f3ea;
+    --ink-2: #a9a6af;
+    --ink-disabled: #5c5b64;
+    --action: #7b2bff;
+    --action-lip: #5212c9;
+    --on-action: #ffffff;
+    --energy: #ffc500;
+    --energy-lip: #c99a00;
+    --on-energy: #2b2924;
+    --good: #2ed3b4;
+    --good-lip: #1e9c85;
+    --on-good: #2b2924;
+    --good-ink: #2ed3b4;
+    --focus: #f6f3ea;
+  }
+}
 
 /*
  * Key hints are shown only once the learner has used the keyboard: the first
@@ -245,8 +282,8 @@
     @apply underline underline-offset-4;
   }
 
-  /* White, 2px, held 2px off the control, on every focusable element — never
-   * the accent, and never removed to tidy a control. */
+  /* Ink, 2px, held 2px off the control, on every focusable element — never a
+   * colour, and never removed to tidy a control. */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;
   }

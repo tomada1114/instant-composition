@@ -108,8 +108,13 @@ afterEach(() => {
   });
 });
 
+// The classes of the three colours with a job — `good`, `good-ink` and
+// `energy` — which a records page never wears: nothing on it moved this session.
+const LIT =
+  ".text-good-ink, .bg-good-ink, .stroke-good-ink, .bg-good, .text-energy, .bg-energy";
+
 describe("the records screen, W10", () => {
-  it("shows the rings on its first tab, and the difficulty, the run and the totals on the history tab, with no accent", async () => {
+  it("shows the rings on its first tab, and the difficulty, the run and the totals on the history tab, with nothing lit", async () => {
     serveRecords();
     await renderApp("/records");
     expect(
@@ -119,9 +124,7 @@ describe("the records screen, W10", () => {
     expect(
       screen.getByText(fill(ja.Summary.reach.nearest, { topic: "仕事", count: 9 })),
     ).toBeInTheDocument();
-    expect(
-      document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
-    ).toBeNull();
+    expect(document.querySelector(LIT)).toBeNull();
     fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.history }));
     await settle();
     expect(
@@ -134,9 +137,7 @@ describe("the records screen, W10", () => {
     expect(screen.getByText("2,315")).toBeInTheDocument();
     expect(screen.getByText("79")).toBeInTheDocument();
     expect(screen.getByText("3,105")).toBeInTheDocument();
-    expect(
-      document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
-    ).toBeNull();
+    expect(document.querySelector(LIT)).toBeNull();
   });
 
   it.each([
@@ -216,9 +217,7 @@ describe("the records screen, W10", () => {
         .getAllByRole("definition")
         .map((definition) => definition.textContent),
     ).toStrictEqual(["現在完了、命令文・Let's", "家、日程調整"]);
-    expect(
-      document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
-    ).toBeNull();
+    expect(document.querySelector(LIT)).toBeNull();
   });
 
   it("leaves out a kind with nothing weak in it", async () => {
