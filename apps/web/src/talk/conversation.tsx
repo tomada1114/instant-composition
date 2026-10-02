@@ -98,7 +98,7 @@ export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
     count.current = lines;
     const element = scroller.current;
     if (element !== null) element.scrollTop = element.scrollHeight;
-  });
+  }, [talk]);
 
   return (
     <div ref={scroller} className="-mx-2 min-h-0 flex-1 overflow-y-auto px-2">

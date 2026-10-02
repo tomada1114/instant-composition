@@ -176,6 +176,22 @@ describe("W4, leaving a talk under way", () => {
     expect(leaveSheet()).toBeNull();
   });
 
+  it("leaves an Esc that cancels an input method's conversion to the input method", async () => {
+    serveTalk();
+    await renderApp("/talk");
+    await begin();
+    act(() => {
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }).dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Escape",
+          isComposing: true,
+          bubbles: true,
+        }),
+      );
+    });
+    expect(leaveSheet()).toBeNull();
+  });
+
   it("keeps the turns so far on 終える from ✕, and ends at おわり with no ✕", async () => {
     const calls = serveTalk();
     await renderApp("/talk");

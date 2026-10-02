@@ -61,11 +61,13 @@ export function useTalkKeys(onEscape: () => void, enter: boolean): void {
   useEffect(() => {
     function onKey(event: KeyboardEvent): void {
       if (event.altKey || event.ctrlKey || event.metaKey) return;
+      // Esc and Enter mid-conversion belong to the input method.
+      if (event.isComposing || event.key === "Process") return;
       if (event.key === "Escape") {
         onEscape();
         return;
       }
-      if (!enter || event.key !== "Enter" || event.repeat || event.isComposing) return;
+      if (!enter || event.key !== "Enter" || event.repeat) return;
       if (
         event.target instanceof Element &&
         event.target.closest(INTERACTIVE) !== null
