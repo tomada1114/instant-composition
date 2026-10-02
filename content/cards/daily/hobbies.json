@@ -525,10 +525,10 @@
   {
     "id": "c_6h3t9g3s",
     "ja": "私は失敗した写真を省くよ。",
-    "en": "I'll weed out unsuccessful shots.",
+    "en": "I'll weed out the bad shots.",
     "alternatives": [
       "I'll remove the failed photos.",
-      "I'll eliminate the unsuccessful photographs."
+      "I'll leave out the unsuccessful photos."
     ],
     "point": "weed out は不要なものを選んで取り除く。",
     "topic": "daily",
@@ -536,7 +536,13 @@
     "level": 5,
     "grammar": ["future-forms", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6e83ec487d7cca2ced6f137f8098a8fb369cc79642ffb89b3a08dcd6bee2f7f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6u3t3a4q",
@@ -593,7 +599,13 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd0c086085326d9bda771e98ba15d7892439e4ad0279dfbf5d83eb5460d9cd2e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7a6e6z8j",
@@ -916,18 +928,24 @@
   {
     "id": "c_9b4x9t3p",
     "ja": "私は兄に伴奏を頼んだ。",
-    "en": "I asked my brother to accompany me.",
+    "en": "I asked my older brother to accompany me.",
     "alternatives": [
-      "I asked my brother to provide accompaniment.",
-      "I asked my brother for musical accompaniment."
+      "I asked my older brother to provide accompaniment.",
+      "I asked my older brother for accompaniment."
     ],
     "point": "accompany は歌に合わせて楽器で伴奏する。",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 5,
+    "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ad8a550af123de76c81d6d79fa713792f4db9ee72387587956a746c1437e2f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9e4g2b2m",

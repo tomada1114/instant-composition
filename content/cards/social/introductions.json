@@ -325,6 +325,28 @@
     }
   },
   {
+    "id": "c_3v9x5j9a",
+    "ja": "型にはめられたくなくて肩書きを避ける。",
+    "en": "I avoid job titles to resist being pigeonholed.",
+    "alternatives": [
+      "I avoid titles because I dislike being pigeonholed.",
+      "I skip job titles to avoid being labeled."
+    ],
+    "point": "to resist being pigeonholed は一つの型に当てはめられるのを避ける目的を表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92f8eef79232f7d1c9f1fe8fb4da14fcf919508df8f1b3e171ff70e68897beca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
@@ -366,30 +388,26 @@
     }
   },
   {
-    "id": "c_3y9p4r6r",
-    "ja": "私をサムと呼んで。",
-    "en": "Call me Sam.",
-    "alternatives": ["Use Sam for me.", "Please address me as Sam."],
-    "point": "call me + 名前で呼び方を伝える。",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 2,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4g3y6n3s",
     "ja": "私は先に挨拶すべき。",
     "en": "I should say hello first.",
-    "alternatives": ["I ought to greet you first.", "I should first greet you."],
+    "alternatives": [
+      "I ought to say hello first.",
+      "I should give the first greeting."
+    ],
     "point": "should で先に挨拶するのがよいと伝える。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 2,
+    "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ad622f01546a32b3c86a87b41ae545dca32172b74409c4c9bda8d0cd598bf5a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4n6z6c2x",
@@ -639,22 +657,6 @@
     }
   },
   {
-    "id": "c_6c3b2a9f",
-    "ja": "型にはめられるのを嫌い私は肩書きを避ける。",
-    "en": "Resisting being pigeonholed, I dispense with job titles.",
-    "alternatives": [
-      "Avoiding being labeled, I do without professional titles.",
-      "Rejecting rigid categories, I avoid using job titles."
-    ],
-    "point": "dispense with は不要と考えて使わない。",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_6d6m9p8v",
     "ja": "私は先生です。",
     "en": "I'm a teacher.",
@@ -677,14 +679,20 @@
     "id": "c_6f6c4v7q",
     "ja": "私は英語を勉強中。",
     "en": "I'm studying English.",
-    "alternatives": ["I'm learning English.", "I'm taking English classes."],
+    "alternatives": ["I'm learning English.", "I'm working on my English."],
     "point": "am studying で現在勉強していることを伝える。",
     "topic": "social",
     "subtopic": "introductions",
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:203ecfb7069cb2a64b29f11804cf2ad8fd3bae76dd66ecaec0ffd9bc09133d6c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g9a6h7j",
@@ -732,7 +740,7 @@
   },
   {
     "id": "c_7e9r6q4e",
-    "ja": "私の得意分野は言外の意味を読むことです。",
+    "ja": "私の得意分野は言外の意味を読むこと。",
     "en": "What I do best is decipher what's left unsaid.",
     "alternatives": [
       "My strength is understanding what people leave unspoken.",
@@ -741,10 +749,16 @@
     "point": "left unsaid は口にされないが含まれている意味。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["noun-clauses", "nested-clauses"],
+    "level": 8,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b244463d4dd5e613dc358c11d805136408ecfcbf1e91bd557cd0150a8486b1df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7f5g2j9b",
@@ -839,10 +853,16 @@
     "point": "have 人 doing は仕事でその役割を担うことを表す。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2bf16036fd017b9ae0ccf838bb99aa066977eb9b0a766e8ac03a26dc1023ad5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7u9e5v5c",

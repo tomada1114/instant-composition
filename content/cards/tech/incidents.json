@@ -452,10 +452,16 @@
     "point": "contained は影響を抑えた状態で、解決済みとは限らない。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3583f98bf7e9b10095c6d06dd218b8caf5a714fba77cfda4db161d6e7b52f49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5p6v5a6c",
@@ -837,8 +843,8 @@
   },
   {
     "id": "c_8h9e4w5t",
-    "ja": "担当は復旧らしいのは一時しのぎと言った。",
-    "en": "Ops said the apparent recovery was merely a reprieve.",
+    "ja": "担当は見かけの復旧を一時しのぎと言った。",
+    "en": "Ops said the apparent recovery was a reprieve.",
     "alternatives": [
       "Ops said the seeming recovery was just temporary relief.",
       "Ops said it only looked recovered for the moment."
@@ -846,10 +852,16 @@
     "point": "reprieve は問題が消えたのでなく一時的に逃れた状態。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6320a1742352e449b1d081a8903d9317c59c8160e95bd2eceff368a3e5febf3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8j4z5g5u",
@@ -1065,10 +1077,16 @@
     "point": "lull 人 into complacency は安心させて警戒心を失わせる。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:236cd231a12d23c667b125a67c4849e2256ab2b83ca262a64f8d4808445ff32c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9u5c5k9c",

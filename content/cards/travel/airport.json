@@ -79,22 +79,6 @@
     }
   },
   {
-    "id": "c_2t8k9e8n",
-    "ja": "私は乗継ぎの余裕を過信しなきゃよかった。",
-    "en": "I wish I'd not taken connection time for granted.",
-    "alternatives": [
-      "I wish I hadn't assumed ample time between flights.",
-      "If only I'd questioned the time allowed for connecting."
-    ],
-    "point": "take for granted は余裕があると確かめず決めつける。",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_3g5p2s7e",
     "ja": "私は荷物を運べる。",
     "en": "I can carry bags.",
@@ -182,18 +166,24 @@
   {
     "id": "c_3y5w5v4r",
     "ja": "係員は私の荷物が保留中だと言った。",
-    "en": "The agent said my luggage was on hold.",
+    "en": "Staff said my luggage was being held.",
     "alternatives": [
-      "The agent said they were holding my baggage.",
-      "The agent said my luggage was being held."
+      "Staff said they were holding my luggage.",
+      "They said my baggage was being held."
     ],
-    "point": "on hold は手続きなどが保留されている。",
+    "point": "said の後で荷物が保留されているという係員の説明を伝える。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95619b58e161bc8a4ca7a6110ca4f5b441cebba73e729de942375a89a210f8dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4b6b2y2f",
@@ -526,15 +516,21 @@
     "en": "Were time no object, I'd choose a connecting flight.",
     "alternatives": [
       "If time didn't matter, I'd choose a connecting flight.",
-      "I'd choose a connecting flight if time weren't an issue."
+      "I'd pick a connection if time weren't an issue."
     ],
     "point": "were を先頭にして時間の制約がない仮定を置く。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d7cc5aea1b0aa2ca05b016cc9f8f845b498f7d41698afb64fa708d13ac175f8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5q6x9v8c",
@@ -614,10 +610,16 @@
     "point": "reassign は既に決めた割り当てを変更する。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
+    "level": 6,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92d35434aca28fff7eec99078b31f6098c9aa2550900c6119a6bf195e927f851",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6j8v9u4v",
@@ -812,18 +814,24 @@
   {
     "id": "c_7z9z6d8n",
     "ja": "私が宣誓した申告内容は正確です。",
-    "en": "The declaration I attested to is accurate.",
+    "en": "The declaration I swore to is accurate.",
     "alternatives": [
-      "The declaration I formally affirmed is correct.",
-      "What I declared under oath is accurate."
+      "What I declared under oath is accurate.",
+      "My sworn declaration is accurate."
     ],
-    "point": "attest to は内容が正しいと正式に証明する。",
+    "point": "I swore to が自分の宣誓した申告内容を限定する。",
     "topic": "travel",
     "subtopic": "airport",
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b84454de256875ee608f05a1ecffdf00ac6d4d7acd582e7db402e16e09822fd9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a6d9g3y",
@@ -839,6 +847,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d3945a3a8ecf7575307ff4138947d6a89d0cfa94228ceadd00f1dbee794ecf36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8m9w4x9z",
+    "ja": "乗継ぎの余裕を過信しなきゃよかった。",
+    "en": "I wish I hadn't overestimated my connection time.",
+    "alternatives": [
+      "If only I hadn't overestimated my connection time.",
+      "I regret overestimating my time between flights."
+    ],
+    "point": "overestimate my connection time は乗り継ぎに使える時間を実際より多く見積もる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94166fa73af9be89b5546ba83fa9911c2cb707cd38339d83d8e919128ef8ed66",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -912,19 +942,25 @@
   },
   {
     "id": "c_8z5z3y8v",
-    "ja": "私には時間の余裕などほとんどない。",
+    "ja": "私には乗継ぎの余裕などほぼない。",
     "en": "I have precious little leeway between flights.",
     "alternatives": [
-      "I have hardly any room for delays between flights.",
+      "I have little room for delays between flights.",
       "There's scarcely any spare time between my flights."
     ],
     "point": "precious little はほとんどないことを強く表す。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 8,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4adc9c3e303b48bed87dc627471f5f0152127fb4a7d642c07285a5bc76fc6aba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c4a6g8y",

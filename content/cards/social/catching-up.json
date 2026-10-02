@@ -440,18 +440,24 @@
   {
     "id": "c_4m6j7e3z",
     "ja": "母は私に言いたくないことを認めさせた。",
-    "en": "Mom made me admit what I'd rather leave unsaid.",
+    "en": "Mom made me admit what I'd rather conceal.",
     "alternatives": [
-      "Mom forced me to admit what I'd rather conceal.",
-      "Mom had me acknowledge what I'd prefer left unspoken."
+      "Mom made me admit something I'd rather hide.",
+      "Mom forced an admission I'd rather have avoided."
     ],
     "point": "would rather leave unsaid は口にせずにおきたいという含み。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1f8d0bd013994452f14c9a1b4754bc14fe399532af9d27060f253b0dc28e97d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4r3t5g8p",
@@ -478,18 +484,24 @@
   {
     "id": "c_4r8a7h2c",
     "ja": "私は親切に見せた干渉を見抜けばな。",
-    "en": "I wish I'd recognized that kindness as unsolicited meddling.",
+    "en": "I wish I'd recognized that kindness as meddling.",
     "alternatives": [
       "I wish I'd seen that kindness was really meddling.",
       "If only I'd realized that kindness was unwanted interference."
     ],
-    "point": "unsolicited meddling は頼んでいないのに口出しすること。",
+    "point": "meddling は親切に見せても望まれていない干渉を指す。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3469cf5a709fcace6d9ffeb59cd604782b3ed079d7009b0e40d26ae818080a2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s6h2z5n",
@@ -613,19 +625,25 @@
   },
   {
     "id": "c_5f8a4s9t",
-    "ja": "私の成功は君には受け入れ難かったのかも。",
+    "ja": "私の成功は君には受け入れ難かったかも。",
     "en": "My success might've been a bitter pill for you.",
     "alternatives": [
-      "My success may have been hard for you to accept.",
-      "You might have found my success difficult to swallow."
+      "You may have struggled to accept my success.",
+      "You might've found my success hard to swallow."
     ],
     "point": "a bitter pill は受け入れるのが苦しい出来事。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:85d893e98c053e0e4a5685291f5d24852f12e81443493c9cfeea9f5655fd40a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h9z5m4r",

@@ -243,14 +243,20 @@
     "id": "c_3j3m8p5r",
     "ja": "この塔の方が古い。",
     "en": "This tower is older.",
-    "alternatives": ["This tower's been here longer.", "This is the older tower."],
+    "alternatives": ["This tower's the older one.", "This is the older tower."],
     "point": "older で建物の古さを比較する。",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58056e6b6a485599ba76e2d93a549c0c53938b583ad3c26fc8e2856cce332edd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3k3p6c3c",
@@ -316,14 +322,20 @@
     "id": "c_3p8m2a6e",
     "ja": "私が入ってもいい？",
     "en": "May I enter?",
-    "alternatives": ["Can I come in?", "Is entering allowed?"],
+    "alternatives": ["Can I come in?", "May I go inside?"],
     "point": "May I で入場してよいか尋ねる。",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad337afb17e5c25e3830f92ecfe0bc899595e094a062feffddf480720210fa16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q6v2v8g",
@@ -1113,14 +1125,20 @@
     "id": "c_9x5s4m5f",
     "ja": "この庭は静か。",
     "en": "This garden is quiet.",
-    "alternatives": ["This garden's peaceful.", "This garden is calm."],
+    "alternatives": ["It's quiet in this garden.", "This is a quiet garden."],
     "point": "quiet は音が少なく静かな状態。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 2,
+    "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dcd300611d4292288b1f4387087442fc40303b44393418f57e18d4d4f937806f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9y4w7y9m",

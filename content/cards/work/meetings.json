@@ -117,10 +117,16 @@
     "point": "reconcile differences は相違をすり合わせる。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 7,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c63971ecc10a7a0f84a300275f241755184208fc8a972b1da0b7e77cf0ddb85",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q2v6z6c",
@@ -538,7 +544,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f97132276aff7c04818481aa8a8daee31cc58c1a69ab81ad8975596a4e9daed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7h6n8z2r",

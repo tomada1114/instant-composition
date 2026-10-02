@@ -474,7 +474,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7862299540060b56401f5e96289ed076781a77ffd956468d7c93892988afb052",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z2c9t4v",
@@ -632,14 +638,20 @@
     "id": "c_5x5v9a4s",
     "ja": "この案を残して。",
     "en": "Keep this option.",
-    "alternatives": ["Retain this option.", "Don't drop this plan."],
+    "alternatives": ["Keep this as an option.", "Don't drop this plan."],
     "point": "keep で設計の案を候補として残す。",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48fb5e0365324de9bcd7da02fc0dd5706f0af9727417a5174636d93f59957742",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5y3j4x3y",
@@ -789,15 +801,24 @@
   {
     "id": "c_7s4z4w8k",
     "ja": "我々は安全を考えなきゃ。",
-    "en": "We must consider safety.",
-    "alternatives": ["We have to consider safety.", "We need to consider safety."],
+    "en": "We must think about safety.",
+    "alternatives": [
+      "We have to think about safety.",
+      "We need to think about safety."
+    ],
     "point": "must で安全を考慮する必要を伝える。",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97b5dccaf54b38227ba0fa9fc33f96b8e1d2d173f5c12d7eaa021a41895d59d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t9s9p3m",

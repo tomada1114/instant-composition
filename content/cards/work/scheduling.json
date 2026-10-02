@@ -447,18 +447,24 @@
   {
     "id": "c_5k9t3k5t",
     "ja": "私が選んだ日はもう埋まってる。",
-    "en": "The date I chose is booked.",
+    "en": "The date I chose is already booked.",
     "alternatives": [
       "The day I picked is already taken.",
-      "The date I selected has been booked."
+      "My chosen date is already booked."
     ],
-    "point": "chose の過去と is の今の状態を分ける。",
+    "point": "I chose が選んだ日を限定し、already booked は既に埋まっている状態を表す。",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 4,
     "grammar": ["tense-contrast", "relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef83021fd01bb9c266dbd0c2643ff4b30df76a193b4c4ce423b97bb342d02491",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5m4j7y6v",
@@ -578,7 +584,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8324fb54787232bbe1f666bdbde9fc09d3a36a3812892a1fe8c14690cdc499a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y3b2p9d",
@@ -1002,18 +1014,24 @@
   {
     "id": "c_8q3z3k6u",
     "ja": "私たちは候補日を絞るべき。",
-    "en": "We should narrow the dates.",
+    "en": "We should shortlist possible dates.",
     "alternatives": [
-      "We ought to reduce the date options.",
+      "We should narrow down possible dates.",
       "We should choose fewer possible dates."
     ],
-    "point": "narrow は候補の範囲を小さくする。",
+    "point": "shortlist possible dates は候補日を少数に絞る。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 4,
+    "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb55a2a24a2147210eb07152501f77a172d4d3936c49912fe49a81b557493a9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8r9z9b5v",

@@ -172,18 +172,24 @@
   {
     "id": "c_3g9s3f8x",
     "ja": "気乗りしなくても私も行くよ。",
-    "en": "Even if reluctant, I'll tag along.",
+    "en": "Reluctant or not, I'll tag along.",
     "alternatives": [
       "I'll come along even if I'm reluctant.",
-      "I'll accompany you despite not being keen."
+      "I'll come along despite not feeling keen."
     ],
     "point": "tag along は他の人について一緒に行く。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["concession-contrast"],
+    "level": 6,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:98fdda0034c941098e1aea5bd169bdc4507cf63fcc30d981b306de5500030ad7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j6e6m3j",
@@ -486,18 +492,24 @@
   {
     "id": "c_5g9d9r4d",
     "ja": "我々が粘れば雨をやり過ごせたのに。",
-    "en": "If we'd persevered, we'd have outlasted the rain.",
+    "en": "If we'd persisted, we'd have weathered the rain.",
     "alternatives": [
-      "Had we persevered, we'd have outlasted the rain.",
-      "We'd have outlasted the rain if we'd persevered."
+      "Had we persisted, we'd have weathered the rain.",
+      "We'd have weathered the rain had we persisted."
     ],
-    "point": "outlast は何かが終わるまで持ちこたえる。",
+    "point": "weather the rain は雨が収まるまで持ちこたえる。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bab9c6579ee9cd40d33dac44101fbb19fb81d811eb93838c89e014b9cd072b3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h6n2h9m",
@@ -592,10 +604,16 @@
     "point": "spontaneously は思いつくままに、その場の気持ちで。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:81c39872b83c5169d41eecec7465dee0c94d2b85bc9dc0c0b530a56102d5f4e7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6w6u7s6d",

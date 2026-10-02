@@ -263,7 +263,7 @@
   },
   {
     "id": "c_3z6k7f2p",
-    "ja": "洗練されて見えてもこのツールには癖がある。",
+    "ja": "洗練されて見えてもこの道具は癖がある。",
     "en": "Polished though it seems, this tool has quirks.",
     "alternatives": [
       "Although it looks polished, this tool has peculiarities.",
@@ -272,10 +272,16 @@
     "point": "polished はよく仕上がっているように見える。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec5fce3d155b5d965b12a3b5dabfb1947bcac0a0041ff84d1e123052983d26d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4g6q5g5s",
@@ -733,23 +739,29 @@
   {
     "id": "c_7b9s6x4j",
     "ja": "更新後に私は初めて隠れた代償を悟った。",
-    "en": "Only after updating did I grasp the hidden trade-off.",
+    "en": "Only after updating did I discover hidden costs.",
     "alternatives": [
-      "I understood the hidden trade-off only after updating.",
-      "Only following the update did I realize the concealed cost."
+      "I discovered hidden costs only after updating.",
+      "Hidden costs became clear only after I updated."
     ],
-    "point": "only after の句を前に置くと did が主語の前に出る。",
+    "point": "Only after updating を前に置き、更新して初めて隠れた代償を知ったことを did I で強調する。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad1398b565b513f76003434bbd52219a544b9a2849bdadd82a227e340a757529",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7j3v5r2a",
-    "ja": "窓口は我々の試みは本題と無関係だと言った。",
-    "en": "Support claimed what we'd tried was beside the point.",
+    "ja": "窓口は我々の試みが筋違いと言った。",
+    "en": "Support said what we'd tried was beside the point.",
     "alternatives": [
       "Support said our attempts were irrelevant to the issue.",
       "Support maintained that our attempts were irrelevant."
@@ -757,10 +769,16 @@
     "point": "beside the point は今の論点とは関係がない。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dacade196000e96a35d80a29a2c1ec4436737a3561bf2f5a33f3610477218a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7p8t5b5a",

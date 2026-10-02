@@ -683,8 +683,8 @@
   },
   {
     "id": "c_6g8c7q3q",
-    "ja": "私は気づかず君の善意を利用し続けてた。",
-    "en": "I've been trading on your goodwill without realizing.",
+    "ja": "気づかず君の善意を利用し続けてる。",
+    "en": "I've unknowingly been trading on your goodwill.",
     "alternatives": [
       "I've been unknowingly taking advantage of your goodwill.",
       "I've been unwittingly exploiting your generosity."
@@ -692,26 +692,38 @@
     "point": "trade on は相手の善意などを自分の利益に使う。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8122436d2c901a83e7abada7c1bd99f8b7cc21cd7b92ee5d571428f92dd087ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6m8t3w6m",
-    "ja": "彼は私の判断の過ちを見逃すと言った。",
-    "en": "He said he'd overlook my lapse in judgment.",
+    "ja": "彼は私の判断ミスを見逃すと言った。",
+    "en": "He said he'd overlook my misjudgment.",
     "alternatives": [
-      "He said he'd forgive my lapse in judgment.",
-      "He said he'd excuse my lapse in judgment."
+      "He said he'd forgive my misjudgment.",
+      "He said he'd excuse my error in judgment."
     ],
-    "point": "a lapse in judgment は一時的に判断を誤ったこと。",
+    "point": "misjudgment は判断を誤ったことを指す。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afb46398ee2bcb40213123722e05e7ab2e1e4996f8bdcefb3f26243d06107f41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y7z3w6x",
@@ -819,19 +831,25 @@
   },
   {
     "id": "c_7u4v2b4f",
-    "ja": "君の厚意にどう報いるか私には分からない。",
+    "ja": "君の厚意にどう報いるか分からない。",
     "en": "I don't know how to reciprocate your generosity.",
     "alternatives": [
       "I'm unsure how I can repay your kindness.",
-      "I don't know how to return your generosity."
+      "I don't know how to repay your kindness."
     ],
     "point": "reciprocate は受けた厚意に応える。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:af54960c9b051542f0db059dedebb3ee140bcc898752299685ae01f8b293f1c7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7w7g3z2x",
