@@ -1,0 +1,428 @@
+[
+  {
+    "name": "light text: ink on canvas",
+    "fg": "#2B2924",
+    "bg": "#FFFCF2",
+    "kind": "text"
+  },
+  {
+    "name": "light text: ink on surface",
+    "fg": "#2B2924",
+    "bg": "#FFFFFF",
+    "kind": "text"
+  },
+  {
+    "name": "light text: ink on raised",
+    "fg": "#2B2924",
+    "bg": "#F6F1E3",
+    "kind": "text"
+  },
+  {
+    "name": "light text: ink-2 on canvas",
+    "fg": "#6B665A",
+    "bg": "#FFFCF2",
+    "kind": "text"
+  },
+  {
+    "name": "light text: ink-2 on surface",
+    "fg": "#6B665A",
+    "bg": "#FFFFFF",
+    "kind": "text"
+  },
+  {
+    "name": "light text: ink-2 on raised",
+    "fg": "#6B665A",
+    "bg": "#F6F1E3",
+    "kind": "text"
+  },
+  {
+    "name": "light text: on-action on action",
+    "fg": "#FFFFFF",
+    "bg": "#6E00F5",
+    "kind": "text"
+  },
+  {
+    "name": "light text: on-energy on energy",
+    "fg": "#2B2924",
+    "bg": "#FFC500",
+    "kind": "text"
+  },
+  {
+    "name": "light text: on-good on good",
+    "fg": "#2B2924",
+    "bg": "#21C6A9",
+    "kind": "text"
+  },
+  {
+    "name": "light text: good-ink on canvas",
+    "fg": "#0E7A66",
+    "bg": "#FFFCF2",
+    "kind": "text"
+  },
+  {
+    "name": "light text: good-ink on surface",
+    "fg": "#0E7A66",
+    "bg": "#FFFFFF",
+    "kind": "text"
+  },
+  {
+    "name": "light text: good-ink on raised",
+    "fg": "#0E7A66",
+    "bg": "#F6F1E3",
+    "kind": "text"
+  },
+  {
+    "name": "light figure outline: on-energy around energy, on canvas",
+    "fg": "#2B2924",
+    "bg": "#FFFCF2",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: control-border on canvas",
+    "fg": "#8F8671",
+    "bg": "#FFFCF2",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: control-border on surface",
+    "fg": "#8F8671",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: control-border on raised",
+    "fg": "#8F8671",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: selected ink border on canvas",
+    "fg": "#2B2924",
+    "bg": "#FFFCF2",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: selected ink border on surface",
+    "fg": "#2B2924",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: selected ink border on raised",
+    "fg": "#2B2924",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: switch on, surface knob on ink track",
+    "fg": "#FFFFFF",
+    "bg": "#2B2924",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: focus on canvas",
+    "fg": "#2B2924",
+    "bg": "#FFFCF2",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: focus on surface",
+    "fg": "#2B2924",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light ui: focus on raised",
+    "fg": "#2B2924",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: timer energy on bar-track",
+    "fg": "#FFC500",
+    "bg": "#2B2924",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: progress good on bar-track",
+    "fg": "#21C6A9",
+    "bg": "#2B2924",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: bar-track on canvas",
+    "fg": "#2B2924",
+    "bg": "#FFFCF2",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: reach ink fill on raised",
+    "fg": "#2B2924",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: grew good-ink on raised",
+    "fg": "#0E7A66",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: ink-2 bar (mix bar, 14-day chart) on surface",
+    "fg": "#6B665A",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: week check on-energy on energy",
+    "fg": "#2B2924",
+    "bg": "#FFC500",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: week today ink ring on surface",
+    "fg": "#2B2924",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light data: week ahead control-border ring on surface",
+    "fg": "#8F8671",
+    "bg": "#FFFFFF",
+    "kind": "ui"
+  },
+  {
+    "name": "light hover: on-action on action hover #7636F8",
+    "fg": "#FFFFFF",
+    "bg": "#7636F8",
+    "kind": "text"
+  },
+  {
+    "name": "light hover: on-good on good hover #45CBB0",
+    "fg": "#2B2924",
+    "bg": "#45CBB0",
+    "kind": "text"
+  },
+  {
+    "name": "light hover: secondary ink on raised",
+    "fg": "#2B2924",
+    "bg": "#F6F1E3",
+    "kind": "text"
+  },
+  {
+    "name": "light hover: secondary control-border on raised",
+    "fg": "#8F8671",
+    "bg": "#F6F1E3",
+    "kind": "ui"
+  },
+  {
+    "name": "dark text: ink on canvas",
+    "fg": "#F6F3EA",
+    "bg": "#18171C",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: ink on surface",
+    "fg": "#F6F3EA",
+    "bg": "#222127",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: ink on raised",
+    "fg": "#F6F3EA",
+    "bg": "#2C2B32",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: ink-2 on canvas",
+    "fg": "#A9A6AF",
+    "bg": "#18171C",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: ink-2 on surface",
+    "fg": "#A9A6AF",
+    "bg": "#222127",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: ink-2 on raised",
+    "fg": "#A9A6AF",
+    "bg": "#2C2B32",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: on-action on action",
+    "fg": "#FFFFFF",
+    "bg": "#7B2BFF",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: on-energy on energy",
+    "fg": "#2B2924",
+    "bg": "#FFC500",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: on-good on good",
+    "fg": "#2B2924",
+    "bg": "#2ED3B4",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: good-ink on canvas",
+    "fg": "#2ED3B4",
+    "bg": "#18171C",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: good-ink on surface",
+    "fg": "#2ED3B4",
+    "bg": "#222127",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: good-ink on raised",
+    "fg": "#2ED3B4",
+    "bg": "#2C2B32",
+    "kind": "text"
+  },
+  {
+    "name": "dark text: energy figure on canvas",
+    "fg": "#FFC500",
+    "bg": "#18171C",
+    "kind": "text"
+  },
+  {
+    "name": "dark ui: control-border on canvas",
+    "fg": "#7A7986",
+    "bg": "#18171C",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: control-border on surface",
+    "fg": "#7A7986",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: control-border on raised",
+    "fg": "#7A7986",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: selected ink border on canvas",
+    "fg": "#F6F3EA",
+    "bg": "#18171C",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: selected ink border on surface",
+    "fg": "#F6F3EA",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: selected ink border on raised",
+    "fg": "#F6F3EA",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: switch on, surface knob on ink track",
+    "fg": "#222127",
+    "bg": "#F6F3EA",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: focus on canvas",
+    "fg": "#F6F3EA",
+    "bg": "#18171C",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: focus on surface",
+    "fg": "#F6F3EA",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark ui: focus on raised",
+    "fg": "#F6F3EA",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: timer energy on bar-track",
+    "fg": "#FFC500",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: progress good on bar-track",
+    "fg": "#2ED3B4",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: reach ink fill on raised",
+    "fg": "#F6F3EA",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: grew good-ink on raised",
+    "fg": "#2ED3B4",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: ink-2 bar (mix bar, 14-day chart) on surface",
+    "fg": "#A9A6AF",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: week check on-energy on energy",
+    "fg": "#2B2924",
+    "bg": "#FFC500",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: week today ink ring on surface",
+    "fg": "#F6F3EA",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark data: week ahead control-border ring on surface",
+    "fg": "#7A7986",
+    "bg": "#222127",
+    "kind": "ui"
+  },
+  {
+    "name": "dark hover: on-action on action hover #8348FF",
+    "fg": "#FFFFFF",
+    "bg": "#8348FF",
+    "kind": "text"
+  },
+  {
+    "name": "dark hover: on-good on good hover #4DD7BA",
+    "fg": "#2B2924",
+    "bg": "#4DD7BA",
+    "kind": "text"
+  },
+  {
+    "name": "dark hover: secondary ink on raised",
+    "fg": "#F6F3EA",
+    "bg": "#2C2B32",
+    "kind": "text"
+  },
+  {
+    "name": "dark hover: secondary control-border on raised",
+    "fg": "#7A7986",
+    "bg": "#2C2B32",
+    "kind": "ui"
+  }
+]

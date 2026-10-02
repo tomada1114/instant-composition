@@ -55,12 +55,12 @@ API_TABLE_NAME=scratch pnpm dev
 It was started from a Next.js App Router template by following
 [`starting-an-app`](.agents/skills/starting-an-app/SKILL.md): the template's identity
 was renamed and its language-model layer removed whole, and the Next.js application has
-since been replaced by the SPA and the API above. The design direction is settled — a
-dark-only "instrument", near-black with one lime — and lives in the
-[`designing-ui`](.agents/skills/designing-ui/SKILL.md) skill with its tokens in
-`apps/web/src/globals.css`. The first version's screens are built: the topic choice and
-placement, the start screen, the drill, the end-of-round summary and its recap, the
-records, and the settings.
+since been replaced by the SPA and the API above. The design direction is settled —
+"Lemon Arcade", PC first, playful and game-like, in light and dark following the OS —
+and lives in the [`designing-ui`](.agents/skills/designing-ui/SKILL.md) skill with its
+tokens in `apps/web/src/globals.css`. The first version's screens are built: the topic
+choice and placement, the start screen, the drill, the end-of-round summary and its
+recap, the records, and the settings.
 
 The shadcn/ui components under `apps/web/src/ui/` are copied from the registry by hand
 rather than with `shadcn add`; `designing-ui` holds how.
