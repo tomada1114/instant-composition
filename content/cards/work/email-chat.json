@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2r8c7r7m",
+    "ja": "法務からまだ一言も返信がない。",
+    "en": "I haven't heard a peep from legal.",
+    "alternatives": [
+      "I've had no word from legal yet.",
+      "Legal still hasn't gotten back to me."
+    ],
+    "point": "not hear a peep は一言も音沙汰がないこと。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3c8w9s7r",
     "ja": "再送していただけないでしょうか？",
     "en": "I wonder if you could resend it.",
@@ -277,6 +293,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5m4x4v4m",
+    "ja": "私のメールは雑務に埋もれた。",
+    "en": "My email was lost in the shuffle.",
+    "alternatives": [
+      "My email got overlooked in the rush.",
+      "My email slipped through the cracks."
+    ],
+    "point": "lost in the shuffle は忙しさの中で見落とされること。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6g3f5f5b",
@@ -675,6 +707,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u6c3u5n",
+    "ja": "私は既にその件を決着させていた。",
+    "en": "I'd already closed that loop.",
+    "alternatives": [
+      "I'd already tied up that loose end.",
+      "I had already taken care of that matter."
+    ],
+    "point": "close the loop は未決のやり取りを完結させること。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9y3f2c4n",

@@ -415,6 +415,22 @@
     }
   },
   {
+    "id": "c_5y8b9r9q",
+    "ja": "私たちがケチってたら駄作を出してた。",
+    "en": "Had we skimped, we'd have shipped a dud.",
+    "alternatives": [
+      "We'd have released a dud if we'd cut corners.",
+      "If we'd skimped, we'd have released a lousy product."
+    ],
+    "point": "skimp は必要な手間や費用まで切り詰めること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6c4w6w4r",
     "ja": "これでユーザーはうちに夢中になる。",
     "en": "That'll get users hooked on us.",
@@ -475,6 +491,22 @@
     }
   },
   {
+    "id": "c_6y4m9v2p",
+    "ja": "その時やっと解約の事情が腑に落ちた。",
+    "en": "Only then did the penny drop about churn.",
+    "alternatives": [
+      "Only then did I grasp why users were leaving.",
+      "That's when the reason for the churn finally clicked."
+    ],
+    "point": "the penny drops はようやく事情が腑に落ちること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6y5p6n7y",
     "ja": "バグは金曜に修正されます。",
     "en": "The bug will be fixed Friday.",
@@ -533,6 +565,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7f7t7q9d",
+    "ja": "資金難で私たちは追加機能を見送る。",
+    "en": "Strapped for cash, we're shelving the extras.",
+    "alternatives": [
+      "Short on cash, we are putting extra features on hold.",
+      "We're shelving nonessential features because money's tight."
+    ],
+    "point": "strapped for cash は資金が足りないこと。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7j3t9v8p",

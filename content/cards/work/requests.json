@@ -300,6 +300,22 @@
     }
   },
   {
+    "id": "c_4z8t9b5g",
+    "ja": "手空きなら私が問合せをさばくのに。",
+    "en": "If I weren't swamped, I'd field inquiries.",
+    "alternatives": [
+      "I'd handle the inquiries if I weren't so busy.",
+      "If I had breathing room, I'd handle the inquiries."
+    ],
+    "point": "field は問い合わせなどを受けて対応すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5k6y2b6x",
     "ja": "チームに、明日やり直させます。",
     "en": "I'll have the team redo it tomorrow.",
@@ -361,6 +377,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6a7x2u4m",
+    "ja": "細かな問題を潰してくれますか？",
+    "en": "Could you iron out the wrinkles?",
+    "alternatives": [
+      "Could you smooth out the rough edges?",
+      "Could you work out the remaining kinks?"
+    ],
+    "point": "iron out the wrinkles は細かな問題を解消すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6d7y9z8f",
@@ -754,5 +786,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y7s9a2b",
+    "ja": "彼は穴埋めすると言った。",
+    "en": "He said he'd pick up the slack.",
+    "alternatives": [
+      "He said he'd cover the shortfall.",
+      "He said he'd take on the extra work."
+    ],
+    "point": "pick up the slack は足りない分の仕事を引き受けること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

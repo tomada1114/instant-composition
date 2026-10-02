@@ -589,6 +589,22 @@
     }
   },
   {
+    "id": "c_6e9t2c5e",
+    "ja": "ここでコーヒーと称する物には呆れる。",
+    "en": "What passes for coffee here beggars belief.",
+    "alternatives": [
+      "I can't believe they call this stuff coffee.",
+      "It's unbelievable that this is supposed to be coffee."
+    ],
+    "point": "pass for はそれらしく見なされることを皮肉にも使う。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6k5e4d5g",
     "ja": "時間があれば手伝うのに。",
     "en": "If I had time, I'd help.",
@@ -606,6 +622,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6m5t7j4w",
+    "ja": "このオフィスに要るのは動ける広さだ。",
+    "en": "What this office needs is some elbow room.",
+    "alternatives": [
+      "What we need here is room to move.",
+      "It's more space that this office needs."
+    ],
+    "point": "elbow room は窮屈でなく動ける空間のこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7d3x6d3j",
@@ -714,6 +746,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8g2s6h9n",
+    "ja": "総務は私たちを手続きで振り回す。",
+    "en": "Admin has us jumping through hoops.",
+    "alternatives": [
+      "Admin makes us deal with endless red tape.",
+      "Admin puts us through a lot of bureaucratic hassle."
+    ],
+    "point": "jump through hoops は厄介な手続きをいくつもこなすこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8w2h8w6j",

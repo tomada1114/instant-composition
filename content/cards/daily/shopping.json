@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2r4z8r6n",
+    "ja": "彼女はこの靴は長持ちすると言った。",
+    "en": "She said these shoes would go the distance.",
+    "alternatives": [
+      "She said these shoes would stand the test of time.",
+      "She said these shoes would last for ages."
+    ],
+    "point": "go the distance は最後まで持ちこたえること。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3b3u4z8h",
     "ja": "このシャツは安いよ。",
     "en": "This shirt is cheap.",
@@ -96,6 +112,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n4p7z6z",
+    "ja": "彼らの売り物が本物だとは思えない。",
+    "en": "I doubt what they're selling is the real McCoy.",
+    "alternatives": [
+      "I don't think the stuff they're selling is genuine.",
+      "I doubt their merchandise is the genuine article."
+    ],
+    "point": "the real McCoy は偽物でない本物のこと。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3n5w2s4h",
@@ -456,6 +488,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7t5j2j9d",
+    "ja": "私にはこれはちょっと高すぎるかな。",
+    "en": "This feels a shade too steep for me.",
+    "alternatives": [
+      "I feel this is a touch too pricey.",
+      "This seems just a bit too expensive for me."
+    ],
+    "point": "a shade too steep はほんの少し高すぎるという言い方。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8d4h6d4q",

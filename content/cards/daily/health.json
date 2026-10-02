@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b7c9a6t",
+    "ja": "私はやっと風邪の峠を越えた。",
+    "en": "I've finally turned the corner with this bug.",
+    "alternatives": [
+      "I've finally gotten past the worst of this bug.",
+      "I'm finally on the mend from this bug."
+    ],
+    "point": "turn the corner は最悪の状態を越えて回復へ向かうこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2e3k7h6j",
     "ja": "ちょっと熱がある気がします。",
     "en": "I might have a fever.",
@@ -209,6 +225,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4r4q6z9p",
+    "ja": "こんなに疲れてなければ私は運動するのに。",
+    "en": "Were I less run-down, I'd get moving.",
+    "alternatives": [
+      "If I weren't so worn out, I'd exercise.",
+      "I'd get some exercise if I weren't so run-down."
+    ],
+    "point": "Were I は If I were の if を省いた形。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4t5e2b4s",
@@ -522,6 +554,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6s3n4n4z",
+    "ja": "私の症状は一度も和らがなかった。",
+    "en": "At no point did my symptoms let up.",
+    "alternatives": [
+      "My symptoms never eased up at all.",
+      "There wasn't a moment when my symptoms eased."
+    ],
+    "point": "let up は症状や強さが和らぐこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6w2f3t3r",

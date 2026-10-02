@@ -168,6 +168,22 @@
     }
   },
   {
+    "id": "c_3m9g5u4r",
+    "ja": "私が感謝するのは君の口の堅さだ。",
+    "en": "It's your discretion that I appreciate.",
+    "alternatives": [
+      "Your discretion is what I'm grateful for.",
+      "What I appreciate is your keeping things confidential."
+    ],
+    "point": "discretion は秘密を漏らさない配慮も表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3u9m7j6e",
     "ja": "貸してくれた傘、ありがとう。",
     "en": "Thanks for the umbrella you lent me.",
@@ -349,6 +365,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5f9b5u9p",
+    "ja": "君の存在を当然とは決して思わない。",
+    "en": "Never will I take you for granted.",
+    "alternatives": [
+      "I'll never treat your support as a given.",
+      "I won't ever take your kindness for granted."
+    ],
+    "point": "take you for granted は君のありがたみを忘れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5g7k8r7x",
@@ -557,6 +589,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7y6e2m5j",
+    "ja": "君が事の重大さを察してくれて感謝する。",
+    "en": "I'm grateful you knew what was at stake.",
+    "alternatives": [
+      "I'm grateful you understood how much was at stake.",
+      "Thank you for realizing what was at stake."
+    ],
+    "point": "at stake は結果次第で失われかねないものを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a6x3y2t",

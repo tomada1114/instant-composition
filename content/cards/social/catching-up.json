@@ -476,6 +476,22 @@
     }
   },
   {
+    "id": "c_5w2j4y6h",
+    "ja": "私はまだ峠を越えたとは言えない。",
+    "en": "I wouldn't say I'm out of the woods.",
+    "alternatives": [
+      "I can't quite say I'm in the clear yet.",
+      "I wouldn't claim my troubles are behind me."
+    ],
+    "point": "out of the woods は危険や問題を脱した状態。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5z3b7r7r",
     "ja": "残ってたら、今ごろ課長だよ。",
     "en": "If I'd stayed, I'd be manager now.",
@@ -667,6 +683,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7j7q4p3h",
+    "ja": "私たちは早く仲直りしとけばよかった。",
+    "en": "I wish we'd buried the hatchet sooner.",
+    "alternatives": [
+      "I wish we'd made peace a little earlier.",
+      "If only we'd settled our differences sooner."
+    ],
+    "point": "bury the hatchet はけんかを終わりにして仲直りすること。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7m5r8g3d",

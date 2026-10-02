@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2x2d9g6f",
+    "ja": "私の陶芸はまだ合格点とはいかない。",
+    "en": "My pottery isn't quite up to snuff yet.",
+    "alternatives": [
+      "My pottery isn't quite up to scratch yet.",
+      "My pottery isn't quite good enough yet."
+    ],
+    "point": "up to snuff は期待される水準に達していること。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3a7t2x4r",
     "ja": "退職して初めて、絵を描き始めた。",
     "en": "Only after retiring did I start painting.",
@@ -168,6 +184,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5c5p6v9r",
+    "ja": "彼が絵で食えるとは思えない。",
+    "en": "I doubt what he paints pays the bills.",
+    "alternatives": [
+      "I doubt he makes a living from his paintings.",
+      "I don't think his paintings put food on the table."
+    ],
+    "point": "pay the bills は生活費をまかなうこと。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5e6y6x3z",
@@ -521,6 +553,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8d7q4f7k",
+    "ja": "写真に熱中して、私は散財した。",
+    "en": "Bitten by the photography bug, I splurged.",
+    "alternatives": [
+      "Hooked on photography, I went on a spending spree.",
+      "Caught up in photography, I spent a small fortune."
+    ],
+    "point": "photography bug は写真への熱中を表す。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8f6w6h6f",

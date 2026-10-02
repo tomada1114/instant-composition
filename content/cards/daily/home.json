@@ -331,6 +331,22 @@
     }
   },
   {
+    "id": "c_7k9b4e3j",
+    "ja": "家事分担が公平なら私も役目を果たすのに。",
+    "en": "Were chores split fairly, I'd pull my weight.",
+    "alternatives": [
+      "If chores were shared fairly, I'd do my bit.",
+      "I'd do my share if chores were divided fairly."
+    ],
+    "point": "pull my weight は自分の分担を果たすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7k9t9w5j",
     "ja": "腹が立つのは、流しが汚いことだ。",
     "en": "What annoys me is the dirty sink.",
@@ -394,6 +410,22 @@
     }
   },
   {
+    "id": "c_7p9w3w5m",
+    "ja": "父は片付けで私たちをビクビクさせる。",
+    "en": "Dad has us walking on eggshells about clutter.",
+    "alternatives": [
+      "Dad makes us tiptoe around the issue of clutter.",
+      "Dad keeps us on edge over untidiness."
+    ],
+    "point": "walk on eggshells は相手を怒らせぬよう気を遣うこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7q6g3z4j",
     "ja": "今夜、私が皿を洗うよ。",
     "en": "I'll do the dishes tonight.",
@@ -433,6 +465,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7r9f7c8x",
+    "ja": "私はやっと散らかりを少しは片付けた。",
+    "en": "I've finally made a dent in the clutter.",
+    "alternatives": [
+      "I've finally made some headway with the clutter.",
+      "I've finally managed to clear away some of the clutter."
+    ],
+    "point": "make a dent in は大きな課題を少しでも減らすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8k2c6u7z",

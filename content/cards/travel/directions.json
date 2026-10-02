@@ -301,6 +301,22 @@
     }
   },
   {
+    "id": "c_4b9e7d4q",
+    "ja": "この先に何があるか誰も分からない。",
+    "en": "What lies ahead is anyone's guess.",
+    "alternatives": [
+      "Nobody can say what is up ahead.",
+      "What's farther down this road is a mystery."
+    ],
+    "point": "anyone's guess は誰にも分からないこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4e2y2z9u",
     "ja": "彼女は、駅はすぐそこだと言った。",
     "en": "She said the station was right there.",
@@ -340,6 +356,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4s3q2v7g",
+    "ja": "人が戸惑うのは道の急な曲がりだ。",
+    "en": "It's the dogleg that tends to throw people.",
+    "alternatives": [
+      "It is the sharp bend that usually confuses people.",
+      "What trips people up is that sharp bend."
+    ],
+    "point": "dogleg は道などの急な折れ曲がりを指す。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4x4g7e8g",
@@ -650,6 +682,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q3k4m6c",
+    "ja": "私たちが左へそれてたら今は楽勝なのに。",
+    "en": "Had we veered left, we'd be home free.",
+    "alternatives": [
+      "If we'd turned left, we'd be in the clear now.",
+      "Had we gone left, we'd have no obstacles now."
+    ],
+    "point": "home free は難所を越えて成功が確実な状態。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9c2k5k2b",

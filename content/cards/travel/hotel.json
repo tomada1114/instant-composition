@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2d8s2s4u",
+    "ja": "騒音には私もちょっと閉口してます。",
+    "en": "I'm a little put out by the noise.",
+    "alternatives": [
+      "The noise is a bit of a nuisance.",
+      "I find the noise a little irritating."
+    ],
+    "point": "put out はここでは軽い不満や迷惑を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2k9z9r3x",
     "ja": "清掃係にシーツを替えてもらった。",
     "en": "I got housekeeping to change the sheets.",
@@ -299,6 +315,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5m4v2q7n",
+    "ja": "部屋が綺麗なら私は法外な額も払うのに。",
+    "en": "Were it spotless, I'd pay through the nose.",
+    "alternatives": [
+      "If the room were immaculate, I'd pay a fortune.",
+      "I'd pay a fortune if the room were clean."
+    ],
+    "point": "pay through the nose は法外な大金を払うこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5x6y2k5u",
@@ -696,6 +728,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r4x3w5q",
+    "ja": "ホテル側は券で私をあしらった。",
+    "en": "They fobbed me off with a voucher.",
+    "alternatives": [
+      "They brushed me off by offering a voucher.",
+      "They gave me a voucher just to dismiss me."
+    ],
+    "point": "fob someone off は適当な対応で相手をあしらうこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9t7f8g3x",

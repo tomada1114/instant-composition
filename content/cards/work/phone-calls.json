@@ -211,6 +211,22 @@
     }
   },
   {
+    "id": "c_4k3d6x6e",
+    "ja": "君が電話してたら今は手探りじゃない。",
+    "en": "Had you called, I wouldn't be flying blind.",
+    "alternatives": [
+      "If you'd called, I wouldn't be in the dark.",
+      "I'd have some clue now if you'd phoned."
+    ],
+    "point": "flying blind は必要な情報なしで手探りすること。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4q6y8h8b",
     "ja": "詳しい者を呼びますね。",
     "en": "I'll get someone who knows more.",
@@ -231,6 +247,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z2b6b2b",
+    "ja": "私は給与係とずっと電話が行き違いだ。",
+    "en": "I've been playing phone tag with payroll.",
+    "alternatives": [
+      "Payroll and I keep missing each other's calls.",
+      "Payroll and I haven't managed to connect by phone."
+    ],
+    "point": "play phone tag は互いの折り返し電話が行き違うこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4z6r8g3z",
@@ -317,6 +349,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6k2c7g3h",
+    "ja": "恐縮ですがお話が私には理解不能でした。",
+    "en": "I'm afraid what you said went over my head.",
+    "alternatives": [
+      "I'm sorry, your point was beyond my understanding.",
+      "I'm afraid I couldn't grasp what you meant."
+    ],
+    "point": "go over my head は難しくて理解できないこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6q2c8g6q",

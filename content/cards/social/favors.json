@@ -290,6 +290,38 @@
     }
   },
   {
+    "id": "c_4p2r5y8m",
+    "ja": "彼女は口利きをすると言った。",
+    "en": "She said she'd pull some strings.",
+    "alternatives": [
+      "She said she'd use her influence.",
+      "She said she'd put in a word."
+    ],
+    "point": "pull strings はコネや影響力を使うこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_4w2q6j8r",
+    "ja": "手一杯でも、手を貸して。",
+    "en": "Even if you're swamped, please pitch in.",
+    "alternatives": [
+      "Please lend a hand even if you're swamped.",
+      "Even if you're snowed under, please help."
+    ],
+    "point": "pitch in は協力して手を貸すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4z5m4c7h",
     "ja": "今、料理中で手が離せない。",
     "en": "I'm busy cooking right now.",
@@ -635,6 +667,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y3f8r3h",
+    "ja": "私も恩返しできたらな。",
+    "en": "I wish I could reciprocate.",
+    "alternatives": [
+      "I wish I could repay your kindness.",
+      "If only I could return the favor."
+    ],
+    "point": "reciprocate は受けた好意を返すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8y5p2h6m",

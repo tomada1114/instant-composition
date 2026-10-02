@@ -45,6 +45,22 @@
     }
   },
   {
+    "id": "c_2n2n6t8a",
+    "ja": "私は出版でずっと修業中です。",
+    "en": "I've been cutting my teeth in publishing.",
+    "alternatives": [
+      "I've been learning the ropes in publishing.",
+      "I've been gaining my first experience in publishing."
+    ],
+    "point": "cut my teeth は初めの実務経験を積むこと。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2t9p7k9j",
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
@@ -65,6 +81,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2v9w5m3s",
+    "ja": "私が重役と付き合う機会は稀だ。",
+    "en": "Seldom do I rub shoulders with executives.",
+    "alternatives": [
+      "I rarely get to mingle with executives.",
+      "I seldom get to mix with senior executives."
+    ],
+    "point": "rub shoulders with は人と交流すること。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3c6q9n4a",
+    "ja": "あなたの原動力を伺えますか？",
+    "en": "May I ask what makes you tick?",
+    "alternatives": [
+      "Could you tell me what drives you?",
+      "May I ask what really motivates you?"
+    ],
+    "point": "what makes you tick は行動や関心の原動力を尋ねる表現。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3d7g4c3x",

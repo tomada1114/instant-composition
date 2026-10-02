@@ -281,6 +281,22 @@
     }
   },
   {
+    "id": "c_5b4c6n4y",
+    "ja": "私たちは運用担当に止めさせた。",
+    "en": "We had ops pull the plug.",
+    "alternatives": [
+      "We got ops to shut it down.",
+      "We told operations to cut it off."
+    ],
+    "point": "pull the plug は稼働中のものを停止させること。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5k3w9p2z",
     "ja": "前より影響が小さいよ。",
     "en": "The impact is smaller now.",
@@ -386,6 +402,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6g4j9m4r",
+    "ja": "落ちたのは中枢だと私たちは見ている。",
+    "en": "We suspect what crashed was the linchpin.",
+    "alternatives": [
+      "We think the core component is what crashed.",
+      "We suspect it was the central component that failed."
+    ],
+    "point": "linchpin は全体を支える要の部分を指す。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6p4s6j7a",
@@ -655,6 +687,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9g5v8q6v",
+    "ja": "修正後もサーバーは延命状態だ。",
+    "en": "Though patched, the server's on borrowed time.",
+    "alternatives": [
+      "Despite the patch, the server's days are numbered.",
+      "Patched or not, the server won't last long."
+    ],
+    "point": "on borrowed time はいつ終わってもおかしくない状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9j7n3t6w",
