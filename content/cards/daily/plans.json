@@ -332,10 +332,16 @@
     "point": "move the goalposts は途中で条件を変える。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
+    "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6629b195cffb5bac97aaecfc4e703e1f1c33a4a38e7fafb7967bbded784bc09a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5s3a8d8e",
@@ -427,10 +433,16 @@
     "point": "read the room は場の雰囲気や相手の気持ちを察する。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:361bd59e35426398b6ae1081d53ce04a160f5ada24a2a819cadd66d6a2709322",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6n9p4b3x",
@@ -528,10 +540,16 @@
     "point": "a long shot は実現する見込みが低いこと。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cba57a49226a3a0092fdc6487536c43f7c94d0927b936a7876ff39ff6fd5fdcc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7k5b8d3a",

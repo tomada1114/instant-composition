@@ -297,7 +297,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a7479c04d12991005ca4eb5cf993f3c5474561c2cb59d3317320fb7cf5db3d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4n6z6c2x",
@@ -352,7 +358,13 @@
     "level": 5,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff12603fe034d1864da5ce122cee9eb24547ee120128e81d98921e0e7c5aa40c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5c2u6w7j",
@@ -360,15 +372,21 @@
     "en": "I'm more outgoing than my sister.",
     "alternatives": [
       "I'm more sociable than my sister.",
-      "I'm more outgoing compared with my sister."
+      "My sister's less outgoing than me."
     ],
     "point": "outgoing は人と気軽に交流する性格。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 5,
+    "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4744c8f7251541fa2a49d9ef324b99556942e94473567af8e0484fa255f4d619",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5c4k7p2e",

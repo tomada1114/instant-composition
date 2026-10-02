@@ -134,7 +134,13 @@
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3086451e3a7d9d335d7a5efe42c6d2b4166317a06c9acc89e193a42b954213ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3t4t4v7q",
@@ -476,7 +482,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e48c1573328d68bec0dc29d627033c9579affb6ee7ed8cac045dbbf153acd55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7c4f3a3n",
@@ -613,14 +625,20 @@
     "id": "c_7t3w4x9v",
     "ja": "私の鍵が効かなくなった。",
     "en": "My key stopped working.",
-    "alternatives": ["My key no longer worked.", "My key ceased to work."],
+    "alternatives": ["My key no longer worked.", "My key quit working."],
     "point": "stopped working は使えなくなった過去。",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 3,
-    "grammar": ["past-simple"],
+    "grammar": ["gerunds", "past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8679ebae16c1505608584d70be9c1b52d2cd9b4e80ebbf222d09603ad4c329c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y2x4u4h",

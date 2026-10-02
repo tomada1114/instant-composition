@@ -281,7 +281,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:033b93ce7590cf5cb7984c1b52ce224694859b778e5238c7537448265177b833",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3w3a9f2c",
@@ -410,14 +416,20 @@
     "id": "c_5h9z5m4r",
     "ja": "私、犬を飼うよ。",
     "en": "I'll get a dog.",
-    "alternatives": ["I'm going to get a dog.", "I'll adopt a dog."],
+    "alternatives": ["I'm going to get a dog.", "I'm getting a dog."],
     "point": "will でこれからの予定を話す。",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c59b5d6892c3846f4ccabb5a451d10a09da3db47c8ad183bdf2e7905dcc04d9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k8q4w7q",
@@ -828,16 +840,22 @@
   },
   {
     "id": "c_9h2g3d4j",
-    "ja": "写真を見せてもらえる？",
+    "ja": "写真を見てもいい？",
     "en": "Can I see photos?",
-    "alternatives": ["Could you show me some photos?", "May I look at the photos?"],
+    "alternatives": ["Could I look at the photos?", "Can you show me the photos?"],
     "point": "Can I で許可を求める。",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d978727c3f9f3e9bacad85ecb00d3cc0f731f1a16afa86fbe8f94501dba0967",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9h6p5b8a",

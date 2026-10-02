@@ -128,19 +128,25 @@
   },
   {
     "id": "c_3b4s4y6s",
-    "ja": "私たち、店は見切っとけばな。",
+    "ja": "私たち、店を見切ればよかった。",
     "en": "I wish we'd cut our losses.",
     "alternatives": [
-      "I regret us sticking with that restaurant.",
-      "If only we'd walked away from that restaurant."
+      "I wish we'd given up on that restaurant.",
+      "If only we'd left that restaurant sooner."
     ],
     "point": "cut our losses はこれ以上の損を避けて撤退する。",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f706c87feff71ceed09a4c5f6d01c26f76f07595745c447d9930fb14221da828",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d3d4x5t",
@@ -371,11 +377,11 @@
   },
   {
     "id": "c_4x8w6r7n",
-    "ja": "私たち、こんな料理に奮発は稀だ。",
-    "en": "Seldom do we splurge on such fare.",
+    "ja": "我々がこんな料理に奮発するのは稀。",
+    "en": "Seldom do we splurge on such food.",
     "alternatives": [
-      "We rarely spend lavishly on food like this.",
-      "We hardly ever splurge on this kind of food."
+      "We rarely splurge on food like this.",
+      "We rarely spend this much on food."
     ],
     "point": "Seldom を先頭に置くと do we の語順。",
     "topic": "daily",
@@ -383,7 +389,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf7dd354d0f4a1fd386387a13c52f543aa74634df6a78933aa4eaf9b35fef9c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5g5g6s8d",
@@ -592,16 +604,22 @@
   },
   {
     "id": "c_7d4r3r2m",
-    "ja": "会計で私は頭に血が上った。",
+    "ja": "請求額に私は頭に血が上った。",
     "en": "The bill had me seeing red.",
     "alternatives": ["The bill made me furious.", "The bill had me fuming."],
     "point": "have 人 doing で状態を引き起こす、see red は激怒する。",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fdb8dfe24aa60c74c1266b095440c506beeed9d01ec022c1ef9b73cca76594d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7e5h5q4u",

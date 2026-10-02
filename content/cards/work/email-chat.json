@@ -3,17 +3,20 @@
     "id": "c_2d5g8v6x",
     "ja": "私ならその返信は和らげる。",
     "en": "If I were you, I'd soften it.",
-    "alternatives": [
-      "In your position, I'd make that reply gentler.",
-      "If I were you, I'd tone it down."
-    ],
+    "alternatives": ["I'd soften that reply.", "In your shoes, I'd soften that reply."],
     "point": "soften は表現のきつさを和らげる。",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 7,
+    "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:011dc92210ff07e70a6cae0d5202eac4cf819b4f080cb5d411cd8fcca2de87d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2g9k5f3c",
@@ -127,16 +130,22 @@
   },
   {
     "id": "c_3g8x9t9k",
-    "ja": "私は連絡内容を転送した。",
-    "en": "I forwarded our message.",
-    "alternatives": ["I sent our message on.", "I passed along our message."],
+    "ja": "私はメッセージを転送した。",
+    "en": "I forwarded the message.",
+    "alternatives": ["I sent the message on.", "I passed along the message."],
     "point": "forward は届いたメールなどを転送する。",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5e50196a81f523ae6ea74fa6da0d4e03ab8487632f38dd01b3c70df593401c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j7v9g3c",
@@ -375,11 +384,11 @@
   },
   {
     "id": "c_6v9r5h3s",
-    "ja": "私はもう関係者に知らせた。",
+    "ja": "私はもう関係者を話に加えた。",
     "en": "I've already looped in the stakeholders.",
     "alternatives": [
-      "I've already brought the stakeholders into the conversation.",
-      "I've already included the relevant people."
+      "I've already included the stakeholders.",
+      "I've already brought the stakeholders in."
     ],
     "point": "loop in は関係者を話に加える。",
     "topic": "work",
@@ -387,7 +396,13 @@
     "level": 7,
     "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:35afe11bd728efde65374c51be33d4745e17e0a572b356bd52ebb83c77574cd9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7b3b2a6n",
@@ -400,7 +415,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f84c048b07f86c78ead1e847b59d3927b3b6c0b78b0c34ffcdfc8053d342b2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7c7f8b8x",
@@ -438,7 +459,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0406a9be59a3d75919312543832866dce0e348efaaeee2a9b9009c5e59af6606",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7j4y5n8r",
@@ -590,11 +617,11 @@
   },
   {
     "id": "c_8e8v9x4e",
-    "ja": "何を添付したか教えて。",
+    "ja": "君が何を添付したか教えて。",
     "en": "Tell me what you attached.",
     "alternatives": [
       "Let me know which files you attached.",
-      "Say what you included as attachments."
+      "Tell me what you've attached."
     ],
     "point": "what 節を添付したものの意味で使う。",
     "topic": "work",
@@ -602,7 +629,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd9748c04447fbf141cb6926df3229c6f297588fa7a88134387bd6a93c6e0885",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f3e2a9n",

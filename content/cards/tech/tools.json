@@ -61,19 +61,25 @@
   },
   {
     "id": "c_2g9t8g9r",
-    "ja": "Gitが私に面倒を強いる。",
+    "ja": "Gitが私に面倒な手順を強いる。",
     "en": "Git makes me jump through hoops.",
     "alternatives": [
-      "Git makes me follow unnecessarily complicated steps.",
+      "Git makes me take unnecessarily complicated steps.",
       "Git forces me through needless procedural hurdles."
     ],
     "point": "jump through hoops は面倒な手順を踏まされる。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a1fab8c1825c228b473c5e467a56d8871e7e45734ac9976901d7109474f5a09",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3a7n4b5f",
@@ -758,16 +764,22 @@
     "ja": "彼がツールの拒否理由を知るか疑問。",
     "en": "I doubt he knows why it balked.",
     "alternatives": [
-      "I'm not sure he understands why the tool refused.",
-      "He may not know why the tool resisted."
+      "I'm not sure he knows why it refused.",
+      "He may not know why the tool balked."
     ],
     "point": "balk は要求に抵抗して動かない、doubt の中に疑問節。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d8e3d9fb4fb52031d76260885cd7631c3dc8b14137fe7c3c845fbfa0dc8651d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9q3w9n4q",
@@ -780,10 +792,16 @@
     "point": "temperamental は機嫌に左右されるように不安定。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c26087857478f65d31e0b8ef15e1a0e3eeedd5dca6f2343d647b6fb0188a9efd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9r4d4b3t",

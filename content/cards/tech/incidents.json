@@ -47,14 +47,20 @@
     "id": "c_2u4a4n5z",
     "ja": "止まったら私に知らせて。",
     "en": "Tell me if it stops.",
-    "alternatives": ["Let me know if it stops.", "Inform me if it stops."],
+    "alternatives": ["Let me know if it stops.", "Alert me if it stops."],
     "point": "これからの条件でも if 節は現在形。",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf9bb111d8a85274aac0b098ce0096286d1685be425950a9bf31354b8b71fa73",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2v9b4u3r",
@@ -238,7 +244,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:68bd5264ed5c4a4c042f54beca3a0ec995be5b708295145cb69e82f95234a268",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4j9z2s8d",
@@ -565,14 +577,20 @@
     "id": "c_7c5k2r5e",
     "ja": "私は彼に確認を頼んだ。",
     "en": "I asked him to check.",
-    "alternatives": ["I requested that he check.", "I asked him to look."],
+    "alternatives": ["I asked him to check it.", "I asked him to verify it."],
     "point": "ask 人 to do で行動を頼む。",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d82d826d14f1b59ba15ca41c386467ef5d34578aebddaa2c20d79027d814af0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7q7m9q2z",

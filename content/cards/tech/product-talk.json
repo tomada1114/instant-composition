@@ -212,19 +212,6 @@
     }
   },
   {
-    "id": "c_3h2e8q8b",
-    "ja": "私たちに助けが必要。",
-    "en": "We need help.",
-    "alternatives": ["We need some help.", "Help is needed."],
-    "point": "help は数えないので a をつけない。",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 1,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_3k3d3t4u",
     "ja": "もうリリースした？",
     "en": "Have you released it yet?",
@@ -278,6 +265,25 @@
         "hash": "sha256:621a999dc124f66545254e5bb094fc18847f0ca0ce52c1b7ceddeb0db189dfa8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w6k4x7b",
+    "ja": "我々は利用者の感想が必要。",
+    "en": "We need user feedback.",
+    "alternatives": ["We need feedback from users.", "We need users' opinions."],
+    "point": "feedback は数えないので a をつけない。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e559024e2b3294cee63d1f65a7c88e4950b333258e9b35bb8ba808678df5df27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -668,7 +674,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc95d712560f065c91713423db0ba898320f596711c1230df7f22511572e9088",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7x8w3s9j",
@@ -747,7 +759,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74b7a87c6d079802cbb828558f318d225dc55920fc813a6f1ba96b3dadacce2d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y7m7r5b",

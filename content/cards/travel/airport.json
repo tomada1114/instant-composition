@@ -65,7 +65,7 @@
     "en": "Exhausted, I missed boarding.",
     "alternatives": [
       "Worn out, I missed boarding.",
-      "I missed boarding from exhaustion."
+      "I missed boarding because I was exhausted."
     ],
     "point": "Exhausted は主語の状態を添える。",
     "topic": "travel",
@@ -73,7 +73,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7961b9a22259583d18f7d52f8dcfc83288f0ad3a113752b67354c6080ba1a872",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3x7d4c3g",
@@ -676,15 +682,21 @@
   {
     "id": "c_9g5f4r2y",
     "ja": "私は搭乗口へ急いだ。",
-    "en": "I dashed to the boarding gate.",
+    "en": "I dashed to the gate.",
     "alternatives": ["I rushed to the gate.", "I hurried toward the gate."],
     "point": "dash は急いで駆ける。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 6,
+    "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4712eeb7d4f389c8d520db78044b1c620583dcdc77bb7fa0667e1b3fc1d25250",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g7x4z6v",
@@ -697,7 +709,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d744f5fe5f21eed23f7eeb6102fa706f47408736032c8f05d3818d6fb4785f8c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9n3w7k9b",

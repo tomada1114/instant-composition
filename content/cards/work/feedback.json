@@ -1,11 +1,11 @@
 [
   {
     "id": "c_2g9j8e2g",
-    "ja": "君、嫌味な褒め言葉はいらなかったよ。",
+    "ja": "私たちに嫌味な褒め言葉は不要だった。",
     "en": "You could've spared us that backhanded compliment.",
     "alternatives": [
-      "You needn't have given us that insulting compliment.",
-      "You could've kept that veiled insult to yourself."
+      "You didn't need to give us that backhanded compliment.",
+      "You could've kept that backhanded compliment to yourself."
     ],
     "point": "could have spared は避けてほしかったという遠回しな非難。",
     "topic": "work",
@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7110aa61a6b61aafceb99858450f225e8f82b5d69e038eeca471f678edf8958",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2j9w8c6f",
@@ -679,7 +685,7 @@
     "en": "Had I equivocated, you'd be none the wiser.",
     "alternatives": [
       "If I'd been evasive, you still wouldn't know.",
-      "You'd still be unaware if I'd dodged the issue."
+      "You'd still be unaware if I'd been evasive."
     ],
     "point": "equivocate は言葉を濁す、none the wiser は分からないまま。",
     "topic": "work",
@@ -687,7 +693,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e392b9269f7673509cb3d22fb1f1cd3de87694fbedbf84b132f112f97646001b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9d7a3k8f",
@@ -736,15 +748,21 @@
     "en": "She said my praise sounded faintly patronizing.",
     "alternatives": [
       "She said my compliments sounded slightly condescending.",
-      "She said my praise sounded subtly superior."
+      "She said my praise sounded a little patronizing."
     ],
     "point": "faintly patronizing はかすかに上から目線の。",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
+    "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:745f3b926fc791cc9ba765b664428e737212b926ba37855db706f4de9a59210b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9p8q6g6r",

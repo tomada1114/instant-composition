@@ -65,15 +65,21 @@
   {
     "id": "c_3c3z2d9a",
     "ja": "私は少し安堵を感じる。",
-    "en": "I feel a measure of relief.",
-    "alternatives": ["I feel some relief.", "I feel a degree of relief."],
-    "point": "a measure of はある程度の、relief は数えない。",
+    "en": "I feel a little relief.",
+    "alternatives": ["I feel slightly relieved.", "I feel a bit relieved."],
+    "point": "気持ちとしての relief は数えず a little relief。",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 6,
+    "level": 4,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:35f555a93e9a62f69e482c37fa5afbaf1ea2be899a69cbe341216cf8ad9c514c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d4u9f2y",
@@ -313,7 +319,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:47fc642ffd04e7701760605a55f2b8517d8a47c2621ce26e43381090578e3477",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z6r6p5c",
@@ -396,11 +408,11 @@
   },
   {
     "id": "c_5m6x9d9z",
-    "ja": "君が無視してたら私はすねた。",
+    "ja": "君が無視してたら私はすねてた。",
     "en": "If you'd ignored me, I'd have sulked.",
     "alternatives": [
       "I'd have sulked if you'd ignored me.",
-      "Your ignoring me would've made me sulky."
+      "I'd have pouted if you'd ignored me."
     ],
     "point": "過去に実現しなかった条件は had ignored、sulk はすねる。",
     "topic": "daily",
@@ -408,7 +420,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42d4e0f6bd62ba5355386f860990bae4dcc11c9793926104b1eb10c2fdb642dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5n3s9g4y",

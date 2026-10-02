@@ -22,19 +22,6 @@
     }
   },
   {
-    "id": "c_2g3r9u7x",
-    "ja": "私たちは共有できる。",
-    "en": "We can share it.",
-    "alternatives": ["We can use it together.", "We can share this."],
-    "point": "can で実現できることを表す。",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 1,
-    "grammar": ["can-could-ability"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_2m5c2c2k",
     "ja": "どっちが拡張向きか分かる？",
     "en": "Do you know which scales better?",
@@ -60,14 +47,20 @@
     "id": "c_2r9y6q4b",
     "ja": "この案は簡単だ。",
     "en": "This plan is simple.",
-    "alternatives": ["This is a simple plan.", "The plan is easy."],
+    "alternatives": ["This is a simple plan.", "This plan isn't complicated."],
     "point": "simple は複雑でない。",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:333aac660d448bb056855dc321a21b49568ab1c870870d928b140a019fda5b01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d3y5a9j",
@@ -596,16 +589,41 @@
   },
   {
     "id": "c_8t6x3s4g",
-    "ja": "私は案を描いてる。",
+    "ja": "私は案を図にしてる。",
     "en": "I'm drawing the plan.",
-    "alternatives": ["I'm sketching the plan.", "I'm drawing our idea."],
+    "alternatives": ["I'm sketching the plan.", "I'm sketching a design."],
     "point": "進行形で今している作業を伝える。",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97d722299f02e8f3aceba4ee16d1289e1c5339485b73d057b7d8abb7ba703123",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9e5q4q5y",
+    "ja": "我々はDBを共用できる。",
+    "en": "We can share this database.",
+    "alternatives": ["We can use the same database.", "We can share one database."],
+    "point": "share は一つのものを一緒に使う。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:666fd6c28c724a12f7087d434829e2e36f58ef2d055736eb83b26e7dc891af0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9n5x8r4x",

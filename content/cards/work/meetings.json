@@ -42,23 +42,29 @@
   },
   {
     "id": "c_3c8b4c3b",
-    "ja": "彼らは誰が裏で操るか知らないかも。",
-    "en": "I doubt they know who's pulling strings.",
+    "ja": "彼らは誰が裏で操るか知らなそう。",
+    "en": "I doubt they know who's pulling the strings.",
     "alternatives": [
-      "I'm not sure they know who's exerting hidden influence.",
-      "They may not know who is manipulating things."
+      "They may not know who's pulling the strings.",
+      "I'm not sure they know who's in control."
     ],
-    "point": "pull strings は裏で影響力を使って物事を動かす。",
+    "point": "pull the strings は裏で実権を握り人を動かす。",
     "topic": "work",
     "subtopic": "meetings",
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f0d3d8f9838da24539ca4c7a2860000e36bb73b17bc88a3c4147494b966b95b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3e9r6x2t",
-    "ja": "誰を不快にしてるか君は分かる？",
+    "ja": "我々が誰を不快にしてるか分かる？",
     "en": "Any idea whose feathers we're ruffling?",
     "alternatives": [
       "Do you know who we are upsetting?",
@@ -67,10 +73,16 @@
     "point": "ruffle feathers は人を不快にさせる。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 9,
+    "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c311778416703af8c00bea98fe0dac703ed2623dd8a13a564c5c49bded0d92c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q2v6z6c",
@@ -523,11 +535,11 @@
   },
   {
     "id": "c_8f5p7j7g",
-    "ja": "彼女は敢えて反論してたはず。",
+    "ja": "彼女はあえて反対役だったはず。",
     "en": "She must've been playing devil's advocate.",
     "alternatives": [
-      "She must have been deliberately arguing the other side.",
-      "She must've been raising objections to test our reasoning."
+      "She must've deliberately argued the other side.",
+      "She must've argued against it to test us."
     ],
     "point": "play devil's advocate は議論を深めるため敢えて反対する。",
     "topic": "work",
@@ -535,7 +547,13 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b196192ce1cf3da70df859f891a2a9cac993249a7bcdc9cfbcda5f9404ac8f0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8m3s5s4j",

@@ -234,7 +234,7 @@
   },
   {
     "id": "c_4n3g5d6e",
-    "ja": "君、声を上げるべき。",
+    "ja": "君は声を大きくすべき。",
     "en": "You should speak louder.",
     "alternatives": ["You ought to speak louder.", "You should raise your voice."],
     "point": "louder は今より大きな声で。",
@@ -243,7 +243,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1de05ad6a60463110984ecadb7bcc4d58dec07d587bd470d8395add376cbc0c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4q6y8h8b",
@@ -582,10 +588,16 @@
     "point": "voice の状態を is で表す。",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 2,
+    "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d49923d74330fab618e9154191c7e95b58be88f758ac82099128935efcf3e751",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8h7h9v7u",
@@ -639,7 +651,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4b46ccb140b4d11de607f951f60d9b96b89aa19e08857dcb67e5940e1319eca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9e5w8d7q",
