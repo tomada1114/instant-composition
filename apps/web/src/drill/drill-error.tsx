@@ -7,8 +7,8 @@ import type { ApiError } from "../lib/endpoints";
 import { Button } from "../ui/button";
 
 /**
- * The empty state where the card would be: too few cards, or none could be
- * loaded. The error envelope carries no count, so `available` is what the
+ * The empty state centred on the stage where the card would be: too few
+ * cards, or none could be loaded; the default strip's ✕ goes home. The error envelope carries no count, so `available` is what the
  * home view last said could be dealt, and the line naming it is left out
  * when that is not known.
  */
@@ -24,8 +24,8 @@ export function DrillError({
   const t = useTranslations("Drill.error");
   const notEnough = error.code === "ERR_NOT_ENOUGH_CARDS";
   return (
-    <div className="mx-auto flex w-full max-w-reading flex-col py-6">
-      <div className="flex flex-col gap-5 rounded-card bg-card p-6">
+    <div className="mx-auto flex w-full max-w-dialog flex-col py-6">
+      <div className="flex flex-col gap-5 rounded-panel border-2 border-border bg-card p-7">
         <div className="flex flex-col gap-1">
           <h1 className="text-heading">
             {notEnough ? t("notEnoughTitle") : t("loadTitle")}

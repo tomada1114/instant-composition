@@ -50,6 +50,20 @@ describe("CardFront", () => {
     expect(screen.queryByText("prompt-ja")).not.toBeInTheDocument();
   });
 
+  it.each([
+    { length: 48, size: "text-front" },
+    { length: 49, size: "text-front-long" },
+  ])(
+    "sets a $length-character prompt at $size on the 880 stage",
+    ({ length, size }) => {
+      const prompt = "あ".repeat(length);
+      renderWithMessages(
+        <CardFront card={{ ...CARD, prompt }} retry={false} hidden={false} />,
+      );
+      expect(screen.getByText(prompt)).toHaveClass(size);
+    },
+  );
+
   it("flips when pressed", () => {
     const onFlip = vi.fn();
     renderWithMessages(
@@ -125,6 +139,29 @@ describe("TopStrip", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.card.pause }));
     expect(onPause).toHaveBeenCalledOnce();
   });
+
+  it.each([
+    { current: 7, lit: false, width: "60%" },
+    { current: 7, lit: true, width: "70%" },
+    { current: 1, lit: false, width: "0%" },
+  ])(
+    "fills the progress bar to the share graded: $current, lit $lit",
+    ({ current, lit, width }) => {
+      const { container } = renderWithMessages(
+        <TopStrip
+          pass="first"
+          current={current}
+          total={10}
+          combo={0}
+          lit={lit}
+          onPause={vi.fn()}
+        />,
+      );
+      expect(container.querySelector("[data-part=progress-fill]")).toHaveStyle({
+        width,
+      });
+    },
+  );
 
   it("shows the retry progress during the retry pass", () => {
     renderWithMessages(

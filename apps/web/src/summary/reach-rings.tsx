@@ -109,7 +109,7 @@ export function ReachRings({
           ))}
         </ul>
       ) : (
-        <div data-layout="concentric" className="flex items-center gap-6">
+        <div data-layout="concentric" className="flex flex-wrap items-center gap-6">
           <svg aria-hidden viewBox="0 0 200 200" className="size-50 shrink-0">
             {reach.topics.map((topic, index) => (
               <Ring

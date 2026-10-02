@@ -255,6 +255,18 @@ describe("the drill's grade keys", () => {
     ]);
   });
 
+  it("puts the grade pair under the back, × on the left and ○ on the right", async () => {
+    serve({ home: CHOSEN });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    const card = document.querySelector("[data-part=card]");
+    const ng = screen.getByRole("button", { name: ja.Drill.card.notSaid });
+    const ok = screen.getByRole("button", { name: ja.Drill.card.said });
+    expect(card?.compareDocumentPosition(ng)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(ng.compareDocumentPosition(ok)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+
   it("ignores → and ←, and K/F and J/D, once another pair is chosen", async () => {
     const calls = serve({ home: CHOSEN });
     await openRound("/drill?kind=today");

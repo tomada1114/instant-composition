@@ -8,7 +8,7 @@ import type { RoundKind } from "../openapi";
 import { SummaryScreen } from "../summary/summary-screen";
 import type { FinishState } from "./use-drill";
 
-const STAGE = "mx-auto flex w-full max-w-reading flex-col gap-4 py-6";
+const STAGE = "mx-auto flex w-full max-w-progress flex-col gap-4 py-6";
 
 /**
  * Where a round ends: the summary once the server has it, or the notice that
