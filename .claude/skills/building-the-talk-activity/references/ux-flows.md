@@ -114,6 +114,8 @@ newly decides.
     hairline)
   - The waiting row (the speaker's eyebrow + a still 「…」)
   - The hidden model answer (the hidden lines of W3f)
+  - 「話す」 (voice input at W3a and W3b), its listening look, answer-field's listening
+    state, and the voice error line (#395)
 
 ### 4.2 Where the accent is used
 
@@ -155,18 +157,24 @@ Only within the four roles the rules name.
 - Enter sends, except the Enter that confirms an input-method conversion (same as
   answer-field).
 - The field grows from one line. No spell checking or auto-correction.
-- To speak aloud, the learner uses the device keyboard's voice input. The app does
-  nothing.
+- Speech goes through the same rules: what is sent by voice is what 「送る」 would send
+  — at most 300 characters (a session stops and sends the first 300), and at W3b typed
+  Japanese plus speech is not sent and shows 「英語で入力してください」.
+- Voice input's own failures are one muted line with the notice glyph under the field,
+  no red, until the next press of 「話す」 or the end of the
+  step: 「マイクが使えません」(`not-allowed`,
+  `service-not-allowed`), 「マイクが見つかりません」 (`audio-capture`),「音声入力が使えませんでした」 (`network`).
 
 ### 4.6 Keys
 
 Add a row for the talk screen to designing-ui's key table.
 
-| Key   | Talk screen                                                                |
-| ----- | -------------------------------------------------------------------------- |
-| Enter | Sends inside a field. In W3e it is 「隠して言う」; in W3f it is 「言えた」 |
-| Esc   | Opens the leave confirmation (W4). Inside the dialog, 「続ける」           |
-| Tab   | Moves focus                                                                |
+| Key   | Talk screen                                                                                                                           |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Space | In an empty W3a/W3b field, starts voice input. During a session, sends                                                                |
+| Enter | Sends inside a field, and during a voice session. In W3e it is 「隠して言う」; in W3f it is 「言えた」                                |
+| Esc   | During a voice session, cancels it and restores the field. Otherwise opens the leave confirmation (W4). Inside the dialog, 「続ける」 |
+| Tab   | Moves focus                                                                                                                           |
 
 - The ○ and × keys are not used (the talk has no self-grading).
 - Key hints (Kbd) show, as the rules say, only to someone who has used the keys.
@@ -179,6 +187,9 @@ Add a row for the talk screen to designing-ui's key table.
 - When the model answer is hidden, it reads 「隠しました」. When shown again, it reads
   the model answer.
 - W4 traps focus inside and places it on 「続ける」.
+- 「話す」 names its state by a label that changes to 「聞いています」, announced
+  politely; a cancelled session is announced as 「取り消しました」; the voice error line
+  is a status.
 - Other standards (contrast, the 44 touch target, the focus line) stay as in
   designing-ui.
 
