@@ -284,8 +284,9 @@ Japanese.
 - W4's 「終える」 from ✕ shows W3h at once and tells a failed `endTalk` with the toast;
   from a tab or Back it sends `endTalk` and lets the navigation go without waiting, so a
   failure there is not shown.
-- No keyboard lift (#349 D6): phone-specific code is removed; the step panel rests on
-  the column's foot and the conversation scrolls above it.
+- No keyboard lift (#398 D1): the owner accepted the keyboard covering the panel on a
+  phone rather than the lift's complexity; the step panel rests on the column's foot and
+  the conversation scrolls above it.
 - The ○ plays the drill's ○ sound under the same setting.
 - Voice input (#395) is the web client's alone: `talk/use-speech-input.ts` runs one Web
   Speech API session per press in the step's language, with the local recognition types

@@ -136,6 +136,19 @@ a screen-reader user who needs longer chooses it there like anyone else. A state
 limitation: nothing extends it past the longest choice, because the limit is the core of
 the drill.
 
+## Phone browsers
+
+Phones are served by Safari on iOS and Chrome on Android, current versions, through the
+one responsive layout (#398 R1). Code specific to a phone goes in only where a phone
+browser's own behaviour requires it — a touch-only device, iOS audio, iOS speech
+recognition — kept to the smallest change and listed here with its reason (#398 R2).
+Firefox, Samsung Internet and tablets only keep working.
+
+- The software keyboard may cover the talk's step panel: no keyboard lift, no
+  `visualViewport` reading, no `interactive-widget`. The learner scrolls the
+  conversation above the keyboard (#398 R3, D1 — the owner chose this over the lift's
+  complexity and the iOS bugs it could bring).
+
 ## Implementation rules
 
 - One box shadow, the lip (`shadow-lip`); nothing else casts one.

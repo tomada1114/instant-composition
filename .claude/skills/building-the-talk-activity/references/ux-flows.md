@@ -210,8 +210,9 @@ Add a row for the talk screen to designing-ui's key table.
 
 - Four sections: 「会話」 is the navigation's second section (#349 moved the navigation
   to a sidebar and a top bar; designing-ui's ledger row and `sidebar` recipe hold it).
-- Phones (#349 D6): phone-specific code and rules are removed, since native apps will
-  serve phones. The web client keeps no keyboard lift; below 1024 the layout collapses
+- Phones (#398): phones are served by their browser, Safari on iOS and Chrome on
+  Android. The web client keeps no keyboard lift — the owner accepted the keyboard over
+  the panel rather than the lift's complexity (#398 D1); below 1024 the layout collapses
   to one column. This supersedes the earlier iOS Safari keyboard decision.
 - Teacher and partner calls: sent together when the English (or 「わからない」) is sent;
   the partner's line is held until 「言えた」 or the ○, so neither the ○ path nor the
