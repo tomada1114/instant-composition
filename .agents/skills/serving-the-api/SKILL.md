@@ -185,11 +185,15 @@ gitignored `.env.local` at the repository root: `pnpm api`, and `pnpm dev`'s API
 alone, start Node with `--env-file-if-exists=.env.local`, so Node reads the file itself
 and a name the shell sets wins. Nothing else loads it — not the web client, not a test,
 not the smoke suite, which starts the API without the flag and with the model key
-cleared, so no test reaches OpenRouter. That is how the owner's model key reaches a
-local run; an agent still never reads, writes or prints a `.env*` file (AGENTS.md
-"Security and human approval"). Adding a name means adding it to `apps/api/src/env.ts`
-_and_ to `.env.example` with an empty value; `tests/env-example.test.ts` fails until the
-two agree, and is the check to run first. A blank value reads as absent, and a value no
+cleared, so no test reaches OpenRouter. Two names are therefore shell only and never
+belong in `.env.local`: `API_PORT`, which the web client's Vite proxy reads from the
+shell alone, and `API_CATALOG_PATH`, which `pnpm dev`'s catalog check reads from the
+shell alone — set only in the file, either moves the API while the proxy or the check
+still uses the default. That is how the owner's model key reaches a local run; an agent
+still never reads, writes or prints a `.env*` file (AGENTS.md "Security and human
+approval"). Adding a name means adding it to `apps/api/src/env.ts` _and_ to
+`.env.example` with an empty value; `tests/env-example.test.ts` fails until the two
+agree, and is the check to run first. A blank value reads as absent, and a value no
 setting accepts stops the process at start (`ERR_API_ENV_INVALID`, naming every such
 variable) rather than returning a `Result`: a malformed environment is a deployment
 mistake no caller can recover from. Never open a real `.env` to learn what exists;

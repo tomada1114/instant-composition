@@ -80,4 +80,25 @@ describe(".env.example", () => {
 
     expect(withValues).toStrictEqual([]);
   });
+
+  // pnpm dev's catalog check and the Vite /api proxy read these from the shell
+  // alone, while the API also reads .env.local; the comment is the only guard.
+  it.each(["API_PORT", "API_CATALOG_PATH"])(
+    "marks %s as shell only, never to be set in .env.local",
+    (name) => {
+      const lines = readFileSync(envExamplePath, "utf8").split("\n");
+      const at = lines.indexOf(`${name}=`);
+      const comment: string[] = [];
+      for (
+        let index = at - 1;
+        index >= 0 && lines[index]?.startsWith("#");
+        index -= 1
+      ) {
+        comment.unshift(lines[index] ?? "");
+      }
+
+      expect(at).toBeGreaterThan(0);
+      expect(comment.join(" ")).toMatch(/Shell only:.*Never set it in \.env\.local\./);
+    },
+  );
 });
