@@ -494,19 +494,25 @@
   },
   {
     "id": "c_7w8w4h4r",
-    "ja": "私は我々が直して当然と決めつける点を疑う。",
-    "en": "I question what we take for granted needs fixing.",
+    "ja": "我々が必要と決めつける修正に疑問だ。",
+    "en": "I question which fixes we assume are necessary.",
     "alternatives": [
-      "I question which fixes we simply assume are necessary.",
-      "I'm questioning what we unquestioningly believe needs fixing."
+      "I question the fixes we assume are needed.",
+      "I'm questioning which fixes we believe are necessary."
     ],
-    "point": "take for granted は根拠を問わず当然と考える。",
+    "point": "which fixes we assume are necessary で我々が必要と思い込む修正を問う。",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3c39d902081eec75471da4dcb9d598fd2433b8c524793f49b93a50f294613d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7x4b3j2q",
@@ -623,7 +629,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9572b933784e886939a717124e6ac83de8216ef71d149a122447a21c00f41161",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8u3s5f5t",

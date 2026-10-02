@@ -676,19 +676,25 @@
   },
   {
     "id": "c_7q2s3y3m",
-    "ja": "我々が警告に従ってたら余波を防げたのに。",
+    "ja": "警告に従えば我々は余波を防げたのに。",
     "en": "Had we heeded warnings, we'd have averted the fallout.",
     "alternatives": [
       "If we'd heeded warnings, we'd have prevented the fallout.",
-      "We'd have avoided the fallout had we listened to warnings."
+      "We'd have avoided the fallout had we heeded warnings."
     ],
     "point": "heed は警告を重く受け止めて従う。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fc9ea53ddf54092bb7dd1ebaea9c9df757bbe63f9fae95f7ece65ac934fbc61",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7q7m9q2z",
@@ -733,19 +739,25 @@
   },
   {
     "id": "c_7v4d9k9v",
-    "ja": "私は安全宣言を出すのは慎重にしたい。",
+    "ja": "私は安全宣言には慎重でいたい。",
     "en": "I'd be wary of declaring the coast clear.",
     "alternatives": [
-      "I'd hesitate to announce that we're in the clear.",
+      "I'd hesitate to announce we're in the clear.",
       "I'd be cautious about saying the danger has passed."
     ],
     "point": "the coast is clear は危険が去ったという宣言。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:23953d86ee8dfc76ae545a04486dcf7009ac30ab3da6b7970028f8e00115d9d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y8b9u3g",
@@ -758,10 +770,16 @@
     "point": "only の句を先頭に出すと did が主語の前に来る。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f5a33f9ead1dc65c7d0bfb3bc8e04517d9eb2216d9d01afba4db5d65449b061",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a4x9e5w",

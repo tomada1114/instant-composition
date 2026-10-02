@@ -268,6 +268,28 @@
     }
   },
   {
+    "id": "c_3r9b7u5b",
+    "ja": "私が推した安全策が今我々に災いしてる。",
+    "en": "The safeguard I backed now haunts us.",
+    "alternatives": [
+      "We're now haunted by the safeguard I backed.",
+      "The safeguard I supported is now hurting us."
+    ],
+    "point": "I backed は私が推した安全策を限定し、now haunts us は今その判断が我々に災いしていることを表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e47cfadf937b189f51677eb22189ba1a0afb8a7f0b32813d545c5f1d28153305",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3s3g8q3j",
     "ja": "この変更で私は前提を再考した。",
     "en": "This change made me rethink my assumptions.",
@@ -807,10 +829,16 @@
     "point": "cosmetic は見た目だけで根本に届かない修正。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c0d08f7310f720c11ac1ad73982392f442be650b885c16f2539e61a248b0dfb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f7k9z4n",
@@ -896,16 +924,22 @@
     "ja": "私が決めるならその主張に留保を付ける。",
     "en": "Were it my call, I'd qualify that claim.",
     "alternatives": [
-      "If it were my decision, I'd temper that claim.",
-      "If it were up to me, I'd qualify that claim."
+      "If it were my call, I'd qualify that claim.",
+      "If I decided, I'd qualify that claim."
     ],
     "point": "qualify a claim は条件や留保を添えて断定を弱める。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a57d0416dbb2efb70cd3c837bbded13f911f9f4f76fed335f34319f32c563d8b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9a5g3e9x",
@@ -1029,22 +1063,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_9x7x3x4x",
-    "ja": "私が推した安全策が今我々に災いしてる。",
-    "en": "The safeguard I endorsed has come back to haunt us.",
-    "alternatives": [
-      "The safeguard I backed has turned into a liability.",
-      "The safeguard I supported has now become our burden."
-    ],
-    "point": "come back to haunt us は過去の判断が後で災いする。",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["tense-contrast", "phrasal-verbs"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_9z4h6u2f",

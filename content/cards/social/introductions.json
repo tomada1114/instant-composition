@@ -24,19 +24,25 @@
   },
   {
     "id": "c_2d2w6j7m",
-    "ja": "私の肩書きは名ばかりと言ってもいい。",
-    "en": "My title is, shall we say, largely nominal.",
+    "ja": "私の肩書きは名ばかりとも言える。",
+    "en": "My title is, shall we say, nominal.",
     "alternatives": [
-      "You could say my title is mostly in name only.",
+      "You could say my title is in name only.",
       "My title is more nominal than substantive, I'd say."
     ],
     "point": "shall we say は少し含みを持たせて言葉を選ぶ。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e3640209a2411c1289abfb0f5b73639982ac3d759a700808afe4635d4158ad3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2e3d8e2p",
@@ -423,15 +429,21 @@
   {
     "id": "c_4z4y2u2h",
     "ja": "私が名刺を渡していい？",
-    "en": "May I give my card?",
+    "en": "May I give you my card?",
     "alternatives": ["Can I offer my business card?", "May I hand you my card?"],
-    "point": "give my card で自分の名刺を渡す。",
+    "point": "May I give you my card? で相手に自分の名刺を渡す許可を求める。",
     "topic": "social",
     "subtopic": "introductions",
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08702e9934cc23c0635da9e1487694bae2b32f70e48789d8003cffe7e2e2be59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5c2u6w7j",
@@ -539,19 +551,25 @@
   },
   {
     "id": "c_5s7j3z5s",
-    "ja": "私は自分を安売りする衝動を抑えればよかった。",
+    "ja": "自分を安売りする衝動を抑えればよかった。",
     "en": "I wish I'd resisted the urge to undersell myself.",
     "alternatives": [
-      "I wish I hadn't given in to underselling myself.",
-      "If only I'd resisted presenting myself as less capable."
+      "I wish I'd resisted the temptation to undersell myself.",
+      "If only I'd resisted the urge to undersell myself."
     ],
     "point": "undersell myself は実力以下に自分を紹介する。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db000f7e36900422b0f25bcb05900e641d181d30a901b35374577bac14f32b31",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5x8s6n4g",
@@ -709,11 +727,17 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcbbde1e0596eca8c855276bfd833d48faf9d872c065eadfd7cc550b4aca3838",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7n9f5n6f",
-    "ja": "私を型にはめるなら私は仲介役かな。",
+    "ja": "自分を型にはめるなら私は仲介役かな。",
     "en": "Were I to pigeonhole myself, I'd say mediator.",
     "alternatives": [
       "If I had to categorize myself, I'd say mediator.",
@@ -722,10 +746,16 @@
     "point": "pigeonhole は人を単純な一つの型に押し込める。",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e392bfb5b95d9fbce73e8c8363d9aa78b52ab75d376728ba3bd22adc99e5c128",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7u9e5v5c",
@@ -801,7 +831,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:393f1c3134175d63b42457a17a3b9339316bf8a1679ec0a11c82d32257ccc47d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8w3u6n3s",

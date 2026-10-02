@@ -10,10 +10,16 @@
     "point": "isolated は交通などを断たれて孤立した状態。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95f49aa13449f34e5b7a970a7b512082be446dfa922d3499c6dbfefcc266ac3b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2k5s5d3f",
@@ -320,10 +326,16 @@
     "point": "racket は迷惑な大きな音。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3ca9fbc294811db94d8defed9412ae16b035136e52373a3789a09ae6b05777c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x3j3p7r",
@@ -435,7 +447,7 @@
   },
   {
     "id": "c_5g4k7a8f",
-    "ja": "私は週末にくつろげばよかった。",
+    "ja": "私はこの週末にくつろげばよかった。",
     "en": "I wish I'd unwound this weekend.",
     "alternatives": [
       "I wish I'd relaxed this weekend.",
@@ -444,10 +456,16 @@
     "point": "unwind は緊張を解いてくつろぐ。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59d123075f18c2ef20de48688590f572c4660cfa667ab575bce1295a7ca49946",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h6n2h9m",

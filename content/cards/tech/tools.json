@@ -60,22 +60,6 @@
     }
   },
   {
-    "id": "c_2f9y6n9s",
-    "ja": "私は自動保存が好き。",
-    "en": "I like saving automatically.",
-    "alternatives": [
-      "I like automatic saving.",
-      "I prefer files saving automatically."
-    ],
-    "point": "like の後の動作は saving のように動名詞。",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 3,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_2g9t8g9r",
     "ja": "Gitが私に面倒な手順を強いる。",
     "en": "Git makes me jump through hoops.",
@@ -108,23 +92,32 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bf2998b5a49d76218af971e4e567ec46bc5e42b2f7102bce839466bdb9d6307",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2w7b6g6n",
-    "ja": "必要なら私は入れるよ。",
-    "en": "I'll install it when needed.",
-    "alternatives": [
-      "I'll install it if it's necessary.",
-      "I'll put it in when needed."
-    ],
-    "point": "when の節で必要になる時を表す。",
+    "ja": "必要なら私が導入するよ。",
+    "en": "I'll install it if needed.",
+    "alternatives": ["I'll install it if it's necessary.", "I'll put it in if needed."],
+    "point": "if needed は必要な場合という条件を表す。",
     "topic": "tech",
     "subtopic": "tools",
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:19284d5679a8a423f5d8a138329eeed06ed6756fdb0711d4b7afc4bdb86bca35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3a7n4b5f",
@@ -584,7 +577,35 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:486937723620a4b08575eb9090145f091efb5a47310a288bd044c1f99ae76f6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6k7s5z8k",
+    "ja": "私は自動保存が好き。",
+    "en": "I like autosave.",
+    "alternatives": [
+      "I like automatic saving.",
+      "I like having files saved automatically."
+    ],
+    "point": "autosave はファイルを自動保存する機能。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac002e3c9fe3b22ca79d780f0e55486f32f6b42b4908c148452eca119d0aaaeb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6p9m3e7u",
@@ -745,7 +766,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:567d7ea783a7675b3230b554fa77c934d10e2085a5551b6153301820ba0d2fba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f6m5r6w",
@@ -769,18 +796,24 @@
   {
     "id": "c_8r4t7v3n",
     "ja": "ツールは既に自動停止してた。",
-    "en": "The tool had already shut down.",
+    "en": "The tool had already shut itself off.",
     "alternatives": [
-      "The tool had already stopped running.",
+      "The tool had already stopped automatically.",
       "The tool had already switched itself off."
     ],
-    "point": "shut down はツールが動作を停止する。",
+    "point": "had already shut itself off は過去の時点より前にツール自身が既に停止したことを表す。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 5,
+    "level": 6,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8854a32b4f535c5a8eccacc6357076690cfcfceee141c20ceb93576abc0ebf17",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8r7x6t8j",
@@ -830,14 +863,20 @@
     "id": "c_8u9j2b3n",
     "ja": "文字を大きくして。",
     "en": "Make the text bigger.",
-    "alternatives": ["Enlarge the text.", "Increase the text size."],
+    "alternatives": ["Make the letters bigger.", "Make the writing larger."],
     "point": "make + 物 + bigger で表示を大きくする。",
     "topic": "tech",
     "subtopic": "tools",
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c482252f9dab5ce325700636183c37ed741cb5005ec0bd950d2488678588b439",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8v7x9p5y",
@@ -997,15 +1036,21 @@
   {
     "id": "c_9g8b5b5s",
     "ja": "メニューがない。",
-    "en": "There are no menus.",
-    "alternatives": ["No menus are available.", "We have no menus."],
-    "point": "there are no で複数の物がないことを伝える。",
+    "en": "There's no menu.",
+    "alternatives": ["No menu is available.", "We don't have a menu."],
+    "point": "there is no でメニューがないことを伝える。",
     "topic": "tech",
     "subtopic": "tools",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3894b1b0d1400f494c663116294af0c35b537cfde9680b38d635560ec32fb91f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9j3d8v7c",
@@ -1081,9 +1126,15 @@
     "point": "migrate は設定などを別の環境へ移す。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 5,
+    "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a920a0210be5ea89a6994363ca19ddcf45253a145d0232399bebe7fe8519194",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

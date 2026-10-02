@@ -164,6 +164,25 @@
     }
   },
   {
+    "id": "c_4k8t3p8s",
+    "ja": "うちに石鹸が少しある。",
+    "en": "We have some soap at home.",
+    "alternatives": ["There's some soap at home.", "We've got some soap at home."],
+    "point": "soap は量として数えず some を付ける。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11e46954dd07803a6dad343e53a7679686c90ce747d1af6c922991b86797883a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4m6q9n3s",
     "ja": "弟は掃除機をかけてる。",
     "en": "My brother is vacuuming.",
@@ -290,14 +309,20 @@
     "id": "c_6g9k4w6z",
     "ja": "この棚は空だ。",
     "en": "This shelf is empty.",
-    "alternatives": ["There's nothing on this shelf.", "This shelf has nothing on it."],
+    "alternatives": ["There's nothing on this shelf.", "Nothing's on this shelf."],
     "point": "empty は物が置かれていない。",
     "topic": "daily",
     "subtopic": "home",
-    "level": 2,
+    "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0a41a03b3e53e83e6d8538e29892dc0a19346cb5c0d3ebb106c9bd5aa34a29a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6h5x6z5z",
@@ -310,7 +335,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c32e74eae35ecbd69690bca440e7e8746c64b537b2539f024a2c365c4538289",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6m6j2b7p",
@@ -885,19 +916,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_9n9u8m6q",
-    "ja": "うちに石鹸が少しある。",
-    "en": "We have some soap.",
-    "alternatives": ["There's some soap at home.", "We have a little soap."],
-    "point": "soap は量として数えず some を付ける。",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 2,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_9p5s5q9g",

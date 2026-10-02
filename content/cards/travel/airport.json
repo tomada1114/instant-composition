@@ -143,19 +143,25 @@
   },
   {
     "id": "c_3y2m3z8n",
-    "ja": "席が空いたら私は確保するよ。",
+    "ja": "席が空けば私が確保するよ。",
     "en": "I'll book if seats open up.",
     "alternatives": [
-      "I'll reserve a seat if one opens up.",
-      "I'll get a seat if one becomes available."
+      "I'll book when a seat opens up.",
+      "I'll reserve one if seats become available."
     ],
     "point": "opens up は空きができるという意味。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
-    "grammar": ["time-and-if-clauses"],
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da1f5fd171d1112d20beeef74d6bb7af66d5677d9197fa58b953583173f90bff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4b6b2y2f",
@@ -175,22 +181,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_4b8s2e9s",
-    "ja": "我々が並んだ列は間違った列だ。",
-    "en": "The queue we joined was wrong.",
-    "alternatives": [
-      "We joined the wrong line.",
-      "The line we got into was incorrect."
-    ],
-    "point": "we joined がどの列かを説明する。",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_4c7h4z4j",
@@ -841,6 +831,25 @@
     }
   },
   {
+    "id": "c_9c4a6g8y",
+    "ja": "我々は列を間違えた。",
+    "en": "We joined the wrong line.",
+    "alternatives": ["We chose the wrong line.", "We waited in the wrong line."],
+    "point": "joined the wrong line は並ぶ列を間違えたことを表す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e5614d8d47d3b0acacfb92167647a28ad15e9fb6fb02fd29f41f30cd877c142e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9d3m2a3g",
     "ja": "着くと、搭乗は終わっていた。",
     "en": "Boarding had ended when I arrived.",
@@ -970,16 +979,22 @@
     "ja": "私は手荷物規則を明確にしたい。",
     "en": "I want to clarify baggage restrictions.",
     "alternatives": [
-      "I'd like to get the baggage rules clarified.",
-      "I want clear information on the baggage restrictions."
+      "I'd like the baggage rules clarified.",
+      "I want clarity on the baggage rules."
     ],
     "point": "clarify は曖昧な規則をはっきりさせる。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
+    "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e223ef4c52754e0fc96431eb762d334f6f8db86d26620ccea50f72eed297268",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9x3s4y8k",

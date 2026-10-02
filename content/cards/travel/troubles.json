@@ -500,14 +500,20 @@
     "id": "c_5c2a8j8w",
     "ja": "私は助けを待ってる。",
     "en": "I'm waiting for help.",
-    "alternatives": ["I'm awaiting help.", "I'm waiting for assistance."],
+    "alternatives": ["I'm waiting for some help.", "I'm still waiting for help."],
     "point": "am waiting で助けを待っている最中と伝える。",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bef8e557a8be721594844642c6f732baff2b9ab4f14d88b339cedac505a12ef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d5v8z5x",
@@ -520,7 +526,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6ef6cca8cd4521f1579099a3eaf9fe8fc839adc454e38b015070ac84194f8ec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d9a9y5j",
@@ -633,14 +645,20 @@
     "id": "c_6u8b4g6c",
     "ja": "私は歩けない。",
     "en": "I can't walk.",
-    "alternatives": ["I'm unable to walk.", "Walking isn't possible for me."],
+    "alternatives": ["I'm not able to walk.", "Walking is impossible for me."],
     "point": "cannot walk で歩くことができないと伝える。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 1,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3aebd02bc26d34e82b34ea3ef9fbe70579631353a4d81123cc88df9088c7c4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y5r8r6s",

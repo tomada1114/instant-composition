@@ -363,15 +363,21 @@
     "point": "what stung で心に刺さった出来事を際立たせる。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:555fdd016a203130aa4180e4ffc3134b8f9c2b9346a62d90507c61464b0f9efb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4f2m9b6u",
     "ja": "私が選べるなら過去を水に流すのに。",
-    "en": "Were it up to me, I'd let bygones be bygones.",
+    "en": "Were it my call, I'd let bygones be bygones.",
     "alternatives": [
       "If I could choose, I'd leave the past behind.",
       "If it were my choice, I'd forget past grievances."
@@ -379,10 +385,16 @@
     "point": "let bygones be bygones は過去のわだかまりを水に流す。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce73c88eb9a58959add8fe5b103ff71da7f7d4a4d4b7a2a742db084048ce372c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4j9z2s7j",
@@ -667,22 +679,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_5v2j7p4w",
-    "ja": "生活は私に無理を野心と勘違いさせた。",
-    "en": "Life had me mistaking overextension for ambition.",
-    "alternatives": [
-      "Life made me confuse overreaching with ambition.",
-      "Life led me to see overextension as ambition."
-    ],
-    "point": "mistake A for B はAをBだと取り違える。",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 10,
-    "grammar": ["causatives"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_5w2j4y6h",

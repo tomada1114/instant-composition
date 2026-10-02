@@ -63,6 +63,28 @@
     }
   },
   {
+    "id": "c_3b3p6u9x",
+    "ja": "助言を一つください。",
+    "en": "Please give me a suggestion.",
+    "alternatives": [
+      "Please offer me one suggestion.",
+      "I'd like a suggestion, please."
+    ],
+    "point": "suggestion は一つ二つと数えられる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:daa7d5a3ef4628a025990d0763f2c0a62070fb911d88f2e7bf4d90e576ee9885",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3b3q7r5f",
     "ja": "私が返信していい？",
     "en": "May I reply?",
@@ -740,19 +762,6 @@
     }
   },
   {
-    "id": "c_8q4p4q4z",
-    "ja": "助言を一つください。",
-    "en": "Please give one suggestion.",
-    "alternatives": ["Please offer a suggestion.", "I'd like one suggestion."],
-    "point": "suggestion は一つ二つと数えられる。",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 3,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_8q5z3k3w",
     "ja": "これは急ぎです。",
     "en": "This is urgent.",
@@ -793,18 +802,24 @@
   {
     "id": "c_9a4m6k2k",
     "ja": "この文面は前より丁寧。",
-    "en": "This wording is more polite.",
+    "en": "This wording is more polite now.",
     "alternatives": [
-      "This wording sounds more courteous.",
-      "This message is more polite."
+      "This message sounds more polite now.",
+      "This wording is politer than before."
     ],
-    "point": "more polite で丁寧さを比較する。",
+    "point": "more polite now は文面が以前より丁寧になったことを表す。",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fed833e5cdf997819aad0ab4a131e88c7b8b4077340ec6dddf62be97e6339b30",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c7x7m2u",
@@ -877,7 +892,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d000e8ba9032493f6937a27cdf36c57c26e787111b694e221ba857f48869344",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9n6p9h8t",
