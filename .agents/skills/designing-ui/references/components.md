@@ -17,30 +17,33 @@ of the states listed; a part with no hover below is not interactive.
 | `kbd`                     | `side`: `end` (default), `start`                           | hidden until the learner has pressed a key (`keys:` variant)          |
 | `icon-button`             | tile (default), `plain`                                    | default, hover, focus, pressed; sound adds `aria-pressed`             |
 | `eyebrow`                 | —                                                          | —                                                                     |
-| `sidebar`                 | — (from `pc`: brand, home, talk, records, settings)        | current (`aria-current="page"`), other; hover, focus                  |
-| `top-bar`                 | labels from 640, glyphs only below                         | current, other; hover, focus                                          |
+| `sidebar`                 | — (from `pc`: brand, home, vocab, talk, records, settings) | current (`aria-current="page"`), other; hover, focus                  |
+| `top-bar`                 | labels from 768, glyphs only below                         | current, other; hover, focus                                          |
 | `skip-link`               | —                                                          | hidden until focused                                                  |
 | `focus-strip`             | `drill`, `summary`, `talk`                                 | —                                                                     |
-| `dialog`                  | `pause`, `leave`, `confirm` (retest, the talk's W4)        | open, with focus trapped                                              |
-| `grade-pair`              | — (× and ○ side by side)                                   | as `button`; only on a back the learner flipped                       |
+| `dialog`                  | `pause`, `leave`, `confirm` (retest, W4, delete a card)    | open, with focus trapped                                              |
+| `grade-trio`              | — (×, △ and ○ side by side)                                | as `button`; with intervals, or none on a re-ask                      |
 | `drill-card`              | `front`, `back-self`, `back-timeout`                       | with or without the "again" mark; during the ○ light                  |
-| `progress`                | `drill` (one bar), `talk` (six segments)                   | "7 / 10"; during the retry round "again 2 / 3"                        |
+| `vocab-card`              | `front` (sentence or dialogue), `back`                     | with or without the "again" mark or the talk mark; during the ○ light |
+| `cloze-blank`             | —                                                          | — (one per blanked word)                                              |
+| `progress`                | `drill` (one bar), `talk` (six segments)                   | "7 / 22"; "again n" beside it while re-asks wait                      |
 | `timer-bar`               | —                                                          | running; at 0 (fill gone)                                             |
 | `combo-chip`              | —                                                          | shown from 2; gone when broken                                        |
 | `home-panel`              | ready, in progress, done, recover, not enough, load failed | —                                                                     |
 | `streak-tile`             | —                                                          | grew today, unchanged, yesterday open, after a break                  |
-| `home-tile`               | `weak`, `reach`, `talk`                                    | figures, not yet answered (frame only), failed (one line), empty      |
+| `home-tile`               | `vocab`, `talk`, `weak`, `reach`                           | figures, not yet answered (frame only), failed (one line), empty      |
+| `deck-row`                | — (the vocabulary hub's rows)                              | default, hover, focus; refused (`aria-disabled`) when empty           |
 | `mix-bar`                 | —                                                          | review and new shares, either may be 0                                |
 | `chip/choice`             | — (focus subtopic)                                         | unselected, selected (ink border + check), disabled (at the limit)    |
 | `tag`                     | —                                                          | — (not pressable)                                                     |
-| `select-card`             | three across from `pc`, two from 640, one below            | unselected, selected (ink border + check), locked (the last one kept) |
-| `segmented`               | one row (cards a day, s per card, auto/manual); `columns`  | one selected; none (a level not yet measured)                         |
+| `select-card`             | three across from `pc`, two from 640, one below; candidate | unselected, selected, locked; candidate: in learning, added           |
+| `segmented`               | one row (up to six options); `columns`                     | one selected; none (a level not yet measured)                         |
 | `toggle`                  | —                                                          | on, off                                                               |
 | `answer-field`            | — (the talk's Japanese and English fields)                 | empty (placeholder), typing, focus, disabled                          |
 | `talk-line`               | — (partner, you, teacher)                                  | current (`ink`), earlier (`ink-2`)                                    |
 | `waiting-line`            | —                                                          | whoever speaks next, over a still "…"                                 |
 | `hidden-answer`           | — (W3f)                                                    | —                                                                     |
-| `key-picker`              | — (settings: the ○ and × keys)                             | showing its key; waiting ("press a key"); refused (status line)       |
+| `key-picker`              | — (settings: the ×, △ and ○ keys)                          | showing its key; waiting ("press a key"); refused (status line)       |
 | `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)              | with a grown segment, without, empty (tracks + one line)              |
 | `reach-bars`              | — (home's reach tile)                                      | with a grown segment, without, empty                                  |
 | `week-row`                | —                                                          | done, today, open (can be made up), missed, ahead                     |
@@ -65,7 +68,7 @@ of the states listed; a part with no hover below is not interactive.
 | `landing`                 | — (the signed-out `/`)                                     | —                                                                     |
 | `confetti`                | — (a streak that grew, a milestone)                        | bursting, gone; absent under reduced motion                           |
 
-There is no status chip. "To review", "timed out", "again" and "fast" are text with a
+There is no status chip. "Timed out", "again", "from a talk" and "fast" are text with a
 glyph: beside lip buttons, a pill reads as one more button. `tag` is the one pill that
 is not pressable, and it never sits beside a button.
 
@@ -75,7 +78,7 @@ is not pressable, and it never sits beside a button.
 | ----------- | --------------------------------------------- | ------------------- | ----------------- | -------------------------------------------------- |
 | `primary`   | `bg-action text-on-action`                    | `shadow-action-lip` | `bg-action-hover` | One per screen, led on by → (`PrimaryButton`)      |
 | `good`      | `bg-good text-on-good`                        | `shadow-good-lip`   | `bg-good-hover`   | ○ "said it" — never the primary                    |
-| `secondary` | `bg-card text-foreground`, 2px `border-input` | `shadow-input`      | `bg-raised`       | ×, flip, "one more" beside a primary, "stop"       |
+| `secondary` | `bg-card text-foreground`, 2px `border-input` | `shadow-input`      | `bg-raised`       | ×, △, flip, "one more" beside a primary, "stop"    |
 | `text`      | transparent, `text-muted-foreground`          | none                | `text-foreground` | "see all", "see the summary →", "count from today" |
 
 - Height 52 (`text`: 44), 16 radius (`rounded-control`), `text-action` (`text`:
@@ -117,27 +120,28 @@ names in `apps/web/src/ui/filled-glyphs.tsx`. There is no icon library.
 ## Shell: sidebar, top bar, skip link
 
 One layout route renders these once, before `main`; a screen renders its content only.
-They appear once a read has said who is signed in, on home, talk start, records and
-settings — never on the landing, the welcome, a path with no screen, a focus screen, or
-a loading state before anyone is known (home's skeleton, `/drill`'s wait).
+They appear once a read has said who is signed in, on home, the vocabulary hub, talk
+start, records and settings — never on the landing, the welcome, a path with no screen,
+a focus screen, or a loading state before anyone is known (home's skeleton, `/drill`'s
+wait).
 
 - **`sidebar`** (from `pc`): 240 wide, fixed to the left at full height, `bg-card` with
   a 2px `border-border` on its right, padding 24 / 16. The brand at the top in
-  `font-display text-figure-sm`, 32 above the items. Then the four sections, in order —
-  home (`/`), talk (`/talk`), records, settings — each a link 44 tall, a pill, the 20
-  glyph (house, speech bubble, bars, gear) 12 before its name in `text-action`, the
-  whole row the hit area, 4 apart.
+  `font-display text-figure-sm`, 32 above the items. Then the five sections, in order —
+  home (`/`), vocab (`/vocab`), talk (`/talk`), records, settings — each a link 44 tall,
+  a pill, the 20 glyph (house, card stack, speech bubble, bars, gear) 12 before its name
+  in `text-action`, the whole row the hit area, 4 apart.
 - **Current item:** `text-foreground` with a 2px `border-foreground` pill around the row
   — the selection ink, never a colour — and `aria-current="page"`, matched on the exact
   path so `/` is not current everywhere, ignoring the query and the hash. Other:
   `text-muted-foreground` and a transparent 2px border, so nothing shifts. Hover:
   `bg-raised`.
 - **`top-bar`** (below `pc`): 56 tall, sticky at the top, `bg-card` over a 2px
-  `border-border`. The brand at the left; the four sections at the right as the same
-  pills 44 tall, glyph and name from 640, the glyph alone below it with the name as its
-  `aria-label`.
-- Both are one `nav` named "menu", the page's only navigation landmark. Esc on records
-  and settings still goes home.
+  `border-border`. The brand at the left; the five sections at the right as the same
+  pills 44 tall, glyph and name from 768, the glyph alone below it with the name as its
+  `aria-label`. Nothing scrolls sideways at 390, 640 or 768.
+- Both are one `nav` named "menu", the page's only navigation landmark. Esc on the
+  vocabulary hub, records and settings still goes home.
 - **`skip-link`**: the first focusable element of every shell page, "skip to content",
   pointing at `main` (`id="main"`, `tabIndex={-1}`). Visually hidden until it takes
   focus, then a `secondary` button at 16, 16 over everything.
@@ -167,25 +171,52 @@ most 560 wide and centered.
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `front`        | an `eyebrow` "again" with the return glyph on a retry → the prompt (`front`, or `front-long` past 48 characters; `text-balance`), centred on the card; the whole card flips on a press                                                                                                                          |
 | `back-self`    | the whole prompt (`point`, muted, wrapped — never truncated) → the model answer (`answer font-latin`) → the alternates as a list between hairlines (`alt font-latin`, muted, 12 above and below each) → the key point (`point`, led by a "point" `label`) → seconds to flip at the right (`figure-sm`, "2.8 s") |
-| `back-timeout` | as `back-self`, with the return glyph and "timed out · to review" (`label`, muted) in place of the seconds, and one `primary` "next" in the grade pair's place                                                                                                                                                  |
+| `back-timeout` | as `back-self`, with the return glyph and "timed out" (`label`, muted) in place of the seconds, then the `grade-trio` as on `back-self`; no "next" — the grade decides                                                                                                                                          |
 
-- **`grade-pair`**: × on the left (`secondary`, ✕ glyph, "not yet"), ○ on the right
-  (`good`, ○ glyph, "said it"), half the width each with a 12 gap. Each hint is the
-  learner's key for that grade, "←" and "→" by default: a "←" sits at the start edge,
-  any other at the end.
-- A ○ turns the answer `text-good-ink` (160 ms) and advances the progress bar; a × fades
-  the answer to `text-muted-foreground`.
+- **`grade-trio`**: × "forgot" (忘れた, `secondary`, ✕ glyph), △ "unsure" (微妙,
+  `secondary`, △ glyph) and ○ "remembered" (覚えてた, `good`, ○ glyph), left to right, a
+  third of the width each with 12 gaps, max 560. Each button stays 52 tall: its name
+  over its next interval ("tomorrow", "3 days") in `caption`, the intervals as the
+  server dealt them with the card — the client computes none. A re-ask's buttons have no
+  interval line. Each hint is that grade's first key, "←", "2" and "→" by default: a "←"
+  sits at the start edge, any other at the end. × and △ share the grey and differ by
+  glyph and name only.
+- A ○ turns the answer `text-good-ink` (160 ms); a △ leaves it `text-foreground`
+  (`ink`); a × fades it to `text-muted-foreground`. A first pass advances the progress
+  bar whatever its grade.
 - A fast ○ shows "fast 2.1 s" in `figure-sm text-good-ink` rising into place.
+- The vocabulary session's face is the `vocab-card` below, on the same card and stage,
+  with the same `grade-trio`; it has no timer, combo or points.
 - When a back does not fit, only the card's inner area scrolls; the strip and the
   actions stay put. The last 32px fades to `surface` (decoration only). ↑/↓ scroll it;
-  ←/→ are the grades and never scroll.
+  the grade keys never scroll.
+
+## Vocab card and cloze blank
+
+The `drill-card`'s frame — `bg-card`, a 2px `border-border`, `rounded-panel`, padding
+32, inside the 880 stage — with "flip" (`secondary`, max 560) 24 under the front and the
+`grade-trio` under the back.
+
+| Face    | Contents, top to bottom                                                                                                                                                                                                                                                                |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `front` | the category `eyebrow` ("phrasal verb") → the definition (`body font-latin`) → the example with each blanked word a `cloze-blank`. A set phrase's example is the dialogue form: two lines, "A: …" over "B: …", the blank in its line                                                   |
+| `back`  | the category `eyebrow` → the headword (`answer font-latin`) → the meaning (`heading`) → a hairline → the example filled in, the answer's words at weight 800 and underlined — never only coloured → `example2` (muted). The grades light the headword as they light the drill's answer |
+
+- **Marks.** A re-ask carries the "again" mark — the return glyph and "again" as the
+  `eyebrow`, before the category — and its trio has no interval line. A card from a talk
+  carries the talk mark beside the category, "from a talk" with the speech-bubble glyph,
+  text and never a pill; on the back only, a `text` "delete" sits at the card's top
+  right, away from the grades, and opens the `dialog` `confirm`.
+- **`cloze-blank`**: one per blanked word, a fixed 6ch underline (2px
+  `border-foreground` at its foot, no fill) inline in the sentence — never as long as
+  the word, so its width gives nothing away.
 
 ## Progress, timer bar and combo
 
 | Item     | Value                                                                                                                                                                                                                |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Progress | `drill`: an 18-tall pill, `bg-good` on `bg-bar-track`, the done share filled, max 560. `talk`: six 8-tall pills 4 apart, done turns `bg-good`, the rest `bg-bar-track`, "3 / 6" at the right                         |
-| Count    | "7 / 10" in `text-count`, beside the bar; it is what a screen reader reads                                                                                                                                           |
+| Count    | "7 / 10" in `text-count`, beside the bar, counting first passes; it is what a screen reader reads. While re-asks wait, "again n" follows it in muted `text-count`. There is no retry round and no count of one       |
 | Combo    | From 2: a `combo-chip` — an `energy` pill with its lip, a bolt glyph and the count + "in a row" in `text-count text-on-energy`                                                                                       |
 | Timer    | Under the card, above the actions: a 12-tall pill, `bg-energy` on `bg-bar-track`, shrinking linearly from the limit to 0; the whole seconds left, rounded up, at its right in `figure-sm font-display` (tabular box) |
 | At 0     | The fill is gone and the figure reads "0". The colour never changes — never red                                                                                                                                      |
@@ -199,8 +230,10 @@ use: keep them in configuration, not in the component.
 ## Home
 
 Max 1120, on the grid: the Today panel (8 columns) beside the `streak-tile` (4), then
-three `home-tile`s (4 each). Below `pc`: Today, the streak, then the tiles, one column.
-Over them, the date (`heading`) at the left and the sound tile at the right.
+four `home-tile`s 2 × 2 (6 columns each): vocab and talk, then weak and reach — every
+tile keeps at least 340 at 1024. Below `pc`: Today, the streak, vocab, talk, weak,
+reach, one column. Over them, the date (`heading`) at the left and the sound tile at the
+right.
 
 `home-panel` (Today) is `bg-card rounded-card p-6` with a 2px `border-border`, its one
 primary action at its bottom right:
@@ -227,10 +260,14 @@ primary action at its bottom right:
   topic — name (`label`), mastered count (`figure-sm`), a 10-tall pill, `bg-foreground`
   on `bg-raised` relative to the next milestone, this session's growth in `bg-good-ink`
   after a 2px gap. `talk`: "6 turns", "the scene is chosen for you", and a `secondary`
-  "start a talk" (home's one primary stays "start").
-- The weak and reach tiles read the records query beside the home view. Not answered
-  yet: the frame and title, no figures, no animation. Failed: one line, "could not
-  load", and the rest of home works. Empty: "none right now" and "0 so far".
+  "start a talk" (home's one primary stays "start"). `vocab`: today's due and new, and a
+  `secondary` "study words" to today's session; done for today, "today's done" and
+  "tomorrow 14" in `text-count` with a `text` link "open vocab →" to the hub; no cards
+  for the language pair, "no cards yet".
+- The weak and reach tiles read the records query beside the home view, and the vocab
+  tile the hub's query. Not answered yet: the frame and title, no figures, no animation.
+  Failed: one line, "could not load", and the rest of home works. Empty: "none right
+  now" and "0 so far".
 
 ## Chips and selection controls
 
@@ -258,19 +295,31 @@ Never `action`, `energy` or `good`.
   `font-display text-action`; hover on the others `bg-card`. More options than a row
   holds (the ten levels by TOEIC) wrap into rows of `columns` (five), 4 between rows,
   rather than shrink below 44.
+- `segmented` takes up to six options in one row — the daily limits' "unlimited" always
+  the last — before it wraps into `columns`.
 - `toggle`: 52 × 32. On: a `bg-foreground` track with a `bg-card` knob at the right.
   Off: a `bg-raised` track with a 2px `border-input` and a `bg-input` knob at the left.
   No "on"/"off" words: position and fill carry the state, and the switch role says it.
   Hover steps the track once: off to `bg-border`, on to `bg-muted-foreground` (the knob
   still measures as `ink-2` against `surface`).
-- `key-picker`: the × key then the ○ key, 8 apart, each a 44-tall `rounded-control`
-  `bg-raised` tile at least 64 wide with a 2px `border-input`, its grade's glyph and the
-  key in `text-count` (an arrow as the arrow, a digit or letter as itself); hover
-  `bg-card`. Pressed, it takes focus and waits: its border turns `border-foreground` and
-  it reads "press a key" in `label` — a selection, so ink. The next key pressed becomes
-  that grade's key and saves; one outside ↑ ↓ ← →, 0–9 and A–Z, or the other grade's, is
-  refused in the row's `status` line and the tile keeps waiting. Esc or leaving the tile
-  gives up.
+- `key-picker`: three tiles — the × key, the △ key, then the ○ key — 8 apart, each a
+  44-tall `rounded-control` `bg-raised` tile at least 64 wide with a 2px `border-input`,
+  its grade's glyph and the key in `text-count` (an arrow as the arrow, a digit or
+  letter as itself); hover `bg-card`. Pressed, it takes focus and waits: its border
+  turns `border-foreground` and it reads "press a key" in `label` — a selection, so ink.
+  The next key pressed becomes that grade's key and saves; one outside ↑ ↓ ← →, 0–9 and
+  A–Z, or one another grade holds, is refused in the row's `status` line and the tile
+  keeps waiting. A stored pair shows its two keys and the △ key derived from them. Esc
+  or leaving the tile gives up.
+
+## Deck row
+
+The vocabulary hub's category rows (and its weak row): each a link 56 tall between 2px
+`border-border` hairlines — the name (`body`) at the left; today's due and new in
+`text-count` and in learning / all in muted `text-count` at the right, then a chevron
+pointing right. Hover `bg-raised`; the whole row is the hit area. With nothing to study
+today it reads "none today" and refuses the press with `aria-disabled`, keeping focus
+and no hover.
 
 ## Talk parts
 
@@ -298,6 +347,16 @@ inside it, kept at its bottom, and the step panel rests on its foot.
   the sentence did. A screen reader hears only its label ("hidden").
 - The step panel is a `bg-card rounded-panel` card with a 2px `border-border`, padding
   20, its actions at its foot.
+- **The candidate card.** Under "the end", in the conversation, scrolling with it and
+  kept in view when it appears: a `bg-card rounded-panel` card with a 2px
+  `border-border`, padding 20, the title "make cards" in `heading`. Each candidate is a
+  `select-card`, two across (one below 640), none selected: the headword as its title
+  (`font-latin`), the category and the meaning as its caption. One already in learning
+  reads "in learning" (`caption`, muted) beside its disc; one added reads "added" and is
+  no longer pressable (`aria-disabled`). "add" (`secondary`) sits at the card's foot,
+  disabled until one is selected; "new talk" stays the one primary. Waiting: the title
+  over the `waiting-line`'s still "…". Failed: one line with the notice glyph and "try
+  again" (`secondary`).
 
 ## Rings, reach and the week (`ring-stack`, `week-row`, `stat`)
 
@@ -398,7 +457,9 @@ Settings is one page: the `section-list` beside rows max 720.
   is the pause dialog's recipe with its own title ("leave the round?"), the resume hint,
   "leave" in place of "stop" and no key list. Focus is trapped and waits on "continue",
   which Escape presses. The talk's W4 and settings' retest confirmation take the same
-  frame.
+  frame, and so does deleting a card from a talk: "keep" is the main action, at the
+  right, first focus and Esc; "delete" removes the card and its progress and goes on to
+  the next card.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`); hover
   `text-foreground`. For a definition someone needs once.

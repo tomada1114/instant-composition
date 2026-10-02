@@ -59,9 +59,11 @@ Never in a colour: ×, a timeout, a weak point, "to review", an error — they a
 
 ### Not by color alone
 
-- ○ and ×: position (× left, ○ right), the `good` fill against a secondary face, the ○ /
-  ✕ glyph and the label.
-- Timeout: the words "timed out · to review" beside the return glyph.
+- The grades: position (× left, △ centre, ○ right), the `good` fill against a secondary
+  face, the ✕ / △ / ○ glyph and the name. × and △ share the grey and differ by glyph and
+  name.
+- Timeout: the words "timed out" beside the return glyph.
+- A filled example's answer: weight 800 and an underline, never only a colour.
 - A grown segment (reach bar or ring): a 2px gap between it and the existing `ink` fill,
   plus a "+n" label.
 - `energy` against the light `canvas`, `surface` or `raised` is far below 3:1, so it
