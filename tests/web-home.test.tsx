@@ -1,7 +1,7 @@
-import { act, fireEvent, screen } from "@testing-library/react";
+import { act, fireEvent, screen, within } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { TUNING, type HomeView } from "@instant-composition/web";
+import { TUNING, type HomeView, type RecordsView } from "@instant-composition/web";
 
 import {
   COUNT,
@@ -233,6 +233,175 @@ describe("the home screen, W3a: today's portion not started", () => {
       "content",
       ja.Metadata.description,
     );
+  });
+});
+
+/** A records view with `weak` and `topics`, the rest of it empty. */
+function recordsView(
+  weak: RecordsView["weak"],
+  topics: RecordsView["reach"]["topics"],
+): RecordsView {
+  return {
+    reach: { topics, nearest: null },
+    breakdown: [],
+    weak,
+    toeic: null,
+    levelMode: "auto",
+    suggestedToeic: null,
+    streak: { current: 12, longest: 12 },
+    calendar: [],
+    said: 0,
+    practicedDays: 0,
+    points: 0,
+    titles: [],
+  };
+}
+
+/** An API that answers `view` for the home view and `records` for the records read. */
+function serveHomeAndRecords(
+  view: HomeView,
+  records: () => Promise<Response> | Response,
+): ApiCall[] {
+  return fakeApi((call) => {
+    if (call.url === "/api/v1/home") return Response.json(view);
+    if (call.url === "/api/v1/records") return records();
+    return undefined;
+  });
+}
+
+const RECORDS = recordsView(
+  { grammar: [{ id: "perfect", name: "現在完了" }], subtopics: [] },
+  [
+    {
+      id: "work",
+      name: "仕事",
+      count: 42,
+      added: 2,
+      ring: { from: 25, to: 50, done: 17, span: 25 },
+    },
+    {
+      id: "travel",
+      name: "旅行",
+      count: 18,
+      added: 0,
+      ring: { from: 10, to: 25, done: 8, span: 15 },
+    },
+  ],
+);
+
+function tile(name: string): HTMLElement {
+  return screen.getByRole("region", { name });
+}
+
+describe("the home screen's tiles, read from the records beside the home view", () => {
+  it("shows the weak grammar, each topic's mastered count and the talk, each records tile leading to the records page", async () => {
+    serveHomeAndRecords(homeView({ kind: "ready", streak: COUNT }), () =>
+      Response.json(RECORDS),
+    );
+    await renderApp("/");
+    expect(within(tile(ja.Home.tiles.weak)).getByText("現在完了")).toBeInTheDocument();
+    const reach = within(tile(ja.Home.tiles.reach));
+    expect(reach.getByText("仕事")).toBeInTheDocument();
+    expect(reach.getByText("42")).toBeInTheDocument();
+    expect(reach.getByText("旅行")).toBeInTheDocument();
+    expect(reach.getByText("18")).toBeInTheDocument();
+    for (const name of [ja.Home.tiles.weak, ja.Home.tiles.reach]) {
+      expect(
+        within(tile(name)).getByRole("link", { name: ja.Home.tiles.seeRecords }),
+      ).toHaveAttribute("href", "/records");
+    }
+    const talk = within(tile(ja.Home.tiles.talk));
+    expect(talk.getByText(String(TUNING.talkTurns))).toBeInTheDocument();
+    expect(talk.getByText(ja.Talk.start.scene)).toBeInTheDocument();
+    expect(talk.getByRole("link", { name: ja.Home.tiles.talkStart })).toHaveAttribute(
+      "href",
+      "/talk",
+    );
+  });
+
+  it("says each records tile could not be read when the read fails, and still starts a round", async () => {
+    serveHomeAndRecords(homeView({ kind: "ready", streak: COUNT }), () =>
+      refusal(503, "ERR_CONTENT_UNREADABLE"),
+    );
+    await renderApp("/");
+    for (const name of [ja.Home.tiles.weak, ja.Home.tiles.reach]) {
+      expect(within(tile(name)).getByText(ja.Home.tiles.failed)).toBeInTheDocument();
+    }
+    expect(
+      within(tile(ja.Home.tiles.talk)).queryByText(ja.Home.tiles.failed),
+    ).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.today.start }));
+    await settle();
+    expect(where()).toBe("/drill?kind=today");
+  });
+
+  it("shows the titles alone until the records read answers", async () => {
+    serveHomeAndRecords(
+      homeView({ kind: "ready", streak: COUNT }),
+      () => new Promise<Response>(() => undefined),
+    );
+    await renderApp("/");
+    for (const name of [ja.Home.tiles.weak, ja.Home.tiles.reach]) {
+      const region = tile(name);
+      expect(within(region).getByRole("heading", { name })).toBeInTheDocument();
+      expect(within(region).queryByText(ja.Home.tiles.failed)).toBeNull();
+      expect(within(region).queryAllByRole("listitem")).toHaveLength(0);
+      expect(within(region).queryByRole("definition")).toBeNull();
+    }
+  });
+
+  it("says there is nothing weak and nothing mastered yet on an empty record", async () => {
+    serveHomeAndRecords(homeView({ kind: "ready", streak: COUNT }), () =>
+      Response.json(recordsView({ grammar: [], subtopics: [] }, [])),
+    );
+    await renderApp("/");
+    expect(
+      within(tile(ja.Home.tiles.weak)).getByText(ja.Records.weak.none),
+    ).toBeInTheDocument();
+    expect(
+      within(tile(ja.Home.tiles.reach)).getByText(ja.Summary.reach.empty),
+    ).toBeInTheDocument();
+  });
+
+  it("shows at most three weak names a kind", async () => {
+    serveHomeAndRecords(homeView({ kind: "ready", streak: COUNT }), () =>
+      Response.json(
+        recordsView(
+          {
+            grammar: ["a", "b", "c", "d"].map((id) => ({ id, name: `g-${id}` })),
+            subtopics: [{ topic: "work", subtopic: "meetings", name: "会議" }],
+          },
+          [],
+        ),
+      ),
+    );
+    await renderApp("/");
+    const weak = within(tile(ja.Home.tiles.weak));
+    expect(weak.getByText("g-a、g-b、g-c")).toBeInTheDocument();
+    expect(weak.getByText("会議")).toBeInTheDocument();
+  });
+});
+
+describe("the home screen's week row", () => {
+  it("marks today undone apart from the days ahead, and says each day's state in words", async () => {
+    vi.useFakeTimers({ toFake: ["Date", "setTimeout", "clearTimeout"] });
+    vi.setSystemTime(new Date(2026, 8, 23, 12));
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/");
+    const states = [...document.querySelectorAll("ol [data-state]")].map((disc) =>
+      disc.getAttribute("data-state"),
+    );
+    expect(states).toStrictEqual([
+      "done",
+      "gap",
+      "today",
+      "upcoming",
+      "upcoming",
+      "upcoming",
+      "upcoming",
+    ]);
+    expect(screen.getByText(ja.Home.week.today)).toHaveClass("sr-only");
+    expect(screen.getByText(ja.Home.week.done)).toHaveClass("sr-only");
   });
 });
 
@@ -695,7 +864,7 @@ describe("the sound switch", () => {
 
   it("goes back when the change cannot be saved", async () => {
     fakeApi((call) =>
-      call.method === "GET"
+      call.url === "/api/v1/home"
         ? Response.json(homeView({ kind: "ready", streak: COUNT }, { sound: true }))
         : refusal(503, "ERR_CONTENT_UNREADABLE"),
     );
@@ -711,7 +880,7 @@ describe("the sound switch", () => {
   it("settles on what the last save left, however the answers arrive", async () => {
     const pending: ((ok: boolean) => void)[] = [];
     fakeApi((call) =>
-      call.method === "GET"
+      call.url === "/api/v1/home"
         ? Response.json(homeView({ kind: "ready", streak: COUNT }, { sound: true }))
         : new Promise<Response>((resolve) => {
             pending.push((ok) => {
