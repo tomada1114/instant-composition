@@ -259,29 +259,84 @@ describe("the settings screen, W11 focus", () => {
   });
 });
 
-describe("the settings screen, W11 size and sound", () => {
-  it("saves the daily size and says when it completes today", async () => {
+/** The radio for `count` (or 「無制限」) in the radiogroup named `group`. */
+function limitRadio(group: string, count: number | null): HTMLElement {
+  return within(screen.getByRole("radiogroup", { name: group })).getByRole("radio", {
+    name:
+      count === null
+        ? ja.Settings.daily.unlimited
+        : fill(ja.Settings.daily.count, { count }),
+  });
+}
+
+describe("the settings screen, W11 daily limits and sound", () => {
+  it("offers new sentences a day and saves one picked, saying when it completes today", async () => {
     const { patches } = serveSettings(PAGE, { completedToday: true });
     await renderApp("/settings");
-    const sizes = screen.getByRole("radiogroup", { name: ja.Settings.size.title });
+    const group = screen.getByRole("radiogroup", { name: ja.Settings.daily.newTitle });
     expect(
-      within(sizes)
+      within(group)
         .getAllByRole("radio")
-        .map((size) => size.textContent),
-    ).toStrictEqual(["5", "10", "15", "20", "30"]);
-    expect(
-      within(sizes).getByRole("radio", {
-        name: fill(ja.Settings.size.count, { count: 10 }),
-      }),
-    ).toBeChecked();
-    fireEvent.click(
-      within(sizes).getByRole("radio", {
-        name: fill(ja.Settings.size.count, { count: 5 }),
-      }),
-    );
+        .map((radio) => radio.textContent),
+    ).toStrictEqual(["0", "3", "5", "10", "15"]);
+    expect(limitRadio(ja.Settings.daily.newTitle, 5)).toBeChecked();
+    fireEvent.click(limitRadio(ja.Settings.daily.newTitle, 10));
     await settle();
-    expect(patches).toStrictEqual([{ dailySize: 5 }]);
-    expect(screen.getByText(ja.Settings.size.completed)).toBeInTheDocument();
+    expect(patches).toStrictEqual([{ newPerDay: 10 }]);
+    expect(limitRadio(ja.Settings.daily.newTitle, 10)).toBeChecked();
+    const row = group.closest("[data-part=settings-row]");
+    expect(row).toHaveTextContent(ja.Settings.daily.completed);
+  });
+
+  it("offers the review limit with 「無制限」 last, and saves it as null (example 5)", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings");
+    const group = screen.getByRole("radiogroup", {
+      name: ja.Settings.daily.reviewsTitle,
+    });
+    expect(
+      within(group)
+        .getAllByRole("radio")
+        .map((radio) => radio.textContent),
+    ).toStrictEqual(["10", "20", "30", "50", ja.Settings.daily.unlimited]);
+    expect(limitRadio(ja.Settings.daily.reviewsTitle, 20)).toBeChecked();
+    fireEvent.click(limitRadio(ja.Settings.daily.reviewsTitle, null));
+    await settle();
+    expect(patches).toStrictEqual([{ reviewsPerDay: null }]);
+    expect(limitRadio(ja.Settings.daily.reviewsTitle, null)).toBeChecked();
+    fireEvent.click(limitRadio(ja.Settings.daily.reviewsTitle, 30));
+    await settle();
+    expect(patches).toStrictEqual([{ reviewsPerDay: null }, { reviewsPerDay: 30 }]);
+  });
+
+  it("shows a stored unlimited review limit as 「無制限」", async () => {
+    serveSettings({ ...PAGE, settings: { ...SETTINGS, reviewsPerDay: null } });
+    await renderApp("/settings");
+    expect(limitRadio(ja.Settings.daily.reviewsTitle, null)).toBeChecked();
+  });
+
+  it("explains each daily limit behind its ⓘ", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    for (const [title, info] of [
+      [ja.Settings.daily.newTitle, ja.Settings.daily.newInfo],
+      [ja.Settings.daily.reviewsTitle, ja.Settings.daily.reviewsInfo],
+    ] as const) {
+      const tip = screen.getByRole("button", {
+        name: fill(ja.Settings.daily.infoLabel, { title }),
+      });
+      expect(tip).toHaveAttribute("aria-expanded", "false");
+      expect(screen.getByText(info)).not.toBeVisible();
+      fireEvent.click(tip);
+      expect(tip).toHaveAttribute("aria-expanded", "true");
+      expect(screen.getByText(info)).toBeVisible();
+    }
+  });
+
+  it("no longer offers the daily size", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    expect(screen.queryByText("1 日の枚数")).toBeNull();
   });
 
   it("shows the time limit saved and saves one picked, saying it applies from the next round", async () => {
@@ -325,7 +380,8 @@ describe("the settings screen, W11 size and sound", () => {
         .getAllByRole("radiogroup")
         .map((group) => group.getAttribute("aria-label")),
     ).toStrictEqual([
-      ja.Settings.size.title,
+      ja.Settings.daily.newTitle,
+      ja.Settings.daily.reviewsTitle,
       ja.Settings.difficulty.mode,
       ja.Settings.difficulty.levels,
       ja.Settings.limit.title,
@@ -411,10 +467,7 @@ describe("the settings screen, W11 size and sound", () => {
       );
       await renderApp("/settings");
       const travel = screen.getByRole("button", { name: /旅行/u });
-      const five = (): HTMLElement =>
-        screen.getByRole("radio", {
-          name: fill(ja.Settings.size.count, { count: 5 }),
-        });
+      const five = (): HTMLElement => limitRadio(ja.Settings.daily.newTitle, 3);
       fireEvent.click(travel);
       await settle();
       fireEvent.click(five());
@@ -422,7 +475,7 @@ describe("the settings screen, W11 size and sound", () => {
       if (laterAnswered) {
         answers[1]?.resolve(
           Response.json({
-            settings: { ...SETTINGS, dailySize: 5 },
+            settings: { ...SETTINGS, newPerDay: 3 },
             removedFocus: [],
             completedToday: false,
           } satisfies SettingsView),
@@ -516,9 +569,9 @@ describe("the settings screen, the grade keys", () => {
     ).toBeInTheDocument();
   });
 
-  /** The grade key button for `grade`, named by the key it shows now. */
-  function keyButton(grade: "ok" | "ng", key: string): HTMLElement {
-    return screen.getByRole("button", { name: fill(ja.Settings.keys[grade], { key }) });
+  /** The grade key tile for `slot`, named by the key it shows now. */
+  function keyButton(slot: "ok" | "ng" | "hard", key: string): HTMLElement {
+    return screen.getByRole("button", { name: fill(ja.Settings.keys[slot], { key }) });
   }
 
   function status(): HTMLElement {
@@ -529,20 +582,40 @@ describe("the settings screen, the grade keys", () => {
     return line;
   }
 
-  it("shows → and ← until others are chosen, then sets each key from the next one pressed", async () => {
+  it("shows three tiles, ×, △ then ○, with ←, 2 and → until others are chosen", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const group = screen.getByRole("group", { name: ja.Settings.keys.title });
+    expect(
+      within(group)
+        .getAllByRole("button")
+        .map((tile) => tile.getAttribute("aria-label")),
+    ).toStrictEqual([
+      fill(ja.Settings.keys.ng, { key: "←" }),
+      fill(ja.Settings.keys.hard, { key: "2" }),
+      fill(ja.Settings.keys.ok, { key: "→" }),
+    ]);
+  });
+
+  it("sets each key from the next one pressed, saving all three together", async () => {
     const { patches } = serveSettings();
     await renderApp("/settings");
-    expect(
-      screen.getByRole("group", { name: ja.Settings.keys.title }),
-    ).toBeInTheDocument();
 
     fireEvent.click(keyButton("ok", "→"));
     const waiting = keyButton("ok", ja.Settings.keys.waiting);
     fireEvent.keyDown(waiting, { key: "l", code: "KeyL" });
     await settle();
-    expect(patches).toStrictEqual([{ gradeKeys: { ok: "KeyL", ng: "ArrowLeft" } }]);
+    expect(patches).toStrictEqual([
+      { gradeKeys: { ok: "KeyL", ng: "ArrowLeft", hard: "Digit2" } },
+    ]);
     expect(keyButton("ok", "L")).toHaveFocus();
 
+    fireEvent.click(keyButton("hard", "2"));
+    fireEvent.keyDown(keyButton("hard", ja.Settings.keys.waiting), {
+      key: "s",
+      code: "KeyS",
+    });
+    await settle();
     fireEvent.click(keyButton("ng", "←"));
     fireEvent.keyDown(keyButton("ng", ja.Settings.keys.waiting), {
       key: "1",
@@ -550,10 +623,23 @@ describe("the settings screen, the grade keys", () => {
     });
     await settle();
     expect(patches).toStrictEqual([
-      { gradeKeys: { ok: "KeyL", ng: "ArrowLeft" } },
-      { gradeKeys: { ok: "KeyL", ng: "Digit1" } },
+      { gradeKeys: { ok: "KeyL", ng: "ArrowLeft", hard: "Digit2" } },
+      { gradeKeys: { ok: "KeyL", ng: "ArrowLeft", hard: "KeyS" } },
+      { gradeKeys: { ok: "KeyL", ng: "Digit1", hard: "KeyS" } },
     ]);
     expect(keyButton("ng", "1")).toBeInTheDocument();
+    expect(keyButton("hard", "S")).toBeInTheDocument();
+  });
+
+  it("shows a pair stored before three grades with △'s key as the server derived it", async () => {
+    serveSettings({
+      ...PAGE,
+      settings: { ...SETTINGS, gradeKeys: { ok: "Digit2", ng: "KeyJ", hard: "KeyS" } },
+    });
+    await renderApp("/settings");
+    expect(keyButton("ng", "J")).toBeInTheDocument();
+    expect(keyButton("hard", "S")).toBeInTheDocument();
+    expect(keyButton("ok", "2")).toBeInTheDocument();
   });
 
   it("takes ↑ as a grade key, shown as the arrow", async () => {
@@ -565,7 +651,9 @@ describe("the settings screen, the grade keys", () => {
       code: "ArrowUp",
     });
     await settle();
-    expect(patches).toStrictEqual([{ gradeKeys: { ok: "ArrowRight", ng: "ArrowUp" } }]);
+    expect(patches).toStrictEqual([
+      { gradeKeys: { ok: "ArrowRight", ng: "ArrowUp", hard: "Digit2" } },
+    ]);
     expect(keyButton("ng", "↑")).toBeInTheDocument();
   });
 
@@ -587,17 +675,32 @@ describe("the settings screen, the grade keys", () => {
       code: "KeyK",
     });
     await settle();
-    expect(patches).toStrictEqual([{ gradeKeys: { ok: "KeyK", ng: "ArrowLeft" } }]);
+    expect(patches).toStrictEqual([
+      { gradeKeys: { ok: "KeyK", ng: "ArrowLeft", hard: "Digit2" } },
+    ]);
     expect(status()).toBeEmptyDOMElement();
   });
 
-  it("refuses the other grade's key, so the two never share one", async () => {
+  it.each([
+    ["×'s", "ArrowLeft"],
+    ["△'s", "Digit2"],
+  ])("refuses %s key for ○, so no two grades share one", async (_, code) => {
     const { patches } = serveSettings();
     await renderApp("/settings");
     fireEvent.click(keyButton("ok", "→"));
-    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), {
-      key: "ArrowLeft",
-      code: "ArrowLeft",
+    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), { key: code, code });
+    await settle();
+    expect(status()).toHaveTextContent(ja.Settings.keys.taken);
+    expect(patches).toStrictEqual([]);
+  });
+
+  it("refuses ○'s key for △", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings");
+    fireEvent.click(keyButton("hard", "2"));
+    fireEvent.keyDown(keyButton("hard", ja.Settings.keys.waiting), {
+      key: "ArrowRight",
+      code: "ArrowRight",
     });
     await settle();
     expect(status()).toHaveTextContent(ja.Settings.keys.taken);
@@ -866,7 +969,10 @@ describe("the settings screen, one page", () => {
     ]);
     expect(screen.getByRole("button", { name: /旅行/u })).toBeInTheDocument();
     expect(
-      screen.getByRole("radiogroup", { name: ja.Settings.size.title }),
+      screen.getByRole("radiogroup", { name: ja.Settings.daily.newTitle }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("radiogroup", { name: ja.Settings.daily.reviewsTitle }),
     ).toBeInTheDocument();
     expect(retest()).toBeInTheDocument();
     expect(

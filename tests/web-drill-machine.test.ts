@@ -7,6 +7,7 @@ import {
   type DrillInit,
   drillReducer,
   type DrillState,
+  type Grade,
   initDrill,
   progress,
   remainingMs,
@@ -20,12 +21,24 @@ const PACE = 7000;
 /** The wall clock, in epoch ms, when the monotonic clock reads zero. */
 const WALL = 1_790_000_000_000;
 
+/** `count` card ids, `c1` onwards. */
+function ids(count: number): string[] {
+  return Array.from({ length: count }, (_, index) => `c${String(index + 1)}`);
+}
+
+function each<T>(deck: readonly string[], value: T): Record<string, T> {
+  return Object.fromEntries(deck.map((id) => [id, value]));
+}
+
+/** A round of `deck`, none of its cards new to the learner unless `overrides` says so. */
 function init(overrides: Partial<DrillInit> = {}): DrillState {
+  const deck = overrides.deck ?? ids(3);
   return initDrill({
     roundId: "round-1",
-    deck: ["c1", "c2", "c3"],
-    limits: { c1: LIMIT, c2: LIMIT, c3: LIMIT },
-    paces: { c1: PACE, c2: PACE, c3: PACE },
+    deck,
+    limits: each(deck, LIMIT),
+    paces: each(deck, PACE),
+    isNew: {},
     answered: [],
     retries: true,
     intro: false,
@@ -39,44 +52,48 @@ function run(state: DrillState, ...events: DrillEvent[]): DrillState {
 
 /** Shows the current front at `at` and flips it `elapsed` later. */
 function flipAfter(state: DrillState, at: number, elapsed: number): DrillState {
-  return run(
-    state,
-    { type: "shown", at },
-    { type: "flip", at: at + elapsed, wall: WALL + (at + elapsed) },
-  );
+  return run(state, { type: "shown", at }, { type: "flip", at: at + elapsed });
 }
 
-function grade(
-  state: DrillState,
-  result: "ok" | "ng",
-  at: number,
-  key = false,
-): DrillState {
-  return drillReducer(state, { type: "grade", result, at, wall: WALL + at, key });
+function grade(state: DrillState, given: Grade, at: number, key = false): DrillState {
+  return drillReducer(state, { type: "grade", grade: given, at, wall: WALL + at, key });
 }
 
-/** Grades the current card `result` by pointer and moves on past the feedback. */
-function answer(state: DrillState, at: number, result: "ok" | "ng"): DrillState {
+/** Grades the current card `given` by pointer and moves on past the feedback. */
+function answer(state: DrillState, given: Grade, at = 0): DrillState {
   const back = flipAfter(state, at, 2000);
-  return drillReducer(grade(back, result, at + 3000), {
+  return drillReducer(grade(back, given, at + 3000), {
     type: "advance",
     at: at + 3500,
   });
 }
 
-function timeOut(state: DrillState, at: number): DrillState {
-  return run(
-    state,
-    { type: "shown", at },
-    { type: "tick", at: at + LIMIT, wall: WALL + (at + LIMIT) },
-    { type: "next", at: at + LIMIT + 1000 },
-  );
+/** Lets the current front run out, then grades the timed-out back `given`. */
+function timeOut(state: DrillState, given: Grade, at = 0): DrillState {
+  const back = run(state, { type: "shown", at }, { type: "tick", at: at + LIMIT });
+  return drillReducer(grade(back, given, at + LIMIT + 1000), {
+    type: "advance",
+    at: at + LIMIT + 1500,
+  });
+}
+
+/** The cards shown, in order, as the session moves through `grades`. */
+function shownWhile(state: DrillState, grades: readonly Grade[]): string[] {
+  const seen: string[] = [];
+  let next = state;
+  for (const given of grades) {
+    const card = currentCard(next);
+    if (card === undefined) break;
+    seen.push(card.pass === "first" ? card.cardId : `${card.cardId}↺`);
+    next = answer(next, given);
+  }
+  return seen;
 }
 
 describe("starting a drill", () => {
   it("opens on the first card's front with its clock not yet running", () => {
     const state = init();
-    expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "first" });
+    expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "first", ask: 0 });
     expect(state.phase).toStrictEqual({
       kind: "front",
       spentMs: 0,
@@ -89,25 +106,19 @@ describe("starting a drill", () => {
   it("waits on the explanation when asked to, and starts on start", () => {
     const state = init({ intro: true });
     expect(state.phase.kind).toBe("intro");
-    expect(
-      drillReducer(state, { type: "flip", at: 5, wall: WALL + 5 }).phase.kind,
-    ).toBe("intro");
+    expect(drillReducer(state, { type: "flip", at: 5 }).phase.kind).toBe("intro");
     expect(drillReducer(state, { type: "start", at: 5 }).phase.kind).toBe("front");
   });
 });
 
 describe("the front's clock", () => {
   it("runs from the moment the front is shown", () => {
-    const state = run(
-      init(),
-      { type: "shown", at: 1000 },
-      { type: "tick", at: 3500, wall: WALL + 3500 },
-    );
+    const state = run(init(), { type: "shown", at: 1000 }, { type: "tick", at: 3500 });
     expect(remainingMs(state)).toBe(LIMIT - 2500);
   });
 
   it("ignores a flip before the front was shown", () => {
-    const state = drillReducer(init(), { type: "flip", at: 10, wall: WALL + 10 });
+    const state = drillReducer(init(), { type: "flip", at: 10 });
     expect(state.phase.kind).toBe("front");
   });
 
@@ -117,77 +128,75 @@ describe("the front's clock", () => {
     expect(state.answers).toStrictEqual([]);
   });
 
-  it("times out on the tick that reaches the limit and records a timeout", () => {
+  it("times out on the tick that reaches the limit, recording nothing until a grade", () => {
     const shown = drillReducer(init(), { type: "shown", at: 0 });
-    expect(
-      drillReducer(shown, { type: "tick", at: LIMIT - 1, wall: WALL + (LIMIT - 1) })
-        .phase.kind,
-    ).toBe("front");
-    const state = drillReducer(shown, {
-      type: "tick",
-      at: LIMIT + 40,
-      wall: WALL + (LIMIT + 40),
-    });
+    expect(drillReducer(shown, { type: "tick", at: LIMIT - 1 }).phase.kind).toBe(
+      "front",
+    );
+    const state = drillReducer(shown, { type: "tick", at: LIMIT + 40 });
     expect(state.phase).toMatchObject({ kind: "back", mode: "timeout" });
-    expect(state.answers).toStrictEqual([
-      {
-        id: answerId("round-1", "first", "c1"),
-        roundId: "round-1",
-        cardId: "c1",
-        pass: "first",
-        result: "timeout",
-        elapsedMs: LIMIT,
-        answeredAt: WALL + LIMIT + 40,
-      },
-    ]);
+    expect(state.answers).toStrictEqual([]);
   });
 
   it("treats a flip that comes after the limit as a timeout", () => {
     const state = flipAfter(init(), 0, LIMIT + 5);
     expect(state.phase).toMatchObject({ kind: "back", mode: "timeout" });
-    expect(state.answers[0]?.result).toBe("timeout");
   });
 });
 
 describe("grading a back", () => {
-  it("ignores a grade key for 150 ms after the back appears", () => {
-    const back = flipAfter(init(), 0, 2000);
-    expect(grade(back, "ok", 2149, true).phase.kind).toBe("back");
-    expect(grade(back, "ok", 2150, true).phase.kind).toBe("feedback");
-  });
+  it.each(["again", "hard", "good"] as const)(
+    "ignores the %s key for 150 ms after the back appears",
+    (given) => {
+      const back = flipAfter(init(), 0, 2000);
+      expect(grade(back, given, 2149, true).phase.kind).toBe("back");
+      expect(grade(back, given, 2150, true).phase.kind).toBe("feedback");
+    },
+  );
 
   it("accepts a pressed button at once", () => {
     const back = flipAfter(init(), 0, 2000);
-    expect(grade(back, "ok", 2001).phase.kind).toBe("feedback");
+    expect(grade(back, "good", 2001).phase.kind).toBe("feedback");
   });
 
-  it("records ○, counts the combo and marks a flip within half the pace as fast", () => {
-    const state = grade(flipAfter(init(), 0, 2100), "ok", 3000);
+  it("records the grade, counts the combo and marks a flip within half the pace as fast", () => {
+    const state = grade(flipAfter(init(), 0, 2100), "good", 3000);
     expect(state.phase).toStrictEqual({
       kind: "feedback",
-      result: "ok",
+      mode: "self",
+      grade: "good",
       fast: true,
       elapsedMs: 2100,
     });
     expect(state.combo).toBe(1);
     expect(state.answers).toStrictEqual([
       {
-        id: answerId("round-1", "first", "c1"),
+        id: answerId("round-1", "c1", 0),
         roundId: "round-1",
         cardId: "c1",
         pass: "first",
-        result: "ok",
+        grade: "good",
+        timedOut: false,
         elapsedMs: 2100,
         answeredAt: WALL + 3000,
       },
     ]);
   });
 
+  it("calls a △ within half the pace fast too, and a × never", () => {
+    expect(grade(flipAfter(init(), 0, 2100), "hard", 3000).phase).toMatchObject({
+      fast: true,
+    });
+    expect(grade(flipAfter(init(), 0, 2100), "again", 3000).phase).toMatchObject({
+      fast: false,
+    });
+  });
+
   it("reports each answer as given at the wall-clock time of its grade, not of its flip", () => {
     const back = flipAfter(init(), 0, 2100);
     const graded = drillReducer(back, {
       type: "grade",
-      result: "ng",
+      grade: "again",
       at: 5000,
       wall: 1_800_000_000_123,
       key: false,
@@ -198,60 +207,55 @@ describe("grading a back", () => {
   });
 
   it("does not call a flip past half the pace fast", () => {
-    const state = grade(flipAfter(init(), 0, 3600), "ok", 4000);
+    const state = grade(flipAfter(init(), 0, 3600), "good", 4000);
     expect(state.phase).toMatchObject({ fast: false });
   });
 
   it("judges fast against the card's pace, not a longer limit the round was dealt with", () => {
-    const long = init({ limits: { c1: 60_000, c2: 60_000, c3: 60_000 } });
-    expect(grade(flipAfter(long, 0, 3600), "ok", 4000).phase).toMatchObject({
+    const long = init({ limits: each(ids(3), 60_000) });
+    expect(grade(flipAfter(long, 0, 3600), "good", 4000).phase).toMatchObject({
       fast: false,
     });
-    expect(grade(flipAfter(long, 0, 3500), "ok", 4000).phase).toMatchObject({
+    expect(grade(flipAfter(long, 0, 3500), "good", 4000).phase).toMatchObject({
       fast: true,
     });
   });
 
   it("moves on to the next front once the feedback is over", () => {
-    const state = answer(init(), 0, "ok");
-    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "first" });
+    const state = answer(init(), "good");
+    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "first", ask: 0 });
     expect(state.phase).toMatchObject({ kind: "front", runningSince: null });
   });
 
-  it("breaks the combo on ×", () => {
-    const twice = answer(answer(init(), 0, "ok"), 10_000, "ok");
+  it("keeps the combo on △ and ○, and breaks it on ×", () => {
+    const twice = answer(answer(init(), "good"), "hard");
     expect(twice.combo).toBe(2);
-    const broken = grade(flipAfter(twice, 20_000, 1000), "ng", 22_000);
+    const broken = grade(flipAfter(twice, 20_000, 1000), "again", 22_000);
     expect(broken.combo).toBe(0);
-    expect(broken.phase).toMatchObject({ kind: "feedback", result: "ng" });
-    expect(broken.answers.at(-1)?.result).toBe("ng");
+    expect(broken.phase).toMatchObject({ kind: "feedback", grade: "again" });
+    expect(broken.answers.at(-1)?.grade).toBe("again");
   });
 
-  it("breaks the combo on a timeout", () => {
-    const state = run(answer(init(), 0, "ok"), { type: "shown", at: 10_000 });
-    expect(
-      drillReducer(state, {
-        type: "tick",
-        at: 10_000 + LIMIT,
-        wall: WALL + (10_000 + LIMIT),
-      }).combo,
-    ).toBe(0);
+  it("grades a timed-out back with the trio, sending the grade with timedOut and the limit", () => {
+    const back = run(init(), { type: "shown", at: 0 }, { type: "tick", at: LIMIT });
+    expect(grade(back, "hard", LIMIT + 100, true).phase.kind).toBe("back");
+    const graded = grade(back, "hard", LIMIT + 1000, true);
+    expect(graded.phase).toStrictEqual({
+      kind: "feedback",
+      mode: "timeout",
+      grade: "hard",
+      fast: false,
+      elapsedMs: LIMIT,
+    });
+    expect(graded.answers).toMatchObject([
+      { cardId: "c1", grade: "hard", timedOut: true, elapsedMs: LIMIT },
+    ]);
+    expect(graded.combo).toBe(1);
   });
 
-  it("offers only next on a timed-out back", () => {
-    const back = run(
-      init(),
-      { type: "shown", at: 0 },
-      { type: "tick", at: LIMIT, wall: WALL + LIMIT },
-    );
-    expect(grade(back, "ok", LIMIT + 1000).phase.kind).toBe("back");
-    const next = drillReducer(back, { type: "next", at: LIMIT + 1000 });
-    expect(currentCard(next)).toStrictEqual({ cardId: "c2", pass: "first" });
-  });
-
-  it("ignores next on a back the learner flipped", () => {
+  it("does not move on from a back without a grade", () => {
     const back = flipAfter(init(), 0, 2000);
-    expect(drillReducer(back, { type: "next", at: 3000 }).phase.kind).toBe("back");
+    expect(drillReducer(back, { type: "advance", at: 3000 }).phase.kind).toBe("back");
   });
 });
 
@@ -261,7 +265,7 @@ describe("pausing", () => {
       init(),
       { type: "shown", at: 0 },
       { type: "pause", at: 3000 },
-      { type: "tick", at: 60_000, wall: WALL + 60_000 },
+      { type: "tick", at: 60_000 },
     );
     expect(paused.paused).toBe(true);
     expect(paused.phase.kind).toBe("front");
@@ -270,19 +274,17 @@ describe("pausing", () => {
     const resumed = run(
       paused,
       { type: "resume", at: 100_000 },
-      { type: "tick", at: 103_000, wall: WALL + 103_000 },
+      { type: "tick", at: 103_000 },
     );
     expect(remainingMs(resumed)).toBe(1000);
-    expect(
-      drillReducer(resumed, { type: "tick", at: 104_000, wall: WALL + 104_000 }).phase,
-    ).toMatchObject({
+    expect(drillReducer(resumed, { type: "tick", at: 104_000 }).phase).toMatchObject({
       kind: "back",
       mode: "timeout",
     });
   });
 
   it("pauses when the page is hidden, and keeps the combo on resume", () => {
-    const state = run(answer(init(), 0, "ok"), { type: "shown", at: 10_000 });
+    const state = run(answer(init(), "good"), { type: "shown", at: 10_000 });
     const hidden = drillReducer(state, { type: "hide", at: 11_000 });
     expect(hidden.paused).toBe(true);
     const resumed = drillReducer(hidden, { type: "resume", at: 50_000 });
@@ -292,11 +294,9 @@ describe("pausing", () => {
 
   it("ignores flips and grades while paused", () => {
     const front = run(init(), { type: "shown", at: 0 }, { type: "pause", at: 100 });
-    expect(
-      drillReducer(front, { type: "flip", at: 200, wall: WALL + 200 }).phase.kind,
-    ).toBe("front");
+    expect(drillReducer(front, { type: "flip", at: 200 }).phase.kind).toBe("front");
     const back = run(flipAfter(init(), 0, 1000), { type: "pause", at: 1500 });
-    expect(grade(back, "ok", 3000).phase.kind).toBe("back");
+    expect(grade(back, "good", 3000).phase.kind).toBe("back");
   });
 
   it("restarts the grade-key lock when a paused back resumes", () => {
@@ -305,12 +305,12 @@ describe("pausing", () => {
       { type: "pause", at: 1500 },
       { type: "resume", at: 9000 },
     );
-    expect(grade(back, "ok", 9100, true).phase.kind).toBe("back");
-    expect(grade(back, "ok", 9150, true).phase.kind).toBe("feedback");
+    expect(grade(back, "good", 9100, true).phase.kind).toBe("back");
+    expect(grade(back, "good", 9150, true).phase.kind).toBe("feedback");
   });
 
   it("finishes the feedback while paused but holds the next clock until resume", () => {
-    const feedback = run(grade(flipAfter(init(), 0, 1000), "ok", 1500), {
+    const feedback = run(grade(flipAfter(init(), 0, 1000), "good", 1500), {
       type: "pause",
       at: 1600,
     });
@@ -318,7 +318,7 @@ describe("pausing", () => {
       feedback,
       { type: "advance", at: 1800 },
       { type: "shown", at: 1810 },
-      { type: "tick", at: 30_000, wall: WALL + 30_000 },
+      { type: "tick", at: 30_000 },
     );
     expect(next.phase).toMatchObject({ kind: "front", runningSince: null });
     expect(remainingMs(next)).toBe(LIMIT);
@@ -331,77 +331,152 @@ describe("pausing", () => {
   });
 });
 
-describe("the retry pass", () => {
-  it("brings back × and timeouts in the order they came, marked as retries", () => {
-    let state = answer(init(), 0, "ng");
-    state = answer(state, 10_000, "ok");
-    state = timeOut(state, 20_000);
-    expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "retry" });
-    expect(progress(state)).toStrictEqual({ pass: "retry", position: 1, total: 2 });
+describe("re-asks", () => {
+  it("brings × back after 4 other cards, marked as a re-ask, and lets it go on ○ (example 2)", () => {
+    let state = init({ deck: ids(10) });
+    state = answer(answer(state, "good"), "good");
+    expect(currentCard(state)?.cardId).toBe("c3");
+    state = answer(state, "again");
+    expect(progress(state)).toStrictEqual({ position: 4, total: 10, waiting: 1 });
+    for (const cardId of ["c4", "c5", "c6", "c7"]) {
+      expect(currentCard(state)).toStrictEqual({ cardId, pass: "first", ask: 0 });
+      state = answer(state, "good");
+    }
+    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "retry", ask: 1 });
+    expect(progress(state)).toStrictEqual({ position: 7, total: 10, waiting: 0 });
 
-    state = answer(state, 30_000, "ng");
-    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "retry" });
-    state = answer(state, 40_000, "ok");
-    expect(state.phase.kind).toBe("finishing");
-    expect(state.answers.map((a) => [a.cardId, a.pass, a.result])).toStrictEqual([
-      ["c1", "first", "ng"],
-      ["c2", "first", "ok"],
-      ["c3", "first", "timeout"],
-      ["c1", "retry", "ng"],
-      ["c3", "retry", "ok"],
+    state = answer(state, "good");
+    expect(currentCard(state)).toStrictEqual({ cardId: "c8", pass: "first", ask: 0 });
+    expect(state.reAsks).toStrictEqual([]);
+    expect(
+      state.answers
+        .filter((a) => a.cardId === "c3")
+        .map((a) => [a.id, a.pass, a.grade]),
+    ).toStrictEqual([
+      ["round-1:f:c3", "first", "again"],
+      ["round-1:r1:c3", "retry", "good"],
     ]);
   });
 
-  it("is skipped by a placement round", () => {
-    let state = init({ retries: false });
-    state = answer(state, 0, "ng");
-    state = answer(state, 10_000, "ok");
-    state = answer(state, 20_000, "ng");
+  it("brings △ back after 8 other cards", () => {
+    const state = answer(init({ deck: ids(12) }), "hard");
+    expect(shownWhile(state, Array<Grade>(9).fill("good"))).toStrictEqual([
+      ...ids(9).slice(1),
+      "c1↺",
+    ]);
+  });
+
+  it("brings a card new to the learner back once more, 12 cards after its first ○, and lets it go at its second", () => {
+    const deck = ids(15);
+    const state = init({ deck, isNew: { c1: true } });
+    expect(shownWhile(state, Array<Grade>(16).fill("good"))).toStrictEqual([
+      ...ids(13),
+      "c1↺",
+      "c14",
+      "c15",
+    ]);
+  });
+
+  it("counts a new card's first ○ wherever it comes, after a miss included", () => {
+    const deck = ids(20);
+    const state = answer(init({ deck, isNew: { c1: true } }), "again");
+    const grades: Grade[] = [...Array<Grade>(4).fill("good"), "good"];
+    grades.push(...Array<Grade>(14).fill("good"));
+    const seen = shownWhile(state, grades);
+    expect(seen.slice(0, 5)).toStrictEqual(["c2", "c3", "c4", "c5", "c1↺"]);
+    // c1's first ○ came at its re-ask (seen[4]); 12 other cards later it is back once more.
+    expect(seen.indexOf("c1↺", 5)).toBe(4 + 13);
+  });
+
+  it("takes the waiting re-asks in the order they fell due once no first pass is left", () => {
+    let state = init({ deck: ids(3) });
+    state = answer(state, "hard");
+    state = answer(state, "again");
+    state = answer(state, "again");
+    // None is due yet; c2, due first after △'s longer gap on c1, comes at once.
+    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "retry", ask: 1 });
+    expect(state.reAsks.map((r) => r.cardId)).toStrictEqual(["c1", "c3"]);
+    expect(shownWhile(state, ["good", "good", "good"])).toStrictEqual([
+      "c2↺",
+      "c3↺",
+      "c1↺",
+    ]);
+  });
+
+  it("never shows the same card twice in a row while another waits", () => {
+    let state = init({ deck: ids(2) });
+    state = answer(state, "again");
+    state = answer(state, "again");
+    // c1 is on screen; missing it again puts it behind c2, which fell due first.
+    expect(currentCard(state)?.cardId).toBe("c1");
+    expect(shownWhile(state, ["again", "again", "good", "good"])).toStrictEqual([
+      "c1↺",
+      "c2↺",
+      "c1↺",
+      "c2↺",
+    ]);
+  });
+
+  it("shows a card again at once when it is the only one left", () => {
+    const state = answer(init({ deck: ids(1) }), "again");
+    expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "retry", ask: 1 });
+    const again = answer(state, "again");
+    expect(currentCard(again)).toStrictEqual({ cardId: "c1", pass: "retry", ask: 2 });
+  });
+
+  it("asks one card again at most 10 times", () => {
+    let state = answer(init({ deck: ids(1) }), "again");
+    for (let ask = 1; ask <= 10; ask += 1) {
+      expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "retry", ask });
+      state = answer(state, "again");
+    }
+    expect(state.phase.kind).toBe("finishing");
+    expect(state.answers.at(-1)?.id).toBe("round-1:r10:c1");
+  });
+
+  it("comes back after a timed-out back graded ×, as any ×", () => {
+    let state = timeOut(init({ deck: ids(1) }), "again");
+    expect(currentCard(state)).toStrictEqual({ cardId: "c1", pass: "retry", ask: 1 });
+    state = answer(state, "good");
     expect(state.phase.kind).toBe("finishing");
   });
 
-  it("is skipped when every card was said", () => {
+  it("are left out of a placement round", () => {
+    let state = init({ retries: false, isNew: each(ids(3), true) });
+    state = answer(state, "again");
+    state = answer(state, "hard");
+    state = answer(state, "good");
+    expect(state.phase.kind).toBe("finishing");
+  });
+
+  it("finish the round once every card has left", () => {
     let state = init();
-    for (const at of [0, 10_000, 20_000]) state = answer(state, at, "ok");
+    for (let card = 0; card < 3; card += 1) state = answer(state, "good");
     expect(state.phase.kind).toBe("finishing");
   });
 });
 
 describe("resuming a round", () => {
-  it("picks up after the answered cards with the combo at 0", () => {
+  it("picks up after the answered first passes with the combo at 0", () => {
     const state = init({
-      deck: ["c1", "c2", "c3"],
       answered: [
-        { cardId: "c1", pass: "first", result: "ng" },
-        { cardId: "c2", pass: "first", result: "ok" },
+        { cardId: "c1", pass: "first" },
+        { cardId: "c2", pass: "first" },
       ],
     });
-    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "first" });
-    expect(progress(state)).toStrictEqual({ pass: "first", position: 3, total: 3 });
+    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "first", ask: 0 });
+    expect(progress(state)).toStrictEqual({ position: 3, total: 3, waiting: 0 });
     expect(state.combo).toBe(0);
-    expect(state.retryPile).toStrictEqual(["c1"]);
   });
 
-  it("resumes inside the retry pass", () => {
+  it("drops the re-asks that were waiting, as the first answers already set the schedule", () => {
     const state = init({
       answered: [
-        { cardId: "c1", pass: "first", result: "ng" },
-        { cardId: "c2", pass: "first", result: "timeout" },
-        { cardId: "c3", pass: "first", result: "ok" },
-        { cardId: "c1", pass: "retry", result: "ok" },
+        { cardId: "c1", pass: "first" },
+        { cardId: "c2", pass: "first" },
+        { cardId: "c3", pass: "first" },
+        { cardId: "c1", pass: "retry" },
       ],
-    });
-    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "retry" });
-    expect(progress(state)).toStrictEqual({ pass: "retry", position: 2, total: 2 });
-  });
-
-  it("goes straight to finishing when nothing is left", () => {
-    const state = init({
-      answered: ["c1", "c2", "c3"].map((cardId) => ({
-        cardId,
-        pass: "first" as const,
-        result: "ok" as const,
-      })),
     });
     expect(state.phase.kind).toBe("finishing");
     expect(currentCard(state)).toBeUndefined();
@@ -410,18 +485,19 @@ describe("resuming a round", () => {
 
   it("skips a card whose content did not arrive", () => {
     const state = init({ limits: { c2: LIMIT, c3: LIMIT } });
-    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "first" });
+    expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "first", ask: 0 });
   });
 });
 
 describe("answers left unsaved by an earlier page", () => {
   function given(cardId: string, overrides: Partial<AnswerInput> = {}): AnswerInput {
     return {
-      id: answerId("round-1", "first", cardId),
+      id: answerId("round-1", cardId, 0),
       roundId: "round-1",
       cardId,
       pass: "first",
-      result: "ok",
+      grade: "good",
+      timedOut: false,
       elapsedMs: 900,
       ...overrides,
     };
@@ -433,14 +509,14 @@ describe("answers left unsaved by an earlier page", () => {
   });
 
   it("leaves out an answer the server already holds, so it is not counted twice", () => {
-    const held = { ...round, answered: [{ id: answerId("round-1", "first", "c1") }] };
+    const held = { ...round, answered: [{ id: answerId("round-1", "c1", 0) }] };
     expect(unsavedAnswers([given("c1"), given("c2")], held)).toStrictEqual([
       given("c2"),
     ]);
   });
 
   it("keeps the first of two answers under one id, as the server does", () => {
-    const later = given("c1", { result: "ng" });
+    const later = given("c1", { grade: "again" });
     expect(unsavedAnswers([given("c1"), later], round)).toStrictEqual([given("c1")]);
   });
 
@@ -451,22 +527,27 @@ describe("answers left unsaved by an earlier page", () => {
     expect(unsavedAnswers([stored], round)).toStrictEqual([]);
   });
 
-  it("resumes past them, a miss among them waiting in the retry pile", () => {
-    const unsaved = unsavedAnswers([given("c1", { result: "ng" }), given("c2")], round);
+  it("resumes past them, a miss among them not asked again", () => {
+    const unsaved = unsavedAnswers(
+      [given("c1", { grade: "again" }), given("c2")],
+      round,
+    );
     const state = init({ answered: unsaved });
-    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "first" });
-    expect(state.retryPile).toStrictEqual(["c1"]);
+    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "first", ask: 0 });
+    expect(state.reAsks).toStrictEqual([]);
   });
 });
 
 describe("answer ids", () => {
-  it("are fixed by round, pass and card, so a resend is recognised", () => {
-    expect(answerId("r", "first", "c")).toBe(answerId("r", "first", "c"));
-    expect(answerId("r", "first", "c")).not.toBe(answerId("r", "retry", "c"));
+  it("are fixed by round, card and showing, so a resend is recognised", () => {
+    expect(answerId("r", "c", 0)).toBe("r:f:c");
+    expect(answerId("r", "c", 1)).toBe("r:r1:c");
+    expect(answerId("r", "c", 0)).not.toBe(answerId("r", "c", 1));
+    expect(answerId("r", "c", 1)).not.toBe(answerId("r", "c", 2));
   });
 
-  it("fit the API's 64-character bound for a UUID round and a card id", () => {
-    const id = answerId("123e4567-e89b-12d3-a456-426614174000", "retry", "c_2c4d3y8g");
+  it("fit the API's 64-character bound for a UUID round, a card id and the tenth re-ask", () => {
+    const id = answerId("123e4567-e89b-12d3-a456-426614174000", "c_2c4d3y8g", 10);
     expect(id.length).toBeLessThanOrEqual(64);
   });
 });

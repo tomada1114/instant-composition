@@ -2,7 +2,6 @@ import { useTranslations } from "use-intl";
 import { useEffect, useRef, type ReactElement } from "react";
 
 import { FocusStrip } from "../lib/frame";
-import type { Pass } from "../openapi";
 import { BoltGlyph } from "../ui/filled-glyphs";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
@@ -10,15 +9,14 @@ import { playMotion } from "./motion";
 
 /**
  * The drill's progress: an 18-tall `good` pill on the bar track, the share of
- * the pass already graded filled — lit the moment the current card is said.
- * The count beside it is what a screen reader reads, so this is hidden.
+ * first passes already graded filled. The count beside it is what a screen
+ * reader reads, so this is hidden.
  */
 export function ProgressBar({
-  current,
+  filled,
   total,
-  lit,
-}: Readonly<{ current: number; total: number; lit: boolean }>): ReactElement {
-  const done = total > 0 ? Math.min(1, (current - (lit ? 0 : 1)) / total) : 0;
+}: Readonly<{ filled: number; total: number }>): ReactElement {
+  const done = total > 0 ? Math.min(1, filled / total) : 0;
   return (
     <div
       aria-hidden
@@ -35,21 +33,25 @@ export function ProgressBar({
 
 /**
  * The drill's focus strip: ✕, which pauses (as Esc and `?` do), the progress
- * bar centred, and the count with the combo from 2 at the right.
+ * bar centred, and at the right the count of first passes, "again n" while
+ * re-asks wait, and the combo from 2.
  */
 export function TopStrip({
-  pass,
   current,
   total,
+  filled,
+  waiting,
   combo,
-  lit,
   onPause,
 }: Readonly<{
-  pass: Pass;
+  /** The first pass on screen, or the last one shown during a re-ask, counted from 1. */
   current: number;
   total: number;
+  /** First passes graded, the one being graded now included. */
+  filled: number;
+  /** Re-asks waiting, the one on screen not counted. */
+  waiting: number;
   combo: number;
-  lit: boolean;
   onPause: () => void;
 }>): ReactElement {
   const t = useTranslations("Drill.card");
@@ -66,14 +68,17 @@ export function TopStrip({
           <CloseGlyph />
         </IconButton>
       }
-      progress={<ProgressBar current={current} total={total} lit={lit} />}
+      progress={<ProgressBar filled={filled} total={total} />}
       counters={
         <>
           <span className="font-latin text-count whitespace-nowrap text-muted-foreground">
-            {pass === "first"
-              ? t("progress", { current, total })
-              : t("retryProgress", { current, total })}
+            {t("progress", { current, total })}
           </span>
+          {waiting > 0 ? (
+            <span className="text-count whitespace-nowrap text-muted-foreground">
+              {t("reAsks", { count: waiting })}
+            </span>
+          ) : null}
           {combo >= 2 ? (
             <span
               ref={comboRef}

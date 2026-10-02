@@ -1,9 +1,10 @@
 import { useTranslations } from "use-intl";
 import type { ReactElement } from "react";
 
-import { keyLabel } from "../lib/grade-keys";
+import { GRADES, KEY_OF } from "../lib/grade-keys";
+import type { DrillCard, Grade, GradeKeyTrio, RoundPayload } from "../openapi";
 import { Button } from "../ui/button";
-import { ArrowGlyph, CloseGlyph, RingGlyph } from "../ui/glyphs";
+import { GradeTrio } from "../ui/grade-trio";
 import { Kbd } from "../ui/kbd";
 
 import {
@@ -13,7 +14,6 @@ import {
   type DrillPhase,
   type DrillState,
 } from "./drill-state";
-import type { GradeKeys, RoundPayload } from "../openapi";
 import { CardBack, CardFront } from "./flashcard";
 import type { DrillKeyAction } from "./keys";
 import { TimerBar } from "./timer-bar";
@@ -21,21 +21,28 @@ import { TopStrip } from "./top-strip";
 
 type OnAction = (action: DrillKeyAction) => void;
 
-/** A grade's key hint; a "←" sits at the start edge, so it points the way it is pressed. */
-function GradeKbd({ code }: Readonly<{ code: string }>): ReactElement {
-  return <Kbd side={code === "ArrowLeft" ? "start" : "end"}>{keyLabel(code)}</Kbd>;
+function byGrade<T>(value: (grade: Grade) => T): Record<Grade, T> {
+  return Object.fromEntries(GRADES.map((grade) => [grade, value(grade)])) as Record<
+    Grade,
+    T
+  >;
 }
 
+/** The flip button under a front, or the grade trio under either back. */
 function Actions({
   phase,
+  card,
+  reAsk,
   gradeKeys,
   onAction,
 }: Readonly<{
   phase: DrillPhase;
-  gradeKeys: GradeKeys;
+  card: DrillCard;
+  reAsk: boolean;
+  gradeKeys: GradeKeyTrio;
   onAction: OnAction;
 }>): ReactElement {
-  const t = useTranslations("Drill.card");
+  const t = useTranslations("Drill");
   if (phase.kind === "front") {
     return (
       <Button
@@ -45,48 +52,22 @@ function Actions({
           onAction({ type: "flip" });
         }}
       >
-        {t("flip")}
+        {t("card.flip")}
         <Kbd>Space</Kbd>
       </Button>
     );
   }
-  if (phase.kind === "back" && phase.mode === "timeout") {
-    return (
-      <Button
-        className="w-full"
-        onClick={() => {
-          onAction({ type: "next" });
-        }}
-      >
-        {t("next")}
-        <ArrowGlyph className="size-4.5" />
-        <Kbd>Space</Kbd>
-      </Button>
-    );
-  }
+  const days = (count: number): string =>
+    count === 1 ? t("grade.tomorrow") : t("grade.days", { count });
   return (
-    <div className="grid grid-cols-2 gap-3">
-      <Button
-        variant="secondary"
-        onClick={() => {
-          onAction({ type: "grade", result: "ng" });
-        }}
-      >
-        <CloseGlyph className="size-4.5" />
-        {t("notSaid")}
-        <GradeKbd code={gradeKeys.ng} />
-      </Button>
-      <Button
-        variant="good"
-        onClick={() => {
-          onAction({ type: "grade", result: "ok" });
-        }}
-      >
-        <RingGlyph className="size-4.5" />
-        {t("said")}
-        <GradeKbd code={gradeKeys.ok} />
-      </Button>
-    </div>
+    <GradeTrio
+      names={byGrade((grade) => t(`grade.${grade}`))}
+      intervals={reAsk ? undefined : byGrade((grade) => days(card.intervals[grade]))}
+      keys={byGrade((grade) => gradeKeys[KEY_OF[grade]])}
+      onGrade={(grade) => {
+        onAction({ type: "grade", grade });
+      }}
+    />
   );
 }
 
@@ -105,7 +86,7 @@ export function CardScreen({
 }: Readonly<{
   state: DrillState;
   round: RoundPayload;
-  gradeKeys: GradeKeys;
+  gradeKeys: GradeKeyTrio;
   onAction: OnAction;
 }>): ReactElement | null {
   const card = currentCard(state);
@@ -114,15 +95,18 @@ export function CardScreen({
 
   const { phase } = state;
   const where = progress(state);
-  const first = where.pass === "first";
+  const current = round.offset + where.position;
+  // A first pass fills its share of the bar the moment it is graded, whatever the grade.
+  const ungraded = card.pass === "first" && phase.kind !== "feedback";
+  const reAsk = card.pass === "retry";
   return (
     <div className="flex max-h-[calc(100dvh-4rem)] w-full flex-col items-center gap-6 py-6">
       <TopStrip
-        pass={where.pass}
-        current={first ? round.offset + where.position : where.position}
-        total={first ? round.total : where.total}
+        current={current}
+        total={round.total}
+        filled={current - (ungraded ? 1 : 0)}
+        waiting={where.waiting}
         combo={state.combo}
-        lit={phase.kind === "feedback" && phase.result === "ok"}
         onPause={() => {
           onAction({ type: "pause" });
         }}
@@ -130,8 +114,9 @@ export function CardScreen({
       <div className="flex min-h-0 w-full flex-col rounded-panel border-2 border-border bg-card p-8">
         {phase.kind === "front" ? (
           <CardFront
+            key={`${card.cardId}:${String(card.ask)}`}
             card={content}
-            retry={card.pass === "retry"}
+            retry={reAsk}
             hidden={state.paused}
             onFlip={() => {
               onAction({ type: "flip" });
@@ -142,7 +127,7 @@ export function CardScreen({
         ) : phase.kind === "feedback" ? (
           <CardBack
             card={content}
-            mode="self"
+            mode={phase.mode}
             elapsedMs={phase.elapsedMs}
             feedback={phase}
           />
@@ -155,7 +140,13 @@ export function CardScreen({
             limitMs={content.limitMs}
           />
         ) : null}
-        <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
+        <Actions
+          phase={phase}
+          card={content}
+          reAsk={reAsk}
+          gradeKeys={gradeKeys}
+          onAction={onAction}
+        />
       </div>
     </div>
   );

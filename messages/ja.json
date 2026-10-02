@@ -130,37 +130,38 @@
       "titleAgain": "{count} 文で測り直します",
       "say": "英語で言う",
       "flip": "めくる",
-      "grade": "自分で ○ / ×",
+      "grade": "自分で × / △ / ○",
       "start": "始める"
     },
     "ready": {
       "eyebrow": "{kind, select, today {Today} yesterday {Yesterday} extra {Extra} other {Placement}}",
       "title": "{kind, select, today {今日の分} yesterday {昨日の分} extra {もう {count} 文} other {難易度の測定}}",
       "resume": "{position} 枚目から ・ 全 {total} 枚",
-      "resumeRetry": "もう一度 {position} 枚目から ・ 全 {total} 枚",
       "start": "始める"
     },
     "card": {
       "pause": "中断",
       "progress": "{current} / {total}",
-      "retryProgress": "もう一度 {current} / {total}",
+      "reAsks": "もう一度 {count}",
       "comboLabel": "連続",
       "again": "もう一度",
       "flip": "めくる",
       "point": "要点",
       "seconds": "{seconds, number, ::.0} 秒",
-      "said": "言えた",
-      "notSaid": "まだ",
       "timedOut": "時間切れ",
-      "review": "復習へ",
-      "next": "次へ",
       "fast": "速い {seconds, number, ::.0} 秒"
+    },
+    "grade": {
+      "again": "忘れた",
+      "hard": "微妙",
+      "good": "覚えてた",
+      "tomorrow": "明日",
+      "days": "{count} 日"
     },
     "announce": {
       "front": "表。{ja}。持ち時間 {seconds} 秒",
-      "timeout": "時間切れ。復習へ",
-      "said": "言えた",
-      "review": "復習へ"
+      "againFront": "もう一度。表。{ja}。持ち時間 {seconds} 秒",
+      "timeout": "時間切れ"
     },
     "dialog": {
       "title": "一時停止",
@@ -368,9 +369,14 @@
       "count": "{count} / {max}",
       "removed": "{names} の重点も外しました"
     },
-    "size": {
-      "title": "1 日の枚数",
+    "daily": {
+      "newTitle": "新しい文 / 日",
+      "newInfo": "まだ答えたことのない文を 1 日に出す数です",
+      "reviewsTitle": "復習の上限 / 日",
+      "reviewsInfo": "復習がこの数に届いた日は、新しい文は出ません",
+      "infoLabel": "{title} の説明",
       "count": "{count} 文",
+      "unlimited": "無制限",
       "completed": "この枚数で今日は完了です"
     },
     "limit": {
@@ -383,11 +389,12 @@
     },
     "keys": {
       "title": "採点のキー",
-      "ok": "言えた {key}",
-      "ng": "まだ {key}",
+      "ng": "忘れた {key}",
+      "hard": "微妙 {key}",
+      "ok": "覚えてた {key}",
       "waiting": "キーを押す",
       "notAllowed": "矢印・数字・英字のキーから選べます",
-      "taken": "もう一方と同じキーです"
+      "taken": "ほかの採点と同じキーです"
     },
     "timeZone": {
       "title": "タイムゾーン",

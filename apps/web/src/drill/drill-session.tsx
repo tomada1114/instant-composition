@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
+import type { GradeKeyTrio, RoundKind, RoundPayload } from "../openapi";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { initDrill } from "./drill-init";
 import { progress, type DrillState } from "./drill-state";
@@ -12,7 +12,7 @@ import { IntroScreen } from "./intro-screen";
 import { LeaveDialog } from "./leave-dialog";
 import { PauseDialog } from "./pause-dialog";
 import { ReadyScreen } from "./ready-screen";
-import { browserSound, roundSound } from "./sound";
+import { browserSound, gradeSound, roundSound } from "./sound";
 import { Toast } from "./toast";
 import { useAnnouncement } from "./use-announcement";
 import {
@@ -34,15 +34,13 @@ function startDrill({
   { round: RoundPayload; pressed: boolean } & Pick<ArrivedQueue, "unsaved">
 >): DrillState {
   const answered = [...round.answered, ...unsaved];
+  const cards = Object.values(round.cards);
   return initDrill({
     roundId: round.id,
     deck: round.deck,
-    limits: Object.fromEntries(
-      Object.values(round.cards).map((card) => [card.id, card.limitMs]),
-    ),
-    paces: Object.fromEntries(
-      Object.values(round.cards).map((card) => [card.id, card.paceMs]),
-    ),
+    limits: Object.fromEntries(cards.map((card) => [card.id, card.limitMs])),
+    paces: Object.fromEntries(cards.map((card) => [card.id, card.paceMs])),
+    isNew: Object.fromEntries(cards.map((card) => [card.id, card.isNew])),
     answered,
     retries: round.retries,
     intro: !pressed || (round.kind === "placement" && answered.length === 0),
@@ -63,7 +61,7 @@ export function DrillSession({
   first: boolean;
   pressed: boolean;
   sound: boolean;
-  gradeKeys: GradeKeys;
+  gradeKeys: GradeKeyTrio;
   dailySize: number;
   onNext: (kind: RoundKind) => void;
 }>): ReactElement {
@@ -84,7 +82,7 @@ export function DrillSession({
   const finish = useRoundFinish({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",
-    answers: [...unsaved, ...state.answers],
+    unrecorded: () => queue.pending(),
     onDone: (summary) => {
       queue.clear();
       if (sound) browserSound.play(roundSound(summary));
@@ -103,9 +101,7 @@ export function DrillSession({
         .querySelector("[data-part=back-scroll]")
         ?.scrollBy({ top: SCROLL_STEP * action.direction });
     } else if (action.type === "grade") {
-      dispatch({ type: "grade", result: action.result, at, wall, key });
-    } else if (action.type === "flip") {
-      dispatch({ type: "flip", at, wall });
+      dispatch({ type: "grade", grade: action.grade, at, wall, key });
     } else {
       if (action.type === "resume") leave.stay();
       dispatch({ type: action.type, at });
@@ -120,8 +116,9 @@ export function DrillSession({
 
   const { phase, combo } = state;
   useEffect(() => {
-    if (!sound || phase.kind !== "feedback" || phase.result !== "ok") return;
-    browserSound.play(combo >= 2 ? "combo" : phase.fast ? "okFast" : "ok");
+    if (!sound || phase.kind !== "feedback") return;
+    const name = gradeSound({ grade: phase.grade, fast: phase.fast, combo });
+    if (name !== undefined) browserSound.play(name);
   }, [sound, phase, combo]);
 
   if (phase.kind === "intro") {
@@ -132,8 +129,7 @@ export function DrillSession({
       <ReadyScreen
         kind={round.kind}
         count={round.total}
-        where={progress(state)}
-        offset={round.offset}
+        position={round.offset + progress(state).position}
         onStart={start}
       />
     ) : (
@@ -152,8 +148,13 @@ export function DrillSession({
       />
     );
 
-  const behind = state.pass === "first" ? 0 : state.queue.length;
-  const resumeAt = round.offset + state.firstDone + behind + state.index + 1;
+  // Where a reload would pick up: the first pass on screen, or the next one
+  // during a re-ask, as waiting re-asks do not survive it.
+  const { position } = progress(state);
+  const resumeAt = Math.min(
+    round.total,
+    round.offset + position + (state.card?.pass === "retry" ? 1 : 0),
+  );
   return (
     <>
       <CardScreen

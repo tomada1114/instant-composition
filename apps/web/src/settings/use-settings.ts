@@ -1,7 +1,15 @@
 import { useRef, useState } from "react";
 
 import { updateSettings } from "../lib/endpoints";
-import type { Settings, SettingsPatch, SubtopicRef } from "../openapi";
+import type { GradeKeyTrio, Settings, SettingsPatch, SubtopicRef } from "../openapi";
+
+/**
+ * A change this screen saves: a settings patch whose grade keys are always
+ * all three, so it lays over the settings shown as it will be stored.
+ */
+export type SettingsChange = Omit<SettingsPatch, "gradeKeys"> & {
+  readonly gradeKeys?: GradeKeyTrio;
+};
 
 export interface SettingsState {
   readonly settings: Settings;
@@ -9,19 +17,7 @@ export interface SettingsState {
   readonly failed: boolean;
   readonly removedFocus: readonly SubtopicRef[];
   readonly completedToday: boolean;
-  save(patch: SettingsPatch): void;
-}
-
-/** `settings` with `patch` laid over it; a patch of two grade keys keeps the third shown. */
-function overlaid(settings: Settings, patch: SettingsPatch): Settings {
-  const { gradeKeys, ...rest } = patch;
-  return {
-    ...settings,
-    ...rest,
-    ...(gradeKeys === undefined
-      ? {}
-      : { gradeKeys: { ...settings.gradeKeys, ...gradeKeys } }),
-  };
+  save(change: SettingsChange): void;
 }
 
 /**
@@ -38,21 +34,21 @@ export function useSettings(initial: Settings): SettingsState {
   const saved = useRef(initial);
   // An answer older than one already applied would put back a stale server view.
   const savedRequest = useRef(0);
-  const pending = useRef(new Map<number, SettingsPatch>());
+  const pending = useRef(new Map<number, SettingsChange>());
   const latest = useRef(0);
 
   function show(): void {
     let next = saved.current;
-    for (const patch of pending.current.values()) next = overlaid(next, patch);
+    for (const change of pending.current.values()) next = { ...next, ...change };
     setSettings(next);
   }
 
-  function save(patch: SettingsPatch): void {
+  function save(change: SettingsChange): void {
     const request = ++latest.current;
-    pending.current.set(request, patch);
+    pending.current.set(request, change);
     show();
     setFailed(false);
-    void updateSettings(patch).then((result) => {
+    void updateSettings(change).then((result) => {
       pending.current.delete(request);
       if (!result.ok) {
         setFailed(true);

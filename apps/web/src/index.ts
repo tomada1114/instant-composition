@@ -27,6 +27,8 @@ export {
   type DrillInit,
   type DrillPhase,
   type DrillState,
+  type ReAsk,
+  type ShownCard,
 } from "./drill/drill-state";
 export { initDrill } from "./drill/drill-init";
 export { keyAction, type DrillKeyAction, type KeyPress } from "./drill/keys";
@@ -35,6 +37,7 @@ export { requestFinish, requestRound, roundKindFrom, sendAnswer } from "./drill/
 export {
   browserSound,
   createSoundPlayer,
+  gradeSound,
   roundSound,
   type SoundName,
   type ToneContext,
@@ -72,7 +75,7 @@ export {
   type ApiError,
   type SendOutcome,
 } from "./lib/endpoints";
-export { isDefaultGradeKeys, isGradeKey, keyLabel } from "./lib/grade-keys";
+export { GRADES, isDefaultGradeKeys, isGradeKey, keyLabel } from "./lib/grade-keys";
 export { KeyMode } from "./lib/key-mode";
 export { isFast, TUNING } from "./lib/tuning";
 export { cn } from "./lib/utils";
@@ -81,6 +84,9 @@ export type {
   AnswerResult,
   Dot,
   DrillCard,
+  Grade,
+  GradeIntervals,
+  GradeKeyTrio,
   GradeKeys,
   Growth,
   HomePreview,
@@ -113,6 +119,7 @@ export { SummaryScreen } from "./summary/summary-screen";
 export { parseTitleKey, type ParsedTitle } from "./summary/titles";
 export { ANSWER_FIELD_MAX, AnswerField } from "./ui/answer-field";
 export { Button } from "./ui/button";
+export { GradeTrio } from "./ui/grade-trio";
 export { BoltGlyph, FlameGlyph, StarGlyph, TargetGlyph } from "./ui/filled-glyphs";
 export { HiddenAnswer } from "./ui/hidden-answer";
 export { Dialog } from "./ui/dialog";

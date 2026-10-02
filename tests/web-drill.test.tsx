@@ -93,12 +93,45 @@ function where(): string {
 }
 
 /** Flips the current card and grades it with `key`, letting the next one start. */
-async function grade(key: "j" | "k" | "ArrowLeft" | "ArrowRight"): Promise<void> {
+async function grade(key: "j" | "k" | "2" | "ArrowLeft" | "ArrowRight"): Promise<void> {
   press(" ");
   await settle(200);
   press(key);
   await settle(400);
   await settle(16);
+}
+
+/** Each answer sent one at a time, as its id, grade and whether it timed out. */
+function sentAnswers(calls: readonly ApiCall[]): [string, string, boolean][] {
+  return (posted(calls, ANSWERS) as { answers: AnswerInput[] }[]).flatMap((body) =>
+    body.answers.map((a): [string, string, boolean] => [a.id, a.grade, a.timedOut]),
+  );
+}
+
+/** The grade button for `grade`, found by its name ahead of any interval. */
+function gradeButton(grade: "again" | "hard" | "good"): HTMLElement {
+  return screen.getByRole("button", {
+    name: (name) => name.startsWith(ja.Drill.grade[grade]),
+  });
+}
+
+/** The three grade buttons' names, with their intervals when shown. */
+function trio(): (string | null)[] {
+  return (["again", "hard", "good"] as const).map((grade) =>
+    gradeButton(grade).getAttribute("aria-label"),
+  );
+}
+
+/** A round of `count` cards, `c1` onwards. */
+function roundOf(count: number, overrides: Partial<RoundPayload> = {}): RoundPayload {
+  const deck = Array.from({ length: count }, (_, index) => `c${String(index + 1)}`);
+  return {
+    ...ROUND,
+    deck,
+    cards: Object.fromEntries(deck.map((id) => [id, drillCard(id)])),
+    total: count,
+    ...overrides,
+  };
 }
 
 /** Opens `path` as a fresh load does, and starts the round from its start screen. */
@@ -122,7 +155,7 @@ afterEach(() => {
 });
 
 describe("the drill, a round run to its summary", () => {
-  it("runs a round by keys, retries the miss, and finishes with every answer", async () => {
+  it("runs a round by keys, asks a △ again, and finishes with nothing left unrecorded", async () => {
     const calls = serve();
     await openRound("/drill?kind=today");
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
@@ -137,6 +170,9 @@ describe("the drill, a round run to its summary", () => {
     expect(screen.getByText("answer-c1")).toBeInTheDocument();
     await settle(200);
     press("k");
+    expect(
+      screen.getByText(ja.Drill.grade.good, { selector: "[aria-live]" }),
+    ).toBeInTheDocument();
     await settle(400);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
@@ -144,8 +180,12 @@ describe("the drill, a round run to its summary", () => {
     // the clock and the ticks after it are awaited separately.
     await settle(16);
     await settle(7100);
-    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
-    press(" ");
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
+    await settle(200);
+    press("2");
+    await settle(400);
     await settle(16);
     expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
@@ -163,14 +203,150 @@ describe("the drill, a round run to its summary", () => {
     }[];
     expect(start?.kind).toBe("today");
     expect(start?.roundId).toMatch(/^[\w-]{1,64}$/u);
-    const answers = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
-    expect(answers.map((body) => body.answers.map((a) => a.result))).toStrictEqual([
-      ["ok"],
-      ["timeout"],
-      ["ok"],
+    expect(sentAnswers(calls)).toStrictEqual([
+      ["round-1:f:c1", "good", false],
+      ["round-1:f:c2", "hard", true],
+      ["round-1:r1:c2", "good", false],
     ]);
-    const [finish] = posted(calls, FINISH) as { answers: unknown[] }[];
-    expect(finish?.answers).toHaveLength(3);
+    expect(
+      (posted(calls, ANSWERS) as { answers: Record<string, unknown>[] }[]).some(
+        (body) => body.answers.some((a) => "result" in a),
+      ),
+    ).toBe(false);
+    expect(posted(calls, FINISH)).toStrictEqual([{ answers: [] }]);
+  });
+
+  it("shows each grade's dealt interval on a back flipped by hand, and grades ○ on → (example 1)", async () => {
+    const calls = serve({
+      round: {
+        ...ROUND,
+        cards: {
+          c1: drillCard("c1", { intervals: { again: 1, hard: 3, good: 8 } }),
+          c2: drillCard("c2"),
+        },
+      },
+    });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    expect(trio()).toStrictEqual([
+      `${ja.Drill.grade.again} ${ja.Drill.grade.tomorrow}`,
+      `${ja.Drill.grade.hard} ${fill(ja.Drill.grade.days, { count: 3 })}`,
+      `${ja.Drill.grade.good} ${fill(ja.Drill.grade.days, { count: 8 })}`,
+    ]);
+    expect(gradeButton("again")).toHaveTextContent(ja.Drill.grade.tomorrow);
+    expect(gradeButton("good")).toHaveTextContent(
+      fill(ja.Drill.grade.days, { count: 8 }),
+    );
+    press("ArrowRight");
+    await settle(400);
+    expect(sentAnswers(calls)).toStrictEqual([["round-1:f:c1", "good", false]]);
+  });
+
+  it("brings × on the third of ten back four cards later, with 「もう一度」 and no intervals, until ○ (example 2)", async () => {
+    const calls = serve({ round: roundOf(10) });
+    await openRound("/drill?kind=today");
+    await grade("k");
+    await grade("k");
+    expect(screen.getByText("prompt-c3")).toBeInTheDocument();
+    await grade("j");
+    expect(
+      screen.getByText(fill(ja.Drill.card.reAsks, { count: 1 })),
+    ).toBeInTheDocument();
+    for (const card of ["c4", "c5", "c6", "c7"]) {
+      expect(screen.getByText(`prompt-${card}`)).toBeInTheDocument();
+      expect(screen.queryByText(ja.Drill.card.again)).not.toBeInTheDocument();
+      await grade("k");
+    }
+    expect(screen.getByText("prompt-c3")).toBeInTheDocument();
+    expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        fill(ja.Drill.announce.againFront, { ja: "prompt-c3", seconds: 7 }),
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Drill.card.progress, { current: 7, total: 10 })),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(fill(ja.Drill.card.reAsks, { count: 1 })),
+    ).not.toBeInTheDocument();
+    press(" ");
+    await settle(200);
+    expect(trio()).toStrictEqual([
+      ja.Drill.grade.again,
+      ja.Drill.grade.hard,
+      ja.Drill.grade.good,
+    ]);
+    press("k");
+    await settle(400);
+    await settle(16);
+    expect(screen.getByText("prompt-c8")).toBeInTheDocument();
+    expect(sentAnswers(calls).filter(([id]) => id.endsWith(":c3"))).toStrictEqual([
+      ["round-1:f:c3", "again", false],
+      ["round-1:r1:c3", "good", false],
+    ]);
+  });
+
+  it("offers the trio on a timed-out back, ignores Space and Enter, and grades △ on 2 as timed out (example 3)", async () => {
+    const calls = serve();
+    await openRound("/drill?kind=today");
+    await settle(7100);
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(ja.Drill.announce.timeout, { selector: "[aria-live]" }),
+    ).toBeInTheDocument();
+    expect(trio()).toHaveLength(3);
+    expect(
+      screen.getAllByRole("button").map((button) => button.textContent),
+    ).not.toContain("次へ");
+    await settle(200);
+    press(" ");
+    press("Enter");
+    await settle(400);
+    expect(screen.getByText("answer-c1")).toBeInTheDocument();
+    expect(sentAnswers(calls)).toStrictEqual([]);
+    press("2");
+    await settle(16);
+    expect(
+      screen.getByText(ja.Drill.grade.hard, { selector: "[aria-live]" }),
+    ).toBeInTheDocument();
+    await settle(400);
+    expect(sentAnswers(calls)).toStrictEqual([["round-1:f:c1", "hard", true]]);
+  });
+
+  it("sends the unrecorded answers of a round of 25 cards and 40 answers in batches of at most 60, and shows the summary (example 4)", async () => {
+    const calls = serve({
+      round: roundOf(25),
+      answers: () => Promise.reject(new TypeError("fetch failed")),
+    });
+    await openRound("/drill?kind=today");
+    const missed = new Set<string>();
+    for (let shown = 0; shown < 60; shown += 1) {
+      if (screen.queryByRole("heading", { name: ja.Summary.title.today }) !== null)
+        break;
+      const prompt = screen.getByText(/^prompt-c\d+$/u).textContent;
+      const firstPass = screen.queryByText(ja.Drill.card.again) === null;
+      // The first 15 cards are missed once, and said on their re-ask.
+      const miss = firstPass && Number(prompt.replace("prompt-c", "")) <= 15;
+      if (miss) missed.add(prompt);
+      await grade(miss ? "j" : "k");
+    }
+    await settle(16);
+    expect(missed.size).toBe(15);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    const finishes = posted(calls, FINISH) as { answers: AnswerInput[] }[];
+    const recorded = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
+    expect([...recorded, ...finishes].every((body) => body.answers.length <= 60)).toBe(
+      true,
+    );
+    expect(finishes).toHaveLength(1);
+    expect(finishes[0]?.answers).toHaveLength(40);
+    expect(new Set(finishes[0]?.answers.map((a) => a.id)).size).toBe(40);
   });
 
   it("starts one more round from the summary, in place", async () => {
@@ -225,21 +401,26 @@ describe("the drill, a round run to its summary", () => {
 describe("the drill's grade keys", () => {
   const CHOSEN = homeView(
     { kind: "ready", streak: COUNT },
-    { gradeKeys: { ok: "KeyL", ng: "Digit1", hard: "Digit2" } },
+    { gradeKeys: { ok: "KeyL", ng: "Digit1", hard: "KeyS" } },
   );
 
-  /** The text of the grade button named `label`, its key hint included. */
-  function hintOf(label: string): string | null {
-    return screen.getByRole("button", { name: label }).textContent;
+  /** The text of the grade button for `grade`: its name, its interval and its key hint. */
+  function hintOf(grade: "again" | "hard" | "good"): string | null {
+    return gradeButton(grade).textContent;
   }
 
-  it("grades with the keys the learner chose, and shows them on the buttons", async () => {
-    const calls = serve({ home: CHOSEN });
+  it("grades with the three keys the learner chose, and shows them on the buttons", async () => {
+    const calls = serve({ home: CHOSEN, round: roundOf(3) });
     await openRound("/drill?kind=today");
     press(" ");
     await settle(200);
-    expect(hintOf(ja.Drill.card.said)).toBe(`${ja.Drill.card.said}L`);
-    expect(hintOf(ja.Drill.card.notSaid)).toBe(`${ja.Drill.card.notSaid}1`);
+    expect(hintOf("again")).toBe(`${ja.Drill.grade.again}${ja.Drill.grade.tomorrow}1`);
+    expect(hintOf("hard")).toBe(
+      `${ja.Drill.grade.hard}${fill(ja.Drill.grade.days, { count: 2 })}S`,
+    );
+    expect(hintOf("good")).toBe(
+      `${ja.Drill.grade.good}${fill(ja.Drill.grade.days, { count: 3 })}L`,
+    );
 
     press("l", "KeyL");
     await settle(400);
@@ -247,36 +428,51 @@ describe("the drill's grade keys", () => {
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
     press(" ");
     await settle(200);
+    press("s", "KeyS");
+    await settle(400);
+    await settle(16);
+    press(" ");
+    await settle(200);
     press("!", "Digit1");
     await settle(400);
 
-    const answers = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
-    expect(answers.map((body) => body.answers.map((a) => a.result))).toStrictEqual([
-      ["ok"],
-      ["ng"],
+    expect(sentAnswers(calls).map(([, grade]) => grade)).toStrictEqual([
+      "good",
+      "hard",
+      "again",
     ]);
   });
 
-  it("puts the grade pair under the back, × on the left and ○ on the right", async () => {
+  it("puts the trio under the back, × on the left, △ in the middle and ○ on the right", async () => {
     serve({ home: CHOSEN });
     await openRound("/drill?kind=today");
     press(" ");
     await settle(200);
     const card = document.querySelector("[data-part=card]");
-    const ng = screen.getByRole("button", { name: ja.Drill.card.notSaid });
-    const ok = screen.getByRole("button", { name: ja.Drill.card.said });
-    expect(card?.compareDocumentPosition(ng)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
-    expect(ng.compareDocumentPosition(ok)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    const again = gradeButton("again");
+    const hard = gradeButton("hard");
+    const good = gradeButton("good");
+    expect(card?.compareDocumentPosition(again)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(again.compareDocumentPosition(hard)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    expect(hard.compareDocumentPosition(good)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   });
 
-  it("ignores → and ←, and K/F and J/D, once another pair is chosen", async () => {
-    const calls = serve({ home: CHOSEN });
+  it("ignores the default keys — → ←, 1 2 3, K/F and J/D — once another trio is chosen", async () => {
+    const calls = serve({
+      home: homeView(
+        { kind: "ready", streak: COUNT },
+        { gradeKeys: { ok: "KeyL", ng: "KeyA", hard: "KeyS" } },
+      ),
+    });
     await openRound("/drill?kind=today");
     press(" ");
     await settle(200);
     for (const [key, code] of [
       ["ArrowRight", "ArrowRight"],
       ["ArrowLeft", "ArrowLeft"],
+      ["1", "Digit1"],
+      ["2", "Digit2"],
+      ["3", "Digit3"],
       ["k", "KeyK"],
       ["f", "KeyF"],
       ["j", "KeyJ"],
@@ -289,13 +485,28 @@ describe("the drill's grade keys", () => {
     expect(posted(calls, ANSWERS)).toStrictEqual([]);
   });
 
-  it("shows → and ← on the buttons while the learner keeps the default", async () => {
+  it("shows ←, 2 and → on the buttons while the learner keeps the default", async () => {
     serve();
     await openRound("/drill?kind=today");
     press(" ");
     await settle(200);
-    expect(hintOf(ja.Drill.card.said)).toBe(`${ja.Drill.card.said}→`);
-    expect(hintOf(ja.Drill.card.notSaid)).toBe(`${ja.Drill.card.notSaid}←`);
+    expect(hintOf("again")?.endsWith("←")).toBe(true);
+    expect(hintOf("hard")?.endsWith("2")).toBe(true);
+    expect(hintOf("good")?.endsWith("→")).toBe(true);
+  });
+
+  it("grades × on 1 and ○ on 3 while the learner keeps the default", async () => {
+    const calls = serve();
+    await openRound("/drill?kind=today");
+    await grade("k");
+    press(" ");
+    await settle(200);
+    press("1", "Digit1");
+    await settle(400);
+    expect(sentAnswers(calls).map(([, grade]) => grade)).toStrictEqual([
+      "good",
+      "again",
+    ]);
   });
 });
 
@@ -307,7 +518,7 @@ describe("the drill, a round run by taps", () => {
     );
   }
 
-  it("flips on the card and the flip button, grades by button, and moves on after a timeout", async () => {
+  it("flips on the card and the flip button, and grades by button, a timed-out back included", async () => {
     const calls = serve();
     await renderApp("/drill?kind=today");
     tap(ja.Drill.ready.start);
@@ -316,29 +527,31 @@ describe("the drill, a round run by taps", () => {
     fireEvent.click(screen.getByText("prompt-c1"));
     expect(screen.getByText("answer-c1")).toBeInTheDocument();
     await settle(200);
-    tap(ja.Drill.card.said);
+    tap(ja.Drill.grade.good);
     await settle(400);
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
     await settle(7100);
-    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
-    tap(ja.Drill.card.next);
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
+    tap(ja.Drill.grade.again);
+    await settle(400);
     await settle(16);
     expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
 
     tap(ja.Drill.card.flip);
     expect(screen.getByText("answer-c2")).toBeInTheDocument();
     await settle(200);
-    tap(ja.Drill.card.notSaid);
+    tap(ja.Drill.grade.good);
     await settle(400);
     expect(screen.getByRole("heading", { name: ja.Summary.title.today })).toHaveFocus();
 
-    const answers = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
-    expect(answers.map((body) => body.answers.map((a) => a.result))).toStrictEqual([
-      ["ok"],
-      ["timeout"],
-      ["ng"],
+    expect(sentAnswers(calls)).toStrictEqual([
+      ["round-1:f:c1", "good", false],
+      ["round-1:f:c2", "again", true],
+      ["round-1:r1:c2", "good", false],
     ]);
   });
 
@@ -353,10 +566,12 @@ describe("the drill, a round run by taps", () => {
     await openRound("/drill?kind=today");
 
     await settle(7100);
-    expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
+    expect(screen.queryByText(ja.Drill.card.timedOut, { selector: "span" })).toBeNull();
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
     await settle(23_000);
-    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
   });
 
   it("pauses from the top strip's pause button", async () => {
@@ -418,24 +633,22 @@ describe("the drill's start screen", () => {
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
   });
 
-  it("counts a resumed retry pass the way the card screen will", async () => {
+  it("drops the re-asks a resumed round had waiting, going straight to the summary", async () => {
     const missed = (cardId: string): RoundPayload["answered"][number] => ({
       ...firstPassOf(cardId),
       result: "ng",
+      grade: "again",
     });
-    serve({
+    const calls = serve({
       round: { ...ROUND, offset: 8, total: 10, answered: [missed("c1"), missed("c2")] },
     });
     await renderApp("/drill?kind=today");
-    expect(
-      screen.getByText(fill(ja.Drill.ready.resumeRetry, { position: 1, total: 2 })),
-    ).toBeInTheDocument();
-    expect(timerBar()).toBeNull();
-    press("Enter");
     await settle(16);
     expect(
-      screen.getByText(fill(ja.Drill.card.retryProgress, { current: 1, total: 2 })),
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
     ).toBeInTheDocument();
+    expect(timerBar()).toBeNull();
+    expect(posted(calls, FINISH)).toStrictEqual([{ answers: [] }]);
   });
 
   it("shows the first front at once when the round starts from home's button", async () => {
@@ -498,23 +711,35 @@ describe("the drill's pause dialog", () => {
     ).toBeInTheDocument();
   });
 
-  it("counts the cards shown so far in the pause hint during the retry pass", async () => {
-    serve();
+  it("names the next first pass in the pause hint during a re-ask, never past the round", async () => {
+    serve({ round: roundOf(3) });
     await openRound("/drill?kind=today");
-    for (let card = 0; card < 3; card += 1) {
-      press(" ");
-      await settle(200);
-      press("ArrowLeft");
-      await settle(200);
-      await settle(16);
-    }
+    await grade("j");
+    await grade("j");
+    await grade("k");
+    // c1 is back after c2 and c3; c2 waits behind it.
+    expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.card.retryProgress, { current: 2, total: 2 })),
+      screen.getByText(fill(ja.Drill.card.progress, { current: 3, total: 3 })),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Drill.card.reAsks, { count: 1 })),
     ).toBeInTheDocument();
     press("Escape");
     expect(
-      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 4 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 3 })),
     ).toBeInTheDocument();
+  });
+
+  it("lists the three grade keys", async () => {
+    serve();
+    await openRound("/drill?kind=today");
+    press("Escape");
+    const legend = screen.getByRole("dialog").querySelector("dl");
+    expect(legend).toHaveTextContent(ja.Drill.grade.again);
+    expect(legend).toHaveTextContent(ja.Drill.grade.hard);
+    expect(legend).toHaveTextContent(ja.Drill.grade.good);
   });
 });
 
@@ -592,9 +817,11 @@ describe("the drill's focus layout", () => {
     expect(where()).toBe("/drill?kind=today");
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
     await settle(4900);
-    expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
+    expect(screen.queryByText(ja.Drill.card.timedOut, { selector: "span" })).toBeNull();
     await settle(200);
-    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
   });
 
   it("stays on Escape, as continue does", async () => {
@@ -876,9 +1103,12 @@ describe("the drill after a reload", () => {
     expect(
       screen.getByRole("heading", { name: ja.Summary.title.today }),
     ).toBeInTheDocument();
-    expect(posted(calls, FINISH).map(ids)).toStrictEqual([
-      ["round-1:f:c1", "round-1:f:c2"],
+    expect(posted(calls, ANSWERS).map(ids)).toStrictEqual([
+      ["round-1:f:c1"],
+      ["round-1:f:c2"],
     ]);
+    // Both are recorded by then, so the finish carries nothing.
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([[]]);
   });
 
   it("stores a graded answer in the same moment the grade is given", async () => {
@@ -901,15 +1131,22 @@ describe("the drill after a reload", () => {
     });
   });
 
-  it("stores a timed-out answer in the same moment the time runs out", async () => {
+  it("stores nothing when the time runs out, and the grade given then as timed out", async () => {
     serve({ answers: inFlight });
     await openRound("/drill?kind=today");
-    await settle(6900);
+    await settle(7100);
+    expect(
+      screen.getByText(ja.Drill.card.timedOut, { selector: "span" }),
+    ).toBeInTheDocument();
+    expect(sessionStorage.getItem("drill-answers:round-1")).toBeNull();
+    await settle(200);
     act(() => {
-      vi.advanceTimersByTime(300);
-      expect(sessionStorage.getItem("drill-answers:round-1") ?? "").toContain(
-        '"result":"timeout"',
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", { key: "1", code: "Digit1", cancelable: true }),
       );
+      expect(
+        JSON.parse(sessionStorage.getItem("drill-answers:round-1") ?? "[]"),
+      ).toMatchObject([{ id: "round-1:f:c1", grade: "again", timedOut: true }]);
     });
   });
 
@@ -949,7 +1186,10 @@ describe("the drill after a reload", () => {
     await settle(16);
     await grade("k");
     await settle(16);
-    expect(posted(calls, FINISH).map(ids)).toStrictEqual([["round-1:f:c2"]]);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([[]]);
   });
 
   it("finishes at once when the reload came after the last answer", async () => {
@@ -968,18 +1208,25 @@ describe("the drill after a reload", () => {
     ]);
   });
 
-  it("keeps an unsaved miss for the retry pass", async () => {
+  it("drops the re-ask an unsaved miss had waiting, and sends the miss itself", async () => {
     serve({ answers: inFlight });
     await openRound("/drill?kind=today");
     await grade("j");
 
-    await reload({});
+    const calls = await reload({});
     press("Enter");
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
     await grade("ArrowRight");
-    expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
-    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+    await settle(16);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(ja.Drill.card.again)).not.toBeInTheDocument();
+    expect(sentAnswers(calls)).toStrictEqual([
+      ["round-1:f:c1", "again", false],
+      ["round-1:f:c2", "good", false],
+    ]);
   });
 
   it("leaves an unsaved answer of another round to that round", async () => {

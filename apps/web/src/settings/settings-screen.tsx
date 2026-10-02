@@ -13,7 +13,8 @@ import { LevelSection } from "./level-section";
 import { LimitSection } from "./limit-section";
 import { SectionList, useCurrentSection } from "./section-list";
 import { SettingsSection } from "./settings-row";
-import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
+import { DailyLimitRows } from "./daily-limit-rows";
+import { FocusSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
 
@@ -84,7 +85,7 @@ export function SettingsScreen({
           <SettingsSection id="cards" title={t("sections.cards")}>
             <TopicsSection topics={page.topics} state={state} />
             <FocusSection topics={page.topics} state={state} />
-            <SizeSection state={state} />
+            <DailyLimitRows state={state} />
           </SettingsSection>
           <SettingsSection id="level" title={t("difficulty.title")}>
             <LevelSection

@@ -1,5 +1,5 @@
 import { isFast, TUNING } from "../lib/tuning";
-import type { AnswerResult } from "../openapi";
+import type { Grade } from "../openapi";
 import {
   answerId,
   currentCard,
@@ -11,58 +11,46 @@ import {
   type DrillPhase,
   type DrillState,
 } from "./drill-state";
+import { afterGrade, nextCard } from "./re-asks";
 
 /**
  * One round's progress in the browser, as a pure reducer: every event carries
  * the time it happened at, so the clock is an input, never read here.
  */
 
-/** Moves to the next card, entering the retry pass or finishing when a pass runs out. */
+/** Moves to the next card — a re-ask that fell due, or the next first pass — or finishes. */
 function advance(state: DrillState): DrillState {
-  if (state.pass === "first" && state.index + 1 < state.queue.length) {
-    return { ...state, index: state.index + 1, phase: FRESH_FRONT };
-  }
-  const retryIndex = state.pass === "first" ? 0 : state.index + 1;
-  if (state.retries && retryIndex < state.retryPile.length) {
-    return { ...state, pass: "retry", index: retryIndex, phase: FRESH_FRONT };
-  }
-  return { ...state, phase: { kind: "finishing" } };
+  const next = nextCard(state);
+  return next === undefined
+    ? { ...state, phase: { kind: "finishing" } }
+    : { ...next, phase: FRESH_FRONT };
 }
 
 function record(
   state: DrillState,
-  result: AnswerResult,
-  elapsedMs: number,
+  grade: Grade,
+  back: Extract<DrillPhase, { kind: "back" }>,
   wall: number,
 ): DrillState {
   const card = currentCard(state);
   if (card === undefined) return state;
-  const missed = result !== "ok" && card.pass === "first" && state.retries;
   return {
     ...state,
-    combo: result === "ok" ? state.combo + 1 : 0,
-    retryPile: missed ? [...state.retryPile, card.cardId] : state.retryPile,
+    ...afterGrade(state, grade),
+    combo: grade === "again" ? 0 : state.combo + 1,
     answers: [
       ...state.answers,
       {
-        id: answerId(state.roundId, card.pass, card.cardId),
+        id: answerId(state.roundId, card.cardId, card.ask),
         roundId: state.roundId,
         cardId: card.cardId,
         pass: card.pass,
-        result,
-        elapsedMs: Math.round(elapsedMs),
+        grade,
+        timedOut: back.mode === "timeout",
+        elapsedMs: Math.round(back.elapsedMs),
         answeredAt: wall,
       },
     ],
-  };
-}
-
-function timeout(state: DrillState, at: number, wall: number): DrillState {
-  const limit = limitOf(state);
-  const recorded = record(state, "timeout", limit, wall);
-  return {
-    ...recorded,
-    phase: { kind: "back", mode: "timeout", elapsedMs: limit, since: at },
   };
 }
 
@@ -81,7 +69,14 @@ function onFront(
     case "flip": {
       if (!running) return state;
       const used = usedMs(phase, event.at);
-      if (used >= limitOf(state)) return timeout(state, event.at, event.wall);
+      const limit = limitOf(state);
+      // The timer running out flips the card and records nothing: the learner grades it.
+      if (used >= limit) {
+        return {
+          ...state,
+          phase: { kind: "back", mode: "timeout", elapsedMs: limit, since: event.at },
+        };
+      }
       return event.type === "tick"
         ? { ...state, phase: { ...phase, now: event.at } }
         : {
@@ -99,14 +94,21 @@ function onBack(
   phase: Extract<DrillPhase, { kind: "back" }>,
   event: DrillEvent,
 ): DrillState {
-  if (phase.mode === "timeout") return event.type === "next" ? advance(state) : state;
   if (event.type !== "grade") return state;
   if (event.key && event.at - phase.since < TUNING.keyLockAfterFlipMs) return state;
-  const fast = event.result === "ok" && isFast(phase.elapsedMs, paceOf(state));
-  const recorded = record(state, event.result, phase.elapsedMs, event.wall);
+  const fast =
+    phase.mode === "self" &&
+    event.grade !== "again" &&
+    isFast(phase.elapsedMs, paceOf(state));
   return {
-    ...recorded,
-    phase: { kind: "feedback", result: event.result, fast, elapsedMs: phase.elapsedMs },
+    ...record(state, event.grade, phase, event.wall),
+    phase: {
+      kind: "feedback",
+      mode: phase.mode,
+      grade: event.grade,
+      fast,
+      elapsedMs: phase.elapsedMs,
+    },
   };
 }
 

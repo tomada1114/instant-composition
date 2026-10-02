@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type Dispatch } from "react";
 
 import { TUNING } from "../lib/tuning";
-import type { GradeKeys, RoundSummary } from "../openapi";
+import type { Grade, GradeKeyTrio, RoundSummary } from "../openapi";
 import {
   currentCard,
   type AnswerInput,
@@ -19,10 +19,10 @@ export type DrillAction = DrillKeyAction | { readonly type: "hide" };
 
 /** How long a grade's feedback holds before the next front; never over 320 ms. */
 export function feedbackMs(feedback: {
-  readonly result: "ok" | "ng";
+  readonly grade: Grade;
   readonly fast: boolean;
 }): number {
-  if (feedback.result === "ng") return 160;
+  if (feedback.grade === "again") return 160;
   return feedback.fast ? TUNING.feedbackMaxMs : 240;
 }
 
@@ -33,7 +33,7 @@ export function feedbackMs(feedback: {
 export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>): void {
   const { phase, paused } = state;
   const card = currentCard(state);
-  const cardKey = card === undefined ? "" : `${card.pass}:${card.cardId}`;
+  const cardKey = card === undefined ? "" : `${String(card.ask)}:${card.cardId}`;
   const waiting = phase.kind === "front" && phase.runningSince === null && !paused;
   const running = phase.kind === "front" && phase.runningSince !== null && !paused;
   const hold = phase.kind === "feedback" ? feedbackMs(phase) : undefined;
@@ -51,7 +51,7 @@ export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>)
   useEffect(() => {
     if (!running) return undefined;
     const timer = setInterval(() => {
-      dispatch({ type: "tick", at: performance.now(), wall: Date.now() });
+      dispatch({ type: "tick", at: performance.now() });
     }, TICK_MS);
     return () => {
       clearInterval(timer);
@@ -85,7 +85,7 @@ function inField(event: KeyboardEvent): boolean {
  */
 export function useDrillKeys(
   state: DrillState,
-  gradeKeys: GradeKeys,
+  gradeKeys: GradeKeyTrio,
   onAction: (action: DrillAction) => void,
 ): void {
   const latest = useRef({ state, gradeKeys, onAction });
@@ -124,14 +124,14 @@ export type FinishState =
     };
 
 /**
- * Asks for the round's summary once the drill is finishing, sending every
- * answer of this session with it so the summary is whole even when some
- * single sends failed.
+ * Asks for the round's summary once the drill is finishing, sending what the
+ * server may not hold yet — `unrecorded`, read at each attempt — ahead of it
+ * and with it, so the summary is whole even when some single sends failed.
  */
 export function useRoundFinish(options: {
   readonly roundId: string;
   readonly finishing: boolean;
-  readonly answers: readonly AnswerInput[];
+  readonly unrecorded: () => readonly AnswerInput[];
   readonly onDone: (summary: RoundSummary) => void;
 }): FinishState {
   const { roundId, finishing } = options;
@@ -147,7 +147,7 @@ export function useRoundFinish(options: {
   useEffect(() => {
     if (!finishing) return undefined;
     let current = true;
-    void requestFinish(roundId, latest.current.answers).then((finished) => {
+    void requestFinish(roundId, latest.current.unrecorded()).then((finished) => {
       if (!current) return;
       if (finished.ok) {
         latest.current.onDone(finished.value);

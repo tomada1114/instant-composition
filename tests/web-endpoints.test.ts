@@ -33,7 +33,8 @@ const ANSWER: AnswerInput = {
   roundId: "r",
   cardId: "c1",
   pass: "first",
-  result: "ok",
+  grade: "good",
+  timedOut: false,
   elapsedMs: 1200,
   answeredAt: 1_790_000_000_000,
 };
@@ -266,7 +267,8 @@ describe("finishRound and requestFinish", () => {
             id: "r:f:c1",
             cardId: "c1",
             pass: "first",
-            result: "ok",
+            grade: "good",
+            timedOut: false,
             elapsedMs: 1200,
             answeredAt: 1_790_000_000_000,
           },
@@ -279,6 +281,85 @@ describe("finishRound and requestFinish", () => {
     const calls = stubFetch(() => Promise.resolve(Response.json({ roundId: "r" })));
     await finishRound("r", []);
     expect(calls[0]?.body).toStrictEqual({ answers: [] });
+  });
+
+  /** `count` unrecorded answers, each under its own id. */
+  function unrecorded(count: number): AnswerInput[] {
+    return Array.from({ length: count }, (_, index) => ({
+      ...ANSWER,
+      id: `r:f:c${String(index)}`,
+      cardId: `c${String(index)}`,
+    }));
+  }
+
+  /** Each call's path and how many answers it carried. */
+  function batches(calls: readonly Call[]): [string, number][] {
+    return calls.map((call) => [
+      call.url,
+      (call.body as { answers: unknown[] }).answers.length,
+    ]);
+  }
+
+  function serveFinish(
+    answers: () => Response = () => new Response(null, { status: 204 }),
+  ): Call[] {
+    const calls: Call[] = [];
+    vi.stubGlobal("fetch", (url: string, init?: RequestInit) => {
+      calls.push({
+        url,
+        method: init?.method,
+        body: typeof init?.body === "string" ? JSON.parse(init.body) : undefined,
+        contentType: null,
+      });
+      return Promise.resolve(
+        url.endsWith("/finish") ? Response.json({ roundId: "r" }) : answers(),
+      );
+    });
+    return calls;
+  }
+
+  it.each([
+    [0, [["/api/v1/rounds/r/finish", 0]]],
+    [60, [["/api/v1/rounds/r/finish", 60]]],
+    [
+      61,
+      [
+        ["/api/v1/rounds/r/answers", 60],
+        ["/api/v1/rounds/r/finish", 1],
+      ],
+    ],
+    [
+      130,
+      [
+        ["/api/v1/rounds/r/answers", 60],
+        ["/api/v1/rounds/r/answers", 60],
+        ["/api/v1/rounds/r/finish", 10],
+      ],
+    ],
+  ] as const)(
+    "sends %i unrecorded answers in batches of at most 60, the last with the finish",
+    async (count, expected) => {
+      const calls = serveFinish();
+      expect(await requestFinish("r", unrecorded(count))).toStrictEqual({
+        ok: true,
+        value: { roundId: "r" },
+      });
+      expect(batches(calls)).toStrictEqual(expected);
+      expect(
+        calls.flatMap((call) =>
+          (call.body as { answers: { id: string }[] }).answers.map((a) => a.id),
+        ),
+      ).toStrictEqual(unrecorded(count).map((a) => a.id));
+    },
+  );
+
+  it("stops before the finish when a batch could not be sent, so a retry sends it again", async () => {
+    const calls = serveFinish(() => new Response(null, { status: 503 }));
+    expect(await requestFinish("r", unrecorded(61))).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_NETWORK" },
+    });
+    expect(batches(calls)).toStrictEqual([["/api/v1/rounds/r/answers", 60]]);
   });
 });
 
@@ -295,7 +376,8 @@ describe("recordAnswers and sendAnswer", () => {
             id: "r:f:c1",
             cardId: "c1",
             pass: "first",
-            result: "ok",
+            grade: "good",
+            timedOut: false,
             elapsedMs: 1200,
             answeredAt: 1_790_000_000_000,
           },
@@ -311,12 +393,20 @@ describe("recordAnswers and sendAnswer", () => {
       roundId: "r",
       cardId: "c1",
       pass: "first",
-      result: "ok",
+      grade: "again",
+      timedOut: true,
       elapsedMs: 1200,
     });
     expect(calls[0]?.body).toStrictEqual({
       answers: [
-        { id: "r:f:c1", cardId: "c1", pass: "first", result: "ok", elapsedMs: 1200 },
+        {
+          id: "r:f:c1",
+          cardId: "c1",
+          pass: "first",
+          grade: "again",
+          timedOut: true,
+          elapsedMs: 1200,
+        },
       ],
     });
   });

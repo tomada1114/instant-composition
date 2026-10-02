@@ -15,7 +15,8 @@ function answer(cardId: string): AnswerInput {
     roundId: "r",
     cardId,
     pass: "first",
-    result: "ok",
+    grade: "good",
+    timedOut: false,
     elapsedMs: 1000,
     answeredAt: 1_790_000_000_000,
   };
@@ -130,7 +131,8 @@ describe("createAnswerQueue", () => {
       roundId: "r",
       cardId: "c1",
       pass: "first",
-      result: "ok",
+      grade: "hard",
+      timedOut: true,
       elapsedMs: 1000,
     };
     const queue = createAnswerQueue({
@@ -140,6 +142,24 @@ describe("createAnswerQueue", () => {
     });
     expect(queue.pending()).toStrictEqual([untimed]);
   });
+
+  it.each([
+    ["ok", "good", false],
+    ["ng", "again", false],
+    ["timeout", "again", true],
+  ] as const)(
+    "reads an earlier build's stored result %s as the server does: %s, timed out %s",
+    (result, grade, timedOut) => {
+      const { id, roundId, cardId, pass, elapsedMs, answeredAt } = answer("c1");
+      const stored = { id, roundId, cardId, pass, result, elapsedMs, answeredAt };
+      const queue = createAnswerQueue({
+        key: "k",
+        send: scriptedSender().send,
+        storage: memoryStorage({ k: JSON.stringify([stored]) }),
+      });
+      expect(queue.pending()).toStrictEqual([{ ...answer("c1"), grade, timedOut }]);
+    },
+  );
 
   it("picks up what an earlier page left in storage, and flushes it", async () => {
     const storage = memoryStorage({ k: JSON.stringify([answer("c1")]) });
@@ -160,8 +180,25 @@ describe("createAnswerQueue", () => {
       JSON.stringify([{ ...answer("c1"), pass: "third" }]),
     ],
     [
-      "an answer with an unknown result",
-      JSON.stringify([{ ...answer("c1"), result: "maybe" }]),
+      "an answer with an unknown grade",
+      JSON.stringify([{ ...answer("c1"), grade: "easy" }]),
+    ],
+    [
+      "an answer with a grade but no timeout flag",
+      JSON.stringify([{ ...answer("c1"), timedOut: "no" }]),
+    ],
+    [
+      "an answer with an unknown result in place of a grade",
+      JSON.stringify([
+        {
+          id: "r:f:c1",
+          roundId: "r",
+          cardId: "c1",
+          pass: "first",
+          result: "maybe",
+          elapsedMs: 1,
+        },
+      ]),
     ],
     [
       "an answer with a fractional time",

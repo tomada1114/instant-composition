@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   browserSound,
   createSoundPlayer,
+  gradeSound,
   roundSound,
   type ToneContext,
 } from "@instant-composition/web";
@@ -141,6 +142,21 @@ describe("createSoundPlayer", () => {
       roundSound({ streak: { changed: round.changed }, titles: round.titles }),
     ).toBe(sound);
   });
+
+  it.each([
+    [{ grade: "good", fast: false, combo: 1 }, "ok"],
+    [{ grade: "good", fast: true, combo: 1 }, "okFast"],
+    [{ grade: "hard", fast: false, combo: 1 }, "ok"],
+    [{ grade: "hard", fast: true, combo: 0 }, "okFast"],
+    [{ grade: "hard", fast: true, combo: 2 }, "combo"],
+    [{ grade: "good", fast: false, combo: 3 }, "combo"],
+    [{ grade: "again", fast: false, combo: 0 }, undefined],
+  ] as const)(
+    "plays the ○ sound on △ and ○ alike, none on ×: %o -> %s",
+    (given, sound) => {
+      expect(gradeSound(given)).toBe(sound);
+    },
+  );
 
   it("does nothing where the browser has no Web Audio", () => {
     const player = createSoundPlayer(() => undefined);

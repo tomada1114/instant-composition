@@ -3,13 +3,15 @@ import type { ReactElement, ReactNode } from "react";
 /**
  * `settings-row`: the label and its one-line note at the left, the control
  * at the right — or, when `wide`, the control across the row under its
- * label. The section draws the hairlines between rows.
+ * label. `info` is an `InfoTip` beside the label, its line opening under it.
+ * The section draws the hairlines between rows.
  */
 export function SettingsRow({
   id,
   label,
   note,
   aside,
+  info,
   wide = false,
   children,
 }: Readonly<{
@@ -17,6 +19,7 @@ export function SettingsRow({
   label: string;
   note?: ReactNode;
   aside?: string;
+  info?: ReactNode;
   wide?: boolean;
   children: ReactNode;
 }>): ReactElement {
@@ -30,12 +33,21 @@ export function SettingsRow({
       }
     >
       <div className="flex min-w-0 flex-col gap-0.5">
-        <div className="flex items-baseline justify-between gap-4">
-          <h3 id={id}>{label}</h3>
-          {aside === undefined ? null : (
-            <span className="font-latin text-count text-muted-foreground">{aside}</span>
-          )}
-        </div>
+        {info === undefined ? (
+          <div className="flex items-baseline justify-between gap-4">
+            <h3 id={id}>{label}</h3>
+            {aside === undefined ? null : (
+              <span className="font-latin text-count text-muted-foreground">
+                {aside}
+              </span>
+            )}
+          </div>
+        ) : (
+          <div className="flex flex-wrap items-center gap-x-1">
+            <h3 id={id}>{label}</h3>
+            {info}
+          </div>
+        )}
         {note}
       </div>
       {wide ? children : <div className="w-full sm:w-72">{children}</div>}

@@ -1,5 +1,6 @@
 import type { SendOutcome } from "../lib/endpoints";
 import type { AnswerInput } from "./drill-state";
+import { readAnswer } from "./stored-answer";
 
 /** The part of `sessionStorage` the queue uses. */
 export interface QueueStorage {
@@ -16,30 +17,14 @@ export interface AnswerQueue {
   clear(): void;
 }
 
-const PASSES: readonly unknown[] = ["first", "retry"];
-const RESULTS: readonly unknown[] = ["ok", "ng", "timeout"];
-
-/** Whether `value` is one answer as this queue stored it; storage is the browser's, so it is read as untrusted. */
-function isAnswer(value: unknown): value is AnswerInput {
-  if (typeof value !== "object" || value === null) return false;
-  const entry = value as Partial<Record<keyof AnswerInput, unknown>>;
-  return (
-    typeof entry.id === "string" &&
-    typeof entry.roundId === "string" &&
-    typeof entry.cardId === "string" &&
-    PASSES.includes(entry.pass) &&
-    RESULTS.includes(entry.result) &&
-    Number.isInteger(entry.elapsedMs) &&
-    (entry.answeredAt === undefined || Number.isInteger(entry.answeredAt))
-  );
-}
-
 function load(storage: QueueStorage | undefined, key: string): AnswerInput[] {
   try {
     const raw = storage?.getItem(key);
     if (raw === null || raw === undefined) return [];
     const parsed: unknown = JSON.parse(raw);
-    return Array.isArray(parsed) && parsed.every(isAnswer) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    const answers = parsed.map(readAnswer);
+    return answers.every((answer) => answer !== undefined) ? answers : [];
   } catch {
     return [];
   }
