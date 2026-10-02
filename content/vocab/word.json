@@ -1386,7 +1386,18 @@
       "ja": "傘"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df8852d1d36505a9241cd66b0960538cf2fcb811a96655ddb683ac26fbbbddc0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fe8aaab15736c692776901fa26b3919dd70f0b73aa70f75980109164bf8ab9d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7k9b2j9r",
