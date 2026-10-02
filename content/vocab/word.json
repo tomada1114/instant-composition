@@ -136,7 +136,18 @@
       "ja": "招待する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6cfed31724a5dcc3531bb12a2f9a0bdcca8d3adba2fa8159010c8e9fd31fe54",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7bd1068e6e3780054a899d7705e0f3bdb47ea9228d082bb6b101e95bfc6f096f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3e8m9d3e",
@@ -150,7 +161,18 @@
       "ja": "もっともらしい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1027de7258ee3c62c7bf53c4b21596ce248eae53ca1425b2f4eb6320f09042e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:09712d92a57a925f7dc22af77ccb053d4ac9564ffea5a90f3fb6407a0b415175",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j6h3q4z",
@@ -264,7 +286,18 @@
       "ja": "媚びへつらう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:907b90933df6b814a1588a5e037cc0940b4b9dd9892281f5ec5b5d0150ea9ad7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:974ef3727448ca84b4ed69478d2512c6f53885300716731fef294b52be9db628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4p7z5k4j",
@@ -428,7 +461,18 @@
       "ja": "礼儀正しい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:195b7f1a1ae138894cfaaeda55d0f77db97c9dea5a5e8afdf340adc6cc9440e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0d1d702962556e6d2b2cbffaf300410db2b4ba46472422ba500763a899633b7d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5m8b4y2w",
@@ -592,7 +636,18 @@
       "ja": "言葉数の少ない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dbd70260dbf779ed396f6b55cde6a48bd9d901a16396f43766ad37841a140ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0fcac406e2a3ab96050fe400889cff5d93b2c63cff2c29397fd404a47407cf6e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6n3j8m2m",
@@ -700,13 +755,24 @@
     "level": 10,
     "headword": "capricious",
     "definition": "likely to change mood or mind suddenly for no clear reason",
-    "example": "The {{capricious}} weather ruined our plans three days in a row.",
+    "example": "The {{capricious}} weather changed from sun to storm and back every hour.",
     "example2": "The king was capricious and often changed his orders.",
     "meanings": {
       "ja": "気まぐれな"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a468b26ae5c343b42371436798b6a0ebd6359b93e6a61a27fc0f65c64b300862",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:603022a98267a004dcc68a8aaef84049f3a7b1f223c93ab307e441474d33676e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6x7y8m9z",
@@ -720,7 +786,18 @@
       "ja": "習慣"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a0a8de666348c085b8ec75dbb6549cc451e731c0366256436fe1e7a81d58297",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:80b6541f23a19643fbe459a64acc3e811ecdba0db11f2211c57185a5acf5f8a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7c9k6r9d",
@@ -884,7 +961,18 @@
       "ja": "怒った"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dce805c612b06a5a767a5dbfa054d0f7053e7427a5603ab0d93305fb8292395",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cc258d6a3dfc8c21edcbec320aacd64779a3126ccd401b43fa42984fa91c6b2a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p3u5z4y",
@@ -948,7 +1036,18 @@
       "ja": "忘れる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:89e8b78568cf3668f7292d476ee165c648c98b9048f222edebf460efe5815d49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e352259b9e3a9c65d4d9f67706354954aeade40cc1e25020ef7d1f58a98d8e29",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7r6v2r5y",
@@ -962,7 +1061,18 @@
       "ja": "しぶしぶ認める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:89092e222e96b5156c6bc38e60be8d5db0e878037503fa26d8701b161ebc7e46",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:aea106a5a4c08065d2403a1cc8af3df949ba454b8686d6a94f44ebee15bea0af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8b8f4n7f",
@@ -1001,7 +1111,18 @@
       "ja": "相反する感情を持つ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e3452bd40383211799c235ab40e8b801f41a35403fb6ad753a8d373d311d5c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7dca8ed5b647a7b872c1440e1b4174c899e5c78a3efb58e8eb428eb27f7e736f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8d6e9w8z",
@@ -1315,6 +1436,17 @@
       "ja": "説明する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb20d9cc5b980840b20fbe507c7d24c45838689c157dee02379d4494a52d4e36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0f6d1c49619f8241386efde4a100604194f297ba81953f2af5f01721cdd2da5a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

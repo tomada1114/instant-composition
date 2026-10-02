@@ -61,7 +61,18 @@
       "ja": "どうしたの？"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46f069b0081c599ffebbedc738a05f1c298cb87b938e8872b7bf0c8512153fed",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dc1e774c9aba680abd244dc0a52e4fd4bb97f98a7e157a61e56e0a663e4ebfec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2w9m9u7f",
@@ -97,10 +108,21 @@
     "example": "A: How was the meeting?\nB: {{Suffice}} {{it}} {{to}} {{say}}, we didn't agree.",
     "example2": "Suffice it to say, I won't be going back there.",
     "meanings": {
-      "ja": "とだけ言っておこう"
+      "ja": "これだけ言っておこう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:85b8966adf21c76956bfa907f4aba8cb64cf0bbf5a565299bf0e4f5d4327db14",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f6eef7aed31d494beaae8fb1c7dd6aef3f2f4b4077bf125e812cd6466abf2aba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3b9b5f5m",
@@ -114,7 +136,18 @@
       "ja": "見ているだけです"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f9e66463294587add09ed9512e4dfc40cdd18a01b600db19a518b7f44db957d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:aa949ffc08be3df5bf2741aa62a029e7b398014d374b3d6bfd52e446613221a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3f4h2z5d",
@@ -203,7 +236,18 @@
       "ja": "おやすみなさい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e9c9e60940f16fe5bed5ed5bcadaef4b8ccd4be060ffc8a20e5c7f699d71051",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8f012611f8ef26e01e85e6befb72d22e1235821cdfd227d594020683537f63f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3p7w2p4u",
@@ -260,14 +304,25 @@
     "category": "phrase",
     "level": 10,
     "headword": "mark my words",
-    "definition": "said to warn that you are sure something will happen later",
+    "definition": "said to make someone remember your prediction, which you are sure is right",
     "example": "A: He says the shop will be fine.\nB: {{Mark}} {{my}} {{words}}, it'll close by spring.",
     "example2": "Mark my words, this team will win the title.",
     "meanings": {
       "ja": "いいかい、見ていなよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0bae272b25ccfa7846e224c7d7e69eb3b9d98985d6a07cd9f1e14610dc0d9423",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:070b4b6ec21d9b12f754fd7e29203b8d908d5a269770aba53a75705cb78c93d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3u3u4r8k",
@@ -381,7 +436,18 @@
       "ja": "楽しそう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7aef0802e08d632d87e497e22c945f94dfbfee83454086e31929475d7b0be2e7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:24e54e134d370f389b0be093768eedc78d95b5c86555837819ce5c3eaaf1363a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4a3e7s3b",
@@ -445,7 +511,18 @@
       "ja": "いえ、結構です"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:183534309a0f2a0c49b13baaa365565fa9dd2783872ec1c19c107956fd0aee4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:568c399f7f573715946721ef0b3ae5cd712c9b3a25ac53f94a5cf35f3f736bd8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4n9t2f2z",
@@ -484,7 +561,18 @@
       "ja": "立派だね、がんばれ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25fb64a75b1b0d004bcf4bb13594e43877e08dd0f4d8bbe60e16c4868e9d173b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:15c88085d779bcf83539d7213310371fb72905d8ed4ef1028765988037170191",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4t2y7x8r",
@@ -573,7 +661,18 @@
       "ja": "これで証明されたね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:090698ad46552102a7207c0b766cc6813f6790becda0885e4dd7dd72afdc8014",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ac42b9a21a07e64b88a08418a32e7e25844026fb9f2e44bfa35014e85bacfba8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4y6b3u9w",
@@ -612,7 +711,18 @@
       "ja": "くつろいでください"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58167390d12510c43ab6ef81fe07b2d7190d9bd6d1dc5168671e01f152636fee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:934596c27f3a903b6aa460f16649d5961dcf04c048c3a6c33393a87b4f7d6d9c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b2z6p6n",
@@ -851,7 +961,18 @@
       "ja": "はじめまして"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64a0d0d4482d5f7b25bbdf622e7e3cf41446b279b85df2b4402aa2f75fcbf487",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2ef0b4b7e615dd9e1fc2ee2d8800e9e62c140f8ad5dad2beb3f1eaf89a9c8aff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6h3v8d3m",
@@ -865,12 +986,23 @@
       "ja": "それは関係ない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a92923b1d85115be01fbd0175adf673cb223cafe1ad4bd0ec61cefc48ac1ca7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:49511fdf7c9727da7a1c76fff37de873821a1b7213ba0482046d8aa1ac287b21",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6h5e8a6k",
     "category": "phrase",
-    "level": 9,
+    "level": 7,
     "headword": "I'm not buying it",
     "definition": "said when you do not believe an excuse or a story",
     "example": "A: The dog ate my homework.\nB: {{I'm}} {{not}} {{buying}} {{it}}.",
@@ -879,7 +1011,18 @@
       "ja": "信じないよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b075f002b2228ad8f62245cd4453d4c1155c898e514fb5d0aca2d2d40993c5c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:65116ae95596539418fba6dd4659c29e466cc1de18d02330842924ff569a7e28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6n5d3k3w",
@@ -1193,7 +1336,18 @@
       "ja": "おはようございます"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c765c0b713873a1e0912abb287219e56d0802b0d4116bba0965a3eb1b967208",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:62b9edbf2d71dac62c6469442836636248f3d38d0008e3655a44d74e9a3007a6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j2q5h8n",
@@ -1257,7 +1411,18 @@
       "ja": "あなたはどう？"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fcf08d5bd4f44417b3d2c8a3b07dfad1205f2d8b8271c18bd6d0c55d5291d37",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bc7fad36743fdf313a0646d1600f1776ff43c3789e7d234826e1b96077db3211",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9n6u6f9t",

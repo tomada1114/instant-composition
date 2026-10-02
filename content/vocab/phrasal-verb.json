@@ -186,7 +186,18 @@
       "ja": "〜を減らす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dd28d9347662fdb36ec60e396293ef1602ce09884101387239209486ca5a5a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e559b598501cf7caccdf8c0d9c56e4fd045955549021922e4cb8bc0e1e9d82d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a3k2t7d",
@@ -400,7 +411,18 @@
       "ja": "ちょっと立ち寄る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f7e25c2c1fd3657ac7848535ec960f34135023eae15bf4abc7401c9223a2f65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:452850ac5c744c0e53083788049f13a47bed1995c19e0b4f8fc1e15761d7684c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4e5g9a9h",
@@ -489,7 +511,18 @@
       "ja": "じっくり考える"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c304d04f64cdabb3741db134f558c8e0bca62db0ffacb43d5270f1db732a01e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e44aaa0cd459c92d128eddc5cd34557dd15d97a89db7f5573b68ee246c21c4d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4y8x4c6f",
@@ -625,10 +658,21 @@
     "example": "The café held a free tasting to {{drum}} {{up}} new customers.",
     "example2": "He tried to drum up support for the petition.",
     "meanings": {
-      "ja": "〈支持などを〉集める"
+      "ja": "〈客や支持を〉集める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:382cdad88fc29130fc7f5c0581cf1913aa28fbc0666f94b743530bbc20a836ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ad19dd556947f7e66b395aa3baba69d4f5f1c85b238b1890c0dbaecc35e56867",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9r9a3k",
@@ -1217,7 +1261,18 @@
       "ja": "提出する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d72e70ac5ab75554c322c912f47cfe767a90c8f0f30fc73d16b98e59a0e87c45",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f72f32c9c8c2eb6654123c0d22dd848376e26b08073930d166e6595d78bbdaca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9k8s7q4q",
@@ -1275,13 +1330,24 @@
     "level": 9,
     "headword": "tease out",
     "definition": "to slowly find a fact or meaning hidden in something complicated",
-    "example": "It took weeks to {{tease}} {{out}} the real cause of the error.",
+    "example": "It took weeks to {{tease}} the real cause {{out}} of the tangled data.",
     "example2": "The lawyer teased the truth out of the witness.",
     "meanings": {
       "ja": "苦労して引き出す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9413ad072ecdb293420a254e080653acadbb015d63800bc71531cf1ca297e303",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2915126bf65ff75dc05cd46aa3131dc5d91d686f41fb6b8c5b3770ee26f3da0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w5r7y4u",

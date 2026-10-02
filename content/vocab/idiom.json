@@ -33,10 +33,21 @@
     "example": "{{Off}} {{the}} {{record}}, I think the plan will fail.",
     "example2": "The senator spoke off the record to reporters.",
     "meanings": {
-      "ja": "非公式に"
+      "ja": "オフレコで"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30a6b1a8b3cc01e7215ff1e8805bcdac084012537876effcf6c3c32f52242939",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:461935df756819227375f19e9d2f321d1bd467ad4a579b6576ad76308406c531",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2g2x4g7n",
@@ -100,7 +111,18 @@
       "ja": "いくつかの"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ee1694fa781e614f2200f74a3da20678cf5ac96fd755c19eb6413b0cdad1a59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ce378a3d849cfeb164d92853396dca0d7e4b085d9d7722ba320e8c5f7e34b75e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a9q9q9m",
@@ -130,7 +152,7 @@
   {
     "id": "v_3b3c8q9x",
     "category": "idiom",
-    "level": 8,
+    "level": 7,
     "headword": "touch base",
     "definition": "to contact someone briefly to share news or check progress",
     "example": "Let's {{touch}} {{base}} on Friday before the meeting.",
@@ -139,7 +161,18 @@
       "ja": "連絡を取り合う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8436baa3412780e7661f9faa8d3fe5ea39ccd8a509577c570193b39660dd0b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:019ca0b75fa39b7980ea31d9e1de48146602cd2566d61801a6e7281c302e64f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3h6c9b6z",
@@ -369,7 +402,7 @@
   {
     "id": "v_4e8v8g5k",
     "category": "idiom",
-    "level": 10,
+    "level": 8,
     "headword": "jump the gun",
     "definition": "to act too early, before the right time",
     "example": "Don't {{jump}} {{the}} {{gun}}; we haven't heard the results yet.",
@@ -378,7 +411,18 @@
       "ja": "先走る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:efe7cf3d959b9a1a8e715372aecc971dae70c9198776d150db81d3090d7a3cf1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:819482b803fd266a52535a1497ac721374e3cf0cee773292d91b993c3929e0c5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4h3z2c4z",
@@ -392,7 +436,18 @@
       "ja": "未定で"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8394e6a069b939df15c3cfe1b5a9015fcfe8e2474f98d5002e6947a0a0ff578",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:29b30ad1c9ed9cd362683a5cce57be91d15b2061aea4923452c359c4b577cb1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4h9e7b9k",
@@ -431,7 +486,18 @@
       "ja": "今のところ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aeee9ec35e15bb69fb31ef2921d6ff3e8a326217234036a3ef38a637e424e79d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6f19fe2979e6408282c5f27b0edb624c67d4d917f5e16eb1c54c1f7d8d267c31",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4r5y9r6p",
@@ -445,7 +511,18 @@
       "ja": "連続して"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c96783d34d83e8ababd618b1eb522f6d66211c5e5e2a1154495f51ad42926c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74dc81c33da5536063c7dd96755c0e779f1fda9f49a312d1ed6aacee2a15b361",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b2t3h3b",
@@ -559,7 +636,18 @@
       "ja": "文句がある"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f14ae0ccdb9ab3ca8f558a3e38b74b86c2953d62a95bfc5fd43517ed72a6034b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4f0cee6d73dc15bca6388d347a09a010fbb2f19a6337e0d852ab6612eb5eacae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5s4d6h3c",
@@ -673,7 +761,18 @@
       "ja": "無料で"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a05375dcba8f3f5d40b47b3a56149617f465829b5b38da73080d4681fd1dd41a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:656e25c1dad2e00cb4bbc28fe91d4316061ebd582a0d7864ff72d7a276741c4c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5w2d6t6t",
@@ -709,10 +808,21 @@
     "example": "He {{threw}} his coworker {{under}} {{the}} {{bus}} to save himself.",
     "example2": "I'd never throw a friend under the bus like that.",
     "meanings": {
-      "ja": "保身で人を見捨てる"
+      "ja": "保身で人に責任を押しつける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34b6b3511701728ad049af3c4908195271c256e23c1fd4ddb9b2aa19938264fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dbf5d72470fd31b5ea70e77fa902bd58cac24a790062b54d9a49458a98fd6039",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6h4j7q3t",
@@ -776,7 +886,18 @@
       "ja": "いつも"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5db00467ba5b41d74d84d17673bfca90848892b17fe705a4fcc4fc1ea2cca6fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48b7ba06d078201ca480ff128100312a5bceaf1cdcbbe2519bb89ff70a71eed0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6r5h4d5z",
@@ -815,7 +936,18 @@
       "ja": "人をからかう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e15a4facbd610958fac5376c097ebd4c82cdbe240ded045d8d6b71cc69cc5a94",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c3be79549bb1f63b89bc98c31a0bea47013477d54ce0f815e001fee5d488af33",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7b6r5h5h",
@@ -829,7 +961,18 @@
       "ja": "秘密をうっかり漏らす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b01027b7ba0ed8c46d1a0eae33527fc18b10066a0f3d4eb7d0fae00613fc273",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fa8cfed002b9a8217c5f244383ce355b078ff64b2eb34a3f9a50c01aa38ebaae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7e5j5f8p",
@@ -861,14 +1004,25 @@
     "category": "idiom",
     "level": 4,
     "headword": "in the end",
-    "definition": "after a long time or many events; finally",
+    "definition": "as the result after a long time or many events",
     "example": "We argued for hours, but {{in}} {{the}} {{end}} we agreed.",
     "example2": "The trip was stressful, but fun in the end.",
     "meanings": {
       "ja": "結局"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:496827c42114b61d9335f781119fbb86b68cda4bd05b6dfd0f1e77727df11782",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:805cdb26b2c5670b7f157f74eb4cc32f8765f68cc553341a0cd55c1d2e8d8545",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7g4s2g5b",
@@ -957,7 +1111,18 @@
       "ja": "〜を担当して"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f1ba3f21d1046100a1ceba9503e6fed3cf25e079cceb74291528f263865db7c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bf182a6d6316bf2a2a61b58a45e6c584a6d365ebd0ca4d45bd69064e9695c75f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7u5p4x8m",
@@ -996,7 +1161,18 @@
       "ja": "怖気づく"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c231a10b2d7ad0e636a78185bac67315f495d1fcf867c8ef7faed81a8d52481",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1d55f683ce69f0a5647830064bff5e83b54a46f0a2d78889789575a09251dfe3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7v7r8g3e",
@@ -1110,7 +1286,18 @@
       "ja": "わざと"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c9a105cbcaf2a853a63208ba96f90c78b0f6e249087912f9bcf399241afb8ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9aa04b6c9ccb4ef21cc9495d914ed2e1a03f38b7b8f0dc00400f48039c8bb5f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8p7b4b4m",
