@@ -225,6 +225,20 @@
     }
   },
   {
+    "id": "v_3c2k5a2h",
+    "category": "phrase",
+    "level": 1,
+    "headword": "I'm fine",
+    "definition": "a short answer saying you feel all right when someone asks",
+    "example": "A: Are you okay?\nB: {{I'm}} {{fine}}, thanks.",
+    "example2": "A: Do you need some help?\nB: No, I'm fine.",
+    "meanings": {
+      "ja": "大丈夫です"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3f4h2z5d",
     "category": "phrase",
     "level": 6,
@@ -248,6 +262,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3g5h6u4b",
+    "category": "phrase",
+    "level": 9,
+    "headword": "I wouldn't go that far",
+    "definition": "said to politely say that a claim is stronger than the truth",
+    "example": "A: So the whole plan was a disaster?\nB: {{I}} {{wouldn't}} {{go}} {{that}} {{far}}.",
+    "example2": "A: Is he lazy?\nB: I wouldn't go that far, but he's slow.",
+    "meanings": {
+      "ja": "そこまでは言わないよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3k3n7d9r",
@@ -475,6 +503,20 @@
     }
   },
   {
+    "id": "v_3u9m3a5a",
+    "category": "phrase",
+    "level": 7,
+    "headword": "you've got to be kidding",
+    "definition": "said when you cannot believe what someone has just told you",
+    "example": "A: The flight is delayed by six hours.\nB: {{You've}} {{got}} {{to}} {{be}} {{kidding}}!",
+    "example2": "A: They want us to work on Sunday.\nB: You've got to be kidding me.",
+    "meanings": {
+      "ja": "冗談でしょ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3w4h8e9j",
     "category": "phrase",
     "level": 8,
@@ -600,6 +642,20 @@
     }
   },
   {
+    "id": "v_4a7j9f7v",
+    "category": "phrase",
+    "level": 2,
+    "headword": "how much is it?",
+    "definition": "a question you ask a seller to learn what something costs",
+    "example": "A: {{How}} {{much}} {{is}} {{it}}?\nB: It's ten dollars.",
+    "example2": "A: How much is it for a large one?\nB: Twelve dollars.",
+    "meanings": {
+      "ja": "いくらですか"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4f9e9y7f",
     "category": "phrase",
     "level": 6,
@@ -623,6 +679,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4k5c9c4k",
+    "category": "phrase",
+    "level": 4,
+    "headword": "that's not what I meant",
+    "definition": "said to correct someone who has misunderstood your words",
+    "example": "A: So you don't like my cooking?\nB: {{That's}} {{not}} {{what}} {{I}} {{meant}}!",
+    "example2": "A: You want me to leave?\nB: No, that's not what I meant.",
+    "meanings": {
+      "ja": "そういう意味じゃないよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4m3z3z6x",
@@ -925,6 +995,20 @@
     }
   },
   {
+    "id": "v_5e7z6q6v",
+    "category": "phrase",
+    "level": 6,
+    "headword": "let's face it",
+    "definition": "said before an unwelcome truth that people prefer not to admit",
+    "example": "A: Maybe we'll win next week.\nB: {{Let's}} {{face}} {{it}}; we're not good enough.",
+    "example2": "Let's face it, nobody wants to work on Monday.",
+    "meanings": {
+      "ja": "現実を見ようよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5h7k5j9r",
     "category": "phrase",
     "level": 5,
@@ -1098,6 +1182,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6d2w4d8p",
+    "category": "phrase",
+    "level": 10,
+    "headword": "you're preaching to the choir",
+    "definition": "said to a person who already agrees strongly with your argument",
+    "example": "A: We should recycle more.\nB: {{You're}} {{preaching}} {{to}} {{the}} {{choir}}.",
+    "example2": "A: Exercise is important.\nB: You're preaching to the choir; I run daily.",
+    "meanings": {
+      "ja": "言われるまでもない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6e3c4p3w",
@@ -1325,6 +1423,20 @@
     }
   },
   {
+    "id": "v_7b6q4w8g",
+    "category": "phrase",
+    "level": 10,
+    "headword": "it is what it is",
+    "definition": "said to accept a situation you cannot change, with a shrug",
+    "example": "A: The flight's cancelled again.\nB: {{It}} {{is}} {{what}} {{it}} {{is}}.",
+    "example2": "A: The traffic is awful.\nB: Yeah, it is what it is.",
+    "meanings": {
+      "ja": "仕方ないよね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7p7s3s5b",
     "category": "phrase",
     "level": 2,
@@ -1348,6 +1460,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7u4u5n3s",
+    "category": "phrase",
+    "level": 2,
+    "headword": "see you tomorrow",
+    "definition": "said when parting from someone you will meet again the next day",
+    "example": "A: Bye, Ken.\nB: Bye! {{See}} {{you}} {{tomorrow}}.",
+    "example2": "A: Class is over.\nB: Great. See you tomorrow, everyone.",
+    "meanings": {
+      "ja": "また明日"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7w4n6j8k",
@@ -1475,6 +1601,20 @@
     }
   },
   {
+    "id": "v_8f7c6f7u",
+    "category": "phrase",
+    "level": 7,
+    "headword": "I'll take a rain check",
+    "definition": "said to refuse an invitation politely but ask to do it another time",
+    "example": "A: Want to grab dinner tonight?\nB: Sorry, I'm busy. {{I'll}} {{take}} {{a}} {{rain}} {{check}}.",
+    "example2": "A: Can we meet on Friday?\nB: I'll take a rain check, if that's okay.",
+    "meanings": {
+      "ja": "また今度にさせて"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8j5m5p5d",
     "category": "phrase",
     "level": 4,
@@ -1548,6 +1688,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8m9f8j9e",
+    "category": "phrase",
+    "level": 9,
+    "headword": "far be it from me",
+    "definition": "said before an opinion to show you do not want to seem rude or bossy",
+    "example": "A: Should I quit?\nB: {{Far}} {{be}} {{it}} {{from}} {{me}} to tell you what to do, but wait.",
+    "example2": "Far be it from me to judge, but that outfit is bold.",
+    "meanings": {
+      "ja": "私が口出しするのもなんですが"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8w2q7z6w",
+    "category": "phrase",
+    "level": 3,
+    "headword": "I don't mind",
+    "definition": "said to show that you are happy to accept either choice",
+    "example": "A: Pizza or pasta?\nB: {{I}} {{don't}} {{mind}}.",
+    "example2": "A: Can I open the window?\nB: I don't mind.",
+    "meanings": {
+      "ja": "どちらでもいいよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9h5b5b6v",
+    "category": "phrase",
+    "level": 6,
+    "headword": "it slipped my mind",
+    "definition": "said as an apology when something you meant to do was not remembered",
+    "example": "A: Did you book the table?\nB: Sorry, {{it}} {{slipped}} {{my}} {{mind}}.",
+    "example2": "I meant to call you, but it slipped my mind.",
+    "meanings": {
+      "ja": "うっかり忘れてた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9j2q5h8n",
@@ -1700,6 +1882,20 @@
     }
   },
   {
+    "id": "v_9t2x2k8n",
+    "category": "phrase",
+    "level": 1,
+    "headword": "I'm sorry",
+    "definition": "said to apologize when you have made a mistake",
+    "example": "A: You stepped on my foot.\nB: {{I'm}} {{sorry}}!",
+    "example2": "A: I'm sorry I'm late.\nB: That's okay.",
+    "meanings": {
+      "ja": "ごめんなさい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9u6p4j7m",
     "category": "phrase",
     "level": 8,
@@ -1723,5 +1919,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9w3q3e6a",
+    "category": "phrase",
+    "level": 6,
+    "headword": "I'm all ears",
+    "definition": "said to show you are ready to listen carefully to someone's news",
+    "example": "A: I have something to tell you.\nB: {{I'm}} {{all}} {{ears}}.",
+    "example2": "A: Can I ask you for some advice?\nB: Sure, I'm all ears.",
+    "meanings": {
+      "ja": "ちゃんと聞くよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

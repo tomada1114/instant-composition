@@ -150,6 +150,48 @@
     }
   },
   {
+    "id": "v_2n8y5u9b",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in advance",
+    "definition": "before the time when something happens or is needed",
+    "example": "Please book the tickets {{in}} {{advance}}.",
+    "example2": "Thank you in advance for your help.",
+    "meanings": {
+      "ja": "前もって"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2u5u5e2y",
+    "category": "idiom",
+    "level": 1,
+    "headword": "a cup of",
+    "definition": "an amount of a hot drink that fills a small round container",
+    "example": "I'd like {{a}} {{cup}} {{of}} tea, please.",
+    "example2": "He drinks a cup of coffee every morning.",
+    "meanings": {
+      "ja": "一杯の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3a4a8h2g",
+    "category": "idiom",
+    "level": 7,
+    "headword": "hit the nail on the head",
+    "definition": "to say exactly what is true or right about a problem",
+    "example": "You {{hit}} {{the}} {{nail}} {{on}} {{the}} {{head}} with that answer.",
+    "example2": "Her report hit the nail on the head.",
+    "meanings": {
+      "ja": "的を射る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3a9q9q9m",
     "category": "idiom",
     "level": 10,
@@ -625,6 +667,20 @@
     }
   },
   {
+    "id": "v_5f7r8m5q",
+    "category": "idiom",
+    "level": 7,
+    "headword": "sit on the fence",
+    "definition": "to refuse to choose a side in an argument",
+    "example": "Stop {{sitting}} {{on}} {{the}} {{fence}} and tell us your opinion.",
+    "example2": "Many voters are still on the fence this week.",
+    "meanings": {
+      "ja": "態度を決めかねる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5k3u6k7k",
     "category": "idiom",
     "level": 9,
@@ -700,6 +756,20 @@
     }
   },
   {
+    "id": "v_5p5b6w2k",
+    "category": "idiom",
+    "level": 1,
+    "headword": "right away",
+    "definition": "without any wait, as soon as you hear the request",
+    "example": "Please call me {{right}} {{away}}.",
+    "example2": "I'll do it right away.",
+    "meanings": {
+      "ja": "すぐに"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5p6z5t9x",
     "category": "idiom",
     "level": 10,
@@ -723,6 +793,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5p9a3f8e",
+    "category": "idiom",
+    "level": 9,
+    "headword": "the lion's share",
+    "definition": "the largest part of something that is divided among several people",
+    "example": "She did {{the}} {{lion's}} {{share}} of the work.",
+    "example2": "The lion's share of the budget goes to research.",
+    "meanings": {
+      "ja": "最大の分け前"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5p9c7p3u",
+    "category": "idiom",
+    "level": 9,
+    "headword": "burn one's bridges",
+    "definition": "to do something that makes it impossible to go back to a past situation",
+    "example": "He {{burned}} {{his}} {{bridges}} by shouting at his boss.",
+    "example2": "Don't burn your bridges when you leave a job.",
+    "meanings": {
+      "ja": "後戻りできなくする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5r7u3j4x",
+    "category": "idiom",
+    "level": 9,
+    "headword": "skate on thin ice",
+    "definition": "to be in a risky situation where one mistake could cause trouble",
+    "example": "You're {{skating}} {{on}} {{thin}} {{ice}} if you miss another deadline.",
+    "example2": "He knew he was on thin ice with his manager.",
+    "meanings": {
+      "ja": "危ない橋を渡る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5s4d6h3c",
@@ -773,6 +885,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5t2w3b6j",
+    "category": "idiom",
+    "level": 3,
+    "headword": "make sure",
+    "definition": "to check or act so that something is certainly true",
+    "example": "{{Make}} {{sure}} you lock the door when you leave.",
+    "example2": "I made sure that everyone had a seat.",
+    "meanings": {
+      "ja": "確実にする・確かめる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5t9f3m2t",
@@ -1000,6 +1126,34 @@
     }
   },
   {
+    "id": "v_6r8g8e8t",
+    "category": "idiom",
+    "level": 3,
+    "headword": "take care of",
+    "definition": "to look after someone or something so that they stay safe or well",
+    "example": "Can you {{take}} {{care}} {{of}} my cat this weekend?",
+    "example2": "She takes care of her little brother.",
+    "meanings": {
+      "ja": "世話をする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6w8j5v4e",
+    "category": "idiom",
+    "level": 10,
+    "headword": "wear one's heart on one's sleeve",
+    "definition": "to show your true feelings openly for everyone to see",
+    "example": "He {{wears}} his {{heart}} {{on}} his {{sleeve}}.",
+    "example2": "She never hides her feelings; she wears her heart on her sleeve.",
+    "meanings": {
+      "ja": "感情を隠さない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7a4j7v4j",
     "category": "idiom",
     "level": 6,
@@ -1100,6 +1254,20 @@
     }
   },
   {
+    "id": "v_7f9u9s6f",
+    "category": "idiom",
+    "level": 4,
+    "headword": "on the other hand",
+    "definition": "used to introduce a different point that contrasts with the one before",
+    "example": "The job pays well; {{on}} {{the}} {{other}} {{hand}}, the hours are long.",
+    "example2": "It is cheap but, on the other hand, quite far from here.",
+    "meanings": {
+      "ja": "一方で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7g4s2g5b",
     "category": "idiom",
     "level": 9,
@@ -1123,6 +1291,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7g5w4d8y",
+    "category": "idiom",
+    "level": 7,
+    "headword": "the ball is in your court",
+    "definition": "it is now the other person's job to decide or act next",
+    "example": "I've made my offer, so {{the}} {{ball}} {{is}} {{in}} {{your}} {{court}}.",
+    "example2": "She sent the contract, so the ball is in his court now.",
+    "meanings": {
+      "ja": "次はあなたの番だ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7p4a6d5z",
@@ -1250,6 +1432,20 @@
     }
   },
   {
+    "id": "v_7v5p6m2n",
+    "category": "idiom",
+    "level": 6,
+    "headword": "out of the question",
+    "definition": "not possible and not allowed, so it cannot even be discussed",
+    "example": "Taking a vacation now is {{out}} {{of}} {{the}} {{question}}.",
+    "example2": "Paying that much for a bag is out of the question.",
+    "meanings": {
+      "ja": "論外だ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7v7r8g3e",
     "category": "idiom",
     "level": 2,
@@ -1375,6 +1571,20 @@
     }
   },
   {
+    "id": "v_7y8q4s9d",
+    "category": "idiom",
+    "level": 6,
+    "headword": "by and large",
+    "definition": "used when you say something is true in most cases",
+    "example": "{{By}} {{and}} {{large}}, the customers were happy with the new menu.",
+    "example2": "By and large, the trains here run on time.",
+    "meanings": {
+      "ja": "概して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8m7r5p3z",
     "category": "idiom",
     "level": 10,
@@ -1448,6 +1658,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8q5z3b2f",
+    "category": "idiom",
+    "level": 2,
+    "headword": "in a minute",
+    "definition": "after a very short wait",
+    "example": "I'll be there {{in}} {{a}} {{minute}}.",
+    "example2": "Wait here, I'll be back in a minute.",
+    "meanings": {
+      "ja": "もうすぐ・すぐ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8v3v8p9u",
+    "category": "idiom",
+    "level": 1,
+    "headword": "every day",
+    "definition": "done once in every twenty-four hours, again and again",
+    "example": "I walk my dog {{every}} {{day}} after school.",
+    "example2": "She practices the piano every day.",
+    "meanings": {
+      "ja": "毎日"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8x7z4w3f",

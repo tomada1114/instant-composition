@@ -150,6 +150,34 @@
     }
   },
   {
+    "id": "v_2p5q4y6b",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "bank on",
+    "definition": "to rely on something happening, as if you were sure of it",
+    "example": "Don't {{bank}} {{on}} good weather for the picnic.",
+    "example2": "I'm banking on you to finish the report.",
+    "meanings": {
+      "ja": "当てにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2p9v2q4m",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "write down",
+    "definition": "to put words on paper so you will not forget them",
+    "example": "Let me {{write}} {{down}} your phone number.",
+    "example2": "She wrote down the address on a card.",
+    "meanings": {
+      "ja": "書き留める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2r8n3n9y",
     "category": "phrasal-verb",
     "level": 9,
@@ -248,6 +276,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3e6u8w7d",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "set off",
+    "definition": "to start a journey",
+    "example": "We {{set}} {{off}} for the mountains at dawn.",
+    "example2": "They set off early to avoid the traffic.",
+    "meanings": {
+      "ja": "出発する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3f6p8z7s",
@@ -623,6 +665,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4q5c3z2g",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "dredge up",
+    "definition": "to bring back an unpleasant fact or memory that people had stopped mentioning",
+    "example": "Why did the reporter {{dredge}} {{up}} that old scandal?",
+    "example2": "I don't want to dredge up painful memories.",
+    "meanings": {
+      "ja": "蒸し返す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4q8q2u9s",
@@ -1125,6 +1181,20 @@
     }
   },
   {
+    "id": "v_7b9a4c6b",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "run into",
+    "definition": "to meet someone you did not plan to see",
+    "example": "I {{ran}} {{into}} my old teacher at the station.",
+    "example2": "You'll never guess who I ran into today.",
+    "meanings": {
+      "ja": "偶然出会う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7c9k5h3k",
     "category": "phrasal-verb",
     "level": 8,
@@ -1148,6 +1218,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7e3r6m7j",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "pare down",
+    "definition": "to make something smaller by cutting away the parts that are not needed",
+    "example": "We had to {{pare}} {{down}} the guest list to thirty.",
+    "example2": "She pared her speech down to five minutes.",
+    "meanings": {
+      "ja": "削って減らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7f8d7x7c",
@@ -1575,6 +1659,20 @@
     }
   },
   {
+    "id": "v_9c7d2n6w",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "slow down",
+    "definition": "to start moving or doing something at a lower speed",
+    "example": "Please {{slow}} {{down}}; I can't follow you.",
+    "example2": "The bus slows down near the school.",
+    "meanings": {
+      "ja": "速度を落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9c8j4p6b",
     "category": "phrasal-verb",
     "level": 7,
@@ -1623,6 +1721,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9f4z3j2w",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "muddle through",
+    "definition": "to manage to finish a task without a good plan or skill",
+    "example": "We had no manual, so we {{muddled}} {{through}} somehow.",
+    "example2": "I don't speak French well, but I'll muddle through.",
+    "meanings": {
+      "ja": "なんとかやり抜く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9f9n4n6z",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "fob off",
+    "definition": "to make someone accept an excuse or a poor thing so they stop asking",
+    "example": "The shop tried to {{fob}} me {{off}} with a vague apology.",
+    "example2": "Don't let them fob you off with excuses.",
+    "meanings": {
+      "ja": "ごまかして追い返す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9g3u2b3u",
@@ -1748,6 +1874,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9m8k8q9e",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "clean up",
+    "definition": "to make a messy place neat by putting things in order",
+    "example": "Please {{clean}} {{up}} your room before dinner.",
+    "example2": "We cleaned up the kitchen after the party.",
+    "meanings": {
+      "ja": "片づける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9r8w3p4j",

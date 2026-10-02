@@ -100,6 +100,34 @@
     }
   },
   {
+    "id": "v_2k2e7n2c",
+    "category": "word",
+    "level": 2,
+    "headword": "neighbor",
+    "definition": "a person who lives in the next house or apartment",
+    "example": "My {{neighbor}} has a very friendly dog.",
+    "example2": "We said hello to our new neighbors.",
+    "meanings": {
+      "ja": "隣人・近所の人"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2k3h4h5n",
+    "category": "word",
+    "level": 3,
+    "headword": "luggage",
+    "definition": "the bags and cases you take with you on a trip",
+    "example": "Please put your {{luggage}} on the shelf.",
+    "example2": "Our luggage got lost at the airport.",
+    "meanings": {
+      "ja": "荷物・手荷物"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2q8b5j5e",
     "category": "word",
     "level": 1,
@@ -123,6 +151,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_2s5d7z6p",
+    "category": "word",
+    "level": 8,
+    "headword": "cumbersome",
+    "definition": "large, heavy or slow in a way that is hard to handle",
+    "example": "The old software was {{cumbersome}} and hard to use.",
+    "example2": "The cumbersome rules slowed down every project.",
+    "meanings": {
+      "ja": "扱いにくい・面倒な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_2t6x2v3s",
@@ -475,6 +517,20 @@
     }
   },
   {
+    "id": "v_4s5e9t7x",
+    "category": "word",
+    "level": 1,
+    "headword": "bag",
+    "definition": "something with handles that you use to carry your things",
+    "example": "She put her book in her {{bag}}.",
+    "example2": "My bag is under the table.",
+    "meanings": {
+      "ja": "かばん"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4x6e4u5n",
     "category": "word",
     "level": 1,
@@ -775,6 +831,34 @@
     }
   },
   {
+    "id": "v_6e7z2f3b",
+    "category": "word",
+    "level": 10,
+    "headword": "recalcitrant",
+    "definition": "stubbornly refusing to obey rules or follow orders",
+    "example": "The {{recalcitrant}} student ignored every warning from the teacher.",
+    "example2": "The committee was recalcitrant and rejected all offers.",
+    "meanings": {
+      "ja": "反抗的な・手に負えない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6f4p7d8b",
+    "category": "word",
+    "level": 2,
+    "headword": "ticket",
+    "definition": "a small piece of paper that lets you enter a place or ride a train",
+    "example": "Can I have one {{ticket}} to Kyoto?",
+    "example2": "Do you have your train ticket?",
+    "meanings": {
+      "ja": "切符・チケット"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6j2x4p6q",
     "category": "word",
     "level": 8,
@@ -898,6 +982,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6p3r5w7y",
+    "category": "word",
+    "level": 5,
+    "headword": "refund",
+    "definition": "money that a shop gives back when you return something you bought",
+    "example": "I asked for a {{refund}} because the shirt was too small.",
+    "example2": "You'll get a full refund if you cancel today.",
+    "meanings": {
+      "ja": "返金"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6v2q3a7s",
@@ -1798,6 +1896,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9t2r3k2a",
+    "category": "word",
+    "level": 10,
+    "headword": "ostensible",
+    "definition": "appearing to be the reason, though it may not be the real one",
+    "example": "The {{ostensible}} purpose of the trip was a conference.",
+    "example2": "His ostensible reason for leaving early was a headache.",
+    "meanings": {
+      "ja": "表向きの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9t9b3h5d",
