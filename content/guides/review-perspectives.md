@@ -7,6 +7,9 @@ a check is added or materially changed; every card stamped with an older version
 re-enters the review queue a batch at a time. Rewording that changes no verdict does not
 need a bump.
 
+A vocabulary card is checked against `vocab-review-perspectives.md` instead, but its
+stamp records this same version: a material change to either file bumps the number here.
+
 Every reviewer returns only the cards that fail, one entry per problem:
 
 ```json

@@ -1,7 +1,8 @@
 # Writing a card
 
 The shared yardstick for whoever writes a card and whoever reviews one. A reviewer
-judges a card against this file, so a rule that is not here is not a reason to reject.
+judges a card against this file, so a rule that is not here is not a reason to reject. A
+vocabulary card under `content/vocab/` has its own, `vocab-writing.md`.
 
 ## What a card is
 
