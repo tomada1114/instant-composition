@@ -1,19 +1,32 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
 import {
+  addCards,
   endTalk,
   learnerId,
+  makeCandidates,
   recordRecital,
   retryReply,
   sendTurn,
   startTalk,
+  startVocabSession,
   type LanguageModel,
   type SendTurnCommand,
 } from "@instant-composition/application";
 import { TALK_TUNING } from "@instant-composition/domain";
 
-import { DAY_MS, NOON } from "./application-harness";
+import { makeVocabProgress, without } from "./application-fixtures";
 import {
+  DAY_MS,
+  fixedCatalog,
+  makeSnapshot,
+  makeVocab,
+  NOON,
+  unreadableCatalog,
+  vocabItem,
+} from "./application-harness";
+import {
+  CANDIDATES,
   JUDGMENT,
   makeTalkHarness,
   SCENE,
@@ -386,6 +399,11 @@ describe("authorization", () => {
         recordRecital(h.talkDeps, agent(), { talkId: "t1", turn: 1, revealCount: 0 }),
     ],
     ["endTalk", () => endTalk(h.talkDeps, agent(), { talkId: "t1" })],
+    ["makeCandidates", () => makeCandidates(h.cardDeps, agent(), { talkId: "t1" })],
+    [
+      "addCards",
+      () => addCards(h.cardDeps, agent(), { talkId: "t1", candidates: [0] }),
+    ],
   ])("refuses %s to an agent not granted it, with no model call", async (_, run) => {
     expect(await run()).toStrictEqual({ ok: false, error: { code: "ERR_FORBIDDEN" } });
     expect(h.model.requests).toHaveLength(0);
@@ -559,5 +577,285 @@ describe("endTalk", () => {
       ok: false,
       error: { code: "ERR_TALK_NOT_FOUND" },
     });
+  });
+});
+
+describe("makeCandidates", () => {
+  /** Talk `t1` finished after six turns, corrected on turns 2 and 5 alone (Example 1). */
+  async function finishedTalk(): Promise<void> {
+    await started();
+    for (let turn = 1; turn <= TALK_TUNING.turns; turn += 1) {
+      h.teacher =
+        turn === 2 || turn === 5
+          ? JUDGMENT
+          : { verdict: "fine", modelAnswer: "", point: "" };
+      const sent = await sendTurn(h.talkDeps, h.context(), { ...TURN, turn });
+      if (!sent.ok) throw new Error(`Sending turn ${String(turn)} failed.`);
+    }
+  }
+
+  it("answers a candidate per corrected turn from one call, and a resend the same without one", async () => {
+    await finishedTalk();
+
+    const first = await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+    const again = await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+
+    expect(first).toStrictEqual({
+      ok: true,
+      value: {
+        candidates: CANDIDATES.map((candidate, index) => ({
+          index,
+          ...candidate,
+          cardId: null,
+          catalog: false,
+          inLearning: false,
+          added: false,
+        })),
+      },
+    });
+    expect(again).toStrictEqual(first);
+    expect(tasksOf(h.model).filter((task) => task === "talk-cards")).toHaveLength(1);
+    expect((await stored())?.value.cards).toStrictEqual({
+      promptVersion: "talk-cards@1",
+      candidates: CANDIDATES,
+      added: [],
+    });
+  });
+
+  it("sends the cards task the corrected turns alone", async () => {
+    await finishedTalk();
+    await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+
+    const request = h.model.requests.find((sent) => sent.task === "talk-cards");
+    const text = request?.messages.map((message) => message.text).join("\n") ?? "";
+    expect([...text.matchAll(/<turn number="(\d)">/g)].map((m) => m[1])).toStrictEqual([
+      "2",
+      "5",
+    ]);
+  });
+
+  it("answers none for a kept talk with no corrected turn, without a call", async () => {
+    // Example 4.
+    await started();
+    h.teacher = { verdict: "fine", modelAnswer: "", point: "" };
+    await sentThrough(1);
+    await endTalk(h.talkDeps, h.context(), { talkId: "t1" });
+
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" }),
+    ).toStrictEqual({ ok: true, value: { candidates: [] } });
+    expect(tasksOf(h.model)).not.toContain("talk-cards");
+  });
+
+  it("answers ERR_MODEL_UNAVAILABLE and keeps nothing when the call fails, then asks again", async () => {
+    await finishedTalk();
+    h.failing.add("talk-cards");
+
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" }),
+    ).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_MODEL_UNAVAILABLE", reason: "malformed" },
+    });
+    expect((await stored())?.value.cards).toBeUndefined();
+
+    h.failing.delete("talk-cards");
+    const retried = await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+    expect(retried.ok && retried.value.candidates).toHaveLength(2);
+  });
+
+  it.each([
+    ["no list", { cards: [] }],
+    [
+      "a candidate with an unknown category",
+      { candidates: [{ ...CANDIDATES[0], category: "slang" }] },
+    ],
+    [
+      "a candidate without a turn",
+      { candidates: [{ ...CANDIDATES[0], turn: undefined }] },
+    ],
+    [
+      "a candidate with a field too many",
+      { candidates: [{ ...CANDIDATES[0], level: 4 }] },
+    ],
+    [
+      "a turn that is not an integer",
+      { candidates: [{ ...CANDIDATES[0], turn: 2.5 }] },
+    ],
+  ])("refuses an answer with %s as malformed, keeping nothing", async (_, answer) => {
+    await finishedTalk();
+    h.cards = answer;
+
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" }),
+    ).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_MODEL_UNAVAILABLE", reason: "malformed" },
+    });
+    expect((await stored())?.value.cards).toBeUndefined();
+  });
+
+  it("keeps the candidates that meet the card rules and drops the rest", async () => {
+    await finishedTalk();
+    h.cards = {
+      candidates: [
+        { ...CANDIDATES[0], example: "Let's {{catch up}} soon." },
+        { ...CANDIDATES[1], turn: 3 },
+        { ...CANDIDATES[1], meaning: "  忙しくて手一杯  " },
+      ],
+    };
+
+    const made = await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+
+    expect(
+      made.ok && made.value.candidates.map((c) => [c.turn, c.meaning]),
+    ).toStrictEqual([[5, "忙しくて手一杯"]]);
+  });
+
+  it("answers ERR_CONFLICT for an open talk and ERR_TALK_NOT_FOUND for an unknown one", async () => {
+    await started();
+    await sentThrough(1);
+
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t2" }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_TALK_NOT_FOUND" } });
+    expect(tasksOf(h.model)).not.toContain("talk-cards");
+  });
+
+  it("answers ERR_CONTENT_UNREADABLE without a call when the catalog cannot be read", async () => {
+    h = makeTalkHarness(unreadableCatalog);
+    await finishedTalk();
+
+    expect(
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" }),
+    ).toMatchObject({ ok: false, error: { code: "ERR_CONTENT_UNREADABLE" } });
+    expect(tasksOf(h.model)).not.toContain("talk-cards");
+  });
+
+  describe("against the catalog", () => {
+    const SWAMPED_CARD = {
+      ...vocabItem("word", 4, 9),
+      id: "v_swamped",
+      headword: "swamped",
+      meaning: "手一杯の",
+    };
+
+    beforeEach(() => {
+      h = makeTalkHarness(
+        fixedCatalog(makeSnapshot({ vocab: [...makeVocab(), SWAMPED_CARD] })),
+      );
+    });
+
+    it("answers a candidate the catalog holds as that card, in learning, and adding it marks it weak", async () => {
+      // Example 2.
+      await finishedTalk();
+      const store = h.stores.forLearner(h.learner);
+      const learning = makeVocabProgress({ cardId: "v_swamped" });
+      await store.commit({
+        puts: [{ type: "vocabItem", value: learning }],
+        updates: [],
+        expect: [],
+      });
+
+      const made = await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+      expect(made.ok && made.value.candidates[1]).toStrictEqual({
+        index: 1,
+        turn: 5,
+        cardId: "v_swamped",
+        catalog: true,
+        category: "word",
+        headword: "swamped",
+        definition: SWAMPED_CARD.definition,
+        example: SWAMPED_CARD.example,
+        example2: SWAMPED_CARD.example2,
+        meaning: "手一杯の",
+        inLearning: true,
+        added: false,
+      });
+
+      const added = await addCards(h.cardDeps, h.context(), {
+        talkId: "t1",
+        candidates: [1],
+      });
+
+      expect(added.ok && added.value.candidates[1]).toMatchObject({
+        cardId: "v_swamped",
+        inLearning: true,
+        added: true,
+      });
+      expect((await store.vocabItems()).get("v_swamped")?.value).toStrictEqual({
+        ...learning,
+        source: { kind: "talk", talkId: "t1", turn: 5 },
+      });
+      expect(await store.cards()).toStrictEqual(new Map());
+    });
+
+    it("makes a candidate the catalog lacks a personal card, new and weak, dealt first among the new", async () => {
+      // Example 3.
+      await finishedTalk();
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+
+      const added = await addCards(h.cardDeps, h.context(), {
+        talkId: "t1",
+        candidates: [0],
+      });
+      const cardId = added.ok ? added.value.candidates[0]?.cardId : null;
+
+      expect(cardId).toMatch(/^p_/);
+      const store = h.stores.forLearner(h.learner);
+      expect((await store.card(cardId ?? ""))?.value).toStrictEqual({
+        id: cardId,
+        target: "en",
+        l1: "ja",
+        level: 1,
+        ...without(CANDIDATES[0], "turn"),
+        source: { kind: "talk", talkId: "t1", turn: 2 },
+        createdAt: NOON,
+      });
+      const opened = await startVocabSession(h.deps, h.context(), {
+        sessionId: "s1",
+        kind: "today",
+      });
+      expect(opened.ok && opened.value.cards[0]).toMatchObject({
+        id: cardId,
+        headword: "catch up",
+        isNew: true,
+        personal: true,
+      });
+    });
+
+    it("adds a candidate once however often it is added", async () => {
+      await finishedTalk();
+      await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+      const first = await addCards(h.cardDeps, h.context(), {
+        talkId: "t1",
+        candidates: [0, 0],
+      });
+      const version = (await stored())?.version;
+
+      const again = await addCards(h.cardDeps, h.context(), {
+        talkId: "t1",
+        candidates: [0],
+      });
+
+      expect(again).toStrictEqual(first);
+      expect((await stored())?.version).toBe(version);
+      expect((await h.stores.forLearner(h.learner).cards()).size).toBe(1);
+    });
+  });
+
+  it("refuses an add before the candidates with ERR_CONFLICT, and an index past them with ERR_BAD_REQUEST", async () => {
+    await finishedTalk();
+
+    expect(
+      await addCards(h.cardDeps, h.context(), { talkId: "t1", candidates: [0] }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+    await makeCandidates(h.cardDeps, h.context(), { talkId: "t1" });
+    expect(
+      await addCards(h.cardDeps, h.context(), { talkId: "t1", candidates: [2] }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
   });
 });

@@ -43,6 +43,9 @@ import {
   startRoundRequestSchema,
 } from "./requests";
 import {
+  addCardsRequestSchema,
+  cardCandidateSchema,
+  cardCandidatesSchema,
   judgmentSchema,
   partnerReplySchema,
   recitalRequestSchema,
@@ -140,6 +143,9 @@ export const COMPONENTS = {
   PartnerReply: partnerReplySchema,
   TurnResult: turnResultSchema,
   TalkEnded: talkEndedSchema,
+  AddCardsRequest: addCardsRequestSchema,
+  CardCandidate: cardCandidateSchema,
+  CardCandidates: cardCandidatesSchema,
   Grade: gradeSchema,
   GradeIntervals: gradeIntervalsSchema,
   VocabCategory: vocabCategorySchema,

@@ -14,9 +14,10 @@ import type {
 } from "@instant-composition/application";
 import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
-import { declaredValue } from "./declared";
 import { isConflict, transactItemsOf } from "./dynamodb-commit";
+import { byTime, storedOf, type Row, type ValueOf } from "./dynamodb-rows";
 import {
+  CARDS_PREFIX,
   checkShape,
   itemsPrefix,
   LEARNER_TABLE_KEY,
@@ -34,28 +35,6 @@ export interface DynamoDbStoresOptions {
   readonly client: DynamoDBClient;
   /** The learner table, keyed by {@link LEARNER_TABLE_KEY}. */
   readonly tableName: string;
-}
-
-type Row = Readonly<Record<string, unknown>>;
-type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
-
-/**
- * A row of `type` as the port hands it back. Only this adapter writes the
- * table, so the value is trusted beyond holding only its declared fields.
- */
-function storedOf<T extends Entry["type"]>(type: T, row: Row): Stored<ValueOf<T>> {
-  const { value, version } = row;
-  if (typeof version !== "number" || typeof value !== "object" || value === null) {
-    throw new TypeError("A learner table item has no value or no version.");
-  }
-  return { value: declaredValue({ type, value } as Entry) as ValueOf<T>, version };
-}
-
-/** The fields both logs sort by. */
-type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
-
-function byTime(a: Timed, b: Timed): number {
-  return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
 function dynamoDbStore(
@@ -166,6 +145,15 @@ function dynamoDbStore(
       const rows = await prefixed(vocabReviewsPrefix(sessionId));
       // The prefix holds the session's answers alone, not the session itself.
       return rows.map((row) => storedOf("vocabReview", row).value).sort(byTime);
+    },
+    card: (id) => get({ type: "card", id }),
+    async cards() {
+      const rows = await prefixed(CARDS_PREFIX);
+      return new Map(
+        rows
+          .map((row) => storedOf("card", row))
+          .map((stored) => [stored.value.id, stored]),
+      );
     },
     async commit(commit) {
       checkShape(commit);

@@ -39,7 +39,8 @@ function expiryOf(entry: Entry): { readonly expiresAt?: number } {
 
 /**
  * The one TransactWriteItems a commit becomes, in the learner's partition:
- * each put and update a conditional `Put`, each expectation a `ConditionCheck`.
+ * each put and update a conditional `Put`, each expectation a `ConditionCheck`,
+ * each delete a `Delete` at the version read.
  * An update replaces the whole entry, since every entry is written whole.
  */
 export function transactItemsOf(
@@ -71,6 +72,9 @@ export function transactItemsOf(
         Key: keyFor(key),
         ...(version === null ? ABSENT : atVersion(version)),
       },
+    })),
+    ...(commit.deletes ?? []).map(({ key, version }) => ({
+      Delete: { TableName: table, Key: keyFor(key), ...atVersion(version) },
     })),
   ];
 }

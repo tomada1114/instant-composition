@@ -448,6 +448,29 @@ export type TalkEnded = {
     kept: boolean;
 };
 
+export type AddCardsRequest = {
+    candidates: Array<number>;
+};
+
+export type CardCandidate = {
+    index: number;
+    turn: number;
+    cardId: string | null;
+    catalog: boolean;
+    category: VocabCategory;
+    headword: string;
+    definition: string;
+    example: string;
+    example2: string;
+    meaning: string;
+    inLearning: boolean;
+    added: boolean;
+};
+
+export type CardCandidates = {
+    candidates: Array<CardCandidate>;
+};
+
 export type Grade = 'again' | 'hard' | 'good';
 
 export type GradeIntervals = {
@@ -514,6 +537,7 @@ export type VocabCard = {
     example2: string;
     intervals: GradeIntervals;
     isNew: boolean;
+    personal: boolean;
 };
 
 export type VocabSession = {
@@ -1237,6 +1261,53 @@ export type FinishVocabSessionResponses = {
 
 export type FinishVocabSessionResponse = FinishVocabSessionResponses[keyof FinishVocabSessionResponses];
 
+export type DeleteVocabCardData = {
+    body?: never;
+    path: {
+        cardId: string;
+    };
+    query?: never;
+    url: '/v1/vocab/cards/{cardId}';
+};
+
+export type DeleteVocabCardErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation. ERR_CARD_NOT_PERSONAL: That card is the catalog's; only a card made from a talk can be deleted.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CARD_NOT_FOUND: No vocabulary card of the learner's own has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type DeleteVocabCardError = DeleteVocabCardErrors[keyof DeleteVocabCardErrors];
+
+export type DeleteVocabCardResponses = {
+    /**
+     * Done; no body.
+     */
+    204: void;
+};
+
+export type DeleteVocabCardResponse = DeleteVocabCardResponses[keyof DeleteVocabCardResponses];
+
 export type StartTalkData = {
     body: StartTalkRequest;
     path?: never;
@@ -1466,3 +1537,101 @@ export type EndTalkResponses = {
 };
 
 export type EndTalkResponse = EndTalkResponses[keyof EndTalkResponses];
+
+export type MakeCandidatesData = {
+    body?: never;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/candidates';
+};
+
+export type MakeCandidatesErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.
+     */
+    503: ErrorResponse;
+};
+
+export type MakeCandidatesError = MakeCandidatesErrors[keyof MakeCandidatesErrors];
+
+export type MakeCandidatesResponses = {
+    /**
+     * OK
+     */
+    200: CardCandidates;
+};
+
+export type MakeCandidatesResponse = MakeCandidatesResponses[keyof MakeCandidatesResponses];
+
+export type AddCardsData = {
+    body: AddCardsRequest;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/cards';
+};
+
+export type AddCardsErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type AddCardsError = AddCardsErrors[keyof AddCardsErrors];
+
+export type AddCardsResponses = {
+    /**
+     * OK
+     */
+    200: CardCandidates;
+};
+
+export type AddCardsResponse = AddCardsResponses[keyof AddCardsResponses];

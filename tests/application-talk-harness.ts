@@ -1,5 +1,7 @@
 import { createStandInModel, type StandInModel } from "@instant-composition/adapters";
 import type {
+  CardDeps,
+  Catalog,
   LanguageModel,
   RequestContext,
   TalkDeps,
@@ -25,6 +27,28 @@ export const JUDGMENT = {
   point: "「引っ越してきた」→ just moved here",
 };
 
+/** What the cards task answers by default: a card for turns 2 and 5. */
+export const CANDIDATES = [
+  {
+    turn: 2,
+    category: "idiom",
+    headword: "catch up",
+    definition: "To talk about what has happened since you last met.",
+    example: "Let's {{catch}} {{up}} over coffee soon.",
+    example2: "We caught up at the station.",
+    meaning: "近況を話す",
+  },
+  {
+    turn: 5,
+    category: "word",
+    headword: "swamped",
+    definition: "Having too much work to do.",
+    example: "I'm {{swamped}} with work this week.",
+    example2: "She was swamped after the holidays.",
+    meaning: "忙しくて手一杯",
+  },
+] as const;
+
 export interface TalkHarness extends Harness {
   readonly model: StandInModel;
   readonly talkDeps: TalkDeps;
@@ -35,15 +59,19 @@ export interface TalkHarness extends Harness {
   /** What the scene and the teacher answer while they are not failing. */
   scene: unknown;
   teacher: unknown;
+  /** What the cards task answers while it is not failing. */
+  cards: unknown;
   /** The partner's line while set, in place of the numbered one. */
   partnerLine: string | undefined;
   context(now?: number): RequestContext;
+  /** The talk's deps with the catalog the candidates are matched against. */
+  readonly cardDeps: CardDeps;
   /** The same deps over another model, such as one that races a write in. */
   withModel(model: LanguageModel): TalkDeps;
 }
 
-export function makeTalkHarness(): TalkHarness {
-  const base = makeHarness();
+export function makeTalkHarness(catalog?: Catalog): TalkHarness {
+  const base = makeHarness(catalog);
   const failing = new Set<string>();
   const deadlines: number[] = [];
   const answer = (task: string, value: () => unknown) => () =>
@@ -54,10 +82,12 @@ export function makeTalkHarness(): TalkHarness {
     deadlines,
     scene: SCENE,
     teacher: JUDGMENT,
+    cards: { candidates: CANDIDATES },
     partnerLine: undefined,
     model: createStandInModel({
       "talk-scene": answer("talk-scene", () => harness.scene),
       "talk-teacher": answer("talk-teacher", () => harness.teacher),
+      "talk-cards": answer("talk-cards", () => harness.cards),
       // The partner numbers its line by the messages it was sent, so a reply
       // shows which turn it answered.
       "talk-partner": (request) =>
@@ -71,6 +101,9 @@ export function makeTalkHarness(): TalkHarness {
     }),
     get talkDeps() {
       return harness.withModel(harness.model);
+    },
+    get cardDeps() {
+      return { ...harness.withModel(harness.model), catalog: base.deps.catalog };
     },
     withModel: (model) => ({
       stores: base.stores,

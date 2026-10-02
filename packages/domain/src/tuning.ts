@@ -112,6 +112,8 @@ export const TALK_TUNING = {
   modelTimeoutMs: 12_000,
   /** The share of scenes about the learner themselves; the rest are an errand or a small trouble. */
   selfShare: 2 / 3,
+  /** The most card candidates a talk's end offers: at most one per corrected turn. */
+  maxCandidates: 6,
 } as const;
 
 /**
@@ -136,6 +138,18 @@ export const VOCAB_TUNING = {
    * most `sessionSize`.
    */
   weak: { lapses: 8, exitStabilityDays: 21, sessionSize: 20 },
+  /**
+   * The limits a card's text keeps: the lint's `VOCAB_LIMITS` in
+   * `scripts/cards/vocab-rules.mjs`, which a personal card the model writes
+   * meets too. Words count a line, a dialogue's `A:` uncounted.
+   */
+  card: {
+    headwordWords: { min: 1, max: 6 },
+    definitionWords: 15,
+    exampleWords: 15,
+    example2Words: 15,
+    meaningChars: 20,
+  },
 } as const;
 
 /** A milestone series: the listed values, then every `step` past the last one. */

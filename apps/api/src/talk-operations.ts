@@ -1,14 +1,16 @@
 import {
+  addCards,
   endTalk,
+  makeCandidates,
   recordRecital,
   retryReply,
   sendTurn,
   startTalk,
   type RequestContext,
   type TalkCommandError,
-  type TalkDeps,
 } from "@instant-composition/application";
 import {
+  addCardsRequestSchema,
   recitalRequestSchema,
   startTalkRequestSchema,
   turnRequestSchema,
@@ -18,13 +20,14 @@ import { err, type Result } from "@instant-composition/domain";
 import type {
   BodySchema,
   Operation,
+  OperationDeps,
   Outcome,
   PathParam,
   PathValues,
 } from "./operations";
 
 type TalkRun<A extends unknown[]> = (
-  deps: TalkDeps,
+  deps: OperationDeps,
   context: RequestContext,
   path: PathValues,
   ...args: A
@@ -88,5 +91,14 @@ export const TALK_OPERATIONS: Readonly<Record<string, Operation>> = {
   ),
   endTalk: talkAction(["talkId"], (deps, context, { talkId }) =>
     endTalk(deps, context, { talkId }),
+  ),
+  makeCandidates: talkAction(["talkId"], (deps, context, { talkId }) =>
+    makeCandidates(deps, context, { talkId }),
+  ),
+  addCards: talkCommand(
+    addCardsRequestSchema,
+    ["talkId"],
+    (deps, context, { talkId }, { candidates }) =>
+      addCards(deps, context, { talkId, candidates }),
   ),
 };

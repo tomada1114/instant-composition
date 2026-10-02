@@ -21,6 +21,9 @@ import { MAX_ROUND_ANSWERS } from "./requests";
 /** The `{sessionId}` path parameter. */
 export const sessionIdParamSchema = idSchema;
 
+/** The `{cardId}` path parameter: a vocabulary card's id. */
+export const cardIdParamSchema = idSchema;
+
 export const vocabSessionKindSchema = z.enum(["today", "extra", "weak"]);
 
 /**
@@ -84,6 +87,8 @@ export const vocabCardSchema = z.object({
   example2: z.string(),
   intervals: gradeIntervalsSchema,
   isNew: z.boolean(),
+  /** The learner's own card, made from a talk, which they may delete. */
+  personal: z.boolean(),
 });
 
 export const vocabSessionSchema = z.object({

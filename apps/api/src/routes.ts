@@ -1,4 +1,5 @@
 import {
+  cardIdParamSchema,
   roundIdParamSchema,
   sessionIdParamSchema,
   talkIdParamSchema,
@@ -9,7 +10,13 @@ import {
 import type { Operation, PathParam, PathValues } from "./operations";
 
 /** Every parameter a contract path may name; an operation reads the ones its path names. */
-const PATH_PARAMS: readonly PathParam[] = ["roundId", "talkId", "turn", "sessionId"];
+const PATH_PARAMS: readonly PathParam[] = [
+  "roundId",
+  "talkId",
+  "turn",
+  "sessionId",
+  "cardId",
+];
 
 /** Every `{name}` a contract path names. */
 function pathParams(path: string): string[] {
@@ -121,10 +128,14 @@ export function readPath(
   const sessionId = params.includes("sessionId")
     ? idOf(sessionIdParamSchema, raw["sessionId"])
     : "";
+  const cardId = params.includes("cardId")
+    ? idOf(cardIdParamSchema, raw["cardId"])
+    : "";
   return roundId === undefined ||
     talkId === undefined ||
     turn === undefined ||
-    sessionId === undefined
+    sessionId === undefined ||
+    cardId === undefined
     ? undefined
-    : { roundId, talkId, turn, sessionId };
+    : { roundId, talkId, turn, sessionId, cardId };
 }

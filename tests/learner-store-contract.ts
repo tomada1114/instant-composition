@@ -13,6 +13,7 @@ import {
   makeDay,
   makeItem,
   makeLeitnerReview,
+  makePersonalCard,
   makePortion,
   makeProfile,
   makeReview,
@@ -59,6 +60,8 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   vocabItems: (store) => store.vocabItems(),
   vocabSession: (store) => store.vocabSession("s1"),
   vocabReviewsOf: (store) => store.vocabReviewsOf("s1"),
+  card: (store) => store.card("p_card00000001"),
+  cards: (store) => store.cards(),
 };
 
 function isNothing(value: unknown): boolean {
@@ -124,6 +127,21 @@ export function describeLearnerStoreContract(
       expect((await stores.forLearner(B).settings())?.value.topics).toStrictEqual([
         "travel",
       ]);
+    });
+
+    it("refuses B a delete of A's card at A's version, and keeps A's card", async () => {
+      const key = { type: "card", id: "p_card00000001" } as const;
+      const version = (await stores.forLearner(A).card(key.id))?.version ?? 0;
+
+      const deleted = await stores
+        .forLearner(B)
+        .commit({ puts: [], updates: [], expect: [], deletes: [{ key, version }] });
+
+      expect(deleted).toStrictEqual(CONFLICT);
+      expect(await stores.forLearner(A).card(key.id)).toStrictEqual({
+        value: makePersonalCard(),
+        version,
+      });
     });
 
     it("refuses B an update of A's entry at A's version", async () => {
@@ -407,6 +425,87 @@ export function describeLearnerStoreContract(
         version: 1,
       });
       expect(await store.vocabReviewsOf("s1")).toStrictEqual([makeVocabReview()]);
+      expect(await store.card("p_card00000001")).toStrictEqual({
+        value: makePersonalCard(),
+        version: 1,
+      });
+      expect(await store.cards()).toStrictEqual(
+        new Map([["p_card00000001", { value: makePersonalCard(), version: 1 }]]),
+      );
+    });
+
+    it("deletes an entry at the version it was read at, and nothing at another", async () => {
+      const card = makePersonalCard();
+      const progress = makeVocabProgress({ cardId: card.id });
+      await store.commit({
+        puts: [
+          { type: "card", value: card },
+          { type: "vocabItem", value: progress },
+          { type: "vocabReview", value: makeVocabReview({ cardId: card.id }) },
+        ],
+        updates: [],
+        expect: [],
+      });
+      const key = { type: "card", id: card.id } as const;
+
+      const stale = await store.commit({
+        puts: [],
+        updates: [],
+        expect: [],
+        deletes: [{ key, version: 2 }],
+      });
+      const absent = await store.commit({
+        puts: [],
+        updates: [],
+        expect: [],
+        deletes: [{ key: { type: "card", id: "p_none" }, version: 1 }],
+      });
+      expect(stale).toStrictEqual(CONFLICT);
+      expect(absent).toStrictEqual(CONFLICT);
+      expect((await store.card(card.id))?.version).toBe(1);
+
+      const deleted = await store.commit({
+        puts: [],
+        updates: [],
+        expect: [],
+        deletes: [
+          { key, version: 1 },
+          { key: { type: "vocabItem", cardId: card.id }, version: 1 },
+        ],
+      });
+
+      expect(deleted.ok).toBe(true);
+      expect(await store.card(card.id)).toBeUndefined();
+      expect(await store.cards()).toStrictEqual(new Map());
+      expect(await store.vocabItems()).toStrictEqual(new Map());
+      expect(await store.vocabReviewsOf("s1")).toStrictEqual([
+        makeVocabReview({ cardId: card.id }),
+      ]);
+    });
+
+    it("puts a card again over one deleted", async () => {
+      const card = makePersonalCard();
+      const key = { type: "card", id: card.id } as const;
+      await store.commit({
+        puts: [{ type: "card", value: card }],
+        updates: [],
+        expect: [],
+      });
+      await store.commit({
+        puts: [],
+        updates: [],
+        expect: [],
+        deletes: [{ key, version: 1 }],
+      });
+
+      const again = await store.commit({
+        puts: [{ type: "card", value: card }],
+        updates: [],
+        expect: [],
+      });
+
+      expect(again.ok).toBe(true);
+      expect(await store.card(card.id)).toStrictEqual({ value: card, version: 1 });
     });
 
     it("keeps the drill's items, rounds and answers apart from the vocabulary's", async () => {
@@ -690,15 +789,50 @@ export function describeLearnerStoreContract(
       await expect(async () =>
         store.commit({ puts: [entry], updates: [{ entry, version: 1 }], expect: [] }),
       ).rejects.toThrow(RangeError);
+      await expect(async () =>
+        store.commit({
+          puts: [entry],
+          updates: [],
+          expect: [],
+          deletes: [{ key: keyOf(entry), version: 1 }],
+        }),
+      ).rejects.toThrow(RangeError);
+    });
+
+    it("counts deletes toward the transaction limit", async () => {
+      const days: Entry[] = Array.from({ length: MAX_COMMIT_ITEMS }, (_, index) => ({
+        type: "day",
+        value: makeDay({ day: `2026-01-${String(index).padStart(3, "0")}` }),
+      }));
+
+      await expect(async () =>
+        store.commit({
+          puts: days,
+          updates: [],
+          expect: [],
+          deletes: [{ key: { type: "card", id: "p_x" }, version: 1 }],
+        }),
+      ).rejects.toThrow(RangeError);
     });
 
     it.each([
       ["review", { type: "review", value: makeReview() }],
       ["vocabulary review", { type: "vocabReview", value: makeVocabReview() }],
-    ] as const)("refuses an update of a %s entry", async (_, entry: Entry) => {
-      await expect(async () =>
-        store.commit({ puts: [], updates: [{ entry, version: 1 }], expect: [] }),
-      ).rejects.toThrow(RangeError);
-    });
+    ] as const)(
+      "refuses an update or a delete of a %s entry",
+      async (_, entry: Entry) => {
+        await expect(async () =>
+          store.commit({ puts: [], updates: [{ entry, version: 1 }], expect: [] }),
+        ).rejects.toThrow(RangeError);
+        await expect(async () =>
+          store.commit({
+            puts: [],
+            updates: [],
+            expect: [],
+            deletes: [{ key: keyOf(entry), version: 1 }],
+          }),
+        ).rejects.toThrow(RangeError);
+      },
+    );
   });
 }

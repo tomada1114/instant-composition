@@ -25,7 +25,8 @@ learners of English: a card shows a Japanese sentence and the learner says it in
 before the timer runs out, then checks the answer. Cards are pre-generated JSON under
 `content/`, written ahead of time by Claude Code skills, so the drill calls no language
 model at runtime; the talk activity, a short scripted conversation, does — the server
-asks a model for the scene, the judgment and the partner's reply inside the request,
+asks a model for the scene, the judgment and the partner's reply inside the request, and
+at a talk's end for vocabulary card candidates from what the learner could not say,
 OpenRouter today, a scripted stand-in on a run with no key. It is a pnpm workspace in
 ESM-only TypeScript: a React single-page app under `apps/web` (Vite, Tailwind v4,
 components derived from shadcn/ui) calls an HTTP API under `apps/api` (Hono), which

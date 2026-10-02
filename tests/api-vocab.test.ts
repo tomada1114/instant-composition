@@ -7,7 +7,12 @@ import {
   vocabSessionSchema,
 } from "@instant-composition/contracts";
 
-import { makeStats } from "./application-fixtures";
+import {
+  makePersonalCard,
+  makeStats,
+  makeVocabProgress,
+  makeVocabReview,
+} from "./application-fixtures";
 import { makeApi, subjectAuthenticator, type ApiHarness } from "./api-harness";
 
 // The vocabulary routes over HTTP, on the in-memory store and the fixture
@@ -342,5 +347,92 @@ describe("another learner's session", () => {
         (row) => row.learning,
       ),
     ).toStrictEqual([0, 0, 0, 0]);
+  });
+});
+
+describe("deleting a personal card", () => {
+  /** Learner A holding personal card `p_card00000001`, new, with an answer logged, and learner B on the same store. */
+  async function twoLearners() {
+    const a = makeApi({ authenticator: subjectAuthenticator("subject-a") });
+    const mine = await placedAt(a, "learner-1");
+    const card = makePersonalCard();
+    const progress = makeVocabProgress({
+      cardId: card.id,
+      source: { kind: "talk", talkId: "t1", turn: 2 },
+      state: null,
+      firstDay: null,
+    });
+    const review = makeVocabReview({ cardId: card.id });
+    const written = await mine.commit({
+      puts: [
+        { type: "card", value: card },
+        { type: "vocabItem", value: progress },
+        { type: "vocabReview", value: review },
+      ],
+      updates: [],
+      expect: [],
+    });
+    expect(written.ok).toBe(true);
+    const b = makeApi({
+      stores: a.stores,
+      directory: a.directory,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+    return { a, b, mine, card, review };
+  }
+
+  it("removes the card and its progress, keeps its answers, and deals it no more", async () => {
+    const { a, mine, card, review } = await twoLearners();
+    const before = vocabSessionSchema.parse(
+      await contracted(
+        await a.call("POST", "/v1/vocab/sessions", { sessionId: "w1", kind: "weak" }),
+        "startVocabSession",
+      ),
+    );
+    expect(before.cards.map(({ id, personal }) => [id, personal])).toStrictEqual([
+      [card.id, true],
+    ]);
+
+    await contracted(
+      await a.call("DELETE", `/v1/vocab/cards/${card.id}`),
+      "deleteVocabCard",
+    );
+
+    expect(await mine.card(card.id)).toBeUndefined();
+    expect((await mine.vocabItems()).has(card.id)).toBe(false);
+    expect(await mine.vocabReviewsOf("s1")).toStrictEqual([review]);
+    const after = await opened(a, { sessionId: "w2", kind: "weak" });
+    expect(after.cards).toStrictEqual([]);
+    expect(
+      await refusal(await a.call("DELETE", `/v1/vocab/cards/${card.id}`)),
+    ).toStrictEqual([404, "ERR_CARD_NOT_FOUND"]);
+  });
+
+  it("is not found by another learner, and leaves the card as it was", async () => {
+    // Example 5.
+    const { b, mine, card } = await twoLearners();
+    const before = await Promise.all([mine.card(card.id), mine.vocabItems()]);
+
+    expect(
+      await refusal(await b.call("DELETE", `/v1/vocab/cards/${card.id}`)),
+    ).toStrictEqual([404, "ERR_CARD_NOT_FOUND"]);
+    expect(await Promise.all([mine.card(card.id), mine.vocabItems()])).toStrictEqual(
+      before,
+    );
+    expect(b.lines).toMatchObject([
+      { operation: "deleteVocabCard", learnerId: "learner-b" },
+    ]);
+  });
+
+  it("refuses a catalog card with 403 ERR_CARD_NOT_PERSONAL, and a path it cannot read with 400", async () => {
+    const { a } = await twoLearners();
+
+    expect(
+      await refusal(await a.call("DELETE", "/v1/vocab/cards/v_word-3-0")),
+    ).toStrictEqual([403, "ERR_CARD_NOT_PERSONAL"]);
+    expect(
+      await refusal(await a.call("DELETE", `/v1/vocab/cards/${"x".repeat(65)}`)),
+    ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
   });
 });
