@@ -23,6 +23,22 @@
     }
   },
   {
+    "id": "c_2d2w6j7m",
+    "ja": "私の肩書きは名ばかりと言ってもいい。",
+    "en": "My title is, shall we say, largely nominal.",
+    "alternatives": [
+      "You could say my title is mostly in name only.",
+      "My title is more nominal than substantive, I'd say."
+    ],
+    "point": "shall we say は少し含みを持たせて言葉を選ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2e3d8e2p",
     "ja": "移住してなければ、今ここにいない。",
     "en": "If I hadn't emigrated, I wouldn't be here.",
@@ -405,6 +421,19 @@
     }
   },
   {
+    "id": "c_4z4y2u2h",
+    "ja": "私が名刺を渡していい？",
+    "en": "May I give my card?",
+    "alternatives": ["Can I offer my business card?", "May I hand you my card?"],
+    "point": "give my card で自分の名刺を渡す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5c2u6w7j",
     "ja": "私は姉より社交的だ。",
     "en": "I'm more outgoing than my sister.",
@@ -507,6 +536,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5s7j3z5s",
+    "ja": "私は自分を安売りする衝動を抑えればよかった。",
+    "en": "I wish I'd resisted the urge to undersell myself.",
+    "alternatives": [
+      "I wish I hadn't given in to underselling myself.",
+      "If only I'd resisted presenting myself as less capable."
+    ],
+    "point": "undersell myself は実力以下に自分を紹介する。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5x8s6n4g",
@@ -654,6 +699,35 @@
     }
   },
   {
+    "id": "c_7m3m8d2h",
+    "ja": "私は海の近くで育った。",
+    "en": "I grew up near the sea.",
+    "alternatives": ["I was raised near the ocean.", "I grew up by the ocean."],
+    "point": "grew up は grow up の過去形。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7n9f5n6f",
+    "ja": "私を型にはめるなら私は仲介役かな。",
+    "en": "Were I to pigeonhole myself, I'd say mediator.",
+    "alternatives": [
+      "If I had to categorize myself, I'd say mediator.",
+      "If I needed a label, I'd choose mediator."
+    ],
+    "point": "pigeonhole は人を単純な一つの型に押し込める。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7u9e5v5c",
     "ja": "前に会ったかもしれませんね。",
     "en": "We might have met before.",
@@ -712,6 +786,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8v9v2k9h",
+    "ja": "私は今年卒業する予定。",
+    "en": "I'm graduating this year.",
+    "alternatives": [
+      "I'm going to graduate this year.",
+      "I plan to graduate this year."
+    ],
+    "point": "予定の進行形で決まっている卒業を伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8w3u6n3s",

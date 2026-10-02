@@ -287,6 +287,32 @@
     }
   },
   {
+    "id": "c_6g9k4w6z",
+    "ja": "この棚は空だ。",
+    "en": "This shelf is empty.",
+    "alternatives": ["There's nothing on this shelf.", "This shelf has nothing on it."],
+    "point": "empty は物が置かれていない。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h5x6z5z",
+    "ja": "私が窓を閉めていい？",
+    "en": "May I close the window?",
+    "alternatives": ["Can I shut the window?", "Is closing the window okay?"],
+    "point": "May I で窓を閉める許可を求める。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6m6j2b7p",
     "ja": "卵が全然ないよ。",
     "en": "There are no eggs.",
@@ -859,6 +885,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9n9u8m6q",
+    "ja": "うちに石鹸が少しある。",
+    "en": "We have some soap.",
+    "alternatives": ["There's some soap at home.", "We have a little soap."],
+    "point": "soap は量として数えず some を付ける。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9p5s5q9g",

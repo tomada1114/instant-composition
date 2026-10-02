@@ -493,6 +493,22 @@
     }
   },
   {
+    "id": "c_7w8w4h4r",
+    "ja": "私は我々が直して当然と決めつける点を疑う。",
+    "en": "I question what we take for granted needs fixing.",
+    "alternatives": [
+      "I question which fixes we simply assume are necessary.",
+      "I'm questioning what we unquestioningly believe needs fixing."
+    ],
+    "point": "take for granted は根拠を問わず当然と考える。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7x4b3j2q",
     "ja": "いつ見てもらえる？",
     "en": "When can you review it?",
@@ -592,6 +608,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8t7c9k8a",
+    "ja": "私が嫌なのは対策に見せかけた忙しさだ。",
+    "en": "What bothers me is busyness masquerading as mitigation.",
+    "alternatives": [
+      "It's activity posing as mitigation that bothers me.",
+      "What troubles me is activity presented as a remedy."
+    ],
+    "point": "masquerading as は実態と違うものに見せかける。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8u3s5f5t",

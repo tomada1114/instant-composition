@@ -740,6 +740,19 @@
     }
   },
   {
+    "id": "c_8q4p4q4z",
+    "ja": "助言を一つください。",
+    "en": "Please give one suggestion.",
+    "alternatives": ["Please offer a suggestion.", "I'd like one suggestion."],
+    "point": "suggestion は一つ二つと数えられる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8q5z3k3w",
     "ja": "これは急ぎです。",
     "en": "This is urgent.",
@@ -776,6 +789,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a4m6k2k",
+    "ja": "この文面は前より丁寧。",
+    "en": "This wording is more polite.",
+    "alternatives": [
+      "This wording sounds more courteous.",
+      "This message is more polite."
+    ],
+    "point": "more polite で丁寧さを比較する。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9c7x7m2u",
@@ -836,6 +865,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9g7d8d4e",
+    "ja": "私は君に署名してほしい。",
+    "en": "I want you to sign.",
+    "alternatives": ["I'd like you to sign.", "I want your signature."],
+    "point": "want + 人 + to で署名してほしいと伝える。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9n6p9h8t",

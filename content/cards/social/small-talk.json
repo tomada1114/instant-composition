@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2e7e8v8d",
+    "ja": "町は工事で孤立してる。",
+    "en": "The town's isolated by roadwork.",
+    "alternatives": [
+      "Roadwork has left the town isolated.",
+      "The town has been isolated by construction."
+    ],
+    "point": "isolated は交通などを断たれて孤立した状態。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2k5s5d3f",
     "ja": "週末は、家でのんびりしてたよ。",
     "en": "I spent the weekend just lounging around.",
@@ -294,6 +310,22 @@
     }
   },
   {
+    "id": "c_4r8n4q5e",
+    "ja": "隣人は私に騒音を我慢してほしい。",
+    "en": "My neighbor wants me to tolerate the racket.",
+    "alternatives": [
+      "My neighbor wants me to endure the noise.",
+      "My neighbor wants me to bear the racket."
+    ],
+    "point": "racket は迷惑な大きな音。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4x3j3p7r",
     "ja": "今日、ちょっと蒸し暑くない？",
     "en": "Doesn't it feel a bit muggy today?",
@@ -400,6 +432,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5g4k7a8f",
+    "ja": "私は週末にくつろげばよかった。",
+    "en": "I wish I'd unwound this weekend.",
+    "alternatives": [
+      "I wish I'd relaxed this weekend.",
+      "If only I'd relaxed this weekend."
+    ],
+    "point": "unwind は緊張を解いてくつろぐ。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5h6n2h9m",

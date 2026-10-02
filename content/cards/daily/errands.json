@@ -448,6 +448,19 @@
     }
   },
   {
+    "id": "c_4v5c9y4m",
+    "ja": "ペンが二本ある。",
+    "en": "There are two pens.",
+    "alternatives": ["We have two pens.", "Two pens are here."],
+    "point": "two の後は pens と複数形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5a9p7a8p",
     "ja": "私は書類を揃えている。",
     "en": "I'm gathering the documents.",
@@ -660,6 +673,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7f2c6m9v",
+    "ja": "何時に閉まる？",
+    "en": "When does it close?",
+    "alternatives": ["What time does it close?", "When's closing time?"],
+    "point": "when で閉まる時刻を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7f4b2z3x",
@@ -948,6 +974,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f8f3h6x",
+    "ja": "この封筒を開けて。",
+    "en": "Open this envelope.",
+    "alternatives": ["Open up this envelope.", "Get this envelope open."],
+    "point": "open の命令形で封筒を開けるよう頼む。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9n2b4g2e",

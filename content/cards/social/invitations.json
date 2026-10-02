@@ -618,6 +618,22 @@
     }
   },
   {
+    "id": "c_6h3j3y8z",
+    "ja": "この招待は私に昔の複雑な感情を呼び起こす。",
+    "en": "This invitation carries emotional baggage for me.",
+    "alternatives": [
+      "This invitation comes with past emotional complications for me.",
+      "This invitation stirs complicated feelings from my past."
+    ],
+    "point": "baggage は過去の経験から引きずる感情で数えない。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6h6r5c7h",
     "ja": "私、車で送れるよ。",
     "en": "I can drive you there.",
@@ -704,6 +720,22 @@
     }
   },
   {
+    "id": "c_6s9x5w9b",
+    "ja": "私は彼が丁寧に断れないと感じてるか気になる。",
+    "en": "I wonder whether he feels he can't graciously decline.",
+    "alternatives": [
+      "I wonder if he feels unable to decline politely.",
+      "I'm wondering whether he feels he can't tactfully refuse."
+    ],
+    "point": "相手が感じている内容を whether の節の中に入れる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6x2k6u6v",
     "ja": "一番来てほしいのは、君なんだよ。",
     "en": "It's you I most want to come.",
@@ -724,6 +756,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6x2y8b5c",
+    "ja": "渋々受けた招待は今や私の義務だ。",
+    "en": "The invitation I grudgingly accepted now binds me.",
+    "alternatives": [
+      "The invitation I reluctantly accepted has become an obligation.",
+      "My reluctant acceptance has since become binding."
+    ],
+    "point": "binds me は承諾によって義務に縛られている含み。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6x5s9h9r",

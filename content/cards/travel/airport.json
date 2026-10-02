@@ -142,6 +142,22 @@
     }
   },
   {
+    "id": "c_3y2m3z8n",
+    "ja": "席が空いたら私は確保するよ。",
+    "en": "I'll book if seats open up.",
+    "alternatives": [
+      "I'll reserve a seat if one opens up.",
+      "I'll get a seat if one becomes available."
+    ],
+    "point": "opens up は空きができるという意味。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4b6b2y2f",
     "ja": "ベルトは外すべきですか？",
     "en": "Should I remove my belt?",
@@ -159,6 +175,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4b8s2e9s",
+    "ja": "我々が並んだ列は間違った列だ。",
+    "en": "The queue we joined was wrong.",
+    "alternatives": [
+      "We joined the wrong line.",
+      "The line we got into was incorrect."
+    ],
+    "point": "we joined がどの列かを説明する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4c7h4z4j",
@@ -932,6 +964,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9q6p4k7a",
+    "ja": "私は手荷物規則を明確にしたい。",
+    "en": "I want to clarify baggage restrictions.",
+    "alternatives": [
+      "I'd like to get the baggage rules clarified.",
+      "I want clear information on the baggage restrictions."
+    ],
+    "point": "clarify は曖昧な規則をはっきりさせる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9x3s4y8k",

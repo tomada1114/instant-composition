@@ -675,6 +675,22 @@
     }
   },
   {
+    "id": "c_7q2s3y3m",
+    "ja": "我々が警告に従ってたら余波を防げたのに。",
+    "en": "Had we heeded warnings, we'd have averted the fallout.",
+    "alternatives": [
+      "If we'd heeded warnings, we'd have prevented the fallout.",
+      "We'd have avoided the fallout had we listened to warnings."
+    ],
+    "point": "heed は警告を重く受け止めて従う。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7q7m9q2z",
     "ja": "エラー数が急増している。",
     "en": "There's a spike in errors.",
@@ -714,6 +730,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v4d9k9v",
+    "ja": "私は安全宣言を出すのは慎重にしたい。",
+    "en": "I'd be wary of declaring the coast clear.",
+    "alternatives": [
+      "I'd hesitate to announce that we're in the clear.",
+      "I'd be cautious about saying the danger has passed."
+    ],
+    "point": "the coast is clear は危険が去ったという宣言。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y8b9u3g",
+    "ja": "後で初めて我々は警告の重みを知った。",
+    "en": "Only in hindsight did we appreciate the warning.",
+    "alternatives": [
+      "We understood the warning's significance only in hindsight.",
+      "Only afterward did we grasp the warning's importance."
+    ],
+    "point": "only の句を先頭に出すと did が主語の前に来る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a4x9e5w",

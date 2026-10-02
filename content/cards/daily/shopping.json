@@ -414,6 +414,19 @@
     }
   },
   {
+    "id": "c_5g9r3z5q",
+    "ja": "君は何色を選んだ？",
+    "en": "Which color did you choose?",
+    "alternatives": ["What color did you pick?", "Which color was your choice?"],
+    "point": "which color で選んだ色を尋ねる。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5p5t8b8k",
     "ja": "私は代金を払ってる。",
     "en": "I'm paying now.",
@@ -682,6 +695,22 @@
     }
   },
   {
+    "id": "c_7u2q6n7a",
+    "ja": "この服は値下げされた。",
+    "en": "This clothing was discounted.",
+    "alternatives": [
+      "This clothing was marked down.",
+      "This clothing's price was reduced."
+    ],
+    "point": "was discounted は値引きされた受動態。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8a9m5c8s",
     "ja": "手数料を免除してもらえる？",
     "en": "Could you waive handling fees?",
@@ -869,6 +898,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p9a2k6r",
+    "ja": "私は君に選んでほしい。",
+    "en": "I want you to choose.",
+    "alternatives": ["I'd like you to pick.", "I want you making the choice."],
+    "point": "want + 人 + to で選択を頼む。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9r7c4f4x",

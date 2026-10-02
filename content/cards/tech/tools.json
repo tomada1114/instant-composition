@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_2f9y6n9s",
+    "ja": "私は自動保存が好き。",
+    "en": "I like saving automatically.",
+    "alternatives": [
+      "I like automatic saving.",
+      "I prefer files saving automatically."
+    ],
+    "point": "like の後の動作は saving のように動名詞。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2g9t8g9r",
     "ja": "Gitが私に面倒な手順を強いる。",
     "en": "Git makes me jump through hoops.",
@@ -80,6 +96,35 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_2n9p4f3k",
+    "ja": "私はどのキーを押す？",
+    "en": "Which key do I press?",
+    "alternatives": ["Which key should I press?", "What key do I press?"],
+    "point": "which key で押すキーを尋ねる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_2w7b6g6n",
+    "ja": "必要なら私は入れるよ。",
+    "en": "I'll install it when needed.",
+    "alternatives": [
+      "I'll install it if it's necessary.",
+      "I'll put it in when needed."
+    ],
+    "point": "when の節で必要になる時を表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3a7n4b5f",
@@ -526,6 +571,22 @@
     }
   },
   {
+    "id": "c_6j2d9d3k",
+    "ja": "一時的な回避策がある。",
+    "en": "There's a temporary workaround.",
+    "alternatives": [
+      "We have a temporary way around it.",
+      "A temporary workaround is available."
+    ],
+    "point": "workaround は根本修正までの回避策。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6p9m3e7u",
     "ja": "私はずっと設定をいじってる。",
     "en": "I've been fiddling with the configuration.",
@@ -674,6 +735,19 @@
     }
   },
   {
+    "id": "c_8c6a6v7w",
+    "ja": "設定が三つある。",
+    "en": "There are three settings.",
+    "alternatives": ["We have three settings.", "Three settings are available."],
+    "point": "three の後は settings と複数形。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8f6m5r6w",
     "ja": "バグを一つ見つけたよ。",
     "en": "I found a bug.",
@@ -691,6 +765,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8r4t7v3n",
+    "ja": "ツールは既に自動停止してた。",
+    "en": "The tool had already shut down.",
+    "alternatives": [
+      "The tool had already stopped running.",
+      "The tool had already switched itself off."
+    ],
+    "point": "shut down はツールが動作を停止する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8r7x6t8j",
@@ -735,6 +825,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8u9j2b3n",
+    "ja": "文字を大きくして。",
+    "en": "Make the text bigger.",
+    "alternatives": ["Enlarge the text.", "Increase the text size."],
+    "point": "make + 物 + bigger で表示を大きくする。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8v7x9p5y",
@@ -892,6 +995,19 @@
     }
   },
   {
+    "id": "c_9g8b5b5s",
+    "ja": "メニューがない。",
+    "en": "There are no menus.",
+    "alternatives": ["No menus are available.", "We have no menus."],
+    "point": "there are no で複数の物がないことを伝える。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9j3d8v7c",
     "ja": "彼がツールの拒否理由を知るか疑問。",
     "en": "I doubt he knows why it balked.",
@@ -953,5 +1069,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s6w3g6e",
+    "ja": "私は古い設定を移した。",
+    "en": "I migrated the old settings.",
+    "alternatives": [
+      "I transferred the old configuration.",
+      "I moved the old settings over."
+    ],
+    "point": "migrate は設定などを別の環境へ移す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

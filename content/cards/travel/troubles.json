@@ -497,6 +497,32 @@
     }
   },
   {
+    "id": "c_5c2a8j8w",
+    "ja": "私は助けを待ってる。",
+    "en": "I'm waiting for help.",
+    "alternatives": ["I'm awaiting help.", "I'm waiting for assistance."],
+    "point": "am waiting で助けを待っている最中と伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d5v8z5x",
+    "ja": "ここで止まって。",
+    "en": "Stop here, please.",
+    "alternatives": ["Please stop right here.", "Please stop at this spot."],
+    "point": "stop here でその場で止まるよう頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5d9a9y5j",
     "ja": "確認メールが、まだ届いてません。",
     "en": "My confirmation email hasn't arrived yet.",
@@ -602,6 +628,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6u8b4g6c",
+    "ja": "私は歩けない。",
+    "en": "I can't walk.",
+    "alternatives": ["I'm unable to walk.", "Walking isn't possible for me."],
+    "point": "cannot walk で歩くことができないと伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6y5r8r6s",
