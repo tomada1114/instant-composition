@@ -46,7 +46,12 @@ export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactEleme
           onStart={actions.start}
         />
       ) : (
-        <TalkScreen talk={talk} actions={actions} onClose={leave.ask} />
+        <TalkScreen
+          talk={talk}
+          actions={actions}
+          onClose={leave.ask}
+          paused={leave.asking !== undefined}
+        />
       )}
       {leave.asking !== undefined && talk !== undefined ? (
         <TalkLeaveDialog turns={keptTurns(talk)} onLeave={end} onStay={leave.stay} />
