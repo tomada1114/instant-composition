@@ -253,6 +253,22 @@
     }
   },
   {
+    "id": "c_4j4a5w7e",
+    "ja": "この障害の引き金は分かる？",
+    "en": "Any idea what triggered this outage?",
+    "alternatives": [
+      "Do you know what caused this outage?",
+      "Any idea what set this outage off?"
+    ],
+    "point": "what triggered は疑問文の語順にしない。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4j9z2s8d",
     "ja": "チームに状況を伝えて。",
     "en": "Update the team.",
@@ -336,6 +352,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4x4q9g9g",
+    "ja": "私はもう原因を特定した。",
+    "en": "I've already isolated the cause.",
+    "alternatives": [
+      "I've already identified the cause.",
+      "I've already tracked down the cause."
+    ],
+    "point": "isolate the cause は原因を他の要因から切り分ける。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5b4c6n4y",
@@ -693,6 +725,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8p2n5w7n",
+    "ja": "私たちは被害を抑えなきゃ。",
+    "en": "We need to contain the damage.",
+    "alternatives": [
+      "We have to limit the damage.",
+      "We need to keep the damage contained."
+    ],
+    "point": "contain は被害が広がるのを抑える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8q5q8s6u",

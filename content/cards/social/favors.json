@@ -208,6 +208,22 @@
     }
   },
   {
+    "id": "c_3k4m3j3y",
+    "ja": "君が頼む前に私は無理してた。",
+    "en": "I'd overextended myself before you asked.",
+    "alternatives": [
+      "I'd already overextended myself when asked.",
+      "I'd already overdone things when you asked."
+    ],
+    "point": "overextend myself は自分の余力を超えて引き受ける。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3r9t8j7k",
     "ja": "頼む相手は、彼女が知ってるかも。",
     "en": "She might know who I should ask.",
@@ -548,6 +564,22 @@
     }
   },
   {
+    "id": "c_5x6m9c5t",
+    "ja": "私はずっと頼みをさばいてる。",
+    "en": "I've been fielding requests.",
+    "alternatives": [
+      "I've been dealing with requests.",
+      "I've been handling people's requests."
+    ],
+    "point": "field requests は寄せられる頼みに対応する。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5x6r9w9x",
     "ja": "充電器ってある？",
     "en": "Is there a charger?",
@@ -786,6 +818,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7x8z2d4r",
+    "ja": "あの子守の頼みは負担が重い。",
+    "en": "That request for babysitting feels onerous.",
+    "alternatives": [
+      "That babysitting request feels burdensome.",
+      "The babysitting request seems a heavy burden."
+    ],
+    "point": "for babysitting は request の説明、onerous は負担が重い。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8d4x3z2v",

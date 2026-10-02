@@ -1,5 +1,31 @@
 [
   {
+    "id": "c_2f3t7g5q",
+    "ja": "空席があるよ。",
+    "en": "There's an empty seat.",
+    "alternatives": ["One seat is free.", "A seat is available."],
+    "point": "an empty seat は空いている席。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_2h3v2r5e",
+    "ja": "追加の運賃がかかる。",
+    "en": "There's an extra fare.",
+    "alternatives": ["There is an additional charge.", "An extra fare applies."],
+    "point": "an extra fare は追加の運賃。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2n4h3y9f",
     "ja": "私がタクシーを呼ぶよ。",
     "en": "I'll call a taxi.",
@@ -102,6 +128,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3s3f8n8q",
+    "ja": "席にいてね。",
+    "en": "Stay in your seat.",
+    "alternatives": ["Remain in your seat.", "Don't leave your seat."],
+    "point": "stay はその場所にとどまる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4d4d7u2a",
@@ -228,6 +267,19 @@
     }
   },
   {
+    "id": "c_5n9b8r6q",
+    "ja": "運転手に待つよう頼んで。",
+    "en": "Ask them to wait.",
+    "alternatives": ["Request that the driver wait.", "Request that they wait."],
+    "point": "ask 人 to do は人に行動を頼む。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5q3q2a6s",
     "ja": "これは京都に行きますか？",
     "en": "Does this go to Kyoto?",
@@ -327,6 +379,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6a6b9x8x",
+    "ja": "私は時刻表の絶対性をもう信じない。",
+    "en": "I've been disabused of the timetable's infallibility.",
+    "alternatives": [
+      "I've learned that the timetable isn't infallible.",
+      "I've lost my faith in the timetable's absolute reliability."
+    ],
+    "point": "be disabused of は思い違いを正される、infallibility は誤らないこと。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6b8m2k8k",
@@ -432,6 +500,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6x5n4d4e",
+    "ja": "私が迷ってたら今も路線を検討中だ。",
+    "en": "Had I vacillated, I'd still be weighing train routes.",
+    "alternatives": [
+      "If I'd wavered, I'd still be considering rail routes.",
+      "I'd still be deciding on train routes if I'd hesitated."
+    ],
+    "point": "過去の仮定で今の迷いを表す、vacillate は決めかねる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6y4c9d7y",
@@ -626,6 +710,19 @@
     }
   },
   {
+    "id": "c_8x3u4t6n",
+    "ja": "切符はすぐ出せるように。",
+    "en": "Keep your ticket handy.",
+    "alternatives": ["Have your ticket ready.", "Keep your ticket within reach."],
+    "point": "handy はすぐ使える場所にある。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8x7n5n6u",
     "ja": "電車が来ています。",
     "en": "The train is coming.",
@@ -734,6 +831,19 @@
     }
   },
   {
+    "id": "c_9u9k6g2c",
+    "ja": "バスが動いてる。",
+    "en": "The bus is moving.",
+    "alternatives": ["The bus is in motion.", "The bus isn't standing still."],
+    "point": "進行形でバスが今動いていると伝える。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9v5k3a8y",
     "ja": "運転手に待ってもらった。",
     "en": "I got the driver to wait.",
@@ -751,5 +861,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y4k3a7v",
+    "ja": "車掌は推測を確かな案内と偽った。",
+    "en": "The conductor palmed off conjecture as authoritative guidance.",
+    "alternatives": [
+      "The conductor disguised conjecture as reliable travel guidance.",
+      "The conductor passed off guesses as trustworthy guidance."
+    ],
+    "point": "palm off は偽って渡す、conjecture は推測、authoritative は信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

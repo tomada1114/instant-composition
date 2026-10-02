@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2s2t9t9z",
+    "ja": "この案の方が明確だ。",
+    "en": "This plan is clearer.",
+    "alternatives": [
+      "This plan is easier to understand.",
+      "This plan is less confusing."
+    ],
+    "point": "clearer は前の案などより分かりやすい。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2w3u5x6a",
     "ja": "質問していいですか？",
     "en": "May I ask a question?",
@@ -449,6 +465,19 @@
     }
   },
   {
+    "id": "c_7h6n8z2r",
+    "ja": "会議は短くしてね。",
+    "en": "Keep the meeting short.",
+    "alternatives": ["Make the meeting brief.", "Keep the meeting brief."],
+    "point": "keep 人や物 形容詞でその状態に保つ。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7j3k3x7m",
     "ja": "私は開始前に資料を送っていた。",
     "en": "I'd sent the slides beforehand.",
@@ -639,6 +668,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8x5k7z2f",
+    "ja": "私たちいつ会った？",
+    "en": "When did we meet?",
+    "alternatives": ["When was our meeting?", "When did we get together?"],
+    "point": "過去の時点を尋ねるときは did we meet。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9d5j3y7d",

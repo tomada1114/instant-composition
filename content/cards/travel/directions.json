@@ -146,6 +146,19 @@
     }
   },
   {
+    "id": "c_2t6u4b7z",
+    "ja": "私は北に向かってる。",
+    "en": "I'm going north.",
+    "alternatives": ["I'm heading north.", "I'm traveling northward."],
+    "point": "north は北へという方向。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2y7x7h2y",
     "ja": "北へ進めば、目と鼻の先ですよ。",
     "en": "Heading north, you'll be a stone's throw away.",
@@ -408,6 +421,19 @@
     }
   },
   {
+    "id": "c_4q4y3g5j",
+    "ja": "私、左に曲がるよ。",
+    "en": "I'll turn left.",
+    "alternatives": ["I'm going to turn left.", "I'll make a left turn."],
+    "point": "will でこれから曲がる向きを伝える。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4s3q2v7g",
     "ja": "人が戸惑うのは道の急な曲がりだ。",
     "en": "It's the dogleg that throws people.",
@@ -450,6 +476,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4x5a7h8z",
+    "ja": "道案内お願いできる？",
+    "en": "Could you guide me?",
+    "alternatives": ["Could you direct me?", "Could you point the way?"],
+    "point": "Could you は道案内を頼む柔らかい言い方。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4y8q4c8s",

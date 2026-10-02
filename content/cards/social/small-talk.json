@@ -919,6 +919,35 @@
     }
   },
   {
+    "id": "c_9r8x8t8m",
+    "ja": "近くの人に見覚えがある。",
+    "en": "Someone nearby seems familiar.",
+    "alternatives": [
+      "Someone close by looks familiar.",
+      "A nearby person seems familiar."
+    ],
+    "point": "nearby で someone を後ろから説明する。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9u7y6h5z",
+    "ja": "君、ラッシュは避けるべき。",
+    "en": "You should avoid rush hour.",
+    "alternatives": ["You ought to avoid rush hour.", "It's best to avoid rush hour."],
+    "point": "rush hour は通勤などで混雑する時間帯。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9v6f5d8j",
     "ja": "傘なしで、きっとびしょ濡れだったね。",
     "en": "You must have gotten soaked without an umbrella.",
@@ -939,5 +968,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y3f6r6s",
+    "ja": "私はずっと日差しが恋しい。",
+    "en": "I've been craving sunshine.",
+    "alternatives": [
+      "I've been longing for sunshine.",
+      "I've been wishing for some sunshine."
+    ],
+    "point": "have been craving はずっと欲しい気持ちが続いている。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

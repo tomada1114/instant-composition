@@ -407,6 +407,22 @@
     }
   },
   {
+    "id": "c_5p7u5d5b",
+    "ja": "この仕事の方が要求は厳しい。",
+    "en": "This task is more exacting.",
+    "alternatives": [
+      "This task demands more of you.",
+      "This assignment is more demanding."
+    ],
+    "point": "exacting は高い水準を要求する。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5s9q8a5g",
     "ja": "報告書が昼までに必要です。",
     "en": "The report is needed by noon.",
@@ -784,6 +800,22 @@
     }
   },
   {
+    "id": "c_8k6q2k5q",
+    "ja": "承認を早める人、君は分かる？",
+    "en": "Any idea who could fast-track approval?",
+    "alternatives": [
+      "Do you know who could accelerate approval?",
+      "Do you know who can expedite approval?"
+    ],
+    "point": "fast-track は通常より迅速に進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8m4g6w6g",
     "ja": "助けが必要です。",
     "en": "I need some help.",
@@ -949,5 +981,18 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9z7k8s8b",
+    "ja": "君を待つ仕事はかなりきつい。",
+    "en": "Work awaiting you is grueling.",
+    "alternatives": ["The work ahead of you is exhausting.", "You face grueling work."],
+    "point": "awaiting you は後ろからの説明、grueling は非常にきつい。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

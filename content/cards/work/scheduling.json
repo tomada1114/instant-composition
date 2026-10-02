@@ -38,6 +38,19 @@
     }
   },
   {
+    "id": "c_3r4s3q3m",
+    "ja": "私は早く来るべき。",
+    "en": "I should come earlier.",
+    "alternatives": ["I ought to come earlier.", "I should arrive sooner."],
+    "point": "earlier は予定などより早い時間に。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3r8v8f5k",
     "ja": "会議は何時ですか？",
     "en": "What time's the meeting?",
@@ -188,6 +201,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4j7b3c9e",
+    "ja": "私、早く帰っていい？",
+    "en": "Can I leave early?",
+    "alternatives": ["Is leaving early okay?", "Could I go home early?"],
+    "point": "Can I は早く帰る許可を求める。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4p9q6r4c",
@@ -421,6 +447,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6y3b2p9d",
+    "ja": "私は火曜に決めた。",
+    "en": "I chose Tuesday.",
+    "alternatives": ["I picked Tuesday.", "Tuesday was my choice."],
+    "point": "chose は choose の過去形。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6y4d7x9c",

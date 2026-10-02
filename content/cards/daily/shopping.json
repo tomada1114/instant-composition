@@ -420,6 +420,35 @@
     }
   },
   {
+    "id": "c_6r7e6m2t",
+    "ja": "お得な話はもう消えていた。",
+    "en": "The bargain had already evaporated.",
+    "alternatives": ["The deal had already vanished.", "The offer was already gone."],
+    "point": "evaporate は比喩的に消えてなくなること。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t5q7d4p",
+    "ja": "値引きなら私たちは奮発する。",
+    "en": "We'll splurge if it's discounted.",
+    "alternatives": [
+      "If it's discounted, we'll spend lavishly.",
+      "If it's marked down, we'll splurge."
+    ],
+    "point": "splurge はぜいたくにお金を使う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6v5y9u7v",
     "ja": "これ、試してもいい？",
     "en": "Can I try this?",
@@ -522,6 +551,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8a9m5c8s",
+    "ja": "手数料を免除してもらえる？",
+    "en": "Could you waive handling fees?",
+    "alternatives": [
+      "Could you exempt me from handling fees?",
+      "Could you remove the handling charges?"
+    ],
+    "point": "waive a fee は支払う義務を免除する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8d4h6d4q",

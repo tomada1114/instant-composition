@@ -82,6 +82,19 @@
     }
   },
   {
+    "id": "c_2m6g7f7p",
+    "ja": "なぜこの名前変える？",
+    "en": "Why change this name?",
+    "alternatives": ["Why alter this name?", "Why use a different name?"],
+    "point": "Why と動詞の原形で変更の理由を尋ねる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2p5t9w4m",
     "ja": "今日中に直せる？",
     "en": "Can you fix this today?",
@@ -375,6 +388,19 @@
     }
   },
   {
+    "id": "c_4z6x7t7p",
+    "ja": "私、名前を確認中。",
+    "en": "I'm checking names.",
+    "alternatives": ["I'm reviewing the names.", "I'm looking over names."],
+    "point": "進行形で今名前を確認していると伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5d7n8g4f",
     "ja": "この関数は他でも使われる。",
     "en": "This function is used elsewhere.",
@@ -546,6 +572,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6v9w2u8n",
+    "ja": "変更点を見せて。",
+    "en": "Show your changes.",
+    "alternatives": ["Show what you changed.", "Let me see your changes."],
+    "point": "changes は変えた箇所。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7p9g2z9w",
