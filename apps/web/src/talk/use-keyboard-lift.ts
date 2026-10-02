@@ -43,7 +43,10 @@ export function useKeyboardLift(
         element !== null &&
         focused instanceof HTMLTextAreaElement &&
         element.contains(focused);
-      const covered = window.innerHeight - visual.height > KEYBOARD_MIN_HEIGHT;
+      // iOS Safari's `innerHeight` follows the visual viewport, so the layout
+      // viewport is read from the root's `clientHeight`, which no keyboard moves.
+      const covered =
+        document.documentElement.clientHeight - visual.height > KEYBOARD_MIN_HEIGHT;
       return field && covered ? element : undefined;
     }
 

@@ -4,11 +4,15 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vite
 import { fakeTimers, ja, navigations, renderApp, settle, warmUp } from "./web-harness";
 import { begin, press, serveTalk, write } from "./web-talk-harness";
 
-// The talk screen under an on-screen keyboard. jsdom has no `visualViewport`,
-// so each test stands one in: a layout viewport 844 tall, and a visual one
-// the keyboard shortens and iOS pans, as Safari reports them.
+// The talk screen under an on-screen keyboard. jsdom has no `visualViewport`
+// and lays nothing out, so each test stands both viewports in: the layout
+// one as the root's `clientHeight`, 844 tall, and a visual one the keyboard
+// shortens and iOS pans — with `innerHeight` following the visual one, as
+// iOS Safari reports it.
 
 const LAYOUT_HEIGHT = 844;
+
+let layoutHeight = LAYOUT_HEIGHT;
 
 class StubViewport extends EventTarget {
   height = LAYOUT_HEIGHT;
@@ -18,6 +22,7 @@ class StubViewport extends EventTarget {
   move(height: number, offsetTop: number, type: "resize" | "scroll" = "resize"): void {
     this.height = height;
     this.offsetTop = offsetTop;
+    vi.stubGlobal("innerHeight", height);
     act(() => {
       this.dispatchEvent(new Event(type));
     });
@@ -25,6 +30,12 @@ class StubViewport extends EventTarget {
 }
 
 let viewport: StubViewport;
+
+/** Resizes the layout viewport and the visual one together, as a desktop or Android does. */
+function resizeLayout(height: number): void {
+  layoutHeight = height;
+  viewport.move(height, 0);
+}
 
 function field(name: string): HTMLElement {
   return screen.getByRole("textbox", { name });
@@ -53,14 +64,20 @@ beforeAll(warmUp);
 beforeEach(() => {
   fakeTimers();
   viewport = new StubViewport();
+  layoutHeight = LAYOUT_HEIGHT;
   vi.stubGlobal("visualViewport", viewport);
   vi.stubGlobal("innerHeight", LAYOUT_HEIGHT);
+  Object.defineProperty(document.documentElement, "clientHeight", {
+    configurable: true,
+    get: () => layoutHeight,
+  });
 });
 
 afterEach(() => {
   act(() => {
     window.history.replaceState(null, "", "/");
   });
+  Reflect.deleteProperty(document.documentElement, "clientHeight");
 });
 
 describe("the talk screen under an iOS keyboard", () => {
@@ -147,13 +164,14 @@ describe("the talk screen where the layout resizes for the keyboard", () => {
   it("keeps the tab bar and its own height while a field has focus, as on a desktop or Android", async () => {
     await atW3a();
 
-    viewport.move(LAYOUT_HEIGHT, 0);
+    resizeLayout(420);
     expect(navigations()).toHaveLength(1);
     expect(visible()).toStrictEqual(["", ""]);
   });
 
   it("lets a button take the press as it always has", async () => {
     await atW3a();
+    resizeLayout(420);
     write(ja.Talk.step.japanese, "最近仕事が詰まってて");
 
     const pressed = fireEvent.mouseDown(

@@ -88,7 +88,7 @@ counting up never shifts a digit.
 | `front`      | sans    | 28   | 1.55        | 0.01em   | 700    | The Japanese prompt on a card's front                  |
 | `front-long` | sans    | 23   | 1.55        | 0.01em   | 700    | The same prompt past 36 characters                     |
 | `answer`     | latin   | 26   | 1.25        | -0.02em  | 600    | The model answer                                       |
-| `alt`        | latin   | 16   | 1.45        | 0        | 400    | Alternate answers                                      |
+| `alt`        | latin   | 16   | 1.45        | 0        | 400    | Alternate answers; the talk's `answer-field`, in sans  |
 | `figure-sm`  | display | 22   | 1.0         | -0.02em  | 600    | Seconds left, seconds to flip, tile figures, the combo |
 | `number-md`  | display | 44   | 1.0         | -0.03em  | 600    | Today's size, a portion's progress, growth counts      |
 | `number-lg`  | display | 72   | 0.9         | -0.04em  | 600    | The streak on the summary                              |

@@ -152,13 +152,13 @@ Built for the talk screen (`building-the-talk-activity`'s `ux-screens.md`), from
 tokens the drill already uses.
 
 - **`answer-field`.** A `textarea` with no border and no fill: one
-  `border-b border-border` underline that turns `border-foreground` on focus,
-  `text-body` on the canvas, its placeholder `text-muted-foreground`. It starts one line
-  tall (at least the 44 touch height) and grows with its text. It takes at most 300
-  characters — input stops there — with spell checking, auto-correct and
-  auto-capitalising off. Enter sends and never breaks the line; the Enter that confirms
-  an input method's conversion (`isComposing`, or `keyCode` 229 on Safari) does not
-  send. Named by its step's label.
+  `border-b border-border` underline that turns `border-foreground` on focus, `text-alt`
+  (16, never smaller: the behavior reference) on the canvas, its placeholder
+  `text-muted-foreground`. It starts one line tall (at least the 44 touch height) and
+  grows with its text. It takes at most 300 characters — input stops there — with spell
+  checking, auto-correct and auto-capitalising off. Enter sends and never breaks the
+  line; the Enter that confirms an input method's conversion (`isComposing`, or
+  `keyCode` 229 on Safari) does not send. Named by its step's label.
 - **`talk-line`.** One turn: the speaker's `eyebrow` over the body in `text-body`. No
   frame, no bubble, no fill; lines in the list are parted by a hairline
   (`border-t border-border`, none above the first) with 12 above and below. The current
