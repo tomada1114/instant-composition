@@ -1,6 +1,7 @@
 import type { Entry, Profile } from "@instant-composition/application";
 import type {
   DayTally,
+  FsrsState,
   ItemProgress,
   LearnerStats,
   Portion,
@@ -62,7 +63,17 @@ export function makeRound(overrides: Partial<Round> = {}): Round {
   };
 }
 
-/** A first-pass `ok` review of `c1` in round `r1`, overridable field by field. */
+/** The FSRS state a new card's first answer, graded good on 2026-09-22, leaves. */
+export const FIRST_GOOD: FsrsState = {
+  stability: 2.3065,
+  difficulty: 2.118,
+  reps: 1,
+  lapses: 0,
+  lastDay: "2026-09-22",
+  dueDay: "2026-09-25",
+};
+
+/** A first-pass review of new card `c1` in round `r1`, graded good, overridable field by field. */
 export function makeReview(overrides: Partial<ReviewEntry> = {}): ReviewEntry {
   return {
     id: "a1",
@@ -72,7 +83,39 @@ export function makeReview(overrides: Partial<ReviewEntry> = {}): ReviewEntry {
     day: "2026-09-22",
     outcome: "good",
     before: null,
-    after: { box: 1, dueDay: "2026-09-24", lastDay: "2026-09-22", seenCount: 1 },
+    after: null,
+    fsrs: { before: null, after: FIRST_GOOD },
+    snapshot: {
+      topic: "work",
+      subtopic: "meetings",
+      level: 5,
+      prompt: "会議を始めましょう。",
+    },
+    detail: {
+      activity: "composition",
+      pass: "first",
+      result: "ok",
+      grade: "good",
+      timedOut: false,
+      elapsedMs: 8_000,
+      limitMs: 10_000,
+      paceMs: 10_000,
+    },
+    ...overrides,
+  };
+}
+
+/** A first-pass `ok` review logged under Leitner, before three grades, as stored then. */
+export function makeLeitnerReview(overrides: Partial<ReviewEntry> = {}): ReviewEntry {
+  return {
+    id: "a0",
+    item: { kind: "composition", id: "c1" },
+    sessionId: "r0",
+    answeredAt: 1_000,
+    day: "2026-09-20",
+    outcome: "good",
+    before: null,
+    after: { box: 1, dueDay: "2026-09-22", lastDay: "2026-09-20", seenCount: 1 },
     snapshot: {
       topic: "work",
       subtopic: "meetings",
@@ -114,10 +157,11 @@ export function makeDay(overrides: Partial<DayTally> = {}): DayTally {
   };
 }
 
+/** Progress on `c1`, first answered on 2026-09-22 and graded good, overridable field by field. */
 export function makeItem(overrides: Partial<ItemProgress> = {}): ItemProgress {
   return {
     item: { kind: "composition", id: "c1" },
-    memory: { box: 1, dueDay: "2026-09-24", lastDay: "2026-09-22", seenCount: 1 },
+    fsrs: FIRST_GOOD,
     okDays: ["2026-09-22"],
     mastered: null,
     placement: { topic: "work", subtopic: "meetings" },

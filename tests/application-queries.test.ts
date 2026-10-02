@@ -16,6 +16,7 @@ import {
   type LearnerStores,
   type RequestContext,
 } from "@instant-composition/application";
+import type { SettingsPatch } from "@instant-composition/domain";
 
 import {
   answersFor,
@@ -42,10 +43,10 @@ async function started(
 /** A placement of ten answers on the first day, all said unless `missed`. */
 async function placed(
   h: Harness,
-  dailySize: 10 | 30 = 10,
+  limits: Pick<SettingsPatch, "newPerDay" | "reviewsPerDay"> = {},
   missed = false,
 ): Promise<void> {
-  await updateSettings(h.deps, h.context(), { topics: ["work", "travel"], dailySize });
+  await updateSettings(h.deps, h.context(), { topics: ["work", "travel"], ...limits });
   const round = await started(h, "placement", "p0", NOON);
   const finished = await finishRound(h.deps, h.context(), {
     roundId: round.id,
@@ -54,9 +55,12 @@ async function placed(
   if (!finished.ok) throw new Error(finished.error.code);
 }
 
-/** The placement, then a day's portion of thirty, missed and retried unless `said`, on each of `days` days. */
+/**
+ * The placement, then a day's portion under limits of fifteen new cards and
+ * thirty reviews, missed and re-asked unless `said`, on each of `days` days.
+ */
 async function practiced(h: Harness, days: number, said = false): Promise<number> {
-  await placed(h, 30);
+  await placed(h, { newPerDay: 15, reviewsPerDay: 30 });
   let now = NOON;
   for (let day = 1; day <= days; day += 1) {
     now = NOON + day * DAY_MS;
@@ -155,11 +159,14 @@ describe("home", () => {
     const ready = await home(h.deps, h.context(tomorrow));
     const today = await home(h.deps, h.context());
 
+    // Nothing placed yesterday is due yet, so today is the five new cards the limit allows.
     expect(ready.ok && ready.value.preview).toMatchObject({
-      size: 10,
-      setting: 10,
+      size: 5,
+      setting: 5,
       shortage: false,
-      minutes: 5,
+      reviewCount: 0,
+      newCount: 5,
+      minutes: 3,
     });
     expect(ready.ok && ready.value.week.map((dot) => dot.state)).toContain("done");
     expect(today.ok && today.value).toMatchObject({
@@ -184,12 +191,12 @@ describe("home", () => {
 
     const view = await home(h.deps, h.context(NOON + DAY_MS));
 
-    expect(view.ok && view.value.preview).toMatchObject({ size: 10, minutes: 10 });
+    expect(view.ok && view.value.preview).toMatchObject({ size: 5, minutes: 5 });
   });
 
   it("names the weak grammar today's deal carries, and none after a clean record", async () => {
     const missed = makeHarness();
-    await placed(missed, 10, true);
+    await placed(missed, {}, true);
     const clean = makeHarness();
     await placed(clean);
 
@@ -230,7 +237,7 @@ describe("home", () => {
     expect(view.ok && view.value.state).toMatchObject({
       kind: "in-progress",
       progress: 3,
-      target: 10,
+      target: 5,
       resumeKind: "today",
     });
   });
@@ -240,7 +247,8 @@ describe("home", () => {
     await placed(h);
     const view = await home(h.deps, h.context(NOON + 2 * DAY_MS));
     expect(view.ok && view.value.state.kind).toBe("recover-offer");
-    expect(view.ok && view.value.preview?.minutes).toBe(10);
+    // Two portions of five cards at 30 seconds each.
+    expect(view.ok && view.value.preview?.minutes).toBe(5);
   });
 
   it("still draws the screen when the catalog cannot be read", async () => {
@@ -443,7 +451,7 @@ describe("records", () => {
     "counts $pending cards one day away from reach after a placement (missed: $missed)",
     async ({ missed, pending }) => {
       const h = makeHarness();
-      await placed(h, 10, missed);
+      await placed(h, {}, missed);
       const view = await records(h.deps, h.context());
       const summary = await roundSummary(h.deps, h.context(), "p0");
 
@@ -477,7 +485,7 @@ describe("records", () => {
 describe("records' weak points", () => {
   it("names the weak grammar and subtopics, weakest first, and nothing after a clean record", async () => {
     const missed = makeHarness();
-    await placed(missed, 10, true);
+    await placed(missed, {}, true);
     const clean = makeHarness();
     await placed(clean);
 
@@ -497,7 +505,7 @@ describe("records' weak points", () => {
 
   it("falls back to a concept's id when the catalog gives it no name", async () => {
     const h = makeHarness(fixedCatalog({ ...makeSnapshot(), conceptNames: new Map() }));
-    await placed(h, 10, true);
+    await placed(h, {}, true);
 
     const view = await records(h.deps, h.context());
 

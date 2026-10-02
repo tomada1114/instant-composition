@@ -1,40 +1,35 @@
-import { compose, countAvailable, type Composition } from "./compose";
+import { compose, composeExtra, countAvailable, type Composition } from "./compose";
+import type { DrillQueueInput } from "./drill-queue";
 import type { PracticeError } from "./errors";
 import type { ItemProgress, LearnerStats, Round } from "./records";
 import { err, ok, type Result } from "./result";
 import { TUNING } from "./tuning";
 import type {
   CardMeta,
-  CardState,
-  ConceptId,
-  DailySize,
   DayKey,
+  DrillNewPerDay,
+  DrillReviewsPerDay,
   LimitSeconds,
   RoundKind,
   Settings,
-  SubtopicRef,
 } from "./types";
-import { limitSecondsOf } from "./settings";
+import { drillLimitsOf, limitSecondsOf } from "./settings";
 import { weaknesses } from "./weakness";
 
 /** What dealing a deck reads, taken once per command or query. */
-export interface PracticeState {
-  readonly today: DayKey;
-  readonly level: number;
-  readonly topics: readonly string[];
-  readonly focus: readonly SubtopicRef[];
-  readonly dailySize: DailySize;
+export interface PracticeState extends DrillQueueInput {
+  readonly newPerDay: DrillNewPerDay;
+  readonly reviewsPerDay: DrillReviewsPerDay;
   /** The per-card limit a round dealt now records. */
   readonly limitSeconds: LimitSeconds;
-  /** The weakest grammar concepts, weakest first: what the weak share draws from. */
-  readonly weakConcepts: readonly ConceptId[];
-  /** Only the cards a round may deal. */
-  readonly cards: readonly CardMeta[];
-  readonly states: ReadonlyMap<string, CardState>;
-  /** Cards already given a first-pass answer today: never dealt twice in a day. */
-  readonly answeredToday: ReadonlySet<string>;
 }
 
+/**
+ * The dealing state for `today`. An item whose state, FSRS or else Leitner,
+ * was last moved today was answered today; one moved then for the first time,
+ * with no Leitner history, was new, and any other counts against the review
+ * limit.
+ */
 export function practiceState(input: {
   readonly today: DayKey;
   readonly stats: LearnerStats;
@@ -44,34 +39,45 @@ export function practiceState(input: {
 }): PracticeState {
   const items = [...input.items.values()];
   const shown = new Map(input.cards.map((card) => [card.id, card]));
+  const { newPerDay, reviewsPerDay } = drillLimitsOf(input.settings);
+  const answered = items.filter(
+    (progress) => (progress.fsrs?.lastDay ?? progress.memory?.lastDay) === input.today,
+  );
+  const newAnswered = answered.filter(
+    (progress) => progress.memory === undefined && progress.fsrs?.reps === 1,
+  ).length;
   return {
     today: input.today,
     level: input.stats.level?.level ?? 1,
     topics: input.settings?.topics ?? [],
     focus: input.settings?.focus ?? [],
-    dailySize: input.settings?.dailySize ?? TUNING.defaultDailySize,
+    newPerDay,
+    reviewsPerDay,
     limitSeconds: limitSecondsOf(input.settings),
     weakConcepts: weaknesses({ items, shown }).grammar.map((weak) => weak.concept),
     cards: input.cards,
-    states: new Map(items.map((progress) => [progress.item.id, progress.memory])),
-    answeredToday: new Set(
-      items
-        .filter((progress) => progress.memory.lastDay === input.today)
-        .map((progress) => progress.item.id),
+    seen: new Map(
+      items.map((progress) => [
+        progress.item.id,
+        {
+          state: progress.fsrs ?? null,
+          lastAnsweredAt: progress.last?.answeredAt ?? 0,
+        },
+      ]),
     ),
+    answeredToday: new Set(answered.map((progress) => progress.item.id)),
+    newLimit: newPerDay,
+    reviewLimit:
+      reviewsPerDay === null
+        ? "unlimited"
+        : Math.max(0, reviewsPerDay - (answered.length - newAnswered)),
+    newAnsweredToday: newAnswered,
   };
 }
 
-function exclusion(practice: PracticeState, extra: readonly string[]): Set<string> {
-  return new Set([...practice.answeredToday, ...extra]);
-}
-
-/** How many cards could be dealt today, leaving out `extra` besides today's answers. */
-export function availableFor(
-  practice: PracticeState,
-  extra: readonly string[] = [],
-): number {
-  return countAvailable({ ...practice, exclude: exclusion(practice, extra) });
+/** How many cards a portion could be dealt from today: its queue and what may top it up. */
+export function availableFor(practice: PracticeState): number {
+  return countAvailable(practice);
 }
 
 /** The seed a round of `kind` started now would use, so a preview deals the same cards. */
@@ -92,9 +98,20 @@ export function deal(
     ...practice,
     size: options.size,
     minSize: options.minSize ?? Math.min(TUNING.minDeckSize, options.size),
-    exclude: exclusion(practice, options.exclude ?? []),
+    exclude: new Set(options.exclude ?? []),
     seed: options.seed,
   });
+  return dealt.ok
+    ? ok(dealt.value)
+    : err({ code: "ERR_NOT_ENOUGH_CARDS", available: dealt.error.available });
+}
+
+/** An extra round's deck; see `composeExtra`. */
+export function dealExtraDeck(
+  practice: PracticeState,
+  seed: string,
+): Result<Composition, PracticeError> {
+  const dealt = composeExtra({ ...practice, seed });
   return dealt.ok
     ? ok(dealt.value)
     : err({ code: "ERR_NOT_ENOUGH_CARDS", available: dealt.error.available });

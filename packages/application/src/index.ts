@@ -46,7 +46,6 @@ export type {
   VocabCardView,
   VocabCategoryView,
   VocabHub,
-  VocabIntervals,
   VocabSessionView,
   VocabSummary,
 } from "./vocab-views";
@@ -117,6 +116,7 @@ export { updateSettings } from "./update-settings";
 export type {
   AnsweredRow,
   DrillCard,
+  GradeIntervals,
   LevelView,
   ReachTopic,
   ReachView,

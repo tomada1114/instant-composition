@@ -3,7 +3,10 @@ import * as z from "zod";
 import {
   answerResultSchema,
   dailySizeSchema,
-  gradeKeysSchema,
+  drillNewPerDaySchema,
+  drillReviewsPerDaySchema,
+  gradeKeysPatchSchema,
+  gradeSchema,
   idSchema,
   levelSchema,
   limitSecondsSchema,
@@ -15,10 +18,8 @@ import {
 } from "./primitives";
 
 /**
- * Two passes over the largest deck is the most a round can hold: twice the
- * largest of the domain's `TUNING.dailySizes`. This package imports only zod,
- * so the value is written out; `tests/contracts-schemas.test.ts` holds it to
- * the domain's.
+ * The most answers one request carries. A round with re-asks can hold more,
+ * so a client sends what is not yet recorded in batches of at most this many.
  */
 export const MAX_ROUND_ANSWERS = 60;
 
@@ -35,21 +36,30 @@ export const startRoundRequestSchema = z.object({
 });
 
 /**
- * One graded card; the round comes from the path. `answeredAt` is when the
- * learner answered, in epoch milliseconds on the client's clock: the server
- * holds it between the round's start and its own time rather than refusing
- * it, and takes its own time when it is absent. `elapsedMs` is held the same
- * way, to the round's limit, never refused for running over.
+ * One graded card; the round comes from the path. It carries a `grade` with
+ * `timedOut`, or an older client's `result` in their place: `ok` is taken as
+ * good, `ng` as again and `timeout` as again timed out; one with neither is
+ * refused. `answeredAt` is when the learner answered, in epoch milliseconds on
+ * the client's clock: the server holds it between the round's start and its
+ * own time rather than refusing it, and takes its own time when it is absent.
+ * `elapsedMs` is held the same way, to the round's limit, never refused for
+ * running over.
  */
-export const answerSchema = z.object({
-  /** Made by the client; a repeated id is ignored, which is what makes a resend safe. */
-  id: idSchema,
-  cardId: idSchema,
-  pass: passSchema,
-  result: answerResultSchema,
-  elapsedMs: z.int().min(0),
-  answeredAt: z.int().min(0).exactOptional(),
-});
+export const answerSchema = z
+  .object({
+    /** Made by the client; a repeated id is ignored, which is what makes a resend safe. */
+    id: idSchema,
+    cardId: idSchema,
+    pass: passSchema,
+    /** An older client's grade; ignored when `grade` is present. */
+    result: answerResultSchema.exactOptional(),
+    grade: gradeSchema.exactOptional(),
+    /** The timer ran out before the flip; the grade still sets the schedule. */
+    timedOut: z.boolean().exactOptional(),
+    elapsedMs: z.int().min(0),
+    answeredAt: z.int().min(0).exactOptional(),
+  })
+  .refine((answer) => answer.grade !== undefined || answer.result !== undefined);
 
 /** `POST /v1/rounds/{roundId}/answers` and `…/finish`: a batch, so a replay is the same call. */
 export const answersRequestSchema = z.object({
@@ -60,12 +70,17 @@ export const answersRequestSchema = z.object({
 export const settingsPatchSchema = z.object({
   topics: z.array(idSchema).max(MAX_SETTINGS_LIST).exactOptional(),
   focus: z.array(subtopicRefSchema).max(MAX_SETTINGS_LIST).exactOptional(),
+  /** Kept for the clients that set it; it no longer sizes a deal. */
   dailySize: dailySizeSchema.exactOptional(),
   sound: z.boolean().exactOptional(),
   /** Taken by the next round dealt; the round under way keeps the limit it was dealt with. */
   limitSeconds: limitSecondsSchema.exactOptional(),
-  /** Both keys at once, so the pair is judged whole. */
-  gradeKeys: gradeKeysSchema.exactOptional(),
+  /** Every key at once, so they are judged together; without `hard`, it is derived. */
+  gradeKeys: gradeKeysPatchSchema.exactOptional(),
+  /** Taken by the next deal; today's portion is retargeted, never below its progress. */
+  newPerDay: drillNewPerDaySchema.exactOptional(),
+  /** As `newPerDay`; `null` is no limit. */
+  reviewsPerDay: drillReviewsPerDaySchema.exactOptional(),
   /** Taken by the next vocabulary deal. */
   vocabNewPerDay: vocabNewPerDaySchema.exactOptional(),
   /** Taken by the next vocabulary deal; `null` is no limit. */

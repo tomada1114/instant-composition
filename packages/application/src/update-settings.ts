@@ -1,8 +1,9 @@
 import {
-  availableFor,
   decideSettings,
   DEFAULT_SETTINGS,
+  drillLimitsOf,
   ok,
+  portionSize,
   refitDeck,
   type Result,
   type Settings,
@@ -19,11 +20,12 @@ import type { LearnerStore } from "./store";
 import type { SettingsView } from "./views";
 
 /**
- * A new daily size applied to today's open portion: its target follows at
- * once, and when enough is already done the portion completes there and then,
- * closing the round under way. Otherwise that round's deck is cut or topped up.
+ * New daily limits applied to today's open portion: its target becomes what
+ * is done plus today's queue under them, never below what is done, and when
+ * enough is already done the portion completes there and then, closing the
+ * round under way. Otherwise that round's deck is cut or topped up.
  */
-async function applyDailySize(
+async function applyLimits(
   store: LearnerStore,
   load: PracticeLoad,
   settings: Settings,
@@ -37,7 +39,7 @@ async function applyDailySize(
   const done = stored.value.progress;
   const portion = {
     ...stored.value,
-    target: Math.min(settings.dailySize, done + availableFor(load.practice)),
+    target: Math.max(done, portionSize(load.practice, done)),
   };
   const stats = statsOf(load);
   const open =
@@ -93,7 +95,9 @@ async function applyDailySize(
 
 /**
  * Saves the fields `patch` sets. The last topic cannot be removed, at most two
- * focus subtopics are kept, and removing a topic removes its focus too.
+ * focus subtopics are kept, and removing a topic removes its focus too. A
+ * change to the drill's daily limits retargets today's portion; the daily
+ * size, which no longer sizes a deal, does not.
  */
 export async function updateSettings(
   deps: ApplicationDeps,
@@ -119,12 +123,13 @@ export async function updateSettings(
     const { settings, removedFocus } = decided.value;
     const writes: Write[] = [[{ type: "settings", value: settings }, current]];
     let completedToday = false;
-    if (patch.dailySize !== undefined && patch.dailySize !== before.dailySize) {
+    const [was, will] = [drillLimitsOf(before), drillLimitsOf(settings)];
+    if (was.newPerDay !== will.newPerDay || was.reviewsPerDay !== will.reviewsPerDay) {
       const load = await loadPractice(store, deps.catalog, context, settings);
       if (!load.ok) {
         return load;
       }
-      const applied = await applyDailySize(store, load.value, settings, context.now);
+      const applied = await applyLimits(store, load.value, settings, context.now);
       completedToday = applied.completed;
       writes.push(...applied.writes);
     }

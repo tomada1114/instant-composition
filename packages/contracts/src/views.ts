@@ -5,6 +5,8 @@ import {
   countSchema,
   dayKeySchema,
   dotSchema,
+  gradeIntervalsSchema,
+  gradeSchema,
   levelModeSchema,
   levelSchema,
   passSchema,
@@ -34,6 +36,10 @@ export const drillCardSchema = z.object({
   limitMs: countSchema,
   /** What a flip is "fast" against, from the model answer's length. */
   paceMs: countSchema,
+  /** Days until each grade of its first answer today brings the card back. */
+  intervals: gradeIntervalsSchema,
+  /** Never answered in the drill when dealt; a card seen before three grades is not new. */
+  isNew: z.boolean(),
 });
 
 /** One answer a round already holds, oldest first. */
@@ -42,7 +48,11 @@ export const answeredRowSchema = z.object({
   id: z.string(),
   cardId: z.string(),
   pass: passSchema,
+  /** What it counts as: `ok` is graded hard or good in time. */
   result: answerResultSchema,
+  /** As given, or read from `result` for an answer that carried none. */
+  grade: gradeSchema,
+  timedOut: z.boolean(),
   /** When it was answered, in epoch milliseconds, as the server holds it. */
   answeredAt: z.int().min(0),
 });
@@ -57,6 +67,7 @@ export const roundPayloadSchema = z.object({
   answered: z.array(answeredRowSchema),
   offset: countSchema,
   total: countSchema,
+  /** Whether the round re-asks a card; a placement round does not. */
   retries: z.boolean(),
 });
 

@@ -11,8 +11,11 @@ import type { LevelView, ReachView, ShownSettings } from "./views";
 /** What a query hands back to a client, in the shapes the screens read. */
 
 export interface HomePreview {
+  /** Today's portion: its queue under the daily limits, or the portion begun. */
   readonly size: number;
+  /** What the daily limits ask for. */
   readonly setting: number;
+  /** New cards ran out before the limits did. */
   readonly shortage: boolean;
   readonly reviewCount: number;
   readonly newCount: number;
@@ -32,10 +35,10 @@ export interface HomeView {
   readonly todayCards: number;
   /** Today's last finished round, the one the recap reads back; `undefined` before any. */
   readonly todayLastRoundId: string | undefined;
-  /** The size an extra round is dealt at: "one more N". */
+  /** The size an extra round is dealt at: "one more N", `TUNING.extraSize`. */
   readonly dailySize: number;
   readonly sound: boolean;
-  readonly gradeKeys: GradeKeys;
+  readonly gradeKeys: Required<GradeKeys>;
   readonly contentError: boolean;
 }
 

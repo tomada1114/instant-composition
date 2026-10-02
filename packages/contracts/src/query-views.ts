@@ -4,7 +4,7 @@ import {
   countSchema,
   dayKeySchema,
   dotSchema,
-  gradeKeysSchema,
+  gradeKeyTrioSchema,
   levelModeSchema,
   levelSchema,
   reachViewSchema,
@@ -73,10 +73,11 @@ export const homeViewSchema = z.object({
   todayCards: countSchema,
   /** Today's last finished round, for the recap to read back; absent before any. */
   todayLastRoundId: z.string().exactOptional(),
+  /** The size an extra round is dealt at: "one more N". */
   dailySize: countSchema,
   sound: z.boolean(),
-  /** The keys the drill grades with, the default until the learner chooses a pair. */
-  gradeKeys: gradeKeysSchema,
+  /** The keys the drill grades with, the default until the learner chooses keys. */
+  gradeKeys: gradeKeyTrioSchema,
   contentError: z.boolean(),
 });
 

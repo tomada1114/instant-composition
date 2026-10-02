@@ -1,4 +1,5 @@
 import type { DifficultyAnswer } from "./difficulty";
+import type { FsrsGrade, FsrsState } from "./fsrs";
 import type { RoundOutcome } from "./round-outcome";
 import type {
   AnswerResult,
@@ -29,14 +30,22 @@ export interface ItemSnapshot {
   readonly prompt: string | null;
 }
 
-/** A scale every activity maps onto, and a spaced-repetition scheduler reads. */
-export type Outcome = "again" | "good" | "easy";
+/**
+ * A scale every activity maps onto: an FSRS grade since the drill took three,
+ * and `easy` on a review logged before, a fast correct answer then.
+ */
+export type Outcome = "again" | "hard" | "good" | "easy";
 
 /** What only a composition review has. */
 export interface CompositionDetail {
   readonly activity: "composition";
   readonly pass: Pass;
+  /** What the figures count it as, from the grade and `timedOut`; see `resultOf`. */
   readonly result: AnswerResult;
+  /** Absent on a review logged before three grades; `gradeOf` reads it from `result`. */
+  readonly grade?: FsrsGrade;
+  /** Absent where `grade` is: `result` says it then. */
+  readonly timedOut?: boolean;
   /** Until the flip; `limitMs` for a timeout. */
   readonly elapsedMs: number;
   /** The round's limit, which the timer ran out at. */
@@ -57,11 +66,20 @@ export interface ReviewEntry {
   readonly day: DayKey;
   readonly outcome: Outcome;
   /**
-   * The item's memory state around this review; a retry leaves it unchanged,
-   * and so does a first pass that came late, which is how a replay knows it.
+   * The item's Leitner state around this review. A review logged before FSRS
+   * moved it; a later one carries the state the item still holds, unchanged.
    */
   readonly before: CardState | null;
   readonly after: CardState | null;
+  /**
+   * The item's FSRS state around this review, absent on one logged before
+   * FSRS. Only a card's first answer of a practice day moves it: a re-ask and
+   * any later answer that day leave it as found, which is how a replay knows.
+   */
+  readonly fsrs?: {
+    readonly before: FsrsState | null;
+    readonly after: FsrsState | null;
+  };
   readonly snapshot: ItemSnapshot;
   readonly detail: CompositionDetail;
 }
@@ -74,10 +92,19 @@ export interface FirstPassMark {
   readonly answeredAt: number;
 }
 
-/** One item's projection: its memory state and what mastery and growth read. */
+/** One item's projection: its schedule and what mastery and growth read. */
 export interface ItemProgress {
   readonly item: ItemRef;
-  readonly memory: CardState;
+  /**
+   * The Leitner state of an item seen before FSRS, kept as stored. Only its
+   * presence is read: the item was seen then, so it is not new.
+   */
+  readonly memory?: CardState;
+  /**
+   * The schedule, from the item's first answer under FSRS. An item with Leitner
+   * history and none is dealt as a review and scheduled as a new card.
+   */
+  readonly fsrs?: FsrsState;
   /** Distinct days of a correct first pass, oldest first, never more than two. */
   readonly okDays: readonly DayKey[];
   readonly mastered: { readonly day: DayKey; readonly sessionId: string } | null;

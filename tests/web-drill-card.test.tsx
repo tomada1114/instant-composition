@@ -27,6 +27,8 @@ const CARD: DrillCard = {
   explanation: "push A to B",
   limitMs: 8000,
   paceMs: 8000,
+  intervals: { again: 1, hard: 2, good: 3 },
+  isNew: true,
 };
 
 function renderWithMessages(element: ReactElement) {

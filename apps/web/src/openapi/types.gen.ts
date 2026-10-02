@@ -20,13 +20,31 @@ export type GradeKeys = {
     ng: string;
 };
 
+export type GradeKeyTrio = {
+    ok: string;
+    ng: string;
+    hard: string;
+};
+
+export type GradeKeysPatch = {
+    ok: string;
+    ng: string;
+    hard?: string;
+};
+
+export type DrillNewPerDay = 0 | 3 | 5 | 10 | 15;
+
+export type DrillReviewsPerDay = 10 | 20 | 30 | 50 | null;
+
 export type Settings = {
     topics: Array<string>;
     focus: Array<SubtopicRef>;
     dailySize: 5 | 10 | 15 | 20 | 30;
     sound: boolean;
     limitSeconds: 15 | 20 | 30 | 45 | 60;
-    gradeKeys: GradeKeys;
+    gradeKeys: GradeKeyTrio;
+    newPerDay: DrillNewPerDay;
+    reviewsPerDay: DrillReviewsPerDay;
     vocabNewPerDay: VocabNewPerDay;
     vocabReviewsPerDay: VocabReviewsPerDay;
 };
@@ -69,7 +87,9 @@ export type Answer = {
     id: string;
     cardId: string;
     pass: Pass;
-    result: AnswerResult;
+    result?: AnswerResult;
+    grade?: Grade;
+    timedOut?: boolean;
     elapsedMs: number;
     answeredAt?: number;
 };
@@ -84,7 +104,9 @@ export type SettingsPatch = {
     dailySize?: 5 | 10 | 15 | 20 | 30;
     sound?: boolean;
     limitSeconds?: 15 | 20 | 30 | 45 | 60;
-    gradeKeys?: GradeKeys;
+    gradeKeys?: GradeKeysPatch;
+    newPerDay?: DrillNewPerDay;
+    reviewsPerDay?: DrillReviewsPerDay;
     vocabNewPerDay?: VocabNewPerDay;
     vocabReviewsPerDay?: VocabReviewsPerDay;
 };
@@ -117,6 +139,8 @@ export type DrillCard = {
     explanation: string;
     limitMs: number;
     paceMs: number;
+    intervals: GradeIntervals;
+    isNew: boolean;
 };
 
 export type AnsweredRow = {
@@ -124,6 +148,8 @@ export type AnsweredRow = {
     cardId: string;
     pass: Pass;
     result: AnswerResult;
+    grade: Grade;
+    timedOut: boolean;
     answeredAt: number;
 };
 
@@ -287,7 +313,7 @@ export type HomeView = {
     todayLastRoundId?: string;
     dailySize: number;
     sound: boolean;
-    gradeKeys: GradeKeys;
+    gradeKeys: GradeKeyTrio;
     contentError: boolean;
 };
 
@@ -424,6 +450,12 @@ export type TalkEnded = {
 
 export type Grade = 'again' | 'hard' | 'good';
 
+export type GradeIntervals = {
+    again: number;
+    hard: number;
+    good: number;
+};
+
 export type VocabCategory = 'word' | 'idiom' | 'phrasal-verb' | 'phrase';
 
 export type VocabNewPerDay = 0 | 5 | 10 | 15 | 20 | 30;
@@ -471,12 +503,6 @@ export type VocabHub = {
     tomorrow: number;
 };
 
-export type VocabIntervals = {
-    again: number;
-    hard: number;
-    good: number;
-};
-
 export type VocabCard = {
     id: string;
     category: VocabCategory;
@@ -486,7 +512,7 @@ export type VocabCard = {
     headword: string;
     meaning: string;
     example2: string;
-    intervals: VocabIntervals;
+    intervals: GradeIntervals;
     isNew: boolean;
 };
 

@@ -1,3 +1,4 @@
+import { gradedOf } from "./card-state";
 import type { AnswerInput, CardFacts } from "./check-answers";
 import { inLevelBand } from "./compose-pick";
 import { emptyTally } from "./empty";
@@ -46,9 +47,10 @@ function clampAnsweredAt(
 
 /**
  * Takes checked answers into `state`, in log order, skipping ids already held.
- * Each is held to its round's limit, not the setting now, and judged by its
- * card's pace, neither trusted from the client; a round crossing the day
- * boundary keeps its own day, so a late answer is taken for the day it was given.
+ * Each is graded as `gradedOf` reads it, held to its round's limit, not the
+ * setting now, and judged by its card's pace, neither trusted from the
+ * client; a round crossing the day boundary keeps its own day, so a late
+ * answer is taken for the day it was given.
  */
 export function decideAnswers(
   state: AnswersState,
@@ -75,16 +77,19 @@ export function decideAnswers(
   const entries: ReviewEntry[] = [];
   for (const { input, answeredAt } of fresh) {
     const card = cards.get(input.cardId);
-    if (card === undefined) continue;
+    const graded = gradedOf(input);
+    if (card === undefined || graded === undefined) continue;
     const paceMs = paceMsOf(card.words);
     const limitMs = limitMsOf(round, paceMs);
     const reviewed = reviewAnswer(items.get(input.cardId), {
-      ...input,
+      id: input.id,
+      cardId: input.cardId,
+      pass: input.pass,
+      ...graded,
       sessionId: round.id,
       limitMs,
       paceMs,
-      elapsedMs:
-        input.result === "timeout" ? limitMs : Math.min(input.elapsedMs, limitMs),
+      elapsedMs: graded.timedOut ? limitMs : Math.min(input.elapsedMs, limitMs),
       day: round.day,
       answeredAt,
       snapshot: {

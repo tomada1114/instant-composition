@@ -10,7 +10,9 @@ import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
-import { levelViewOf, payloadOf, shownSettingsOf, summaryOf } from "./present";
+import { itemValues } from "./practice";
+import { levelViewOf, shownSettingsOf, summaryOf } from "./present";
+import { payloadOf } from "./round-payload";
 import type { History, SettingsPageView } from "./query-views";
 import type { LearnerStore } from "./store";
 import type { RoundPayload, RoundSummary } from "./views";
@@ -72,14 +74,23 @@ export async function roundPayload(
     return err({ code: "ERR_ROUND_NOT_FOUND" });
   }
   const { portionDay } = round.value;
-  const [snapshot, reviews, portion] = await Promise.all([
+  const [snapshot, reviews, portion, items] = await Promise.all([
     deps.catalog.snapshot(),
     store.reviewsOf(roundId),
     portionDay === null ? undefined : store.portion(portionDay),
+    store.items(),
   ]);
   // An empty snapshot would drop every card, which a client would read as all edited.
   return snapshot.ok
-    ? ok(payloadOf(round.value, reviews, portion?.value, snapshot.value))
+    ? ok(
+        payloadOf(
+          round.value,
+          reviews,
+          portion?.value,
+          snapshot.value,
+          itemValues(items),
+        ),
+      )
     : snapshot;
 }
 
