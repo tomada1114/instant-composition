@@ -21,7 +21,8 @@ export interface TalkTurn {
  * Where the current turn stands, which is what the bottom panel shows:
  * W3a `japanese`, W3b `english`, W3c `teacher` and `partner`, W3d `fine`,
  * W3e `model`, W3f `hidden`, W3g `replyFailed` (the reply did not arrive)
- * and `turnFailed` (the turn itself was not answered), W3h `ended`.
+ * and `turnFailed` (the turn itself was not answered), W3h `ended` (also a
+ * talk the server no longer takes).
  */
 export type TalkStep =
   | "japanese"
@@ -56,7 +57,7 @@ export type TalkEvent =
   | { readonly type: "answered"; readonly talkId: string; readonly result: TurnResult }
   | { readonly type: "replied"; readonly talkId: string; readonly reply: PartnerReply }
   | {
-      readonly type: "turnFailed" | "replyFailed" | "shown" | "retrying";
+      readonly type: "turnFailed" | "replyFailed" | "shown" | "retrying" | "gone";
       readonly talkId: string;
     }
   | { readonly type: "hide" | "lookAgain" | "said" | "end" };
@@ -154,6 +155,10 @@ function talkStep(talk: Talk, event: TalkEvent): Talk {
         : talk;
     case "replyFailed":
       return step === "partner" ? { ...talk, step: "replyFailed" } : talk;
+    case "gone":
+      return step === "teacher" || step === "partner"
+        ? { ...talk, step: "ended" }
+        : talk;
     case "end":
       return { ...talk, step: "ended" };
     default:

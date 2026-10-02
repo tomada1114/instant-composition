@@ -23,6 +23,13 @@ export interface TalkLeave {
  */
 export function useTalkLeave(active: boolean): TalkLeave {
   const [closing, setClosing] = useState(false);
+  // A talk that ends under a ✕-opened W4 must not bring W4 back with the next
+  // talk, so the question is dropped, during render, as the talk stops.
+  const [wasActive, setWasActive] = useState(active);
+  if (wasActive !== active) {
+    setWasActive(active);
+    if (!active) setClosing(false);
+  }
   const blocker = useBlocker({
     shouldBlockFn: ALWAYS,
     withResolver: true,

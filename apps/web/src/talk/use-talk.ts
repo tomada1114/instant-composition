@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 
 import { browserSound } from "../drill/sound";
+import type { ApiError } from "../lib/api-call";
 import { TUNING } from "../lib/tuning";
 import {
   endTalk,
@@ -57,6 +58,21 @@ export function useTalk(sound: boolean): {
     return state.kind === "talk" ? state.talk : undefined;
   }
 
+  /** A talk the server no longer has (404) or has closed (409) ends here: W3h, never W3g's 「もう一度」. */
+  function failed(
+    talkId: string,
+    error: ApiError,
+    otherwise: "turnFailed" | "replyFailed",
+  ): void {
+    if (error.code !== "ERR_TALK_NOT_FOUND" && error.code !== "ERR_TALK_CLOSED") {
+      dispatch({ type: otherwise, talkId });
+      return;
+    }
+    dispatch({ type: "gone", talkId });
+    // An expired or unknown talk was never kept; a closed one was, by whatever closed it.
+    if (error.code === "ERR_TALK_NOT_FOUND") tell("save");
+  }
+
   async function send(
     talkId: string,
     n: number,
@@ -65,7 +81,7 @@ export function useTalk(sound: boolean): {
   ): Promise<void> {
     const result = await sendTurn(talkId, { turn: n, japanese, english });
     if (!result.ok) {
-      dispatch({ type: "turnFailed", talkId });
+      failed(talkId, result.error, "turnFailed");
       return;
     }
     if (result.value.judgment.verdict === "failed") tell("judgment");
@@ -74,11 +90,11 @@ export function useTalk(sound: boolean): {
 
   async function askReply(talkId: string): Promise<void> {
     const result = await retryReply(talkId);
-    dispatch(
-      result.ok
-        ? { type: "replied", talkId, reply: result.value }
-        : { type: "replyFailed", talkId },
-    );
+    if (!result.ok) {
+      failed(talkId, result.error, "replyFailed");
+      return;
+    }
+    dispatch({ type: "replied", talkId, reply: result.value });
   }
 
   const step = state.kind === "talk" ? state.talk.step : undefined;
