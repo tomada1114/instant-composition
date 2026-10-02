@@ -152,6 +152,11 @@ Firefox, Samsung Internet and tablets only keep working.
   read through `matchMedia` and following its `change` event: a touch-only device's
   software keyboard sends no key the row could take, so a tapped key button would wait
   forever (#398 R4).
+- Key hints never turn on where that query matches, nor from a composing `keydown`
+  (`isComposing`, `Process`, `Unidentified`) anywhere (`apps/web/src/lib/key-mode.tsx`):
+  a phone's software keyboard fires `keydown` for what the learner types, there is no
+  Space or Enter for a hint to name, and beside the talk's half-width buttons the hints
+  cover 「話す」 and 「送る」 (#410).
 - The time-zone `<select>` is `text-body` at every width, like every other field, so iOS
   never zooms the page when it opens.
 - The toggle keeps its 32-tall track and takes a `before:` overlay that makes its hit

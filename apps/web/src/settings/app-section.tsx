@@ -2,6 +2,7 @@ import { useId, useSyncExternalStore, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { LOGOUT_URL } from "../lib/endpoints";
+import { isTouchOnly, TOUCH_ONLY } from "../lib/touch";
 import { Button } from "../ui/button";
 import { Toggle } from "../ui/toggle";
 import { GradeKeysRow } from "./grade-keys-row";
@@ -10,8 +11,6 @@ import type { SettingsState } from "./use-settings";
 
 // A touch-only device: its software keyboard sends no key the grade keys
 // could take, so the row would only wait forever.
-const TOUCH_ONLY = "(pointer: coarse) and (hover: none)";
-
 function subscribeTouchOnly(onChange: () => void): () => void {
   if (typeof matchMedia !== "function") return () => undefined;
   const query = matchMedia(TOUCH_ONLY);
@@ -19,10 +18,6 @@ function subscribeTouchOnly(onChange: () => void): () => void {
   return () => {
     query.removeEventListener("change", onChange);
   };
-}
-
-function isTouchOnly(): boolean {
-  return typeof matchMedia === "function" && matchMedia(TOUCH_ONLY).matches;
 }
 
 /** The app's own rows: the sound, the drill's grade keys (not on a touch-only device) and the time zone. */

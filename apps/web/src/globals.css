@@ -224,8 +224,8 @@
 /*
  * Key hints are shown only once the learner has used the keyboard: the first
  * drill key sets `data-keys` on `<html>` (`apps/web/src/lib/key-mode.tsx`),
- * and a hint is written `hidden keys:inline-flex`. A touch-only learner never
- * sees one.
+ * and a hint is written `hidden keys:inline-flex`. A touch-only device never
+ * sets it, and a composing key never counts, so a phone never shows one.
  */
 @custom-variant keys (&:where([data-keys] *));
 
