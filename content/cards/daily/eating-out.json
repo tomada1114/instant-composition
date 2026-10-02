@@ -203,7 +203,13 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de8fc909c347a44cf0c752453b849fdd09fc1be517a58e2bbcc39fc70a1d7a03",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j2w6j7m",
@@ -289,19 +295,25 @@
   },
   {
     "id": "c_3w4y4u5g",
-    "ja": "我々が折れてたら店の不手際分を払った。",
-    "en": "Had we capitulated, we'd have underwritten their incompetence.",
+    "ja": "我々が折れてたら店の不手際分を払ってた。",
+    "en": "Had we capitulated, we'd have paid for their incompetence.",
     "alternatives": [
-      "If we'd given in, we'd have funded their mistakes.",
-      "We'd have paid for their ineptitude if we'd capitulated."
+      "If we'd given in, we'd have paid for their mistakes.",
+      "We'd have paid for their incompetence had we capitulated."
     ],
-    "point": "capitulate は折れる、underwrite はここでは費用を肩代わりする。",
+    "point": "Had we capitulated は「我々が折れていたら」という過去の仮定。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 10,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca681a3c2777b5ea7ceee7c1dd7a7fe656f237a115fd7e96af7333bce3796628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4b5j9c3q",
@@ -822,19 +834,25 @@
   },
   {
     "id": "c_8t8y4f5c",
-    "ja": "地味でもこの店は気取りが鼻につく。",
+    "ja": "地味でもこの店は気取りが嫌だ。",
     "en": "Though unassuming, this place reeks of pretension.",
     "alternatives": [
-      "Though modest-looking, this place feels painfully pretentious.",
-      "Despite its plain appearance, this place exudes pretension."
+      "Though plain-looking, this place reeks of pretension.",
+      "Despite looking modest, this place feels pretentious."
     ],
     "point": "reek of は不快な印象を強く与える、pretension は気取り。",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 10,
+    "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0731068ca3160a30f203a901186574e899199b9f31786079c957102f478d02ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x8x5s7g",

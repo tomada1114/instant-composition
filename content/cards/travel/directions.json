@@ -149,14 +149,20 @@
     "id": "c_2t6u4b7z",
     "ja": "私は北に向かってる。",
     "en": "I'm going north.",
-    "alternatives": ["I'm heading north.", "I'm traveling northward."],
+    "alternatives": ["I'm heading north.", "I'm traveling north."],
     "point": "north は北へという方向。",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 2,
+    "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f4bccac9a248bac3a286d7c4c1a494363694e9527d80941f7ae22f3697d3ff9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y7x7h2y",
@@ -431,7 +437,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d81be38e3dddb776939feacaa4e9a5b9881650c6864042d8272827b216748dfe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s3q2v7g",
@@ -481,14 +493,20 @@
     "id": "c_4x5a7h8z",
     "ja": "道案内お願いできる？",
     "en": "Could you guide me?",
-    "alternatives": ["Could you direct me?", "Could you point the way?"],
+    "alternatives": ["Could you give me directions?", "Could you point the way?"],
     "point": "Could you は道案内を頼む柔らかい言い方。",
     "topic": "travel",
     "subtopic": "directions",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d382da427ece39a378a8fe6a36d0024bcad00ede20fd809ea1f0e86363c37cdc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4y8q4c8s",

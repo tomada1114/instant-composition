@@ -35,7 +35,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4edac2dc8891a615ffc6df29252ac6821eb6a949fe5f8782f6089aee2fb1d63f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2w3u5x6a",
@@ -468,14 +474,20 @@
     "id": "c_7h6n8z2r",
     "ja": "会議は短くしてね。",
     "en": "Keep the meeting short.",
-    "alternatives": ["Make the meeting brief.", "Keep the meeting brief."],
+    "alternatives": ["Make the meeting short.", "Keep the meeting brief."],
     "point": "keep 人や物 形容詞でその状態に保つ。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 2,
+    "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00356f05d102449251e1d8ed98a32948e1d67de63d78a68c07bfaa2d36d114a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7j3k3x7m",
@@ -673,14 +685,20 @@
     "id": "c_8x5k7z2f",
     "ja": "私たちいつ会った？",
     "en": "When did we meet?",
-    "alternatives": ["When was our meeting?", "When did we get together?"],
+    "alternatives": ["When did we get together?", "When did we see each other?"],
     "point": "過去の時点を尋ねるときは did we meet。",
     "topic": "work",
     "subtopic": "meetings",
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9152675c66a5dcf45fb7478fef34dbe56fa267357c1952ba934b5bc0f52edae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9d5j3y7d",

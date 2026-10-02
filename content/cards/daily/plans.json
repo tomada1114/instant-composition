@@ -20,19 +20,25 @@
   },
   {
     "id": "c_2j8k6j3j",
-    "ja": "君の懸念で私は旅行を考え直してる。",
-    "en": "Your reservations have me second-guessing our getaway.",
+    "ja": "君の懸念で私は旅行を再考中。",
+    "en": "Your reservations have me second-guessing the trip.",
     "alternatives": [
-      "Your doubts are making me reconsider our trip.",
-      "Your misgivings have me questioning our travel plans."
+      "Your doubts have me reconsidering the trip.",
+      "Your misgivings have me questioning the trip."
     ],
     "point": "reservation はここでは懸念、second-guess は判断を疑い直す。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 10,
+    "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:61380811821f61cc60e16b01a9cadb43347eaa56ce3e32feee64be57380deccf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2s2f8f9b",
@@ -679,24 +685,30 @@
     "ja": "私は最後通告を誘いと呼びかねる。",
     "en": "I'd hesitate to call ultimatums invitations.",
     "alternatives": [
-      "I'd be reluctant to describe ultimatums as invitations.",
-      "I'm wary of treating ultimatums as invitations."
+      "I'd be reluctant to call ultimatums invitations.",
+      "I'd balk at calling ultimatums invitations."
     ],
     "point": "hesitate to で断定を控える、ultimatum は最後通告。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6bd4d48ff1236f115f0672bab86f8be5aa6b1bcd76882bbe68d3384fb66b8da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y8z3z4j",
-    "ja": "表向き任意でも外出は強制に感じる。",
+    "ja": "表向き任意でもこの外出は強制に感じる。",
     "en": "Though ostensibly optional, this outing feels coercive.",
     "alternatives": [
       "Though supposedly optional, this outing feels forced.",
-      "This supposedly voluntary outing feels like coercion."
+      "Despite being nominally optional, this outing feels coercive."
     ],
     "point": "ostensibly は表向きには、coercive は強制的な。",
     "topic": "daily",
@@ -704,7 +716,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92d0dd2cd68db22a6b6e89487dd41a35e65faffedd4787d80329a62cbca0e099",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8d2a5e4k",

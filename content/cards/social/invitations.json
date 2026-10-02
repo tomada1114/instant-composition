@@ -752,11 +752,11 @@
   },
   {
     "id": "c_8j3p3k8d",
-    "ja": "私、客の意向を探り続けてる。",
+    "ja": "私、招待客の意向を探り続けてる。",
     "en": "I've been sounding out guests.",
     "alternatives": [
-      "I've been asking guests how they feel.",
-      "I've been gauging guests' interest."
+      "I've been gauging guests' wishes.",
+      "I've been asking guests what they want."
     ],
     "point": "sound out は相手の意向を探る。",
     "topic": "social",
@@ -764,7 +764,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9875ea192b0762dafc46fe4cad0a6ef7ad52dba5339061d409fee635d06dc3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8p3p3h2k",
@@ -818,23 +824,32 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cd5aed931858bda571704305f7026d13ba464eef96e82ef19bb2f8890e0c0e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9b3t9g3m",
-    "ja": "私、君も一緒に来てほしい。",
+    "ja": "私はぜひ君に一緒に来てほしい。",
     "en": "I'm keen to have you along.",
-    "alternatives": [
-      "I'd love you to come along.",
-      "I'd be thrilled if you joined me."
-    ],
+    "alternatives": ["I'd love you to come along.", "I'm keen for you to join me."],
     "point": "keen to はぜひしたいという気持ち。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 6,
+    "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb51bcef082e8f19503801c55f60a55ea6dee5d13e3474cb01f37bbf1fdeba4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9t5g4w9v",

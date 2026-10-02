@@ -39,16 +39,22 @@
   },
   {
     "id": "c_3r4s3q3m",
-    "ja": "私は早く来るべき。",
+    "ja": "私はもっと早く来るべき。",
     "en": "I should come earlier.",
-    "alternatives": ["I ought to come earlier.", "I should arrive sooner."],
+    "alternatives": ["I should arrive earlier.", "I ought to come earlier."],
     "point": "earlier は予定などより早い時間に。",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:faf47087048036289798a3ed2af83bce56c08c794a390bfdcca22c6edb87fb82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3r8v8f5k",
@@ -213,7 +219,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6977e64d6122e32a178c8f1f446bfa9b9e784318d2f512457be79ce5c85b2c58",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4p9q6r4c",
@@ -450,7 +462,7 @@
   },
   {
     "id": "c_6y3b2p9d",
-    "ja": "私は火曜に決めた。",
+    "ja": "私は火曜を選んだ。",
     "en": "I chose Tuesday.",
     "alternatives": ["I picked Tuesday.", "Tuesday was my choice."],
     "point": "chose は choose の過去形。",
@@ -459,7 +471,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ee6ae54a545d85aa69d5f973855917f1ef49414098d7d020578c19ab3cfd0a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y4d7x9c",

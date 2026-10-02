@@ -257,16 +257,22 @@
     "ja": "この障害の引き金は分かる？",
     "en": "Any idea what triggered this outage?",
     "alternatives": [
-      "Do you know what caused this outage?",
-      "Any idea what set this outage off?"
+      "Do you know what triggered this outage?",
+      "Any idea what caused this outage?"
     ],
-    "point": "what triggered は疑問文の語順にしない。",
+    "point": "Any idea what で原因に心当たりがあるか尋ねる。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 5,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:942b2d47c57037157765b474f1deeb2d81604cef6f879a4a03dee21b514c9866",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4j9z2s8d",
@@ -367,7 +373,13 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:804e5e0b4ac0aa5e7cd5f5c3ef9ad75ccf24eb93a7378da5522bd4272cf234ec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5b4c6n4y",
@@ -730,17 +742,20 @@
     "id": "c_8p2n5w7n",
     "ja": "私たちは被害を抑えなきゃ。",
     "en": "We need to contain the damage.",
-    "alternatives": [
-      "We have to limit the damage.",
-      "We need to keep the damage contained."
-    ],
+    "alternatives": ["We have to limit the damage.", "We must contain the damage."],
     "point": "contain は被害が広がるのを抑える。",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b143c739b74d17c754deef5ec1e62412358745760af149e1a1f01dac046766",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8q5q8s6u",

@@ -45,19 +45,25 @@
   },
   {
     "id": "c_2p9k4t5v",
-    "ja": "美を追い私は障害耐性を軽視した。",
-    "en": "Pursuing elegance, I shortchanged fault tolerance.",
+    "ja": "私は美を追い障害耐性を軽視した。",
+    "en": "Pursuing elegance, I neglected fault tolerance.",
     "alternatives": [
-      "In pursuing elegance, I gave fault tolerance insufficient attention.",
-      "I neglected fault tolerance in my pursuit of elegance."
+      "I neglected fault tolerance while pursuing elegance.",
+      "In pursuing elegance, I neglected fault tolerance."
     ],
-    "point": "shortchange は重視すべき点への配慮を十分割かない。",
+    "point": "fault tolerance は障害が起きても動き続ける能力。",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4449604686d44f9f5a940d6c5619946a13d2033446a83b8ac9ea51948cfb719",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2r9y6q4b",
@@ -352,11 +358,11 @@
   },
   {
     "id": "c_4u3m8t2m",
-    "ja": "私、便宜を工夫と美化したかも。",
+    "ja": "私は便宜を工夫と美化したかも。",
     "en": "I might've dressed up expediency as ingenuity.",
     "alternatives": [
-      "I may have disguised convenience as creative ingenuity.",
-      "I might've presented mere expediency as genuine inventiveness."
+      "I may have dressed up expediency as inventiveness.",
+      "I might've portrayed expediency as ingenuity."
     ],
     "point": "dress up は実態よりよく見せる、expediency は便宜的な都合。",
     "topic": "tech",
@@ -364,7 +370,13 @@
     "level": 10,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e92c2468e3e2bcd503bf8295162321e6c41928c409fee17356878da26bb79812",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4v4m6n9t",

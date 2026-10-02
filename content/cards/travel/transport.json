@@ -10,20 +10,32 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6b6237af17e07e11b4d4963510fc18d4cc13171691cb61e13e3ab33633c6f5f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2h3v2r5e",
     "ja": "追加の運賃がかかる。",
     "en": "There's an extra fare.",
-    "alternatives": ["There is an additional charge.", "An extra fare applies."],
+    "alternatives": ["An extra fare applies.", "You pay an extra fare."],
     "point": "an extra fare は追加の運賃。",
     "topic": "travel",
     "subtopic": "transport",
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8e8eadae4bcda10a11f48021b4d7e1477f061785de298bf89e4dca35b877b82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2n4h3y9f",
@@ -130,6 +142,25 @@
     }
   },
   {
+    "id": "c_3k7z9v8k",
+    "ja": "運転手は休んでいい？",
+    "en": "Can the driver rest?",
+    "alternatives": ["May the driver rest?", "Can the driver take a break?"],
+    "point": "Can はここでは休む許可を求める。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1709e827c3951037b9fcaaef23c04f127089ae717d2610c631e668486d388b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3s3f8n8q",
     "ja": "席にいてね。",
     "en": "Stay in your seat.",
@@ -140,7 +171,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb16b6e9084ff179f207d2706c5bd9397b43bfc35e4b0676ddc4bf84f66c8768",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4d4d7u2a",
@@ -226,6 +263,28 @@
     }
   },
   {
+    "id": "c_5f9d2u3t",
+    "ja": "この時刻表は頼れない。",
+    "en": "This timetable isn't reliable.",
+    "alternatives": [
+      "You can't rely on this timetable.",
+      "This timetable isn't dependable."
+    ],
+    "point": "reliable は当てにできる、信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21d6198f1f81b6822d36440122bb871afe750723682821349c7c503398b84068",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5g4x3w5w",
     "ja": "往復を一枚ください。",
     "en": "A round-trip ticket, please.",
@@ -265,19 +324,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_5n9b8r6q",
-    "ja": "運転手に待つよう頼んで。",
-    "en": "Ask them to wait.",
-    "alternatives": ["Request that the driver wait.", "Request that they wait."],
-    "point": "ask 人 to do は人に行動を頼む。",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 3,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_5q3q2a6s",
@@ -379,22 +425,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_6a6b9x8x",
-    "ja": "私は時刻表の絶対性をもう信じない。",
-    "en": "I've been disabused of the timetable's infallibility.",
-    "alternatives": [
-      "I've learned that the timetable isn't infallible.",
-      "I've lost my faith in the timetable's absolute reliability."
-    ],
-    "point": "be disabused of は思い違いを正される、infallibility は誤らないこと。",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_6b8m2k8k",
@@ -503,11 +533,11 @@
   },
   {
     "id": "c_6x5n4d4e",
-    "ja": "私が迷ってたら今も路線を検討中だ。",
-    "en": "Had I vacillated, I'd still be weighing train routes.",
+    "ja": "私が迷ってたら今も鉄道路線を検討中だ。",
+    "en": "Had I vacillated, I'd still be weighing rail routes.",
     "alternatives": [
       "If I'd wavered, I'd still be considering rail routes.",
-      "I'd still be deciding on train routes if I'd hesitated."
+      "I'd still be weighing rail routes had I hesitated."
     ],
     "point": "過去の仮定で今の迷いを表す、vacillate は決めかねる。",
     "topic": "travel",
@@ -515,7 +545,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a56686e77e00ef3a02f7d886dc89ffb1dc07bd9f594ac8a36584a90503975e10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y4c9d7y",
@@ -720,7 +756,13 @@
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b46b3b1bf09ae28b04b6bc72f20e0380da102c4a85548b8851660cce6bfb618",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x7n5n6u",
@@ -834,14 +876,20 @@
     "id": "c_9u9k6g2c",
     "ja": "バスが動いてる。",
     "en": "The bus is moving.",
-    "alternatives": ["The bus is in motion.", "The bus isn't standing still."],
+    "alternatives": ["The bus is rolling.", "The bus is traveling."],
     "point": "進行形でバスが今動いていると伝える。",
     "topic": "travel",
     "subtopic": "transport",
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bf1fe108e1723cdc14850875119049cae0a2564ca03f76ee96b97f1730438a6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9v5k3a8y",
@@ -867,8 +915,8 @@
     "ja": "車掌は推測を確かな案内と偽った。",
     "en": "The conductor palmed off conjecture as authoritative guidance.",
     "alternatives": [
-      "The conductor disguised conjecture as reliable travel guidance.",
-      "The conductor passed off guesses as trustworthy guidance."
+      "The conductor passed off guesses as reliable guidance.",
+      "The conductor passed off conjecture as authoritative guidance."
     ],
     "point": "palm off は偽って渡す、conjecture は推測、authoritative は信頼できる。",
     "topic": "travel",
@@ -876,6 +924,12 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e89744475ab884324c31035d6772b3c7093e021a40329d599171406e632fce0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

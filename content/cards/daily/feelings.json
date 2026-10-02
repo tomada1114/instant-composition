@@ -350,14 +350,20 @@
     "id": "c_5a2b9t4h",
     "ja": "私は怒ってない。",
     "en": "I'm not angry.",
-    "alternatives": ["I don't feel angry.", "I feel no anger."],
+    "alternatives": ["I don't feel angry.", "I'm not mad."],
     "point": "not angry で怒っていないと伝える。",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c758853238fdf9f5d4c73abbfec8c3b384d4fc71f00b958947a14a1931d386bc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5a9a3b2h",
@@ -403,15 +409,21 @@
   {
     "id": "c_5d2n7m3r",
     "ja": "泣かないでね。",
-    "en": "Don't cry, please.",
-    "alternatives": ["Please hold back your tears.", "Please don't shed tears."],
+    "en": "Please don't cry.",
+    "alternatives": ["Don't cry, okay?", "Try not to cry."],
     "point": "否定の命令文は Don't と動詞の原形。",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97c48c7a30634c3c0bf61738af20c2308cf2f03fdc0c51e1723e9601234c1582",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k5w3s2s",
@@ -1003,7 +1015,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:68c6acf5d5695bad591715a70df00f113ed3503b9e5230136858ee405c950c20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9x9p2r4r",

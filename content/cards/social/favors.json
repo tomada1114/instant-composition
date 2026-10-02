@@ -212,8 +212,8 @@
     "ja": "君が頼む前に私は無理してた。",
     "en": "I'd overextended myself before you asked.",
     "alternatives": [
-      "I'd already overextended myself when asked.",
-      "I'd already overdone things when you asked."
+      "I'd already overextended myself before you asked.",
+      "I'd overdone it before you asked."
     ],
     "point": "overextend myself は自分の余力を超えて引き受ける。",
     "topic": "social",
@@ -221,7 +221,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f70ee51624ef9d95412a53dbd719f6424ea5a306d4045f66fa123aa988f72d6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3r9t8j7k",
@@ -577,7 +583,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff653b5213f81fc3292f39c386f9947995877efd95aff96ca9c14654daeeca7b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5x6r9w9x",
@@ -821,19 +833,25 @@
   },
   {
     "id": "c_7x8z2d4r",
-    "ja": "あの子守の頼みは負担が重い。",
+    "ja": "あの子守の頼みは重荷に感じる。",
     "en": "That request for babysitting feels onerous.",
     "alternatives": [
       "That babysitting request feels burdensome.",
-      "The babysitting request seems a heavy burden."
+      "That request for babysitting feels burdensome."
     ],
     "point": "for babysitting は request の説明、onerous は負担が重い。",
     "topic": "social",
     "subtopic": "favors",
-    "level": 6,
+    "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da5b226823e9ca63479a5d5e9f2d1b82308e872324e86545aa4237859b11e559",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8d4x3z2v",

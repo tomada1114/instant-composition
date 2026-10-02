@@ -408,19 +408,22 @@
   },
   {
     "id": "c_5p7u5d5b",
-    "ja": "この仕事の方が要求は厳しい。",
+    "ja": "この仕事の方が要求が厳しい。",
     "en": "This task is more exacting.",
-    "alternatives": [
-      "This task demands more of you.",
-      "This assignment is more demanding."
-    ],
+    "alternatives": ["This task is more demanding.", "This assignment demands more."],
     "point": "exacting は高い水準を要求する。",
     "topic": "work",
     "subtopic": "requests",
     "level": 7,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3a73fc4cf4e7c06779011ae7d021d52bdad8cbdc090a4533fd5852f895513c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5s9q8a5g",
@@ -801,10 +804,10 @@
   },
   {
     "id": "c_8k6q2k5q",
-    "ja": "承認を早める人、君は分かる？",
+    "ja": "承認を早められる人、君は分かる？",
     "en": "Any idea who could fast-track approval?",
     "alternatives": [
-      "Do you know who could accelerate approval?",
+      "Do you know who can fast-track approval?",
       "Do you know who can expedite approval?"
     ],
     "point": "fast-track は通常より迅速に進める。",
@@ -813,7 +816,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13e3f0d2477c84c7e92ee1f254330aae4818c8642f7e826e408f19a2cbe43907",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8m4g6w6g",
@@ -984,7 +993,7 @@
   },
   {
     "id": "c_9z7k8s8b",
-    "ja": "君を待つ仕事はかなりきつい。",
+    "ja": "君を待ち受ける仕事は過酷だ。",
     "en": "Work awaiting you is grueling.",
     "alternatives": ["The work ahead of you is exhausting.", "You face grueling work."],
     "point": "awaiting you は後ろからの説明、grueling は非常にきつい。",
@@ -993,6 +1002,12 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:064d90c8991090925c53c43a108cf648eb119a03e4a5d40b46e81356a7060ad0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]
