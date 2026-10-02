@@ -162,7 +162,7 @@
       "said": "言えた",
       "review": "復習へ"
     },
-    "sheet": {
+    "dialog": {
       "title": "一時停止",
       "hint": "やめても午前 {hour} 時までなら {position} 枚目から再開",
       "quit": "やめる",

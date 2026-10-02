@@ -28,7 +28,7 @@ export function LeaveDialog({
           {t("leave.title")}
         </h2>
         <p className="font-latin text-count text-muted-foreground">
-          {t("sheet.hint", { hour: TUNING.dayBoundaryHour, position })}
+          {t("dialog.hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>
       <div className="grid grid-cols-2 gap-3">
@@ -36,7 +36,7 @@ export function LeaveDialog({
           {t("leave.go")}
         </Button>
         <Button className="w-full" data-autofocus onClick={onStay}>
-          {t("sheet.continue")}
+          {t("dialog.continue")}
           <Kbd>Esc</Kbd>
         </Button>
       </div>

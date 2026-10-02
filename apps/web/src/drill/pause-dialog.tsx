@@ -50,7 +50,7 @@ export function PauseDialog({
   onQuit: () => void;
   onContinue: () => void;
 }>): ReactElement {
-  const t = useTranslations("Drill.sheet");
+  const t = useTranslations("Drill.dialog");
   return (
     <Dialog titleId="pause-title">
       <div className="flex flex-col gap-2">

@@ -277,12 +277,14 @@ describe("PauseDialog", () => {
       />,
     );
     expect(
-      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+      screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 7 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 7 })),
     ).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: ja.Drill.sheet.continue })).toHaveFocus();
+    expect(
+      screen.getByRole("button", { name: ja.Drill.dialog.continue }),
+    ).toHaveFocus();
   });
 
   it("quits and continues through its buttons", () => {
@@ -296,8 +298,8 @@ describe("PauseDialog", () => {
         onContinue={onContinue}
       />,
     );
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.quit }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.dialog.continue }));
     expect(onQuit).toHaveBeenCalledOnce();
     expect(onContinue).toHaveBeenCalledOnce();
   });
@@ -311,8 +313,8 @@ describe("PauseDialog", () => {
         onContinue={() => undefined}
       />,
     );
-    const quit = screen.getByRole("button", { name: ja.Drill.sheet.quit });
-    const resume = screen.getByRole("button", { name: ja.Drill.sheet.continue });
+    const quit = screen.getByRole("button", { name: ja.Drill.dialog.quit });
+    const resume = screen.getByRole("button", { name: ja.Drill.dialog.continue });
     fireEvent.keyDown(resume, { key: "Tab" });
     expect(quit).toHaveFocus();
     fireEvent.keyDown(quit, { key: "Tab", shiftKey: true });
