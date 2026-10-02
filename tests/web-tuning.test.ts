@@ -2,9 +2,11 @@ import { describe, expect, it } from "vitest";
 
 import {
   isGradeKey as isDomainGradeKey,
+  TALK_TUNING,
   TUNING as DOMAIN_TUNING,
 } from "@instant-composition/domain";
 import {
+  ANSWER_FIELD_MAX,
   isDefaultGradeKeys,
   isFast,
   isGradeKey,
@@ -40,6 +42,11 @@ describe("the web client's tuning", () => {
     expect(codes.map((code) => [code, isGradeKey(code)])).toStrictEqual(
       codes.map((code) => [code, isDomainGradeKey(code)]),
     );
+  });
+
+  it("runs a talk for the domain's turns, each field taking the domain's most characters", () => {
+    expect(TUNING.talkTurns).toBe(TALK_TUNING.turns);
+    expect(ANSWER_FIELD_MAX).toBe(TALK_TUNING.maxChars);
   });
 
   it("calls a flip fast up to half the pace, and not past it", () => {

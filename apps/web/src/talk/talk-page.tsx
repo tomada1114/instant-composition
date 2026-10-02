@@ -1,25 +1,28 @@
+import { useQuery } from "@tanstack/react-query";
+import { Navigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
-import { useTranslations } from "use-intl";
 
-import { TabBar } from "../lib/tab-bar";
-import { useEscapeHome } from "../lib/use-escape-home";
-import { Eyebrow } from "../ui/eyebrow";
+import { PageLoadFailed, PageLoading } from "../lib/page-shell";
+import { HOME_QUERY, isSignedOut } from "../lib/queries";
+import { TalkSession } from "./talk-session";
 
 /**
- * The `/talk` route's stand-in until the talk screen lands: the tab's name on
- * the canvas and the tab bar, so the 会話 tab never leads to a missing page.
+ * The `/talk` route. The home view says who is signed in and whether the ○
+ * sound is on, as it does for the drill; the talk itself is read from
+ * nothing, and lives only as long as the screen does — so once the view has
+ * answered, a later refetch that fails never takes the screen away mid-talk.
  */
 export function TalkPage(): ReactElement {
-  const t = useTranslations("Nav");
-  useEscapeHome();
+  const home = useQuery(HOME_QUERY);
+  if (home.data !== undefined) return <TalkSession sound={home.data.sound} />;
+  if (home.isPending) return <PageLoading withTabBar />;
+  if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   return (
-    <>
-      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space))] max-w-column flex-col px-4 pt-8 pb-(--tab-bar-space)">
-        <h1>
-          <Eyebrow>{t("talk")}</Eyebrow>
-        </h1>
-      </main>
-      <TabBar />
-    </>
+    <PageLoadFailed
+      withTabBar
+      onReload={() => {
+        void home.refetch();
+      }}
+    />
   );
 }

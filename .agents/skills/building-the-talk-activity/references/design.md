@@ -272,6 +272,14 @@ Japanese.
   English or「わからない」 → `sendTurn`; the held reply shows after 「言えた」 or with
   the ○; W3g's「もう一度」 → `retryReply`; W4's 「終える」 → `endTalk`. Leaving mid-talk
   goes through the drill's `useBlocker` pattern and the leave sheet's recipe.
+- A `sendTurn` that got no answer at all shows W3g as well, and its 「もう一度」 sends
+  the same turn again rather than calling `retryReply`, which would answer the previous
+  turn's reply; resending is safe, since a kept turn answers its stored result. The ○
+  holds for the drill's feedback time (`TUNING.feedbackMaxMs`) over the partner's
+  waiting line before the held reply shows.
+- W4's 「終える」 from ✕ shows W3h at once and tells a failed `endTalk` with the toast;
+  from a tab or Back it sends `endTalk` and lets the navigation go without waiting, so a
+  failure there is not shown.
 - While a field has focus, the tab bar hides and the bottom panel sits on the keyboard,
   positioned from `visualViewport`; the conversation scrolls in what is left. Checked on
   a real iPhone.
