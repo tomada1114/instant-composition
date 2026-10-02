@@ -85,10 +85,9 @@ holds with these changes:
   `stamps["meanings.<lang>"]`, beside `stamps.core`. A card is shown for a first
   language only while its core stamp and that language's meaning stamp both match, so a
   new meaning hides nothing from the languages already reviewed.
-- **Step 2.** `cards:queue --kind vocab` takes no `--missing`, so list the cards from
-  `pnpm -s cards:show --kind vocab [range] --json > tmp/cards/vocab.json` and split
-  those without the meaning, stamped first, into batches:
-  `node -e 'const [l,n]=process.argv.slice(1);const c=require("./tmp/cards/vocab.json").filter(x=>!(x.meanings||{})[l]).sort((a,b)=>Number(Boolean((b.stamps||{}).core))-Number(Boolean((a.stamps||{}).core))).slice(0,Number(n));for(let b=0;b*50<c.length;b++)require("fs").writeFileSync("tmp/cards/fill-"+(b+1)+".json",JSON.stringify(c.slice(b*50,b*50+50)));console.log(c.length)' <lang> <limit>`.
+- **Step 2.**
+  `cards:queue --kind vocab --missing meanings.<lang> [range] --limit <n> --json` lists
+  the cards without the meaning, shown ones first; split it into batches as above.
 - **Step 3.** The writer's prompt names `references/fields/meanings.<lang>.md` and
   `content/guides/vocab-writing.md`, and its output is
   `[{ "id": …, "meanings": { "<lang>": "…" } }]` in
@@ -96,6 +95,5 @@ holds with these changes:
 - **Step 4.** `pnpm -s cards:update --kind vocab <file>` merges the meaning into the
   card's `meanings`, leaving the other languages and every stamp as they were.
 - **Step 5.** Commit `feat(cards): backfill meanings.<lang> on <n> vocab cards`.
-- **Step 6.**
-  `reviewing-cards kind=vocab --field meanings.<lang> --ids <every id filled>`.
-- **Step 7.** Count what is still missing by rerunning step 2's listing.
+- **Step 6.** `reviewing-cards kind=vocab --field meanings.<lang>`.
+- **Step 7.** `pnpm -s cards:queue --kind vocab --missing meanings.<lang> --count`.

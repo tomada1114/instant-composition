@@ -1,3 +1,5 @@
+import { isTouchOnly } from "../lib/touch";
+
 // The few members of the Web Speech API's recognition object the talk uses.
 // TypeScript's DOM lib carries the events but no `SpeechRecognition`
 // interface, so they are declared here rather than through another package.
@@ -90,13 +92,11 @@ export function appendHeard(before: string, heard: string, lang: string): string
   return before + separator + heard;
 }
 
-// A touch-only device: its soft keyboard would cover the panel while the
+// On a touch-only device the soft keyboard would cover the panel while the
 // read-only field keeps focus, so a session takes the focus off the field.
-const TOUCH_ONLY = "(pointer: coarse) and (hover: none)";
-
 /** Closes the soft keyboard on a touch-only device by blurring the focused field. */
 export function closeSoftKeyboard(): void {
-  if (typeof matchMedia !== "function" || !matchMedia(TOUCH_ONLY).matches) return;
+  if (!isTouchOnly()) return;
   const focused = document.activeElement;
   if (focused instanceof HTMLTextAreaElement || focused instanceof HTMLInputElement) {
     focused.blur();

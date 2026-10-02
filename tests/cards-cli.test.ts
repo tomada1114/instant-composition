@@ -485,6 +485,11 @@ describe("cards:lint", () => {
       }),
     ],
     ["no perspectivesVersion line", "guides/review-perspectives.md", "# nothing\n"],
+    [
+      "no vocabulary perspectivesVersion line",
+      "guides/vocab-review-perspectives.md",
+      "# nothing\n",
+    ],
   ])("fails on %s with ERR_CARDS_CONTENT", (_label, file, text) => {
     const root = makeContentRoot();
     writeUnder(root, file, text);
@@ -493,11 +498,17 @@ describe("cards:lint", () => {
     expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
   });
 
-  it("fails when the perspectives guide is missing", () => {
-    const root = makeContentRoot();
-    rmSync(path.join(root, "guides", "review-perspectives.md"));
-    expect(errorCode(runCards(root, ["lint"]).err)).toBe("ERR_CARDS_CONTENT");
-  });
+  it.each(["review-perspectives.md", "vocab-review-perspectives.md"])(
+    "fails when the perspectives guide %s is missing",
+    (guide) => {
+      const root = makeContentRoot();
+      rmSync(path.join(root, "guides", guide));
+      expect(errorCode(runCards(root, ["lint"]).err)).toBe("ERR_CARDS_CONTENT");
+      expect(errorCode(runCards(root, ["lint", "--kind", "vocab"]).err)).toBe(
+        "ERR_CARDS_CONTENT",
+      );
+    },
+  );
 
   it("fails on a card file that is not an array", () => {
     const root = makeContentRoot();
@@ -2449,6 +2460,120 @@ describe("cards:queue --kind vocab", () => {
       "v_2a2a2a2a  current  phrasal-verb L4  give up\n1 queued, 1 listed",
     );
     expect(run.err).toBe("unknown id v_9z9z9z9z: does not exist");
+  });
+
+  it("lists cards whose meaning is unstamped or changed under --field, current or not", () => {
+    const root = makeContentRoot();
+    const unstampedMeaning = vocabStamped(makeVocabCard("v_2a2a2a2a"));
+    delete unstampedMeaning.stamps["meanings.ja"];
+    writeVocab(root, "phrasal-verb.json", [
+      unstampedMeaning,
+      vocabStamped(
+        makeVocabCard("v_3a3a3a3a", {
+          headword: "pick up",
+          example: "{{Pick}} me {{up}}.",
+        }),
+        1,
+      ),
+      makeVocabCard("v_4a4a4a4a", {
+        headword: "put off",
+        example: "Don't {{put}} it {{off}}.",
+        meanings: {},
+      }),
+    ]);
+    writeVocab(root, "idiom.json", [
+      {
+        ...vocabStamped(makeVocabCard("v_5a5a5a5a", { category: "idiom" })),
+        meanings: { ja: "諦める" },
+      },
+    ]);
+    const run = vocab(root, ["queue", "--field", "meanings.ja"]);
+    expect(run.out.split("\n")).toEqual([
+      "v_2a2a2a2a  field-unstamped  phrasal-verb L4  give up",
+      "v_5a5a5a5a  field-changed  idiom L4  give up",
+      "2 queued, 2 listed",
+    ]);
+  });
+
+  it("lists cards lacking the meaning under --missing, shown ones first", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      vocabStamped(makeVocabCard("v_2a2a2a2a")),
+      makeVocabCard("v_3a3a3a3a", {
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+        meanings: {},
+      }),
+    ]);
+    const run = vocab(root, ["queue", "--missing", "meanings.ja"]);
+    expect(run.out).toBe(
+      "v_3a3a3a3a  missing  phrasal-verb L4  pick up\n1 queued, 1 listed",
+    );
+    expect(vocab(root, ["queue", "--missing", "meanings.ja", "--count"]).out).toBe("1");
+  });
+
+  it.each([
+    [
+      "--field with --missing",
+      ["queue", "--field", "meanings.ja", "--missing", "meanings.ja"],
+      "ERR_CARDS_USAGE",
+    ],
+    [
+      "an undeclared --field",
+      ["queue", "--field", "meanings.xx"],
+      "ERR_CARDS_UNKNOWN_FIELD",
+    ],
+    [
+      "a --missing that is not a meaning",
+      ["queue", "--missing", "headword"],
+      "ERR_CARDS_UNKNOWN_FIELD",
+    ],
+  ])("fails on %s", (_label, argv, code) => {
+    const run = vocab(makeContentRoot(), argv);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe(code);
+  });
+
+  it("reads its own perspectivesVersion, so bumping one kind's leaves the other's queue alone", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [
+      stamped(makeCard("c_2a2a2a2a", { ja: "現在の文です。" })),
+    ]);
+    writeVocab(root, "phrasal-verb.json", [vocabStamped(makeVocabCard("v_2a2a2a2a"))]);
+    writeUnder(
+      root,
+      "guides/vocab-review-perspectives.md",
+      "# Vocabulary review perspectives\n\nperspectivesVersion: 3\n",
+    );
+    expect(runCards(root, ["queue"]).out).toBe("0 queued, 0 listed");
+    expect(vocab(root, ["queue"]).out).toMatch(/^v_2a2a2a2a {2}outdated /u);
+    writeUnder(
+      root,
+      "guides/vocab-review-perspectives.md",
+      "# Vocabulary review perspectives\n\nperspectivesVersion: 2\n",
+    );
+    writeUnder(
+      root,
+      "guides/review-perspectives.md",
+      "# Review perspectives\n\nperspectivesVersion: 3\n",
+    );
+    expect(vocab(root, ["queue"]).out).toBe("0 queued, 0 listed");
+    expect(runCards(root, ["queue"]).out).toMatch(/^c_2a2a2a2a {2}outdated /u);
+  });
+
+  it("stamps a vocabulary card with the vocabulary perspectivesVersion", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    writeUnder(
+      root,
+      "guides/vocab-review-perspectives.md",
+      "# Vocabulary review perspectives\n\nperspectivesVersion: 7\n",
+    );
+    expect(vocab(root, ["stamp", "--ids", "v_2a2a2a2a"]).code).toBe(0);
+    const [card] = vocabFileOf(root, "phrasal-verb.json");
+    const stamps = card?.["stamps"] as Record<string, VocabStamp>;
+    expect(stamps["core"]?.perspectivesVersion).toBe(7);
+    expect(stamps["meanings.ja"]?.perspectivesVersion).toBe(7);
   });
 });
 

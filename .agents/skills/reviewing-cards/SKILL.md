@@ -5,7 +5,8 @@ description: >
   under content/cards/ or vocabulary cards under content/vocab/ (kind=vocab), when pnpm
   cards:lint reports errors, when unreviewed or changed cards are waiting in pnpm
   cards:queue, when a single card looks wrong while using the app, or when
-  content/guides/review-perspectives.md changed its perspectivesVersion.
+  content/guides/review-perspectives.md or vocab-review-perspectives.md changed its
+  perspectivesVersion.
 ---
 
 # Reviewing Cards
@@ -103,11 +104,13 @@ The procedure above, with these changes and no others:
   A vocabulary tombstone line carries `"kind": "vocab"`.
 - **Stamp.** `cards:stamp --kind vocab --ids <them>` stamps the core and every meaning
   the card holds; there is no `OVER_TARGET` to count.
-- **`--field meanings.<lang>`** reviews one meaning. `cards:queue --kind vocab` takes
-  neither `--field` nor `--missing`, so queue the cards by `--ids` (the ids
-  `backfilling-card-fields` filled), pass `Field: meanings.<lang>` to the reviewer, and
-  stamp with `cards:stamp --kind vocab --ids <them> --field meanings.<lang>`, which
-  leaves the core stamp alone.
+- **`--field meanings.<lang>`** reviews one meaning:
+  `cards:queue --kind vocab --field meanings.<lang>` queues the cards whose meaning is
+  unstamped or changed, the reviewer gets `Field: meanings.<lang>`, and
+  `cards:stamp --kind vocab --ids <them> --field meanings.<lang>` stamps it, leaving the
+  core stamp alone.
+- **Version.** Vocabulary stamps record `vocab-review-perspectives.md`'s own
+  `perspectivesVersion`, so bumping it re-queues only vocabulary cards.
 - **Commit** `fix(cards): review <n> vocab cards (<kept>/<edited>/<rebuilt>/<deleted>)`
   (for a meaning: `fix(cards): review meanings.<lang> on <n> vocab cards`).
 
