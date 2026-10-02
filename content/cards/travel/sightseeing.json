@@ -120,6 +120,19 @@
     }
   },
   {
+    "id": "c_2q5n3x5y",
+    "ja": "城は高いね。",
+    "en": "The castle is tall.",
+    "alternatives": ["It's a tall castle.", "That's a tall castle."],
+    "point": "高さには tall を使う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3g6c2w5g",
     "ja": "大人二枚お願いします。",
     "en": "Two adults, please.",
@@ -497,6 +510,32 @@
     }
   },
   {
+    "id": "c_5v8j7h3p",
+    "ja": "この切符は無料だ。",
+    "en": "This ticket is free.",
+    "alternatives": ["This ticket costs nothing.", "This is a free ticket."],
+    "point": "free は無料という意味。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y6s5w3p",
+    "ja": "彼女は見学中だ。",
+    "en": "She's looking around.",
+    "alternatives": ["She's having a look.", "She's taking a look."],
+    "point": "look around で見て回っている様子。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6a7a8d9k",
     "ja": "展望台はありますか？",
     "en": "Is there a lookout?",
@@ -514,6 +553,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6b9r5z2u",
+    "ja": "曇ってても眺めは最高だ。",
+    "en": "Even when cloudy, the view's stunning.",
+    "alternatives": [
+      "The view is stunning despite the clouds.",
+      "The view is spectacular even when cloudy."
+    ],
+    "point": "even when でその状況でも変わらないと伝える。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6h5h7z2z",
@@ -596,6 +651,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7t9y5a6u",
+    "ja": "私はもう城を一巡しました。",
+    "en": "I've already toured the castle.",
+    "alternatives": [
+      "I've already been around the castle.",
+      "I've finished touring the castle."
+    ],
+    "point": "tour は観光目的で見て回る。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_8f3x5y2u",
+    "ja": "この塔は修復されました。",
+    "en": "This tower has been restored.",
+    "alternatives": [
+      "They've restored this tower.",
+      "Restoration of this tower is complete."
+    ],
+    "point": "restore は古い建物を元の状態に戻す。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8n6w8v9x",

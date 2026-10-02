@@ -82,6 +82,54 @@
     }
   },
   {
+    "id": "c_3f4v3u5m",
+    "ja": "彼が軽んじられたと思うのは分かる。",
+    "en": "I get why he feels he's been slighted.",
+    "alternatives": [
+      "I understand why he thinks he's been disrespected.",
+      "I see why he feels he's been treated dismissively."
+    ],
+    "point": "slighted は軽んじられたと感じること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3h3f3q3b",
+    "ja": "私ならその案を弱く褒めて遠回しにけなす。",
+    "en": "In your shoes, I'd damn it with faint praise.",
+    "alternatives": [
+      "If I were you, I'd criticize with lukewarm praise.",
+      "I'd use tepid praise to criticize it in your place."
+    ],
+    "point": "damn with faint praise は弱い賛辞で逆にけなす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3h8z7g4e",
+    "ja": "私はこんな恨みを抱くと思わなかった。",
+    "en": "Little did I imagine I'd harbor such resentment.",
+    "alternatives": [
+      "I never imagined I'd nurse such a grudge.",
+      "I hadn't imagined I'd feel such lasting bitterness."
+    ],
+    "point": "harbor resentment は恨みを心に抱き続ける。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3p7z6b4w",
     "ja": "一人で歩くのは平気だよ。",
     "en": "I don't mind walking alone.",

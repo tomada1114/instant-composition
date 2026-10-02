@@ -230,6 +230,38 @@
     }
   },
   {
+    "id": "c_3y8p9u8g",
+    "ja": "君の負担が増えるのが心配だ。",
+    "en": "I worry that this burdens you.",
+    "alternatives": [
+      "I'm concerned this adds to your burden.",
+      "I'm worried this puts more pressure on you."
+    ],
+    "point": "burden は相手に負担をかける動詞にもなる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_4a2x9c9j",
+    "ja": "私は頼みを断って心苦しい。",
+    "en": "I regret turning down your request.",
+    "alternatives": [
+      "I feel bad about turning down your request.",
+      "I'm sorry I've declined your request."
+    ],
+    "point": "regret doing はその行為を心苦しく思う。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4c3x4q4d",
     "ja": "彼の代わりを務めたのは、私なんだよ。",
     "en": "It was me who covered for him.",
@@ -496,6 +528,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6k2b8r9s",
+    "ja": "彼に手加減してと頼んで。",
+    "en": "Ask him to go easy.",
+    "alternatives": ["Ask him to ease up.", "Ask him to be less demanding."],
+    "point": "go easy は厳しさを和らげる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6q2r2g5g",

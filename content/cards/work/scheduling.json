@@ -146,6 +146,22 @@
     }
   },
   {
+    "id": "c_4d9f6y6s",
+    "ja": "日程が動くと彼らは分かってないと思う。",
+    "en": "I doubt they grasp how fluid our schedule is.",
+    "alternatives": [
+      "I don't think they understand how changeable our schedule is.",
+      "They probably don't appreciate how unsettled our schedule is."
+    ],
+    "point": "fluid は予定がまだ動き得る状態。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4e9b2f6z",
     "ja": "これ、30分前倒しにできますか？",
     "en": "Could we move it up by 30 minutes?",
@@ -423,6 +439,22 @@
     }
   },
   {
+    "id": "c_6z9a2g5x",
+    "ja": "私たちが日程に余白を残せてたらなあ。",
+    "en": "I wish we'd built some float into scheduling.",
+    "alternatives": [
+      "I wish we'd allowed some leeway in the schedule.",
+      "If only we'd left some slack in scheduling."
+    ],
+    "point": "float は日程に組み込む余裕時間。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7k7u8w3t",
     "ja": "プリヤは木曜を仮押さえすると言った。",
     "en": "Priya said she'd pencil in Thursday.",
@@ -588,6 +620,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8f6d5b6j",
+    "ja": "仕事を前倒ししてれば今は余裕があるのに。",
+    "en": "Had we front-loaded work, we'd have slack now.",
+    "alternatives": [
+      "If we'd done more upfront, we'd have leeway now.",
+      "We'd have breathing room now had we worked ahead."
+    ],
+    "point": "front-load は仕事を前半に集中させる。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8h2s9b3m",

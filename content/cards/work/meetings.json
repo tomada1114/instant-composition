@@ -143,6 +143,22 @@
     }
   },
   {
+    "id": "c_4e6w9b6v",
+    "ja": "私たちはもう懸念を解消した。",
+    "en": "We've already addressed the concerns.",
+    "alternatives": [
+      "We've already resolved the concerns.",
+      "We've already dealt with the concerns."
+    ],
+    "point": "address concerns は懸念に対処する。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4s7d5g5y",
     "ja": "資料を読んだので、次に行こう。",
     "en": "Having read the handout, let's move on.",
@@ -427,6 +443,22 @@
     }
   },
   {
+    "id": "c_7x9h8s9p",
+    "ja": "私は議論を脱線させたくない。",
+    "en": "I want to avoid derailing discussion.",
+    "alternatives": [
+      "I don't want to derail the discussion.",
+      "I'd rather not send the discussion off track."
+    ],
+    "point": "avoid の後は動名詞、derail は脱線させる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7z3h6x8b",
     "ja": "次の会議は私が進行します。",
     "en": "I'll lead the next meeting.",
@@ -507,6 +539,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8w7g2r5d",
+    "ja": "見解は違うが方針は支持します。",
+    "en": "Despite disagreeing, I support the approach.",
+    "alternatives": [
+      "Although I disagree, I back the approach.",
+      "I support the approach despite my disagreement."
+    ],
+    "point": "despite の後は名詞か動名詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9d5j3y7d",

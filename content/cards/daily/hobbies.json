@@ -129,6 +129,22 @@
     }
   },
   {
+    "id": "c_4d9n2p2q",
+    "ja": "私は唐突な救済展開を作品から削った。",
+    "en": "I edited the deus ex machina out.",
+    "alternatives": [
+      "I cut out the contrived last-minute plot rescue.",
+      "I removed the implausibly convenient plot resolution."
+    ],
+    "point": "deus ex machina は唐突な救済で話を解決する展開。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4g3b3p2v",
     "ja": "ハイキングに行こう。",
     "en": "Let's go hiking.",
@@ -212,6 +228,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5e4f5p5r",
+    "ja": "私は良い写真を飾りすぎなければなあ。",
+    "en": "I wish I hadn't gilded the lily.",
+    "alternatives": [
+      "I wish I hadn't overembellished my good photos.",
+      "If only I'd left my good photos unembellished."
+    ],
+    "point": "gild the lily は良いものに不要な飾りを足す。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5e6y6x3z",
@@ -477,6 +509,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7a8p8q4u",
+    "ja": "こんな抑えた哀感は私は滅多に見ない。",
+    "en": "Rarely have I seen such understated pathos.",
+    "alternatives": [
+      "I've rarely seen such subtly conveyed sorrow.",
+      "I've seldom seen sadness expressed with such restraint."
+    ],
+    "point": "understated pathos は大げさに表さない哀感。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7d4f8a4y",

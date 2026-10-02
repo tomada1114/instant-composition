@@ -66,6 +66,22 @@
     }
   },
   {
+    "id": "c_2t8p6d6x",
+    "ja": "拡大すれば私たちの利幅は薄くなる。",
+    "en": "If we scaled up, our margins would shrink.",
+    "alternatives": [
+      "Our profit margins would narrow if we expanded.",
+      "If we grew, we'd have thinner profit margins."
+    ],
+    "point": "margins は金額そのものではなく利幅。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2w2d2x4h",
     "ja": "これは何の図ですか？",
     "en": "What is this chart?",
@@ -102,6 +118,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3j7j7w7x",
+    "ja": "この数字の隠れた問題が分かりますか？",
+    "en": "Can you see where these figures fall short?",
+    "alternatives": [
+      "Do you see the shortcomings in these figures?",
+      "Can you identify the weakness in these numbers?"
+    ],
+    "point": "fall short は数字が期待や基準に届かないこと。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3k4w7x8y",
@@ -607,6 +639,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9b6q3q6v",
+    "ja": "伸びが鈍った訳を彼は知らないと思う。",
+    "en": "I doubt he knows why growth tapered off.",
+    "alternatives": [
+      "I don't think he understands why growth lost momentum.",
+      "I doubt he understands why growth slowed down."
+    ],
+    "point": "taper off は伸びや勢いが徐々に弱まる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9d5c7z2p",

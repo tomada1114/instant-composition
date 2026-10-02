@@ -360,6 +360,22 @@
     }
   },
   {
+    "id": "c_5t2u9s5d",
+    "ja": "遅延で我々は現状維持だけでも必死だ。",
+    "en": "Delays have us running to stand still.",
+    "alternatives": [
+      "The delays make us struggle just to stay afloat.",
+      "Delays leave us working hard merely to hold ground."
+    ],
+    "point": "run to stand still は努力しても現状維持が精いっぱい。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5u9m9k6b",
     "ja": "進み具合を知らせてね。",
     "en": "Keep me posted.",
@@ -487,6 +503,22 @@
     }
   },
   {
+    "id": "c_6y3u4n9d",
+    "ja": "私たちは問題を取り繕ってるのかも。",
+    "en": "We may be papering over the cracks.",
+    "alternatives": [
+      "We might be glossing over the problems.",
+      "Perhaps we're covering up the underlying problems."
+    ],
+    "point": "paper over the cracks は根本を直さず取り繕う。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7h7q2u3y",
     "ja": "予算がきついです。",
     "en": "The budget is tight.",
@@ -593,6 +625,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8g6n4f3m",
+    "ja": "それでも我々の試算は精査に耐えない。",
+    "en": "Even so, our estimates don't bear scrutiny.",
+    "alternatives": [
+      "Nevertheless, our estimates don't stand up to scrutiny.",
+      "Still, our estimates don't withstand close examination."
+    ],
+    "point": "bear scrutiny は厳しく調べても成り立つこと。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8g8j9s3b",

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b4n3b7g",
+    "ja": "私は空席待ちに回されました。",
+    "en": "I was bumped onto the standby list.",
+    "alternatives": [
+      "They bumped me to the standby list.",
+      "I was switched from confirmed seating to standby."
+    ],
+    "point": "bumped は確定していた席から外された含み。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2j5g5c8g",
     "ja": "隣の男性が、荷物を上げてくれた。",
     "en": "The man beside me lifted my bag.",
@@ -80,6 +96,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4c7h4z4j",
+    "ja": "夜便で来てたら私たち今はぐったりだ。",
+    "en": "Had we taken the red-eye, we'd be wrecked.",
+    "alternatives": [
+      "If we'd flown overnight, we'd be exhausted now.",
+      "We'd be wiped out now had we flown overnight."
+    ],
+    "point": "red-eye は夜をまたぐ便、wrecked はぐったり。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4g6k5b7t",
@@ -311,6 +343,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5q7e4a3u",
+    "ja": "彼女はもう審査をすんなり通った。",
+    "en": "She's already breezed through immigration.",
+    "alternatives": [
+      "She's already sailed through immigration.",
+      "She's already cleared immigration with no trouble."
+    ],
+    "point": "breeze through は難なくすんなり通過する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5r2w2n5a",

@@ -44,6 +44,38 @@
     }
   },
   {
+    "id": "c_2s5t6p7r",
+    "ja": "問題なのは、その修正が脆いことだ。",
+    "en": "What worries me is how brittle that fix is.",
+    "alternatives": [
+      "It's the fragility of that fix that worries me.",
+      "My concern is that the fix breaks too easily."
+    ],
+    "point": "brittle は小さな変化で壊れやすい実装。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_2t2s6c9z",
+    "ja": "我々が依存を切ってたら今は特定できる。",
+    "en": "Had we decoupled it, we'd pinpoint the cause now.",
+    "alternatives": [
+      "If we'd removed dependencies, we could isolate the cause now.",
+      "We'd pinpoint the cause now had we removed dependencies."
+    ],
+    "point": "decouple は他の部分との依存を切り離す。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2t4b3c8r",
     "ja": "まず再現手順を書くべき。",
     "en": "You should write repro steps first.",
@@ -86,6 +118,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3c6u7c5y",
+    "ja": "私は競合する実行経路を解きほぐした。",
+    "en": "I teased apart the competing execution paths.",
+    "alternatives": [
+      "I untangled the competing execution paths.",
+      "I disentangled the competing execution paths."
+    ],
+    "point": "tease apart は絡み合った要素を丁寧に分ける。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3j7s9w3e",

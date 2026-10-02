@@ -372,6 +372,22 @@
     }
   },
   {
+    "id": "c_6p9m3e7u",
+    "ja": "私はずっと設定をいじってる。",
+    "en": "I've been fiddling with the configuration.",
+    "alternatives": [
+      "I've been tinkering with the settings.",
+      "I've been making little adjustments to the configuration."
+    ],
+    "point": "fiddle with は細かくいじる感じを含む。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6z2m4s6c",
     "ja": "新しい方のツールが速い。",
     "en": "The new tool is faster.",
@@ -411,6 +427,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7p8t5b5a",
+    "ja": "継ぎはぎしたこのツールは脆い。",
+    "en": "This tool, cobbled together, is brittle.",
+    "alternatives": [
+      "This cobbled-together tool is fragile.",
+      "This tool, pieced together, breaks easily."
+    ],
+    "point": "cobbled together は間に合わせで継ぎはぎした。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7v5k2d9e",

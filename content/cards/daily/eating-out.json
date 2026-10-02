@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_2u6p6d8f",
+    "ja": "食後、私は損した気分だった。",
+    "en": "I left the meal feeling shortchanged.",
+    "alternatives": [
+      "The meal left me feeling cheated.",
+      "I finished the meal feeling ripped off."
+    ],
+    "point": "shortchanged は十分な価値を得られず損した感じ。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2v5b2b3p",
     "ja": "好きな店が潰れたと彼女が言った。",
     "en": "She said my favorite place closed down.",
@@ -144,6 +160,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3q7d7t4c",
+    "ja": "私は軽い前菜にしておきます。",
+    "en": "I'll stick to a light appetizer.",
+    "alternatives": [
+      "I'll just have a light starter.",
+      "I'm going to stick to a light appetizer."
+    ],
+    "point": "stick to はそれだけにとどめる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3u4r6r6z",
@@ -267,6 +299,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5m4q7q7s",
+    "ja": "彼らは注文を取り違えたのかも。",
+    "en": "They might have mixed up orders.",
+    "alternatives": [
+      "They may have confused the orders.",
+      "Perhaps they got the orders mixed up."
+    ],
+    "point": "might have done は過去の出来事への推測。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5m9a7t2u",

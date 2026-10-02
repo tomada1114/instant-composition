@@ -237,6 +237,22 @@
     }
   },
   {
+    "id": "c_4e5z8v9x",
+    "ja": "顧客の依頼が一件未処理。",
+    "en": "There's one outstanding client request.",
+    "alternatives": [
+      "One client request is still pending.",
+      "There's one client request awaiting action."
+    ],
+    "point": "outstanding はまだ処理されていない意味もある。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4x3h9j8f",
     "ja": "よければ、手伝ってもらえない？",
     "en": "I don't suppose you could help?",
@@ -320,6 +336,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5d4y5v8d",
+    "ja": "手が空いたら手伝います。",
+    "en": "I'll help once I'm free.",
+    "alternatives": ["When I'm available, I'll help.", "I'll help when I have time."],
+    "point": "once の後は未来のことも現在形。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5k6y2b6x",
@@ -738,6 +767,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9b7p3z2d",
+    "ja": "顧客の修正依頼を優先して。",
+    "en": "Prioritize the client's revised request.",
+    "alternatives": [
+      "Give the client's updated request priority.",
+      "Put the client's revised request first."
+    ],
+    "point": "revised は修正を加えたもの。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["imperatives", "post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9f4p6z5s",

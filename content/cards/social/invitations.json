@@ -268,6 +268,22 @@
     }
   },
   {
+    "id": "c_4a6z4q8t",
+    "ja": "断ってたら私は今ごろ仲間外れだ。",
+    "en": "Had I declined, I'd be left out now.",
+    "alternatives": [
+      "If I'd declined, I'd be excluded now.",
+      "I'd be out of the loop had I declined."
+    ],
+    "point": "過去の辞退が今の仲間外れにつながる仮定。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4b4p6v9g",
     "ja": "先週、彼に誘われたよ。",
     "en": "He invited me last week.",
@@ -537,6 +553,22 @@
     }
   },
   {
+    "id": "c_6x7a3j7h",
+    "ja": "私の返事は参加を濁してたかも。",
+    "en": "My reply might've sounded evasive about coming.",
+    "alternatives": [
+      "My response may have sounded noncommittal about coming.",
+      "My answer might have seemed evasive about attending."
+    ],
+    "point": "evasive は返事をはぐらかす感じを表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7b9d2e5w",
     "ja": "終わったら合流するよ。",
     "en": "I'll join you when I'm done.",
@@ -557,6 +589,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7c3n2j4y",
+    "ja": "私は誘いを滅多に見送らない。",
+    "en": "Rarely do I pass up an invitation.",
+    "alternatives": [
+      "I rarely turn down an invitation.",
+      "I seldom decline an invitation."
+    ],
+    "point": "rarely を先頭に出すと do が主語の前。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7t2b3s2p",
