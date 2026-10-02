@@ -110,10 +110,13 @@ export type {
   SettingsView,
   StreakView,
   TalkOpened,
+  TalkView,
   TopicInfo,
   TurnResult,
   Verdict,
 } from "./openapi";
+export { TALK_STORAGE_KEY } from "./lib/talk-storage";
+export { resumedTalk } from "./talk/talk-resume";
 export { countUpPlan, valueAt, type CountUp } from "./summary/count-up";
 export { SummaryScreen } from "./summary/summary-screen";
 export { parseTitleKey, type ParsedTitle } from "./summary/titles";

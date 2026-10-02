@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import {
   addCards,
   endTalk,
+  getTalk,
   learnerId,
   makeCandidates,
   recordRecital,
@@ -68,6 +69,92 @@ async function sentThrough(count: number): Promise<void> {
     }
   }
 }
+
+describe("getTalk", () => {
+  it("reads kept feedback and a missing reply, omitting private fields without a call or write", async () => {
+    await started();
+    h.failing.add("talk-partner");
+    await sendTurn(h.talkDeps, h.context(), { ...TURN, english: null });
+    await recordRecital(h.talkDeps, h.context(), {
+      talkId: "t1",
+      turn: 1,
+      revealCount: 3,
+    });
+    const before = await stored();
+    const calls = h.model.requests.length;
+    const result = await getTalk(h.talkDeps, h.context(), "t1");
+    expect(result).toStrictEqual({
+      ok: true,
+      value: {
+        talkId: "t1",
+        status: "open",
+        turnCount: TALK_TUNING.turns,
+        scene: {
+          partner: SCENE.partner,
+          place: SCENE.place,
+          relation: SCENE.relation,
+          description: SCENE.description,
+        },
+        opening: SCENE.opening,
+        turns: [
+          {
+            turn: 1,
+            japanese: TURN.japanese,
+            english: null,
+            judgment: JUDGMENT,
+            reply: null,
+            closing: false,
+          },
+        ],
+      },
+    });
+    expect(await stored()).toStrictEqual(before);
+    expect(h.model.requests).toHaveLength(calls);
+  });
+
+  it.each([
+    ["finished", 6, true],
+    ["ended", 1, false],
+    ["discarded", 0, undefined],
+  ])("reads a %s talk", async (status, count, closing) => {
+    await started();
+    await sentThrough(count);
+    await endTalk(h.talkDeps, h.context(), { talkId: "t1" });
+    const result = await getTalk(h.talkDeps, h.context(), "t1");
+    expect(result.ok && result.value).toMatchObject({ status });
+    expect(result.ok && result.value.turns.length).toBe(count);
+    expect(result.ok && result.value.turns.at(-1)?.closing).toBe(closing);
+  });
+
+  it.each([
+    ["finished", 6],
+    ["ended", 1],
+  ])("reads a kept %s talk after the open talk expiry", async (status, count) => {
+    await started();
+    await sentThrough(count);
+    await endTalk(h.talkDeps, h.context(), { talkId: "t1" });
+    const result = await getTalk(h.talkDeps, h.context(NOON + 2 * DAY_MS), "t1");
+    expect(result.ok && result.value).toMatchObject({ status });
+  });
+
+  it.each([
+    ["unknown", "t2", NOON, "learner-a"],
+    ["expired", "t1", NOON + DAY_MS, "learner-a"],
+    ["another learner's", "t1", NOON, "learner-b"],
+  ])("does not find an %s talk", async (_, talkId, now, learner) => {
+    await started();
+    const id = learnerId(learner);
+    const context = {
+      ...h.context(now),
+      actor: { kind: "learner" as const, learnerId: id },
+      learner: { ...h.context(now).learner, id },
+    };
+    expect(await getTalk(h.talkDeps, context, talkId)).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_TALK_NOT_FOUND" },
+    });
+  });
+});
 
 describe("startTalk", () => {
   it("makes one scene call for two starts with the same talk id, and answers the same talk both times", async () => {
@@ -391,6 +478,7 @@ describe("authorization", () => {
   });
 
   it.each([
+    ["getTalk", () => getTalk(h.talkDeps, agent(), "t1")],
     ["startTalk", () => startTalk(h.talkDeps, agent(), { talkId: "t1" })],
     ["sendTurn", () => sendTurn(h.talkDeps, agent(), TURN)],
     ["retryReply", () => retryReply(h.talkDeps, agent(), { talkId: "t1" })],

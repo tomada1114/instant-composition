@@ -7,6 +7,7 @@ import {
   startTalkRequestSchema,
   talkEndedSchema,
   talkOpenedSchema,
+  talkViewSchema,
   turnRequestSchema,
   turnResultSchema,
 } from "./talk";
@@ -26,6 +27,21 @@ const TALK_ERRORS = [
 
 /** The talk activity's `/v1` operations; the talk context's commands back them. */
 export const TALK_ROUTES: readonly Route[] = [
+  {
+    method: "get",
+    path: "/v1/talks/{talkId}",
+    operationId: "getTalk",
+    summary:
+      "Reads the signed-in learner's own unexpired talk and kept turns without a model call or a write; omits model metadata and recital counters.",
+    requestBody: null,
+    success: { status: 200, body: talkViewSchema },
+    errors: [
+      "ERR_BAD_REQUEST",
+      "ERR_UNAUTHENTICATED",
+      "ERR_FORBIDDEN",
+      "ERR_TALK_NOT_FOUND",
+    ],
+  },
   {
     method: "post",
     path: "/v1/talks",

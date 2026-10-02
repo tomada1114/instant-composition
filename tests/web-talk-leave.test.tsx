@@ -24,6 +24,7 @@ import {
   replyTo,
   say,
   serveTalk,
+  savedTalk,
   turnResult,
   write,
 } from "./web-talk-harness";
@@ -58,6 +59,7 @@ function toast(): string {
 beforeAll(warmUp);
 
 beforeEach(() => {
+  savedTalk(null);
   fakeTimers();
 });
 

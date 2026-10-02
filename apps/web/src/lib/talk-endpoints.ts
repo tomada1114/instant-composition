@@ -1,4 +1,7 @@
 import type {
+  GetTalkData,
+  GetTalkResponses,
+  TalkView,
   EndTalkData,
   EndTalkResponses,
   PartnerReply,
@@ -14,12 +17,36 @@ import type {
   TurnRequest,
   TurnResult,
 } from "../openapi";
-import { call, send, type ApiError } from "./api-call";
+import { call, errorCode, send, type ApiError, type OperationData } from "./api-call";
 import type { Result } from "./result";
+import { forgetTalk } from "./talk-storage";
+
+async function talkCall<T extends { 200: unknown }>(
+  method: "GET" | "POST",
+  data: OperationData,
+): Promise<Result<T[200], ApiError>> {
+  const result = await call<T>(method, data);
+  const talkId = data.path?.["talkId"];
+  if (
+    !result.ok &&
+    result.error.code === "ERR_TALK_NOT_FOUND" &&
+    typeof talkId === "string"
+  )
+    forgetTalk(talkId);
+  return result;
+}
+
+/** Reads this learner's own talk and kept turns without a model call. */
+export function getTalk(talkId: string): Promise<Result<TalkView, ApiError>> {
+  return talkCall<GetTalkResponses>("GET", {
+    url: "/v1/talks/{talkId}",
+    path: { talkId },
+  } satisfies GetTalkData);
+}
 
 /** Opens the talk `talkId` names, or answers the talk a start with that id already made. */
 export function startTalk(talkId: string): Promise<Result<TalkOpened, ApiError>> {
-  return call<StartTalkResponses>("POST", {
+  return talkCall<StartTalkResponses>("POST", {
     url: "/v1/talks",
     body: { talkId },
   } satisfies StartTalkData);
@@ -30,7 +57,7 @@ export function sendTurn(
   talkId: string,
   turn: TurnRequest,
 ): Promise<Result<TurnResult, ApiError>> {
-  return call<SendTurnResponses>("POST", {
+  return talkCall<SendTurnResponses>("POST", {
     url: "/v1/talks/{talkId}/turns",
     path: { talkId },
     body: turn,
@@ -39,7 +66,7 @@ export function sendTurn(
 
 /** Asks again for the partner's reply to the latest turn kept. */
 export function retryReply(talkId: string): Promise<Result<PartnerReply, ApiError>> {
-  return call<RetryReplyResponses>("POST", {
+  return talkCall<RetryReplyResponses>("POST", {
     url: "/v1/talks/{talkId}/reply",
     path: { talkId },
   } satisfies RetryReplyData);
@@ -55,11 +82,13 @@ export async function recordRecital(
   revealCount: number,
 ): Promise<void> {
   try {
-    await send("POST", {
+    const response = await send("POST", {
       url: "/v1/talks/{talkId}/turns/{turn}/recital",
       path: { talkId, turn },
       body: { revealCount },
     } satisfies RecordRecitalData);
+    if (!response.ok && errorCode(await response.json()) === "ERR_TALK_NOT_FOUND")
+      forgetTalk(talkId);
   } catch {
     // Nothing is shown for a recital that was not kept.
   }
@@ -67,7 +96,7 @@ export async function recordRecital(
 
 /** Ends the talk: `kept` says whether it held a turn to keep as a record. */
 export function endTalk(talkId: string): Promise<Result<TalkEnded, ApiError>> {
-  return call<EndTalkResponses>("POST", {
+  return talkCall<EndTalkResponses>("POST", {
     url: "/v1/talks/{talkId}/end",
     path: { talkId },
   } satisfies EndTalkData);

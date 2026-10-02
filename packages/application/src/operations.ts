@@ -19,6 +19,7 @@ export const LEARNER_OPERATIONS = [
   "settings",
   "history",
   "startTalk",
+  "getTalk",
   "sendTurn",
   "retryReply",
   "recordRecital",

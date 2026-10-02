@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   TALK_IDLE,
+  resumedTalk,
+  type TalkView,
   talkReducer,
   type PartnerReply,
   type TalkEvent,
@@ -246,5 +248,95 @@ describe("the talk reducer", () => {
 
   it("restarts from W2's preparing when a new talk is asked for", () => {
     expect(step(run(...SENT, { type: "end" }, { type: "start" }))).toBe("preparing");
+  });
+});
+
+describe("restoring kept turns", () => {
+  const view = (turns: TalkView["turns"]): TalkView => ({
+    ...opened(ID),
+    status: "open",
+    turns,
+  });
+  it("starts an empty open talk at its opening", () => {
+    const talk = resumedTalk(view([]));
+    expect(talk.step).toBe("japanese");
+    expect(talk.turns).toStrictEqual([
+      { n: 1, partnerLine: opened(ID).opening, revealCount: 0 },
+    ]);
+  });
+  it.each(["fine", "corrected", "failed"] as const)(
+    "skips an interrupted %s turn, keeping its judgment and give-up",
+    (verdict) => {
+      const judgment = turnResult(verdict, 1).judgment;
+      const talk = resumedTalk(
+        view([
+          {
+            turn: 1,
+            japanese: "日本語",
+            english: null,
+            judgment,
+            reply: "Reply.",
+            closing: false,
+          },
+        ]),
+      );
+      expect(talk.step).toBe("japanese");
+      expect(talk.turns).toHaveLength(2);
+      expect(talk.turns[0]).toMatchObject({ english: null, judgment, revealCount: 0 });
+      expect(talk.turns[1]).toMatchObject({ n: 2, partnerLine: "Reply." });
+    },
+  );
+  it("waits to retry a missing reply and continues when it arrives", () => {
+    const talk = resumedTalk(
+      view([
+        {
+          turn: 1,
+          japanese: "日本語",
+          english: "English.",
+          judgment: turnResult("corrected", 1).judgment,
+          reply: null,
+          closing: false,
+        },
+      ]),
+    );
+    expect(talk.step).toBe("replyFailed");
+    const state: TalkState = { kind: "talk", talk };
+    const retrying = talkReducer(state, { type: "retrying", talkId: ID });
+    const replied = talkReducer(retrying, {
+      type: "replied",
+      talkId: ID,
+      reply: replyTo(1),
+    });
+    expect(step(replied)).toBe("japanese");
+  });
+  it("shows the end when the kept reply closes", () => {
+    const talk = resumedTalk(
+      view([
+        {
+          turn: 6,
+          japanese: "日本語",
+          english: "English.",
+          judgment: turnResult("fine", 6).judgment,
+          reply: "Bye.",
+          closing: true,
+        },
+      ]),
+    );
+    expect(talk).toMatchObject({ step: "ended", closed: true });
+  });
+  it("accepts a resume only while preparing, and missing returns to idle", () => {
+    const talk = resumedTalk(view([]));
+    const event: TalkEvent = { type: "resumed", talk };
+    expect(talkReducer(TALK_IDLE, event)).toBe(TALK_IDLE);
+    expect(talkReducer({ kind: "preparing" }, event)).toStrictEqual({
+      kind: "talk",
+      talk,
+    });
+    expect(talkReducer({ kind: "preparing" }, { type: "resumeMissing" })).toBe(
+      TALK_IDLE,
+    );
+    const state = run(...OPEN);
+    expect(talkReducer(state, event)).toBe(state);
+    expect(talkReducer(state, { type: "resumeMissing" })).toBe(state);
   });
 });

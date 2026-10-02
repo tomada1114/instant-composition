@@ -66,7 +66,8 @@ when the learner stops speaking.
 - **The provider is configuration.** OpenRouter stands in until the `dev` account can
   call Bedrock; nothing outside the adapters may know which provider answered.
 - **Only finished talks are kept.** An open or discarded talk expires through the
-  table's TTL; nothing resumes a talk.
+  table's TTL. This browser resumes an unexpired open talk after a reload; an explicitly
+  ended or discarded talk is not resumed.
 
 ## Keeping this current
 

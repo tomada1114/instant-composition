@@ -1,7 +1,7 @@
-import { act, fireEvent, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, screen } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { browserSound } from "@instant-composition/web";
+import { browserSound, TALK_STORAGE_KEY } from "@instant-composition/web";
 
 import {
   COUNT,
@@ -28,6 +28,8 @@ import {
   press,
   say,
   serveTalk,
+  savedTalk,
+  talkView,
   turnResult,
   write,
 } from "./web-talk-harness";
@@ -63,12 +65,291 @@ function key(name: string): void {
 beforeAll(warmUp);
 
 beforeEach(() => {
+  savedTalk(null);
   fakeTimers();
 });
 
 afterEach(() => {
   act(() => {
     window.history.replaceState(null, "", "/");
+  });
+});
+
+describe("resuming on this browser", () => {
+  it("saves the opened id and reloads at turn 4 with three kept turns and their feedback", async () => {
+    const calls = serveTalk({
+      turn: (body) => Response.json(turnResult("corrected", body.turn)),
+      read: (talkId) => Response.json({ ...talkView(talkId), turnCount: 5 }),
+    });
+    await renderApp("/talk");
+    await begin();
+    const talkId = localStorage.getItem(TALK_STORAGE_KEY);
+    expect(talkId).toBeTypeOf("string");
+    for (const n of [1, 2, 3]) {
+      await say(`日本語-${String(n)}`, n === 2 ? null : `english-${String(n)}`);
+      if (n < 3) {
+        press(ja.Talk.teacher.hide);
+        press(ja.Talk.teacher.said);
+        await settle();
+      }
+    }
+    cleanup();
+    await renderApp("/talk");
+    expect(screen.getByText(SCENE)).toBeInTheDocument();
+    for (const n of [1, 2, 3])
+      expect(screen.getByText(`日本語-${String(n)}`)).toBeInTheDocument();
+    expect(screen.getAllByText("english-1")[0]).toBeInTheDocument();
+    expect(screen.getAllByText("english-3")[0]).toBeInTheDocument();
+    expect(screen.getAllByText(MODEL_ANSWER)).toHaveLength(3);
+    expect(screen.getAllByText(POINT)).toHaveLength(3);
+    expect(
+      screen.getByText(fill(ja.Talk.strip.progress, { current: 4, total: 5 })),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: ja.Talk.teacher.hide })).toBeNull();
+    expect(
+      calls.filter(
+        (call) =>
+          call.method === "GET" && call.url === `/api/v1/talks/${String(talkId)}`,
+      ),
+    ).toHaveLength(1);
+    await say("次の日本語", "Next turn.");
+    expect(posted(calls, TURNS).at(-1)).toMatchObject({ turn: 4 });
+  });
+
+  it("stays preparing while reading the saved id", async () => {
+    savedTalk("held");
+    let resolve: ((response: Response) => void) | undefined;
+    const pending = new Promise<Response>((deliver) => {
+      resolve = deliver;
+    });
+    serveTalk({ read: () => pending });
+    await renderApp("/talk");
+    expect(
+      screen.getByRole("button", { name: ja.Talk.start.preparing }),
+    ).toBeDisabled();
+    if (resolve === undefined) throw new Error("The read must be pending.");
+    resolve(Response.json(talkView("held", 0)));
+    await settle();
+    expect(screen.getByText(OPENING)).toBeInTheDocument();
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toBeInTheDocument();
+  });
+
+  it("skips the recital and retries a kept turn's missing partner reply", async () => {
+    savedTalk("held");
+    const view = talkView("held", 2);
+    const calls = serveTalk({
+      read: () =>
+        Response.json({
+          ...view,
+          turns: view.turns.map((turn) => ({
+            ...turn,
+            reply: turn.turn === 2 ? null : turn.reply,
+          })),
+        }),
+      reply: () => Response.json({ line: "Reply recovered.", closing: false }),
+    });
+    await renderApp("/talk");
+    expect(screen.getByText(ja.Talk.reply.failed)).toBeInTheDocument();
+    expect(screen.getAllByText(MODEL_ANSWER)).toHaveLength(2);
+    press(ja.Talk.reply.retry);
+    await settle();
+    expect(screen.getByText("Reply recovered.")).toBeInTheDocument();
+    expect(screen.getByText(progress(3))).toBeInTheDocument();
+    expect(posted(calls, /\/reply$/u)).toHaveLength(1);
+    expect(posted(calls, TURNS)).toHaveLength(0);
+    expect(posted(calls, /\/recital$/u)).toHaveLength(0);
+  });
+
+  it("quietly clears an expired id and returns to W2", async () => {
+    savedTalk("expired");
+    serveTalk({ read: () => refusal(404, "ERR_TALK_NOT_FOUND") });
+    await renderApp("/talk");
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeEnabled();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBeNull();
+    expect(screen.getByRole("status")).toHaveTextContent("");
+  });
+
+  it.each(["finished", "ended", "discarded"] as const)(
+    "quietly clears a %s talk instead of resuming it",
+    async (status) => {
+      savedTalk("closed");
+      serveTalk({ read: () => Response.json({ ...talkView("closed"), status }) });
+      await renderApp("/talk");
+      expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeEnabled();
+      expect(localStorage.getItem(TALK_STORAGE_KEY)).toBeNull();
+      expect(screen.getByRole("status")).toHaveTextContent("");
+    },
+  );
+
+  it("shows the step after a closing reply and clears the id", async () => {
+    savedTalk("closing");
+    serveTalk({ read: () => Response.json(talkView("closing", 6)) });
+    await renderApp("/talk");
+    expect(screen.getByText(ja.Talk.end.mark)).toBeInTheDocument();
+    expect(screen.getByText("reply-6")).toBeInTheDocument();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBeNull();
+  });
+
+  it("guards leaving a resumed talk and clears the id when it is explicitly ended", async () => {
+    savedTalk("held");
+    serveTalk({ read: () => Response.json(talkView("held")) });
+    await renderApp("/talk");
+    press(ja.Talk.strip.close);
+    expect(
+      screen.getByRole("dialog", { name: ja.Talk.leave.title }),
+    ).toBeInTheDocument();
+    press(ja.Talk.leave.stay);
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBe("held");
+    press(ja.Talk.strip.close);
+    press(ja.Talk.leave.end);
+    await settle();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBeNull();
+    cleanup();
+    await renderApp("/talk");
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeEnabled();
+  });
+
+  it("starts at W2 on a browser without an id", async () => {
+    const calls = serveTalk();
+    await renderApp("/talk");
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeEnabled();
+    expect(calls.filter((call) => call.url.includes("/talks/"))).toHaveLength(0);
+  });
+
+  it("retries a transient read failure without starting another talk", async () => {
+    savedTalk("held");
+    let reads = 0;
+    const calls = serveTalk({
+      read: () => {
+        reads += 1;
+        return reads === 1
+          ? refusal(503, "ERR_INTERNAL")
+          : Response.json(talkView("held", 0));
+      },
+    });
+    await renderApp("/talk");
+    expect(
+      screen.getByRole("heading", { name: ja.Talk.start.failed }),
+    ).toBeInTheDocument();
+    press(ja.Talk.start.retry);
+    await settle();
+    expect(screen.getByText(OPENING)).toBeInTheDocument();
+    expect(reads).toBe(2);
+    expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(0);
+  });
+
+  it("keeps talking when reading or writing browser storage throws", async () => {
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new Error("Unavailable storage");
+    });
+    vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => {
+      throw new Error("Unavailable storage");
+    });
+    serveTalk();
+    await renderApp("/talk");
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeEnabled();
+    await begin();
+    expect(screen.getByText(OPENING)).toBeInTheDocument();
+    await say("日本語", "English.");
+    await settle(320);
+    expect(screen.getByText("reply-1")).toBeInTheDocument();
+  });
+
+  it("can end and start fresh even when removing the saved id throws", async () => {
+    savedTalk("held");
+    const calls = serveTalk({ read: () => Response.json(talkView("held", 0)) });
+    await renderApp("/talk");
+    vi.spyOn(Storage.prototype, "removeItem").mockImplementation(() => {
+      throw new Error("Unavailable storage");
+    });
+    press(ja.Talk.strip.close);
+    press(ja.Talk.leave.end);
+    await settle();
+    expect(screen.getByRole("button", { name: ja.Talk.end.again })).toBeInTheDocument();
+    press(ja.Talk.end.again);
+    await settle();
+    expect(screen.getByText(OPENING)).toBeInTheDocument();
+    expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(1);
+  });
+
+  it("ignores an unmounted start's late answer and resumes the newer talk", async () => {
+    let firstId = "";
+    let resolve: ((response: Response) => void) | undefined;
+    const calls = serveTalk({
+      start: (talkId, asked) => {
+        if (asked > 0) return Response.json(opened(talkId));
+        firstId = talkId;
+        return new Promise<Response>((deliver) => {
+          resolve = deliver;
+        });
+      },
+      read: (talkId) => Response.json(talkView(talkId, 0)),
+    });
+    await renderApp("/talk");
+    press(ja.Talk.start.go);
+    await settle();
+    cleanup();
+    await renderApp("/talk");
+    await begin();
+    const current = localStorage.getItem(TALK_STORAGE_KEY);
+    expect(current).toBeTypeOf("string");
+    expect(current).not.toBe(firstId);
+    if (resolve === undefined) throw new Error("The first start must be pending.");
+    resolve(Response.json(opened(firstId)));
+    await settle();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBe(current);
+    cleanup();
+    await renderApp("/talk");
+    expect(
+      calls
+        .filter((call) => call.method === "GET" && call.url.includes("/talks/"))
+        .map((call) => call.url),
+    ).toStrictEqual([`/api/v1/talks/${String(current)}`]);
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toBeInTheDocument();
+  });
+
+  it("ignores an older mount's late missing response without clearing a new talk", async () => {
+    savedTalk("old");
+    let resolve: ((response: Response) => void) | undefined;
+    const pending = new Promise<Response>((deliver) => {
+      resolve = deliver;
+    });
+    serveTalk({ read: () => pending });
+    await renderApp("/talk");
+    cleanup();
+    savedTalk(null);
+    await renderApp("/talk");
+    await begin();
+    const current = localStorage.getItem(TALK_STORAGE_KEY);
+    expect(current).toBeTypeOf("string");
+    if (resolve === undefined) throw new Error("The old read must be pending.");
+    resolve(refusal(404, "ERR_TALK_NOT_FOUND"));
+    await settle();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBe(current);
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toBeInTheDocument();
+  });
+
+  it("clears the id when even a fire-and-forget recital is not found", async () => {
+    serveTalk({
+      turn: (body) => Response.json(turnResult("corrected", body.turn)),
+      recital: () => refusal(404, "ERR_TALK_NOT_FOUND"),
+    });
+    await renderApp("/talk");
+    await begin();
+    await say("日本語", "English.");
+    press(ja.Talk.teacher.hide);
+    press(ja.Talk.teacher.said);
+    await settle();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBeNull();
   });
 });
 

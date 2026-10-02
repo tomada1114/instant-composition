@@ -63,6 +63,7 @@ export {
   talkEndedSchema,
   talkIdParamSchema,
   talkOpenedSchema,
+  talkViewSchema,
   turnRequestSchema,
   turnResultSchema,
   turnSchema,

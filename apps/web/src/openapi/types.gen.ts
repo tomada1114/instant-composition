@@ -437,6 +437,22 @@ export type TalkOpened = {
     turnCount: number;
 };
 
+export type TalkView = {
+    talkId: string;
+    scene: Scene;
+    opening: string;
+    turnCount: number;
+    status: 'open' | 'finished' | 'ended' | 'discarded';
+    turns: Array<{
+        turn: number;
+        japanese: string;
+        english: string | null;
+        judgment: Judgment;
+        reply: string | null;
+        closing: boolean;
+    }>;
+};
+
 export type Verdict = 'fine' | 'corrected' | 'failed';
 
 export type Judgment = {
@@ -1318,6 +1334,45 @@ export type DeleteVocabCardResponses = {
 };
 
 export type DeleteVocabCardResponse = DeleteVocabCardResponses[keyof DeleteVocabCardResponses];
+
+export type GetTalkData = {
+    body?: never;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}';
+};
+
+export type GetTalkErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+};
+
+export type GetTalkError = GetTalkErrors[keyof GetTalkErrors];
+
+export type GetTalkResponses = {
+    /**
+     * OK
+     */
+    200: TalkView;
+};
+
+export type GetTalkResponse = GetTalkResponses[keyof GetTalkResponses];
 
 export type StartTalkData = {
     body: StartTalkRequest;

@@ -4,7 +4,7 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vite
 import { TUNING } from "@instant-composition/web";
 
 import { fakeTimers, ja, renderApp, settle, warmUp } from "./web-harness";
-import { begin, posted, press, serveTalk, write } from "./web-talk-harness";
+import { begin, posted, press, savedTalk, serveTalk, write } from "./web-talk-harness";
 
 // Voice input at W3a and W3b, driven through a stand-in for the browser's
 // recognition object: jsdom has none, and no test reaches a microphone. Each
@@ -102,6 +102,7 @@ async function atEnglish(
 beforeAll(warmUp);
 
 beforeEach(() => {
+  savedTalk(null);
   fakeTimers();
   FakeRecognition.made = [];
 });

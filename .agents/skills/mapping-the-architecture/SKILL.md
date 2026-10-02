@@ -75,7 +75,9 @@ their own:
   the vocabulary (`…/cards`): a candidate whose headword a catalog card holds marks that
   card as from the talk, any other becomes a personal card. The card rules a model's
   card has to meet are the lint's, written again in the domain (`vocab-card.ts`) and
-  held to it by a test. **REQUIRED:** `building-the-talk-activity`.
+  held to it by a test. `GET /v1/talks/{talkId}` reads the learner's own unexpired talk,
+  with no model call or write, so this browser can resume an open talk after a reload
+  from its locally saved id. **REQUIRED:** `building-the-talk-activity`.
 - The vocabulary context schedules each card with FSRS-6 (`fsrs.ts`): its own items,
   sessions and append-only answers, keyed apart from the drill's, and only a card's
   first answer of a practice day moves it. Today's queue, a category's share of it and

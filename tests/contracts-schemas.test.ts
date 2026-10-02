@@ -22,6 +22,7 @@ import {
   type TalkCommandError,
   type TalkEnded,
   type TalkOpened,
+  type TalkView,
   type TurnResult,
   type HomeView,
   type LevelView,
@@ -70,6 +71,7 @@ import {
   TALK_TURNS,
   type talkEndedSchema,
   type talkOpenedSchema,
+  type talkViewSchema,
   turnRequestSchema,
   type turnResultSchema,
   type ErrorCode,
@@ -158,9 +160,11 @@ describe("each response schema mirrors the application view it serves", () => {
     expectTypeOf<z.infer<typeof profileSchema>>().toExtend<Wire<Profile>>();
   });
 
-  it("TalkOpened, TurnResult, PartnerReply and TalkEnded", () => {
+  it("TalkOpened, TalkView, TurnResult, PartnerReply and TalkEnded", () => {
     expectTypeOf<Wire<TalkOpened>>().toExtend<z.infer<typeof talkOpenedSchema>>();
     expectTypeOf<z.infer<typeof talkOpenedSchema>>().toExtend<Wire<TalkOpened>>();
+    expectTypeOf<Wire<TalkView>>().toExtend<z.infer<typeof talkViewSchema>>();
+    expectTypeOf<z.infer<typeof talkViewSchema>>().toExtend<Wire<TalkView>>();
     expectTypeOf<Wire<TurnResult>>().toExtend<z.infer<typeof turnResultSchema>>();
     expectTypeOf<z.infer<typeof turnResultSchema>>().toExtend<Wire<TurnResult>>();
     expectTypeOf<Wire<PartnerReply>>().toExtend<z.infer<typeof partnerReplySchema>>();

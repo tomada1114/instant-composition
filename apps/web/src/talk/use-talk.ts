@@ -1,8 +1,10 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { browserSound } from "../drill/sound";
 import type { ApiError } from "../lib/api-call";
 import { TUNING } from "../lib/tuning";
+import { forgetTalk, rememberTalk } from "../lib/talk-storage";
+import { useTalkState } from "./use-talk-state";
 import {
   endTalk,
   recordRecital,
@@ -10,13 +12,7 @@ import {
   sendTurn,
   startTalk,
 } from "../lib/talk-endpoints";
-import {
-  currentTurn,
-  IDLE,
-  talkReducer,
-  type Talk,
-  type TalkState,
-} from "./talk-state";
+import { currentTurn, type Talk, type TalkState } from "./talk-state";
 
 /** A failure notice: which one, and a count that grows each time one is shown. */
 export interface TalkNotice {
@@ -47,8 +43,15 @@ export function useTalk(sound: boolean): {
   notice: TalkNotice;
   actions: TalkActions;
 } {
-  const [state, dispatch] = useReducer(talkReducer, IDLE);
+  const { state, dispatch, resume } = useTalkState();
   const [notice, setNotice] = useState<TalkNotice>({ signal: 0, kind: "judgment" });
+  const startRequest = useRef<string | undefined>(undefined);
+  useEffect(
+    () => () => {
+      startRequest.current = undefined;
+    },
+    [],
+  );
 
   function tell(kind: TalkNotice["kind"]): void {
     setNotice((last) => ({ signal: last.signal + 1, kind }));
@@ -109,13 +112,22 @@ export function useTalk(sound: boolean): {
     return () => {
       clearTimeout(timer);
     };
-  }, [step, turnNumber, talkId, sound]);
+  }, [step, turnNumber, talkId, sound, dispatch]);
+
+  useEffect(() => {
+    if (step === "ended" && talkId !== undefined) forgetTalk(talkId);
+  }, [step, talkId]);
 
   const actions: TalkActions = {
     start() {
       if (sound) browserSound.unlock();
+      if (resume()) return;
       dispatch({ type: "start" });
-      void startTalk(crypto.randomUUID()).then((result) => {
+      const request = crypto.randomUUID();
+      startRequest.current = request;
+      void startTalk(request).then((result) => {
+        if (startRequest.current !== request) return;
+        if (result.ok) rememberTalk(result.value.talkId);
         dispatch(
           result.ok
             ? { type: "opened", opened: result.value }
@@ -161,6 +173,7 @@ export function useTalk(sound: boolean): {
     end(stay) {
       const now = talk();
       if (now === undefined) return;
+      forgetTalk(now.talkId);
       if (stay) dispatch({ type: "end" });
       void endTalk(now.talkId).then((result) => {
         if (!result.ok && stay) tell("save");
