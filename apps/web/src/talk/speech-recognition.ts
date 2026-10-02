@@ -42,11 +42,15 @@ export function recognitionConstructor(): RecognitionConstructor | undefined {
   return speech.SpeechRecognition ?? speech.webkitSpeechRecognition;
 }
 
-/** Everything heard so far, interim results included, as one line. */
-export function heardText(event: RecognitionResultEvent): string {
-  return Array.from(event.results, (result) => result[0]?.transcript ?? "")
-    .join("")
-    .trim();
+/**
+ * Everything heard so far, interim results included, as one line. English
+ * results are parted by one space, since a later one may not begin with one;
+ * Japanese results join directly.
+ */
+export function heardText(event: RecognitionResultEvent, lang: string): string {
+  const parts = Array.from(event.results, (result) => result[0]?.transcript ?? "");
+  if (!lang.startsWith("en")) return parts.join("").trim();
+  return parts.join(" ").replace(/\s+/gu, " ").trim();
 }
 
 /** Why a session could not listen, as the one muted line under the field names it. */

@@ -207,6 +207,36 @@ describe("one session", () => {
     ]);
   });
 
+  it.each([
+    ["without", "yesterday"],
+    ["with", " yesterday"],
+  ])(
+    "joins two English results %s a leading space with one space",
+    async (_how, second) => {
+      const calls = await atEnglish();
+      press(ja.Talk.step.speak);
+      listen();
+      hear("I went to the park", second);
+      expect(field(ja.Talk.step.english)).toHaveValue("I went to the park yesterday");
+      await settle(TUNING.speechSilenceMs);
+      expect(posted(calls, TURNS)).toStrictEqual([
+        {
+          turn: 1,
+          japanese: "仕事が詰まってて",
+          english: "I went to the park yesterday",
+        },
+      ]);
+    },
+  );
+
+  it("joins two Japanese results with no space", async () => {
+    await atJapanese();
+    press(ja.Talk.step.speak);
+    listen();
+    hear("仕事が", "詰まってて");
+    expect(field(ja.Talk.step.japanese)).toHaveValue("仕事が詰まってて");
+  });
+
   it("appends heard Japanese after typed Japanese with no space", async () => {
     await atJapanese();
     write(ja.Talk.step.japanese, "仕事が");

@@ -130,7 +130,7 @@ export function useSpeechInput(
         }, TUNING.speechNoInputMs);
       };
       recognition.onresult = (event) => {
-        heard(current, heardText(event));
+        heard(current, heardText(event, latest.current.lang));
       };
       recognition.onerror = (event) => {
         const kind = troubleOf(event.error);
