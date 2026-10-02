@@ -519,6 +519,11 @@ export function lintVocabCard(raw, id, lists, options) {
         "BLANK",
         '"example" needs at least one "{{…}}", and every brace in a non-empty one',
       );
+    } else if (blanks.some((blank) => /\s/u.test(blank.trim()))) {
+      add(
+        "BLANK",
+        '"example" needs one "{{…}}" per blanked word, never one holding a space',
+      );
     } else if (isText(headword)) {
       const blanked = blanks.flatMap(wordsOf);
       if (!blanksMatch(blanked, wordsOf(headword))) {

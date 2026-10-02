@@ -5,7 +5,7 @@
     "level": 7,
     "headword": "a blessing in disguise",
     "definition": "something that seems bad at first but turns out to be good",
-    "example": "Missing that flight was {{a blessing in disguise}}.",
+    "example": "Missing that flight was {{a}} {{blessing}} {{in}} {{disguise}}.",
     "example2": "Losing that job turned out to be a blessing in disguise.",
     "meanings": {
       "ja": "災い転じて福となす"
@@ -13,7 +13,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:3cfaaa33b1b1d6e04e1b1a6a211b2fe1df2688f31e068a14ecc998992ab3f432",
+        "hash": "sha256:f44cf6f2e01cd6a5bc34215d7aa80ffe85a6b7c6a48277a9426f4bcc845106c3",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -30,7 +30,7 @@
     "level": 5,
     "headword": "hit the road",
     "definition": "to start a journey",
-    "example": "We should {{hit the road}} early to avoid the traffic.",
+    "example": "We should {{hit}} {{the}} {{road}} early to avoid the traffic.",
     "example2": "It's getting late, so I'd better hit the road.",
     "meanings": {
       "ja": "出発する"
@@ -38,7 +38,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:d2734990ba4b0e1f6c2194d12ac4f1fe4a7697143dfca398508061e1af3c77c0",
+        "hash": "sha256:db7290c0d4c93525e33d2d0c0821510ae1b1f870f457adf390ba74b54ff20ec0",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -55,7 +55,7 @@
     "level": 7,
     "headword": "get the hang of",
     "definition": "to learn how to do something after some practice",
-    "example": "It took me a month to {{get the hang of}} the new system.",
+    "example": "It took me a month to {{get}} {{the}} {{hang}} {{of}} the new system.",
     "example2": "Don't worry, you'll get the hang of it soon.",
     "meanings": {
       "ja": "コツをつかむ"
@@ -63,7 +63,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:cb186f1df9b7fe01e745088bb59dd5f12473ad6f0ee6d79abfb2af28179b90a2",
+        "hash": "sha256:8166d18fb1364d5f8d88763742a0d21774323b5d54e29bfa89fdb32c0b0b57e2",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -80,7 +80,7 @@
     "level": 5,
     "headword": "under the weather",
     "definition": "feeling a little sick",
-    "example": "I'm feeling a bit {{under the weather}}, so I'll stay home today.",
+    "example": "I'm feeling a bit {{under}} {{the}} {{weather}}, so I'll stay home today.",
     "example2": "She was under the weather all weekend.",
     "meanings": {
       "ja": "体調がすぐれない"
@@ -88,7 +88,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:a349451e0ad0725705ce3bfd764f5a7a01028dc44a6322fe7b34efb983e0fe0f",
+        "hash": "sha256:1a5b0d5e6780f817e58226534b5241db002a54a21e4337f80bc3e957bdc63af8",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -105,7 +105,7 @@
     "level": 6,
     "headword": "cost an arm and a leg",
     "definition": "to be very expensive",
-    "example": "That new laptop {{cost}} me {{an arm and a leg}}.",
+    "example": "That new laptop {{cost}} me {{an}} {{arm}} {{and}} {{a}} {{leg}}.",
     "example2": "Hotels near the beach cost an arm and a leg in summer.",
     "meanings": {
       "ja": "目が飛び出るほど高い"
@@ -113,7 +113,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:22d438655d96954320406abb17d94be581a8a0073c8726da5eb073e0cb506d97",
+        "hash": "sha256:cc9a8e7a0d6f2a603695d318cdae468948b8e80e3a3ec106d3e2440ed2ee343f",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -130,7 +130,7 @@
     "level": 6,
     "headword": "the last straw",
     "definition": "the final problem that makes you lose your patience",
-    "example": "When he was late again, it was {{the last straw}}.",
+    "example": "When he was late again, it was {{the}} {{last}} {{straw}}.",
     "example2": "Losing my keys was the last straw on a terrible day.",
     "meanings": {
       "ja": "我慢の限界"
@@ -138,7 +138,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:c4c9a3fece442c25f7ea7976bda839be24eaf8afe45b58667ec4f8fb38571d61",
+        "hash": "sha256:78e420379856f972b48faa7993942e9d50996118ea1f4feb1a53260a47f1885d",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -155,7 +155,7 @@
     "level": 3,
     "headword": "a piece of cake",
     "definition": "something that is very easy to do",
-    "example": "The test was {{a piece of cake}}.",
+    "example": "The test was {{a}} {{piece}} {{of}} {{cake}}.",
     "example2": "Don't worry, setting up the printer is a piece of cake.",
     "meanings": {
       "ja": "朝飯前・とても簡単"
@@ -163,7 +163,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:3e02a30f616cc668d23f4b0a816580a71933ec789dee398bb608b672eeab0243",
+        "hash": "sha256:21e46c9fdbbbec62cd332380f64de3c420e00cfe0a2cf0e59591b1e01f283ac3",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -180,7 +180,7 @@
     "level": 4,
     "headword": "on the same page",
     "definition": "agreeing about what to do or what is happening",
-    "example": "Let's have a quick call so we're all {{on the same page}}.",
+    "example": "Let's have a quick call so we're all {{on}} {{the}} {{same}} {{page}}.",
     "example2": "Before we start, I want to make sure we're on the same page.",
     "meanings": {
       "ja": "認識が一致している"
@@ -188,7 +188,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:5980bd7e6c7b7a9258d32c44cbab1140baf4fd5b5aea695f9a638b8ffe69bc36",
+        "hash": "sha256:e8dce26c5499050f4811c3c026aac4f141f5cf59977cfe53867009ff90d516c6",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -205,7 +205,7 @@
     "level": 4,
     "headword": "break the ice",
     "definition": "to say or do something that helps people feel relaxed",
-    "example": "He told a funny story to {{break the ice}} at the party.",
+    "example": "He told a funny story to {{break}} {{the}} {{ice}} at the party.",
     "example2": "A short game is a good way to break the ice.",
     "meanings": {
       "ja": "場を和ませる"
@@ -213,7 +213,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:74e8d25355de714ab39e5e6af089693979484e6bea012651628206e8d0353de9",
+        "hash": "sha256:0208026282b2b643f9ff71c9db35b68ac7b586c41cad193a396e2fc92939b365",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -230,7 +230,7 @@
     "level": 3,
     "headword": "take it easy",
     "definition": "to relax and not work too hard",
-    "example": "You've been busy all week, so {{take it easy}} this weekend.",
+    "example": "You've been busy all week, so {{take}} {{it}} {{easy}} this weekend.",
     "example2": "The doctor told him to take it easy for a few days.",
     "meanings": {
       "ja": "のんびりする・無理しない"
@@ -238,7 +238,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:40726be96faa40cc4324b33cee4fc60489496a64e9b05a2e2a0de3c6d814309c",
+        "hash": "sha256:1ec5b4025c47cee6fece4d5d60dfb74746cee86fe9f517a4b43bccc32f63bdcd",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
