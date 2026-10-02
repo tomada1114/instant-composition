@@ -84,11 +84,11 @@
   },
   {
     "id": "c_2h6j3v6f",
-    "ja": "工事の場所をご存じですか？",
-    "en": "Do you know where roadwork is?",
+    "ja": "道路工事の場所をご存じですか？",
+    "en": "Do you know where the roadwork is?",
     "alternatives": [
-      "Do you know the roadwork location?",
-      "Are you aware where the roadwork is?"
+      "Do you know where they're doing roadwork?",
+      "Do you know where construction's happening?"
     ],
     "point": "where の後は疑問文ではなく主語と動詞の順。",
     "topic": "travel",
@@ -96,7 +96,13 @@
     "level": 5,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2871397a3665be913b42aa059fd0b4538c09db664f9036754bd0d59552c30419",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2n5p2u7v",
@@ -176,7 +182,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1687fbbba7fc46cde81b5cb50cd9c81923b0cacf05ddc5e32c536d90e2e2665a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q2c5z6w",
@@ -637,7 +649,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ebc320235d4b48a707a47e7ec23e8aac831f9a3748dc3188b6270ead686ef51",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6h7e7s9y",

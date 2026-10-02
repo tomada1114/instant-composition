@@ -202,7 +202,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cb80bbe48aa3c12c1f75843669fac6af298b23d9f59dc6b7c7cba69254376a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4a5n5u4g",
@@ -343,18 +349,21 @@
   {
     "id": "c_5k5w3s2s",
     "ja": "君に私の話に合わせてほしい。",
-    "en": "I need you to humor me.",
-    "alternatives": [
-      "I'd like you to indulge me.",
-      "I want you to play along with me."
-    ],
+    "en": "I want you to humor me.",
+    "alternatives": ["I'd like you to indulge me.", "I'd like you to play along."],
     "point": "humor は相手に合わせてあげること。",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6323c0816524c25eb3cac0822e64c8a652ca67f2c3805ae557bf7da3510f1bc0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5n3s9g4y",
@@ -423,14 +432,24 @@
     "id": "c_6b9d8q6w",
     "ja": "私はだいぶ気が楽になった。",
     "en": "I feel much more relaxed.",
-    "alternatives": ["I'm feeling far less tense.", "I feel a lot calmer."],
+    "alternatives": [
+      "I'm feeling far less tense.",
+      "I feel a lot calmer.",
+      "I'm much more at ease."
+    ],
     "point": "much は比較級の差を強める。",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83d835944ee1db62b507f26fb9265e7c97f42ae9b5e5162e2af4f62d4a800a84",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6c6d5c7h",
@@ -512,7 +531,13 @@
     "level": 7,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dc9ac17506191d8e43aad6f413d94b1e5ceef142e3d6585d2a0a3cdfeedf163",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7c4z9t7s",
@@ -662,7 +687,7 @@
   },
   {
     "id": "c_8k9v6s6v",
-    "ja": "私は自信を取り戻した。",
+    "ja": "私はもう自信を取り戻した。",
     "en": "I've regained my confidence.",
     "alternatives": ["My confidence has returned.", "I have my confidence back."],
     "point": "regain は失ったものを取り戻す。",
@@ -671,7 +696,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:73353502d40a3e00e14aa8e6aabbf7e90e798bde3b0b7fc9781ca3ed8f0a77d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8r6e7r8r",
@@ -795,7 +826,7 @@
   },
   {
     "id": "c_9d6x2y3t",
-    "ja": "私は悪い知らせを覚悟してた。",
+    "ja": "私はもう悪い知らせに備えてた。",
     "en": "I'd braced myself for bad news.",
     "alternatives": [
       "I'd prepared myself for bad news.",
@@ -807,7 +838,13 @@
     "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e02f2b29d9300dd46073108e5fd412cb7d099d5f83678fac0a09aa7b1fe3e1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9x9p2r4r",

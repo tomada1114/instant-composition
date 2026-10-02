@@ -234,8 +234,8 @@
     "ja": "僕を君の防波堤に使わないで。",
     "en": "Don't have me run interference for you.",
     "alternatives": [
-      "Don't make me shield you from interference.",
-      "Don't get me to deflect interference for you."
+      "Don't use me as your shield.",
+      "Don't make me act as your buffer."
     ],
     "point": "run interference は邪魔や圧力を引き受けて人を守る。",
     "topic": "social",
@@ -243,7 +243,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca071668e81738a4577499f0035e2359f263047f7478842852736be3f63a4ef0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3y8p9u8g",
@@ -499,19 +505,25 @@
   },
   {
     "id": "c_5p7h4r5p",
-    "ja": "受けてたら私は今、知らずに操られてる。",
-    "en": "Had I agreed, I'd be someone's cat's-paw now.",
+    "ja": "受けてたら私は今知らずに操られてる。",
+    "en": "Had I agreed, I'd be an unwitting pawn.",
     "alternatives": [
-      "If I'd agreed, I'd be someone's unwitting pawn now.",
-      "I'd be someone's unwitting tool now had I agreed."
+      "If I'd agreed, I'd be an unwitting pawn.",
+      "I'd be an unwitting pawn now had I agreed."
     ],
-    "point": "cat's-paw は知らずに他人に利用される手先。",
+    "point": "unwitting pawn は気づかずに他人に利用される人。",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
-    "grammar": ["mixed-conditional"],
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a803fdccb71ff62a54e29f3d8baf5f5fbe4fa20a57f50dbff52204cace8e1a85",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5t7y6r4w",
@@ -755,11 +767,11 @@
   },
   {
     "id": "c_7v4z6a6m",
-    "ja": "私はもう君への貸し以上に頼んだ。",
+    "ja": "私はもう君への貸しを超えて頼んだ。",
     "en": "I've already overdrawn my favor account with you.",
     "alternatives": [
       "I've already asked more than you owe me.",
-      "I've already called in more favors than you owed."
+      "I've called in more favors than you owed."
     ],
     "point": "overdraw は貸しの残高以上に頼むという比喩。",
     "topic": "social",
@@ -767,7 +779,13 @@
     "level": 10,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7cb24372ebc8633d2fc50523b95bb1fa6df01c11b629bd767d802da9dd02adf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8d4x3z2v",

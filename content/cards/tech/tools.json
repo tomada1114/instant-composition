@@ -111,10 +111,16 @@
     "point": "deprecated は使用を推奨しなくなったという意味。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
-    "grammar": ["passive-voice"],
+    "level": 8,
+    "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a9479f97d44b1750b47fa3fb03541654d1842980c8f157f003d681e2754eb96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3n7t5d8w",
@@ -282,19 +288,25 @@
   },
   {
     "id": "c_5q2y8g5e",
-    "ja": "このツールの癖がどこか分かる？",
+    "ja": "このツールの扱いづらい所が分かる？",
     "en": "Do you know where this tool gets finicky?",
     "alternatives": [
-      "Do you know where this tool becomes temperamental?",
-      "Can you identify where this tool becomes fussy?"
+      "Do you know where this tool gets fussy?",
+      "Can you tell where this tool gets finicky?"
     ],
     "point": "finicky は細かい条件に敏感で扱いにくい。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b54ec21c7bac23f5cd4953aeea475da93d34b28e800324a96e08cf1663734ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5r6h8v5t",
@@ -446,19 +458,25 @@
   },
   {
     "id": "c_6z5c5y8x",
-    "ja": "標準入りのツールは余計に重い。",
+    "ja": "標準搭載のこのツールは重すぎる。",
     "en": "This tool bundled by default is bloated.",
     "alternatives": [
-      "This default-bundled tool is unnecessarily heavyweight.",
-      "This tool, included by default, carries unnecessary bulk."
+      "This default tool has unnecessary bulk.",
+      "This bundled tool is needlessly heavy."
     ],
     "point": "bloated は不要なものが多く重い状態。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ea1d094774f804b7b2c62b2892e9effe9746f5afb179f93595a53ace6e6f0fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7a2h3q8s",

@@ -133,19 +133,25 @@
   },
   {
     "id": "c_2v9q6y6s",
-    "ja": "エラーが減れば我々は調査をやめる",
-    "en": "We'll stop investigating when errors abate.",
+    "ja": "エラーが減れば我々は調査をやめる。",
+    "en": "We'll stop investigating if errors dwindle.",
     "alternatives": [
-      "We'll end the investigation when the errors subside.",
-      "Once errors die down, we'll stop investigating."
+      "We'll stop investigating if errors decrease.",
+      "If errors taper off, we'll stop investigating."
     ],
-    "point": "abate は強さや頻度が落ちること。",
+    "point": "dwindle は数などが次第に少なくなること。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 8,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6df35c027cdbb6268736e9f4c7c6f7eed8f1a599f432a08f3d4fd70c59da3003",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c6u7c5y",
@@ -654,19 +660,25 @@
   },
   {
     "id": "c_8r5d5t3a",
-    "ja": "彼にノイズを除いてと頼んだ。",
+    "ja": "私は彼にノイズ除去を頼んだ。",
     "en": "I asked him to filter out noise.",
     "alternatives": [
-      "I asked him to remove the irrelevant signals.",
-      "I asked him to strip out the noise."
+      "I asked him to remove the noise.",
+      "I asked him to strip out noise."
     ],
     "point": "filter out は必要なものとノイズを分ける。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b694965bfe766a45567306d0abd526234287b7ed4ebf88be920f722434bb936",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8v5f6s8p",
@@ -692,11 +704,11 @@
   },
   {
     "id": "c_9b5e7d7v",
-    "ja": "負荷をかけると現れるバグは厄介だ。",
+    "ja": "負荷で出るバグは追いづらい。",
     "en": "Bugs that surface under load are elusive.",
     "alternatives": [
-      "Bugs emerging under load are hard to pin down.",
-      "Bugs that appear under load are difficult to isolate."
+      "Bugs that surface under load are hard to track.",
+      "Bugs appearing under load are difficult to isolate."
     ],
     "point": "elusive は捉えにくく原因をつかみにくい。",
     "topic": "tech",
@@ -704,7 +716,13 @@
     "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e004535a71642f70f044cf64113faf1c4e9c8b823c3ad0c1bcffc4fc26102c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9p2m9w8b",

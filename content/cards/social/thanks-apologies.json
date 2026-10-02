@@ -86,6 +86,25 @@
     }
   },
   {
+    "id": "c_2r8f3c8p",
+    "ja": "お礼に何を渡せるかな？",
+    "en": "What thank-you gift can I give?",
+    "alternatives": ["What gift could I give you?", "What could I offer as thanks?"],
+    "point": "what でお礼に渡せるものを尋ねる。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7cec9c24682514056c23924df44237ab04abef38040a10ffaef09c99b61ed0b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2z2w7c5k",
     "ja": "思ってた以上に助かったよ。",
     "en": "That helped more than I expected.",
@@ -256,6 +275,25 @@
     }
   },
   {
+    "id": "c_3w6h5q2c",
+    "ja": "君の助けを受けるよ。",
+    "en": "I'll accept your help.",
+    "alternatives": ["I'll let you help me.", "I'll welcome your help."],
+    "point": "accept は差し出された助けを受け入れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46e61c074b7e15301ccef1e5c6afa1f5daf0c49e9b6c3da38f5e12027b4a8200",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4c3w4q5x",
     "ja": "ささやかなお礼です。",
     "en": "It's a small thank-you.",
@@ -415,19 +453,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_5e3y6t8g",
-    "ja": "お礼に何を渡せるかな？",
-    "en": "What can I give?",
-    "alternatives": ["What could I give you?", "What can I offer you?"],
-    "point": "what でお礼に渡せるものを尋ねる。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 2,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_5f9b5u9p",
@@ -619,19 +644,6 @@
     }
   },
   {
-    "id": "c_7c5h2m5y",
-    "ja": "君の助けを借りてます。",
-    "en": "I'm accepting your help.",
-    "alternatives": ["I'm using your help.", "I'm making use of your help."],
-    "point": "accepting は助けを受け入れているところ。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 2,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_7c8t6w4t",
     "ja": "アドバイスありがとう。",
     "en": "Thanks for the advice.",
@@ -720,14 +732,24 @@
     "id": "c_7z7s3z2n",
     "ja": "私が弁償するよ。",
     "en": "I'll pay for it.",
-    "alternatives": ["I'll cover the cost.", "I'm going to reimburse you."],
+    "alternatives": [
+      "I'll cover the cost.",
+      "I'm going to reimburse you.",
+      "I'll pay for the damage."
+    ],
     "point": "pay for で壊したものなどの代金を負担する。",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4a147ac515d4ed1d009afe8e1bdb3ec31480e33649a1121b72d0aceab66674e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a6x3y2t",

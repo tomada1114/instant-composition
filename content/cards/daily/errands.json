@@ -63,6 +63,25 @@
     }
   },
   {
+    "id": "c_2n5f2k9b",
+    "ja": "私に何の書類が要る？",
+    "en": "What documents do I need?",
+    "alternatives": ["Which papers do I need?", "What documents must I provide?"],
+    "point": "What documents do I need は自分に必要な書類を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cd2a0a9fba1809c0d6d9f99496d14f0dce66ba15c35a5baffc8cff0194d0221",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2u7y7j6h",
     "ja": "昨日来てれば、もう済んでたのに。",
     "en": "If I'd come yesterday, I'd be done.",
@@ -306,22 +325,6 @@
     }
   },
   {
-    "id": "c_5b8a3m6g",
-    "ja": "私に何の書類が要る？",
-    "en": "Which documents are required?",
-    "alternatives": [
-      "Which papers are required of me?",
-      "Which documents must I provide?"
-    ],
-    "point": "what documents で必要な書類を尋ねる。",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 2,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_5k3b4d9b",
     "ja": "パスポート更新しなきゃ。",
     "en": "I need to renew my passport.",
@@ -417,7 +420,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bcee29bf62398f095e261e987ec59214a7e2592ad16c40d7da17b79ee5930a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6e6a6k6n",
@@ -689,14 +698,20 @@
     "id": "c_9p2s8f9t",
     "ja": "こっちの配達が安い。",
     "en": "This delivery is cheaper.",
-    "alternatives": ["This shipping costs less.", "This delivery costs less."],
+    "alternatives": ["This shipping option is cheaper.", "This delivery costs less."],
     "point": "cheaper は料金がより安いこと。",
     "topic": "daily",
     "subtopic": "errands",
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:49e9a8d99b778cd17820b9fb822b4b650c51a7746e0b7e382d60338a66030591",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9s6p7r5u",

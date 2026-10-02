@@ -244,7 +244,7 @@
     "ja": "私たちの後ろの庭園は見事だ。",
     "en": "The garden behind us is spectacular.",
     "alternatives": [
-      "The garden at our backs is magnificent.",
+      "The garden behind us is magnificent.",
       "That garden behind us is stunning."
     ],
     "point": "behind us が庭園の位置を後ろから説明する。",
@@ -253,7 +253,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d3278198fae87e28ffa452f72659fc6a344e1dc18a30b95b741d4d6b00b15da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4f9t8c6a",
@@ -261,7 +267,7 @@
     "en": "I'd already finished the castle tour.",
     "alternatives": [
       "I'd already wrapped up the castle tour.",
-      "I'd already completed my tour of the castle."
+      "I'd already finished touring the castle."
     ],
     "point": "had already finished で過去の時点より前の完了。",
     "topic": "travel",
@@ -269,7 +275,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d5e64981c95b0f694068336117465700c7e08b4e88414e55cd0eea36b70628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s6n8p5s",
@@ -453,7 +465,13 @@
     "level": 6,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a289849516c4368db850af8a555a8425ae8d5e0b76cbeb4ec1b05c504c907ea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5f8j7f6y",

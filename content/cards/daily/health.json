@@ -41,6 +41,25 @@
     }
   },
   {
+    "id": "c_2g2m4p8b",
+    "ja": "ここが痛い。",
+    "en": "It hurts here.",
+    "alternatives": ["This spot hurts.", "I feel pain here."],
+    "point": "hurt は痛むという動詞。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae617c787ab50baa1cdf5feea764dfb368d8e51a0b22571fd48ea6e2b4697a7f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2m3d6d3d",
     "ja": "昨日よりずっと体調がいい。",
     "en": "I feel much better than yesterday.",
@@ -61,19 +80,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_2r6m3h5v",
-    "ja": "ここが痛い。",
-    "en": "There's pain here.",
-    "alternatives": ["It hurts here.", "This spot hurts."],
-    "point": "pain は数えずに痛みを表す。",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 1,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_2v3h3b4j",
@@ -190,7 +196,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:004e5f312ee5f304ac06fda8d466aa02cadf60c8e0b7cb5db60d01e78fa7b419",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3u5e8j5b",
@@ -866,7 +878,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a56b7152e9cfaf1631d6872c9c217a232068d448658bf7d06be946f77d153d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9r7g5z8q",

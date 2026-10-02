@@ -86,7 +86,7 @@
   },
   {
     "id": "c_3d2b3f8n",
-    "ja": "引っ越してたら彼は今、心の支えがない。",
+    "ja": "彼が引っ越してたら今は心の支えがない。",
     "en": "If he'd moved, he'd feel unmoored now.",
     "alternatives": [
       "Had he relocated, he'd feel adrift now.",
@@ -98,7 +98,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:efb281343b53c1c83158725478d94f9ce32a4167e81a4970fcd3672def0a63c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3m5n4m7k",
@@ -356,7 +362,7 @@
   },
   {
     "id": "c_5k4d9b3u",
-    "ja": "私は明日は休むよ。",
+    "ja": "私は明日体を休めるよ。",
     "en": "I'll rest tomorrow.",
     "alternatives": ["I'm going to rest tomorrow.", "I plan to rest tomorrow."],
     "point": "will でこれから休む予定を伝える。",
@@ -365,7 +371,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6eaced9c5e0074d147d5a8d6d642eea145c6d77851031631be35cd916108c61",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5x7s5p3h",
@@ -482,7 +494,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:51df8e91cb4ca16461f9dc77cd5612f980dfa5d9659a0fdbff991104543102cc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7h9g6y3g",
@@ -546,7 +564,7 @@
   },
   {
     "id": "c_8a5j8f3p",
-    "ja": "彼女は人の心の動きが分かると言う。",
+    "ja": "彼女は人の動機が分かると言う。",
     "en": "She says she knows what makes people tick.",
     "alternatives": [
       "She says she understands what motivates people.",
@@ -555,10 +573,16 @@
     "point": "what makes people tick は人を動かす心理。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
+    "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9dac244949e88ad01e5eddaae138b54be9c8cff10bf9e808114a6d43d1bffc4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8b3a8p5v",
@@ -668,14 +692,20 @@
     "id": "c_8u2r9n5t",
     "ja": "ここに座ってもいい？",
     "en": "Can I sit here?",
-    "alternatives": ["Is this seat okay for me?", "May I take this seat?"],
+    "alternatives": ["May I sit here?", "Can I take this seat?"],
     "point": "can I で座る許可を求める。",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c9220e88374f353c55276e50110103a652934e355163896312ef94f9472c38f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8u9x5e9k",
@@ -698,19 +728,25 @@
   },
   {
     "id": "c_9b7a9g6x",
-    "ja": "予報で私は予定を決め切らずにいた。",
+    "ja": "予報で私は予定を決めずにいた。",
     "en": "The forecast had me hedging my bets.",
     "alternatives": [
-      "The forecast made me keep my options open.",
-      "That forecast got me to avoid firm plans."
+      "The forecast kept me from making plans.",
+      "The forecast made me keep my options open."
     ],
     "point": "hedge my bets は一つに賭けず選択肢を残す。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
+    "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c58cfb4022c3cf9bd1e5ed469506171e108716d5ccf1f0504401dbd7bb73d17",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c4h9n8u",

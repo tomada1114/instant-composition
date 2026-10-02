@@ -316,14 +316,20 @@
     "id": "c_5k2e9g2m",
     "ja": "私たちもう注文できる？",
     "en": "Can we order now?",
-    "alternatives": ["Can we place our order now?", "Is it okay to order now?"],
+    "alternatives": ["Can we order yet?", "May we order now?"],
     "point": "can we で自分たちが注文してよいか聞く。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4532b33c530c6da3b1bb6b1a88ddca4596e8f61ab7219176648da56ec2c3a26",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5m4q7q7s",
@@ -412,7 +418,7 @@
   },
   {
     "id": "c_5x9z4n2b",
-    "ja": "ゆっくり食べるべきだ。",
+    "ja": "君はゆっくり食べるべきだ。",
     "en": "You should eat slowly.",
     "alternatives": ["You ought to eat slowly.", "You should take your time eating."],
     "point": "should は相手への助言。",
@@ -421,7 +427,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:800738c5e357418067cb79d52cd4b4baf78ed720bc77e06eefb803f4752d5ad2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5y3n9k3q",
@@ -550,14 +562,20 @@
     "id": "c_8c8j7h7d",
     "ja": "このスープは塩辛い。",
     "en": "This soup tastes salty.",
-    "alternatives": ["The soup is salty.", "This soup tastes of salt."],
+    "alternatives": ["The soup is salty.", "It tastes salty."],
     "point": "味の感想には taste と形容詞を使える。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c89ef2fed54015f0d1133b1deeab22c6eac8d85a83dbdb57d1c3c004d042de56",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8m5x5h8h",

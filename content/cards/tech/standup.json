@@ -54,7 +54,13 @@
     "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dbda770b054eb6c8d4d225bb412d4a6d1db59e8900c9317ba08b0e46fe64e91",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j8v3k2p",
@@ -77,19 +83,25 @@
   },
   {
     "id": "c_3p8a9p4w",
-    "ja": "相談してたら我々は今迷わず済むのに。",
-    "en": "Had we consulted, we'd have clarity now.",
+    "ja": "相談してたら我々は今迷わないのに。",
+    "en": "Had we sought advice, we'd have clarity.",
     "alternatives": [
       "If we'd sought advice, we'd have clarity now.",
-      "We'd be clear now had we asked for advice."
+      "We'd have clarity had we sought advice."
     ],
     "point": "clarity は曖昧さが消え、見通しがつくこと。",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30458a65ee463b73cc63002d59e24ffcbdf68245c999eb2a1f875673ca683913",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3r3j5t5x",

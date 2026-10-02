@@ -150,19 +150,22 @@
   },
   {
     "id": "c_3x4f6d6c",
-    "ja": "荷物が出たら知らせて。",
-    "en": "Tell me when luggage turns up.",
-    "alternatives": [
-      "Let me know when the luggage appears.",
-      "Notify me when the luggage is found."
-    ],
+    "ja": "荷物が見つかったら知らせて。",
+    "en": "Tell me when it turns up.",
+    "alternatives": ["Tell me when it's found.", "Let me know when it shows up."],
     "point": "turn up は探していた物が見つかること。",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:abc152675e21cac5dc9934244b75354487f40ba0fe155f897cc7efc9b2d05db0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4d5j4t4z",
@@ -247,17 +250,20 @@
     "id": "c_4k6m6e6h",
     "ja": "私は紛失の届け出を終えた。",
     "en": "I finished reporting the loss.",
-    "alternatives": [
-      "I've finished filing a loss report.",
-      "I'm done reporting the missing item."
-    ],
+    "alternatives": ["I've finished filing a loss report.", "I filed the loss report."],
     "point": "finish の後には動名詞。",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8d3151844b9357b5555f40c9340312848a230d97f17c1018bdafd3636a88a9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4n7j2g5d",
@@ -372,13 +378,19 @@
       "In your shoes, I'd show booking confirmation.",
       "I'd show reservation confirmation in your place."
     ],
-    "point": "in your place は相手の立場ならという仮定。",
+    "point": "I'd は相手の立場ならそうするという助言。",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8926fa65e22591e385b79d588adb9877a0d4c7909d42c80086ef65b12fe8795",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6u4y7m6f",

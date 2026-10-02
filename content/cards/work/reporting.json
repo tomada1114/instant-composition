@@ -136,7 +136,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:823c33b4beb71216ed827a4ee34876e6c28fd290e4ec0090bc87465d3eebc7d6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j2v4m3g",
@@ -276,10 +282,16 @@
     "point": "a delay in でどこに遅れがあるか示す。",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 3,
+    "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:517281efee828e5cb8cb1b1601af5cb10f2a248338bcd327d419c7fc813fa8b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4y2j8b7z",
@@ -478,14 +490,20 @@
     "id": "c_6c2y7a2f",
     "ja": "私は目標を達成しました。",
     "en": "I met the target.",
-    "alternatives": ["I achieved the target.", "I reached the goal."],
+    "alternatives": ["I achieved my goal.", "I reached my goal."],
     "point": "meet a target は目標を達成する。",
     "topic": "work",
     "subtopic": "reporting",
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e14b0dd1a17b4daa5e228cbff189eaafb0f4cca17b9dd0070d8a36d27cd598f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6h7q5x3y",
