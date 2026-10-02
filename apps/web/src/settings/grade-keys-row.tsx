@@ -95,9 +95,9 @@ export function GradeKeysRow({
   }
 
   return (
-    <div className="flex flex-col border-t border-border">
+    <div className="flex flex-col">
       <div className="flex min-h-16 items-center justify-between gap-4">
-        <h2 id={titleId}>{t("title")}</h2>
+        <h3 id={titleId}>{t("title")}</h3>
         <div role="group" aria-labelledby={titleId} className="flex gap-2">
           {keyButton("ng")}
           {keyButton("ok")}

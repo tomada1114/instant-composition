@@ -24,7 +24,7 @@ export function Breakdown({
         onClick={() => {
           setOpen((value) => !value);
         }}
-        className="flex h-12 items-center justify-between border-b border-border text-left"
+        className="flex h-12 items-center justify-between border-b-2 border-border text-left hover:bg-raised"
       >
         <span>{name}</span>
         <ChevronGlyph
@@ -44,7 +44,7 @@ export function Breakdown({
               <span className="truncate text-caption text-muted-foreground">
                 {subtopic.name}
               </span>
-              <span className="h-1.5 overflow-hidden rounded-full bg-border">
+              <span className="h-2 overflow-hidden rounded-full bg-raised">
                 <span
                   data-part="fill"
                   className="block h-full rounded-full bg-foreground"
@@ -82,7 +82,7 @@ export function DotCalendar({
             <span
               key={dot.day}
               data-state={dot.state}
-              className={cn("size-3 rounded-full", DOT[dot.state])}
+              className={cn("size-3.5 rounded-full", DOT[dot.state])}
             />
           ))}
         </div>

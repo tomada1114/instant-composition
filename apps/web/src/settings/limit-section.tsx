@@ -1,10 +1,10 @@
-import { useId, type ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { TUNING } from "../lib/tuning";
 import type { Settings } from "../openapi";
 import { Segmented } from "../ui/segmented";
-import { Heading } from "./settings-sections";
+import { SettingsRow } from "./settings-row";
 import type { SettingsState } from "./use-settings";
 
 type LimitSeconds = Settings["limitSeconds"];
@@ -13,10 +13,11 @@ export function LimitSection({
   state,
 }: Readonly<{ state: SettingsState }>): ReactElement {
   const t = useTranslations("Settings.limit");
-  const id = useId();
   return (
-    <section className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
+    <SettingsRow
+      label={t("title")}
+      note={<p className="text-caption text-muted-foreground">{t("next")}</p>}
+    >
       <Segmented<LimitSeconds>
         label={t("title")}
         options={TUNING.limitSeconds.map((seconds) => ({
@@ -29,7 +30,6 @@ export function LimitSection({
           state.save({ limitSeconds });
         }}
       />
-      <p className="text-caption text-muted-foreground">{t("next")}</p>
-    </section>
+    </SettingsRow>
   );
 }
