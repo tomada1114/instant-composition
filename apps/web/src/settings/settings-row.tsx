@@ -38,7 +38,7 @@ export function SettingsRow({
         </div>
         {note}
       </div>
-      {children}
+      {wide ? children : <div className="w-full sm:w-72">{children}</div>}
     </div>
   );
 }

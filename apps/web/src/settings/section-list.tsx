@@ -98,7 +98,7 @@ export function SectionList({
                 onChoose(section);
               }}
               className={cn(
-                "flex h-11 items-center rounded-full border-2 px-4 text-action",
+                "flex h-11 items-center rounded-full border-2 px-4 text-action no-underline",
                 section === current
                   ? "border-foreground text-foreground"
                   : "border-transparent text-muted-foreground hover:bg-raised",
