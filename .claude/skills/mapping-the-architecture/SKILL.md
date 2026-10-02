@@ -203,6 +203,8 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   tab on an older bundle, and the answers it queued, still meet the new API. A field
   leaves `/v1` only once no client reads it; request objects strip fields they do not
   name, so a queued body still carrying it is taken without it.
+- The SPA's entry upload waits on the API function's update, so a new bundle that
+  requires additive response fields is exposed only after the API serves them.
 - Writes are safe to resend: rounds, vocabulary sessions and answers carry client-made
   ids, a repeated answer is skipped, and finishing a finished round or session returns
   its kept summary. A model's first answer — a scene, a turn, a talk's candidates — is

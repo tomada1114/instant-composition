@@ -41,7 +41,7 @@ export interface SpaDeploymentProps {
 export function addSpaDeployment(
   scope: Construct,
   { bucket, distribution, webDist }: SpaDeploymentProps,
-): void {
+): BucketDeployment {
   const source = Source.asset(webDist);
   // One handler serves both uploads; without a group of its own its logs
   // would be kept forever.
@@ -77,4 +77,5 @@ export function addSpaDeployment(
   });
   // index.html names the new assets, so it lands only once they are there.
   entry.node.addDependency(assets);
+  return entry;
 }

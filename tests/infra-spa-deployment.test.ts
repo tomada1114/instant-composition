@@ -131,6 +131,13 @@ describe("the dev app stack's web upload", () => {
     expect(upload("SpaEntry").resource.DependsOn).toContain(upload("SpaAssets").id);
   });
 
+  it("updates the API before exposing an entry that relies on its additive fields", () => {
+    const functions = Object.keys(TEMPLATE.findResources("AWS::Lambda::Function"));
+    const handler = functions.find((id) => id.startsWith("ApiFunction"));
+    expect(handler).toBeDefined();
+    expect(upload("SpaEntry").resource.DependsOn).toContain(handler);
+  });
+
   it("keeps the uploaded files when an upload is removed from the stack", () => {
     for (const name of ["SpaAssets", "SpaEntry"]) {
       expect(upload(name).resource.Properties).not.toHaveProperty("RetainOnDelete");
