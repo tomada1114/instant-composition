@@ -123,16 +123,35 @@ describe("today's vocabulary queue for a learner with nothing answered", () => {
 });
 
 describe("the order new cards come in", () => {
-  it("goes past the band to the next level up, never below it", () => {
-    const deal = dealVocab(makeState({ level: 8, newPerDay: 30 }), "today", null);
-    expect(new Set(deal.map(({ cardId }) => cardId.split("-").at(-2)))).toStrictEqual(
-      new Set(["7"]),
-    );
-    expect(deal).toHaveLength(8);
-
+  it("goes past the band to the next level up, then below the band, highest first", () => {
     const low = dealVocab(makeState({ level: 1, newPerDay: 30 }), "today", null);
     expect(low.slice(8, 16).every(({ cardId }) => cardId.includes("-4-"))).toBe(true);
     expect(low).toHaveLength(30);
+
+    const high = dealVocab(makeState({ level: 7, newPerDay: 30 }), "today", null);
+    const levels = high.map(({ cardId }) => cardId.split("-").at(-2));
+    expect(levels).toStrictEqual([
+      ...Array.from({ length: 16 }, (_, index) => (index < 8 ? "6" : "7")),
+      ...Array.from({ length: 8 }, () => "5"),
+      ...Array.from({ length: 6 }, () => "4"),
+    ]);
+  });
+
+  it("deals a learner above every card the catalog holds from the highest level down", () => {
+    const deal = dealVocab(makeState({ level: 9 }), "today", null);
+    expect(ids(deal)).toStrictEqual([
+      "word-7-0",
+      "idiom-7-0",
+      "phrasal-verb-7-0",
+      "phrase-7-0",
+      "word-7-1",
+      "idiom-7-1",
+      "phrasal-verb-7-1",
+      "phrase-7-1",
+      "word-6-0",
+      "idiom-6-0",
+    ]);
+    expect(vocabFigures(makeState({ level: 10 }))).toMatchObject({ due: 0, fresh: 10 });
   });
 
   it("deals a weak new card first, from a talk, whatever its level", () => {

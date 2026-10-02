@@ -148,20 +148,24 @@ function inTurn(cards: readonly VocabCard[]): VocabCard[] {
 /**
  * New cards in the order they are dealt: weak ones first, then the learner's
  * level band from one below `level` up — lowest level first, the categories
- * taking turns within a level — and past the band the next level up. A card
- * below the band is never dealt new, unless it is weak.
+ * taking turns within a level — and past the band the next level up. Only
+ * once those run out do the levels below the band follow, highest first, so a
+ * learner above every card the catalog holds is still dealt some.
  */
 export function newCardOrder(
   cards: readonly VocabCard[],
   level: number,
   weak: (cardId: string) => boolean,
 ): VocabCard[] {
-  const levels = [
-    ...new Set(cards.filter((card) => card.level >= level - 1).map((c) => c.level)),
-  ].sort((a, b) => a - b);
   const plain = cards.filter((card) => !weak(card.id));
+  const levels = [...new Set(plain.map((card) => card.level))];
+  const floor = level - 1;
+  const ordered = [
+    ...levels.filter((step) => step >= floor).sort((a, b) => a - b),
+    ...levels.filter((step) => step < floor).sort((a, b) => b - a),
+  ];
   return [
     ...cards.filter((card) => weak(card.id)),
-    ...levels.flatMap((step) => inTurn(plain.filter((card) => card.level === step))),
+    ...ordered.flatMap((step) => inTurn(plain.filter((card) => card.level === step))),
   ];
 }
