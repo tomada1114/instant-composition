@@ -50,15 +50,15 @@ was first written under.
 The bounded contexts are modules inside those packages, not packages or services of
 their own:
 
-| Context              | What it holds                                                | Where it lives                                                                                              |
-| -------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| identity             | `sub` → internal `LearnerId`, the learner's profile          | `LearnerDirectory` (`sign-in.ts`), `profile.ts`; the two directory adapters                                 |
-| catalog              | cards, topics, levels and grammar concepts, read-only        | the `Catalog` port (`catalog.ts`, `catalog-document.ts`); `snapshotCatalog`; `scripts/catalog/build.mjs`    |
-| practice-composition | rounds, day portions, placement, level, deck composition     | domain's `compose*`, `deck`, `start*`, `placement`, `difficulty`; application's round and settings commands |
-| learning-record      | the append-only review log and each item's memory projection | domain's `records.ts` and `card-state.ts`                                                                   |
-| learner-model (v0)   | weak grammar concepts and subtopics                          | domain's `weakness.ts`, derived when read                                                                   |
-| vocabulary           | vocabulary cards' progress, sessions and today's queue       | domain's `vocab*.ts` over `fsrs.ts` and `queue.ts`; application's `vocab-*.ts`                              |
-| talk                 | a talk's scene and turns, and its three model tasks          | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`           |
+| Context              | What it holds                                              | Where it lives                                                                                                             |
+| -------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| identity             | `sub` → internal `LearnerId`, the learner's profile        | `LearnerDirectory` (`sign-in.ts`), `profile.ts`; the two directory adapters                                                |
+| catalog              | cards, topics, levels and grammar concepts, read-only      | the `Catalog` port (`catalog.ts`, `catalog-document.ts`); `snapshotCatalog`; `scripts/catalog/build.mjs`                   |
+| practice-composition | rounds, day portions, placement, level, deck composition   | domain's `compose*`, `drill-queue`, `deck`, `start*`, `placement`, `difficulty`; application's round and settings commands |
+| learning-record      | the append-only review log and each item's FSRS projection | domain's `records.ts`, `review.ts` and `card-state.ts`                                                                     |
+| learner-model (v0)   | weak grammar concepts and subtopics                        | domain's `weakness.ts`, derived when read                                                                                  |
+| vocabulary           | vocabulary cards' progress, sessions and today's queue     | domain's `vocab*.ts` over `fsrs.ts` and `queue.ts`; application's `vocab-*.ts`                                             |
+| talk                 | a talk's scene and turns, and its three model tasks        | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`                          |
 
 - Streak, points and titles live inside practice-composition and count the drill alone.
   Items cross contexts only as an `ItemRef` (`kind` plus `id`), so a second activity
@@ -79,9 +79,26 @@ their own:
   `…/{sessionId}/answers` and `…/finish`.
 - The learner model stores nothing: it is a pure pass over item projections the reads
   already load. Grammar weaknesses feed the deck; subtopic weaknesses are only shown.
-- The drill schedules with Leitner boxes. Each review logs a common outcome (`again`,
-  `good`, `easy`) with the memory state before and after, so a scheduler change is a
-  replay.
+- The drill schedules each card with FSRS-6 (`fsrs.ts`), on the same rule as the
+  vocabulary: only a card's first answer of a practice day moves it; a re-ask and any
+  later answer that day are logged and move nothing. An answer carries a `grade`
+  (`again`, `hard`, `good`) and `timedOut`, and an older client's `result` still maps
+  onto them. Each review logs the grade, `timedOut`, the seconds and the FSRS state
+  before and after (`fsrs`), beside the `result` the figures count — said in time is
+  hard or good not timed out, a weakness miss is again or timed out — so the reach,
+  weakness and growth code reads what it always read. A replay copies the stored state
+  rather than recomputing it, so a scheduler change applies from the next answer and
+  never rewrites the past.
+- An item holds its FSRS state as `fsrs`; the Leitner `memory` of a card answered before
+  FSRS stays in it, read only for its presence. A card with that history and no state is
+  dealt in the review quota as not new, with a new card's intervals, and its next first
+  answer schedules it as one. Today's queue (`drill-queue.ts` over `queue.ts`) deals due
+  reviews by lowest retrievability with new cards spread among them, under the drill's
+  daily limits in the settings (`newPerDay`, `reviewsPerDay`); only the number of new
+  cards comes from the limit, which ones is the focus, weak and level shares' choice. A
+  portion under five is topped up with cards not yet due; an extra round deals due
+  reviews past the limit, then new cards past it. `dailySize` is still stored and served
+  but sizes nothing.
 
 How a context exposes its surface: **REQUIRED:** `designing-application-core`.
 
