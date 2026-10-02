@@ -283,9 +283,8 @@ Japanese.
 - W4's 「終える」 from ✕ shows W3h at once and tells a failed `endTalk` with the toast;
   from a tab or Back it sends `endTalk` and lets the navigation go without waiting, so a
   failure there is not shown.
-- While a field has focus, the tab bar hides and the bottom panel sits on the keyboard,
-  positioned from `visualViewport`; the conversation scrolls in what is left. Checked on
-  a real iPhone.
+- No keyboard lift (#349 D6): phone-specific code is removed; the step panel rests on
+  the column's foot and the conversation scrolls above it.
 - The ○ plays the drill's ○ sound under the same setting.
 
 ## Moving to Bedrock

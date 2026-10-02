@@ -5,14 +5,15 @@ The screen list and wireframes (W1 to W4, T) are in [ux-screens.md](ux-screens.m
 - **Input:** [requirements.md](requirements.md) (settled). It is the source of truth for
   what the feature does; this file covers only the screens and flows. Copy and details
   may be adjusted to designing-ui.
-- **Foundation:** `designing-ui` (the "instrument" rules, components and behavior) and
+- **Foundation:** `designing-ui` (the "Lemon Arcade" rules, components and behavior) and
   `building-web-screens`.
   - Rules for color, type, spacing, motion, keys and accessibility belong to those
     skills and are not repeated here.
   - What is decided here is only what is new, and which existing components are used
     where.
-- **Premise:** a single phone-width column (390 × 844). On a PC it fits the column
-  designing-ui sets, at most 420 wide and 720 high.
+- **Premise:** a laptop browser first; the layout collapses to one column below 1024. W2
+  sits in the shell at most 720 wide; W3 is a column at most 720 wide centred on the
+  focus stage.
 - **How to read the wireframes:** the right-hand border is left off (Japanese widths
   break it). Text to the right of "←" is an annotation.
 
@@ -97,12 +98,12 @@ newly decides.
 
 - **Reused:**
   - home-panel (W2)
-  - ticks and the top bar (W3)
+  - the focus strip and the `talk` progress pills (W3)
   - answer-field (the fields of W3a and W3b)
   - the back-self layout (W3e)
   - the grade pair layout (the two buttons of W3b and W3f; secondary on the left,
     primary on the right)
-  - sheet (W4; the leave sheet build)
+  - dialog (W4; the leave dialog build)
   - toast, button, eyebrow
   - Note: the drill's typed-answer field and the answer face's 「あなた」 row were
     removed from the code (#317), so the talk screen builds them anew to this document's
@@ -120,7 +121,7 @@ Only within the four roles the rules name.
 
 - **The one main action of the screen:**
   「始める」, 「送る」, 「隠して言う」, 「言えた」,「新しい会話」
-- **The "said it" mark:** the ○ of W3d (the learner's English, and that turn's tick)
+- **The "said it" mark:** the ○ of W3d (the learner's English)
 - The model answer is white and failure text is grey. Red is not used.
 
 ### 4.3 Waiting display
@@ -198,9 +199,9 @@ Add a row for the talk screen to designing-ui's key table.
 
 - Four tabs: the tab bar becomes four equal cells on every screen that shows it, and
   designing-ui's ledger row and tab-bar recipe change with it.
-- iOS Safari keyboard: while a field has focus, the tab bar hides and the bottom panel
-  sits directly above the keyboard, positioned from `visualViewport`; the conversation
-  scrolls in the height left. Checked on a real iPhone before the screen is done.
+- Phones (#349 D6): phone-specific code and rules are removed, since native apps will
+  serve phones. The web client keeps no keyboard lift; below 1024 the layout collapses
+  to one column. This supersedes the earlier iOS Safari keyboard decision.
 - Teacher and partner calls: sent together when the English (or 「わからない」) is sent;
   the partner's line is held until 「言えた」 or the ○, so neither the ○ path nor the
   recital waits on the partner.

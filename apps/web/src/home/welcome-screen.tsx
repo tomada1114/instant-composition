@@ -150,15 +150,15 @@ export function WelcomeScreen({
   }
 
   return (
-    <main className="mx-auto flex min-h-dvh max-w-reading flex-col gap-8 px-4 pt-8 pb-3">
+    <main className="mx-auto flex min-h-dvh max-w-reading flex-col gap-8 px-4 py-8 sm:px-6">
       <div className="flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
         <h1 className="text-heading">{t("title")}</h1>
         <p className="text-caption text-muted-foreground">{t("note")}</p>
       </div>
-      <ul className="flex flex-col gap-2">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 pc:grid-cols-3">
         {topics.map((topic) => (
-          <li key={topic.id}>
+          <li key={topic.id} className="flex">
             <SelectCard
               title={topic.name}
               detail={topic.subtopics.map((subtopic) => subtopic.name).join("・")}
@@ -170,10 +170,10 @@ export function WelcomeScreen({
           </li>
         ))}
       </ul>
-      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-3">
+      <div className="flex justify-end">
         <Button
           data-primary
-          className="w-full"
+          className="w-full sm:w-auto sm:min-w-48"
           disabled={chosen.size === 0}
           onClick={() => {
             go("start");

@@ -27,7 +27,7 @@ function WelcomeStep({
 }>): ReactElement {
   const t = useTranslations("Welcome");
   return (
-    <main className="mx-auto flex min-h-dvh max-w-reading flex-col gap-8 px-4 pt-4 pb-3">
+    <main className="mx-auto flex min-h-dvh max-w-reading flex-col gap-8 px-4 py-8 sm:px-6">
       <div className="flex flex-col gap-3">
         <IconButton
           type="button"
@@ -42,13 +42,15 @@ function WelcomeStep({
         <p className="text-caption text-muted-foreground">{note}</p>
       </div>
       {children}
-      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-3">
+      <div className="flex flex-col gap-3">
         {failed ? (
           <p role="alert" className="rounded-control bg-raised px-4 py-3">
             {t("saveFailed")}
           </p>
         ) : null}
-        {footer}
+        <div className="flex flex-col gap-3 sm:flex-row-reverse sm:justify-start">
+          {footer}
+        </div>
       </div>
     </main>
   );
@@ -77,14 +79,19 @@ export function StartStep({
       failed={failed}
       footer={
         <>
-          <Button data-primary className="w-full" disabled={saving} onClick={onMeasure}>
+          <Button
+            data-primary
+            className="w-full sm:w-auto sm:min-w-48"
+            disabled={saving}
+            onClick={onMeasure}
+          >
             {t("measure")}
             <ArrowGlyph className="size-4.5" />
             <Kbd>Space</Kbd>
           </Button>
           <Button
             variant="secondary"
-            className="w-full"
+            className="w-full sm:w-auto sm:min-w-48"
             disabled={saving}
             onClick={onChoose}
           >
@@ -124,7 +131,7 @@ export function LevelStep({
       footer={
         <Button
           data-primary
-          className="w-full"
+          className="w-full sm:w-auto sm:min-w-48"
           disabled={level === null || saving}
           onClick={onStart}
         >

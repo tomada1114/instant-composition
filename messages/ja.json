@@ -23,7 +23,8 @@
       "done": "済み",
       "gap": "空き",
       "missed": "未",
-      "upcoming": "これから"
+      "upcoming": "これから",
+      "today": "今日"
     },
     "today": {
       "eyebrow": "Today",
@@ -65,6 +66,14 @@
     "loadFailed": {
       "title": "例文を読み込めませんでした",
       "reload": "読み込み直す"
+    },
+    "tiles": {
+      "weak": "苦手",
+      "reach": "到達度",
+      "talk": "会話",
+      "seeRecords": "記録で見る",
+      "talkStart": "会話を始める",
+      "failed": "読み込めませんでした"
     }
   },
   "Nav": {
@@ -85,7 +94,11 @@
       "say": "時間内に英語で言う",
       "grade": "めくって ○ / × をつける"
     },
-    "signIn": "ログイン"
+    "signIn": "ログイン",
+    "sample": {
+      "topic": "Work · Meetings",
+      "prompt": "会議は 3 時に始まります。"
+    }
   },
   "Welcome": {
     "eyebrow": "Welcome",
@@ -181,7 +194,10 @@
       "go": "始める",
       "preparing": "用意しています",
       "failed": "始められませんでした",
-      "retry": "もう一度"
+      "retry": "もう一度",
+      "flow": "1 ターンの流れ",
+      "model": "お手本",
+      "again": "言い直し"
     },
     "strip": {
       "close": "会話を終える",
