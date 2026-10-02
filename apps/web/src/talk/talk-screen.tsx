@@ -71,10 +71,13 @@ export function TalkScreen({
   talk,
   actions,
   onClose,
+  paused,
 }: Readonly<{
   talk: Talk;
   actions: TalkActions;
   onClose: () => void;
+  /** W4 is open over the talk. */
+  paused: boolean;
 }>): ReactElement {
   return (
     <>
@@ -85,7 +88,7 @@ export function TalkScreen({
           data-part="step-panel"
           className="flex flex-col gap-3 rounded-panel border-2 border-border bg-card p-5 empty:hidden"
         >
-          <StepPanel step={talk.step} actions={actions} />
+          <StepPanel step={talk.step} actions={actions} paused={paused} />
         </div>
       </div>
     </>

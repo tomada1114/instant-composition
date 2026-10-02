@@ -215,7 +215,13 @@
       "englishHint": "言える語で言い切る",
       "notEnglish": "英語で入力してください",
       "send": "送る",
-      "giveUp": "わからない"
+      "giveUp": "わからない",
+      "speak": "話す",
+      "listening": "聞いています",
+      "cancelled": "取り消しました",
+      "micRefused": "マイクが使えません",
+      "micMissing": "マイクが見つかりません",
+      "speechFailed": "音声入力が使えませんでした"
     },
     "teacher": {
       "point": "要点",

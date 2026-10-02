@@ -28,6 +28,8 @@ export function Toggle({
       }}
       className={cn(
         "relative h-8 w-13 shrink-0 rounded-full border-2",
+        // The track is 32 tall; the overlay makes the hit area 44 × 44 or more.
+        "before:absolute before:-inset-y-2 before:-inset-x-0.5 before:content-['']",
         on
           ? "border-foreground bg-foreground hover:border-muted-foreground hover:bg-muted-foreground"
           : "border-input bg-raised hover:bg-border",

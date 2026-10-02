@@ -39,7 +39,8 @@ of the states listed; a part with no hover below is not interactive.
 | `select-card`             | three across from `pc`, two from 640, one below; candidate | unselected, selected, locked; candidate: in learning, added           |
 | `segmented`               | one row (up to six options); `columns`                     | one selected; none (a level not yet measured)                         |
 | `toggle`                  | —                                                          | on, off                                                               |
-| `answer-field`            | — (the talk's Japanese and English fields)                 | empty (placeholder), typing, focus, disabled                          |
+| `answer-field`            | — (the talk's Japanese and English fields)                 | empty (placeholder), typing, focus, disabled, listening               |
+| `speak-button`            | — (W3a, W3b; only where speech recognition exists)         | idle (「話す」), listening (「聞いています」, pressed); error line    |
 | `talk-line`               | — (partner, you, teacher)                                  | current (`ink`), earlier (`ink-2`)                                    |
 | `waiting-line`            | —                                                          | whoever speaks next, over a still "…"                                 |
 | `hidden-answer`           | — (W3f)                                                    | —                                                                     |
@@ -334,7 +335,24 @@ inside it, kept at its bottom, and the step panel rests on its foot.
   takes at most 300 characters — input stops there — with spell checking, auto-correct
   and auto-capitalising off. Enter sends and never breaks the line; the Enter that
   confirms an input method's conversion (`isComposing`, or `keyCode` 229 on Safari) does
-  not send. Named by its step's label.
+  not send. Named by its step's label. **Listening** (a voice session running): it shows
+  the text heard so far and takes no typing (`readonly`, no hover fill); Space in the
+  empty field, outside a conversion, starts a session instead of typing a space.
+- **`speak-button` (「話す」).** Voice input at W3a and W3b, shown only where the
+  browser exposes `SpeechRecognition` or `webkitSpeechRecognition`. A `secondary`
+  button: the mic glyph (a capsule over a cup and stem, the 20 grid at 1.75
+  strokes),「話す」, and a `Space` `Kbd` that shows only while Space presses it — an
+  empty field, or a session running. Listening, from the browser's `start` event, it
+  reads「聞いています」 in its pressed look: dropped onto its lip (`translate-y-1`,
+  `shadow-none`) on `bg-raised` — no pulsing, no red, no new colour. Pressing it then
+  sends. W3a's row is the grade-pair layout (「話す」 / 「送る」); W3b's is three across
+  (「わからない」 / 「話す」 / 「送る」), `secondary` / `secondary` / `primary`. Without
+  recognition the rows stay as before. The state is named one way only: the label
+  changes, and a polite status announces 「聞いています」, and 「取り消しました」 on Esc
+  — no `aria-pressed`. Its error is one muted line with the notice glyph under the field
+  (`text-label text-muted-foreground`,
+  `role="status"`): 「マイクが使えません」,「マイクが見つかりません」 or 「音声入力が使えませんでした」,
+  cleared by the next press; at W3b it takes the place of 「英語で入力してください」.
 - **`talk-line`.** One turn: the speaker's `eyebrow` over the body in `text-body`. No
   frame, no bubble, no fill; lines are parted by a 2px `border-border` hairline (none
   above the first) with 12 above and below. The current turn is `text-foreground`;

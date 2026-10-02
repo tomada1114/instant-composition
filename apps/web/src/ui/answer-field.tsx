@@ -19,6 +19,12 @@ type AnswerFieldProps = Readonly<{
   label: string;
   placeholder?: string | undefined;
   disabled?: boolean | undefined;
+  /** Voice input is filling the field: it shows what was heard and takes no typing. */
+  listening?: boolean | undefined;
+  /** Called on Space in an empty field outside a conversion, instead of typing the space. */
+  onEmptySpace?: (() => void) | undefined;
+  /** The software keyboard's label for the Enter key, which sends. */
+  enterKeyHint?: "next" | "send" | undefined;
   className?: string | undefined;
 }>;
 
@@ -35,14 +41,22 @@ export function AnswerField({
   label,
   placeholder,
   disabled = false,
+  listening = false,
+  onEmptySpace,
+  enterKeyHint,
   className,
 }: AnswerFieldProps): ReactElement {
   const composing = useRef(false);
   const endedAt = useRef(Number.NEGATIVE_INFINITY);
 
   function onKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
-    if (event.key !== "Enter") return;
     if (composing.current || event.nativeEvent.isComposing) return;
+    if (event.key === " " && value === "" && onEmptySpace !== undefined) {
+      event.preventDefault();
+      onEmptySpace();
+      return;
+    }
+    if (event.key !== "Enter") return;
     if (event.timeStamp - endedAt.current < CONFIRMING_ENTER_MS) return;
     event.preventDefault();
     onSend();
@@ -55,6 +69,9 @@ export function AnswerField({
       value={value}
       placeholder={placeholder}
       disabled={disabled}
+      readOnly={listening}
+      data-listening={listening ? "" : undefined}
+      enterKeyHint={enterKeyHint}
       rows={1}
       maxLength={ANSWER_FIELD_MAX}
       spellCheck={false}
@@ -73,7 +90,7 @@ export function AnswerField({
         endedAt.current = event.timeStamp;
       }}
       className={cn(
-        "field-sizing-content min-h-11 w-full resize-none rounded-control border-2 border-input bg-card px-4 py-3 text-body text-foreground placeholder:text-muted-foreground enabled:hover:bg-raised disabled:text-disabled",
+        "field-sizing-content min-h-11 w-full resize-none rounded-control border-2 border-input bg-card px-4 py-3 text-body text-foreground placeholder:text-muted-foreground enabled:hover:bg-raised read-only:hover:bg-card disabled:text-disabled",
         className,
       )}
     />

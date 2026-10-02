@@ -114,6 +114,17 @@ Back, either of which opens W4.
 │ [              送る              ]      ← primary. Cannot be pressed while empty
 ```
 
+- Where the browser has speech recognition, the row is the grade pair:
+  `[ ［マイク］話す  Space ] [ 送る  Enter ]` (secondary / primary). The Space hint
+  shows only to a key user and only while the field is empty.
+- Listening: the field shows the text heard so far and takes no
+  typing; 「話す」 reads「聞いています」 in its pressed look (no pulsing, no red) from
+  the browser's `start` event. Pressing it, Space, Enter or 「送る」 sends at once; Esc
+  puts the field back.
+- Error line: one muted line with the notice glyph under the field
+  —「マイクが使えません」, 「マイクが見つかりません」 or 「音声入力が使えませんでした」 —
+  until the next press of 「話す」.
+
 ### W3b The English step (step 3)
 
 ```
@@ -124,6 +135,12 @@ Back, either of which opens W4.
 │ ［字形］英語で入力してください             ← only when Japanese characters were entered. Grey, no red
 │ [  わからない  ]  [     送る     ]        ← secondary / primary
 ```
+
+- Where the browser has speech recognition, the row is three across:
+  `[ わからない ] [ ［マイク］話す  Space ] [ 送る  Enter ]`, listening in `en-US`, with
+  W3a's listening state and error line; the error line sits
+  where「英語で入力してください」 sits, and the two never show
+  together. 「わからない」 during a session stops it and gives up as before.
 
 - Giving up with 「わからない」 ("I don't know") goes through W3c (waiting for the
   teacher) to W3e. W3e shows no English row for 「あなた」 ("you").

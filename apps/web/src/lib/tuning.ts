@@ -7,7 +7,7 @@
  * is the talk's, from its `TALK_TUNING`. The web client
  * imports no workspace package, so they are written out here and
  * `tests/web-tuning.test.ts` holds them to the domain's. The rest — the feedback hold, the key lock, the
- * skeleton delay, the toast — are the client's own, kept in the same object
+ * skeleton delay, the toast, voice input's silence and no-input waits — are the client's own, kept in the same object
  * because they are meant to be tuned too.
  */
 export const TUNING = {
@@ -29,6 +29,10 @@ export const TUNING = {
   keyLockAfterFlipMs: 150,
   skeletonDelayMs: 300,
   toastMs: 4000,
+  /** A talk's voice input sends this long after the last word heard, with nothing new. */
+  speechSilenceMs: 2000,
+  /** A talk's voice input stops quietly when nothing is heard this long after it starts listening. */
+  speechNoInputMs: 10000,
 } as const;
 
 /** Whether a flip came within the "fast" share of its card's pace, whatever the limit. */
