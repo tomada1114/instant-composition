@@ -11,7 +11,18 @@
       "ja": "入る・入ってくる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:838c94c1f32186bd8df89a4869f4320c437017edbb5394e23ce018428e20ee74",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0666be0e27f80e04b19cc29db6413b5b07339844543c60e542f465caabaa0e67",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j7k7u6m",
@@ -25,7 +36,18 @@
       "ja": "段階的に廃止する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:524fb2cfa76d248308bfaf2543571853420730992472c43500dc9050a24efa62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7182dec495e890e69e8c8cf8461146c32140f5eb9578e2c772d7b708a2c6f14d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3s7m4s5f",
@@ -132,14 +154,25 @@
     "category": "phrasal-verb",
     "level": 1,
     "headword": "stand up",
-    "definition": "to rise from a chair so you are on your feet",
+    "definition": "to change from sitting to being on your feet",
     "example": "The students {{stand}} {{up}} when the teacher comes in.",
     "example2": "Stand up, please, and say your name.",
     "meanings": {
       "ja": "立ち上がる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:640e1075ba6da074bf1937bf38ff285976984d176bc91f8c044c84c361c23bbc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e547e49859ea80ec0c4b7dd7946f070bacd50f123551eda63876f035c5173db4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6f7h4h6g",
@@ -228,7 +261,18 @@
       "ja": "食い止める・遠ざける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28cdabeb7e07079af1d152771c352370d15a238bb1dc7ce837e9a1796e49062e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e6cc9fe264c871fb338d50d32feb62d25b2a7cd9f1e941957d19679f84e263ee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7m7m9n5w",
@@ -317,7 +361,18 @@
       "ja": "縮小する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5359ef46adc4d7b5687b683bbc3c3f0dcf71c78b5c97659210c5091165b7dd55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:364cef55a4f60fa009869500de94152c544304fd95fa93553b346e44b163065d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9g3u2b3u",
@@ -331,7 +386,18 @@
       "ja": "解決する・調整する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b349cbbb68075cd422d97b7d0ec079c3c9ead273eb25c460510a608534898ccb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74099411408a9529c58daee210b3046c1dda1978ec0b867bc10072aff10dd23a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9h5e2v6t",
@@ -345,7 +411,18 @@
       "ja": "次第に消える"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e822033c81b444100776a9189f3f432fd401086d3e615cb54160c6e9b8659577",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:977476657976f65455cbc2f40fc799fafcc1b29315aa6325eec83ba925c3ce60",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9k8s7q4q",
@@ -359,20 +436,42 @@
       "ja": "補強する・てこ入れする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a48b8f0a2de72afa3bbd86453d2dbecd280037dd94838622f7aded2f4719ad28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:99a75c16fdb76f05b45c33141df8c2f0344b6283920366b3ec7604518e7d9238",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w5r7y4u",
     "category": "phrasal-verb",
     "level": 1,
     "headword": "sit down",
-    "definition": "to move your body so you are on a chair",
+    "definition": "to lower yourself onto a chair or seat",
     "example": "Please {{sit}} {{down}}, and I will bring the menu.",
     "example2": "The children sat down on the floor to hear the story.",
     "meanings": {
       "ja": "座る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:444754e4407a2fef98514cffeb3721b32c0870506047d587fb35d5043bd0fdca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5ccb3ce62567a96d7b6353ae044b80e5202bf346be1e6081390c55b62b26319f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

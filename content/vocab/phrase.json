@@ -11,12 +11,23 @@
       "ja": "あなたを信じるよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:929b7ee3d247ee16cb31e381de0873fa6da230a96622154422b3e6aaa018e2da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:addb1c5da59b1b6efe257168f36bda03505eb057b8b4204333815f71bac01a1b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2w9m9u7f",
     "category": "phrase",
-    "level": 8,
+    "level": 6,
     "headword": "I couldn't agree more",
     "definition": "said to show you completely agree with what someone just said",
     "example": "A: This city really needs more bike lanes.\nB: {{I}} {{couldn't}} {{agree}} {{more}}.",
@@ -25,7 +36,18 @@
       "ja": "まったく同感です"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e26c76cf1374bb2b37f71716bf9b7bd346cae4ac3907db47983031388ed3f5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ac686e9be2d9c7a660749adc9e4cd5ff68eb800b5c25684a88d7015b6d320f6b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3f4h2z5d",
@@ -55,7 +77,7 @@
   {
     "id": "v_3k8t2v8b",
     "category": "phrase",
-    "level": 9,
+    "level": 7,
     "headword": "that's easier said than done",
     "definition": "said when a piece of advice sounds simple but is hard to follow",
     "example": "A: Just stop worrying about the exam.\nB: {{That's}} {{easier}} {{said}} {{than}} {{done}}.",
@@ -64,21 +86,43 @@
       "ja": "言うは易く行うは難し"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4feafdc0be97666bd272e5d9ed56b620d41ea5ce217ef53e6efb25e7932515b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:86a71f8a6a18a1ac7f026f482ad62890ab1187c0037c6e1abb0641644d1b7d18",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3p7w2p4u",
     "category": "phrase",
     "level": 1,
     "headword": "see you later",
-    "definition": "said when you leave a person you will meet again soon",
+    "definition": "a casual goodbye said to someone you will see again",
     "example": "A: I have to go to class now.\nB: OK. {{See}} {{you}} {{later}}!",
     "example2": "A: Bye, Tom.\nB: See you later!",
     "meanings": {
       "ja": "またあとでね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4377903071b9192ff941e6cfc36cd27f25a43baa652745131b942d3916c0873",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6e920c19c7cec99e0b04e7234aaa438315fee3d2dd889e2bdbc8fb874a3c0882",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3p8j9a3w",
@@ -158,7 +202,7 @@
   {
     "id": "v_4f9e9y7f",
     "category": "phrase",
-    "level": 8,
+    "level": 6,
     "headword": "fair enough",
     "definition": "said to accept an opinion or request you do not fully share",
     "example": "A: I'd rather not work this Saturday.\nB: {{Fair}} {{enough}}. I'll ask someone else.",
@@ -167,7 +211,18 @@
       "ja": "まあいいよ・なるほどね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e531421f4246177fc6b54c4bfe29148754c832243ebd6a51827f32b97093938b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fa3bfab7977544a283dbdf39d49def632be4479ad0f3bf529a5d2603a57b23dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4n9t2f2z",
@@ -206,7 +261,18 @@
       "ja": "期待はしてないよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0abfc0d2943165dbbd9e7da0de23bbe6f127ae89b8eb9044f8cb8456c5a6733",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:487430a0efe50c3ad339b9465815602d59a4c2e20b6108536c02679893f4c399",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5h8n5c2k",
@@ -220,7 +286,18 @@
       "ja": "すみません"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a275771f4bcad9473aed8df62e7bf5bab85a71a88d5b4a2aa23de2e3aae44a76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:795530736d60fbb2bd7e968bdf7bf8d3484d860e785fff83e5b7845feb045510",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5n3y7q3u",
@@ -234,21 +311,43 @@
       "ja": "まったくだよ・わかる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:47aba0b67930fb2714901007ff694aff00329a16bce731126a5add99800cedf4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ac66400a8b6a778c5cbeec4ae0f0ea3a9a525b1b6edeb2d17bf3c19f00c3c376",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5u5m7u4v",
     "category": "phrase",
     "level": 9,
     "headword": "don't quote me on that",
-    "definition": "said when you are not sure that what you just said is correct",
+    "definition": "said to warn that your guess is not a fact others should repeat",
     "example": "A: When does the store open?\nB: Around nine, but {{don't}} {{quote}} {{me}} {{on}} {{that}}.",
     "example2": "A: How far is the station?\nB: Maybe two miles. Don't quote me on that.",
     "meanings": {
       "ja": "確かじゃないけどね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:191bdb2e5c863cf4f2a04156f2154eb4ca1b5ec28250b238dc745d2876bd3aac",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:270a19c9b1b1e0401f2cc7a402a05b1892aa1653e982ee2479f371a14db9ef4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5x3t6s2x",
@@ -287,7 +386,18 @@
       "ja": "いいね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:daef924c5e612fc329962f1097fff923cbbd3a0e689a4eb602d6d475b6c21fcb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7b63cfb2179ad30ef2a6185f6134c68ce5fb9ce1337183a90becfd25c960b7ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6p3b9p2t",
@@ -326,7 +436,18 @@
       "ja": "ありがとう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c9612757028ff47683dd051e5d980be8b75606a0a4a1b90a0effb241973caf5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:003ef1628c93a417a628cdb7812859a44f9faa3e3b7d39520639e5432444b7f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6y4e7h9k",
@@ -358,14 +479,25 @@
     "category": "phrase",
     "level": 2,
     "headword": "what's up?",
-    "definition": "a casual way to ask what is new or what is wrong",
+    "definition": "a casual greeting that asks how someone is or what is going on",
     "example": "A: {{What's}} {{up}}?\nB: Not much. I'm just watching TV.",
     "example2": "A: Hey, what's up? You look tired.\nB: I stayed up late.",
     "meanings": {
       "ja": "どうしたの？・元気？"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:688371520ace0af10bb775a7ed35ac3fc13648f9fdd31c5a98387930948161db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:59608494d47af931688813acd1347a4ed3639c687a9d7074fbd1ff5468ca728d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8b2v2b2w",
@@ -379,7 +511,18 @@
       "ja": "気にしないで"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e088b3fbeee7128d909dfd683748a57f9742b863492757a43b663b46b0a1d514",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f0c0dd44b7be4639642167ceeae14e57d4d4070adfdb0fc1a7b34b847fa33b83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8f4u7s9y",
@@ -443,20 +586,42 @@
       "ja": "私もそう言いたかった"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1384fec53f9e6392658d4b6fd8c32665ec07f7b4ddc9164c30949be88b62836d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e81e9aafe8c4ca0685a1289df96513c2e01c868fa92f52f94a55fb7d78cdc665",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9p5v9j3d",
     "category": "phrase",
     "level": 8,
     "headword": "that's a fair point",
-    "definition": "said to accept that someone's argument is reasonable",
+    "definition": "said to admit that an objection someone raised is reasonable",
     "example": "A: We can't afford a bigger office yet.\nB: {{That's}} {{a}} {{fair}} {{point}}.",
     "example2": "A: Remote workers need clear rules too.\nB: That's a fair point; I'll draft some.",
     "meanings": {
       "ja": "もっともな指摘だね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bca4308ab9678f52f7b0a2803898af24e150b8b50854a6af33cb303f110ce10b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2dfac6e5761402e5c0359a0bb15b84da28f33a4c5f720793a23666ea8ebf9baf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

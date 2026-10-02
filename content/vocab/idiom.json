@@ -11,7 +11,18 @@
       "ja": "振り出しに戻って"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b51530c5d551ab890909c021cf88e2aaa1a8491d449d43ffe0244ef6bb10cb8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a3ed7e1ccfe082e08cf3a62dd2883e67fe7e523ba3f6351578821542549813b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2k8b2r5x",
@@ -25,7 +36,18 @@
       "ja": "悪い前兆・避けられない破滅"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b610927a4491c6e71ef9892ccdc5599202fda373d52bb2f92eeee8f536b11983",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1d01c809a2ee90ea9b392ef7688534f9dd58c360c628ea4353f381a172b989a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a9q9q9m",
@@ -39,7 +61,18 @@
       "ja": "あえて反対意見を言う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a24df9ef276709f1e3c9dd9eec0c8fe4921a6a59533ff191922e63aca7805481",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:350e033b1349ec9eebc1f4318429819f74997a15d5edb714ff5bfe4a4e0e11a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3h6c9b6z",
@@ -53,12 +86,23 @@
       "ja": "氷山の一角"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dbd53d8a5f569b493dd2f2ed6d1e4c8594f9ed8b535bb09b857457f128301e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:457739d6b9e2ba7ce30de523be751fdb39b8c3ff2b21c16911b567f073709f21",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j6a8p2w",
     "category": "idiom",
-    "level": 2,
+    "level": 4,
     "headword": "once in a while",
     "definition": "sometimes, but not often",
     "example": "I eat out {{once}} {{in}} {{a}} {{while}}, usually on my birthday.",
@@ -67,7 +111,18 @@
       "ja": "たまに・時々"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8da720eae3e96434d33a3199b18e59a8196727a61a2b391e250874bfd8d3aa2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:46db22704412da44b3ae621dec99d5da92b20b4770f37d362117c71f1b29cade",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3k9u2u4n",
@@ -81,7 +136,18 @@
       "ja": "もちろん"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b1e02ef28c191c867dab358079a88d718fe76dba95490bddc49bf317ce022c9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d41796ae81c574eae405418fedec8d25f703fe3a7996a38fe6ef65d6954799e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3n7g2u6g",
@@ -95,7 +161,18 @@
       "ja": "楽しむ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0f38593fd6d5fb8dcbf19bc725747fd92a7916fa9130153020e334d513f1c56",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3f5d5aa2cde2415fb17e81d146884ee95b07fcd655127c968780e594bb6ca3ad",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3p3r9u7w",
@@ -109,7 +186,18 @@
       "ja": "覚悟を決めてやる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ead77456bd474b7b0c101ec5f7fc36a77822891108b41d87078ec0d2d734444",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8f492255b65d06a8c422a2ecf2dd0b80f8a334819a0422115f9fef3766118a30",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3s2u3j6b",
@@ -118,12 +206,23 @@
     "headword": "a red herring",
     "definition": "something that leads people away from the real answer",
     "example": "The missing key turned out to be {{a}} {{red}} {{herring}}.",
-    "example2": "Don't let that small detail become a red herring in the debate.",
+    "example2": "The detective realized the muddy shoes were a red herring.",
     "meanings": {
       "ja": "人を惑わす偽の手がかり"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cbc809e7931052c0e21ffdde17b0166d079dfd2f6564fbafcd1a47a01376449",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7701e9a84fd38d51d509d9a3b171a9b3743d0eb6612a596adac311703709a9b3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3z8k7a8p",
@@ -187,7 +286,18 @@
       "ja": "手を抜く"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d072eead9724c70f1fc36bd08132006d7e21183b643129918614cee4421f42e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0f5c3ae5a0c12e6efd163ad077d11e29d97eea567942d8456f6e9337330472b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5u7p4w6v",
@@ -201,7 +311,18 @@
       "ja": "誰も触れない大問題"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0faee0c0b6b2fb619cb9cc4dbcfb44855899b61586a57a5f76d010edb0dc71e0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d89a5ba9213ea7af0a08daa39e9905a6aa36a3968df609c52ffcf642b67d7e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6h4j7q3t",
@@ -340,7 +461,18 @@
       "ja": "急いで"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:696233af85bdeb49f3ca286becfa67367cfb05ca05b42d7f4a90c00fe2f7d366",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c2d3a9e010d1daa34342d852b96b16c71f4cf4bf7e6a350ea264d446a3f2a353",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8p7b4b4m",
@@ -376,10 +508,21 @@
     "example": "I am eating lunch {{right}} {{now}}.",
     "example2": "Right now, my mother is in the kitchen.",
     "meanings": {
-      "ja": "今すぐ・ちょうど今"
+      "ja": "ちょうど今・今は"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9270d7f2b686b790367e6ac79cf0a98dd6ba48aa4e5d9f41e5a2376ea84e1f0a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:020a166881166075ce50b11b1302dbaa082dc5bb95faec360081728236b78562",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9d4r6s3h",
@@ -418,7 +561,18 @@
       "ja": "時間通りに"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d2a60a2b9b8152e8ec46c93a984401ace6b8dcb8069972e9239d0b343c70725",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ca8c85f13684191528585ec8c93f623c03999360392bd7846d6f71d96d073c5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w4n5z3w",

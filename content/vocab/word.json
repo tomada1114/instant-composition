@@ -36,7 +36,18 @@
       "ja": "徐々に損なう"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:10e31a1dd480a12c94afbd0c9a05566103e42ddfdbe3d09bd32e830169ddae2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:156fdce588c2e3b0e595d6af0ff843b3f65ee5d66ebecda903ac6687883b2a6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2q8b5j5e",
@@ -50,7 +61,18 @@
       "ja": "忙しい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d267b1728dc0cdae37f98cbb45ccf9630bc345cf84ee0ed33c00abe9b6add2bb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2bd0b4eb451bce37c45a591cd5d8a8007bb2eb64c2e74f8ba6a8c2690db701a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2t6x2v3s",
@@ -114,7 +136,18 @@
       "ja": "安い"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc5bd0c0d5f297af564b2d7f0f83ea37899dca3aba7101f3b487b4a77f129e32",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0835d784cd823f2a7c68c4590fa47ff02224353d11119172268e1d295b899aa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4q3x6c3w",
@@ -128,7 +161,18 @@
       "ja": "お腹がすいた"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7345fdcb2e3ad0dd7777783e964afe63149e7c5043c4df1b144d130f1eac25c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:243b69f9b2ba4ba3d16a0d0d329fe90c7cc963ea8894b6295940b75e36d13f49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4x6e4u5n",
@@ -142,7 +186,18 @@
       "ja": "のどが渇いた"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee776f1cd0e1b4e6e91686ff0ef453be2c3a6fd01f8a26bb90c9151c9a546604",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:91ef9d87c7f9eaf5b1d7f95d2a42c2f9d0917e7c829da722920a6ed086ea8dec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5a7q4w2p",
@@ -181,21 +236,43 @@
       "ja": "空の"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:341ff88e63f22e96aec85e2813a4d7a33226a070253c49655f830da8a62bb1c4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:61f2d44cf01d6602aec8283a43fc7fac0036485cd5624afd334c5119fda0b16b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5m8b4y2w",
     "category": "word",
     "level": 10,
     "headword": "tenacious",
-    "definition": "refusing to give up or let go, even in hard times",
+    "definition": "holding on to a goal and refusing to let go, even when it is hard",
     "example": "The {{tenacious}} reporter kept asking questions until she got an answer.",
     "example2": "Our tenacious goalkeeper saved three shots in the final minute.",
     "meanings": {
       "ja": "粘り強い"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18e0d73610765ee6a04308460a395c416a372f45c61487a536f96c5afe71d53f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2b0cf674fed29d39d64d044384f1fd17d23a77a28fff8b5dfa36ea0b6a3c8f99",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5p8c6g7b",
@@ -234,7 +311,18 @@
       "ja": "軽減する・和らげる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:469c8a275b3a48c7d0efebcc3cc79696d366c2c38d8c635dabde8d7fb8923d6b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d0d54f53bf2aa7e3d55970634a17c2bd53e8935b217f2d3dcbb836c001b7534",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6j2x4p6q",
@@ -248,7 +336,18 @@
       "ja": "曖昧な・多義的な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf66347f3e0319c154509d5c27eeff7f3c8f9085ce748199fa8bcc66299daaa9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7b8f30d3f7d58b80a8b97dd31e556096ff0442b0851efef3c83a39146176d3fe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6n3j8m2m",
@@ -262,7 +361,18 @@
       "ja": "孤独な・寂しい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13747f4a906f9beca2e4b5923e67e068731e5f7df4aad241df6a7bc2b76a32fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8cdcc7b0df49e6b14c63f3a425f86d7e667cb021c9f76e49d3bc6ab60423b923",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6p2g7b7e",
@@ -376,7 +486,18 @@
       "ja": "至る所にある"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f84c1ab028c47ef6b80b0e5544ca8a2b0db8da8249c6560995b1d74e211cd60c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:577dd45c477f96f1c493b556f6e1050c2cb511f39c6432439bb24830e089d5bd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9h7e2z7v",
@@ -390,7 +511,18 @@
       "ja": "細部まで綿密な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2cc54a10df318e7096bf6561b4afd9a223d2803605cc49ba37d7370bfcc313d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:06ed98fb69437d20b388d959a18e281c9d7496434569cc724b4b415041cedbb6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j7q7g5h",
