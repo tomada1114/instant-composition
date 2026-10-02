@@ -127,8 +127,8 @@
   },
   {
     "id": "c_2y8z3f3f",
-    "ja": "君が落ち着いたら私が訪ねるよ。",
-    "en": "I'll visit once you've found your feet.",
+    "ja": "君が慣れたら私が訪ねるよ。",
+    "en": "I'll visit once you've settled in.",
     "alternatives": [
       "I'll come by once you've settled in.",
       "I'll visit after you've adjusted."
@@ -136,10 +136,16 @@
     "point": "settle in は新しい環境に慣れて落ち着く。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["time-and-if-clauses"],
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3afc7a853b1da3f64c3aca215cd747faeefbc14ddcb29f59ab69d47d863264af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3b4w6e8y",
@@ -297,10 +303,16 @@
     "point": "rebuild my network は人とのつながりを築き直す。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd12017dc5fb71dc46294262ec126e19d4e0889b12aa7539a8b4927c6a9144c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3u2f6b6h",
@@ -351,7 +363,13 @@
     "level": 5,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afa4eacb6a77da1233f22a97c2ef9063f28c6d5a00c1e3613016fac34cc9b07d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4m3d7c8s",
@@ -389,7 +407,13 @@
     "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc2ef8c7fffe8c7248048ff6cc216b7279b521d66b8148b065464420cb3af58d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s6h2z5n",
@@ -503,7 +527,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:271c974cfb2e314ae5598cd455ac1c4aff1d798a9c246667020c3208c8e805e0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h9z5m4r",
@@ -1062,9 +1092,15 @@
     "point": "have been hunting で最近続けている家探し。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f7f71b6566e8735220b544d54c8401c348f7ecca0412393ec69b10699224354",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

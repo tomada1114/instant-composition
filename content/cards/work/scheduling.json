@@ -21,22 +21,28 @@
   {
     "id": "c_2n4u4c5k",
     "ja": "日程に迷い私は判断を保留した。",
-    "en": "Torn over dates, I deferred judgment.",
+    "en": "Torn between dates, I postponed deciding.",
     "alternatives": [
       "Unable to choose dates, I postponed my decision.",
-      "I put off deciding, torn over dates."
+      "I put off deciding, torn between dates."
     ],
     "point": "torn は選択肢の間で気持ちが揺れている。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ecdc9896597428d404fd0c75e1333c7d91fb9d7119b5e3b378d4bffd69fc5a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3b9q6d9a",
-    "ja": "火曜の方が私たちは無理しない。",
+    "ja": "火曜の方が私たちは楽だ。",
     "en": "Tuesday is less taxing for us.",
     "alternatives": [
       "Tuesday puts less strain on us.",
@@ -48,7 +54,13 @@
     "level": 7,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18892977d401d0f3af76936d336d5414cb8b43b3c51888512eb4689d717c4d65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j7e7v8t",
@@ -876,7 +888,7 @@
   {
     "id": "c_8g7r6s9a",
     "ja": "我々に必要なのは確約だ。",
-    "en": "What we need is firm commitment.",
+    "en": "What we need is a firm commitment.",
     "alternatives": [
       "A firm commitment is what we need.",
       "We need a definite commitment."
@@ -884,10 +896,16 @@
     "point": "firm commitment は曖昧な予定ではなく確かな約束。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28f7853d42731bbf91a29802eaca611ae5a536eac4df98336f400dcec058624c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8h2s9b3m",

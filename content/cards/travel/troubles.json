@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:70a0e062030aa8ccc78c3e31ca25ac4ebe1b2025bfd6241c509ea1d507b46d28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2k3g9z2c",
@@ -119,7 +125,7 @@
   {
     "id": "c_2x8m7e6r",
     "ja": "私が疑ってるのは相手の誠意だ。",
-    "en": "It's their good faith I'm calling into question.",
+    "en": "It's their sincerity I'm calling into question.",
     "alternatives": [
       "What I'm questioning is their good faith.",
       "It's their sincerity that I'm questioning."
@@ -127,10 +133,16 @@
     "point": "call into question は信頼性を疑問に付す。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9884cb0b71f3bc5eadad19d52e992aaf557c48c64a4d75ba179f2f72a5dc9937",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y7y5k4n",
@@ -834,10 +846,16 @@
     "point": "take at face value は言われたことを疑わず受け取る。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9f7e91302549008b7d20a61594bfdb054ee9ccc713ed46179c18f3e1a6bb1b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8m7t5w8p",

@@ -20,19 +20,25 @@
   },
   {
     "id": "c_2h8a9x5m",
-    "ja": "皆が合意した日が私には悩みの種だ。",
+    "ja": "皆で決めた日が私は心配だ。",
     "en": "The date everyone agreed on troubles me.",
     "alternatives": [
       "I'm troubled by the date everyone chose.",
-      "The agreed date is a concern for me."
+      "The agreed date worries me."
     ],
     "point": "agreed on で具体的な日について合意する。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:613c0f14187b706bf149b5005d15b3cf3466d6846a78b9ebefb0608fdb1169c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2j8k6j3j",
@@ -786,10 +792,16 @@
     "point": "fallback は予定が無理なときに使える代案。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18aa94756433819ec24cc265dac86997c83f059af2ceab8d983453b2f5be3736",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7w6t8z5w",
@@ -934,7 +946,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cec42b0cc5427e54f0a5e3350756f20ffbf541c93c585bb882e2606004a2c99",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8q8p2b7z",

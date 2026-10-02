@@ -92,10 +92,16 @@
     "point": "honor は約束を正式に履行するという意味。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5c496ba1e28415dd65f734b85f7644d39e4f7408b6a78d2a7c20008a8af4304",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2u7y7j6h",
@@ -484,19 +490,25 @@
   },
   {
     "id": "c_5r6n8a9j",
-    "ja": "慣例でも私はこの手数料に異議がある。",
-    "en": "Custom notwithstanding, I take issue with this fee.",
+    "ja": "慣例でも私はこの手数料に反対だ。",
+    "en": "Despite convention, I take issue with this fee.",
     "alternatives": [
       "Despite the custom, I object to this fee.",
-      "Although customary, I find this fee objectionable."
+      "Despite convention, I object to this fee."
     ],
-    "point": "notwithstanding は慣例を認めつつ異議があると伝える。",
+    "point": "take issue with は問題があるとして異議を唱える。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 10,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f148c6bf76722c6a4b8139cf2b658dad1e5e094000a16bfcfa6245b3254feeef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5x9f6k3u",
@@ -816,19 +828,25 @@
   },
   {
     "id": "c_8t8r2q7f",
-    "ja": "私は契約のごまかしを見抜けばよかった。",
-    "en": "I wish I'd seen through the contractual sleight of hand.",
+    "ja": "契約のごまかしを見抜けばよかった。",
+    "en": "I wish I'd seen through the contract's tricks.",
     "alternatives": [
-      "I wish I'd recognized the trickery in the contract.",
-      "If only I'd spotted how the contract misled me."
+      "I wish I'd spotted the contract's tricks.",
+      "If only I'd recognized the contract's trickery."
     ],
-    "point": "sleight of hand は巧みにごまかす手口も指す。",
+    "point": "see through は巧妙なごまかしの本質を見抜く。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 10,
+    "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5be27b6e0b2be17c3559236ebb03a40f75ad74f3142dcf292b024b610a8409eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y3w4m3q",

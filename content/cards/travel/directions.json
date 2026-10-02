@@ -166,16 +166,22 @@
   },
   {
     "id": "c_2u3z7u8f",
-    "ja": "私は道を一本間違えました。",
+    "ja": "私は道を間違えた。",
     "en": "I took the wrong street.",
     "alternatives": ["I went down the wrong street.", "I chose the wrong street."],
     "point": "take a street はその道を通る。",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 4,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bf1aa2d28a63280fafe7efd42ad1a9403e98ccfc27027b769e0722775fd7b25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y7x7h2y",
@@ -516,7 +522,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db833fa2308f86a9a0c05b8c47ade90e1426dd6126628de5f1c3a24625c876d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x5a7h8z",
@@ -588,15 +600,21 @@
     "en": "I've already crossed the bridge.",
     "alternatives": [
       "I've already gone across the bridge.",
-      "I've already made it across the bridge."
+      "I've already made it across."
     ],
     "point": "cross は橋などを渡る動詞。",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 4,
+    "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f91047ce24ee55cd0a4e54789110746770c2eb8056c26d95fd843be11b5912ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h4a2p3m",

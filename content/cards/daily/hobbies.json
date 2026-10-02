@@ -91,14 +91,20 @@
     "id": "c_3b9j7z4p",
     "ja": "君は何を集めてる？",
     "en": "What do you collect?",
-    "alternatives": ["What are you collecting?", "What things do you collect?"],
+    "alternatives": ["What things do you collect?", "What do you like collecting?"],
     "point": "collect は趣味として物を集める。",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 3,
+    "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e2f6cc10020db3fa0eca6fe173338f86b7e7f193be882237d4b656ac75598b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3g2j4g6w",
@@ -300,7 +306,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:150ca311ad00e15f6942af2b4782b7a89174c7bd9230a3cdfc8254fde130d815",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h3k3b7q",
@@ -502,7 +514,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eeaebebb9cc0ab24fe6a1db81a31217ed87032eb4a9460ed0ad3a3f58a35dd5f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6u3t3a4q",
@@ -594,10 +612,16 @@
     "point": "where で泳ぐ場所を尋ねる。",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 2,
+    "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6db61d0d812ffd93b63804f3af836026079ae1c80cfc4f0a2457f1e076815ece",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7d4f8a4y",
@@ -668,15 +692,21 @@
   {
     "id": "c_7v2r3v5q",
     "ja": "私は菓子作りが好き。",
-    "en": "I enjoy baking sweets.",
+    "en": "I enjoy making desserts.",
     "alternatives": ["I like making sweets.", "I like baking desserts."],
-    "point": "enjoy の後は baking のように動名詞。",
+    "point": "enjoy の後は making のように動名詞。",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e3555c7401ec0e712783c1d7c78f4ae48f190e4dbbbdb3ceafcab48cc6055d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v2x6k5z",

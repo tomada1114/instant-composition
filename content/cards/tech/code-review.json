@@ -270,10 +270,10 @@
   {
     "id": "c_3s3g8q3j",
     "ja": "この変更で私は前提を再考した。",
-    "en": "This change made me rethink assumptions.",
+    "en": "This change made me rethink my assumptions.",
     "alternatives": [
-      "This change prompted me to reconsider assumptions.",
-      "This change led me to revisit assumptions."
+      "This change prompted me to reconsider my assumptions.",
+      "This change led me to revisit my assumptions."
     ],
     "point": "make + 人 + 動詞の原形で再考させたと伝える。",
     "topic": "tech",
@@ -281,7 +281,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13565f2c189d1201b964272e4afd9588ec32ec3dca6800f6a120a53946b6a7e3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3y8j9k4h",
@@ -323,8 +329,8 @@
   },
   {
     "id": "c_4h3h6v2e",
-    "ja": "長くても私は明白な名がいい。",
-    "en": "Though verbose, I prefer self-explanatory names.",
+    "ja": "長くても私は明快な名がいい。",
+    "en": "Length aside, I prefer self-explanatory names.",
     "alternatives": [
       "I favor clear names despite their length.",
       "I prefer self-explanatory names despite their length."
@@ -332,10 +338,16 @@
     "point": "self-explanatory は追加説明なしで意味が分かる。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 6,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48875e08b4ecf1ac9fe98148ba5c1a54d847136fd08d1dbe2e08f698cef4a409",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4k8r9p2x",
@@ -362,7 +374,7 @@
   {
     "id": "c_4n3w3p9x",
     "ja": "この変更は不要かもしれません。",
-    "en": "This change may be redundant.",
+    "en": "This change may be unnecessary.",
     "alternatives": [
       "Perhaps this change is unnecessary.",
       "This change might not be needed."
@@ -373,7 +385,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59f1afe2a0db65631206ce0d674cbc48b3ccc38c5e15f58c424a7e3068b2cc40",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4q4h8m5d",

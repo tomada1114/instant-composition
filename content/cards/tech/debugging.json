@@ -249,7 +249,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b62e82c1557a9610f232407f4074f9dfa2858e2f4372eec41cd7227e13a1b64c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q8f8k2x",
@@ -299,14 +305,20 @@
     "id": "c_3y2z2g6d",
     "ja": "私は設定を調べなきゃ。",
     "en": "I need to check settings.",
-    "alternatives": ["I have to inspect the settings.", "I must check the settings."],
+    "alternatives": ["I have to check the settings.", "I must check the settings."],
     "point": "need to check は確認する必要がある。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb5ec41de920c920450b75b2c80a533900ef82f1e74eb4463440b378f9480840",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3z7f9k8j",
@@ -344,7 +356,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e71d95a2a851220ccfa502140f63642a0f4cc2de66486064fe4dbe50c07c3ae0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s3m9e8x",
@@ -370,8 +388,8 @@
   },
   {
     "id": "c_4y2c9m6c",
-    "ja": "我々は症状を原因と誤認したのかも。",
-    "en": "We may've mistaken symptoms for causes.",
+    "ja": "我々は症状を原因と誤認したかも。",
+    "en": "We might've mistaken symptoms for causes.",
     "alternatives": [
       "We might have confused symptoms with causes.",
       "We may have misidentified symptoms as causes."
@@ -379,10 +397,16 @@
     "point": "mistake A for B はAをBだと思い違いする。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d3c4feeb7d39db4d5f6fe33a645603f859f6d35c9a95db2e08f4e88b48c390e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z7j6m2y",
@@ -588,7 +612,7 @@
   },
   {
     "id": "c_6x8a7s7y",
-    "ja": "この可能性はまだ排除されてない。",
+    "ja": "この可能性は排除されてない。",
     "en": "This possibility hasn't been ruled out.",
     "alternatives": [
       "This possibility hasn't yet been eliminated.",
@@ -597,10 +621,16 @@
     "point": "rule out は原因の候補から外す。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
+    "level": 6,
     "grammar": ["passive-voice", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e92a60feecd15a0fda49ee08c2843ac8154ff6b1e21d98e3e6df37488a5f71b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6x8u8k2m",
@@ -948,9 +978,15 @@
     "point": "probe は原因を突き止めようと詳しく調べる。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["third-conditional", "phrasal-verbs"],
+    "level": 6,
+    "grammar": ["third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db5f2d5048db930f03d72b5c6bbf9157615edcc2a10966da96d0c89c63adcca7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

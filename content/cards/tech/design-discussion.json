@@ -455,7 +455,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:672812332b6047ebaa35ceff544b119ff4dee3352bb33cd70a44786dbd2854dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z2c9t4v",
@@ -768,7 +774,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2e7dddd8f0e2a56a63d50fa3aca61a2a56c000346a048f13083f1494f31ba4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7u7z6m3b",
@@ -835,7 +847,7 @@
   },
   {
     "id": "c_9d5v2n5a",
-    "ja": "私はデータの複製を避ける。",
+    "ja": "私はデータ複製を避ける。",
     "en": "I avoid copying data.",
     "alternatives": ["I try not to copy data.", "I avoid making data copies."],
     "point": "avoid の後は copying のように動名詞。",
@@ -844,7 +856,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82b198ed9b2958ac5d95ec5408595af06dbd801241d242e36544b5c41d27f355",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9e5q4q5y",

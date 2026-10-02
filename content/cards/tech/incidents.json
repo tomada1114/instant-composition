@@ -370,7 +370,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:404b9155609db373fc19131399d1c8d02732a47bbc93650cd726d85430fcb7a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x4q9g9g",
@@ -619,7 +625,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5078a6a7ddfbe6d7b6e521de7745eb3a1e718eb2bc2a3a2467bd8607d3ddcda3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7c4h9n9c",
@@ -707,14 +719,20 @@
     "id": "c_8a4x9e5w",
     "ja": "我々は客に伝えなきゃ。",
     "en": "We must tell customers.",
-    "alternatives": ["We have to notify customers.", "We need to tell customers."],
+    "alternatives": ["We have to tell customers.", "We need to tell customers."],
     "point": "must で顧客への連絡が必要と伝える。",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64810d6db927a11c47731405bc22cde5f3479431ceb1d43ee879e7a84c20bd6e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8g9c2a6e",

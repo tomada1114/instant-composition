@@ -98,7 +98,13 @@
     "level": 5,
     "grammar": ["can-could-ability", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4764e0162c79f42faa3e0d4a66f76493f26284c691cc4e911e1b80c3188cb63e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2s3k7u5f",
@@ -513,13 +519,19 @@
       "I'll arrange it when approval comes through.",
       "I'll make arrangements once we get approval."
     ],
-    "point": "come through は待っていた承認などが届く。",
+    "point": "once は承認が下り次第という条件を表す。",
     "topic": "work",
     "subtopic": "reporting",
     "level": 5,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d8c6e6b7a2ff64332f9097ed1155fcdeec165062f319d2dcf3e804865a9f4a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6a5y5y9c",
@@ -709,19 +721,25 @@
   },
   {
     "id": "c_7y5y9q6z",
-    "ja": "我々は見積もりが甘いと知った。",
-    "en": "We found the estimate was optimistic.",
+    "ja": "我々は甘い試算だと知った。",
+    "en": "We found the estimate was too optimistic.",
     "alternatives": [
       "We discovered the estimate was too optimistic.",
-      "We learned that the estimate was optimistic."
+      "We learned our estimate was too optimistic."
     ],
-    "point": "found の後の節で見積もりが楽観的だと伝える。",
+    "point": "too optimistic は見積もりが楽観的すぎて甘いこと。",
     "topic": "work",
     "subtopic": "reporting",
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9065ff66b70103714e353b12f333fb2ff0110f311e773cebf588f409437344ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a4m6d8y",
