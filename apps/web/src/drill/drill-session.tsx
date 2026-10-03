@@ -12,8 +12,9 @@ import { IntroScreen } from "./intro-screen";
 import { LeaveDialog } from "./leave-dialog";
 import { PauseDialog } from "./pause-dialog";
 import { ReadyScreen } from "./ready-screen";
-import { browserSound, gradeSound, roundSound } from "./sound";
-import { Toast } from "./toast";
+import { browserSound } from "../study/sound";
+import { gradeSound, roundSound } from "./sound";
+import { Toast } from "../study/toast";
 import { useAnnouncement } from "./use-announcement";
 import {
   useDrillClock,
@@ -21,7 +22,7 @@ import {
   useRoundFinish,
   type DrillAction,
 } from "./use-drill";
-import { useLeaveGuard } from "./use-leave-guard";
+import { useLeaveGuard } from "../study/use-leave-guard";
 
 /** Pixels one ↑/↓ press moves an overflowing back. */
 const SCROLL_STEP = 48;

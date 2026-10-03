@@ -6,7 +6,7 @@ import { Eyebrow } from "../ui/eyebrow";
 import { ReturnGlyph } from "../ui/glyphs";
 
 import type { DrillCard, Grade } from "../openapi";
-import { playMotion } from "./motion";
+import { playMotion } from "../study/motion";
 
 /**
  * Past this many characters a prompt runs to a third line at `front` (36px)

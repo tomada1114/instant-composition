@@ -1,33 +1,19 @@
-import { FRESH_FRONT, type DrillInit, type DrillState } from "./drill-state";
-import { nextCard } from "./re-asks";
+import { initStudy } from "../study/study-init";
+import type { DrillInit, DrillState } from "./drill-state";
 
-/**
- * The drill a round opens on, past what the server and this tab's queue
- * already hold. Only first passes count: a re-ask that was waiting when the
- * page went away is dropped, as the first answer already set the schedule.
- */
+/** Resumes a timed drill past saved first answers, omitting unavailable cards. */
 export function initDrill(init: DrillInit): DrillState {
-  const shown = (id: string): boolean => init.limits[id] !== undefined;
-  const answeredFirst = new Set(
-    init.answered.filter((a) => a.pass === "first").map((a) => a.cardId),
-  );
-  const base: DrillState = {
-    roundId: init.roundId,
-    retries: init.retries,
+  return {
+    ...initStudy({
+      sessionId: init.roundId,
+      deck: init.deck.filter((id) => init.limits[id] !== undefined),
+      isNew: init.isNew,
+      answered: init.answered,
+      retries: init.retries,
+      intro: init.intro,
+    }),
     limits: init.limits,
     fastThresholds: init.fastThresholds,
-    isNew: init.isNew,
-    fresh: init.deck.filter((id) => !answeredFirst.has(id) && shown(id)),
-    firstShown: answeredFirst.size,
-    card: undefined,
-    reAsks: [],
-    step: 0,
-    asked: {},
-    goods: {},
     combo: 0,
-    paused: false,
-    answers: [],
-    phase: init.intro ? { kind: "intro" } : FRESH_FRONT,
   };
-  return nextCard(base) ?? { ...base, phase: { kind: "finishing" } };
 }

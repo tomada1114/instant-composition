@@ -1,5 +1,5 @@
 import type { SendOutcome } from "../lib/endpoints";
-import type { AnswerInput } from "./drill-state";
+import type { AnswerInput } from "./study-state";
 import { queueText, readQueue } from "./stored-queue";
 
 /** The part of `sessionStorage` the queue uses. */

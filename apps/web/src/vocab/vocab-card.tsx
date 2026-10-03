@@ -1,12 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { currentCard, progress, type DrillState } from "../drill/drill-state";
-import { playMotion } from "../drill/motion";
-import { TopStrip } from "../drill/top-strip";
+import { currentCard, progress, type StudyState } from "../study/study-state";
+import { playMotion } from "../study/motion";
+import { TopStrip } from "../study/top-strip";
 import { KEY_OF } from "../lib/grade-keys";
 import { cn } from "../lib/utils";
 import type { GradeKeyTrio, VocabCard as Card } from "../openapi";
-import type { DrillKeyAction } from "../drill/keys";
+import type { StudyKeyAction } from "../study/keys";
 import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
 import { GradeTrio } from "../ui/grade-trio";
@@ -51,11 +51,11 @@ export function VocabCard({
   onAction,
   onDelete,
 }: Readonly<{
-  state: DrillState;
+  state: StudyState;
   card: Card;
   gradeKeys: GradeKeyTrio;
   onDelete: () => void;
-  onAction: (action: DrillKeyAction) => void;
+  onAction: (action: StudyKeyAction) => void;
 }>): ReactElement {
   const drill = useTranslations("Drill");
   const front = state.phase.kind === "front";
@@ -93,7 +93,6 @@ export function VocabCard({
           (currentCard(state)?.pass === "first" && phase.kind !== "feedback" ? 1 : 0)
         }
         waiting={where.waiting}
-        combo={0}
         onPause={() => {
           onAction({ type: "pause" });
         }}

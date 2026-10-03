@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import { browserSound } from "../drill/sound";
+import { browserSound } from "../study/sound";
 import type { ApiError } from "../lib/api-call";
 import { TUNING } from "../lib/tuning";
 import { forgetTalk, rememberTalk } from "../lib/talk-storage";

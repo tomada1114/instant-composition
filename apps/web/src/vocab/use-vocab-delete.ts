@@ -1,13 +1,13 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState, type Dispatch } from "react";
-import type { AnswerQueue } from "../drill/answer-queue";
-import type { DrillEvent, DrillState } from "../drill/drill-state";
+import type { AnswerQueue } from "../study/answer-queue";
+import type { StudyEvent, StudyState } from "../study/study-state";
 import { deleteVocabCard } from "../lib/vocab-endpoints";
 
 /** Owns confirmation and deletion; waits for answer sends before removing progress. */
 export function useVocabDelete(
-  state: DrillState,
-  dispatch: Dispatch<DrillEvent>,
+  state: StudyState,
+  dispatch: Dispatch<StudyEvent>,
   queue: AnswerQueue,
   onClose: () => void,
 ): {

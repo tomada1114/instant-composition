@@ -1,7 +1,7 @@
 import { useTranslations } from "use-intl";
 import { useEffect, useRef, type ReactElement } from "react";
 
-import { playMotion } from "../drill/motion";
+import { playMotion } from "../study/motion";
 
 import type { RoundSummary } from "../openapi";
 import type { Shown } from "./summary-parts";

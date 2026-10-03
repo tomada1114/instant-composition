@@ -84,13 +84,15 @@ reaches it as types generated from `packages/contracts/openapi.json` into
 - **A write** calls its function in `endpoints.ts` directly from the hook or the drill
   code that owns it; nothing here uses a mutation cache. A write the learner must not
   lose (an answer) goes through the drill's answer queue, which retries only what
-  `recordAnswers` reports as `failed` (with an optional `Retry-After` deadline). Only
-  explicit operation-specific status/code refusals are final; unknown or temporary
-  responses stay stored. A deferred queue preserves its deadline across reload, reads
-  old answer arrays too, and stops an unsuccessful drain until a later arrival or
-  explicit retry. Finish attempts wait for the active drain before reading the same
-  deadline, and keep a new retry hint even when every answer has already been saved.
-  Earlier batches must be acknowledged before finishing.
+  `recordAnswers` reports as `failed` (with an optional `Retry-After` deadline). The
+  shared `study/` surface owns the queue, re-asks, keys and navigation guard; drill and
+  vocabulary bind their own reducer, payload and finish call. Only explicit
+  operation-specific status/code refusals are final; unknown or temporary responses stay
+  stored. A deferred queue preserves its deadline across reload, reads old answer arrays
+  too, and stops an unsuccessful drain until a later arrival or explicit retry. Finish
+  attempts wait for the active drain before reading the same deadline, and keep a new
+  retry hint even when every answer has already been saved. Earlier batches must be
+  acknowledged before finishing.
 
 **After a contract change**, regenerate both documents, in order, and commit what they
 write: `pnpm contracts:openapi` rewrites `packages/contracts/openapi.json`, then

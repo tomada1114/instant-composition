@@ -1,7 +1,7 @@
 import type { ApiError } from "../lib/api-call";
 import type { Result } from "../lib/result";
 import type { AnswerQueue } from "./answer-queue";
-import type { AnswerInput } from "./drill-state";
+import type { AnswerInput } from "./study-state";
 
 /** A finish waits for sends already in flight, then reads their answers and deadline. */
 export async function queuedFinish<T>(

@@ -1,6 +1,6 @@
 import { TUNING } from "../lib/tuning";
 import type { Grade } from "../openapi";
-import type { DrillState, ReAsk } from "./drill-state";
+import type { StudyState, ReAsk } from "./study-state";
 
 /**
  * In-session re-asks, in place of a retry pass at the round's end: a card
@@ -18,9 +18,9 @@ function gapAfter(grade: Grade, isNew: boolean, goods: number): number | undefin
 
 /** The current card's re-ask, if `grade` sets one, and its tally of ○. */
 export function afterGrade(
-  state: DrillState,
+  state: StudyState,
   grade: Grade,
-): Pick<DrillState, "reAsks" | "goods"> {
+): Pick<StudyState, "reAsks" | "goods"> {
   const card = state.card;
   if (card === undefined) return state;
   const { cardId } = card;
@@ -50,7 +50,7 @@ function earliest(reAsks: readonly ReAsk[]): ReAsk | undefined {
  * no first pass is left, the waiting ones come without waiting, in the order
  * they fell due, never the card just shown while another waits.
  */
-export function nextCard(state: DrillState): DrillState | undefined {
+export function nextCard(state: StudyState): StudyState | undefined {
   const step = state.step + 1;
   const due = earliest(state.reAsks.filter((reAsk) => reAsk.due <= step));
   const [first, ...rest] = state.fresh;

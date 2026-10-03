@@ -1,16 +1,17 @@
-import { queuedFinish } from "../drill/queued-finish";
+import { queuedFinish } from "../study/queued-finish";
 import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { createAnswerQueue, sessionStore } from "../drill/answer-queue";
-import { useQueuedDrill } from "../drill/answer-sync";
+import { createAnswerQueue, sessionStore } from "../study/answer-queue";
+import { useQueuedStudy } from "../study/answer-sync";
+import { studyReducer } from "../study/study-machine";
 import { initVocab } from "./vocab-init";
-import { currentCard } from "../drill/drill-state";
-import { browserSound } from "../drill/sound";
-import { Toast } from "../drill/toast";
-import { useDrillClock, useDrillKeys, type DrillAction } from "../drill/use-drill";
-import { useLeaveGuard } from "../drill/use-leave-guard";
+import { currentCard } from "../study/study-state";
+import { browserSound } from "../study/sound";
+import { Toast } from "../study/toast";
+import { useStudyClock, useStudyKeys, type StudyAction } from "../study/use-study";
+import { useLeaveGuard } from "../study/use-leave-guard";
 import type { GradeKeyTrio, VocabSession, VocabSummary } from "../openapi";
 import { Button } from "../ui/button";
 import { requestVocabFinish, VOCAB_QUEUE_PREFIX, sendVocabAnswer } from "./sessions";
@@ -22,7 +23,7 @@ import { VocabAnnouncement } from "./vocab-announcement";
 import { useVocabAvailability } from "./use-vocab-availability";
 import { VocabDone } from "./vocab-done";
 
-/** One untimed session uses the drill's reducer, grading keys, guarded navigation and durable queue. */
+/** One vocabulary session uses the shared study reducer, grading keys, guarded navigation and durable queue. */
 export function VocabStudy({
   session,
   sound,
@@ -46,12 +47,13 @@ export function VocabStudy({
     }),
   );
   const [failures, setFailures] = useState(0);
-  const [state, dispatch] = useQueuedDrill(
+  const [state, dispatch] = useQueuedStudy(
     queue,
     () => initVocab(session),
     () => {
       setFailures((count) => count + 1);
     },
+    studyReducer,
   );
   const [summary, setSummary] = useState<VocabSummary>();
   const moreCount = useVocabAvailability(session, summary !== undefined);
@@ -62,7 +64,7 @@ export function VocabStudy({
     leave.stay();
     dispatch({ type: "resume", at: performance.now() });
   });
-  useDrillClock(state, dispatch, false);
+  useStudyClock(state, dispatch);
   const finishing = state.phase.kind === "finishing";
   useEffect(() => {
     if (!finishing) return undefined;
@@ -81,7 +83,7 @@ export function VocabStudy({
       active = false;
     };
   }, [finishing, session.sessionId, queue, cache, attempt]);
-  function act(action: DrillAction, key: boolean): void {
+  function act(action: StudyAction, key: boolean): void {
     if (deletion.asking) {
       if (action.type === "resume") deletion.keep();
       return;
@@ -98,7 +100,7 @@ export function VocabStudy({
       dispatch({ type: action.type, at: performance.now() });
     }
   }
-  useDrillKeys(
+  useStudyKeys(
     deletion.asking ? { ...state, paused: true } : state,
     gradeKeys,
     (action) => {

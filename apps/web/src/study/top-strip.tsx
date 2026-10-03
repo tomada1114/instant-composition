@@ -41,7 +41,7 @@ export function TopStrip({
   total,
   filled,
   waiting,
-  combo,
+  combo = 0,
   onPause,
 }: Readonly<{
   /** The first pass on screen, or the last one shown during a re-ask, counted from 1. */
@@ -51,7 +51,7 @@ export function TopStrip({
   filled: number;
   /** Re-asks waiting, the one on screen not counted. */
   waiting: number;
-  combo: number;
+  combo?: number;
   onPause: () => void;
 }>): ReactElement {
   const t = useTranslations("Drill.card");

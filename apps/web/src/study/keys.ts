@@ -1,9 +1,9 @@
 import { isDefaultGradeKeys } from "../lib/grade-keys";
 import type { Grade, GradeKeyTrio } from "../openapi";
-import type { DrillState } from "./drill-state";
+import type { StudyState } from "./study-state";
 
 /** What a key or a control asks of the drill; the caller stamps it with the time. */
-export type DrillKeyAction =
+export type StudyKeyAction =
   | { readonly type: "start" | "flip" | "pause" | "resume" }
   | { readonly type: "grade"; readonly grade: Grade }
   | { readonly type: "scroll"; readonly direction: 1 | -1 };
@@ -45,10 +45,10 @@ function gradeOf(press: KeyPress, keys: GradeKeyTrio): Grade | undefined {
  * scrolls, so ↑ or ↓ chosen as one leaves the card to the other arrow.
  */
 export function keyAction(
-  state: DrillState,
+  state: StudyState,
   press: KeyPress,
   keys: GradeKeyTrio,
-): DrillKeyAction | undefined {
+): StudyKeyAction | undefined {
   const { phase } = state;
   const { key } = press;
   if (state.paused) return key === "Escape" ? { type: "resume" } : undefined;

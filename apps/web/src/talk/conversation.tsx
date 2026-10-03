@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { playMotion } from "../drill/motion";
+import { playMotion } from "../study/motion";
 import { cn } from "../lib/utils";
 import { Eyebrow } from "../ui/eyebrow";
 import { NoticeGlyph, RingGlyph } from "../ui/glyphs";

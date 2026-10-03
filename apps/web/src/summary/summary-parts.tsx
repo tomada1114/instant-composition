@@ -1,7 +1,7 @@
 import { useTranslations } from "use-intl";
 import { useEffect, useRef, type ReactElement, type RefObject } from "react";
 
-import { playMotion } from "../drill/motion";
+import { playMotion } from "../study/motion";
 import { WeekRow } from "../home/streak-figure";
 import { cn } from "../lib/utils";
 import { FlameGlyph } from "../ui/filled-glyphs";

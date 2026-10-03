@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { Toast } from "../drill/toast";
+import { Toast } from "../study/toast";
 import { TalkLeaveDialog } from "./talk-leave-dialog";
 import { TalkConversation } from "./talk-conversation";
 import { TalkScreen } from "./talk-screen";

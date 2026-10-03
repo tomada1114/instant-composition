@@ -1,7 +1,7 @@
 import { useBlocker } from "@tanstack/react-router";
 import { useEffect, type Dispatch } from "react";
 
-import type { DrillEvent, DrillState } from "./drill-state";
+import type { StudyEvent, StudyState } from "./study-state";
 
 /** Every navigation asks while the guard is on; `disabled` is what turns it off. */
 const ALWAYS = (): boolean => true;
@@ -26,8 +26,8 @@ export interface LeaveGuard {
  * open, nothing is left to lose, so the navigation goes.
  */
 export function useLeaveGuard(
-  state: DrillState,
-  dispatch: Dispatch<DrillEvent>,
+  state: StudyState,
+  dispatch: Dispatch<StudyEvent>,
 ): LeaveGuard {
   const active = state.phase.kind !== "intro" && state.phase.kind !== "finishing";
   const blocker = useBlocker({

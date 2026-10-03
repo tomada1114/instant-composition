@@ -13,8 +13,8 @@ import type {
   VocabSessionKind,
   VocabSummary,
 } from "../openapi";
-import { flushEarlierRounds, sessionStore } from "../drill/answer-queue";
-import type { AnswerInput } from "../drill/drill-state";
+import { flushEarlierRounds, sessionStore } from "../study/answer-queue";
+import type { AnswerInput } from "../study/study-state";
 
 export const VOCAB_QUEUE_PREFIX = "vocab-answers:";
 export interface VocabSearch {
