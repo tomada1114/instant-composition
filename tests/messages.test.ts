@@ -651,6 +651,20 @@ const MESSAGE_KEYS = [
   "Vocab.categories.idiom",
   "Vocab.categories.phrasal-verb",
   "Vocab.categories.phrase",
+  "Talk.cards.title",
+  "Talk.cards.failed",
+  "Talk.cards.retry",
+  "Talk.cards.learning",
+  "Talk.cards.added",
+  "Talk.cards.add",
+  "Talk.cards.addFailed",
+  "Vocab.fromTalk",
+  "Vocab.delete.go",
+  "Vocab.delete.title",
+  "Vocab.delete.caption",
+  "Vocab.delete.confirm",
+  "Vocab.delete.keep",
+  "Vocab.delete.failed",
 ] as const satisfies readonly MessageKey[];
 
 describe("the message catalogs", () => {

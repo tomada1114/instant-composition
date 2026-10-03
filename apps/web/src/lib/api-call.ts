@@ -34,7 +34,7 @@ export interface OperationData {
   readonly body?: unknown;
 }
 
-export type Method = "GET" | "POST" | "PATCH";
+export type Method = "GET" | "POST" | "PATCH" | "DELETE";
 
 /** `data.url` under {@link API_ROOT}, each `{name}` filled with its encoded path parameter. */
 export function operationUrl(data: OperationData): string {

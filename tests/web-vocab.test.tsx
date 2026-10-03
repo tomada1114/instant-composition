@@ -30,6 +30,7 @@ function serve(
     summary?: VocabSummary;
     offline?: boolean;
     exhausted?: boolean;
+    delete?: () => Response | Promise<Response>;
   } = {},
 ) {
   return fakeApi((call) => {
@@ -53,6 +54,8 @@ function serve(
       );
     if (call.url === "/api/v1/vocab/sessions")
       return Response.json(options.session ?? vocabSession());
+    if (call.method === "DELETE")
+      return options.delete?.() ?? new Response(null, { status: 204 });
     if (call.url.endsWith("/answers"))
       return options.offline
         ? refusal(503, "ERR_CONFLICT")
@@ -682,5 +685,189 @@ describe("vocabulary recovery and scoped continuation", () => {
     expect(calls.filter((call) => call.url === "/api/v1/vocab/sessions")).toHaveLength(
       2,
     );
+  });
+});
+
+describe("deleting a vocabulary card from a talk", () => {
+  async function personalBack(
+    cards = [vocabCard("v_own", { personal: true }), vocabCard("v_next")],
+    options: Parameters<typeof serve>[0] = {},
+  ) {
+    const calls = serve({ session: vocabSession({ cards }), ...options });
+    await renderApp("/vocab/study");
+    expect(screen.getByText(ja.Vocab.fromTalk)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: ja.Vocab.delete.go })).toBeNull();
+    await settle(16);
+    press(" ");
+    return calls;
+  }
+  function openDelete(): void {
+    fireEvent.click(screen.getByRole("button", { name: ja.Vocab.delete.go }));
+  }
+  function confirmDelete(): void {
+    fireEvent.click(screen.getByRole("button", { name: ja.Vocab.delete.confirm }));
+  }
+  it("never offers origin or deletion on a catalog card's back", async () => {
+    serve();
+    await renderApp("/vocab/study");
+    await settle(16);
+    press(" ");
+    expect(screen.queryByText(ja.Vocab.fromTalk)).toBeNull();
+    expect(screen.queryByRole("button", { name: ja.Vocab.delete.go })).toBeNull();
+  });
+  it("focuses keep, traps Tab, and Esc closes without grading or deleting", async () => {
+    const calls = await personalBack();
+    openDelete();
+    expect(screen.getByRole("dialog")).toHaveTextContent(ja.Vocab.delete.title);
+    expect(screen.getByRole("dialog")).toHaveTextContent(ja.Vocab.delete.caption);
+    const keep = screen.getByRole("button", { name: ja.Vocab.delete.keep });
+    expect(keep).toHaveFocus();
+    fireEvent.keyDown(keep, { key: "Tab" });
+    expect(screen.getByRole("button", { name: ja.Vocab.delete.confirm })).toHaveFocus();
+    await settle(200);
+    press("3");
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(0);
+    press("Escape");
+    expect(screen.queryByRole("dialog")).toBeNull();
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(0);
+    expect(screen.getByText("No worries v_own")).toBeInTheDocument();
+  });
+  it("accepts an empty 204 and advances without a fabricated grade", async () => {
+    const calls = await personalBack();
+    openDelete();
+    confirmDelete();
+    await settle(16);
+    expect(calls.filter((call) => call.method === "DELETE")).toMatchObject([
+      { url: "/api/v1/vocab/cards/v_own", body: null },
+    ]);
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(0);
+    expect(
+      screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(ja.Vocab.fromTalk)).toBeNull();
+  });
+  it("coalesces pending deletion and blocks keep, grades and background navigation until completion", async () => {
+    let resolve!: (response: Response) => void;
+    const calls = await personalBack(undefined, {
+      delete: () =>
+        new Promise<Response>((done) => {
+          resolve = done;
+        }),
+    });
+    openDelete();
+    confirmDelete();
+    await settle();
+    confirmDelete();
+    press("3");
+    press("Escape");
+    fireEvent.click(screen.getByRole("button", { name: ja.Vocab.delete.keep }));
+    act(() => {
+      window.history.back();
+    });
+    await settle();
+    expect(screen.getAllByRole("dialog")).toHaveLength(1);
+    expect(screen.getByRole("dialog")).toHaveTextContent(ja.Vocab.delete.title);
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(0);
+    resolve(new Response(null, { status: 204 }));
+    await settle(16);
+    expect(window.location.pathname).toBe("/vocab/study");
+    expect(
+      screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
+    ).toBeInTheDocument();
+  });
+  it("keeps a refused card, announces failure and allows an explicit retry", async () => {
+    let fail = true;
+    const calls = await personalBack(undefined, {
+      delete: () =>
+        fail ? refusal(503, "ERR_CONFLICT") : new Response(null, { status: 204 }),
+    });
+    openDelete();
+    confirmDelete();
+    await settle();
+    expect(screen.getByText(ja.Vocab.delete.failed)).toBeInTheDocument();
+    expect(screen.getByText("No worries v_own")).toBeInTheDocument();
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    fail = false;
+    confirmDelete();
+    await settle(16);
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(2);
+    expect(
+      screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
+    ).toBeInTheDocument();
+  });
+  it("finishes after deleting the last card with an empty answer batch", async () => {
+    const calls = await personalBack([vocabCard("v_own", { personal: true })]);
+    openDelete();
+    confirmDelete();
+    await settle();
+    expect(screen.getByRole("heading", { name: ja.Vocab.done })).toBeInTheDocument();
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      answers: [],
+    });
+  });
+  it("drops only a deleted re-ask's failed pending answers and finishes with unrelated answers", async () => {
+    const calls = await personalBack(undefined, { offline: true });
+    await settle(151);
+    press("1");
+    await settle(300);
+    await flipAndGrade("3");
+    expect(
+      screen.getByText(vocabCard("v_own").definition, { selector: "p" }),
+    ).toBeInTheDocument();
+    await settle(16);
+    press(" ");
+    openDelete();
+    confirmDelete();
+    await settle();
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toMatchObject({
+      answers: [{ cardId: "v_next", grade: "good" }],
+    });
+    expect(
+      calls
+        .filter((call) => call.url.endsWith("/answers"))
+        .every((call) => JSON.stringify(call.body).includes("v_own")),
+    ).toBe(true);
+    expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
+    expect(sessionStorage.getItem("vocab-answers:session-1")).toBeNull();
+  });
+  it("waits for an in-flight answer before deleting its re-ask and does not resend it afterwards", async () => {
+    let resolve!: (response: Response) => void;
+    let answering = true;
+    const cards = [vocabCard("v_own", { personal: true }), vocabCard("v_next")];
+    const calls = fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
+      if (call.url === "/api/v1/vocab/sessions")
+        return Response.json(vocabSession({ cards }));
+      if (call.url.endsWith("/answers"))
+        return answering
+          ? new Promise<Response>((done) => {
+              resolve = done;
+            })
+          : new Response(null, { status: 204 });
+      if (call.method === "DELETE") return new Response(null, { status: 204 });
+      if (call.url.endsWith("/finish")) return Response.json(vocabSummary());
+      return undefined;
+    });
+    await renderApp("/vocab/study");
+    await flipAndGrade("1");
+    await flipAndGrade("3");
+    await settle(16);
+    press(" ");
+    openDelete();
+    confirmDelete();
+    await settle();
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(0);
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    answering = false;
+    resolve(new Response(null, { status: 204 }));
+    await settle();
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(2);
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      answers: [],
+    });
   });
 });

@@ -4,6 +4,7 @@ import { useTranslations } from "use-intl";
 
 import { Toast } from "../drill/toast";
 import { TalkLeaveDialog } from "./talk-leave-dialog";
+import { TalkConversation } from "./talk-conversation";
 import { TalkScreen } from "./talk-screen";
 import { TalkStart } from "./talk-start";
 import { keptTurns } from "./talk-state";
@@ -23,7 +24,7 @@ export function TalkSession({
 }: Readonly<{ sound: boolean; turnCount: number }>): ReactElement {
   const t = useTranslations("Talk");
   const navigate = useNavigate();
-  const { state, notice, actions } = useTalk(sound);
+  const { state, notice, actions, kept } = useTalk(sound);
   const talk = state.kind === "talk" ? state.talk : undefined;
   const active = talk !== undefined && talk.step !== "ended";
   const leave = useTalkLeave(active);
@@ -52,6 +53,7 @@ export function TalkSession({
       ) : (
         <TalkScreen
           talk={talk}
+          conversation={<TalkConversation key={talk.talkId} talk={talk} kept={kept} />}
           actions={actions}
           onClose={leave.ask}
           paused={leave.asking !== undefined}

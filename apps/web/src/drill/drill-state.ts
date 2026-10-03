@@ -41,6 +41,7 @@ export type DrillPhase =
  * answer reports as the time it was given.
  */
 export type DrillEvent =
+  | { readonly type: "remove"; readonly cardId: string }
   | {
       readonly type: "start" | "shown" | "tick" | "flip" | "advance";
       readonly at: number;

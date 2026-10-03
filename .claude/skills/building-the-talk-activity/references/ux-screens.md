@@ -216,6 +216,10 @@ Back, either of which opens W4.
 │ 相手
 │ Good to see you. Have a nice weekend.  ← closing line of turn 6
 │ ──────── おわり ────────                ← an eyebrow between lines
+│ ┌ カードにする                         ← inside the conversation scroller
+│ │ [ swamped ] [ catch up ]             ← select-card; two across, one below 640
+│ │ [          追加する          ]       ← secondary; disabled until one is selected
+│ └────────────────────────────
 ├──────────────────────────────────────
 │ [            新しい会話            ]     ← primary. Pressing it goes to W2's 「用意しています」
 ```
@@ -224,6 +228,19 @@ Back, either of which opens W4.
   gives the same shape (no closing line; it starts from 「おわり」("the end")).
 - The ✕ in the top bar goes away. After the end, the learner can leave straight from a
   tab (nothing is lost).
+- A kept talk with at least one corrected turn, including a give-up, asks for card
+  candidates once on reaching W3h. An early end waits for successful persistence; an
+  expired, missing or unsuccessfully saved talk offers none.
+- The candidate card follows the end marker and scrolls into view. Its headwords are
+  Latin; captions show the localized category and Japanese meaning. None is
+  selected. 「学習中」 stays selectable; 「追加済み」 is locked. 「追加する」 sends
+  selected indexes, clears added selections and uses the returned statuses. It stays
+  secondary.
+- Waiting is a still 「…」 under the title. Failure is 「候補を作れませんでした」 and
+  secondary 「もう一度」; only that press retries. Empty candidates or no corrected turn
+  show no card. An add failure shows 「追加できませんでした」 and keeps selections.
+- 「新しい会話」 stays the sole primary, starts a fresh talk and asks no old candidates.
+  Space and Enter on a focused candidate operate that native control.
 - The conversation stays on this screen. No control is added for reading it back.
 
 ### W4 Leave-confirmation dialog

@@ -361,3 +361,42 @@ describe("flushEarlierRounds", () => {
     expect([...storage.data.keys()]).toStrictEqual(["drill-answers:new", "other"]);
   });
 });
+
+describe("removing pending answers for a deleted card", () => {
+  it("preserves unrelated answers and storage when a deleted card had failed resends", async () => {
+    const storage = memoryStorage({ k: JSON.stringify([answer("c1"), answer("c2")]) });
+    const sender = scriptedSender("failed", "sent");
+    const queue = createAnswerQueue({ key: "k", send: sender.send, storage });
+    expect(await queue.flush()).toBe(false);
+    queue.removeCard("c1");
+    expect(queue.pending()).toStrictEqual([answer("c2")]);
+    expect(JSON.parse(storage.data.get("k") ?? "[]")).toStrictEqual([answer("c2")]);
+    expect(await queue.flush()).toBe(true);
+    expect(sender.sent).toStrictEqual(["c1", "c2"]);
+    expect(storage.data.has("k")).toBe(false);
+  });
+  it("does not shift away an unrelated answer when removal races an in-flight send", async () => {
+    let resolve!: (value: SendOutcome) => void;
+    const sent: string[] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      send: (item) => {
+        sent.push(item.cardId);
+        return item.cardId === "c1"
+          ? new Promise<SendOutcome>((done) => {
+              resolve = done;
+            })
+          : Promise.resolve("sent");
+      },
+    });
+    const first = queue.enqueue(answer("c1"));
+    await Promise.resolve();
+    const second = queue.enqueue(answer("c2"));
+    queue.removeCard("c1");
+    resolve("failed");
+    expect(await first).toBe(true);
+    expect(await second).toBe(true);
+    expect(sent).toStrictEqual(["c1", "c2"]);
+    expect(queue.pending()).toStrictEqual([]);
+  });
+});

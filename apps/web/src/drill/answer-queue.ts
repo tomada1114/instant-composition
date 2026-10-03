@@ -15,6 +15,8 @@ export interface AnswerQueue {
   enqueue(answer: AnswerInput): Promise<boolean>;
   flush(): Promise<boolean>;
   clear(): void;
+  /** For a successfully deleted card only: remove its unsent answers, preserving every other answer. */
+  removeCard(cardId: string): void;
 }
 
 function load(storage: QueueStorage | undefined, key: string): AnswerInput[] {
@@ -148,8 +150,11 @@ export function createAnswerQueue(options: {
 
   async function drain(): Promise<boolean> {
     while (pending[0] !== undefined) {
-      if ((await send(pending[0])) === "failed") return false;
-      pending = pending.slice(1);
+      const answer = pending[0];
+      const outcome = await send(answer);
+      if (outcome === "failed" && pending.some((value) => value.id === answer.id))
+        return false;
+      pending = pending.filter((value) => value.id !== answer.id);
       persist();
     }
     return true;
@@ -168,6 +173,10 @@ export function createAnswerQueue(options: {
       return schedule();
     },
     flush: schedule,
+    removeCard(cardId) {
+      pending = pending.filter((answer) => answer.cardId !== cardId);
+      persist();
+    },
     clear() {
       pending = [];
       persist();

@@ -19,8 +19,12 @@ export function SelectCard({
   locked = false,
   compact = false,
   onToggle,
+  latin = false,
+  status,
 }: Readonly<{
   title: string;
+  latin?: boolean;
+  status?: string | undefined;
   detail: string;
   selected: boolean;
   locked?: boolean;
@@ -41,9 +45,20 @@ export function SelectCard({
       )}
     >
       <span className="flex min-w-0 flex-1 flex-col gap-1">
-        <span className={compact ? "text-label" : "text-action"}>{title}</span>
+        <span
+          lang={latin ? "en" : undefined}
+          className={cn(
+            compact ? "text-label" : "text-action",
+            latin && "font-latin break-words",
+          )}
+        >
+          {title}
+        </span>
         <span className="truncate text-caption text-muted-foreground">{detail}</span>
       </span>
+      {status === undefined ? null : (
+        <span className="shrink-0 text-caption text-muted-foreground">{status}</span>
+      )}
       <span
         className={cn(
           "flex size-6 shrink-0 items-center justify-center rounded-full",

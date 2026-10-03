@@ -1,11 +1,10 @@
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { useTranslations } from "use-intl";
 
 import { FocusStrip } from "../lib/frame";
 import { cn } from "../lib/utils";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
-import { Conversation } from "./conversation";
 import { StepPanel } from "./step-panel";
 import { currentTurn, keptTurns, type Talk } from "./talk-state";
 import type { TalkActions } from "./use-talk";
@@ -77,8 +76,10 @@ export function TalkScreen({
   actions,
   onClose,
   paused,
+  conversation,
 }: Readonly<{
   talk: Talk;
+  conversation: ReactNode;
   actions: TalkActions;
   onClose: () => void;
   /** W4 is open over the talk. */
@@ -88,7 +89,7 @@ export function TalkScreen({
     <>
       <TalkStrip talk={talk} onClose={onClose} />
       <div className="mx-auto flex h-stage w-full max-w-reading flex-col gap-4 pb-6">
-        <Conversation talk={talk} />
+        {conversation}
         <div
           data-part="step-panel"
           className="flex flex-col gap-3 rounded-panel border-2 border-border bg-card p-5 empty:hidden"

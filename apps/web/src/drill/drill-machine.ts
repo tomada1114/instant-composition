@@ -135,6 +135,20 @@ function resume(state: DrillState, at: number): DrillState {
 }
 
 export function drillReducer(state: DrillState, event: DrillEvent): DrillState {
+  if (event.type === "remove") {
+    if (
+      state.untimed !== true ||
+      state.phase.kind !== "back" ||
+      state.card?.cardId !== event.cardId
+    )
+      return state;
+    return advance({
+      ...state,
+      paused: false,
+      fresh: state.fresh.filter((id) => id !== event.cardId),
+      reAsks: state.reAsks.filter((card) => card.cardId !== event.cardId),
+    });
+  }
   if (event.type === "pause" || event.type === "hide") return pause(state, event.at);
   if (state.paused) {
     if (event.type === "resume") return resume(state, event.at);

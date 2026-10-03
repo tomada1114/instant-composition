@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
@@ -11,11 +11,14 @@ import { Toast } from "../drill/toast";
 import { useDrillClock, useDrillKeys, type DrillAction } from "../drill/use-drill";
 import { useLeaveGuard } from "../drill/use-leave-guard";
 import type { GradeKeyTrio, VocabSession, VocabSummary } from "../openapi";
-import { VOCAB_QUERY } from "../lib/queries";
 import { Button } from "../ui/button";
 import { requestVocabFinish, VOCAB_QUEUE_PREFIX, sendVocabAnswer } from "./sessions";
 import { VocabCard } from "./vocab-card";
 import { VocabDialog } from "./vocab-dialog";
+import { useVocabDelete } from "./use-vocab-delete";
+import { VocabDeleteDialog } from "./vocab-delete-dialog";
+import { VocabAnnouncement } from "./vocab-announcement";
+import { useVocabAvailability } from "./use-vocab-availability";
 import { VocabDone } from "./vocab-done";
 
 /** One untimed session uses the drill's reducer, grading keys, guarded navigation and durable queue. */
@@ -50,23 +53,14 @@ export function VocabStudy({
     },
   );
   const [summary, setSummary] = useState<VocabSummary>();
-  const availability = useQuery({
-    ...VOCAB_QUERY,
-    queryKey: ["vocab", "after", session.sessionId],
-    enabled: summary !== undefined,
-  });
-  const available = availability.data;
-  const category = available?.categories.find(
-    (row) => row.category === session.category,
-  );
-  const extraCount =
-    session.category === null ? (available?.extra ?? 0) : (category?.extra ?? 0);
-  const weakCount =
-    session.category === null ? (available?.weak ?? 0) : (category?.weak ?? 0);
-  const moreCount = session.kind === "weak" ? weakCount : extraCount;
+  const moreCount = useVocabAvailability(session, summary !== undefined);
   const [failed, setFailed] = useState(false);
   const [attempt, retry] = useState(0);
   const leave = useLeaveGuard(state, dispatch);
+  const deletion = useVocabDelete(state, dispatch, queue, () => {
+    leave.stay();
+    dispatch({ type: "resume", at: performance.now() });
+  });
   useDrillClock(state, dispatch, false);
   const finishing = state.phase.kind === "finishing";
   useEffect(() => {
@@ -85,6 +79,10 @@ export function VocabStudy({
     };
   }, [finishing, session.sessionId, queue, cache, attempt]);
   function act(action: DrillAction, key: boolean): void {
+    if (deletion.asking) {
+      if (action.type === "resume") deletion.keep();
+      return;
+    }
     if (sound) browserSound.unlock();
     if (action.type === "scroll")
       document
@@ -97,9 +95,13 @@ export function VocabStudy({
       dispatch({ type: action.type, at: performance.now() });
     }
   }
-  useDrillKeys(state, gradeKeys, (action) => {
-    act(action, true);
-  });
+  useDrillKeys(
+    deletion.asking ? { ...state, paused: true } : state,
+    gradeKeys,
+    (action) => {
+      act(action, true);
+    },
+  );
   const phase = state.phase;
   useEffect(() => {
     if (sound && phase.kind === "feedback" && phase.grade !== "again")
@@ -107,17 +109,6 @@ export function VocabStudy({
   }, [sound, phase]);
   const shown = currentCard(state);
   const card = session.cards.find((value) => value.id === shown?.cardId);
-  const announcement =
-    phase.kind === "front" && card !== undefined ? (
-      <>
-        {`${shown?.pass === "retry" ? t("card.again") : ""} ${vocab("front")} `}
-        <span lang="en">{card.definition}</span>
-      </>
-    ) : phase.kind === "feedback" ? (
-      t(`grade.${phase.grade}`)
-    ) : (
-      ""
-    );
   if (summary !== undefined)
     return (
       <VocabDone
@@ -161,16 +152,25 @@ export function VocabStudy({
   return (
     <>
       {card === undefined ? null : (
-        <VocabCard
-          state={state}
-          card={card}
-          gradeKeys={gradeKeys}
-          onAction={(action) => {
-            act(action, false);
-          }}
-        />
+        <div inert={deletion.asking || undefined}>
+          <VocabCard
+            state={state}
+            card={card}
+            gradeKeys={gradeKeys}
+            onDelete={deletion.ask}
+            onAction={(action) => {
+              act(action, false);
+            }}
+          />
+        </div>
       )}
-      {leave.asking || state.paused ? (
+      {deletion.asking ? (
+        <VocabDeleteDialog
+          pending={deletion.pending}
+          onDelete={deletion.confirm}
+          onKeep={deletion.keep}
+        />
+      ) : leave.asking || state.paused ? (
         <VocabDialog
           leaving={leave.asking}
           gradeKeys={gradeKeys}
@@ -184,10 +184,12 @@ export function VocabStudy({
           }
         />
       ) : null}
+      <Toast signal={deletion.failures} message={vocab("delete.failed")} />
       <Toast signal={failures} message={t("save.failed")} />
-      <p aria-live="polite" className="sr-only">
-        {state.paused ? "" : announcement}
-      </p>
+      <VocabAnnouncement
+        state={deletion.asking ? { ...state, paused: true } : state}
+        card={card}
+      />
     </>
   );
 }

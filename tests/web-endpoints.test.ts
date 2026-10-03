@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   API_ROOT,
+  deleteVocabCard,
   getVocab,
   startVocabSession,
   recordVocabAnswers,
@@ -794,5 +795,66 @@ describe("vocabulary calls", () => {
     ],
   ])("normalizes vocabulary search %j", (search, expected) => {
     expect(vocabSearch(search)).toStrictEqual(expected);
+  });
+});
+
+describe("deleting a personal vocabulary card", () => {
+  it("encodes its id and accepts the typed bodyless 204", async () => {
+    const calls = stubFetch(() => Promise.resolve(new Response(null, { status: 204 })));
+    expect(await deleteVocabCard("v_own/word")).toStrictEqual({
+      ok: true,
+      value: undefined,
+    });
+    expect(calls).toStrictEqual([
+      {
+        url: "/api/v1/vocab/cards/v_own%2Fword",
+        method: "DELETE",
+        body: undefined,
+        contentType: null,
+      },
+    ]);
+  });
+  it("renews a refused session through the shared sender before retrying DELETE", async () => {
+    let number = 0;
+    const calls = stubFetch(() => {
+      number += 1;
+      return Promise.resolve(
+        number === 1
+          ? Response.json({ error: { code: "ERR_UNAUTHENTICATED" } }, { status: 401 })
+          : new Response(null, { status: 204 }),
+      );
+    });
+    expect(await deleteVocabCard("v_own")).toStrictEqual({
+      ok: true,
+      value: undefined,
+    });
+    expect(calls.map((call) => [call.url, call.method])).toStrictEqual([
+      ["/api/v1/vocab/cards/v_own", "DELETE"],
+      [REFRESH_URL, "POST"],
+      ["/api/v1/vocab/cards/v_own", "DELETE"],
+    ]);
+  });
+  it("preserves a server refusal code", async () => {
+    stubFetch(() =>
+      Promise.resolve(
+        Response.json({ error: { code: "ERR_CARD_NOT_PERSONAL" } }, { status: 403 }),
+      ),
+    );
+    expect(await deleteVocabCard("v_catalog")).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_CARD_NOT_PERSONAL" },
+    });
+  });
+  it("reports malformed or missing responses as network failures", async () => {
+    stubFetch(() => Promise.resolve(new Response("invalid", { status: 503 })));
+    expect(await deleteVocabCard("v_own")).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_NETWORK" },
+    });
+    stubFetch(() => Promise.reject(new Error("offline")));
+    expect(await deleteVocabCard("v_own")).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_NETWORK" },
+    });
   });
 });

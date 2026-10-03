@@ -136,6 +136,7 @@ export {
 } from "./talk/talk-state";
 
 export {
+  deleteVocabCard,
   getVocab,
   startVocabSession,
   recordVocabAnswers,
@@ -149,6 +150,8 @@ export {
   VOCAB_QUEUE_PREFIX,
 } from "./vocab/sessions";
 export type {
+  CardCandidate,
+  CardCandidates,
   VocabAnswer,
   VocabCard,
   VocabCategory,
