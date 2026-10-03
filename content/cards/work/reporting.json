@@ -199,7 +199,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b97832051297e5c417ce9d099a2f9361d57af45b8ff02d4e9c8b5930e107d72",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3t2r8s3m",
@@ -342,7 +348,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9f6893c5d670d851bc5883c0ded0a5ce85f57ef5f433ff7d132df1221fb9fe3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4m3j8y9u",
@@ -968,15 +980,21 @@
   {
     "id": "c_9e8n4z2b",
     "ja": "この数字を見て。",
-    "en": "Check this number.",
-    "alternatives": ["Look at this number.", "Review this number."],
-    "point": "check this number は報告中の数字を確認する。",
+    "en": "Look at this number.",
+    "alternatives": ["Check this number.", "Look at the number here."],
+    "point": "look at で報告中のこの数字を見るよう促す。",
     "topic": "work",
     "subtopic": "reporting",
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6965207ac3ecd4d035679a9c8b242d8b52ce79ae5cd77d122d68d329c31c77b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9f8n4b5e",

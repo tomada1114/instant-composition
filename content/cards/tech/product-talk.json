@@ -84,19 +84,22 @@
   },
   {
     "id": "c_2n5y5v4b",
-    "ja": "我々は公開を待つべき。",
-    "en": "We should delay release.",
-    "alternatives": [
-      "We ought to wait before releasing.",
-      "We should hold the release."
-    ],
+    "ja": "我々は公開を遅らせるべき。",
+    "en": "We should delay the release.",
+    "alternatives": ["We should wait before releasing.", "We should hold the release."],
     "point": "should で公開を急がず待つべきだと伝える。",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 2,
+    "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5345b996bc40cf4562218be3a3b1390c9b2062b58bf62d0a1c0491b7e810689d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2r2h9b5a",
@@ -238,7 +241,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0110339a1d9ce05dc22c8c791f9bd71f99daba44b34c093ee9eb426eac323a6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3k3d3t4u",
@@ -643,7 +652,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c97a2d64db9da1b39949af1b11762c11db4152ba2465e39c0f4ebc428c3bfa96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y4m9v2p",

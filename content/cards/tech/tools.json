@@ -102,19 +102,25 @@
   },
   {
     "id": "c_2u9s7u8z",
-    "ja": "このツールの安心感は見せかけかもしれない。",
+    "ja": "この道具の安心感は見せかけかも。",
     "en": "This tool's reassurance may be more apparent than real.",
     "alternatives": [
       "This tool may offer the illusion of reassurance.",
-      "The security this tool suggests might not be genuine."
+      "The reassurance this tool offers may be illusory."
     ],
     "point": "more apparent than real は実態より見かけの方が大きい。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a37e848f90c8bdf117e66b1086d92d3b0cb4b338017f60dce76b8d9ce9db44d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2w7b6g6n",
@@ -288,7 +294,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e202d226d72e00dcc8f8a55895055d6cddb860e35f6fe9c420636dd4d3e7b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3z6k7f2p",
@@ -452,7 +464,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:efc388e6d159a6eab9bf2b4f247db21f5f7cb0c694e6ed2de7e0b48c92bd90a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5n2a6h7s",
@@ -539,6 +557,28 @@
         "hash": "sha256:bd82bf1f41014c911dd56e0cf63bb2920d227de9a2e8bdcae875f197d010d5fe",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v5c4z7s",
+    "ja": "この便利さが何を隠すか気になる。",
+    "en": "I wonder what this convenience conceals.",
+    "alternatives": [
+      "I'm curious about what this convenience hides.",
+      "I wonder what's hidden behind this convenience."
+    ],
+    "point": "wonder what this convenience conceals は便利さの裏で何が隠れているか気になること。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:196b5ead27570f8f5e0dc43a7cea66e55901727740584987f187b7149b69002c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -893,7 +933,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:392c571cc2d0602d8bf73b80419b31b14271058f31363873bcf51ffd59381f04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f6m5r6w",
@@ -1156,19 +1202,25 @@
   },
   {
     "id": "c_9g3n7c9j",
-    "ja": "私は依存が逃げ道をなくすと知っておけばな。",
+    "ja": "依存が逃げ道を奪うと知っておけばな。",
     "en": "I wish I'd known dependence would leave no recourse.",
     "alternatives": [
       "I wish I'd realized dependence would remove my alternatives.",
-      "If only I'd known dependence would leave me without recourse."
+      "If only I'd known dependence would leave no recourse."
     ],
     "point": "recourse は困った時に頼れる別の手段。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
+    "level": 8,
+    "grammar": ["wishes-regrets", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:33df387d8ee47a3e87867629fed962433817c40d7c59e92024fdb201fac2bed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g8b5b5s",
@@ -1273,21 +1325,5 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_9s9e2n2s",
-    "ja": "私が疑うのはこの便利さが隠す物だ。",
-    "en": "What I question is what this convenience obscures.",
-    "alternatives": [
-      "I question what lies hidden behind this convenience.",
-      "My concern is what this convenience conceals."
-    ],
-    "point": "what の節で便利さが覆い隠す内容を表す。",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 10,
-    "grammar": ["noun-clauses", "nested-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   }
 ]

@@ -48,7 +48,7 @@
     "ja": "我々は先に論点を整理すべき。",
     "en": "We should clarify the issues first.",
     "alternatives": [
-      "We ought to identify the issues first.",
+      "We ought to clarify the issues first.",
       "We should sort out the points first."
     ],
     "point": "clarify は曖昧な論点を明確にする。",
@@ -57,7 +57,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4319ddaedc0e373501fdcc95a0d850dc4d92383115159476a2e22365d7c96fce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2w3u5x6a",
@@ -165,7 +171,7 @@
   },
   {
     "id": "c_3s7s2x8r",
-    "ja": "私は意見を集約するよ。",
+    "ja": "我々の意見は私が集約する。",
     "en": "I'll consolidate our views.",
     "alternatives": ["I'll bring our views together.", "I'll combine our opinions."],
     "point": "consolidate は複数の意見を一つにまとめる。",
@@ -174,7 +180,13 @@
     "level": 5,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:251ae219b12996f5a146e28e202cdcb19f2e04ecbf11bf40c16b99455f961301",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3v3p9v2a",
@@ -721,7 +733,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd12da687387af88c19a3aa4fcdc63d238159b4eab0c89837b639ce3e9ecf79",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8m3s5s4j",

@@ -726,6 +726,28 @@
     }
   },
   {
+    "id": "c_6w9e3s7g",
+    "ja": "君が犠牲にしたことを私は詫びる。",
+    "en": "I'm sorry for what you gave up.",
+    "alternatives": [
+      "I apologize for what you sacrificed.",
+      "I'm sorry about the sacrifices you made."
+    ],
+    "point": "what you gave up は相手が犠牲にしたことを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["noun-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01e258590259989bc85183f79bb109c88bdaf45db993bea38289878fde3b49b6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6y7z3w6x",
     "ja": "君のしてくれたことが、沁みたよ。",
     "en": "What you did really touched me.",
@@ -763,6 +785,28 @@
         "hash": "sha256:447b699fa941a8e1e0058ccf55555579d06458518b7256e9adf3db44ce865426",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z9q2d7r",
+    "ja": "私が埋め合わせできれば喜んでするのに。",
+    "en": "Were I able, I'd gladly make amends.",
+    "alternatives": [
+      "If I could, I'd gladly make amends.",
+      "I'd gladly make amends if I were able."
+    ],
+    "point": "Were I able は自分が埋め合わせできるという仮定を倒置で表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfa1d638ead23660de578f337185a4ad5548ed5f2549bcf33ac38165ce3e8e76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -985,22 +1029,6 @@
     }
   },
   {
-    "id": "c_8h9f2d7j",
-    "ja": "私は君が諦めた物を知ってて詫びる。",
-    "en": "I'm sorry, knowing what you relinquished.",
-    "alternatives": [
-      "I apologize, aware of what you gave up.",
-      "I apologize because I know what you sacrificed."
-    ],
-    "point": "relinquish は手放す、諦めるという改まった言い方。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 9,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_8n9z2q4y",
     "ja": "私が埋め合わせすべきです。",
     "en": "I should make amends.",
@@ -1018,38 +1046,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_8p4w7c7h",
-    "ja": "私が埋め合わせできれば喜んでするのに。",
-    "en": "Were amends possible, I'd make them gladly.",
-    "alternatives": [
-      "If I could make amends, I'd gladly do so.",
-      "I'd happily make things right if I could."
-    ],
-    "point": "make amends は過ちの埋め合わせをする。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 9,
-    "grammar": ["second-conditional", "inversion"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q5e5a4n",
-    "ja": "私への静かな配慮に私は感謝します。",
-    "en": "I'm grateful for your discreet consideration toward me.",
-    "alternatives": [
-      "I appreciate your unobtrusive thoughtfulness toward me.",
-      "Thank you for your quiet consideration of me."
-    ],
-    "point": "understated は目立たせず控えめに示した様子。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 9,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_8s2u8v8r",
@@ -1070,6 +1066,28 @@
         "hash": "sha256:3a6f733f6a54c216b7eec3af5a40f3445da985a12b5c515523cad643eee7818e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8s8b2b7a",
+    "ja": "私への控えめな配慮に感謝します。",
+    "en": "I appreciate your discreet thoughtfulness.",
+    "alternatives": [
+      "I'm grateful for your discreet care.",
+      "Thank you for your unobtrusive thoughtfulness."
+    ],
+    "point": "discreet thoughtfulness は控えめな配慮。thoughtfulness は数えない。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63dd775d23da0b8e153b99a2458cb0007a85a30f1669c12efe7f96cbf84f7672",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

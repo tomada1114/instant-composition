@@ -506,7 +506,7 @@
   },
   {
     "id": "c_5x8s8b4x",
-    "ja": "再発を恐れ我々は見せかけの安心を疑った。",
+    "ja": "再発を恐れ我々は偽りの安心を疑った。",
     "en": "Fearing recurrence, we questioned what passed for reassurance.",
     "alternatives": [
       "Fearing another occurrence, we challenged the supposedly reassuring statements.",
@@ -515,10 +515,16 @@
     "point": "pass for は本物でないのにそのものと見なされる含み。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["participle-clauses", "nested-clauses"],
+    "level": 8,
+    "grammar": ["participle-clauses", "noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:509b77d772f8b8d82f254d15ccadf4a5df978195f53baacb76c5ceb0365a7e62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6b6x7s5x",
@@ -597,10 +603,16 @@
     "point": "come home to roost は過去の行いの悪い結果が戻る。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "level": 9,
+    "grammar": ["relative-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4638b60b4271e956e225d8d32c8740b48d064c3911b415a3667509d61c6089e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6p4s6j7a",
@@ -1057,18 +1069,24 @@
   {
     "id": "c_9c7g3v4y",
     "ja": "私が指揮するなら油断は許さないのに。",
-    "en": "Were I in charge, I'd countenance no complacency.",
+    "en": "Were I in charge, I'd tolerate no complacency.",
     "alternatives": [
       "If I led, I wouldn't tolerate any complacency.",
       "I'd allow no complacency if I were in charge."
     ],
-    "point": "countenance は行為を容認するという意味。",
+    "point": "tolerate no complacency は油断を一切容認しないことを表す。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc1bb5405e195295193844ac486895d7352bf6733651010a40c2f09c95328f25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g5v8q6v",

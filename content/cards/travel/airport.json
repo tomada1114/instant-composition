@@ -79,6 +79,28 @@
     }
   },
   {
+    "id": "c_3g2d7q8q",
+    "ja": "私が信じた確約は今では条件付きだ。",
+    "en": "The guarantee I relied on is now conditional.",
+    "alternatives": [
+      "The assurance I trusted now comes with conditions.",
+      "The guarantee I believed now has conditions attached."
+    ],
+    "point": "I relied on は頼った確約を限定し、now conditional は今では条件付きである状態。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e672417dd8a9779a10398eaddd8f5f6bae52c9c8952aae04f6800e6e4db37f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3g5p2s7e",
     "ja": "私は荷物を運べる。",
     "en": "I can carry bags.",
@@ -469,18 +491,24 @@
   {
     "id": "c_5e5y5b4c",
     "ja": "私は彼らが約束した便が飛ぶか疑ってる。",
-    "en": "I doubt whether the flight they promised will materialize.",
+    "en": "I doubt the flight they promised will materialize.",
     "alternatives": [
       "I'm doubtful that the promised flight will actually happen.",
-      "I question whether the flight they promised will actually operate."
+      "I question whether the flight they promised will operate."
     ],
     "point": "materialize は約束などが実際に形になること。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1750a12e3366d2ca137612887b26e3f23bbda9186a90aaf928a11efaec2e5789",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5f6m4n3n",
@@ -958,19 +986,25 @@
   },
   {
     "id": "c_8x5y6d9c",
-    "ja": "係員は私の同意を勝手に決めつけたのかも。",
+    "ja": "係員は私の同意を勝手に決めつけたかも。",
     "en": "The agent might've presumed my consent without asking.",
     "alternatives": [
-      "The agent may have assumed my agreement without consulting me.",
+      "The agent might've assumed my consent without asking me.",
       "The agent might have taken my consent for granted."
     ],
     "point": "presume consent は確認なしに同意があると決めつける。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb520582717bdf0f38b12319285b409254fa1eeb9a7e1b6001400e4f3891f68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8z5z3y8v",
@@ -1201,21 +1235,5 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_9z2j6y9v",
-    "ja": "私が信じた確約は今では条件付きだ。",
-    "en": "The assurance I trusted has since acquired caveats.",
-    "alternatives": [
-      "The guarantee I believed now comes with qualifications.",
-      "The assurance I relied on is now conditional."
-    ],
-    "point": "caveats は約束に後から添えられる条件や留保。",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   }
 ]

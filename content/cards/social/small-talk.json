@@ -253,19 +253,22 @@
   },
   {
     "id": "c_3t5u8m7y",
-    "ja": "私が雑談を切り上げてもいい？",
+    "ja": "私が雑談を切り上げていい？",
     "en": "Could I wrap up our conversation?",
-    "alternatives": [
-      "Would it be okay to end our chat?",
-      "May I bring our chat to a close?"
-    ],
+    "alternatives": ["Could I end our chat?", "May I finish our conversation?"],
     "point": "wrap up は話を終わりにする。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["requests-permission"],
+    "level": 5,
+    "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbc5845ddabf1c21c646e2803070d474cda0cd61cc5291200a590ef5c946e32e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3x8s6n7y",
@@ -633,19 +636,25 @@
   },
   {
     "id": "c_6s7f3m4d",
-    "ja": "私はその頃、社交に疲れ切ってた。",
+    "ja": "私はその頃もう社交に疲れ切ってた。",
     "en": "I'd burned out socially by then.",
     "alternatives": [
       "I'd exhausted myself socializing by then.",
-      "I had worn myself out socially by then."
+      "I'd worn myself out socially by then."
     ],
     "point": "burn out は消耗し切って気力を失う。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:757d18f1073ec185ae0c036d011afaf7549963c1ec31fbbc3585501f8a345883",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6w6u7s6d",
@@ -792,18 +801,24 @@
   {
     "id": "c_8a3g2g3s",
     "ja": "私を驚かせたのは町の活気だ。",
-    "en": "What struck me was the town's vibrancy.",
+    "en": "What surprised me was the town's vibrancy.",
     "alternatives": [
-      "The town's liveliness was what struck me.",
-      "I was struck by the town's energy."
+      "The town's liveliness was what surprised me.",
+      "I was surprised by the town's energy."
     ],
-    "point": "strike me は印象を強く残す。",
+    "point": "What surprised me was で町の活気が意外で驚いた点を強調する。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["noun-clauses"],
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:029919b03d4748694fff55dd00d7ab86707895a6ead35d0c33b4c7f99a0c5bcf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a5j8f3p",

@@ -166,18 +166,21 @@
   {
     "id": "c_3z6b2g3y",
     "ja": "私は仕様を確認しなきゃ。",
-    "en": "I need to verify requirements.",
-    "alternatives": [
-      "I have to check the requirements.",
-      "I must confirm the specifications."
-    ],
-    "point": "verify は内容が正しいか確かめる。",
+    "en": "I need to check specs.",
+    "alternatives": ["I have to verify the specifications.", "I must check the specs."],
+    "point": "check specs は仕様を確認する。specs は specifications の略。",
     "topic": "tech",
     "subtopic": "standup",
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17d1969c85f0db288f1e1fa40c762a53cd62cef3c74606d22819235102ddbd93",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4m4r8a9h",
@@ -458,7 +461,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cd69b5df5b8a7820f2e6ac07cccf32e0577be239d752a44d96b3b1fc43ba73a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7r9a5a8b",
@@ -626,22 +635,6 @@
     }
   },
   {
-    "id": "c_8p2a3u8y",
-    "ja": "私はずっとレビュー待ち。",
-    "en": "I've been awaiting review.",
-    "alternatives": [
-      "I've been waiting for a review.",
-      "I've been waiting to be reviewed."
-    ],
-    "point": "have been awaiting で待ち続けていることを示す。",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 4,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_8p8u8b5v",
     "ja": "あのバグ、引き続き調べます。",
     "en": "I'll keep looking into that bug.",
@@ -674,7 +667,35 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f24695b7c4f3b97de972cd85d44792f8afe09566fb76c47fc87e6d642d3b578",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8r3y5q5h",
+    "ja": "私はずっとレビュー待ち。",
+    "en": "I've been waiting for a review.",
+    "alternatives": [
+      "I've been waiting to be reviewed.",
+      "I've been waiting on a review."
+    ],
+    "point": "have been waiting はレビューを待ち続けていることを表す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c49d93be52a0247efb2cf1d6627c2122cdb51555cacedb5d76dea78dd7faec86",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8t7c9k8a",
@@ -810,7 +831,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ea8eb773e37aeb113147a45c697ec61db94dd9b16a3f7a1da16e7aa01f65d8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9h9h4q3d",

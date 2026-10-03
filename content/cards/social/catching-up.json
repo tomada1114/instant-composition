@@ -254,18 +254,24 @@
   {
     "id": "c_3j2b3n4g",
     "ja": "彼女は私の平気なふりを見抜いたと言った。",
-    "en": "She said she'd seen through my studied nonchalance.",
+    "en": "She said she'd seen through my calm facade.",
     "alternatives": [
-      "She said she'd recognized my deliberate show of indifference.",
-      "She said she'd detected that my casual attitude was affected."
+      "She said she'd spotted my pretense of calm.",
+      "She said my calmness hadn't fooled her."
     ],
-    "point": "studied nonchalance は意識して作った平然とした態度。",
+    "point": "seen through my calm facade は私の平気なふりを見抜いたことを表す。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fe06093c002b6ecff7292cc6ba243e8cf0026c97e9331bb6e11c0ef1a36608b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3s2e2u3q",
@@ -1024,7 +1030,7 @@
   {
     "id": "c_7p7w7p5w",
     "ja": "傍目には成功でも私は達成感が薄い。",
-    "en": "Successful though I look, I feel little fulfillment.",
+    "en": "Though seemingly successful, I feel little fulfillment.",
     "alternatives": [
       "Though I seem successful, I feel scarcely fulfilled.",
       "I feel little satisfaction despite appearing successful."
@@ -1032,10 +1038,16 @@
     "point": "fulfillment は自分の生き方や達成に満足する感覚。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cfbbd019b6ade08a6bce0190ce154ee70d4a031ad959c5beb0cb0b3d9ced804",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v9p5a2q",
@@ -1108,10 +1120,16 @@
     "point": "disillusionment は理想が崩れた失望、detachment は心の距離。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:036ea8f5acb85b6d122d885628a2634c275f3904fd5c9f0fc4e61df29f5c2f0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9b2a9x6d",
