@@ -34,7 +34,8 @@ import type {
   UpdateSettingsData,
   UpdateSettingsResponses,
 } from "../openapi";
-import { call, errorCode, send, type ApiError, type SendOutcome } from "./api-call";
+import { call, type ApiError, type SendOutcome } from "./api-call";
+import { sendAnswerBatch } from "./answer-send";
 import type { Result } from "./result";
 
 export {
@@ -127,9 +128,8 @@ export function finishRound(
 }
 
 /**
- * Sends a batch of answers. A refusal is final — resending the same request
- * changes nothing — except `ERR_CONFLICT`, which the contract names as the
- * one worth sending again, and a 5xx or no answer at all.
+ * Sends a batch of answers, retaining temporary/unknown responses and any
+ * Retry-After hint. Only explicit contract refusals are final.
  */
 export async function recordAnswers(
   roundId: string,
@@ -140,13 +140,10 @@ export async function recordAnswers(
     path: { roundId },
     body: { answers: [...answers] },
   };
-  try {
-    const response = await send("POST", data);
-    if (response.ok) return "sent";
-    if (response.status >= 500) return "failed";
-    const code = errorCode(await response.json().catch(() => null));
-    return code === "ERR_CONFLICT" ? "failed" : "rejected";
-  } catch {
-    return "failed";
-  }
+  return sendAnswerBatch(data, {
+    ERR_BAD_REQUEST: 400,
+    ERR_FORBIDDEN: 403,
+    ERR_ROUND_NOT_FOUND: 404,
+    ERR_ROUND_CLOSED: 409,
+  });
 }

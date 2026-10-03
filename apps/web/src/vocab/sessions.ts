@@ -68,8 +68,7 @@ export async function requestVocabFinish(
   const last = Math.max(0, Math.ceil(answers.length / size) - 1) * size;
   for (let from = 0; from < last; from += size) {
     if (
-      (await recordVocabAnswers(sessionId, answers.slice(from, from + size))) ===
-      "failed"
+      (await recordVocabAnswers(sessionId, answers.slice(from, from + size))) !== "sent"
     )
       return err({ code: "ERR_NETWORK" });
   }

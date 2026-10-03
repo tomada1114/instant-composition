@@ -430,11 +430,7 @@ describe("recordAnswers and sendAnswer", () => {
       () => envelope(409, "ERR_CONFLICT"),
       "failed",
     ],
-    [
-      "a 4xx with no readable body",
-      () => new Response("", { status: 404 }),
-      "rejected",
-    ],
+    ["a 4xx with no readable body", () => new Response("", { status: 404 }), "failed"],
     ["a 500", () => new Response(null, { status: 500 }), "failed"],
     ["a 503", () => envelope(503, "ERR_CONTENT_UNREADABLE"), "failed"],
   ] as const)("reads %s as %s", async (_, response, outcome) => {
@@ -446,6 +442,93 @@ describe("recordAnswers and sendAnswer", () => {
     stubFetch(() => Promise.reject(new TypeError("fetch failed")));
     expect(await sendAnswer(ANSWER)).toBe("failed");
   });
+});
+
+describe("temporary answer refusals", () => {
+  it.each([
+    ["drill", recordAnswers],
+    ["vocabulary", recordVocabAnswers],
+  ] as const)("%s preserves temporary and unknown responses", async (_, record) => {
+    for (const response of [
+      envelope(429, "ERR_TOO_MANY_REQUESTS"),
+      new Response("<html>Slow down</html>", { status: 429 }),
+      new Response(null, { status: 408 }),
+      new Response(null, { status: 503 }),
+      envelope(409, "ERR_CONFLICT"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      envelope(400, "ERR_NEW_ERROR"),
+      new Response("<html>Unknown</html>", { status: 404 }),
+      envelope(418, "ERR_BAD_REQUEST"),
+      new Response("<html>Unknown</html>", { status: 200 }),
+    ]) {
+      beginVisit();
+      stubFetch(() => Promise.resolve(response.clone()));
+      expect(await record("s1", [])).toBe("failed");
+    }
+  });
+
+  it.each([
+    ["drill", recordAnswers],
+    ["vocabulary", recordVocabAnswers],
+  ] as const)("%s carries Retry-After seconds and HTTP dates", async (_, record) => {
+    vi.spyOn(Date, "now").mockReturnValue(Date.UTC(2026, 9, 3, 17));
+    const now = Date.UTC(2026, 9, 3, 17);
+    stubFetch(() =>
+      Promise.resolve(
+        new Response(null, { status: 429, headers: { "Retry-After": "15" } }),
+      ),
+    );
+    expect(await record("s1", [])).toStrictEqual({
+      status: "failed",
+      retryAt: now + 15_000,
+    });
+    stubFetch(() =>
+      Promise.resolve(
+        new Response(null, {
+          status: 503,
+          headers: { "Retry-After": "Sat, 03 Oct 2026 17:01:00 GMT" },
+        }),
+      ),
+    );
+    expect(await record("s1", [])).toStrictEqual({
+      status: "failed",
+      retryAt: now + 60_000,
+    });
+    vi.restoreAllMocks();
+  });
+
+  it.each(["-1", "1.5", "Infinity", "not a date"])(
+    "ignores invalid Retry-After %s",
+    async (value) => {
+      stubFetch(() =>
+        Promise.resolve(
+          new Response(null, { status: 429, headers: { "Retry-After": value } }),
+        ),
+      );
+      expect(await recordAnswers("s1", [])).toBe("failed");
+    },
+  );
+
+  it.each([
+    ["drill", requestFinish, "ERR_ROUND_CLOSED"],
+    ["vocabulary", requestVocabFinish, "ERR_SESSION_CLOSED"],
+  ] as const)(
+    "%s cannot finish after an earlier batch is refused",
+    async (_, finish, code) => {
+      const calls = stubFetch(() => Promise.resolve(envelope(409, code)));
+      expect(
+        await finish(
+          "s1",
+          Array.from({ length: 61 }, (_, index) => ({
+            ...ANSWER,
+            id: `a${String(index)}`,
+          })),
+        ),
+      ).toStrictEqual({ ok: false, error: { code: "ERR_NETWORK" } });
+      expect(calls).toHaveLength(1);
+      expect(calls[0]?.url.endsWith("/answers")).toBe(true);
+    },
+  );
 });
 
 describe("roundKindFrom", () => {
