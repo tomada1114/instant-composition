@@ -98,9 +98,9 @@ below is not a priority order.
 #### Overview
 
 - **Purpose:** Exchange several turns with a partner in one scene.
-- **Entry:** On the bottom tab 「会話」 ("Talk") screen, the learner
-  taps 「始める」 ("Start"). The tabs are Home, Talk, Record and
-  Settings: 「ホーム」, 「会話」, 「記録」, 「設定」.
+- **Entry:** On the 「会話」 ("Talk") screen, reached from the shell navigation, the
+  learner taps 「始める」 ("Start"). The five sections are Home, Vocabulary, Talk,
+  Records and Settings: 「ホーム」, 「語彙」, 「会話」, 「記録」, 「設定」.
 
 #### Specification
 

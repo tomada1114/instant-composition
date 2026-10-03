@@ -122,7 +122,7 @@ newly decides.
     removed from the code (#317), so the talk screen builds them anew to this document's
     shape: an underline-only field, no border, 300 characters at most, Enter sends.
 - **Newly added:** add each to designing-ui's component table first, then build it.
-  - The four tabs and the 「会話」 glyph
+  - The five navigation sections and the 「会話」 glyph
   - The conversation row (the speaker's eyebrow + body; no frame, separated by a
     hairline)
   - The waiting row (the speaker's eyebrow + a still 「…」)
@@ -189,7 +189,8 @@ Add a row for the talk screen to designing-ui's key table.
 | Esc   | During a voice session, cancels it and restores the field. Otherwise opens the leave confirmation (W4). Inside the dialog, 「続ける」 |
 | Tab   | Moves focus                                                                                                                           |
 
-- The ○ and × keys are not used (the talk has no self-grading).
+- The three grade keys (× 忘れた, △ 微妙, ○ 覚えてた) are not used for self-grading in a
+  talk.
 - Key hints (Kbd) show, as the rules say, only to someone who has used the keys.
 
 ### 4.7 Accessibility
@@ -221,8 +222,9 @@ Add a row for the talk screen to designing-ui's key table.
 
 ## 5. Decisions on the open points
 
-- Four sections: 「会話」 is the navigation's second section (#349 moved the navigation
-  to a sidebar and a top bar; designing-ui's ledger row and `sidebar` recipe hold it).
+- Five sections: ホーム, 語彙, 会話, 記録, 設定, with 「会話」 third (#374 added
+  vocabulary; #349 moved the navigation to a sidebar and a top bar; designing-ui's
+  ledger row and `sidebar` recipe hold it).
 - Phones (#398): phones are served by their browser, Safari on iOS and Chrome on
   Android. The web client keeps no keyboard lift — the owner accepted the keyboard over
   the panel rather than the lift's complexity (#398 D1); below 1024 the layout collapses
