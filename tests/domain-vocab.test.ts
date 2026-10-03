@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   dealVocab,
   planVocab,
+  summarizeVocabReviews,
   decideSettings,
   decideVocabAnswers,
   DEFAULT_SETTINGS,
@@ -426,6 +427,49 @@ function decide(
     5_000,
   );
 }
+
+describe("a vocabulary review summary", () => {
+  it("retains first-entry grades and order with one card-id pass", () => {
+    const decided = decide([answer({ grade: "again" })]);
+    if (!decided.ok) throw new Error(decided.error.code);
+    const base = decided.value.entries[0];
+    if (base === undefined) throw new Error("The fixture needs one review");
+    let reads = 0;
+    const firsts: VocabReview[] = Array.from({ length: 100 }, (_, index) => ({
+      ...base,
+      id: `first-${String(index)}`,
+      get cardId() {
+        reads += 1;
+        return `card-${String(index)}`;
+      },
+      snapshot: { ...base.snapshot, headword: `first-${String(index)}` },
+    }));
+    const duplicates: VocabReview[] = firsts.map((review, index) => ({
+      ...review,
+      id: `second-${String(index)}`,
+      get cardId() {
+        reads += 1;
+        return `card-${String(index)}`;
+      },
+      answeredAt: base.answeredAt - 1,
+      before: base.after,
+      grade: "good",
+      snapshot: { ...base.snapshot, headword: "later entry" },
+    }));
+    reads = 0;
+    expect(summarizeVocabReviews([...firsts, ...duplicates])).toStrictEqual({
+      answered: 100,
+      new: 100,
+      again: Array.from({ length: 100 }, (_, index) => ({
+        cardId: `card-${String(index)}`,
+        headword: `first-${String(index)}`,
+        meaning: base.snapshot.meaning,
+      })),
+    });
+    expect(reads).toBeLessThanOrEqual(300);
+    expect(summarizeVocabReviews([])).toStrictEqual({ answered: 0, new: 0, again: [] });
+  });
+});
 
 describe("a vocabulary session's answers", () => {
   it("schedule a new card graded good three days on, and introduce it today", () => {

@@ -90,12 +90,13 @@ their own:
   for. The hub also derives the next extra and weak sessions' available counts, globally
   and per category, from one request-local domain plan: queue, extras, weak cards and
   the category index are derived once, with no module-global cache. Finished summaries
-  keep the first log entry for each card in input order through a single Set-based pass.
-  The client uses a fresh read after finishing to offer only sessions that can deal a
-  card. Settings expose both activities' limit choices from domain tuning. Its routes
-  are `GET /v1/vocab` (the hub) and `POST /v1/vocab/sessions`, with a session's
-  `…/{sessionId}/answers` and `…/finish`, and `DELETE /v1/vocab/cards/{cardId}`, which
-  removes a personal card and its progress but not its logged answers.
+  use the domain's pure review summary: it keeps the first log entry for each card in
+  input order through a single Set-based pass. The client uses a fresh read after
+  finishing to offer only sessions that can deal a card. Settings expose both
+  activities' limit choices from domain tuning. Its routes are `GET /v1/vocab` (the hub)
+  and `POST /v1/vocab/sessions`, with a session's `…/{sessionId}/answers` and
+  `…/finish`, and `DELETE /v1/vocab/cards/{cardId}`, which removes a personal card and
+  its progress but not its logged answers.
 - The learner model stores nothing: it is a pure pass over item projections the reads
   already load. Grammar weaknesses feed the deck; subtopic weaknesses are only shown.
 - The drill schedules each card with FSRS-6 (`fsrs.ts`), on the same rule as the

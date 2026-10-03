@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import {
   deleteVocabCard,
@@ -11,7 +11,7 @@ import {
   type RequestContext,
   type VocabSessionView,
 } from "@instant-composition/application";
-import type { VocabAnswer, VocabReview } from "@instant-composition/domain";
+import type { VocabAnswer } from "@instant-composition/domain";
 
 import { makePersonalCard, makeStats, makeVocabProgress } from "./application-fixtures";
 import { describeVocabCardDeletionContract } from "./vocab-card-deletion-contract";
@@ -322,62 +322,33 @@ describe("a session of today's queue", () => {
 });
 
 describe("a finished session", () => {
-  it("summarizes first reviews in input order with one card-id pass", async () => {
+  it("keeps the first grade and introduction after a later re-ask", async () => {
     const h = makeHarness();
     await atLevel(h);
-    const session = await started(h, "linear-summary");
-    await finishVocabSession(h.deps, h.context(), {
-      sessionId: session.sessionId,
-      answers: gradedAll(session),
-    });
-    const store = h.stores.forLearner(h.learner);
-    const base = (await store.vocabReviewsOf(session.sessionId))[0];
-    expect(base).toBeDefined();
-    if (base === undefined) throw new Error("The finished fixture needs a review");
-    let reads = 0;
-    const firsts: VocabReview[] = Array.from({ length: 100 }, (_, index) => ({
-      ...base,
-      id: `first-${String(index)}`,
-      get cardId() {
-        reads += 1;
-        return `card-${String(index)}`;
-      },
-      grade: "again",
-      before: null,
-      snapshot: { ...base.snapshot, headword: `first-${String(index)}` },
-    }));
-    const duplicates: VocabReview[] = firsts.map((review, index) => ({
-      ...review,
-      id: `second-${String(index)}`,
-      get cardId() {
-        reads += 1;
-        return `card-${String(index)}`;
-      },
-      answeredAt: base.answeredAt - 1,
-      before: base.after,
-      grade: "good",
-      snapshot: { ...base.snapshot, headword: "later entry" },
-    }));
-    reads = 0;
-    vi.spyOn(h.stores, "forLearner").mockReturnValue(store);
-    const log = vi
-      .spyOn(store, "vocabReviewsOf")
-      .mockResolvedValue([...firsts, ...duplicates]);
+    const session = await started(h, "first-summary");
+    const first = gradedAll(session, "again")[0];
+    if (first === undefined) throw new Error("The fixture needs a dealt card");
+    expect(
+      await recordVocabAnswers(h.deps, h.context(), {
+        sessionId: session.sessionId,
+        answers: [
+          first,
+          { ...first, id: "retry", pass: "retry", grade: "good", answeredAt: NOON + 1 },
+        ],
+      }),
+    ).toStrictEqual({ ok: true, value: undefined });
     const result = await finishVocabSession(h.deps, h.context(), {
       sessionId: session.sessionId,
       answers: [],
     });
+    const card = session.cards[0];
     expect(result.ok && result.value).toMatchObject({
-      answered: 100,
-      new: 100,
-      again: Array.from({ length: 100 }, (_, index) => ({
-        cardId: `card-${String(index)}`,
-        headword: `first-${String(index)}`,
-        meaning: base.snapshot.meaning,
-      })),
+      answered: 1,
+      new: 1,
+      again: [
+        { cardId: first.cardId, headword: card?.headword, meaning: card?.meaning },
+      ],
     });
-    expect(log).toHaveBeenCalledExactlyOnceWith(session.sessionId);
-    expect(reads).toBeLessThanOrEqual(300);
   });
   it("answers the summary it kept, takes a resent batch and refuses a new answer", async () => {
     const h = makeHarness();
