@@ -652,6 +652,22 @@
     }
   },
   {
+    "id": "c_6h9d7b7a",
+    "ja": "彼はこの修正は責任をぼかすだけと言った。",
+    "en": "He said the fix merely blurred who's accountable.",
+    "alternatives": [
+      "He said the fix only obscured who was responsible.",
+      "He said the change just made responsibility less clear."
+    ],
+    "point": "accountable は結果について説明責任を負う。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6p9s7x8d",
     "ja": "ブランチ、リベースしてもいい？",
     "en": "Mind if I rebase this branch?",
@@ -863,6 +879,22 @@
     }
   },
   {
+    "id": "c_8e5y3g3c",
+    "ja": "こんな微妙な差なら私は保留にするのに。",
+    "en": "Were the distinction so fine, I'd reserve judgment.",
+    "alternatives": [
+      "If the difference were that subtle, I'd withhold judgment.",
+      "I'd hold off judging if the distinction were so subtle."
+    ],
+    "point": "reserve judgment は判断を急がず差し控える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8e7c8z4d",
     "ja": "彼女は我々の修正が表面的だと言った。",
     "en": "She said what we'd fixed was merely cosmetic.",
@@ -943,6 +975,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8q4z3r8y",
+    "ja": "私にはこんな大幅変更の根拠がほぼ見えない。",
+    "en": "I see little justification for so sweeping a change.",
+    "alternatives": [
+      "I can scarcely justify so sweeping a change.",
+      "I see almost no grounds for such an extensive change."
+    ],
+    "point": "so sweeping a change は so + 形容詞 + a + 名詞の語順。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8r6j2p7s",

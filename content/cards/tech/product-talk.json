@@ -83,6 +83,22 @@
     }
   },
   {
+    "id": "c_2n5y5v4b",
+    "ja": "我々は公開を待つべき。",
+    "en": "We should delay release.",
+    "alternatives": [
+      "We ought to wait before releasing.",
+      "We should hold the release."
+    ],
+    "point": "should で公開を急がず待つべきだと伝える。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2r2h9b5a",
     "ja": "この機能は、削るべきだった。",
     "en": "We should have cut this feature.",
@@ -210,6 +226,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3h8d8b3d",
+    "ja": "このボタンの方が大きい。",
+    "en": "This button is bigger.",
+    "alternatives": ["This button's larger.", "This is the larger button."],
+    "point": "bigger でボタンのサイズを比較する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3k3d3t4u",
@@ -602,6 +631,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6v2x8k9v",
+    "ja": "この通知を消して。",
+    "en": "Remove this notice.",
+    "alternatives": ["Delete this notification.", "Get rid of this notice."],
+    "point": "remove は表示や機能を取り除く。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6y4m9v2p",

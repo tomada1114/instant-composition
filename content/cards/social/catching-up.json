@@ -252,6 +252,22 @@
     }
   },
   {
+    "id": "c_3j2b3n4g",
+    "ja": "彼女は私の平気なふりを見抜いたと言った。",
+    "en": "She said she'd seen through my studied nonchalance.",
+    "alternatives": [
+      "She said she'd recognized my deliberate show of indifference.",
+      "She said she'd detected that my casual attitude was affected."
+    ],
+    "point": "studied nonchalance は意識して作った平然とした態度。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3s2e2u3q",
     "ja": "こんなに忙しいのは初めてだよ。",
     "en": "Never have I been this busy.",
@@ -1006,6 +1022,22 @@
     }
   },
   {
+    "id": "c_7p7w7p5w",
+    "ja": "傍目には成功でも私は達成感が薄い。",
+    "en": "Successful though I look, I feel little fulfillment.",
+    "alternatives": [
+      "Though I seem successful, I feel scarcely fulfilled.",
+      "I feel little satisfaction despite appearing successful."
+    ],
+    "point": "fulfillment は自分の生き方や達成に満足する感覚。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7v9p5a2q",
     "ja": "私は今歩いてる。",
     "en": "I'm walking now.",
@@ -1064,6 +1096,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8z8e6g7g",
+    "ja": "私が耐えた失望は今は距離感になった。",
+    "en": "The disillusionment I endured has since become detachment.",
+    "alternatives": [
+      "The disappointment I lived through has become emotional distance.",
+      "My earlier disillusionment has now turned into detachment."
+    ],
+    "point": "disillusionment は理想が崩れた失望、detachment は心の距離。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9b2a9x6d",

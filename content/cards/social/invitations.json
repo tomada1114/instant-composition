@@ -621,6 +621,22 @@
     }
   },
   {
+    "id": "c_5n5k5c6d",
+    "ja": "私が断ってたら今の気まずさはないのに。",
+    "en": "Had I declined, I wouldn't feel so compromised now.",
+    "alternatives": [
+      "If I'd declined, I wouldn't feel so uncomfortable now.",
+      "I'd feel less compromised now if I hadn't accepted."
+    ],
+    "point": "compromised は立場や原則を守りにくい状態の含み。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5q7k2t8g",
     "ja": "ぜひ行きたいです。",
     "en": "I'd love to go.",
@@ -679,6 +695,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p9j6n9j",
+    "ja": "私が歓迎した招待は今では好意の取引だ。",
+    "en": "The invitation I welcomed has become a quid pro quo.",
+    "alternatives": [
+      "The invitation I embraced is now an exchange of favors.",
+      "What I welcomed as an invitation is now transactional."
+    ],
+    "point": "quid pro quo は好意などと引き換えに何かを求めること。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6q7q2b7g",
@@ -1001,6 +1033,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8y5y3a5s",
+    "ja": "君の招待は私に本音を言う余地をほぼ与えない。",
+    "en": "Your invitation leaves precious little room for candor.",
+    "alternatives": [
+      "Your invitation offers hardly any scope for frankness.",
+      "There's scarcely any room for honesty in your invitation."
+    ],
+    "point": "candor は遠慮せず率直に話すことを表し数えない。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9b3t9g3m",

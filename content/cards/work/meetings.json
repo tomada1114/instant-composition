@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2t5h9y9g",
+    "ja": "我々は先に論点を整理すべき。",
+    "en": "We should clarify the issues first.",
+    "alternatives": [
+      "We ought to identify the issues first.",
+      "We should sort out the points first."
+    ],
+    "point": "clarify は曖昧な論点を明確にする。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2w3u5x6a",
     "ja": "質問していいですか？",
     "en": "May I ask a question?",
@@ -146,6 +162,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3s7s2x8r",
+    "ja": "私は意見を集約するよ。",
+    "en": "I'll consolidate our views.",
+    "alternatives": ["I'll bring our views together.", "I'll combine our opinions."],
+    "point": "consolidate は複数の意見を一つにまとめる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3v3p9v2a",
@@ -677,6 +706,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8f9u9g9u",
+    "ja": "私が進行役なら順番を変えるのに。",
+    "en": "If I chaired, I'd change the order.",
+    "alternatives": [
+      "I'd reorder things if I were chairing.",
+      "I'd change the order if I chaired."
+    ],
+    "point": "chair は会議の進行役を務める動詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8m3s5s4j",

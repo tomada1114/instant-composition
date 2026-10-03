@@ -467,6 +467,22 @@
     }
   },
   {
+    "id": "c_5e5y5b4c",
+    "ja": "私は彼らが約束した便が飛ぶか疑ってる。",
+    "en": "I doubt whether the flight they promised will materialize.",
+    "alternatives": [
+      "I'm doubtful that the promised flight will actually happen.",
+      "I question whether the flight they promised will actually operate."
+    ],
+    "point": "materialize は約束などが実際に形になること。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5f6m4n3n",
     "ja": "受付で席を変えてもらった。",
     "en": "I got my seat changed at check-in.",
@@ -941,6 +957,22 @@
     }
   },
   {
+    "id": "c_8x5y6d9c",
+    "ja": "係員は私の同意を勝手に決めつけたのかも。",
+    "en": "The agent might've presumed my consent without asking.",
+    "alternatives": [
+      "The agent may have assumed my agreement without consulting me.",
+      "The agent might have taken my consent for granted."
+    ],
+    "point": "presume consent は確認なしに同意があると決めつける。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8z5z3y8v",
     "ja": "私には乗継ぎの余裕などほぼない。",
     "en": "I have precious little leeway between flights.",
@@ -1169,5 +1201,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9z2j6y9v",
+    "ja": "私が信じた確約は今では条件付きだ。",
+    "en": "The assurance I trusted has since acquired caveats.",
+    "alternatives": [
+      "The guarantee I believed now comes with qualifications.",
+      "The assurance I relied on is now conditional."
+    ],
+    "point": "caveats は約束に後から添えられる条件や留保。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

@@ -991,6 +991,22 @@
     }
   },
   {
+    "id": "c_9c2r4u3k",
+    "ja": "私が転職してなければ今も型通りに働く。",
+    "en": "Had I not switched careers, I'd still follow the script.",
+    "alternatives": [
+      "If I hadn't changed careers, I'd still follow expectations.",
+      "I'd still be following the script without my career change."
+    ],
+    "point": "過去の転職と今の決められた道を混合仮定法で結ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9c9k5e6g",
     "ja": "時間があれば、サーフを始めるのに。",
     "en": "If I had time, I'd take up surfing.",
@@ -1090,6 +1106,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9n8y9y6f",
+    "ja": "分野を変え私は内部の常識に疑問を持った。",
+    "en": "Changing fields, I questioned what insiders take for granted.",
+    "alternatives": [
+      "Changing fields made me question insiders' unexamined assumptions.",
+      "I challenged insiders' unquestioned assumptions when I changed fields."
+    ],
+    "point": "take for granted は疑わず当然と思う。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["participle-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p6t6y3b",
+    "ja": "私が疑うのは見かけの合意が本物かです。",
+    "en": "What I question is whether apparent consensus is genuine.",
+    "alternatives": [
+      "I question whether what looks like agreement is genuine.",
+      "My concern is whether apparent agreement is real."
+    ],
+    "point": "apparent consensus は実際に一致しているか不明な見かけの合意。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9t7c2w8f",

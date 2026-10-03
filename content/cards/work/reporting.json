@@ -189,6 +189,19 @@
     }
   },
   {
+    "id": "c_3p4f4y8e",
+    "ja": "君はいつ始める？",
+    "en": "When do you start?",
+    "alternatives": ["When are you starting?", "When will you begin?"],
+    "point": "when で作業を始める時を尋ねる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3t2r8s3m",
     "ja": "確認前に彼は引き下がってた。",
     "en": "He'd backed down before the review.",
@@ -317,6 +330,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4e7t2h6z",
+    "ja": "私には紙が必要。",
+    "en": "I need paper.",
+    "alternatives": ["I need some paper.", "Some paper would help."],
+    "point": "paper は紙の素材として数えないので an を付けない。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4m3j8y9u",
@@ -938,6 +964,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9e8n4z2b",
+    "ja": "この数字を見て。",
+    "en": "Check this number.",
+    "alternatives": ["Look at this number.", "Review this number."],
+    "point": "check this number は報告中の数字を確認する。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9f8n4b5e",

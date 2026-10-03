@@ -164,6 +164,22 @@
     }
   },
   {
+    "id": "c_3z6b2g3y",
+    "ja": "私は仕様を確認しなきゃ。",
+    "en": "I need to verify requirements.",
+    "alternatives": [
+      "I have to check the requirements.",
+      "I must confirm the specifications."
+    ],
+    "point": "verify は内容が正しいか確かめる。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4m4r8a9h",
     "ja": "バグの原因、まだつかめてません。",
     "en": "I haven't found the cause yet.",
@@ -429,6 +445,22 @@
     }
   },
   {
+    "id": "c_7p5b9q4j",
+    "ja": "私は文書整理に集中してる。",
+    "en": "I'm focused on organizing documentation.",
+    "alternatives": [
+      "I'm concentrating on organizing the documents.",
+      "My focus is organizing the documentation."
+    ],
+    "point": "on の後の動作は organizing のように動名詞。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7r9a5a8b",
     "ja": "遅いけど、形になってきたよ。",
     "en": "Slow as it is, it's coming together.",
@@ -594,6 +626,22 @@
     }
   },
   {
+    "id": "c_8p2a3u8y",
+    "ja": "私はずっとレビュー待ち。",
+    "en": "I've been awaiting review.",
+    "alternatives": [
+      "I've been waiting for a review.",
+      "I've been waiting to be reviewed."
+    ],
+    "point": "have been awaiting で待ち続けていることを示す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8p8u8b5v",
     "ja": "あのバグ、引き続き調べます。",
     "en": "I'll keep looking into that bug.",
@@ -614,6 +662,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q6n9t7k",
+    "ja": "私は作業を終えなきゃ。",
+    "en": "I must finish this.",
+    "alternatives": ["I have to finish the work.", "I need to finish the task."],
+    "point": "must で作業を終える必要を示す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8t7c9k8a",
@@ -737,6 +798,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h3t2b9s",
+    "ja": "私が休んでもいい？",
+    "en": "May I take a break?",
+    "alternatives": ["Can I rest?", "Is taking a break okay?"],
+    "point": "May I で休憩の許可を求める。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9h9h4q3d",

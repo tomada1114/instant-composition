@@ -101,6 +101,22 @@
     }
   },
   {
+    "id": "c_2u9s7u8z",
+    "ja": "このツールの安心感は見せかけかもしれない。",
+    "en": "This tool's reassurance may be more apparent than real.",
+    "alternatives": [
+      "This tool may offer the illusion of reassurance.",
+      "The security this tool suggests might not be genuine."
+    ],
+    "point": "more apparent than real は実態より見かけの方が大きい。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2w7b6g6n",
     "ja": "必要なら私が導入するよ。",
     "en": "I'll install it if needed.",
@@ -262,6 +278,19 @@
     }
   },
   {
+    "id": "c_3x3m7w8f",
+    "ja": "私は今設定を開いてる。",
+    "en": "I'm opening settings now.",
+    "alternatives": ["I'm bringing up the settings.", "I'm loading the settings now."],
+    "point": "am opening で設定画面を開く動作中。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3z6k7f2p",
     "ja": "洗練されて見えてもこの道具は癖がある。",
     "en": "Polished though it seems, this tool has quirks.",
@@ -411,6 +440,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5j3g8e6y",
+    "ja": "私が保存するよ。",
+    "en": "I'll save it.",
+    "alternatives": ["I'll keep a copy.", "I'll store it."],
+    "point": "will で保存を引き受ける意思を表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5n2a6h7s",
@@ -841,6 +883,19 @@
     }
   },
   {
+    "id": "c_8e4d2a8v",
+    "ja": "私は拡大できる。",
+    "en": "I can zoom in.",
+    "alternatives": ["I can enlarge it.", "I can make it bigger."],
+    "point": "zoom in は画面の表示を拡大する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8f6m5r6w",
     "ja": "バグを一つ見つけたよ。",
     "en": "I found a bug.",
@@ -1100,6 +1155,22 @@
     }
   },
   {
+    "id": "c_9g3n7c9j",
+    "ja": "私は依存が逃げ道をなくすと知っておけばな。",
+    "en": "I wish I'd known dependence would leave no recourse.",
+    "alternatives": [
+      "I wish I'd realized dependence would remove my alternatives.",
+      "If only I'd known dependence would leave me without recourse."
+    ],
+    "point": "recourse は困った時に頼れる別の手段。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9g8b5b5s",
     "ja": "メニューがない。",
     "en": "There's no menu.",
@@ -1202,5 +1273,21 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9s9e2n2s",
+    "ja": "私が疑うのはこの便利さが隠す物だ。",
+    "en": "What I question is what this convenience obscures.",
+    "alternatives": [
+      "I question what lies hidden behind this convenience.",
+      "My concern is what this convenience conceals."
+    ],
+    "point": "what の節で便利さが覆い隠す内容を表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

@@ -505,6 +505,22 @@
     }
   },
   {
+    "id": "c_5x8s8b4x",
+    "ja": "再発を恐れ我々は見せかけの安心を疑った。",
+    "en": "Fearing recurrence, we questioned what passed for reassurance.",
+    "alternatives": [
+      "Fearing another occurrence, we challenged the supposedly reassuring statements.",
+      "We challenged what passed for reassurance, fearing another recurrence."
+    ],
+    "point": "pass for は本物でないのにそのものと見なされる含み。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["participle-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6b6x7s5x",
     "ja": "30分後にまた報告します。",
     "en": "I'll update you in 30 minutes.",
@@ -569,6 +585,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6m6n4w9q",
+    "ja": "我々のかつての油断が今災いになった。",
+    "en": "The complacency we displayed has come home to roost.",
+    "alternatives": [
+      "The complacency we showed has now brought unpleasant consequences.",
+      "Our earlier complacency has now brought bad consequences."
+    ],
+    "point": "come home to roost は過去の行いの悪い結果が戻る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6p4s6j7a",
@@ -1021,6 +1053,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9c7g3v4y",
+    "ja": "私が指揮するなら油断は許さないのに。",
+    "en": "Were I in charge, I'd countenance no complacency.",
+    "alternatives": [
+      "If I led, I wouldn't tolerate any complacency.",
+      "I'd allow no complacency if I were in charge."
+    ],
+    "point": "countenance は行為を容認するという意味。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9g5v8q6v",

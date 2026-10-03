@@ -148,6 +148,22 @@
     }
   },
   {
+    "id": "c_3w2b4b9g",
+    "ja": "私は君を内線につなげられる。",
+    "en": "I can connect you internally.",
+    "alternatives": [
+      "I can put you through internally.",
+      "I'm able to connect you internally."
+    ],
+    "point": "extension は社内の内線番号や回線。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3w5n2w4v",
     "ja": "受付にお客様がいます。",
     "en": "There's a visitor at reception.",
@@ -165,6 +181,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3w7q9b9z",
+    "ja": "私は彼にかけ直してほしい。",
+    "en": "I want him to redial.",
+    "alternatives": ["I'd like him to call again.", "I want him to dial again."],
+    "point": "want + 人 + to でかけ直してほしいと伝える。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4g7a2b8u",
@@ -380,6 +409,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6d6n3g9d",
+    "ja": "私は接続を確かめなきゃ。",
+    "en": "I need to check connectivity.",
+    "alternatives": [
+      "I have to verify the connection.",
+      "I must check the connection."
+    ],
+    "point": "connectivity は通話がつながる状態。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6k2c7g3h",

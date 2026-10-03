@@ -985,6 +985,22 @@
     }
   },
   {
+    "id": "c_8h9f2d7j",
+    "ja": "私は君が諦めた物を知ってて詫びる。",
+    "en": "I'm sorry, knowing what you relinquished.",
+    "alternatives": [
+      "I apologize, aware of what you gave up.",
+      "I apologize because I know what you sacrificed."
+    ],
+    "point": "relinquish は手放す、諦めるという改まった言い方。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8n9z2q4y",
     "ja": "私が埋め合わせすべきです。",
     "en": "I should make amends.",
@@ -1002,6 +1018,38 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8p4w7c7h",
+    "ja": "私が埋め合わせできれば喜んでするのに。",
+    "en": "Were amends possible, I'd make them gladly.",
+    "alternatives": [
+      "If I could make amends, I'd gladly do so.",
+      "I'd happily make things right if I could."
+    ],
+    "point": "make amends は過ちの埋め合わせをする。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_8q5e5a4n",
+    "ja": "私への静かな配慮に私は感謝します。",
+    "en": "I'm grateful for your discreet consideration toward me.",
+    "alternatives": [
+      "I appreciate your unobtrusive thoughtfulness toward me.",
+      "Thank you for your quiet consideration of me."
+    ],
+    "point": "understated は目立たせず控えめに示した様子。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8s2u8v8r",

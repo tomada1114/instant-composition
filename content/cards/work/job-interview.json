@@ -553,6 +553,19 @@
     }
   },
   {
+    "id": "c_6s4a5h6f",
+    "ja": "私は車を持ってる。",
+    "en": "I have a car.",
+    "alternatives": ["I own a car.", "I've got a car."],
+    "point": "数える名詞 car が一つなので a を付ける。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6u2p2r4a",
     "ja": "英語でメールが書けます。",
     "en": "I can write English emails.",
@@ -717,6 +730,19 @@
     }
   },
   {
+    "id": "c_7y9p9z7a",
+    "ja": "給料はどのくらい？",
+    "en": "What's the pay?",
+    "alternatives": ["How much is the pay?", "What does it pay?"],
+    "point": "pay は仕事への報酬。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8e7k8e4v",
     "ja": "来月から働き始めます。",
     "en": "I'll start next month.",
@@ -738,6 +764,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8p5c6g6x",
+    "ja": "私の話を聞いて。",
+    "en": "Listen to my story.",
+    "alternatives": ["Hear my story.", "Please hear me out."],
+    "point": "listen の後に相手の話を置くときは to を使う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8q7g5v3n",

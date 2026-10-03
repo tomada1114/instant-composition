@@ -252,6 +252,22 @@
     }
   },
   {
+    "id": "c_3t5u8m7y",
+    "ja": "私が雑談を切り上げてもいい？",
+    "en": "Could I wrap up our conversation?",
+    "alternatives": [
+      "Would it be okay to end our chat?",
+      "May I bring our chat to a close?"
+    ],
+    "point": "wrap up は話を終わりにする。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3x8s6n7y",
     "ja": "偶然会ったのは、同級生なんだ。",
     "en": "It was a classmate I bumped into.",
@@ -616,6 +632,22 @@
     }
   },
   {
+    "id": "c_6s7f3m4d",
+    "ja": "私はその頃、社交に疲れ切ってた。",
+    "en": "I'd burned out socially by then.",
+    "alternatives": [
+      "I'd exhausted myself socializing by then.",
+      "I had worn myself out socially by then."
+    ],
+    "point": "burn out は消耗し切って気力を失う。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6w6u7s6d",
     "ja": "予報だと、晴れると言っていた。",
     "en": "The forecast said it'd clear up.",
@@ -756,6 +788,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8a3g2g3s",
+    "ja": "私を驚かせたのは町の活気だ。",
+    "en": "What struck me was the town's vibrancy.",
+    "alternatives": [
+      "The town's liveliness was what struck me.",
+      "I was struck by the town's energy."
+    ],
+    "point": "strike me は印象を強く残す。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a5j8f3p",
