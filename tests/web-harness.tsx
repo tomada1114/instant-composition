@@ -228,6 +228,8 @@ export const SETTINGS_OPTIONS: SettingsPageView["options"] = {
   dailySizes: [5, 10, 15, 20, 30],
   newPerDay: [0, 3, 5, 10, 15],
   reviewsPerDay: [10, 20, 30, 50, null],
+  vocabNewPerDay: [0, 5, 10, 15, 20, 30],
+  vocabReviewsPerDay: [50, 100, 200, null],
   limitSeconds: [15, 20, 30, 45, 60],
   maxFocus: 2,
 };

@@ -13,6 +13,7 @@ import { LevelSection } from "./level-section";
 import { LimitSection } from "./limit-section";
 import { SectionList, useCurrentSection } from "./section-list";
 import { SettingsSection } from "./settings-row";
+import { VocabLimitRows } from "./vocab-limit-rows";
 import { DailyLimitRows } from "./daily-limit-rows";
 import { FocusSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
@@ -90,6 +91,9 @@ export function SettingsScreen({
               maxFocus={page.options.maxFocus}
             />
             <DailyLimitRows state={state} options={page.options} />
+          </SettingsSection>
+          <SettingsSection id="vocab" title={t("sections.vocab")}>
+            <VocabLimitRows state={state} options={page.options} />
           </SettingsSection>
           <SettingsSection id="level" title={t("difficulty.title")}>
             <LevelSection

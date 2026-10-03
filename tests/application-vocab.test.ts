@@ -19,6 +19,7 @@ import {
   fixedCatalog,
   makeHarness,
   makeSnapshot,
+  vocabItem,
   NOON,
   unreadableCatalog,
   type Harness,
@@ -90,12 +91,45 @@ describe("the hub", () => {
       ok: true,
       value: {
         empty: false,
+        extra: 10,
         today: { due: 0, new: 10, minutes: 2 },
         categories: [
-          { category: "word", due: 0, new: 3, learning: 0, total: 10 },
-          { category: "idiom", due: 0, new: 3, learning: 0, total: 10 },
-          { category: "phrasal-verb", due: 0, new: 2, learning: 0, total: 10 },
-          { category: "phrase", due: 0, new: 2, learning: 0, total: 10 },
+          {
+            category: "word",
+            due: 0,
+            new: 3,
+            extra: 7,
+            weak: 0,
+            learning: 0,
+            total: 10,
+          },
+          {
+            category: "idiom",
+            due: 0,
+            new: 3,
+            extra: 7,
+            weak: 0,
+            learning: 0,
+            total: 10,
+          },
+          {
+            category: "phrasal-verb",
+            due: 0,
+            new: 2,
+            extra: 8,
+            weak: 0,
+            learning: 0,
+            total: 10,
+          },
+          {
+            category: "phrase",
+            due: 0,
+            new: 2,
+            extra: 8,
+            weak: 0,
+            learning: 0,
+            total: 10,
+          },
         ],
         weak: 0,
         tomorrow: 0,
@@ -579,5 +613,83 @@ describe("a personal card", () => {
     expect((await h.stores.forLearner(h.learner).card(CARD.id))?.value).toStrictEqual(
       CARD,
     );
+  });
+});
+
+describe("server-derived vocabulary session availability", () => {
+  it("exposes extra categories from the same deal, and becomes zero after all cards are answered", async () => {
+    const h = makeHarness(
+      fixedCatalog(
+        makeSnapshot({ vocab: [vocabItem("word", 4, 0), vocabItem("phrase", 4, 0)] }),
+      ),
+    );
+    await atLevel(h);
+    await updateSettings(h.deps, h.context(), { topics: ["work"], vocabNewPerDay: 0 });
+    const before = await vocabHub(h.deps, h.context());
+    expect(before.ok && before.value).toMatchObject({
+      extra: 2,
+      categories: [
+        { category: "word", extra: 1, weak: 0 },
+        { category: "idiom", extra: 0, weak: 0 },
+        { category: "phrasal-verb", extra: 0, weak: 0 },
+        { category: "phrase", extra: 1, weak: 0 },
+      ],
+    });
+    const session = await started(h, "extra", "extra");
+    await finishVocabSession(h.deps, h.context(), {
+      sessionId: "extra",
+      answers: gradedAll(session),
+    });
+    const after = await vocabHub(h.deps, h.context());
+    expect(after.ok && after.value.extra).toBe(0);
+  });
+  it("excludes future reviews from extra while exposing weak cards by category", async () => {
+    const word = vocabItem("word", 4, 0);
+    const phrase = vocabItem("phrase", 4, 0);
+    const h = makeHarness(fixedCatalog(makeSnapshot({ vocab: [word, phrase] })));
+    await atLevel(h);
+    const progress = makeVocabProgress({ cardId: phrase.id });
+    await h.stores.forLearner(h.learner).commit({
+      puts: [
+        {
+          type: "vocabItem",
+          value: {
+            ...progress,
+            source: { kind: "talk", talkId: "t1", turn: 1 },
+            state: {
+              ...progress.state,
+              dueDay: "2099-01-01",
+              lastDay: "2026-09-21",
+              difficulty: 2.118,
+              reps: 1,
+              lapses: 0,
+              stability: 2,
+            },
+          },
+        },
+      ],
+      updates: [],
+      expect: [],
+    });
+    const hub = await vocabHub(h.deps, h.context());
+    expect(hub.ok && hub.value).toMatchObject({
+      extra: 0,
+      weak: 1,
+      categories: [
+        { category: "word", extra: 0, weak: 0 },
+        { category: "idiom", extra: 0, weak: 0 },
+        { category: "phrasal-verb", extra: 0, weak: 0 },
+        { category: "phrase", extra: 0, weak: 1 },
+      ],
+    });
+    const session = await started(h, "weak", "weak");
+    await finishVocabSession(h.deps, h.context(), {
+      sessionId: "weak",
+      answers: gradedAll(session),
+    });
+    const after = await vocabHub(h.deps, h.context());
+    expect(after.ok && after.value.weak).toBe(0);
+    const other = await vocabHub(h.deps, otherLearner(h));
+    expect(other.ok && other.value).toMatchObject({ weak: 0, today: { new: 2 } });
   });
 });

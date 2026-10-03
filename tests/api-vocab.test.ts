@@ -5,6 +5,8 @@ import {
   errorResponseSchema,
   ROUTES,
   vocabSessionSchema,
+  vocabHubSchema,
+  settingsPageViewSchema,
 } from "@instant-composition/contracts";
 
 import {
@@ -88,12 +90,37 @@ describe("the vocabulary hub", () => {
 
     expect(hub).toStrictEqual({
       empty: false,
+      extra: 10,
       today: { due: 0, new: 10, minutes: 2 },
       categories: [
-        { category: "word", due: 0, new: 3, learning: 0, total: 10 },
-        { category: "idiom", due: 0, new: 3, learning: 0, total: 10 },
-        { category: "phrasal-verb", due: 0, new: 2, learning: 0, total: 10 },
-        { category: "phrase", due: 0, new: 2, learning: 0, total: 10 },
+        { category: "word", due: 0, new: 3, extra: 7, weak: 0, learning: 0, total: 10 },
+        {
+          category: "idiom",
+          due: 0,
+          new: 3,
+          extra: 7,
+          weak: 0,
+          learning: 0,
+          total: 10,
+        },
+        {
+          category: "phrasal-verb",
+          due: 0,
+          new: 2,
+          extra: 8,
+          weak: 0,
+          learning: 0,
+          total: 10,
+        },
+        {
+          category: "phrase",
+          due: 0,
+          new: 2,
+          extra: 8,
+          weak: 0,
+          learning: 0,
+          total: 10,
+        },
       ],
       weak: 0,
       tomorrow: 0,
@@ -341,7 +368,12 @@ describe("another learner's session", () => {
 
     const hub = await contracted(await b.call("GET", "/v1/vocab"), "getVocab");
 
-    expect(hub).toMatchObject({ today: { due: 0, new: 10 }, weak: 0, tomorrow: 0 });
+    expect(hub).toMatchObject({
+      today: { due: 0, new: 10 },
+      extra: 10,
+      weak: 0,
+      tomorrow: 0,
+    });
     expect(
       (hub as { categories: { learning: number }[] }).categories.map(
         (row) => row.learning,
@@ -434,5 +466,36 @@ describe("deleting a personal card", () => {
     expect(
       await refusal(await a.call("DELETE", `/v1/vocab/cards/${"x".repeat(65)}`)),
     ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+  });
+});
+
+describe("vocabulary availability over HTTP", () => {
+  it("returns tunable vocabulary choices and category availability, then none after the last extra", async () => {
+    const api = makeApi();
+    await placedAt(api, "learner-1");
+    const settings = settingsPageViewSchema.parse(
+      await contracted(await api.call("GET", "/v1/settings"), "getSettings"),
+    );
+    expect(settings.options.vocabNewPerDay).toStrictEqual([0, 5, 10, 15, 20, 30]);
+    expect(settings.options.vocabReviewsPerDay).toStrictEqual([50, 100, 200, null]);
+    await api.call("PATCH", "/v1/settings", { topics: ["work"], vocabNewPerDay: 0 });
+    const before = vocabHubSchema.parse(
+      await contracted(await api.call("GET", "/v1/vocab"), "getVocab"),
+    );
+    expect(before.extra).toBe(10);
+    expect(before.categories.map((row) => row.extra)).toStrictEqual([10, 10, 10, 10]);
+    for (const sessionId of ["extra1", "extra2", "extra3", "extra4"]) {
+      const session = await opened(api, { sessionId, kind: "extra" });
+      await api.call(
+        "POST",
+        `/v1/vocab/sessions/${sessionId}/finish`,
+        goodBatch(session),
+      );
+    }
+    const after = vocabHubSchema.parse(
+      await contracted(await api.call("GET", "/v1/vocab"), "getVocab"),
+    );
+    expect(after.extra).toBe(0);
+    expect(after.categories.map((row) => row.extra)).toStrictEqual([0, 0, 0, 0]);
   });
 });

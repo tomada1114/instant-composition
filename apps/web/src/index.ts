@@ -134,3 +134,25 @@ export {
   type TalkEvent,
   type TalkState,
 } from "./talk/talk-state";
+
+export {
+  getVocab,
+  startVocabSession,
+  recordVocabAnswers,
+  finishVocabSession,
+} from "./lib/vocab-endpoints";
+export {
+  vocabSearch,
+  requestVocabFinish,
+  requestVocabSession,
+  sendVocabAnswer,
+  VOCAB_QUEUE_PREFIX,
+} from "./vocab/sessions";
+export type {
+  VocabAnswer,
+  VocabCard,
+  VocabCategory,
+  VocabHub,
+  VocabSession,
+  VocabSummary,
+} from "./openapi";

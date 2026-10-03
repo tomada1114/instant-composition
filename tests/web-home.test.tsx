@@ -3,6 +3,8 @@ import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vite
 
 import { TUNING, type HomeView, type RecordsView } from "@instant-composition/web";
 
+import { vocabHub } from "./web-vocab-fixtures";
+
 import {
   COUNT,
   PREVIEW,
@@ -181,6 +183,7 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", null],
@@ -204,6 +207,7 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/vocab", null],
         ["/talk", "page"],
         ["/records", null],
         ["/settings", null],
@@ -218,6 +222,7 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", null],
@@ -753,6 +758,7 @@ describe("the home screen before and instead of the home view", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", null],
@@ -893,10 +899,8 @@ describe("a session that runs out while the app is open", () => {
     await settle(TUNING.skeletonDelayMs);
     expect(visited).toStrictEqual(["/api/v1/auth/login"]);
     expect(where()).toBe("/records");
-    expect(calls.map((call) => call.url).slice(-2)).toStrictEqual([
-      "/api/v1/records",
-      "/api/v1/auth/refresh",
-    ]);
+    expect(calls.filter((call) => call.url === "/api/v1/records")).toHaveLength(1);
+    expect(calls.filter((call) => call.url === "/api/v1/auth/refresh")).toHaveLength(2);
     // The records page's loading state: its column, and nothing in it.
     const mains = document.querySelectorAll("main");
     expect(mains).toHaveLength(1);
@@ -976,4 +980,61 @@ describe("the sound switch", () => {
       "false",
     );
   });
+});
+
+describe("the vocabulary tile on home", () => {
+  it.each(["ready", "done", "empty", "failed", "pending"] as const)(
+    "shows the %s vocabulary state independently of home",
+    async (state) => {
+      fakeApi((call) => {
+        if (call.url === "/api/v1/home")
+          return Response.json(homeView({ kind: "ready", streak: COUNT }));
+        if (call.url === "/api/v1/vocab") {
+          if (state === "pending") return new Promise<Response>(() => undefined);
+          if (state === "failed") return refusal(503, "ERR_CONTENT_UNREADABLE");
+          return Response.json(
+            vocabHub(
+              state === "done"
+                ? { today: { due: 0, new: 0, minutes: 0 } }
+                : state === "empty"
+                  ? { empty: true }
+                  : {},
+            ),
+          );
+        }
+        return undefined;
+      });
+      await renderApp("/");
+      const tile = within(
+        screen.getByRole("heading", { name: ja.Vocab.title }).closest("section") ??
+          document.body,
+      );
+      expect(
+        screen.getByRole("button", { name: ja.Home.today.start }),
+      ).toBeInTheDocument();
+      const expected = {
+        ready: "22 枚 · 約 4 分",
+        done: ja.Vocab.done,
+        empty: ja.Vocab.empty,
+        failed: ja.Home.tiles.failed,
+        pending: ja.Vocab.title,
+      };
+      expect(tile.getByText(expected[state])).toBeInTheDocument();
+      expect(
+        tile.queryByRole("link", { name: ja.Vocab.homeStart })?.getAttribute("href") ??
+          null,
+      ).toBe(state === "ready" ? "/vocab/study?kind=today" : null);
+      expect(
+        screen
+          .getAllByRole("heading", { level: 2 })
+          .slice(-4)
+          .map((heading) => heading.textContent),
+      ).toStrictEqual([
+        ja.Vocab.title,
+        ja.Home.tiles.talk,
+        ja.Home.tiles.weak,
+        ja.Home.tiles.reach,
+      ]);
+    },
+  );
 });

@@ -9,6 +9,9 @@ export interface VocabCategoryView {
   /** Its reviews and new cards in today's queue, which a session restricted to it deals. */
   readonly due: number;
   readonly new: number;
+  /** Cards the next extra or weak session restricted to this category can deal. */
+  readonly extra: number;
+  readonly weak: number;
   /** Its cards answered at least once, and all its cards the catalog shows. */
   readonly learning: number;
   readonly total: number;
@@ -18,6 +21,8 @@ export interface VocabCategoryView {
 export interface VocabHub {
   /** True when the language pair has no vocabulary card at all. */
   readonly empty: boolean;
+  /** Cards the next extra session can deal beyond today's daily limits. */
+  readonly extra: number;
   readonly today: {
     readonly due: number;
     readonly new: number;

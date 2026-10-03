@@ -83,7 +83,8 @@
     "settings": "設定",
     "brand": "Instant Composition",
     "skip": "本文へ移動",
-    "close": "閉じる"
+    "close": "閉じる",
+    "vocab": "語彙"
   },
   "Landing": {
     "brand": "Instant Composition",
@@ -358,7 +359,8 @@
     "sections": {
       "label": "設定の項目",
       "cards": "出題",
-      "app": "アプリ"
+      "app": "アプリ",
+      "vocab": "語彙"
     },
     "topics": {
       "title": "場面",
@@ -377,7 +379,9 @@
       "infoLabel": "{title} の説明",
       "count": "{count} 文",
       "unlimited": "無制限",
-      "completed": "この枚数で今日は完了です"
+      "completed": "この枚数で今日は完了です",
+      "vocabNewTitle": "新しい語 / 日",
+      "vocabCount": "{count} 語"
     },
     "limit": {
       "title": "1 文の持ち時間",
@@ -424,5 +428,42 @@
       "title": "アカウント",
       "action": "ログアウト"
     }
+  },
+  "Vocab": {
+    "title": "語彙",
+    "today": "Today",
+    "size": "{count} 枚 · 約 {minutes} 分",
+    "review": "復習 {count}",
+    "fresh": "新規 {count}",
+    "start": "始める",
+    "done": "今日の分は完了",
+    "categoryDone": "{category}の今日の分は完了",
+    "weakDone": "弱点を復習しました",
+    "tomorrow": "明日 {count} 枚",
+    "extra": "もう 10 枚",
+    "end": "終わる",
+    "open": "語彙を開く",
+    "homeStart": "語彙を始める",
+    "empty": "まだカードがありません",
+    "emptyBody": "カードが追加されると、ここから学習できます",
+    "noneToday": "今日はなし",
+    "learning": "学習中 {count} / {total}",
+    "weak": "弱点",
+    "weakInfo": "会話からの語と、8 回以上忘れた語。定着すると弱点を卒業します",
+    "weakNone": "今はありません",
+    "count": "{count} 枚",
+    "answered": "答えた",
+    "introduced": "新しく始めた",
+    "dueTomorrow": "明日の復習",
+    "againTitle": "復習に回った語",
+    "againNone": "0 語",
+    "reloadHint": "回答は保存され、次は今日の残りから始めます",
+    "categories": {
+      "word": "単語",
+      "idiom": "熟語",
+      "phrasal-verb": "句動詞",
+      "phrase": "定型文"
+    },
+    "front": "表。"
   }
 }

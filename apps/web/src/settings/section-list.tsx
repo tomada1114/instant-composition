@@ -4,7 +4,7 @@ import { useTranslations } from "use-intl";
 import { cn } from "../lib/utils";
 
 /** The page's sections, in order; each is also its element's `id` and its `#` link. */
-export const SECTIONS = ["cards", "level", "app", "account"] as const;
+export const SECTIONS = ["cards", "vocab", "level", "app", "account"] as const;
 export type Section = (typeof SECTIONS)[number];
 
 // A section is current once its top has passed this far down the viewport:
@@ -79,6 +79,7 @@ export function SectionList({
   const t = useTranslations("Settings");
   const names: Readonly<Record<Section, string>> = {
     cards: t("sections.cards"),
+    vocab: t("sections.vocab"),
     level: t("difficulty.title"),
     app: t("sections.app"),
     account: t("signOut.title"),

@@ -108,6 +108,8 @@ export interface SettingsPageView {
     readonly dailySizes: readonly DailySize[];
     readonly newPerDay: readonly DrillNewPerDay[];
     readonly reviewsPerDay: readonly DrillReviewsPerDay[];
+    readonly vocabNewPerDay: readonly ShownSettings["vocabNewPerDay"][];
+    readonly vocabReviewsPerDay: readonly ShownSettings["vocabReviewsPerDay"][];
     readonly limitSeconds: readonly LimitSeconds[];
     readonly maxFocus: number;
   };

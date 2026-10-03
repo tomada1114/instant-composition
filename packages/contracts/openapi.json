@@ -2629,6 +2629,14 @@
                 "type": "array",
                 "items": { "$ref": "#/components/schemas/DrillReviewsPerDay" }
               },
+              "vocabNewPerDay": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/VocabNewPerDay" }
+              },
+              "vocabReviewsPerDay": {
+                "type": "array",
+                "items": { "$ref": "#/components/schemas/VocabReviewsPerDay" }
+              },
               "limitSeconds": {
                 "type": "array",
                 "items": {
@@ -2651,6 +2659,8 @@
               "dailySizes",
               "newPerDay",
               "reviewsPerDay",
+              "vocabNewPerDay",
+              "vocabReviewsPerDay",
               "limitSeconds",
               "maxFocus"
             ]
@@ -2945,15 +2955,18 @@
           "category": { "$ref": "#/components/schemas/VocabCategory" },
           "due": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "new": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "extra": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "weak": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "learning": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "total": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
         },
-        "required": ["category", "due", "new", "learning", "total"]
+        "required": ["category", "due", "new", "extra", "weak", "learning", "total"]
       },
       "VocabHub": {
         "type": "object",
         "properties": {
           "empty": { "type": "boolean" },
+          "extra": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "today": {
             "type": "object",
             "properties": {
@@ -2974,7 +2987,7 @@
           "weak": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "tomorrow": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
         },
-        "required": ["empty", "today", "categories", "weak", "tomorrow"]
+        "required": ["empty", "extra", "today", "categories", "weak", "tomorrow"]
       },
       "VocabCard": {
         "type": "object",

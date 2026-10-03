@@ -77,17 +77,20 @@ export function queueKey(roundId: string): string {
  */
 export async function flushEarlierRounds(options: {
   readonly currentId: string;
+  /** Other activities have their own storage namespace and sender. */
+  readonly prefix?: string;
   readonly send: (answer: AnswerInput) => Promise<SendOutcome>;
   readonly storage?: ListedStorage | undefined;
 }): Promise<void> {
   const { currentId, send, storage } = options;
+  const prefix = options.prefix ?? PREFIX;
   const keys: string[] = [];
   try {
     for (let index = 0; index < (storage?.length ?? 0); index += 1) {
       const key = storage?.key(index);
       if (
-        key?.startsWith(PREFIX) === true &&
-        key !== queueKey(currentId) &&
+        key?.startsWith(prefix) === true &&
+        key !== `${prefix}${currentId}` &&
         !flushing.has(key)
       )
         keys.push(key);

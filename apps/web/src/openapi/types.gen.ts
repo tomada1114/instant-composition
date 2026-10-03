@@ -385,6 +385,8 @@ export type SettingsPageView = {
         dailySizes: Array<5 | 10 | 15 | 20 | 30>;
         newPerDay: Array<DrillNewPerDay>;
         reviewsPerDay: Array<DrillReviewsPerDay>;
+        vocabNewPerDay: Array<VocabNewPerDay>;
+        vocabReviewsPerDay: Array<VocabReviewsPerDay>;
         limitSeconds: Array<15 | 20 | 30 | 45 | 60>;
         maxFocus: number;
     };
@@ -537,12 +539,15 @@ export type VocabCategoryView = {
     category: VocabCategory;
     due: number;
     new: number;
+    extra: number;
+    weak: number;
     learning: number;
     total: number;
 };
 
 export type VocabHub = {
     empty: boolean;
+    extra: number;
     today: {
         due: number;
         new: number;

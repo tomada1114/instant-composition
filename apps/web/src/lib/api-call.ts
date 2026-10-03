@@ -94,10 +94,12 @@ async function refreshSession(): Promise<boolean> {
  * began; once one has, it means the session ran out while the app was open.
  */
 let signedIn = false;
+let redirecting: Promise<never> | undefined;
 
 /** Starts a visit in which nobody is yet known to be signed in: each page load, and each mount of the app. */
 export function beginVisit(): void {
   signedIn = false;
+  redirecting = undefined;
 }
 
 /**
@@ -123,8 +125,11 @@ export async function send(method: Method, data: OperationData): Promise<Respons
 }
 
 function signIn(): Promise<never> {
-  globalThis.location.assign(LOGIN_URL);
-  return new Promise<never>(() => undefined);
+  if (redirecting === undefined) {
+    redirecting = new Promise<never>(() => undefined);
+    globalThis.location.assign(LOGIN_URL);
+  }
+  return redirecting;
 }
 
 /** The envelope's `error.code`, or `undefined` for a body that is not the envelope. */
