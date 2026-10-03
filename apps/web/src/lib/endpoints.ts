@@ -142,6 +142,7 @@ export async function recordAnswers(
   };
   return sendAnswerBatch(data, {
     ERR_BAD_REQUEST: 400,
+    ERR_PAYLOAD_TOO_LARGE: 413,
     ERR_FORBIDDEN: 403,
     ERR_ROUND_NOT_FOUND: 404,
     ERR_ROUND_CLOSED: 409,

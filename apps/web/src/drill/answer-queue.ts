@@ -1,6 +1,6 @@
 import type { SendOutcome } from "../lib/endpoints";
 import type { AnswerInput } from "./drill-state";
-import { readQueue } from "./stored-queue";
+import { queueText, readQueue } from "./stored-queue";
 
 /** The part of `sessionStorage` the queue uses. */
 export interface QueueStorage {
@@ -11,6 +11,8 @@ export interface QueueStorage {
 
 export interface AnswerQueue {
   pending(): readonly AnswerInput[];
+  retryAt(): number;
+  deferUntil(deadline: number): void;
   /** Queues `answer` and sends everything pending; `true` when nothing is left. */
   enqueue(answer: AnswerInput): Promise<boolean>;
   flush(): Promise<boolean>;
@@ -130,14 +132,9 @@ export function createAnswerQueue(options: {
 
   function persist(): void {
     try {
-      if (pending.length === 0) {
-        retryAt = 0;
-        storage?.removeItem(key);
-      } else
-        storage?.setItem(
-          key,
-          JSON.stringify(retryAt > 0 ? { answers: pending, retryAt } : pending),
-        );
+      const text = queueText(pending, retryAt);
+      if (text === undefined) storage?.removeItem(key);
+      else storage?.setItem(key, text);
     } catch {
       // Storage may be full or blocked; the queue in memory still holds the answers.
     }
@@ -171,6 +168,11 @@ export function createAnswerQueue(options: {
 
   return {
     pending: () => pending,
+    retryAt: () => retryAt,
+    deferUntil(deadline) {
+      retryAt = Math.max(retryAt, deadline);
+      persist();
+    },
     enqueue(answer) {
       pending = [...pending, answer];
       persist();
@@ -179,9 +181,11 @@ export function createAnswerQueue(options: {
     flush: schedule,
     removeCard(cardId) {
       pending = pending.filter((answer) => answer.cardId !== cardId);
+      if (pending.length === 0) retryAt = 0;
       persist();
     },
     clear() {
+      retryAt = 0;
       pending = [];
       persist();
     },

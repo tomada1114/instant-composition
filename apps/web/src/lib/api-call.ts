@@ -1,5 +1,6 @@
 // How every call in `endpoints.ts` reaches the API: the root, the URL a
 // contract path becomes, and how an answer is read into a `Result`.
+import { retryAt } from "./retry-after";
 import { err, ok, type Result } from "./result";
 
 /**
@@ -11,6 +12,7 @@ export const API_ROOT = "/api";
 /** An error code from the API, or `ERR_NETWORK` when no readable answer came back. */
 export interface ApiError {
   readonly code: string;
+  readonly retryAt?: number;
 }
 
 const NETWORK: ApiError = { code: "ERR_NETWORK" };
@@ -157,10 +159,10 @@ export async function call<TResponses extends { 200: unknown }>(
 ): Promise<Result<TResponses[200], ApiError>> {
   try {
     const response = await send(method, data);
-    const body: unknown = await response.json();
-    if (response.ok) return ok(body as TResponses[200]);
-    const code = errorCode(body);
-    return err(code === undefined ? NETWORK : { code });
+    if (response.ok) return ok((await response.json()) as TResponses[200]);
+    const code = errorCode(await response.json().catch(() => null)) ?? "ERR_NETWORK";
+    const deadline = retryAt(response.headers.get("Retry-After"));
+    return err({ code, ...(deadline === undefined ? {} : { retryAt: deadline }) });
   } catch {
     return err(NETWORK);
   }

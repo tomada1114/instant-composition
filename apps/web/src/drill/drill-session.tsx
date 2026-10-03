@@ -85,6 +85,10 @@ export function DrillSession({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",
     unrecorded: () => queue.pending(),
+    notBefore: () => queue.retryAt(),
+    onDeferred: (deadline) => {
+      queue.deferUntil(deadline);
+    },
     onDone: (summary) => {
       queue.clear();
       if (sound) browserSound.play(roundSound(summary));

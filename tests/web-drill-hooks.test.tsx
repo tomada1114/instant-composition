@@ -306,6 +306,44 @@ describe("useAnswerQueue on arrival at a new round", () => {
 });
 
 describe("useRoundFinish", () => {
+  it("stores finish retry hints and waits for the queue deadline on manual retry", async () => {
+    let now = 10_000;
+    let deadline = 0;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const fetch = vi.fn(() =>
+      Promise.resolve(
+        new Response("down", { status: 429, headers: { "Retry-After": "10" } }),
+      ),
+    );
+    vi.stubGlobal("fetch", fetch);
+    const { result } = renderHook(() =>
+      useRoundFinish({
+        roundId: "r",
+        finishing: true,
+        unrecorded: () => [answer("c1")],
+        notBefore: () => deadline,
+        onDeferred: (value) => {
+          deadline = value;
+        },
+        onDone: vi.fn(),
+      }),
+    );
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(deadline).toBe(20_000);
+    act(() => result.current.retry());
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(fetch).toHaveBeenCalledOnce();
+    now = 20_000;
+    act(() => result.current.retry());
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(fetch).toHaveBeenCalledTimes(2);
+  });
   it("asks for the summary once finishing, and retries on demand after a failure", async () => {
     let calls = 0;
     const urls: string[] = [];

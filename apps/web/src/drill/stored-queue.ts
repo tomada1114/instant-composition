@@ -34,3 +34,12 @@ export function readQueue(read: () => string | null | undefined): StoredQueue {
     return empty;
   }
 }
+
+/** A deadline may belong to the finish request even when every answer is saved. */
+export function queueText(
+  answers: readonly AnswerInput[],
+  retryAt: number,
+): string | undefined {
+  if (answers.length === 0 && retryAt === 0) return undefined;
+  return JSON.stringify(retryAt > 0 ? { answers, retryAt } : answers);
+}

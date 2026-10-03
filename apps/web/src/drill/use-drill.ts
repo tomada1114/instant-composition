@@ -136,6 +136,8 @@ export function useRoundFinish(options: {
   readonly roundId: string;
   readonly finishing: boolean;
   readonly unrecorded: () => readonly AnswerInput[];
+  readonly notBefore?: () => number;
+  readonly onDeferred?: (deadline: number) => void;
   readonly onDone: (summary: RoundSummary) => void;
 }): FinishState {
   const { roundId, finishing } = options;
@@ -151,12 +153,18 @@ export function useRoundFinish(options: {
   useEffect(() => {
     if (!finishing) return undefined;
     let current = true;
-    void requestFinish(roundId, latest.current.unrecorded()).then((finished) => {
+    void requestFinish(
+      roundId,
+      latest.current.unrecorded(),
+      latest.current.notBefore?.(),
+    ).then((finished) => {
       if (!current) return;
       if (finished.ok) {
         latest.current.onDone(finished.value);
         setResult({ status: "done", summary: finished.value });
       } else {
+        if (finished.error.retryAt !== undefined)
+          latest.current.onDeferred?.(finished.error.retryAt);
         setResult({ status: "failed" });
       }
     });

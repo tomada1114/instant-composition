@@ -83,7 +83,9 @@ reaches it as types generated from `packages/contracts/openapi.json` into
   explicit operation-specific status/code refusals are final; unknown or temporary
   responses stay stored. A deferred queue preserves its deadline across reload, reads
   old answer arrays too, and stops an unsuccessful drain until a later arrival or
-  explicit retry. Earlier batches must be acknowledged before finishing.
+  explicit retry. Finish attempts consult the same deadline, and keep a new retry hint
+  even when every answer has already been saved. Earlier batches must be acknowledged
+  before finishing.
 
 **After a contract change**, regenerate both documents, in order, and commit what they
 write: `pnpm contracts:openapi` rewrites `packages/contracts/openapi.json`, then

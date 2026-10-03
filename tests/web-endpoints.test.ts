@@ -448,6 +448,75 @@ describe("temporary answer refusals", () => {
   it.each([
     ["drill", recordAnswers],
     ["vocabulary", recordVocabAnswers],
+  ] as const)(
+    "%s treats the contract's oversized payload as final",
+    async (_, record) => {
+      stubFetch(() => Promise.resolve(envelope(413, "ERR_PAYLOAD_TOO_LARGE")));
+      expect(await record("s1", [])).toBe("rejected");
+    },
+  );
+
+  it.each([
+    ["drill", requestFinish],
+    ["vocabulary", requestVocabFinish],
+  ] as const)(
+    "%s defers both finish and its earlier answer batches",
+    async (_, finish) => {
+      let now = 10_000;
+      vi.spyOn(Date, "now").mockImplementation(() => now);
+      const responses = [
+        new Response(null, { status: 204 }),
+        new Response("{}", { status: 200 }),
+      ];
+      const calls = stubFetch(() =>
+        Promise.resolve(responses.shift() ?? new Response(null, { status: 500 })),
+      );
+      const pending = Array.from({ length: 61 }, (_, index) => ({
+        ...ANSWER,
+        id: `a${String(index)}`,
+      }));
+      expect(await finish("s1", pending, 20_000)).toStrictEqual({
+        ok: false,
+        error: { code: "ERR_NETWORK", retryAt: 20_000 },
+      });
+      expect(calls).toHaveLength(0);
+      now = 20_000;
+      expect((await finish("s1", pending, 20_000)).ok).toBe(true);
+      expect(calls).toHaveLength(2);
+      vi.restoreAllMocks();
+    },
+  );
+
+  it.each([
+    ["drill", requestFinish],
+    ["vocabulary", requestVocabFinish],
+  ] as const)(
+    "%s preserves new retry hints from an earlier batch and the finish itself",
+    async (_, finish) => {
+      vi.spyOn(Date, "now").mockReturnValue(10_000);
+      const calls = stubFetch(() =>
+        Promise.resolve(
+          new Response("down", { status: 429, headers: { "Retry-After": "10" } }),
+        ),
+      );
+      for (const count of [1, 61]) {
+        const pending = Array.from({ length: count }, (_, index) => ({
+          ...ANSWER,
+          id: `a${String(index)}`,
+        }));
+        expect(await finish("s1", pending)).toStrictEqual({
+          ok: false,
+          error: { code: "ERR_NETWORK", retryAt: 20_000 },
+        });
+      }
+      expect(calls).toHaveLength(2);
+      vi.restoreAllMocks();
+    },
+  );
+
+  it.each([
+    ["drill", recordAnswers],
+    ["vocabulary", recordVocabAnswers],
   ] as const)("%s preserves temporary and unknown responses", async (_, record) => {
     for (const response of [
       envelope(429, "ERR_TOO_MANY_REQUESTS"),

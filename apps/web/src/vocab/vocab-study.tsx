@@ -66,14 +66,19 @@ export function VocabStudy({
   useEffect(() => {
     if (!finishing) return undefined;
     let active = true;
-    void requestVocabFinish(session.sessionId, queue.pending()).then((result) => {
-      if (!active) return;
-      if (result.ok) {
-        queue.clear();
-        setSummary(result.value);
-        void cache.invalidateQueries({ queryKey: ["vocab"] });
-      } else setFailed(true);
-    });
+    void requestVocabFinish(session.sessionId, queue.pending(), queue.retryAt()).then(
+      (result) => {
+        if (!active) return;
+        if (result.ok) {
+          queue.clear();
+          setSummary(result.value);
+          void cache.invalidateQueries({ queryKey: ["vocab"] });
+        } else {
+          queue.deferUntil(result.error.retryAt ?? 0);
+          setFailed(true);
+        }
+      },
+    );
     return () => {
       active = false;
     };

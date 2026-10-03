@@ -57,6 +57,7 @@ export async function recordVocabAnswers(
   } satisfies RecordVocabAnswersData;
   return sendAnswerBatch(data, {
     ERR_BAD_REQUEST: 400,
+    ERR_PAYLOAD_TOO_LARGE: 413,
     ERR_FORBIDDEN: 403,
     ERR_SESSION_NOT_FOUND: 404,
     ERR_SESSION_CLOSED: 409,

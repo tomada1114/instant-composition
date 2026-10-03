@@ -227,9 +227,10 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   refusal drops an unsent answer: temporary and unknown responses stay pending. A
   `Retry-After` deadline is stored beside deferred answers, with old answer arrays still
   readable; no resend is made before it, and a failed attempt stops the drain. A finish
-  stops if any earlier batch was not acknowledged. A client `answeredAt` is clamped
-  between the round's start and the server's time, a late answer counts for its round's
-  day and never rewinds an item's schedule, and rounds never expire.
+  also obeys that deadline and retains retry hints from its own response, and stops if
+  any earlier batch was not acknowledged. A client `answeredAt` is clamped between the
+  round's start and the server's time, a late answer counts for its round's day and
+  never rewinds an item's schedule, and rounds never expire.
 
 ## The web client
 

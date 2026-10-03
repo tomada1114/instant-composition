@@ -47,6 +47,19 @@ function scriptedSender(...outcomes: SendOutcome[]) {
 }
 
 describe("createAnswerQueue", () => {
+  it("retains a deferred finish without pending answers across reload, until explicitly cleared", () => {
+    const storage = memoryStorage();
+    const sender = scriptedSender();
+    const queue = createAnswerQueue({ key: "k", send: sender.send, storage });
+    queue.deferUntil(20_000);
+    queue.deferUntil(15_000);
+    const reloaded = createAnswerQueue({ key: "k", send: sender.send, storage });
+    expect(reloaded.pending()).toStrictEqual([]);
+    expect(reloaded.retryAt()).toBe(20_000);
+    reloaded.clear();
+    expect(reloaded.retryAt()).toBe(0);
+    expect(storage.data.has("k")).toBe(false);
+  });
   it("honors a late Retry-After response after the in-flight card is deleted", async () => {
     vi.spyOn(Date, "now").mockReturnValue(10_000);
     let resolve: (outcome: SendOutcome) => void = () => undefined;
