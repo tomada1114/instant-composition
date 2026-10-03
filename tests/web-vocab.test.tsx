@@ -828,6 +828,45 @@ describe("deleting a vocabulary card from a talk", () => {
       screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
     ).toBeInTheDocument();
   });
+  it("preserves the answer retry deadline after deleting the last re-ask", async () => {
+    let now = 10_000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const calls = fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
+      if (call.url === "/api/v1/vocab/sessions")
+        return Response.json(
+          vocabSession({ cards: [vocabCard("v_own", { personal: true })] }),
+        );
+      if (call.url.endsWith("/answers"))
+        return new Response("down", { status: 429, headers: { "Retry-After": "10" } });
+      if (call.method === "DELETE") return new Response(null, { status: 204 });
+      if (call.url.endsWith("/finish")) return Response.json(vocabSummary());
+      return undefined;
+    });
+    await renderApp("/vocab/study");
+    await flipAndGrade("1");
+    await settle(16);
+    press(" ");
+    openDelete();
+    confirmDelete();
+    await settle();
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    now = 20_000;
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(1);
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      answers: [],
+    });
+    expect(screen.getByRole("heading", { name: ja.Vocab.done })).toBeInTheDocument();
+    expect(sessionStorage.getItem("vocab-answers:session-1")).toBeNull();
+  });
   it("finishes after deleting the last card with an empty answer batch", async () => {
     const calls = await personalBack([vocabCard("v_own", { personal: true })]);
     openDelete();

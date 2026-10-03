@@ -47,6 +47,44 @@ function scriptedSender(...outcomes: SendOutcome[]) {
 }
 
 describe("createAnswerQueue", () => {
+  it("does not restore a late retry hint after an explicit clear", async () => {
+    let resolve: (outcome: SendOutcome) => void = () => undefined;
+    const sending = new Promise<SendOutcome>((done) => {
+      resolve = done;
+    });
+    const storage = memoryStorage();
+    const queue = createAnswerQueue({ key: "k", storage, send: () => sending });
+    const queued = queue.enqueue(answer("c1"));
+    await Promise.resolve();
+    queue.clear();
+    resolve({ status: "failed", retryAt: Date.now() + 10_000 });
+    expect(await queued).toBe(true);
+    expect(queue.retryAt()).toBe(0);
+    expect(storage.data.has("k")).toBe(false);
+  });
+  it("keeps a late retry hint after the only in-flight card is deleted", async () => {
+    vi.spyOn(Date, "now").mockReturnValue(10_000);
+    let resolve: (outcome: SendOutcome) => void = () => undefined;
+    const sending = new Promise<SendOutcome>((done) => {
+      resolve = done;
+    });
+    const storage = memoryStorage();
+    const queue = createAnswerQueue({ key: "k", storage, send: () => sending });
+    const queued = queue.enqueue(answer("c1"));
+    await Promise.resolve();
+    queue.removeCard("c1");
+    resolve({ status: "failed", retryAt: 20_000 });
+    expect(await queued).toBe(false);
+    expect(queue.pending()).toStrictEqual([]);
+    expect(
+      createAnswerQueue({
+        key: "k",
+        storage,
+        send: () => Promise.resolve("sent"),
+      }).retryAt(),
+    ).toBe(20_000);
+    vi.restoreAllMocks();
+  });
   it("retains a deferred finish without pending answers across reload, until explicitly cleared", () => {
     const storage = memoryStorage();
     const sender = scriptedSender();
@@ -133,6 +171,11 @@ describe("createAnswerQueue", () => {
     expect(sender.sent).toStrictEqual(["c1"]);
     reloaded.removeCard("c2");
     expect(await reloaded.flush()).toBe(true);
+    expect(reloaded.retryAt()).toBe(20_000);
+    expect(createAnswerQueue({ key: "k", storage, send: sender.send }).retryAt()).toBe(
+      20_000,
+    );
+    reloaded.clear();
     expect(storage.data.has("k")).toBe(false);
     vi.restoreAllMocks();
   });
@@ -393,6 +436,22 @@ describe("flushEarlierRounds", () => {
   const stored = (...cards: string[]): string =>
     JSON.stringify(cards.map((cardId) => answer(cardId)));
 
+  it("retains an earlier empty deferred queue until its retry deadline expires", async () => {
+    let now = 10_000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const storage = listed({
+      "drill-answers:r": JSON.stringify({ answers: [], retryAt: 20_000 }),
+    });
+    const sender = scriptedSender();
+    const options = { currentId: "new", send: sender.send, storage };
+    expect(await flushEarlierRounds(options)).toBe(false);
+    expect(storage.data.has("drill-answers:r")).toBe(true);
+    expect(sender.sent).toStrictEqual([]);
+    now = 20_000;
+    expect(await flushEarlierRounds(options)).toBe(true);
+    expect(storage.data.has("drill-answers:r")).toBe(false);
+    vi.restoreAllMocks();
+  });
   it("sends an earlier round's answers under their fixed ids and clears its key", async () => {
     const storage = listed({ "drill-answers:r": stored("c1", "c2") });
     const sent: string[] = [];

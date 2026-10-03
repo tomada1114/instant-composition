@@ -94,7 +94,8 @@ export async function flushEarlierRounds(options: {
     if (pending === undefined) {
       const queue = createAnswerQueue({ key, send, storage });
       if (queue.pending().length === 0) {
-        queue.clear();
+        if (Date.now() < queue.retryAt()) empty = false;
+        else queue.clear();
         continue;
       }
       pending = queue.flush().finally(() => {
@@ -131,6 +132,7 @@ export function createAnswerQueue(options: {
   let pending = loaded.answers;
   let retryAt = loaded.retryAt;
   let chain: Promise<boolean> = Promise.resolve(true);
+  let generation = 0;
 
   function persist(): void {
     try {
@@ -146,14 +148,13 @@ export function createAnswerQueue(options: {
     while (pending[0] !== undefined) {
       if (Date.now() < retryAt) return false;
       const answer = pending[0];
+      const epoch = generation;
       const outcome = await send(answer);
+      if (epoch !== generation) continue;
       if (outcome === "failed" || typeof outcome === "object") {
         retryAt = typeof outcome === "object" ? outcome.retryAt : 0;
         persist();
-        if (
-          pending.some((value) => value.id === answer.id) ||
-          (pending.length > 0 && Date.now() < retryAt)
-        )
+        if (pending.some((value) => value.id === answer.id) || Date.now() < retryAt)
           return false;
       }
       retryAt = 0;
@@ -184,10 +185,10 @@ export function createAnswerQueue(options: {
     flush: schedule,
     removeCard(cardId) {
       pending = pending.filter((answer) => answer.cardId !== cardId);
-      if (pending.length === 0) retryAt = 0;
       persist();
     },
     clear() {
+      generation += 1;
       retryAt = 0;
       pending = [];
       persist();
