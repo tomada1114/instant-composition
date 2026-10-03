@@ -62,16 +62,19 @@ export async function requestVocabSession(
 export async function requestVocabFinish(
   sessionId: string,
   pending: readonly AnswerInput[],
+  notBefore = 0,
 ): Promise<Result<VocabSummary, ApiError>> {
+  if (Date.now() < notBefore) return err({ code: "ERR_NETWORK", retryAt: notBefore });
   const size = TUNING.maxRoundAnswers;
   const answers = pending.map(answerOf);
   const last = Math.max(0, Math.ceil(answers.length / size) - 1) * size;
   for (let from = 0; from < last; from += size) {
-    if (
-      (await recordVocabAnswers(sessionId, answers.slice(from, from + size))) ===
-      "failed"
-    )
-      return err({ code: "ERR_NETWORK" });
+    const sent = await recordVocabAnswers(sessionId, answers.slice(from, from + size));
+    if (sent !== "sent")
+      return err({
+        code: "ERR_NETWORK",
+        ...(typeof sent === "object" ? { retryAt: sent.retryAt } : {}),
+      });
   }
   return finishVocabSession(sessionId, answers.slice(last));
 }

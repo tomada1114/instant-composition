@@ -84,7 +84,7 @@ export function DrillSession({
   const finish = useRoundFinish({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",
-    unrecorded: () => queue.pending(),
+    queue,
     onDone: (summary) => {
       queue.clear();
       if (sound) browserSound.play(roundSound(summary));

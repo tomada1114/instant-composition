@@ -1,6 +1,6 @@
 import type { SendOutcome } from "../lib/endpoints";
 import type { AnswerInput } from "./drill-state";
-import { readAnswer } from "./stored-answer";
+import { queueText, readQueue } from "./stored-queue";
 
 /** The part of `sessionStorage` the queue uses. */
 export interface QueueStorage {
@@ -11,25 +11,16 @@ export interface QueueStorage {
 
 export interface AnswerQueue {
   pending(): readonly AnswerInput[];
+  retryAt(): number;
+  /** Wait for sends already scheduled without starting another attempt. */
+  settled(): Promise<void>;
+  deferUntil(deadline: number): void;
   /** Queues `answer` and sends everything pending; `true` when nothing is left. */
   enqueue(answer: AnswerInput): Promise<boolean>;
   flush(): Promise<boolean>;
   clear(): void;
   /** For a successfully deleted card only: remove its unsent answers, preserving every other answer. */
   removeCard(cardId: string): void;
-}
-
-function load(storage: QueueStorage | undefined, key: string): AnswerInput[] {
-  try {
-    const raw = storage?.getItem(key);
-    if (raw === null || raw === undefined) return [];
-    const parsed: unknown = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    const answers = parsed.map(readAnswer);
-    return answers.every((answer) => answer !== undefined) ? answers : [];
-  } catch {
-    return [];
-  }
 }
 
 /**
@@ -103,7 +94,8 @@ export async function flushEarlierRounds(options: {
     if (pending === undefined) {
       const queue = createAnswerQueue({ key, send, storage });
       if (queue.pending().length === 0) {
-        queue.clear();
+        if (Date.now() < queue.retryAt()) empty = false;
+        else queue.clear();
         continue;
       }
       pending = queue.flush().finally(() => {
@@ -136,13 +128,17 @@ export function createAnswerQueue(options: {
   readonly storage?: QueueStorage | undefined;
 }): AnswerQueue {
   const { key, send, storage } = options;
-  let pending = load(storage, key);
+  const loaded = readQueue(() => storage?.getItem(key));
+  let pending = loaded.answers;
+  let retryAt = loaded.retryAt;
   let chain: Promise<boolean> = Promise.resolve(true);
+  let generation = 0;
 
   function persist(): void {
     try {
-      if (pending.length === 0) storage?.removeItem(key);
-      else storage?.setItem(key, JSON.stringify(pending));
+      const text = queueText(pending, retryAt);
+      if (text === undefined) storage?.removeItem(key);
+      else storage?.setItem(key, text);
     } catch {
       // Storage may be full or blocked; the queue in memory still holds the answers.
     }
@@ -150,10 +146,18 @@ export function createAnswerQueue(options: {
 
   async function drain(): Promise<boolean> {
     while (pending[0] !== undefined) {
+      if (Date.now() < retryAt) return false;
       const answer = pending[0];
+      const epoch = generation;
       const outcome = await send(answer);
-      if (outcome === "failed" && pending.some((value) => value.id === answer.id))
-        return false;
+      if (epoch !== generation) continue;
+      if (outcome === "failed" || typeof outcome === "object") {
+        retryAt = typeof outcome === "object" ? outcome.retryAt : 0;
+        persist();
+        if (pending.some((value) => value.id === answer.id) || Date.now() < retryAt)
+          return false;
+      }
+      retryAt = 0;
       pending = pending.filter((value) => value.id !== answer.id);
       persist();
     }
@@ -167,6 +171,12 @@ export function createAnswerQueue(options: {
 
   return {
     pending: () => pending,
+    retryAt: () => retryAt,
+    settled: () => chain.then(() => undefined),
+    deferUntil(deadline) {
+      retryAt = Math.max(retryAt, deadline);
+      persist();
+    },
     enqueue(answer) {
       pending = [...pending, answer];
       persist();
@@ -178,6 +188,8 @@ export function createAnswerQueue(options: {
       persist();
     },
     clear() {
+      generation += 1;
+      retryAt = 0;
       pending = [];
       persist();
     },

@@ -15,6 +15,7 @@ import type {
   VocabSummary,
 } from "../openapi";
 import { call, errorCode, send, type ApiError, type SendOutcome } from "./api-call";
+import { sendAnswerBatch } from "./answer-send";
 import { err, ok, type Result } from "./result";
 
 /** The vocabulary queue, categories and tomorrow's due count. */
@@ -44,7 +45,7 @@ export function finishVocabSession(
   } satisfies FinishVocabSessionData);
 }
 
-/** Only network, server and conflict failures remain queued for resend. */
+/** Temporary and unknown failures remain queued; only explicit contract refusals are final. */
 export async function recordVocabAnswers(
   sessionId: string,
   answers: readonly VocabAnswer[],
@@ -54,16 +55,13 @@ export async function recordVocabAnswers(
     path: { sessionId },
     body: { answers: [...answers] },
   } satisfies RecordVocabAnswersData;
-  try {
-    const response = await send("POST", data);
-    if (response.ok) return "sent";
-    if (response.status >= 500) return "failed";
-    return errorCode(await response.json().catch(() => null)) === "ERR_CONFLICT"
-      ? "failed"
-      : "rejected";
-  } catch {
-    return "failed";
-  }
+  return sendAnswerBatch(data, {
+    ERR_BAD_REQUEST: 400,
+    ERR_PAYLOAD_TOO_LARGE: 413,
+    ERR_FORBIDDEN: 403,
+    ERR_SESSION_NOT_FOUND: 404,
+    ERR_SESSION_CLOSED: 409,
+  });
 }
 
 /** Deletes an owned card and its progress, accepting the contract's bodyless 204. */

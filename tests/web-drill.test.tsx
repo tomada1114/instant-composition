@@ -1203,9 +1203,12 @@ describe("the drill after a reload", () => {
     expect(
       screen.getByRole("heading", { name: ja.Summary.title.today }),
     ).toBeInTheDocument();
-    expect(posted(calls, FINISH).map(ids)).toStrictEqual([
-      ["round-1:f:c1", "round-1:f:c2"],
+    expect(posted(calls, ANSWERS).flatMap(ids)).toStrictEqual([
+      "round-1:f:c1",
+      "round-1:f:c2",
     ]);
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([[]]);
+    expect(sessionStorage.getItem("drill-answers:round-1")).toBeNull();
   });
 
   it("drops the re-ask an unsaved miss had waiting, and sends the miss itself", async () => {

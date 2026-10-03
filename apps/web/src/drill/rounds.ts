@@ -61,13 +61,19 @@ function answerOf(input: AnswerInput): Answer {
 export async function requestFinish(
   roundId: string,
   unrecorded: readonly AnswerInput[],
+  notBefore = 0,
 ): Promise<Result<RoundSummary, ApiError>> {
+  if (Date.now() < notBefore) return err({ code: "ERR_NETWORK", retryAt: notBefore });
   const size = TUNING.maxRoundAnswers;
   const answers = unrecorded.map(answerOf);
   const last = Math.max(0, Math.ceil(answers.length / size) - 1) * size;
   for (let from = 0; from < last; from += size) {
     const sent = await recordAnswers(roundId, answers.slice(from, from + size));
-    if (sent === "failed") return err({ code: "ERR_NETWORK" });
+    if (sent !== "sent")
+      return err({
+        code: "ERR_NETWORK",
+        ...(typeof sent === "object" ? { retryAt: sent.retryAt } : {}),
+      });
   }
   return finishRound(roundId, answers.slice(last));
 }
