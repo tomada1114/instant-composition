@@ -60,6 +60,7 @@ const DETAIL = {
 
 const ITEM = {
   item: true,
+  revision: true,
   memory: true,
   fsrs: true,
   okDays: true,

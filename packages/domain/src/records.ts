@@ -62,6 +62,8 @@ export interface ReviewEntry {
   /** The round, or another activity's session. */
   readonly sessionId: string;
   readonly answeredAt: number;
+  /** The item's causal revision when this review moves it; absent on legacy logs. */
+  readonly revision?: number;
   /** The session's practice day, not the wall-clock day of the answer. */
   readonly day: DayKey;
   readonly outcome: Outcome;
@@ -95,6 +97,8 @@ export interface FirstPassMark {
 /** One item's projection: its schedule and what mastery and growth read. */
 export interface ItemProgress {
   readonly item: ItemRef;
+  /** Incremented with each state-changing review in the same atomic commit. */
+  readonly revision?: number;
   /**
    * The Leitner state of an item seen before FSRS, kept as stored. Only its
    * presence is read: the item was seen then, so it is not new.

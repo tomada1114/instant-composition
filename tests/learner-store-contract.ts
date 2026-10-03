@@ -275,6 +275,26 @@ export function describeLearnerStoreContract(
       expect(current.ok).toBe(true);
     });
 
+    it("keeps causal item revisions in the log and projection through an atomic commit", async () => {
+      const review = makeReview({ revision: 1 });
+      const item = makeItem({ revision: 1 });
+      const committed = await store.commit({
+        puts: [
+          { type: "review", value: review },
+          { type: "item", value: item },
+        ],
+        updates: [],
+        expect: [],
+      });
+
+      expect(committed.ok).toBe(true);
+      expect(await store.reviewsOf("r1")).toStrictEqual([review]);
+      expect((await store.items()).get("c1")).toStrictEqual({
+        value: item,
+        version: 1,
+      });
+    });
+
     it("reads a session's reviews by time and then by id, and no other session's", async () => {
       const reviews = [
         makeReview({ id: "b", answeredAt: 5 }),

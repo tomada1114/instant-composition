@@ -258,6 +258,104 @@ describe("reviewAnswer", () => {
 });
 
 describe("replayItems", () => {
+  it.each([
+    ["reversed answer times", 50, 20],
+    ["equal times with reversed ids", 10, 10],
+  ] as const)("follows state changes with %s", (_, firstTime, nextTime) => {
+    const { progress, log } = folded([
+      answer({ id: "z", answeredAt: firstTime }),
+      answer({ id: "a", sessionId: "r2", day: "2026-09-23", answeredAt: nextTime }),
+      answer({ id: "retry", pass: "retry", day: "2026-09-23", answeredAt: 1 }),
+    ]);
+
+    expect(progress?.fsrs?.reps).toBe(2);
+    expect(log.map((entry) => entry.revision)).toStrictEqual([1, 2, undefined]);
+    expect(progress?.revision).toBe(2);
+    expect(replayItems([...log].reverse()).get("c1")).toStrictEqual(progress);
+  });
+
+  it("follows a legacy FSRS state chain when client times run backwards", () => {
+    const after = {
+      ...FIRST_GOOD,
+      reps: 2,
+      lastDay: "2026-09-23",
+      dueDay: "2026-10-03",
+    };
+    const first = makeReview({ id: "z", answeredAt: 50 });
+    const next = makeReview({
+      id: "a",
+      sessionId: "r2",
+      day: "2026-09-23",
+      answeredAt: 20,
+      fsrs: { before: FIRST_GOOD, after },
+    });
+
+    expect(replayItems([next, first]).get("c1")).toMatchObject({
+      fsrs: after,
+      last: { sessionId: "r2" },
+      previous: { sessionId: "r1" },
+    });
+  });
+
+  it("refuses ambiguous legacy histories instead of choosing by time", () => {
+    expect(() =>
+      replayItems([makeReview(), makeReview({ id: "fork", answeredAt: 3_000 })]),
+    ).toThrow(RangeError);
+  });
+
+  it("refuses a disconnected legacy state chain", () => {
+    const before = { ...FIRST_GOOD, difficulty: 9 };
+    const after = { ...before, reps: 2, lastDay: "2026-09-23" };
+    expect(() =>
+      replayItems([
+        makeReview(),
+        makeReview({ id: "broken", fsrs: { before, after } }),
+      ]),
+    ).toThrow(RangeError);
+  });
+
+  it.each([0, 2, 1.5, Number.MAX_SAFE_INTEGER + 1])(
+    "refuses an invalid first item revision %s",
+    (revision) => {
+      expect(() => replayItems([makeReview({ revision })])).toThrow(RangeError);
+    },
+  );
+
+  it("refuses a missing revision after numbered state changes", () => {
+    const first = makeReview({ revision: 1 });
+    const after = { ...FIRST_GOOD, reps: 2, lastDay: "2026-09-23" };
+    expect(() =>
+      replayItems([
+        first,
+        makeReview({ id: "legacy", fsrs: { before: FIRST_GOOD, after } }),
+      ]),
+    ).toThrow(RangeError);
+  });
+
+  it("follows a legacy Leitner chain before numbered FSRS reviews", () => {
+    const first = makeLeitnerReview({ id: "z", answeredAt: 50 });
+    const memory = {
+      box: 2,
+      dueDay: "2026-09-24",
+      lastDay: "2026-09-21",
+      seenCount: 2,
+    };
+    const next = makeLeitnerReview({
+      id: "a",
+      before: first.after,
+      after: memory,
+      day: "2026-09-21",
+      answeredAt: 10,
+    });
+    const fsrs = makeReview({ before: memory, after: memory, revision: 1 });
+
+    expect(replayItems([fsrs, next, first]).get("c1")).toMatchObject({
+      memory,
+      fsrs: FIRST_GOOD,
+      revision: 1,
+    });
+  });
+
   it("rebuilds from the log in time order whatever order it is handed, copying each state it logged", () => {
     const moved = {
       ...FIRST_GOOD,

@@ -103,9 +103,13 @@ their own:
   onto them. Each review logs the grade, `timedOut`, the seconds and the FSRS state
   before and after (`fsrs`), beside the `result` the figures count — said in time is
   hard or good not timed out, a weakness miss is again or timed out — so the reach,
-  weakness and growth code reads what it always read. A replay copies the stored state
-  rather than recomputing it, so a scheduler change applies from the next answer and
-  never rewrites the past.
+  weakness and growth code reads what it always read. State-changing composition reviews
+  and their item projections share a per-item causal revision in the same commit. Replay
+  follows the before/after state chain and validates revisions, including unambiguous
+  legacy Leitner and FSRS logs; a broken or ambiguous chain fails closed. Client answer
+  times order display and analysis alone. A replay copies the stored state rather than
+  recomputing it, so a scheduler change applies from the next answer and never rewrites
+  the past.
 - An item holds its FSRS state as `fsrs`; the Leitner `memory` of a card answered before
   FSRS stays in it, read only for its presence. A card with that history and no state is
   dealt in the review quota as not new, with a new card's intervals, and its next first
