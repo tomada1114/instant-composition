@@ -17,10 +17,21 @@ import path from "node:path";
 import process from "node:process";
 import { pathToFileURL } from "node:url";
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { CardsError } from "../scripts/cards/errors.mjs";
 import { withLock, LOCK_FILE, STALE_LOCK_MS } from "../scripts/cards/store.mjs";
 
 const source = pathToFileURL(path.resolve("scripts/cards/store.mjs")).href;
 const children = new Set<ChildProcessWithoutNullStreams>();
+function expectBusy(action: () => unknown): void {
+  try {
+    action();
+  } catch (error) {
+    expect(error).toBeInstanceOf(CardsError);
+    expect(error).toMatchObject({ code: "ERR_CARDS_BUSY" });
+    return;
+  }
+  expect.fail("Expected the content lock to refuse acquisition");
+}
 function aged(file: string): void {
   const old = new Date(Date.now() - STALE_LOCK_MS - 1000);
   utimesSync(file, old, old);
@@ -52,13 +63,13 @@ export function describeCardsLockContract(makeRoot: () => string): void {
           vi.spyOn(Date, "now").mockReturnValue(
             statSync(file).mtimeMs + STALE_LOCK_MS + 1,
           );
-          expect(() =>
+          expectBusy(() =>
             withLock(
               root,
               () => undefined,
               () => undefined,
             ),
-          ).toThrow(/Another cards/u);
+          );
           expect(readFileSync(file, "utf8")).toBe(original);
         },
       );
@@ -105,13 +116,13 @@ export function describeCardsLockContract(makeRoot: () => string): void {
         );
         aged(file);
         const original = readFileSync(file, "utf8");
-        expect(() =>
+        expectBusy(() =>
           withLock(
             root,
             () => undefined,
             () => undefined,
           ),
-        ).toThrow(/Another cards/u);
+        );
         expect(readFileSync(file, "utf8")).toBe(original);
       },
     );
@@ -132,13 +143,13 @@ export function describeCardsLockContract(makeRoot: () => string): void {
         writeFileSync(file, replacement);
         throw Object.assign(new Error("gone"), { code: "ESRCH" });
       });
-      expect(() =>
+      expectBusy(() =>
         withLock(
           root,
           () => undefined,
           () => undefined,
         ),
-      ).toThrow(/Another cards/u);
+      );
       expect(readFileSync(file, "utf8")).toBe(replacement);
     });
     it("retains ownership when process liveness cannot be checked", () => {
@@ -152,13 +163,13 @@ export function describeCardsLockContract(makeRoot: () => string): void {
       vi.spyOn(process, "kill").mockImplementation(() => {
         throw Object.assign(new Error("permission denied"), { code: "EPERM" });
       });
-      expect(() =>
+      expectBusy(() =>
         withLock(
           root,
           () => undefined,
           () => undefined,
         ),
-      ).toThrow(/Another cards/u);
+      );
       expect(existsSync(file)).toBe(true);
     });
     it("leaves an interrupted acquisition guard untouched and fails fast", () => {
@@ -166,13 +177,13 @@ export function describeCardsLockContract(makeRoot: () => string): void {
       const file = path.join(root, `${LOCK_FILE}.claim`);
       writeFileSync(file, "partial metadata");
       aged(file);
-      expect(() =>
+      expectBusy(() =>
         withLock(
           root,
           () => undefined,
           () => undefined,
         ),
-      ).toThrow(/Another cards/u);
+      );
       expect(readFileSync(file, "utf8")).toBe("partial metadata");
       expect(existsSync(path.join(root, LOCK_FILE))).toBe(false);
     });
@@ -181,14 +192,32 @@ export function describeCardsLockContract(makeRoot: () => string): void {
       const target = path.join(root, "target");
       writeFileSync(target, "unknown");
       symlinkSync(target, path.join(root, LOCK_FILE));
-      expect(() =>
+      expectBusy(() =>
         withLock(
           root,
           () => undefined,
           () => undefined,
         ),
-      ).toThrow(/Another cards/u);
+      );
       expect(readFileSync(target, "utf8")).toBe("unknown");
+    });
+    it("refuses a FIFO lock without blocking or removing it", () => {
+      const root = makeRoot();
+      const file = path.join(root, LOCK_FILE);
+      execFileSync("mkfifo", [file]);
+      const errors = pathToFileURL(path.resolve("scripts/cards/errors.mjs")).href;
+      const code = `import { withLock } from ${JSON.stringify(source)};
+        import { CardsError } from ${JSON.stringify(errors)};
+        try { withLock(${JSON.stringify(root)}, () => {}, () => {}); process.exit(1); }
+        catch (error) { if (!(error instanceof CardsError) || error.code !== "ERR_CARDS_BUSY") throw error; process.stdout.write(error.code); }`;
+      expect(
+        execFileSync(process.execPath, ["--input-type=module", "-e", code], {
+          timeout: 2000,
+          encoding: "utf8",
+        }),
+      ).toBe("ERR_CARDS_BUSY");
+      expect(statSync(file).isFIFO()).toBe(true);
+      expect(existsSync(`${file}.claim`)).toBe(false);
     });
     it("recovers a confirmed dead child's old lock and releases its own", () => {
       const root = makeRoot();

@@ -87,7 +87,10 @@ function readOwner(value) {
 function observe(file) {
   let fd;
   try {
-    fd = openSync(file, constants.O_RDONLY | constants.O_NOFOLLOW);
+    fd = openSync(
+      file,
+      constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK,
+    );
     const identity = fstatSync(fd);
     if (!identity.isFile()) return undefined;
     return { identity, owner: readOwner(parseJson(readFileSync(fd, "utf8"))) };
