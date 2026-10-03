@@ -9,13 +9,13 @@ export {
   type AnswerQueue,
   type ListedStorage,
   type QueueStorage,
-} from "./drill/answer-queue";
+} from "./study/answer-queue";
 export { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./drill/answer-sync";
 export { CardBack, CardFront } from "./drill/flashcard";
 export { IntroScreen } from "./drill/intro-screen";
 export { PauseDialog } from "./drill/pause-dialog";
 export { TimerBar } from "./drill/timer-bar";
-export { TopStrip } from "./drill/top-strip";
+export { TopStrip } from "./study/top-strip";
 export { drillReducer } from "./drill/drill-machine";
 export {
   answerId,
@@ -31,17 +31,20 @@ export {
   type ShownCard,
 } from "./drill/drill-state";
 export { initDrill } from "./drill/drill-init";
-export { keyAction, type DrillKeyAction, type KeyPress } from "./drill/keys";
-export { playMotion, prefersReducedMotion } from "./drill/motion";
+export {
+  keyAction,
+  type StudyKeyAction as DrillKeyAction,
+  type KeyPress,
+} from "./study/keys";
+export { playMotion, prefersReducedMotion } from "./study/motion";
 export { requestFinish, requestRound, roundKindFrom, sendAnswer } from "./drill/rounds";
 export {
   browserSound,
   createSoundPlayer,
-  gradeSound,
-  roundSound,
   type SoundName,
   type ToneContext,
-} from "./drill/sound";
+} from "./study/sound";
+export { gradeSound, roundSound } from "./drill/sound";
 export {
   feedbackMs,
   useDrillClock,
@@ -159,3 +162,9 @@ export type {
   VocabSession,
   VocabSummary,
 } from "./openapi";
+
+export { initStudy, type StudyInit } from "./study/study-init";
+export { studyReducer } from "./study/study-machine";
+export type { StudyEvent, StudyState } from "./study/study-state";
+export { useQueuedStudy } from "./study/answer-sync";
+export { useStudyClock, useStudyKeys } from "./study/use-study";

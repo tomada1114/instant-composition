@@ -1,4 +1,4 @@
-import type { AnswerInput } from "./drill-state";
+import type { AnswerInput } from "./study-state";
 import { readAnswer } from "./stored-answer";
 
 export interface StoredQueue {

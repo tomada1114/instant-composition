@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, type ReactElement, type ReactNode } from "react";
 import { useTranslations } from "use-intl";
 
-import { prefersReducedMotion } from "../drill/motion";
+import { prefersReducedMotion } from "../study/motion";
 import { FocusStrip } from "../lib/frame";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import { cn } from "../lib/utils";

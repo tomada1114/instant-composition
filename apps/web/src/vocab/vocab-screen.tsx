@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { browserSound } from "../drill/sound";
+import { browserSound } from "../study/sound";
 import { useShellNav } from "../lib/frame";
 import { useEscapeHome } from "../lib/use-escape-home";
 import { usePrimaryKey } from "../lib/use-primary-key";

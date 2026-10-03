@@ -196,6 +196,45 @@ function inZone(resolved: string, tree: string): boolean {
   return resolved === tree || resolved.startsWith(`${tree}/`);
 }
 
+describe("the shared study surface owns no activity and vocabulary owns no drill internals", () => {
+  it.each(["vocab", "study"])("keeps %s outside drill's private modules", (area) => {
+    const modules = sourceModules.filter((module) =>
+      inZone(module.file, `apps/web/src/${area}`),
+    );
+    expect(modules.length).toBeGreaterThan(0);
+    const offenders = modules.flatMap(({ file, specifiers }) =>
+      specifiers
+        .filter((specifier) =>
+          inZone(
+            path.posix.normalize(path.posix.join(path.posix.dirname(file), specifier)),
+            "apps/web/src/drill",
+          ),
+        )
+        .map((specifier) => `${file}: ${specifier}`),
+    );
+    expect(offenders).toStrictEqual([]);
+  });
+
+  it("keeps shared study modules independent of vocabulary and talk", () => {
+    const offenders = sourceModules
+      .filter((module) => inZone(module.file, "apps/web/src/study"))
+      .flatMap(({ file, specifiers }) =>
+        specifiers
+          .filter((specifier) => {
+            const resolved = path.posix.normalize(
+              path.posix.join(path.posix.dirname(file), specifier),
+            );
+            return (
+              inZone(resolved, "apps/web/src/vocab") ||
+              inZone(resolved, "apps/web/src/talk")
+            );
+          })
+          .map((specifier) => `${file}: ${specifier}`),
+      );
+    expect(offenders).toStrictEqual([]);
+  });
+});
+
 // --- the workspace packages --------------------------------------------------
 
 /**

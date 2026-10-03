@@ -15,9 +15,9 @@ import {
   type DrillState,
 } from "./drill-state";
 import { CardBack, CardFront } from "./flashcard";
-import type { DrillKeyAction } from "./keys";
+import type { StudyKeyAction as DrillKeyAction } from "../study/keys";
 import { TimerBar } from "./timer-bar";
-import { TopStrip } from "./top-strip";
+import { TopStrip } from "../study/top-strip";
 
 type OnAction = (action: DrillKeyAction) => void;
 

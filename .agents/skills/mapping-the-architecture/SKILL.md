@@ -243,6 +243,14 @@ cookie needs no CORS. It has no server of its own, which is why server rendering
 second data layer would be a new architecture rather than a feature. **REQUIRED:**
 `building-web-screens`; the look is `designing-ui`'s.
 
+Drill and vocabulary share the client-only `study/` session machine, re-asks, durable
+answer queue, keyboard routing and navigation guard. Drill adds its timeout, fast
+feedback, combo and placement adapter; vocabulary starts a study session directly
+without drill timing configuration. Activity-specific card rendering, HTTP payloads and
+finish calls stay in their own directories. The queue retains its existing storage keys
+and answer format across reloads. The import graph keeps vocabulary out of drill
+internals and keeps study independent of activities; scheduling remains on the server.
+
 The talk's voice input is the one data flow that leaves the browser for a party other
 than the API: Chrome's Web Speech API, in its default mode, sends the microphone's audio
 to Google's speech service and hands the page text, which the client sends as typed text

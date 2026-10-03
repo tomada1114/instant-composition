@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react";
 import { useReducer } from "react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, expectTypeOf, it, vi } from "vitest";
 
 import {
   createAnswerQueue,
@@ -9,6 +9,7 @@ import {
   initDrill,
   useAnswerQueue,
   useQueuedDrill,
+  useQueuedStudy,
   useDrillClock,
   useDrillKeys,
   useRoundFinish,
@@ -174,6 +175,24 @@ describe("useDrillKeys", () => {
 });
 
 describe("useQueuedDrill", () => {
+  it("preserves a drill adapter's concrete state through shared synchronization", async () => {
+    const queue = createAnswerQueue({
+      key: "generic-study",
+      send: () => Promise.resolve("failed"),
+    });
+    const { result } = renderHook(() =>
+      useQueuedStudy(queue, fresh, vi.fn(), drillReducer),
+    );
+    expectTypeOf(result.current[0]).toEqualTypeOf<DrillState>();
+    await act(async () => {
+      gradeOk(result.current[1], 0);
+      await queue.settled();
+    });
+    expect(result.current[0].combo).toBe(1);
+    expect(result.current[0].limits).toStrictEqual({ c1: 7000, c2: 7000 });
+    expect(queue.pending()).toHaveLength(1);
+  });
+
   /** Shows, flips and grades the current card ○, as one burst of events. */
   function gradeOk(dispatch: (event: DrillEvent) => void, at: number): void {
     dispatch({ type: "shown", at });

@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { KeyLegend } from "../drill/pause-dialog";
+import { KeyLegend } from "../study/key-legend";
 import type { GradeKeyTrio } from "../openapi";
 import { Button } from "../ui/button";
 import { Dialog } from "../ui/dialog";

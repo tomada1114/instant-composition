@@ -1,119 +1,31 @@
 import { useEffect, useRef, useState, type Dispatch } from "react";
-
-import { TUNING } from "../lib/tuning";
-import type { Grade, GradeKeyTrio, RoundSummary } from "../openapi";
-import { currentCard, type DrillEvent, type DrillState } from "./drill-state";
+import type { RoundSummary } from "../openapi";
+import { useStudyClock } from "../study/use-study";
+import type { DrillEvent, DrillState } from "./drill-state";
 import { requestFinish } from "./rounds";
-import { keyAction, type DrillKeyAction } from "./keys";
-import type { AnswerQueue } from "./answer-queue";
-import { queuedFinish } from "./queued-finish";
+import type { AnswerQueue } from "../study/answer-queue";
+import { queuedFinish } from "../study/queued-finish";
 
-/** How often the front's clock is read; also the timer bar's step. */
-const TICK_MS = 100;
+export {
+  feedbackMs,
+  useStudyKeys as useDrillKeys,
+  type StudyAction as DrillAction,
+} from "../study/use-study";
 
-/** What the page asks of the drill: a key's action, or the page going hidden. */
-export type DrillAction = DrillKeyAction | { readonly type: "hide" };
-
-/** How long a grade's feedback holds before the next front; never over 320 ms. */
-export function feedbackMs(feedback: {
-  readonly grade: Grade;
-  readonly fast: boolean;
-}): number {
-  if (feedback.grade === "again") return 160;
-  return feedback.fast ? TUNING.feedbackMaxMs : 240;
-}
-
-/**
- * Feeds the reducer its clock: `shown` on the frame the front is drawn, a
- * tick while it runs, and `advance` once a grade's feedback is over.
- */
-export function useDrillClock(
-  state: DrillState,
-  dispatch: Dispatch<DrillEvent>,
-  timed = true,
-): void {
-  const { phase, paused } = state;
-  const card = currentCard(state);
-  const cardKey = card === undefined ? "" : `${String(card.ask)}:${card.cardId}`;
-  const waiting = phase.kind === "front" && phase.runningSince === null && !paused;
-  const running = phase.kind === "front" && phase.runningSince !== null && !paused;
-  const hold = phase.kind === "feedback" ? feedbackMs(phase) : undefined;
-
+/** Adds only timed drill ticks to the shared front and feedback clock. */
+export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>): void {
+  useStudyClock(state, dispatch);
+  const running =
+    state.phase.kind === "front" && state.phase.runningSince !== null && !state.paused;
   useEffect(() => {
-    if (!waiting) return undefined;
-    const frame = requestAnimationFrame(() => {
-      dispatch({ type: "shown", at: performance.now() });
-    });
-    return () => {
-      cancelAnimationFrame(frame);
-    };
-  }, [waiting, cardKey, dispatch]);
-
-  useEffect(() => {
-    if (!running || !timed) return undefined;
+    if (!running) return undefined;
     const timer = setInterval(() => {
       dispatch({ type: "tick", at: performance.now() });
-    }, TICK_MS);
+    }, 100);
     return () => {
       clearInterval(timer);
     };
-  }, [running, dispatch, timed]);
-
-  useEffect(() => {
-    if (hold === undefined) return undefined;
-    const timer = setTimeout(() => {
-      dispatch({ type: "advance", at: performance.now() });
-    }, hold);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [hold, cardKey, dispatch]);
-}
-
-/** A key typed into a field is text, not the drill's; only Escape still pauses from one. */
-function inField(event: KeyboardEvent): boolean {
-  return (
-    event.key !== "Escape" &&
-    event.target instanceof Element &&
-    event.target.closest("input, textarea") !== null
-  );
-}
-
-/**
- * Routes the drill's keys to `onAction`, grading with `gradeKeys`, and pauses
- * when the page is hidden. A page shown again stays paused: the dialog waits
- * for "continue".
- */
-export function useDrillKeys(
-  state: DrillState,
-  gradeKeys: GradeKeyTrio,
-  onAction: (action: DrillAction) => void,
-): void {
-  const latest = useRef({ state, gradeKeys, onAction });
-  useEffect(() => {
-    latest.current = { state, gradeKeys, onAction };
-  });
-
-  useEffect(() => {
-    function onKey(event: KeyboardEvent): void {
-      if (event.repeat || event.isComposing) return;
-      if (event.metaKey || event.ctrlKey || event.altKey || inField(event)) return;
-      const action = keyAction(latest.current.state, event, latest.current.gradeKeys);
-      if (action === undefined) return;
-      event.preventDefault();
-      latest.current.onAction(action);
-    }
-    function onVisibility(): void {
-      if (document.visibilityState === "hidden")
-        latest.current.onAction({ type: "hide" });
-    }
-    window.addEventListener("keydown", onKey);
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, []);
+  }, [running, dispatch]);
 }
 
 export type FinishState =

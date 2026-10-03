@@ -1,13 +1,13 @@
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { currentCard, type DrillState } from "../drill/drill-state";
+import { currentCard, type StudyState } from "../study/study-state";
 import type { VocabCard } from "../openapi";
 
 /** English alone carries its language in the live Japanese announcement. */
 export function VocabAnnouncement({
   state,
   card,
-}: Readonly<{ state: DrillState; card: VocabCard | undefined }>): ReactElement {
+}: Readonly<{ state: StudyState; card: VocabCard | undefined }>): ReactElement {
   const drill = useTranslations("Drill");
   const vocab = useTranslations("Vocab");
   const phase = state.phase;

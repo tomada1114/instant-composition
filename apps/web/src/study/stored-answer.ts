@@ -1,4 +1,4 @@
-import type { AnswerInput } from "./drill-state";
+import type { AnswerInput } from "./study-state";
 
 const PASSES: readonly unknown[] = ["first", "retry"];
 const GRADES: readonly unknown[] = ["again", "hard", "good"];

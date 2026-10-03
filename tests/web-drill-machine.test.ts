@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  studyReducer,
+  type StudyState,
   answerId,
   currentCard,
   type DrillEvent,
@@ -562,9 +564,9 @@ describe("answer ids", () => {
 
 describe("untimed card removal", () => {
   it("removes all re-asks and fresh occurrences of the current card without grading or erasing history", () => {
-    const back = flipAfter({ ...init(), untimed: true }, 0, 1000);
+    const back = flipAfter(init(), 0, 1000);
     const recorded = grade(back, "again", 1200).answers;
-    const state: DrillState = {
+    const state: StudyState = {
       ...back,
       fresh: ["c1", "c2", "c3"],
       answers: recorded,
@@ -575,7 +577,7 @@ describe("untimed card removal", () => {
       ],
       paused: true,
     };
-    const next = drillReducer(state, { type: "remove", cardId: "c1" });
+    const next = studyReducer(state, { type: "remove", cardId: "c1" });
     expect(currentCard(next)?.cardId).toBe("c2");
     expect(next.fresh).toStrictEqual(["c3"]);
     expect(next.reAsks).toStrictEqual([{ cardId: "c2", due: 100 }]);
@@ -584,8 +586,8 @@ describe("untimed card removal", () => {
     expect(next.paused).toBe(false);
   });
   it("finishes when deleting the last card, without an answer", () => {
-    const back = flipAfter({ ...init({ deck: ["c1"] }), untimed: true }, 0, 1000);
-    const next = drillReducer(back, { type: "remove", cardId: "c1" });
+    const back = flipAfter(init({ deck: ["c1"] }), 0, 1000);
+    const next = studyReducer(back, { type: "remove", cardId: "c1" });
     expect(next.phase.kind).toBe("finishing");
     expect(currentCard(next)).toBeUndefined();
     expect(next.answers).toStrictEqual([]);
@@ -593,11 +595,11 @@ describe("untimed card removal", () => {
   it("rejects timed removal, a stale card id, the front and already graded feedback", () => {
     const timed = flipAfter(init(), 0, 1000);
     expect(drillReducer(timed, { type: "remove", cardId: "c1" })).toBe(timed);
-    const back = { ...timed, untimed: true };
-    expect(drillReducer(back, { type: "remove", cardId: "c2" })).toBe(back);
-    const front = { ...init(), untimed: true };
-    expect(drillReducer(front, { type: "remove", cardId: "c1" })).toBe(front);
+    const back = timed;
+    expect(studyReducer(back, { type: "remove", cardId: "c2" })).toBe(back);
+    const front = init();
+    expect(studyReducer(front, { type: "remove", cardId: "c1" })).toBe(front);
     const feedback = grade(back, "good", 1500);
-    expect(drillReducer(feedback, { type: "remove", cardId: "c1" })).toBe(feedback);
+    expect(studyReducer(feedback, { type: "remove", cardId: "c1" })).toBe(feedback);
   });
 });

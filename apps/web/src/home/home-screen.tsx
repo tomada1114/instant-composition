@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 import { useFormatter, useTranslations } from "use-intl";
 
 import { markPressed } from "../drill/pressed";
-import { browserSound } from "../drill/sound";
+import { browserSound } from "../study/sound";
 import { useShellNav } from "../lib/frame";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import { cn } from "../lib/utils";
