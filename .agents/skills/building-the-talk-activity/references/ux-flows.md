@@ -27,7 +27,13 @@ The screen list and wireframes (W1 to W4, T) are in [ux-screens.md](ux-screens.m
 4. One turn (F2) is repeated 6 times.
 5. On turn 6, the partner closes while staying in role. It becomes W3h (the end), and
    the talk is saved.
-6. 「新しい会話」 ("new talk") goes back to step 2.
+6. A kept talk with a corrected turn asks once for vocabulary candidates under the end
+   marker. Select none initially; choosing a candidate enables secondary 「追加する」.
+   Adding updates the authoritative statuses; 「追加済み」 locks that candidate
+   and 「学習中」 remains selectable. A failed request offers only
+   explicit 「もう一度」; no correction or an empty response shows no card.
+7. 「新しい会話」 ("new talk") goes back to step 2, without asking old candidates.
+   Responses arriving after a new talk starts or the screen closes are ignored.
 
 ```
 [W2 会話のタブ] -> [始める] -> [用意しています] -> [W3 1 ターン目] -> … -> [6 ターン目の締め] -> [W3h おわり] -> [新しい会話]
@@ -86,6 +92,9 @@ The screen list and wireframes (W1 to W4, T) are in [ux-screens.md](ux-screens.m
                 ✕ から → [W3h おわり]　　タブ・戻るから → [その行き先]
 ```
 
+- From ✕, W3h waits for a successful save before asking for candidates; a save failure
+  shows its existing toast and asks for none. Ending to another destination asks for
+  none.
 - Reloading or the device discarding the page leaves the server's talk open until its
   expiry. Returning to `/talk` on the same browser reads it during W2's preparing state,
   restores the kept conversation and continues after the last kept turn; the interrupted

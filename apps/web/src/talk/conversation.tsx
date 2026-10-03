@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactElement } from "react";
+import { useEffect, useLayoutEffect, useRef, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { playMotion } from "../drill/motion";
@@ -6,6 +6,8 @@ import { cn } from "../lib/utils";
 import { Eyebrow } from "../ui/eyebrow";
 import { NoticeGlyph, RingGlyph } from "../ui/glyphs";
 import { TalkLine, WaitingLine } from "../ui/talk-line";
+import type { TalkCards } from "./use-talk-cards";
+import { TalkCandidates } from "./talk-candidates";
 import { TeacherLine } from "./teacher-line";
 import type { Talk, TalkTurn } from "./talk-state";
 
@@ -82,7 +84,10 @@ function TurnLines({
  * white and earlier ones muted. It alone scrolls, carried to its bottom edge
  * when a line appears, and each new line fades in.
  */
-export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
+export function Conversation({
+  talk,
+  cards,
+}: Readonly<{ talk: Talk; cards: TalkCards }>): ReactElement {
   const t = useTranslations("Talk");
   const scroller = useRef<HTMLDivElement>(null);
   const list = useRef<HTMLOListElement>(null);
@@ -102,6 +107,11 @@ export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
     const element = scroller.current;
     if (element !== null) element.scrollTop = element.scrollHeight;
   }, [talk]);
+
+  useLayoutEffect(() => {
+    const element = scroller.current;
+    if (element !== null) element.scrollTop = element.scrollHeight;
+  }, [cards.status, cards.candidates]);
 
   return (
     <div
@@ -136,6 +146,7 @@ export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
             <span aria-hidden className="h-px flex-1 bg-border" />
           </li>
         ) : null}
+        <TalkCandidates cards={cards} />
       </ol>
     </div>
   );

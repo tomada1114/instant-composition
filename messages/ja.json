@@ -255,6 +255,15 @@
     "announce": {
       "line": "{speaker}、{text}",
       "fine": "○、直しなし"
+    },
+    "cards": {
+      "title": "カードにする",
+      "failed": "候補を作れませんでした",
+      "retry": "もう一度",
+      "learning": "学習中",
+      "added": "追加済み",
+      "add": "追加する",
+      "addFailed": "追加できませんでした"
     }
   },
   "Summary": {
@@ -466,6 +475,15 @@
       "phrasal-verb": "句動詞",
       "phrase": "定型文"
     },
-    "front": "表。"
+    "front": "表。",
+    "fromTalk": "会話から",
+    "delete": {
+      "go": "削除",
+      "title": "このカードを削除しますか",
+      "caption": "進み具合も消えます",
+      "confirm": "削除する",
+      "keep": "残す",
+      "failed": "削除できませんでした"
+    }
   }
 }

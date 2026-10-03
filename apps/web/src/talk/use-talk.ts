@@ -14,24 +14,8 @@ import {
 } from "../lib/talk-endpoints";
 import { currentTurn, type Talk, type TalkState } from "./talk-state";
 
-/** A failure notice: which one, and a count that grows each time one is shown. */
-export interface TalkNotice {
-  readonly signal: number;
-  readonly kind: "judgment" | "save";
-}
-
-/** What the talk screen's controls ask of the talk. */
-export interface TalkActions {
-  readonly start: () => void;
-  readonly japanese: (text: string) => void;
-  readonly english: (text: string | null) => void;
-  readonly hide: () => void;
-  readonly lookAgain: () => void;
-  readonly said: () => void;
-  readonly retry: () => void;
-  /** Ends the talk on the server; `stay` keeps W3h on screen, so a failure can be told. */
-  readonly end: (stay: boolean) => void;
-}
+import type { TalkActions, TalkNotice } from "./talk-actions";
+export type { TalkActions, TalkNotice } from "./talk-actions";
 
 /**
  * The talk's state and the calls each step makes. Every answer names the
@@ -42,9 +26,11 @@ export function useTalk(sound: boolean): {
   state: TalkState;
   notice: TalkNotice;
   actions: TalkActions;
+  kept: boolean;
 } {
   const { state, dispatch, resume } = useTalkState();
   const [notice, setNotice] = useState<TalkNotice>({ signal: 0, kind: "judgment" });
+  const [keptId, setKeptId] = useState<string>();
   const startRequest = useRef<string | undefined>(undefined);
   useEffect(
     () => () => {
@@ -74,6 +60,7 @@ export function useTalk(sound: boolean): {
     dispatch({ type: "gone", talkId });
     // An expired or unknown talk was never kept; a closed one was, by whatever closed it.
     if (error.code === "ERR_TALK_NOT_FOUND") tell("save");
+    else setKeptId(talkId);
   }
 
   async function send(
@@ -122,6 +109,7 @@ export function useTalk(sound: boolean): {
     start() {
       if (sound) browserSound.unlock();
       if (resume()) return;
+      setKeptId(undefined);
       dispatch({ type: "start" });
       const request = crypto.randomUUID();
       startRequest.current = request;
@@ -177,9 +165,17 @@ export function useTalk(sound: boolean): {
       if (stay) dispatch({ type: "end" });
       void endTalk(now.talkId).then((result) => {
         if (!result.ok && stay) tell("save");
+        if (result.ok && result.value.kept && stay) setKeptId(now.talkId);
       });
     },
   };
 
-  return { state, notice, actions };
+  return {
+    state,
+    notice,
+    actions,
+    kept:
+      talkId !== undefined &&
+      (keptId === talkId || (state.kind === "talk" && state.talk.closed === true)),
+  };
 }

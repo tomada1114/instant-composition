@@ -1,4 +1,6 @@
 import type {
+  DeleteVocabCardData,
+  DeleteVocabCardResponses,
   FinishVocabSessionData,
   FinishVocabSessionResponses,
   GetVocabData,
@@ -13,7 +15,7 @@ import type {
   VocabSummary,
 } from "../openapi";
 import { call, errorCode, send, type ApiError, type SendOutcome } from "./api-call";
-import type { Result } from "./result";
+import { err, ok, type Result } from "./result";
 
 /** The vocabulary queue, categories and tomorrow's due count. */
 export function getVocab(): Promise<Result<VocabHub, ApiError>> {
@@ -61,5 +63,21 @@ export async function recordVocabAnswers(
       : "rejected";
   } catch {
     return "failed";
+  }
+}
+
+/** Deletes an owned card and its progress, accepting the contract's bodyless 204. */
+export async function deleteVocabCard(
+  cardId: string,
+): Promise<Result<DeleteVocabCardResponses[204], ApiError>> {
+  try {
+    const response = await send("DELETE", {
+      url: "/v1/vocab/cards/{cardId}",
+      path: { cardId },
+    } satisfies DeleteVocabCardData);
+    if (response.status === 204) return ok(undefined);
+    return err({ code: errorCode(await response.json()) ?? "ERR_NETWORK" });
+  } catch {
+    return err({ code: "ERR_NETWORK" });
   }
 }

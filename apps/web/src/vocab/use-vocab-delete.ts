@@ -1,0 +1,71 @@
+import { useQueryClient } from "@tanstack/react-query";
+import { useEffect, useRef, useState, type Dispatch } from "react";
+import type { AnswerQueue } from "../drill/answer-queue";
+import type { DrillEvent, DrillState } from "../drill/drill-state";
+import { deleteVocabCard } from "../lib/vocab-endpoints";
+
+/** Owns confirmation and deletion; waits for answer sends before removing progress. */
+export function useVocabDelete(
+  state: DrillState,
+  dispatch: Dispatch<DrillEvent>,
+  queue: AnswerQueue,
+  onClose: () => void,
+): {
+  readonly asking: boolean;
+  readonly pending: boolean;
+  readonly failures: number;
+  readonly ask: () => void;
+  readonly keep: () => void;
+  readonly confirm: () => void;
+} {
+  const cache = useQueryClient();
+  const [cardId, setCardId] = useState<string>();
+  const [pending, setPending] = useState(false);
+  const [failures, setFailures] = useState(0);
+  const live = useRef(false);
+  const sending = useRef(false);
+  useEffect(() => {
+    live.current = true;
+    return () => {
+      live.current = false;
+    };
+  }, []);
+  return {
+    asking: cardId !== undefined,
+    pending,
+    failures,
+    ask() {
+      if (state.phase.kind === "back" && !state.paused) setCardId(state.card?.cardId);
+    },
+    keep() {
+      if (sending.current) return;
+      setCardId(undefined);
+      onClose();
+    },
+    confirm() {
+      if (cardId === undefined || sending.current) return;
+      sending.current = true;
+      setPending(true);
+      // A previously graded re-ask may still be sending. Its write must finish before DELETE.
+      void queue
+        .flush()
+        .then(() => deleteVocabCard(cardId))
+        .then((result) => {
+          if (result.ok) {
+            queue.removeCard(cardId);
+            void cache.invalidateQueries({ queryKey: ["vocab"] });
+          }
+          if (!live.current) return;
+          sending.current = false;
+          setPending(false);
+          if (!result.ok) {
+            setFailures((count) => count + 1);
+            return;
+          }
+          setCardId(undefined);
+          onClose();
+          dispatch({ type: "remove", cardId });
+        });
+    },
+  };
+}

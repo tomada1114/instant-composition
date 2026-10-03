@@ -23,6 +23,7 @@ import {
   POINT,
   SCENE,
   begin,
+  cardCandidates,
   opened,
   posted,
   press,
@@ -697,5 +698,259 @@ describe("the talk's keys", () => {
       screen.getByRole("textbox", { name: ja.Talk.step.english }),
     ).toBeInTheDocument();
     expect(posted(calls, TURNS)).toStrictEqual([]);
+  });
+});
+
+async function completeCorrectedTalk(): Promise<void> {
+  await renderApp("/talk");
+  await begin();
+  await say("仕事が詰まってて", null);
+  press(ja.Talk.teacher.hide);
+  press(ja.Talk.teacher.said);
+  await settle();
+}
+function correctedOneTurn(options: Parameters<typeof serveTalk>[0] = {}) {
+  return serveTalk({
+    start: (id) => Response.json({ ...opened(id), turnCount: 1 }),
+    turn: (body) =>
+      Response.json(
+        turnResult("corrected", body.turn, { line: "Goodbye.", closing: true }),
+      ),
+    candidates: () => Response.json(cardCandidates()),
+    ...options,
+  });
+}
+
+describe("cards at the talk's end", () => {
+  it("asks once after a corrected give-up, adds selected indexes and locks returned successes", async () => {
+    const calls = correctedOneTurn();
+    await completeCorrectedTalk();
+    const first = screen.getByRole("button", { name: /swamped/u });
+    const learned = screen.getByRole("button", { name: /catch up/u });
+    expect(first).toHaveAttribute("aria-pressed", "false");
+    expect(learned).toHaveAttribute("aria-pressed", "false");
+    expect(learned).toHaveTextContent(ja.Talk.cards.learning);
+    expect(learned).not.toHaveAttribute("aria-disabled");
+    expect(screen.getByText("swamped")).toHaveAttribute("lang", "en");
+    expect(screen.getByRole("button", { name: ja.Talk.cards.add })).toBeDisabled();
+    expect(first.closest("[data-conversation]")).not.toBeNull();
+    fireEvent.click(first);
+    fireEvent.click(screen.getByRole("button", { name: ja.Talk.cards.add }));
+    await settle();
+    expect(posted(calls, /\/cards$/u)).toStrictEqual([{ candidates: [0] }]);
+    expect(first).toHaveTextContent(ja.Talk.cards.added);
+    expect(first).toHaveAttribute("aria-disabled", "true");
+    fireEvent.click(first);
+    expect(screen.getByRole("button", { name: ja.Talk.cards.add })).toBeDisabled();
+    fireEvent.click(learned);
+    expect(learned).toHaveAttribute("aria-pressed", "true");
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(1);
+    expect(posted(calls, /\/end$/u)).toHaveLength(0);
+  });
+  it("shows still waiting, discards a late generation after a new talk, and does not ask old candidates again", async () => {
+    let resolve!: (response: Response) => void;
+    const waiting = new Promise<Response>((done) => {
+      resolve = done;
+    });
+    const calls = correctedOneTurn({ candidates: () => waiting });
+    await completeCorrectedTalk();
+    expect(
+      screen.getByRole("heading", { name: ja.Talk.cards.title }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("…")).toBeInTheDocument();
+    press(ja.Talk.end.again);
+    await settle();
+    resolve(Response.json(cardCandidates()));
+    await settle();
+    expect(screen.queryByText("swamped")).toBeNull();
+    expect(screen.queryByRole("heading", { name: ja.Talk.cards.title })).toBeNull();
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(1);
+    expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(2);
+  });
+  it("retries generation only on the secondary retry press", async () => {
+    const calls = correctedOneTurn({
+      candidates: (n) =>
+        n === 0
+          ? refusal(503, "ERR_MODEL_UNAVAILABLE")
+          : Response.json(cardCandidates()),
+    });
+    await completeCorrectedTalk();
+    expect(screen.getByText(ja.Talk.cards.failed)).toBeInTheDocument();
+    await settle(10000);
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(1);
+    press(ja.Talk.cards.retry);
+    await settle();
+    expect(screen.getByText("swamped")).toBeInTheDocument();
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(2);
+  });
+  it("preserves selection after add failure and coalesces duplicate pending additions", async () => {
+    let resolve!: (response: Response) => void;
+    const waiting = new Promise<Response>((done) => {
+      resolve = done;
+    });
+    const calls = correctedOneTurn({
+      cards: (_, n) => (n === 0 ? refusal(503, "ERR_CONFLICT") : waiting),
+    });
+    await completeCorrectedTalk();
+    fireEvent.click(screen.getByRole("button", { name: /swamped/u }));
+    press(ja.Talk.cards.add);
+    await settle();
+    expect(screen.getByText(ja.Talk.cards.addFailed)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /swamped/u })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    press(ja.Talk.cards.add);
+    press(ja.Talk.cards.add);
+    expect(posted(calls, /\/cards$/u)).toHaveLength(2);
+    resolve(Response.json(cardCandidates([0])));
+    await settle();
+    expect(screen.getByRole("button", { name: /swamped/u })).toHaveAttribute(
+      "aria-disabled",
+      "true",
+    );
+    expect(screen.queryByText(ja.Talk.cards.addFailed)).toBeNull();
+  });
+  it("ignores a late add result after starting a new talk", async () => {
+    let resolve!: (response: Response) => void;
+    const calls = correctedOneTurn({
+      cards: () =>
+        new Promise<Response>((done) => {
+          resolve = done;
+        }),
+    });
+    await completeCorrectedTalk();
+    fireEvent.click(screen.getByRole("button", { name: /swamped/u }));
+    press(ja.Talk.cards.add);
+    press(ja.Talk.end.again);
+    await settle();
+    resolve(Response.json(cardCandidates([0])));
+    await settle();
+    expect(screen.queryByText(ja.Talk.cards.added)).toBeNull();
+    expect(posted(calls, /\/cards$/u)).toHaveLength(1);
+  });
+  it("does not intercept Enter on a candidate but retains the unfocused primary key", async () => {
+    const calls = correctedOneTurn();
+    await completeCorrectedTalk();
+    const first = screen.getByRole("button", { name: /swamped/u });
+    first.focus();
+    key("Enter");
+    expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(1);
+    first.blur();
+    key("Enter");
+    await settle();
+    expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(2);
+  });
+  it.each(["fine", "failed"] as const)(
+    "shows no card and makes no candidate request for a %s judgment",
+    async (verdict) => {
+      const calls = correctedOneTurn({
+        turn: (body) =>
+          Response.json(
+            turnResult(verdict, body.turn, { line: "Goodbye.", closing: true }),
+          ),
+      });
+      await renderApp("/talk");
+      await begin();
+      await say("ありがとう", "Thanks.");
+      await settle(320);
+      expect(
+        screen.getByRole("button", { name: ja.Talk.end.again }),
+      ).toBeInTheDocument();
+      expect(screen.queryByRole("heading", { name: ja.Talk.cards.title })).toBeNull();
+      expect(posted(calls, /\/candidates$/u)).toHaveLength(0);
+    },
+  );
+  it("shows no candidate card when the kept talk yields no candidates", async () => {
+    const calls = correctedOneTurn({
+      candidates: () => Response.json({ candidates: [] }),
+    });
+    await completeCorrectedTalk();
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(1);
+    expect(screen.queryByRole("heading", { name: ja.Talk.cards.title })).toBeNull();
+  });
+  it.each([true, false])(
+    "waits for early-end persistence and generates only on successful save (%s)",
+    async (success) => {
+      let resolve!: (response: Response) => void;
+      const calls = serveTalk({
+        turn: (body) => Response.json(turnResult("corrected", body.turn)),
+        end: () =>
+          new Promise<Response>((done) => {
+            resolve = done;
+          }),
+        candidates: () => Response.json(cardCandidates()),
+      });
+      await renderApp("/talk");
+      await begin();
+      await say("仕事が詰まってて", "Busy.");
+      press(ja.Talk.strip.close);
+      press(ja.Talk.leave.end);
+      await settle();
+      expect(posted(calls, /\/candidates$/u)).toHaveLength(0);
+      resolve(success ? Response.json({ kept: true }) : refusal(503, "ERR_CONFLICT"));
+      await settle();
+      expect(posted(calls, /\/candidates$/u)).toHaveLength(success ? 1 : 0);
+      expect(
+        screen.queryByRole("heading", { name: ja.Talk.cards.title }) !== null,
+      ).toBe(success);
+    },
+  );
+});
+
+describe("candidate persistence boundaries", () => {
+  it.each([
+    [404, "ERR_TALK_NOT_FOUND", 0],
+    [409, "ERR_TALK_CLOSED", 1],
+  ] as const)(
+    "offers candidates after corrected history only when %s confirms a kept talk",
+    async (status, code, expected) => {
+      const calls = serveTalk({
+        turn: (body, asked) =>
+          asked === 0
+            ? Response.json(turnResult("corrected", body.turn))
+            : refusal(status, code),
+        candidates: () => Response.json(cardCandidates()),
+      });
+      await renderApp("/talk");
+      await begin();
+      await say("仕事が詰まってて", "Busy.");
+      press(ja.Talk.teacher.hide);
+      press(ja.Talk.teacher.said);
+      await settle();
+      await say("またね", "See you.");
+      expect(posted(calls, /\/candidates$/u)).toHaveLength(expected);
+      expect(posted(calls, /\/end$/u)).toHaveLength(0);
+    },
+  );
+  it("offers no candidates when an early-end response says the talk was discarded", async () => {
+    const calls = serveTalk({
+      turn: (body) => Response.json(turnResult("corrected", body.turn)),
+      end: () => Response.json({ kept: false }),
+    });
+    await renderApp("/talk");
+    await begin();
+    await say("仕事が詰まってて", null);
+    press(ja.Talk.strip.close);
+    press(ja.Talk.leave.end);
+    await settle();
+    expect(posted(calls, /\/candidates$/u)).toHaveLength(0);
+    expect(screen.queryByRole("heading", { name: ja.Talk.cards.title })).toBeNull();
+  });
+  it("discards generation after unmount and never attaches it to a fresh session", async () => {
+    let resolve!: (response: Response) => void;
+    correctedOneTurn({
+      candidates: () =>
+        new Promise<Response>((done) => {
+          resolve = done;
+        }),
+    });
+    await completeCorrectedTalk();
+    cleanup();
+    await renderApp("/talk");
+    resolve(Response.json(cardCandidates()));
+    await settle();
+    expect(screen.queryByText("swamped")).toBeNull();
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeInTheDocument();
   });
 });

@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
 import { GradeTrio } from "../ui/grade-trio";
 import { ReturnGlyph } from "../ui/glyphs";
+import { VocabCardHeading } from "./vocab-card-heading";
 import { Kbd } from "../ui/kbd";
 
 /** Cloze marks are fixed-width blanks on the front and emphasized answers on the back. */
@@ -48,13 +49,14 @@ export function VocabCard({
   card,
   gradeKeys,
   onAction,
+  onDelete,
 }: Readonly<{
   state: DrillState;
   card: Card;
   gradeKeys: GradeKeyTrio;
+  onDelete: () => void;
   onAction: (action: DrillKeyAction) => void;
 }>): ReactElement {
-  const t = useTranslations("Vocab");
   const drill = useTranslations("Drill");
   const front = state.phase.kind === "front";
   const reAsk = currentCard(state)?.pass === "retry";
@@ -108,7 +110,11 @@ export function VocabCard({
             {drill("card.again")}
           </Eyebrow>
         ) : null}
-        <Eyebrow>{t(`categories.${card.category}`)}</Eyebrow>
+        <VocabCardHeading
+          card={card}
+          removable={phase.kind === "back" && !state.paused}
+          onDelete={onDelete}
+        />
         {front ? (
           <button
             type="button"

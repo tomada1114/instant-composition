@@ -2,6 +2,7 @@ import { fireEvent, screen } from "@testing-library/react";
 import { TALK_STORAGE_KEY } from "@instant-composition/web";
 
 import type {
+  CardCandidates,
   HomeView,
   PartnerReply,
   TalkOpened,
@@ -71,11 +72,13 @@ export interface TalkServe {
   ) => Answer;
   readonly reply?: (asked: number) => Answer;
   readonly end?: () => Answer;
+  readonly candidates?: (asked: number) => Answer;
+  readonly cards?: (indexes: readonly number[], asked: number) => Answer;
 }
 
 /** An API that answers the home view and the talk operations, recording every call. */
 export function serveTalk(options: TalkServe = {}): ApiCall[] {
-  const asked = { start: 0, turn: 0, reply: 0 };
+  const asked = { start: 0, turn: 0, reply: 0, candidates: 0, cards: 0 };
   return fakeApi((call) => {
     if (call.method === "GET" && call.url === "/api/v1/home") {
       return Response.json(options.home ?? homeView({ kind: "ready", streak: COUNT }));
@@ -104,6 +107,20 @@ export function serveTalk(options: TalkServe = {}): ApiCall[] {
     }
     if (call.url.endsWith("/recital"))
       return options.recital?.() ?? new Response(null, { status: 204 });
+    if (call.url.endsWith("/candidates")) {
+      asked.candidates += 1;
+      return (
+        options.candidates?.(asked.candidates - 1) ?? Response.json({ candidates: [] })
+      );
+    }
+    if (call.url.endsWith("/cards")) {
+      asked.cards += 1;
+      const body = call.body as { candidates: number[] };
+      return (
+        options.cards?.(body.candidates, asked.cards - 1) ??
+        Response.json(cardCandidates(body.candidates))
+      );
+    }
     if (call.url.endsWith("/end"))
       return options.end?.() ?? Response.json({ kept: true });
     return undefined;
@@ -168,5 +185,41 @@ export function talkView(talkId: string, count = 3): TalkView {
       reply: `reply-${String(index + 1)}`,
       closing: index + 1 === 6,
     })),
+  };
+}
+
+/** Two choices: one new personal word and one already learned catalog phrase. */
+export function cardCandidates(added: readonly number[] = []): CardCandidates {
+  return {
+    candidates: [
+      {
+        index: 0,
+        turn: 1,
+        cardId: null,
+        catalog: false,
+        category: "word",
+        headword: "swamped",
+        definition: "Very busy.",
+        example: "I am {{swamped}}.",
+        example2: "She is swamped.",
+        meaning: "とても忙しい",
+        inLearning: false,
+        added: added.includes(0),
+      },
+      {
+        index: 1,
+        turn: 2,
+        cardId: "v_catch",
+        catalog: true,
+        category: "phrasal-verb",
+        headword: "catch up",
+        definition: "Reach the same level.",
+        example: "I need to {{catch up}}.",
+        example2: "Let's catch up.",
+        meaning: "追いつく",
+        inLearning: true,
+        added: added.includes(1),
+      },
+    ],
   };
 }
