@@ -223,7 +223,11 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   its kept summary. A model's first answer — a scene, a turn, a talk's candidates — is
   stored and answered again; a candidate added twice is added once.
 - Answers travel in batches, so a live answer and a resent one take the same call; the
-  web keeps unsent ones in the tab's `sessionStorage`. A client `answeredAt` is clamped
+  web keeps unsent ones in the tab's `sessionStorage`. Only a contract status/code
+  refusal drops an unsent answer: temporary and unknown responses stay pending. A
+  `Retry-After` deadline is stored beside deferred answers, with old answer arrays still
+  readable; no resend is made before it, and a failed attempt stops the drain. A finish
+  stops if any earlier batch was not acknowledged. A client `answeredAt` is clamped
   between the round's start and the server's time, a late answer counts for its round's
   day and never rewinds an item's schedule, and rounds never expire.
 

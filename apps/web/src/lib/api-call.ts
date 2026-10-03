@@ -16,7 +16,11 @@ export interface ApiError {
 const NETWORK: ApiError = { code: "ERR_NETWORK" };
 
 /** What became of one send: delivered, refused for good, or worth retrying. */
-export type SendOutcome = "sent" | "rejected" | "failed";
+export type SendOutcome =
+  | "sent"
+  | "rejected"
+  | "failed"
+  | { readonly status: "failed"; readonly retryAt: number };
 
 /**
  * The shape every generated `<Operation>Data` type has: the path template,

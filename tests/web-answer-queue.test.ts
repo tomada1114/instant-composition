@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   type AnswerInput,
@@ -47,6 +47,82 @@ function scriptedSender(...outcomes: SendOutcome[]) {
 }
 
 describe("createAnswerQueue", () => {
+  it("honors a late Retry-After response after the in-flight card is deleted", async () => {
+    vi.spyOn(Date, "now").mockReturnValue(10_000);
+    let resolve: (outcome: SendOutcome) => void = () => undefined;
+    const sending = new Promise<SendOutcome>((done) => {
+      resolve = done;
+    });
+    const sent: string[] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      send: (input) => {
+        sent.push(input.cardId);
+        return sending;
+      },
+    });
+    const first = queue.enqueue(answer("c1"));
+    await Promise.resolve();
+    const next = queue.enqueue(answer("c2"));
+    queue.removeCard("c1");
+    resolve({ status: "failed", retryAt: 20_000 });
+    expect(await first).toBe(false);
+    expect(await next).toBe(false);
+    expect(sent).toStrictEqual(["c1"]);
+    expect(queue.pending()).toStrictEqual([answer("c2")]);
+    vi.restoreAllMocks();
+  });
+  it("keeps a Retry-After deadline across reload and records the same IDs once after recovery", async () => {
+    let now = 10_000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const storage = memoryStorage();
+    const sender = scriptedSender(
+      { status: "failed", retryAt: 20_000 },
+      "sent",
+      "sent",
+    );
+    const queue = createAnswerQueue({ key: "k", send: sender.send, storage });
+    expect(await queue.enqueue(answer("c1"))).toBe(false);
+    expect(await queue.enqueue(answer("c2"))).toBe(false);
+    expect(sender.sent).toStrictEqual(["c1"]);
+
+    const recorded: string[] = [];
+    const reloaded = createAnswerQueue({
+      key: "k",
+      storage,
+      send: (input) => {
+        recorded.push(input.id);
+        return Promise.resolve("sent");
+      },
+    });
+    expect(await reloaded.flush()).toBe(false);
+    expect(reloaded.pending()).toStrictEqual([answer("c1"), answer("c2")]);
+    expect(recorded).toStrictEqual([]);
+    now = 20_000;
+    expect(await reloaded.flush()).toBe(true);
+    expect(await reloaded.flush()).toBe(true);
+    expect(recorded).toStrictEqual(["r:f:c1", "r:f:c2"]);
+    expect(storage.data.has("k")).toBe(false);
+    vi.restoreAllMocks();
+  });
+
+  it("removes a deleted card during deferred retry without losing another card or its deadline", async () => {
+    vi.spyOn(Date, "now").mockReturnValue(10_000);
+    const storage = memoryStorage();
+    const sender = scriptedSender({ status: "failed", retryAt: 20_000 });
+    const queue = createAnswerQueue({ key: "k", send: sender.send, storage });
+    await queue.enqueue(answer("c1"));
+    await queue.enqueue(answer("c2"));
+    queue.removeCard("c1");
+    const reloaded = createAnswerQueue({ key: "k", send: sender.send, storage });
+    expect(reloaded.pending()).toStrictEqual([answer("c2")]);
+    expect(await reloaded.flush()).toBe(false);
+    expect(sender.sent).toStrictEqual(["c1"]);
+    reloaded.removeCard("c2");
+    expect(await reloaded.flush()).toBe(true);
+    expect(storage.data.has("k")).toBe(false);
+    vi.restoreAllMocks();
+  });
   it("sends an answer and keeps nothing once it is delivered", async () => {
     const storage = memoryStorage();
     const sender = scriptedSender("sent");
