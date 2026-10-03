@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { type VocabSession, type VocabSummary } from "@instant-composition/web";
 import {
   fakeApi,
@@ -117,10 +117,9 @@ describe("the vocabulary hub", () => {
     );
     await renderApp("/vocab");
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: ja.Vocab.extra })).toHaveAttribute(
-      "href",
-      "/vocab/study?kind=extra",
-    );
+    expect(
+      screen.getByRole("link", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+    ).toHaveAttribute("href", "/vocab/study?kind=extra");
     press("Escape");
     await settle();
     expect(window.location.pathname).toBe("/");
@@ -140,6 +139,18 @@ describe("the vocabulary hub", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
     await settle();
     expect(screen.getByRole("heading", { name: ja.Vocab.title })).toBeInTheDocument();
+  });
+  it("offers exactly the three extra cards available at the hub", async () => {
+    fakeApi(() =>
+      Response.json(vocabHub({ extra: 3, today: { due: 0, new: 0, minutes: 0 } })),
+    );
+    await renderApp("/vocab");
+    expect(
+      screen.getByRole("link", { name: fill(ja.Vocab.extra, { count: 3 }) }),
+    ).toHaveAttribute("href", "/vocab/study?kind=extra");
+    expect(
+      screen.queryByRole("link", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+    ).toBeNull();
   });
   it("shows a pair with no cards without an action, and refuses empty weak", async () => {
     fakeApi(() => Response.json(vocabHub({ empty: true, weak: 0, extra: 0 })));
@@ -287,6 +298,56 @@ describe("an untimed vocabulary session", () => {
       calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
     ).toMatchObject({ kind: "today" });
   });
+  it("keeps a failed earlier answer and retries it before dealing a fresh queue", async () => {
+    const arrival = "11111111-1111-4111-8111-111111111111";
+    const ids = vi.spyOn(crypto, "randomUUID").mockReturnValue(arrival);
+    const pending = JSON.stringify([
+      {
+        id: "old:f:v_old",
+        roundId: "old",
+        cardId: "v_old",
+        pass: "first",
+        grade: "again",
+        timedOut: false,
+        elapsedMs: 2000,
+      },
+    ]);
+    sessionStorage.setItem("vocab-answers:old", pending);
+    let offline = true;
+    const calls = fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      if (call.url.endsWith("/answers"))
+        return offline
+          ? refusal(503, "ERR_CONTENT_UNREADABLE")
+          : new Response(null, { status: 204 });
+      if (call.url === "/api/v1/vocab/sessions") return Response.json(vocabSession());
+      return undefined;
+    });
+    await renderApp("/vocab/study");
+    expect(
+      calls.filter((call) => call.method === "POST").map((call) => call.url),
+    ).toStrictEqual(["/api/v1/vocab/sessions/old/answers"]);
+    expect(sessionStorage.getItem("vocab-answers:old")).toBe(pending);
+    offline = false;
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
+    await settle();
+    expect(
+      calls.filter((call) => call.method === "POST").map((call) => call.url),
+    ).toStrictEqual([
+      "/api/v1/vocab/sessions/old/answers",
+      "/api/v1/vocab/sessions/old/answers",
+      "/api/v1/vocab/sessions",
+    ]);
+    const sends = calls.filter((call) => call.url.endsWith("/answers"));
+    expect(sends[1]?.body).toStrictEqual(sends[0]?.body);
+    expect(sessionStorage.getItem("vocab-answers:old")).toBeNull();
+    expect(
+      calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
+    ).toStrictEqual({ sessionId: arrival, kind: "today" });
+    expect(ids).toHaveBeenCalledTimes(1);
+    expect(screen.getByText(vocabCard().definition)).toBeInTheDocument();
+  });
   it("retries a failed start under the same id and closes to the hub", async () => {
     let fails = true;
     const calls = fakeApi((call) =>
@@ -347,16 +408,46 @@ describe("vocabulary completion", () => {
       expect(screen.getByText("10 枚")).toBeInTheDocument();
       expect(screen.getByText("14 枚")).toBeInTheDocument();
       expect(screen.getByText("give up")).toBeInTheDocument();
-      expect(screen.queryByRole("button", { name: ja.Vocab.extra })).toBeNull();
+      expect(
+        screen.queryByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+      ).toBeNull();
       press(" ");
       await settle();
       expect(window.location.pathname).toBe("/vocab");
     },
   );
+  it("offers exactly the three extras remaining in the completed category", async () => {
+    fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      if (call.url === "/api/v1/vocab")
+        return Response.json(
+          vocabHub({
+            categories: vocabHub().categories.map((row) =>
+              row.category === "word" ? { ...row, extra: 3 } : row,
+            ),
+          }),
+        );
+      if (call.url === "/api/v1/vocab/sessions")
+        return Response.json(vocabSession({ cards: [], category: "word" }));
+      if (call.url.endsWith("/finish"))
+        return Response.json(vocabSummary({ category: "word" }));
+      return undefined;
+    });
+    await renderApp("/vocab/study?kind=today&category=word");
+    expect(
+      screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 3 }) }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+    ).toBeNull();
+  });
   it("opens another extra session under a new id even when the path stays the same", async () => {
     const calls = serve({ session: vocabSession({ cards: [], kind: "extra" }) });
     await renderApp("/vocab/study?kind=extra");
-    fireEvent.click(screen.getByRole("button", { name: ja.Vocab.extra }));
+    fireEvent.click(
+      screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+    );
     await settle();
     const starts = calls.filter((call) => call.url === "/api/v1/vocab/sessions");
     expect(starts).toHaveLength(2);
@@ -438,14 +529,16 @@ describe("vocabulary recovery and scoped continuation", () => {
     expect(
       screen.getByRole("heading", { name: "単語の今日の分は完了" }),
     ).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: ja.Vocab.extra })).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
+    ).toBeNull();
   });
   it("a weak continuation starts another session and displays its new front", async () => {
     let next = false;
     const calls = fakeApi((call) => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
-      if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
+      if (call.url === "/api/v1/vocab") return Response.json(vocabHub({ weak: 20 }));
       if (call.url === "/api/v1/vocab/sessions")
         return Response.json(
           next
@@ -462,7 +555,9 @@ describe("vocabulary recovery and scoped continuation", () => {
     });
     await renderApp("/vocab/study?kind=weak");
     next = true;
-    fireEvent.click(screen.getByRole("button", { name: ja.Vocab.extra }));
+    fireEvent.click(
+      screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 20 }) }),
+    );
     await settle(16);
     expect(screen.getByText(vocabCard("v_next").definition)).toBeInTheDocument();
     expect(screen.queryByText(ja.Vocab.weakDone)).toBeNull();

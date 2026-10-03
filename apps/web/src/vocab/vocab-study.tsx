@@ -63,7 +63,7 @@ export function VocabStudy({
     session.category === null ? (available?.extra ?? 0) : (category?.extra ?? 0);
   const weakCount =
     session.category === null ? (available?.weak ?? 0) : (category?.weak ?? 0);
-  const hasExtra = (session.kind === "weak" ? weakCount : extraCount) > 0;
+  const moreCount = session.kind === "weak" ? weakCount : extraCount;
   const [failed, setFailed] = useState(false);
   const [attempt, retry] = useState(0);
   const leave = useLeaveGuard(state, dispatch);
@@ -117,7 +117,7 @@ export function VocabStudy({
     return (
       <VocabDone
         summary={summary}
-        hasExtra={hasExtra}
+        extraCount={moreCount}
         onExtra={() => {
           if (session.kind === "extra" || session.kind === "weak") {
             onRestart();

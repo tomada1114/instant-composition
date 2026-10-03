@@ -12,11 +12,11 @@ import { PrimaryButton } from "../ui/primary-button";
 export function VocabDone({
   summary,
   onExtra,
-  hasExtra,
+  extraCount,
 }: Readonly<{
   summary: VocabSummary;
   onExtra: () => void;
-  hasExtra: boolean;
+  extraCount: number;
 }>): ReactElement {
   const t = useTranslations("Vocab");
   const nav = useTranslations("Nav");
@@ -64,9 +64,9 @@ export function VocabDone({
         ))}
       </dl>
       <div className="flex flex-wrap justify-center gap-3">
-        {hasExtra ? (
+        {extraCount > 0 ? (
           <Button variant="secondary" onClick={onExtra}>
-            {t("extra")}
+            {t("extra", { count: extraCount })}
           </Button>
         ) : null}
         <PrimaryButton

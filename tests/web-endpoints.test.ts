@@ -7,6 +7,7 @@ import {
   recordVocabAnswers,
   finishVocabSession,
   requestVocabFinish,
+  requestVocabSession,
   vocabSearch,
   sendVocabAnswer,
   beginVisit,
@@ -705,6 +706,70 @@ describe("vocabulary calls", () => {
     expect((calls[0]?.body as { answers: object[] }).answers[0]).not.toHaveProperty(
       "timedOut",
     );
+  });
+  it("blocks overlapping starts until prior answers drain, preserves failures and retries the same ids", async () => {
+    const stored = JSON.stringify([ANSWER]);
+    const data = new Map([["vocab-answers:r", stored]]);
+    vi.stubGlobal("window", {
+      sessionStorage: {
+        get length() {
+          return data.size;
+        },
+        key: (index: number) => [...data.keys()][index] ?? null,
+        getItem: (key: string) => data.get(key) ?? null,
+        setItem: (key: string, value: string) => void data.set(key, value),
+        removeItem: (key: string) => void data.delete(key),
+      },
+    });
+    let finish: (response: Response) => void = () => undefined;
+    const sending = new Promise<Response>((resolve) => {
+      finish = resolve;
+    });
+    const failedCalls = stubFetch(() => sending);
+    const first = requestVocabSession({ kind: "today" }, "new");
+    const second = requestVocabSession({ kind: "today" }, "new");
+    await Promise.resolve();
+    expect(failedCalls.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+    ]);
+    finish(envelope(503, "ERR_CONTENT_UNREADABLE"));
+    expect(await Promise.all([first, second])).toStrictEqual([
+      { ok: false, error: { code: "ERR_NETWORK" } },
+      { ok: false, error: { code: "ERR_NETWORK" } },
+    ]);
+    expect(data.get("vocab-answers:r")).toBe(stored);
+    let completeRetry: (response: Response) => void = () => undefined;
+    const retrySending = new Promise<Response>((resolve) => {
+      completeRetry = resolve;
+    });
+    let retriedRequests = 0;
+    const retried = stubFetch(() => {
+      retriedRequests += 1;
+      return retriedRequests === 1
+        ? retrySending
+        : Promise.resolve(Response.json({ sessionId: "new" }));
+    });
+    const retryFirst = requestVocabSession({ kind: "today" }, "new");
+    const retrySecond = requestVocabSession({ kind: "today" }, "new");
+    await Promise.resolve();
+    expect(retried.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+    ]);
+    completeRetry(new Response(null, { status: 204 }));
+    expect(
+      (await Promise.all([retryFirst, retrySecond])).map((result) => result.ok),
+    ).toStrictEqual([true, true]);
+    expect(retried.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+      "/api/v1/vocab/sessions",
+      "/api/v1/vocab/sessions",
+    ]);
+    expect(retried[0]?.body).toStrictEqual(failedCalls[0]?.body);
+    expect(retried.slice(1).map((call) => call.body)).toStrictEqual([
+      { sessionId: "new", kind: "today" },
+      { sessionId: "new", kind: "today" },
+    ]);
+    expect(data.has("vocab-answers:r")).toBe(false);
   });
   it("stops finishing on a failed earlier vocabulary batch", async () => {
     const sent: unknown[] = [];

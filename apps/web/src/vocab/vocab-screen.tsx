@@ -43,7 +43,7 @@ export function VocabScreen({ hub }: Readonly<{ hub: VocabHub }>): ReactElement 
                 {hub.extra > 0 ? (
                   <Button asChild variant="secondary" className="self-end">
                     <Link to="/vocab/study" search={{ kind: "extra" }}>
-                      {t("extra")}
+                      {t("extra", { count: hub.extra })}
                     </Link>
                   </Button>
                 ) : null}

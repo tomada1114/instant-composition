@@ -234,17 +234,17 @@ describe("a session over HTTP", () => {
 });
 
 describe("the weak session", () => {
-  it("deals twenty of twenty-five weak cards, the least likely recalled first", async () => {
+  it("shows and deals at most twenty of thirty-five weak cards, excluding today's answers", async () => {
     // Example 4.
     const api = makeApi();
     const store = await placedAt(api, "learner-1");
-    const ids = ["word", "idiom", "phrasal-verb"]
+    const ids = ["word", "idiom", "phrasal-verb", "phrase"]
       .flatMap((category) =>
         [3, 4, 5, 6, 7].flatMap((level) =>
           [0, 1].map((index) => `v_${category}-${String(level)}-${String(index)}`),
         ),
       )
-      .slice(0, 25);
+      .slice(0, 35);
     await store.commit({
       puts: ids.map((cardId, index) => ({
         type: "vocabItem" as const,
@@ -269,9 +269,38 @@ describe("the weak session", () => {
     const hub = await contracted(await api.call("GET", "/v1/vocab"), "getVocab");
     const session = await opened(api, { sessionId: "w1", kind: "weak" });
 
-    expect(hub).toMatchObject({ weak: 25 });
+    expect(hub).toMatchObject({ weak: 20 });
     expect(session.cards.map((card) => card.id)).toStrictEqual(ids.slice(0, 20));
     expect(session.cards.every((card) => !card.isNew)).toBe(true);
+    await contracted(
+      await api.call("POST", "/v1/vocab/sessions/w1/finish", {
+        answers: goodBatch(session).answers.map((answer) => ({
+          ...answer,
+          grade: "again",
+        })),
+      }),
+      "finishVocabSession",
+    );
+    expect(
+      await contracted(await api.call("GET", "/v1/vocab"), "getVocab"),
+    ).toMatchObject({ weak: 15 });
+    const remaining = await opened(api, { sessionId: "w2", kind: "weak" });
+    expect(remaining.cards.map((card) => card.id)).toStrictEqual(ids.slice(20));
+    await contracted(
+      await api.call("POST", "/v1/vocab/sessions/w2/finish", {
+        answers: goodBatch(remaining).answers.map((answer) => ({
+          ...answer,
+          grade: "again",
+        })),
+      }),
+      "finishVocabSession",
+    );
+    expect(
+      await contracted(await api.call("GET", "/v1/vocab"), "getVocab"),
+    ).toMatchObject({ weak: 0 });
+    expect((await opened(api, { sessionId: "w3", kind: "weak" })).cards).toStrictEqual(
+      [],
+    );
   });
 });
 

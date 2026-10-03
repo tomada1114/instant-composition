@@ -61,7 +61,7 @@ export interface ListedStorage extends QueueStorage {
 
 const PREFIX = "drill-answers:";
 /** Keys a flush is already sending, so a second arrival (a remount) never sends them alongside it. */
-const flushing = new Set<string>();
+const flushing = new Map<string, Promise<boolean>>();
 
 /** The storage key holding the unsent answers of round `roundId`. */
 export function queueKey(roundId: string): string {
@@ -73,7 +73,8 @@ export function queueKey(roundId: string): string {
  * rounds other than `currentId` — one abandoned at the day's turn or by another
  * kind, which the server still takes. A key empties as its answers are sent or
  * refused (a finished round answers `ERR_ROUND_CLOSED`); only a failed send
- * stays for the next arrival. Nothing here waits on or reports to the current round.
+ * stays for the next arrival. Reports whether all earlier queues are empty, awaiting
+ * a flush already in flight on another arrival.
  */
 export async function flushEarlierRounds(options: {
   readonly currentId: string;
@@ -81,33 +82,36 @@ export async function flushEarlierRounds(options: {
   readonly prefix?: string;
   readonly send: (answer: AnswerInput) => Promise<SendOutcome>;
   readonly storage?: ListedStorage | undefined;
-}): Promise<void> {
+}): Promise<boolean> {
   const { currentId, send, storage } = options;
   const prefix = options.prefix ?? PREFIX;
   const keys: string[] = [];
   try {
     for (let index = 0; index < (storage?.length ?? 0); index += 1) {
       const key = storage?.key(index);
-      if (
-        key?.startsWith(prefix) === true &&
-        key !== `${prefix}${currentId}` &&
-        !flushing.has(key)
-      )
+      if (key?.startsWith(prefix) === true && key !== `${prefix}${currentId}`)
         keys.push(key);
     }
   } catch {
-    return;
+    return false;
   }
-  for (const key of keys) flushing.add(key);
+  let empty = true;
   for (const key of keys) {
-    const queue = createAnswerQueue({ key, send, storage });
-    try {
-      if (queue.pending().length === 0) queue.clear();
-      else await queue.flush();
-    } finally {
-      flushing.delete(key);
+    let pending = flushing.get(key);
+    if (pending === undefined) {
+      const queue = createAnswerQueue({ key, send, storage });
+      if (queue.pending().length === 0) {
+        queue.clear();
+        continue;
+      }
+      pending = queue.flush().finally(() => {
+        flushing.delete(key);
+      });
+      flushing.set(key, pending);
     }
+    if (!(await pending)) empty = false;
   }
+  return empty;
 }
 
 /** The tab's `sessionStorage`, or nothing where reading it throws (storage blocked). */

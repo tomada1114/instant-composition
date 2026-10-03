@@ -87,8 +87,8 @@ their own:
   the streak, the points and the records stay the drill's. It deals the catalog's cards
   and the learner's personal cards, made from a talk and kept in their own partition,
   never in the catalog; a personal card is shown only for the language pair it was made
-  for. The hub also derives the next extra session's available count, and the extra and
-  weak counts per category, from the same deal rule; the client uses a fresh read after
+  for. The hub also derives the next extra and weak sessions' available counts, globally
+  and per category, from the same deal rule; the client uses a fresh read after
   finishing to offer only sessions that can deal a card. Settings expose both
   activities' limit choices from domain tuning. Its routes are `GET /v1/vocab` (the hub)
   and `POST /v1/vocab/sessions`, with a session's `…/{sessionId}/answers` and

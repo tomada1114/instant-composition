@@ -442,7 +442,7 @@
     "categoryDone": "{category}の今日の分は完了",
     "weakDone": "弱点を復習しました",
     "tomorrow": "明日 {count} 枚",
-    "extra": "もう 10 枚",
+    "extra": "もう {count} 枚",
     "end": "終わる",
     "open": "語彙を開く",
     "homeStart": "語彙を始める",

@@ -52,7 +52,7 @@ export async function vocabHub(
       learning,
       total,
     })),
-    weak: figures.weak,
+    weak: dealVocab(loaded.value.state, "weak", null).length,
     tomorrow: figures.tomorrow,
   });
 }

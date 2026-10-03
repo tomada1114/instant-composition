@@ -48,13 +48,15 @@ export async function requestVocabSession(
   search: VocabSearch,
   sessionId: string,
 ): Promise<Result<VocabSession, ApiError>> {
-  await flushEarlierRounds({
+  const empty = await flushEarlierRounds({
     currentId: sessionId,
     prefix: VOCAB_QUEUE_PREFIX,
     send: sendVocabAnswer,
     storage: sessionStore(),
   });
-  return startVocabSession({ sessionId, ...search });
+  return empty
+    ? startVocabSession({ sessionId, ...search })
+    : err({ code: "ERR_NETWORK" });
 }
 /** The finish carries the last pending batch; earlier batches stay within the contract bound. */
 export async function requestVocabFinish(
