@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2c9a8r7h",
+    "ja": "私が知りたいのは断ると関係を損なうかです。",
+    "en": "What I need to know is whether declining costs goodwill.",
+    "alternatives": [
+      "I need to know whether declining would damage goodwill.",
+      "My question is whether refusing will strain our goodwill."
+    ],
+    "point": "cost goodwill は断ることで好意や関係を損なう。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2h3z4d2j",
     "ja": "ねえ、無理に誘わせないでよ。",
     "en": "Don't make me twist your arm.",
@@ -165,6 +181,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3g7v8b4a",
+    "ja": "私が伏せた事情が今は誘いの支障だ。",
+    "en": "The circumstances I withheld have now complicated the invitation.",
+    "alternatives": [
+      "What I left unspoken has now complicated the invitation.",
+      "The circumstances I didn't disclose now obstruct the invitation."
+    ],
+    "point": "withhold は事情を意図的に明かさずにおく。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3k3x3g9v",
@@ -897,6 +929,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7c5y6d2h",
+    "ja": "断れそうもない誘いを私に断らせないで。",
+    "en": "Don't make me decline what feels impossible to refuse.",
+    "alternatives": [
+      "Don't force me to reject what seems impossible to decline.",
+      "Don't make me refuse an invitation I can't decline."
+    ],
+    "point": "make me decline と what の節で断れない圧力を表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["causatives", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7t2b3s2p",

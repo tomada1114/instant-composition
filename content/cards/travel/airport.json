@@ -555,6 +555,22 @@
     }
   },
   {
+    "id": "c_5n5z4h7a",
+    "ja": "書類は十分でも私には通過の保証がない。",
+    "en": "Complete though my papers are, clearance is no foregone conclusion.",
+    "alternatives": [
+      "Even with complete papers, I'm not assured clearance.",
+      "Having all my documents doesn't guarantee I'll be cleared."
+    ],
+    "point": "a foregone conclusion は結果が既に決まっていること。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5n6u8h4u",
     "ja": "時間を気にしないなら私は乗継便を選ぶ。",
     "en": "Were time no object, I'd choose a connecting flight.",
@@ -644,6 +660,22 @@
     }
   },
   {
+    "id": "c_5s6d7y8b",
+    "ja": "私が確認を求めてたら誤解は防げたのに。",
+    "en": "Had I sought clarification, I'd have forestalled the misunderstanding.",
+    "alternatives": [
+      "If I'd sought clarification, I'd have prevented the misunderstanding.",
+      "I'd have averted the misunderstanding had I requested clarification."
+    ],
+    "point": "forestall は問題が生じる前に先手を打って防ぐ。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5u3g4s8q",
     "ja": "私の席を窓側に変更できますか？",
     "en": "Could you reassign me to a window seat?",
@@ -664,6 +696,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5x6r3m5e",
+    "ja": "私が疑うのは優先搭乗が名ばかりかだ。",
+    "en": "What I question is whether priority boarding is merely nominal.",
+    "alternatives": [
+      "I question whether priority boarding is only in name.",
+      "I'm wondering whether priority boarding has any real substance."
+    ],
+    "point": "nominal は名前や建前だけで実質がない。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6j8v9u4v",

@@ -375,6 +375,22 @@
     }
   },
   {
+    "id": "c_3z6j8y6t",
+    "ja": "私が面子に固執しなければ謝れたのに。",
+    "en": "Had I swallowed my pride, I could have apologized.",
+    "alternatives": [
+      "If I'd swallowed my pride, I could've said sorry.",
+      "I could have apologized had I set my pride aside."
+    ],
+    "point": "swallow my pride は面子を捨てて行動する。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3z7h8h6w",
     "ja": "私が辛かったのは努力を無視されたことだ。",
     "en": "What stung was having my efforts brushed aside.",
@@ -745,6 +761,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5q6z8u5p",
+    "ja": "私の転職は手放しで成功とは言えない。",
+    "en": "I'd hesitate to call my career change an unqualified success.",
+    "alternatives": [
+      "I wouldn't confidently describe my career change as wholly successful.",
+      "I'd stop short of calling my career change entirely successful."
+    ],
+    "point": "unqualified success は何の留保もない全面的な成功。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5u5c2m7x",
@@ -1174,6 +1206,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9c8r3c8b",
+    "ja": "私が独立してなければ今も周囲に従う。",
+    "en": "Had I not gone freelance, I'd still toe the line.",
+    "alternatives": [
+      "If I hadn't become independent, I'd still conform to expectations.",
+      "I'd still toe the line if I hadn't gone freelance."
+    ],
+    "point": "toe the line は求められた方針や規範に従う。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9h2g3d4j",

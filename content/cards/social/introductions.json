@@ -89,6 +89,22 @@
     }
   },
   {
+    "id": "c_2q9a6d8y",
+    "ja": "私が型に従えば居場所は見つからなかった。",
+    "en": "Had I conformed, I'd never have found my niche.",
+    "alternatives": [
+      "If I'd conformed, I wouldn't have found my niche.",
+      "I'd never have found my place had I conformed."
+    ],
+    "point": "find my niche は自分に合う役割や居場所を見つける。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2t9p7k9j",
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
@@ -739,6 +755,22 @@
     }
   },
   {
+    "id": "c_7a4z9k6s",
+    "ja": "不器用に見えても私は人の意図を察します。",
+    "en": "Awkward though I seem, I read between the lines.",
+    "alternatives": [
+      "Although I seem awkward, I pick up unspoken intentions.",
+      "I understand unstated intentions despite seeming awkward."
+    ],
+    "point": "read between the lines は言葉に出ない意図を読み取る。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7e9r6q4e",
     "ja": "私の得意分野は言外の意味を読むこと。",
     "en": "What I do best is decipher what's left unsaid.",
@@ -901,6 +933,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8p7w2c5x",
+    "ja": "私が避けた分野は今では得意分野だ。",
+    "en": "The field I shied away from has become my forte.",
+    "alternatives": [
+      "The field I avoided is now my strong suit.",
+      "What I once avoided has become my area of strength."
+    ],
+    "point": "shy away from は不安などから避ける、forte は得意分野。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8v8h7m7u",

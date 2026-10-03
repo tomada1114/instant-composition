@@ -338,6 +338,22 @@
     }
   },
   {
+    "id": "c_4u7a3d6k",
+    "ja": "我々が否定した可能性は今や無視できない。",
+    "en": "The possibility we dismissed has since become impossible to ignore.",
+    "alternatives": [
+      "The possibility we rejected now demands our attention.",
+      "We can no longer ignore the possibility we previously dismissed."
+    ],
+    "point": "dismissed と has become で過去の判断と今の状態を対比する。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4v2f9t3r",
     "ja": "警報が壊れたら誰も気づかない。",
     "en": "If alerts failed, nobody would know.",
@@ -418,6 +434,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5b8t8r9k",
+    "ja": "我々が早く気づけば今は後手でないのに。",
+    "en": "Had we caught it sooner, we wouldn't be playing catch-up.",
+    "alternatives": [
+      "If we'd noticed sooner, we wouldn't be scrambling now.",
+      "We wouldn't be playing catch-up had we caught it earlier."
+    ],
+    "point": "過去の発見と今の後手の状態を混合仮定法で結ぶ。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5k3w9p2z",
@@ -1087,6 +1119,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9d8h8n4w",
+    "ja": "我々の失敗は手順を判断力の代用にした点だ。",
+    "en": "What failed us was substituting procedure for judgment.",
+    "alternatives": [
+      "It was substituting procedure for judgment that failed us.",
+      "We failed by substituting procedure for judgment."
+    ],
+    "point": "substitute A for B はBの代わりにAを使う。what の節で失敗の原因を強調する。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9g5v8q6v",

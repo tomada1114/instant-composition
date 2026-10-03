@@ -325,6 +325,22 @@
     }
   },
   {
+    "id": "c_4f5s2y9m",
+    "ja": "私が更新させてたら使えなくなったのに。",
+    "en": "Had I let it update, I'd have lost access.",
+    "alternatives": [
+      "If I'd let it update, I'd have lost access.",
+      "I'd have lost access had I allowed the update."
+    ],
+    "point": "let + 動詞の原形を過去の反実仮想の条件に置く。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["causatives", "third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4g6q5g5s",
     "ja": "先月、CIを乗り換えた。",
     "en": "We switched CI tools last month.",
