@@ -81,6 +81,7 @@ export function fakeTimers(): void {
 /** Lets `ms` pass, and every promise and render it releases settle. */
 export async function settle(ms = 0): Promise<void> {
   await act(async () => {
+    await vi.dynamicImportSettled();
     await vi.advanceTimersByTimeAsync(ms);
   });
 }

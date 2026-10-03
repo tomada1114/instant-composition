@@ -37,7 +37,12 @@ Each area has its own directory under `apps/web/src/` (`home/`, `drill/`, `talk/
   both in `apps/web/src/lib/frame.tsx`; the layout renders `main`, so a screen renders
   its content only. A search param is read through `validateSearch` returning a total
   value, so a missing or unknown one still yields a screen (`/drill`'s `kind` is the
-  model).
+  model). Activity pages use named-export lazy components; search-prop wrappers forward
+  their `preload` method so intent preloading reaches the chunk. Home, welcome, frames
+  and common errors stay eager. A failed module reloads the document on retry
+  (preserving tab-stored answer queues), with focus moved to `main`; pending/error
+  states use the same frame and shared page-state components. Vite's manifest verifies
+  the entry's static closure and the activity chunks in the smoke suite.
 - **The page** (`<Area>Page` in `<area>-page.tsx`) — the route's component. It reads its
   data, shows the loading and failed states (`PageLoading` and `PageLoadFailed` in
   `apps/web/src/lib/page-shell.tsx`), redirects with `Navigate`, and hands a finished
