@@ -88,7 +88,10 @@ their own:
   and the learner's personal cards, made from a talk and kept in their own partition,
   never in the catalog; a personal card is shown only for the language pair it was made
   for. The hub also derives the next extra and weak sessions' available counts, globally
-  and per category, from the same deal rule; the client uses a fresh read after
+  and per category, from one request-local domain plan: queue, extras, weak cards and
+  the category index are derived once, with no module-global cache. Finished summaries
+  use the domain's pure review summary: it keeps the first log entry for each card in
+  input order through a single Set-based pass. The client uses a fresh read after
   finishing to offer only sessions that can deal a card. Settings expose both
   activities' limit choices from domain tuning. Its routes are `GET /v1/vocab` (the hub)
   and `POST /v1/vocab/sessions`, with a session's `…/{sessionId}/answers` and

@@ -2,6 +2,7 @@ import {
   DEFAULT_SETTINGS,
   ok,
   previewGrades,
+  summarizeVocabReviews,
   withDefaults,
   type dealVocab,
   type DayKey,
@@ -138,24 +139,12 @@ export function summaryOf(
   session: VocabSession,
   reviews: readonly VocabReview[],
 ): VocabSummary {
-  const firsts = reviews.filter(
-    (review, index) =>
-      reviews.findIndex((other) => other.cardId === review.cardId) === index,
-  );
   return {
     sessionId: session.id,
     kind: session.kind,
     category: session.category,
     day: session.day,
-    answered: firsts.length,
-    new: firsts.filter((review) => review.before === null).length,
-    again: firsts
-      .filter((review) => review.grade === "again")
-      .map(({ cardId, snapshot }) => ({
-        cardId,
-        headword: snapshot.headword,
-        meaning: snapshot.meaning,
-      })),
+    ...summarizeVocabReviews(reviews),
     tomorrow: session.tomorrow ?? 0,
   };
 }

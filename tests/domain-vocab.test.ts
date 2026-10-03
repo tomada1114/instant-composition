@@ -1,7 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   dealVocab,
+  planVocab,
+  summarizeVocabReviews,
   decideSettings,
   decideVocabAnswers,
   DEFAULT_SETTINGS,
@@ -269,6 +271,105 @@ describe("the weak cards", () => {
   });
 });
 
+describe("a request-local vocabulary plan", () => {
+  const cards: Card[] = Array.from({ length: 80 }, (_, index) => ({
+    id: `plan-${String(index)}`,
+    category: CATEGORIES[index % 4] ?? "word",
+    level: 3 + (index % 5),
+  }));
+  const progress = new Map(
+    cards.slice(0, 65).map(({ id }, index) =>
+      progressOf(
+        id,
+        index < 45
+          ? { state: scheduled({ lastDay: TODAY, dueDay: "2026-09-30" }) }
+          : index < 60
+            ? { state: scheduled({ lapses: 8, stability: 4 }) }
+            : {
+                source: { kind: "talk", talkId: "talk-1", turn: index },
+                state: null,
+                firstDay: null,
+              },
+      ),
+    ),
+  );
+  it.each([0, 5, 30] as const)(
+    "preserves all deals with a new limit of %d",
+    (newPerDay) => {
+      for (const reviewsPerDay of [50, 100, null] as const) {
+        for (const today of [TODAY, "2026-09-23"] as const) {
+          // Removed cards still have stored progress, but cannot be dealt or counted.
+          const state = makeState({
+            cards: cards.filter((card) => card.id !== "plan-46"),
+            progress,
+            today,
+            newPerDay,
+            reviewsPerDay,
+          });
+          const plan = planVocab(state);
+          for (const kind of ["today", "extra", "weak"] as const) {
+            for (const category of [null, ...CATEGORIES]) {
+              expect(plan.deal(kind, category)).toStrictEqual(
+                dealVocab(state, kind, category),
+              );
+            }
+          }
+          expect(
+            plan.figures.categories.reduce(
+              (total, category) => total + category.total,
+              0,
+            ),
+          ).toBe(79);
+          expect(plan.figures.due).toBe(
+            plan.deal("today", null).filter((card) => card.kind === "review").length,
+          );
+          expect(plan.figures.fresh).toBe(
+            plan.deal("today", null).filter((card) => card.kind === "new").length,
+          );
+        }
+      }
+    },
+  );
+  it("does not derive progress again for category deals and figures", () => {
+    const state = makeState({ cards, progress });
+    const reads = vi.spyOn(progress, "get");
+    const plan = planVocab(state);
+    const derivedReads = reads.mock.calls.length;
+    expect(derivedReads).toBeGreaterThan(0);
+    for (const category of [null, ...CATEGORIES]) {
+      plan.deal("extra", category);
+      plan.deal("weak", category);
+    }
+    expect(plan.figures.categories).toHaveLength(4);
+    expect(reads).toHaveBeenCalledTimes(derivedReads);
+    const dealt = plan.deal("today", null);
+    dealt.splice(0);
+    expect(plan.deal("today", null)).not.toStrictEqual([]);
+  });
+  it("keeps plans independent across learners, days and limits", () => {
+    const first = planVocab(makeState({ newPerDay: 5 }));
+    const second = planVocab(
+      makeState({ cards, progress, today: "2026-09-23", newPerDay: 0 }),
+    );
+    expect(first.figures.fresh).toBe(5);
+    expect(second.figures.fresh).toBe(0);
+    expect(second.figures.due).toBeGreaterThan(0);
+    expect(ids(first.deal("today", null))).toStrictEqual([
+      "word-3-0",
+      "idiom-3-0",
+      "phrasal-verb-3-0",
+      "phrase-3-0",
+      "word-3-1",
+    ]);
+    expect(planVocab(makeState({ cards: [] })).figures).toMatchObject({
+      due: 0,
+      fresh: 0,
+      weak: 0,
+      tomorrow: 0,
+    });
+  });
+});
+
 function session(overrides: Partial<VocabSession> = {}): VocabSession {
   return {
     id: "s1",
@@ -326,6 +427,49 @@ function decide(
     5_000,
   );
 }
+
+describe("a vocabulary review summary", () => {
+  it("retains first-entry grades and order with one card-id pass", () => {
+    const decided = decide([answer({ grade: "again" })]);
+    if (!decided.ok) throw new Error(decided.error.code);
+    const base = decided.value.entries[0];
+    if (base === undefined) throw new Error("The fixture needs one review");
+    let reads = 0;
+    const firsts: VocabReview[] = Array.from({ length: 100 }, (_, index) => ({
+      ...base,
+      id: `first-${String(index)}`,
+      get cardId() {
+        reads += 1;
+        return `card-${String(index)}`;
+      },
+      snapshot: { ...base.snapshot, headword: `first-${String(index)}` },
+    }));
+    const duplicates: VocabReview[] = firsts.map((review, index) => ({
+      ...review,
+      id: `second-${String(index)}`,
+      get cardId() {
+        reads += 1;
+        return `card-${String(index)}`;
+      },
+      answeredAt: base.answeredAt - 1,
+      before: base.after,
+      grade: "good",
+      snapshot: { ...base.snapshot, headword: "later entry" },
+    }));
+    reads = 0;
+    expect(summarizeVocabReviews([...firsts, ...duplicates])).toStrictEqual({
+      answered: 100,
+      new: 100,
+      again: Array.from({ length: 100 }, (_, index) => ({
+        cardId: `card-${String(index)}`,
+        headword: `first-${String(index)}`,
+        meaning: base.snapshot.meaning,
+      })),
+    });
+    expect(reads).toBeLessThanOrEqual(300);
+    expect(summarizeVocabReviews([])).toStrictEqual({ answered: 0, new: 0, again: [] });
+  });
+});
 
 describe("a vocabulary session's answers", () => {
   it("schedule a new card graded good three days on, and introduce it today", () => {
