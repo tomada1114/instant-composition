@@ -23,6 +23,7 @@ import {
 } from "./api-harness";
 import { NOON } from "./application-harness";
 import { localTables } from "./dynamodb-local";
+import { describeFirstAnswerHttpContract } from "./first-answer-http-contract";
 
 // The API over the DynamoDB store on DynamoDB local: the round's whole life, a
 // vocabulary session's, the learner's profile and the grade keys through HTTP,
@@ -38,6 +39,10 @@ beforeAll(async () => {
 afterAll(async () => {
   await tables.close();
 });
+
+describeFirstAnswerHttpContract("HTTP first answers with DynamoDB", async () =>
+  makeApi(await tables.freshBacking()),
+);
 
 describe("the API on DynamoDB local", () => {
   it("runs a talk to its last turn and keeps it, never found by another learner", async () => {

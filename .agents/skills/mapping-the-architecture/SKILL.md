@@ -225,6 +225,12 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   ids, a repeated answer is skipped, and finishing a finished round or session returns
   its kept summary. A model's first answer — a scene, a turn, a talk's candidates — is
   stored and answered again; a candidate added twice is added once.
+- A drill round adopts one first answer per card: a valid duplicate with another id
+  succeeds without replacing the first committed grade or moving counters and FSRS
+  again. The round version guards adoption and updates together; existing review logs
+  supply the adopted cards, and remain unchanged. Retry answers retain separate ids and
+  entries. The HTTP acknowledgement remains empty `204`, and reload/summary returns the
+  adopted result. A finished round still rejects unrecorded ids.
 - Answers travel in batches, so a live answer and a resent one take the same call; the
   web keeps unsent ones in the tab's `sessionStorage`. Only a contract status/code
   refusal drops an unsent answer: temporary and unknown responses stay pending. A

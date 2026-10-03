@@ -10,6 +10,7 @@ import {
 } from "@instant-composition/application";
 import { replayItems } from "@instant-composition/domain";
 import { makeRound } from "./application-fixtures";
+import { describeFirstAnswerContract } from "./first-answer-contract";
 
 import {
   answersFor,
@@ -18,6 +19,8 @@ import {
   NOON,
   type Harness,
 } from "./application-harness";
+
+describeFirstAnswerContract("first answers with memory", () => makeHarness().stores);
 
 /** A placement, then five days of rounds with misses, retries and fast answers. */
 async function fiveDays(h: Harness): Promise<void> {

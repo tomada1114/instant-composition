@@ -22,6 +22,8 @@ export interface AnswersState {
   readonly items: ReadonlyMap<string, ItemProgress>;
   /** Ids of the answers this round already holds. */
   readonly recorded: ReadonlySet<string>;
+  /** Cards whose first answer this round has already adopted, regardless of answer id. */
+  readonly firstCards: ReadonlySet<string>;
 }
 
 export interface AnswersChange {
@@ -46,7 +48,8 @@ function clampAnsweredAt(
 }
 
 /**
- * Takes checked answers into `state`, in log order, skipping ids already held.
+ * Takes checked answers into `state`, in log order, skipping ids already held
+ * and first cards already adopted, including earlier answers in this chunk.
  * Each is graded as `gradedOf` reads it, held to its round's limit, not the
  * setting now, and judged by its card's pace, neither trusted from the
  * client; a round crossing the day boundary keeps its own day, so a late
@@ -74,11 +77,16 @@ export function decideAnswers(
     );
   const items = new Map(state.items);
   const moved = new Set<string>();
+  const firstCards = new Set(state.firstCards);
   const entries: ReviewEntry[] = [];
   for (const { input, answeredAt } of fresh) {
     const card = cards.get(input.cardId);
     const graded = gradedOf(input);
     if (card === undefined || graded === undefined) continue;
+    if (input.pass === "first") {
+      if (firstCards.has(input.cardId)) continue;
+      firstCards.add(input.cardId);
+    }
     const paceMs = paceMsOf(card.words);
     const limitMs = limitMsOf(round, paceMs);
     const reviewed = reviewAnswer(items.get(input.cardId), {
