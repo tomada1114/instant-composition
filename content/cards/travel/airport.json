@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_2b4n3b7g",
+    "ja": "私は空席待ちに回された。",
+    "en": "I was put on standby.",
+    "alternatives": ["They put me on standby.", "I was added to the standby list."],
+    "point": "on standby は空席が出るのを待つ状態。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dae3f5a48e29a5e03fa4e9f145c25131785c3f69dac4152aedad374f00991d3d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2b4r5k4b",
+    "ja": "私は搭乗券を見せなきゃ？",
+    "en": "Must I show my pass?",
+    "alternatives": ["Is my boarding pass required?", "Do you need my boarding pass?"],
+    "point": "Must I で必要か尋ねるが、会話では Do you need も自然。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42783eebc0eb765fcfa3b4721db8ef1d76b300fd8c6ab960977f912aaa77053c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2j5g5c8g",
     "ja": "隣の男性が、荷物を上げてくれた。",
     "en": "The man beside me lifted my bag.",
@@ -41,6 +79,69 @@
     }
   },
   {
+    "id": "c_3g2d7q8q",
+    "ja": "私が信じた確約は今では条件付きだ。",
+    "en": "The guarantee I relied on is now conditional.",
+    "alternatives": [
+      "The assurance I trusted now comes with conditions.",
+      "The guarantee I believed now has conditions attached."
+    ],
+    "point": "I relied on は頼った確約を限定し、now conditional は今では条件付きである状態。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e672417dd8a9779a10398eaddd8f5f6bae52c9c8952aae04f6800e6e4db37f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3g5p2s7e",
+    "ja": "私は荷物を運べる。",
+    "en": "I can carry bags.",
+    "alternatives": ["I'm able to carry bags.", "I can carry the luggage."],
+    "point": "can で荷物を運べると伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b4f13de5b72490144486ef23be6c360d20c87b9ceb622cbd6b2d8d2d220ac2d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3r7y3t4f",
+    "ja": "疲れ果てて私は搭乗を逃した。",
+    "en": "Exhausted, I missed boarding.",
+    "alternatives": [
+      "Worn out, I missed boarding.",
+      "I missed boarding because I was exhausted."
+    ],
+    "point": "Exhausted は主語の状態を添える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7961b9a22259583d18f7d52f8dcfc83288f0ad3a113752b67354c6080ba1a872",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3x7d4c3g",
     "ja": "あの便は今、搭乗中です。",
     "en": "That flight is boarding now.",
@@ -63,6 +164,50 @@
     }
   },
   {
+    "id": "c_3y2m3z8n",
+    "ja": "席が空けば私が確保するよ。",
+    "en": "I'll book if seats open up.",
+    "alternatives": [
+      "I'll book when a seat opens up.",
+      "I'll reserve one if seats become available."
+    ],
+    "point": "opens up は空きができるという意味。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da1f5fd171d1112d20beeef74d6bb7af66d5677d9197fa58b953583173f90bff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3y5w5v4r",
+    "ja": "係員は私の荷物が保留中だと言った。",
+    "en": "Staff said my luggage was being held.",
+    "alternatives": [
+      "Staff said they were holding my luggage.",
+      "They said my baggage was being held."
+    ],
+    "point": "said の後で荷物が保留されているという係員の説明を伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:95619b58e161bc8a4ca7a6110ca4f5b441cebba73e729de942375a89a210f8dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4b6b2y2f",
     "ja": "ベルトは外すべきですか？",
     "en": "Should I remove my belt?",
@@ -78,6 +223,66 @@
         "hash": "sha256:082c64fba66e16bc91523bae9020f8abbae0d96ec994261612348f80865f98fa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c7h4z4j",
+    "ja": "夜便で来てたら私たち今はぐったりだ。",
+    "en": "Had we taken the red-eye, we'd be wrecked.",
+    "alternatives": [
+      "If we'd flown overnight, we'd be exhausted now.",
+      "We'd be wiped out now had we flown overnight."
+    ],
+    "point": "red-eye は夜をまたぐ便、wrecked はぐったり。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0db6f3c983853a154e800676b430b3941919dbc0801d9fc00f49e1ba035e3c6b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4f2g8c9c",
+    "ja": "私は席を見つけられる。",
+    "en": "I can find seats.",
+    "alternatives": ["I can locate seats.", "I can find a seat."],
+    "point": "can で空いている席を探せると伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d108447c3a558a908d39106e73008e117d449b5cf62d28f78c8a7ef8459b8387",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4f9w9j8u",
+    "ja": "私の席はどこ？",
+    "en": "Where's my seat?",
+    "alternatives": ["Where do I sit?", "Which seat is mine?"],
+    "point": "where で座席の場所を尋ねる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e251f61b285bfdb29226b727219cb741595b205d4991a32eb6683345462767d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -183,6 +388,25 @@
     }
   },
   {
+    "id": "c_4v2s2b8z",
+    "ja": "出るのはあの便が早い。",
+    "en": "That flight leaves earlier.",
+    "alternatives": ["That plane takes off earlier.", "That flight departs sooner."],
+    "point": "earlier は時刻がより早い。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bea8491bb465673dfbacaed43257069f870d000a5045d5c740705a05e4367f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4w5h3y4d",
     "ja": "乗り継ぎを、長く取るべきだった。",
     "en": "I should've allowed a longer layover.",
@@ -201,6 +425,25 @@
         "hash": "sha256:be3d193c92b651588784d9b58e9f488e4b2852520464190ec001e9df4076feed",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z3f6b8y",
+    "ja": "私はもう席を選びました。",
+    "en": "I've already chosen my seat.",
+    "alternatives": ["I've already picked a seat.", "I've already selected my seat."],
+    "point": "already と現在完了で席選びの完了を伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e59ee27105f02c70b8d09c2e072bf7bcff670fc3a89f9ef025cdf06964ea5c53",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -242,6 +485,28 @@
         "hash": "sha256:e01523c095821a641aae17d3f9cfe64ac21850c13e196555ada518cfaa003fbf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e5y5b4c",
+    "ja": "私は彼らが約束した便が飛ぶか疑ってる。",
+    "en": "I doubt the flight they promised will materialize.",
+    "alternatives": [
+      "I'm doubtful that the promised flight will actually happen.",
+      "I question whether the flight they promised will operate."
+    ],
+    "point": "materialize は約束などが実際に形になること。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1750a12e3366d2ca137612887b26e3f23bbda9186a90aaf928a11efaec2e5789",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -290,6 +555,28 @@
     }
   },
   {
+    "id": "c_5n6u8h4u",
+    "ja": "時間を気にしないなら私は乗継便を選ぶ。",
+    "en": "Were time no object, I'd choose a connecting flight.",
+    "alternatives": [
+      "If time didn't matter, I'd choose a connecting flight.",
+      "I'd pick a connection if time weren't an issue."
+    ],
+    "point": "were を先頭にして時間の制約がない仮定を置く。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d7cc5aea1b0aa2ca05b016cc9f8f845b498f7d41698afb64fa708d13ac175f8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5q6x9v8c",
     "ja": "保安検査場、どこか分かる？",
     "en": "Do you know where security is?",
@@ -313,6 +600,28 @@
     }
   },
   {
+    "id": "c_5q7e4a3u",
+    "ja": "彼女はもう入国審査を楽々通った。",
+    "en": "She's already breezed through immigration.",
+    "alternatives": [
+      "She's already sailed through immigration.",
+      "She's already cleared immigration without trouble."
+    ],
+    "point": "breeze through は難なくすんなり通過する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:560b842e92cd24e0fc1e98cb4f3586a8837c62633c5d00b1a9f7fc4756b91c7e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5r2w2n5a",
     "ja": "早く来れば、私たち乗れたのに。",
     "en": "We'd have boarded if we'd been earlier.",
@@ -331,6 +640,72 @@
         "hash": "sha256:971cd5af76b35a3b9d17b6bad5222b25adc855f684c786bb5c303b58e9f81297",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5s6d7y8b",
+    "ja": "私が確認を求めてたら誤解は防げたのに。",
+    "en": "Had I sought clarification, I'd have forestalled the misunderstanding.",
+    "alternatives": [
+      "If I'd sought clarification, I'd have prevented the misunderstanding.",
+      "I'd have averted the misunderstanding had I requested clarification."
+    ],
+    "point": "forestall は問題が生じる前に先手を打って防ぐ。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65801a382a3e0a119a3d4c813dd40294aac9daec7897a5f90d2d7bfbeac2723b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5u3g4s8q",
+    "ja": "私の席を窓側に変更できますか？",
+    "en": "Could you reassign me to a window seat?",
+    "alternatives": [
+      "Could I be reassigned to a window seat?",
+      "Could you switch me to a window seat?"
+    ],
+    "point": "reassign は既に決めた割り当てを変更する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92d35434aca28fff7eec99078b31f6098c9aa2550900c6119a6bf195e927f851",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5x6r3m5e",
+    "ja": "私が疑うのは優先搭乗が名ばかりかだ。",
+    "en": "What I question is whether priority boarding is nominal.",
+    "alternatives": [
+      "I question whether priority boarding is only in name.",
+      "I'm wondering whether priority boarding has any real substance."
+    ],
+    "point": "nominal は名前や建前だけで実質がない。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a74e3b303bc15ac0f296f56f8f977fd0738f3a6a3c22468e7053d53c0eb17c53",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -399,6 +774,25 @@
     }
   },
   {
+    "id": "c_6z8x3p8n",
+    "ja": "私の便は満席だ。",
+    "en": "My flight is full.",
+    "alternatives": ["My plane is full.", "My flight's fully booked."],
+    "point": "full は空いている席がない状態。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8ef37d0e0ac475991e9254e3a8f3531fc41f16fdfcd8035cfac2c9ca1eb1bf7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7g4s2z2b",
     "ja": "予約した便は遅れていますか？",
     "en": "Is the flight I booked delayed?",
@@ -436,6 +830,28 @@
         "hash": "sha256:64d8bdfb99af2a63841a6b121c2e8cfc59b3207c4e561960b6dfd73c5cde78aa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r8r6n4n",
+    "ja": "書類は揃っても私に通過の保証はない。",
+    "en": "Even with complete papers, I'm not guaranteed clearance.",
+    "alternatives": [
+      "Complete papers don't guarantee I'll be cleared.",
+      "Having all my documents doesn't guarantee clearance."
+    ],
+    "point": "even with で書類が揃っても通過は保証されないと譲歩する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["concession-contrast", "passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23084fcfcb7b32d59845510b398cdb88bd6fa71602cb17a60342cf11203d9e5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -506,6 +922,69 @@
     }
   },
   {
+    "id": "c_7z9z6d8n",
+    "ja": "私が宣誓した申告内容は正確です。",
+    "en": "The declaration I swore to is accurate.",
+    "alternatives": [
+      "What I declared under oath is accurate.",
+      "My sworn declaration is accurate."
+    ],
+    "point": "I swore to が自分の宣誓した申告内容を限定する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b84454de256875ee608f05a1ecffdf00ac6d4d7acd582e7db402e16e09822fd9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8a6d9g3y",
+    "ja": "鞄から靴を出して。",
+    "en": "Remove shoes from your bag.",
+    "alternatives": ["Take shoes from your bag.", "Get shoes from your bag."],
+    "point": "remove A from B で B から A を取り出す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3945a3a8ecf7575307ff4138947d6a89d0cfa94228ceadd00f1dbee794ecf36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8m9w4x9z",
+    "ja": "乗継ぎの余裕を過信しなきゃよかった。",
+    "en": "I wish I hadn't overestimated my connection time.",
+    "alternatives": [
+      "If only I hadn't overestimated my connection time.",
+      "I regret overestimating my time between flights."
+    ],
+    "point": "overestimate my connection time は乗り継ぎに使える時間を実際より多く見積もる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94166fa73af9be89b5546ba83fa9911c2cb707cd38339d83d8e919128ef8ed66",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8p9t5m3n",
     "ja": "この用紙、書いてもらえますか？",
     "en": "Could you fill this out?",
@@ -572,6 +1051,69 @@
     }
   },
   {
+    "id": "c_8x5y6d9c",
+    "ja": "係員は私の同意を勝手に決めつけたかも。",
+    "en": "The agent might've presumed my consent without asking.",
+    "alternatives": [
+      "The agent might've assumed my consent without asking me.",
+      "The agent might have taken my consent for granted."
+    ],
+    "point": "presume consent は確認なしに同意があると決めつける。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb520582717bdf0f38b12319285b409254fa1eeb9a7e1b6001400e4f3891f68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8z5z3y8v",
+    "ja": "私には乗継ぎの余裕などほぼない。",
+    "en": "I have precious little leeway between flights.",
+    "alternatives": [
+      "I have little room for delays between flights.",
+      "There's scarcely any spare time between my flights."
+    ],
+    "point": "precious little はほとんどないことを強く表す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4adc9c3e303b48bed87dc627471f5f0152127fb4a7d642c07285a5bc76fc6aba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9c4a6g8y",
+    "ja": "我々は列を間違えた。",
+    "en": "We joined the wrong line.",
+    "alternatives": ["We chose the wrong line.", "We waited in the wrong line."],
+    "point": "joined the wrong line は並ぶ列を間違えたことを表す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e5614d8d47d3b0acacfb92167647a28ad15e9fb6fb02fd29f41f30cd877c142e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9d3m2a3g",
     "ja": "着くと、搭乗は終わっていた。",
     "en": "Boarding had ended when I arrived.",
@@ -591,6 +1133,66 @@
         "hash": "sha256:6dd283bdbba710403891ab434aba7ad3ff4dd463816f02c2a17c757cddeb0331",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d3n7b8q",
+    "ja": "私は到着ロビーで待つよ。",
+    "en": "I'll wait in arrivals.",
+    "alternatives": [
+      "I'll wait in the arrivals hall.",
+      "I'm waiting in the arrivals hall."
+    ],
+    "point": "arrivals は空港の到着エリアを指す。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc09dc23b5a7ee687a66d1be32117cbd988642f29c8fc27b3a27825a48be59c3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9g5f4r2y",
+    "ja": "私は搭乗口へ急いだ。",
+    "en": "I dashed to the gate.",
+    "alternatives": ["I rushed to the gate.", "I hurried toward the gate."],
+    "point": "dash は急いで駆ける。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4712eeb7d4f389c8d520db78044b1c620583dcdc77bb7fa0667e1b3fc1d25250",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9g7x4z6v",
+    "ja": "私、荷物減らしておけばな。",
+    "en": "I wish I'd packed lighter.",
+    "alternatives": ["If only I'd brought less luggage.", "I regret packing so much."],
+    "point": "pack lighter は荷物を少なくして旅の準備をする。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d744f5fe5f21eed23f7eeb6102fa706f47408736032c8f05d3818d6fb4785f8c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -633,6 +1235,28 @@
         "hash": "sha256:6e667fd41d2e1e5abbd90a35ecc02ff55fe18fac63b9de5d052262f314c599c0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9q6p4k7a",
+    "ja": "私は手荷物規則を明確にしたい。",
+    "en": "I want to clarify baggage restrictions.",
+    "alternatives": [
+      "I'd like the baggage rules clarified.",
+      "I want clarity on the baggage rules."
+    ],
+    "point": "clarify は曖昧な規則をはっきりさせる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e223ef4c52754e0fc96431eb762d334f6f8db86d26620ccea50f72eed297268",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

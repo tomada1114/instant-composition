@@ -63,6 +63,25 @@
     }
   },
   {
+    "id": "c_3c3z2d9a",
+    "ja": "私は少し安堵を感じる。",
+    "en": "I feel a little relief.",
+    "alternatives": ["I feel slightly relieved.", "I feel a bit relieved."],
+    "point": "気持ちとしての relief は数えず a little relief。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35f555a93e9a62f69e482c37fa5afbaf1ea2be899a69cbe341216cf8ad9c514c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3d4u9f2y",
     "ja": "あの一言、飲み込めばよかった。",
     "en": "I wish I'd bitten my tongue.",
@@ -78,6 +97,72 @@
         "hash": "sha256:fef345a7bbbc43bda1fb2437fa69bb750fd853d7c8200716e409d19efc2c65e7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3f4v3u5m",
+    "ja": "彼が軽んじられたと思う訳は分かる。",
+    "en": "I get why he feels he's been slighted.",
+    "alternatives": [
+      "I understand why he thinks he's been disrespected.",
+      "I get why he feels slighted."
+    ],
+    "point": "slighted は軽んじられたと感じること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:210e0f1bbd93383363bdf6054f1b0dc368e40a496383138a2765a862f1ffbc89",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3h3f3q3b",
+    "ja": "君の立場なら控えめな賛辞で案をけなす。",
+    "en": "In your shoes, I'd damn it with faint praise.",
+    "alternatives": [
+      "In your place, I'd criticize it with faint praise.",
+      "I'd give it faint praise in your place."
+    ],
+    "point": "damn with faint praise は弱い賛辞で逆にけなす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13f6139a625e0f7a9aab86a4b05cae0ab7a3a61e5524e56a9d117fca5036ce62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3h8z7g4e",
+    "ja": "私はこんな恨みを抱くと思わなかった。",
+    "en": "Little did I imagine I'd harbor such resentment.",
+    "alternatives": [
+      "I never imagined I'd nurse such a grudge.",
+      "I never thought I'd resent it this much."
+    ],
+    "point": "harbor resentment は恨みを心に抱き続ける。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8a2b839fd33f89e256c9302d9dc180304012fb90927f77c1e06166ba5d6c5fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -122,6 +207,25 @@
         "hash": "sha256:42df784a3b6e6a36933bbc12962f657ae7929fc6534aee35a773d8db91d23060",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3u6b3h8j",
+    "ja": "君に考え直してほしい。",
+    "en": "I want you to reconsider.",
+    "alternatives": ["I want you to rethink it.", "I'd like you to think again."],
+    "point": "reconsider は一度決めたことを考え直す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cb80bbe48aa3c12c1f75843669fac6af298b23d9f59dc6b7c7cba69254376a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -202,6 +306,28 @@
     }
   },
   {
+    "id": "c_4x3s9d9c",
+    "ja": "彼が漏らした秘密が気がかりだ。",
+    "en": "The secret he spilled worries me.",
+    "alternatives": [
+      "I worry about the secret he revealed.",
+      "The secret he let slip concerns me."
+    ],
+    "point": "spill a secret は秘密を漏らす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:47fc642ffd04e7701760605a55f2b8517d8a47c2621ce26e43381090578e3477",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4z6r6p5c",
     "ja": "今、わくわくしてる！",
     "en": "I'm feeling excited.",
@@ -217,6 +343,25 @@
         "hash": "sha256:630e2a2702983e8d8b1934d74c74f8b04ebf60d397cd50230fa4448ea0db9b03",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a2b9t4h",
+    "ja": "私は怒ってない。",
+    "en": "I'm not angry.",
+    "alternatives": ["I don't feel angry.", "I'm not mad."],
+    "point": "not angry で怒っていないと伝える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c758853238fdf9f5d4c73abbfec8c3b384d4fc71f00b958947a14a1931d386bc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -258,6 +403,66 @@
         "hash": "sha256:77af6adb156faf13fce0843ead7c2a7aa0f83747196a507192619bd64a60870e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d2n7m3r",
+    "ja": "泣かないでね。",
+    "en": "Please don't cry.",
+    "alternatives": ["Don't cry, okay?", "Try not to cry."],
+    "point": "否定の命令文は Don't と動詞の原形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97c48c7a30634c3c0bf61738af20c2308cf2f03fdc0c51e1723e9601234c1582",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5k5w3s2s",
+    "ja": "君に私の話に合わせてほしい。",
+    "en": "I want you to humor me.",
+    "alternatives": ["I'd like you to indulge me.", "I'd like you to play along."],
+    "point": "humor は相手に合わせてあげること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6323c0816524c25eb3cac0822e64c8a652ca67f2c3805ae557bf7da3510f1bc0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5m6x9d9z",
+    "ja": "君が無視してたら私はすねてた。",
+    "en": "If you'd ignored me, I'd have sulked.",
+    "alternatives": [
+      "I'd have sulked if you'd ignored me.",
+      "I'd have pouted if you'd ignored me."
+    ],
+    "point": "過去に実現しなかった条件は had ignored、sulk はすねる。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42d4e0f6bd62ba5355386f860990bae4dcc11c9793926104b1eb10c2fdb642dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -306,6 +511,25 @@
     }
   },
   {
+    "id": "c_5x6t6w3m",
+    "ja": "私、君を信じられる。",
+    "en": "I can trust you.",
+    "alternatives": ["I can count on you.", "I can have faith in you."],
+    "point": "trust は相手を信頼する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad1ddf155eda60d4bfaca22ff831bd0e42ebd77cdbe251b14ff74ed951877ea9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5x6w8j8s",
     "ja": "彼、ほっとしたって言ってたよ。",
     "en": "He said he was relieved.",
@@ -321,6 +545,29 @@
         "hash": "sha256:194f686776879ad9c4ba494a3c840b378d5bfbee1c2a8f3e3089dd0730a35d37",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b9d8q6w",
+    "ja": "私はだいぶ気が楽になった。",
+    "en": "I feel much more relaxed.",
+    "alternatives": [
+      "I'm feeling far less tense.",
+      "I feel a lot calmer.",
+      "I'm much more at ease."
+    ],
+    "point": "much は比較級の差を強める。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83d835944ee1db62b507f26fb9265e7c97f42ae9b5e5162e2af4f62d4a800a84",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -391,6 +638,28 @@
     }
   },
   {
+    "id": "c_6v7k9m7b",
+    "ja": "私は不安をもう払拭した。",
+    "en": "I've put my fears to rest.",
+    "alternatives": [
+      "I've laid my worries to rest.",
+      "My fears have now been dispelled."
+    ],
+    "point": "put fears to rest は不安を解消する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dc9ac17506191d8e43aad6f413d94b1e5ceef142e3d6585d2a0a3cdfeedf163",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7c4z9t7s",
     "ja": "聞いた知らせ、嬉しかったよ。",
     "en": "I loved the news I heard.",
@@ -447,6 +716,25 @@
         "hash": "sha256:bc702dda73921cb6c7234b69185832ade1afad272dbc5433eff5cbdac4bf979a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w2y9q3r",
+    "ja": "まだ望みはある。",
+    "en": "There's still hope.",
+    "alternatives": ["Hope still remains.", "There is hope yet."],
+    "point": "hope は数えないので there is。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c66c78f068f5e1f1c38ec88aa4e8ff28ea303a83aa8175137d2d4bf0ffd6f06a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -533,6 +821,25 @@
         "hash": "sha256:6c5f47cf741447465aa23ec4b7396cb5dd7bf7798a0bfe72e4ace9024d733568",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8k9v6s6v",
+    "ja": "私はもう自信を取り戻した。",
+    "en": "I've regained my confidence.",
+    "alternatives": ["My confidence has returned.", "I have my confidence back."],
+    "point": "regain は失ったものを取り戻す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73353502d40a3e00e14aa8e6aabbf7e90e798bde3b0b7fc9781ca3ed8f0a77d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -653,6 +960,66 @@
         "hash": "sha256:06195286097e4f6132f1348e2da6b7a721068530b694e10da3743b9f6256d49f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d6x2y3t",
+    "ja": "私はもう悪い知らせに備えてた。",
+    "en": "I'd braced myself for bad news.",
+    "alternatives": [
+      "I'd prepared myself for bad news.",
+      "I'd been ready for unwelcome news."
+    ],
+    "point": "brace oneself は悪いことに備えて心を構える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e02f2b29d9300dd46073108e5fd412cb7d099d5f83678fac0a09aa7b1fe3e1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9e5c2b9c",
+    "ja": "心配をやめてよ。",
+    "en": "Stop worrying, please.",
+    "alternatives": ["Please stop fretting.", "Please quit worrying."],
+    "point": "stop の後は worrying の形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["imperatives", "gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6c974e958d0ab73c1b27d95d138c91279ebccbd673c4f8f44ccad0c07efeb95",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9p7w8h9a",
+    "ja": "私は今、悲しい。",
+    "en": "I'm feeling sad.",
+    "alternatives": ["I feel sad.", "I'm sad right now."],
+    "point": "feeling sad は今の悲しい気持ち。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68c6acf5d5695bad591715a70df00f113ed3503b9e5230136858ee405c950c20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

@@ -1,5 +1,71 @@
 [
   {
+    "id": "c_2d4g8x7s",
+    "ja": "彼女は密結合が致命的な弱点と言った。",
+    "en": "She said tight coupling was an Achilles heel.",
+    "alternatives": [
+      "She said tight coupling was a fatal weakness.",
+      "She said tight coupling was the weak point."
+    ],
+    "point": "Achilles heel は重大な弱点。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c391b8f16bfa783f93eaf4985fa1b090f59666879d2f3d6f92c823ef99d3e9cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2d6s5q4x",
+    "ja": "私は抽象化を万能薬と誤認した。",
+    "en": "I mistook abstraction for a panacea.",
+    "alternatives": [
+      "I wrongly saw abstraction as a cure-all.",
+      "I wrongly treated abstraction as a universal remedy."
+    ],
+    "point": "mistook A for B は A を B と誤認した、panacea は万能薬。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73321468640642cbd2df3d4fc65f5f498fed98fe57b584dcb23807b87eb6e197",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2h2b7v8r",
+    "ja": "私、彼女に表の分割を頼んだ。",
+    "en": "I asked her to split tables.",
+    "alternatives": [
+      "I asked her to divide tables.",
+      "I asked her to separate the tables."
+    ],
+    "point": "ask 人 to do で表を分割するよう頼む。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c75120a97f248e877bdcc478d1bcd60721e0dce9099fb609712151cf4729c9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2m5c2c2k",
     "ja": "どっちが拡張向きか分かる？",
     "en": "Do you know which scales better?",
@@ -18,6 +84,47 @@
         "hash": "sha256:d8df12a825722d124e6ebfdd6d2b3d5a9ef012e4cfeeaa2c3691493c29d1ca8a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2p9k4t5v",
+    "ja": "私は美を追い障害耐性を軽視した。",
+    "en": "Pursuing elegance, I neglected fault tolerance.",
+    "alternatives": [
+      "I neglected fault tolerance while pursuing elegance.",
+      "In pursuing elegance, I neglected fault tolerance."
+    ],
+    "point": "fault tolerance は障害が起きても動き続ける能力。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4449604686d44f9f5a940d6c5619946a13d2033446a83b8ac9ea51948cfb719",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2r9y6q4b",
+    "ja": "この案は簡単だ。",
+    "en": "This plan is simple.",
+    "alternatives": ["This is a simple plan.", "This plan isn't complicated."],
+    "point": "simple は複雑でない。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:333aac660d448bb056855dc321a21b49568ab1c870870d928b140a019fda5b01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -64,6 +171,28 @@
     }
   },
   {
+    "id": "c_3g6k7h9g",
+    "ja": "私たちはもう代案を掘り下げた。",
+    "en": "We've already delved into the alternatives.",
+    "alternatives": [
+      "We've already examined the alternatives in depth.",
+      "We've already explored the other options thoroughly."
+    ],
+    "point": "delve into は詳しく掘り下げて調べる。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["present-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f240ee783f532036fefed3e2e2783c9d7537ee6f8fc18402a9e352dbc83cfd65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3h6a4n7j",
     "ja": "まず選択肢を挙げよう。",
     "en": "Let's list the options.",
@@ -79,6 +208,28 @@
         "hash": "sha256:53f2045c30c8c0b5716f60de6c8c3361ec76c0692babf54cc8f83173852f4cf7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p9f6b7v",
+    "ja": "この設計は私たちを縛る。",
+    "en": "This design has us boxed in.",
+    "alternatives": [
+      "This design leaves us little room to maneuver.",
+      "This design restricts our options."
+    ],
+    "point": "have 人 boxed in は選択肢を制約する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:681a1091c027cd43e35093aed36ff412cd497f152a1d2303a672b632c705dda1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -142,6 +293,28 @@
         "hash": "sha256:5ef251c755f26851bcef8d58ebc47923f4446cc61c308188c29e0f31f9f1c4c0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f8a8q9v",
+    "ja": "分けてたら我々は窮地を免れたのに。",
+    "en": "If we'd split it, we'd have dodged trouble.",
+    "alternatives": [
+      "If we'd divided it, we'd have avoided trouble.",
+      "We'd have avoided trouble if we'd split it."
+    ],
+    "point": "dodge trouble は厄介な状況を避ける。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bfc4b7a2d3701f57984f93831bca7e81f3b582963e643de7e62d87f391fef2a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -228,6 +401,28 @@
     }
   },
   {
+    "id": "c_4u3m8t2m",
+    "ja": "私は便宜を工夫と美化したかも。",
+    "en": "I might've dressed up expediency as ingenuity.",
+    "alternatives": [
+      "I may have dressed up expediency as inventiveness.",
+      "I might've portrayed expediency as ingenuity."
+    ],
+    "point": "dress up は実態よりよく見せる、expediency は便宜的な都合。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["modal-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e92c2468e3e2bcd503bf8295162321e6c41928c409fee17356878da26bb79812",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4v4m6n9t",
     "ja": "彼はそれが何をするか知らないと思う。",
     "en": "I don't think he knows what it does.",
@@ -246,6 +441,66 @@
         "hash": "sha256:17f3411838cfc174f8afed2bd7cdef49a6cc9ba22c5958a929492892601b8835",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v5p2u5u",
+    "ja": "私が図を描いてもいい？",
+    "en": "Can I draw a diagram?",
+    "alternatives": ["May I sketch a diagram?", "Is drawing a diagram okay?"],
+    "point": "draw a diagram で設計の図を描く。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:672812332b6047ebaa35ceff544b119ff4dee3352bb33cd70a44786dbd2854dd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4v8g4f8d",
+    "ja": "私が二つを比べるよ。",
+    "en": "I'll compare both.",
+    "alternatives": ["I'll compare the two.", "I'll check both against each other."],
+    "point": "compare both は二つの選択肢を比べる。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7862299540060b56401f5e96289ed076781a77ffd956468d7c93892988afb052",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4z2c9t4v",
+    "ja": "私は案を既に比較してた。",
+    "en": "I'd already weighed the options.",
+    "alternatives": [
+      "I'd already compared the options.",
+      "I'd already evaluated the alternatives."
+    ],
+    "point": "weigh the options は選択肢を比較検討する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4df9496888c2663f0a6acdc3ef3161088d5e39370ada92b923602e08c93a1c10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -313,6 +568,28 @@
     }
   },
   {
+    "id": "c_5g3k3q2m",
+    "ja": "承認待ちの設計が足かせだ。",
+    "en": "The design awaiting approval is a burden.",
+    "alternatives": [
+      "The design pending approval is a hindrance.",
+      "The design awaiting approval is holding us back."
+    ],
+    "point": "awaiting approval は承認待ち、a burden は重荷。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5f7130c1db7daccb50b0026071f21c939837b4ed17d52b623a7950e43822f78",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5g6s5s6h",
     "ja": "Postgres にしたよ。",
     "en": "We went with Postgres.",
@@ -354,6 +631,25 @@
         "hash": "sha256:38f24cc32fa4bc66783563031b90d9a1e3298482f2a32cb59924a32f839e0f12",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x5v9a4s",
+    "ja": "この案を残して。",
+    "en": "Keep this option.",
+    "alternatives": ["Keep this as an option.", "Don't drop this plan."],
+    "point": "keep で設計の案を候補として残す。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48fb5e0365324de9bcd7da02fc0dd5706f0af9727417a5174636d93f59957742",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -421,6 +717,28 @@
     }
   },
   {
+    "id": "c_6s7x9h6c",
+    "ja": "私たちは密結合をなくす予定だ。",
+    "en": "We'll eliminate tight coupling.",
+    "alternatives": [
+      "We're going to remove the tight coupling.",
+      "We'll get rid of tight coupling."
+    ],
+    "point": "tight coupling は密結合。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:407b5ab9c503a6d8cab26fe79fe2b0ef2d90bbf88cfad568b5c80e1292553d1d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6u6d4z5n",
     "ja": "別案を出してもいいですか？",
     "en": "May I suggest another option?",
@@ -481,6 +799,72 @@
     }
   },
   {
+    "id": "c_7s4z4w8k",
+    "ja": "我々は安全を考えなきゃ。",
+    "en": "We must think about safety.",
+    "alternatives": [
+      "We have to think about safety.",
+      "We need to think about safety."
+    ],
+    "point": "must で安全を考慮する必要を伝える。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97b5dccaf54b38227ba0fa9fc33f96b8e1d2d173f5c12d7eaa021a41895d59d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7t9s9p3m",
+    "ja": "この設計には弱点がある。",
+    "en": "This design has a weakness.",
+    "alternatives": [
+      "There's a weakness in this design.",
+      "This design has a weak point."
+    ],
+    "point": "a weakness は設計上の弱点。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2e7dddd8f0e2a56a63d50fa3aca61a2a56c000346a048f13083f1494f31ba4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7u7z6m3b",
+    "ja": "私は設計の全体像を描いた。",
+    "en": "I mapped out the architecture.",
+    "alternatives": [
+      "I sketched the overall architecture.",
+      "I drew up the architecture."
+    ],
+    "point": "map out は全体の構成を描いて整理する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-simple", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17bdca6adeaad7d79851dababdc88f6c168211a024395916342797551503a316",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8h9b2r9h",
     "ja": "よく更新される表は分けたい。",
     "en": "I'd split tables that update often.",
@@ -503,6 +887,85 @@
     }
   },
   {
+    "id": "c_8t6x3s4g",
+    "ja": "私は案を図にしてる。",
+    "en": "I'm drawing the plan.",
+    "alternatives": ["I'm sketching the plan.", "I'm sketching a design."],
+    "point": "進行形で今している作業を伝える。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97d722299f02e8f3aceba4ee16d1289e1c5339485b73d057b7d8abb7ba703123",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9d5v2n5a",
+    "ja": "私はデータ複製を避ける。",
+    "en": "I avoid copying data.",
+    "alternatives": ["I try not to copy data.", "I avoid making data copies."],
+    "point": "avoid の後は copying のように動名詞。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:82b198ed9b2958ac5d95ec5408595af06dbd801241d242e36544b5c41d27f355",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9e5q4q5y",
+    "ja": "我々はDBを共用できる。",
+    "en": "We can share this database.",
+    "alternatives": ["We can use the same database.", "We can share one database."],
+    "point": "share は一つのものを一緒に使う。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:666fd6c28c724a12f7087d434829e2e36f58ef2d055736eb83b26e7dc891af0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9h8f7g7c",
+    "ja": "私は割に合わぬ勝利を悔やむ。",
+    "en": "I wish I'd forgone that Pyrrhic victory.",
+    "alternatives": [
+      "I wish I'd avoided that costly victory.",
+      "I regret securing that ruinously costly victory."
+    ],
+    "point": "a Pyrrhic victory は代償が大きく利益が帳消しになる勝利。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f33b6039b03eecc98f81d6efc625b0679db2f3d7436fc6105740c59e397a6b0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9n5x8r4x",
     "ja": "もう誰かが作ってたんだ。",
     "en": "Someone had already built it.",
@@ -518,6 +981,28 @@
         "hash": "sha256:ccdf383735e3c0ef31fb529f16d8c9e4a47a99a2cc4fa6737ebe290fb172d3e2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p7p7r7x",
+    "ja": "私は設計の袋小路を予想しなかった。",
+    "en": "Little did I foresee this design's dead end.",
+    "alternatives": [
+      "I never anticipated this design's dead end.",
+      "I didn't foresee this design becoming a dead end."
+    ],
+    "point": "Little を先頭にすると did I の語順になる。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c4e935e84b7cd989175a40fae69d5e756e8a42e75ec77b96ba303b1518f6ab1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

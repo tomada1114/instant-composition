@@ -23,6 +23,28 @@
     }
   },
   {
+    "id": "c_2d2w6j7m",
+    "ja": "私の肩書きは名ばかりとも言える。",
+    "en": "My title is, shall we say, nominal.",
+    "alternatives": [
+      "You could say my title is in name only.",
+      "My title is more nominal than substantive, I'd say."
+    ],
+    "point": "shall we say は少し含みを持たせて言葉を選ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e3640209a2411c1289abfb0f5b73639982ac3d759a700808afe4635d4158ad3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2e3d8e2p",
     "ja": "移住してなければ、今ここにいない。",
     "en": "If I hadn't emigrated, I wouldn't be here.",
@@ -45,6 +67,50 @@
     }
   },
   {
+    "id": "c_2n2n6t8a",
+    "ja": "私は出版でずっと修業してます。",
+    "en": "I've been cutting my teeth in publishing.",
+    "alternatives": [
+      "I've been learning the ropes in publishing.",
+      "I've been getting my start in publishing."
+    ],
+    "point": "cut my teeth は初めの実務経験を積むこと。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a50970413db90c29f7c26460df8072d373c859f14ee93dc2259938108eec0f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2q9a6d8y",
+    "ja": "私が型に従えば居場所は見つからなかった。",
+    "en": "Had I conformed, I'd never have found my niche.",
+    "alternatives": [
+      "If I'd conformed, I wouldn't have found my niche.",
+      "I'd never have found my place had I conformed."
+    ],
+    "point": "find my niche は自分に合う役割や居場所を見つける。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7df2269a0343cb22ad507f80d885f57fe883399c2702bd57c0d61be99bd049e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2t9p7k9j",
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
@@ -63,6 +129,69 @@
         "hash": "sha256:85981092e64f5674580bc0d3c286029c9fdedef8417dcf9cb5f5fa5e8588c8f3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v9w5m3s",
+    "ja": "私が重役と付き合う機会は稀だ。",
+    "en": "Seldom do I rub shoulders with executives.",
+    "alternatives": [
+      "I rarely mingle with executives.",
+      "I seldom mix with senior executives."
+    ],
+    "point": "rub shoulders with は人と交流すること。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60832d836034100fc795bffe9db794ea316d8d597964a1e9ef1c5c0ffa3c13df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2x2r3n6a",
+    "ja": "私は音楽が好き。",
+    "en": "I like music.",
+    "alternatives": ["I enjoy music.", "Music appeals to me."],
+    "point": "music は数えないので a をつけない。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72100343902a35ce144d243c62e7c847bca2b588ad27d9e87ec0da4453d4a2c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3c6q9n4a",
+    "ja": "あなたの原動力を伺えますか？",
+    "en": "May I ask what makes you tick?",
+    "alternatives": [
+      "Could you tell me what drives you?",
+      "May I ask what really motivates you?"
+    ],
+    "point": "what makes you tick は行動や関心の原動力を尋ねる表現。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cc8f4b325ac6f107c16d4fbdaeb051720b63b78bcc86e1b62f0553f818909d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -155,6 +284,25 @@
     }
   },
   {
+    "id": "c_3n4h7v9u",
+    "ja": "そこに私の妹がいる。",
+    "en": "There's my younger sister.",
+    "alternatives": ["My younger sister's there.", "That's my little sister."],
+    "point": "There's でそこにいる人を指し示す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2cd5adc3e8179fb79b95207c128bfd8d98d75ba8815cc218081ac398b9e212d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3n4u5s6w",
     "ja": "弊社はこの分野で有名です。",
     "en": "We're well known in this field.",
@@ -173,6 +321,28 @@
         "hash": "sha256:1d97085103f5c708649d44a2f2ba2110d82188e9545ac55b3c7fd6eb6bd264a3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q2d5p9e",
+    "ja": "私が避けた分野は今では得意分野だ。",
+    "en": "The field I avoided is now my forte.",
+    "alternatives": [
+      "What I avoided is now my strong suit.",
+      "The field I avoided is now my specialty."
+    ],
+    "point": "forte は得意分野。避けた過去と得意な現在を対比する。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17a8dfc92a84a47e8dd4c74712822342ddfd92d387ff5c3d0006822a55879e1d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -199,6 +369,28 @@
     }
   },
   {
+    "id": "c_3v9x5j9a",
+    "ja": "型にはめられたくなくて肩書きを避ける。",
+    "en": "I avoid job titles to resist being pigeonholed.",
+    "alternatives": [
+      "I avoid titles because I dislike being pigeonholed.",
+      "I skip job titles to avoid being labeled."
+    ],
+    "point": "to resist being pigeonholed は一つの型に当てはめられるのを避ける目的を表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92f8eef79232f7d1c9f1fe8fb4da14fcf919508df8f1b3e171ff70e68897beca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
@@ -214,6 +406,50 @@
         "hash": "sha256:f0f39280423d457000933cc2c2a9db0bc2170f10bdffdd874e04782dcebd05cd",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y7d6d4f",
+    "ja": "緊張すると私は黙り込む。",
+    "en": "I clam up when nervous.",
+    "alternatives": [
+      "I go quiet when I get nervous.",
+      "I stop talking when I feel nervous."
+    ],
+    "point": "clam up は黙り込む。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a7479c04d12991005ca4eb5cf993f3c5474561c2cb59d3317320fb7cf5db3d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4g3y6n3s",
+    "ja": "私は先に挨拶すべき。",
+    "en": "I should say hello first.",
+    "alternatives": [
+      "I ought to say hello first.",
+      "I should give the first greeting."
+    ],
+    "point": "should で先に挨拶するのがよいと伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ad622f01546a32b3c86a87b41ae545dca32172b74409c4c9bda8d0cd598bf5a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -256,6 +492,66 @@
         "hash": "sha256:f821ff38d71cfaaf6410ac8174f6a78da6e918212b7527ca62c6bd909207a9d3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y8h4t7c",
+    "ja": "君はどんな仕事してるの？",
+    "en": "What's your line of work?",
+    "alternatives": ["What kind of work do you do?", "What do you do for a living?"],
+    "point": "line of work は仕事の分野や職種。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff12603fe034d1864da5ce122cee9eb24547ee120128e81d98921e0e7c5aa40c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4z4y2u2h",
+    "ja": "私が名刺を渡していい？",
+    "en": "May I give you my card?",
+    "alternatives": ["Can I offer my business card?", "May I hand you my card?"],
+    "point": "May I give you my card? で相手に自分の名刺を渡す許可を求める。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08702e9934cc23c0635da9e1487694bae2b32f70e48789d8003cffe7e2e2be59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5c2u6w7j",
+    "ja": "私は姉より社交的だ。",
+    "en": "I'm more outgoing than my sister.",
+    "alternatives": [
+      "I'm more sociable than my sister.",
+      "My sister's less outgoing than me."
+    ],
+    "point": "outgoing は人と気軽に交流する性格。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4744c8f7251541fa2a49d9ef324b99556942e94473567af8e0484fa255f4d619",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -342,6 +638,28 @@
     }
   },
   {
+    "id": "c_5s7j3z5s",
+    "ja": "自分を安売りする衝動を抑えればよかった。",
+    "en": "I wish I'd resisted the urge to undersell myself.",
+    "alternatives": [
+      "I wish I'd resisted the temptation to undersell myself.",
+      "If only I'd resisted the urge to undersell myself."
+    ],
+    "point": "undersell myself は実力以下に自分を紹介する。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db000f7e36900422b0f25bcb05900e641d181d30a901b35374577bac14f32b31",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5x8s6n4g",
     "ja": "私は看護師です。",
     "en": "I'm a nurse.",
@@ -379,6 +697,44 @@
         "hash": "sha256:db20c0028bd41761f2fd2b626df418c6263a33410a6066365b4f423d991f29c8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d6m9p8v",
+    "ja": "私は先生です。",
+    "en": "I'm a teacher.",
+    "alternatives": ["I teach.", "Teaching is my job."],
+    "point": "職業を言う単数の名詞は a teacher。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afb6cbbce319c222db98e91260df827d950c7a18eb4f82aa758c68f50c97793a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6f6c4v7q",
+    "ja": "私は英語を勉強中。",
+    "en": "I'm studying English.",
+    "alternatives": ["I'm learning English.", "I'm working on my English."],
+    "point": "am studying で現在勉強していることを伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:203ecfb7069cb2a64b29f11804cf2ad8fd3bae76dd66ecaec0ffd9bc09133d6c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -427,6 +783,50 @@
     }
   },
   {
+    "id": "c_7a4z9k6s",
+    "ja": "不器用に見えても私は人の意図を察する。",
+    "en": "Awkward though I seem, I read between the lines.",
+    "alternatives": [
+      "Although I seem awkward, I pick up unspoken intentions.",
+      "I understand unstated intentions despite seeming awkward."
+    ],
+    "point": "read between the lines は言葉に出ない意図を読み取る。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fd1f91fa50908f5e978f14da81936b2ac2ebf05956d88230b29e68e51f6a4ad",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7e9r6q4e",
+    "ja": "私の得意分野は言外の意味を読むこと。",
+    "en": "What I do best is decipher what's left unsaid.",
+    "alternatives": [
+      "My strength is understanding what people leave unspoken.",
+      "I'm best at interpreting what isn't explicitly said."
+    ],
+    "point": "left unsaid は口にされないが含まれている意味。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b244463d4dd5e613dc358c11d805136408ecfcbf1e91bd557cd0150a8486b1df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7f5g2j9b",
     "ja": "うちの課は十人います。",
     "en": "There are ten of us.",
@@ -464,6 +864,69 @@
         "hash": "sha256:eb29adec71306983764c20c300d7b99b5ba4aead0cde0430b7bafd2dce565b4b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7m3m8d2h",
+    "ja": "私は海の近くで育った。",
+    "en": "I grew up near the sea.",
+    "alternatives": ["I was raised near the ocean.", "I grew up by the ocean."],
+    "point": "grew up は grow up の過去形。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcbbde1e0596eca8c855276bfd833d48faf9d872c065eadfd7cc550b4aca3838",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7n9f5n6f",
+    "ja": "自分を型にはめるなら私は仲介役かな。",
+    "en": "Were I to pigeonhole myself, I'd say mediator.",
+    "alternatives": [
+      "If I had to categorize myself, I'd say mediator.",
+      "If I needed a label, I'd choose mediator."
+    ],
+    "point": "pigeonhole は人を単純な一つの型に押し込める。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e392bfb5b95d9fbce73e8c8363d9aa78b52ab75d376728ba3bd22adc99e5c128",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7s4a3f5k",
+    "ja": "仕事で私は合わなそうな意見をまとめる。",
+    "en": "My work has me reconciling seemingly irreconcilable positions.",
+    "alternatives": [
+      "My job involves getting apparently incompatible viewpoints reconciled.",
+      "My work makes me reconcile seemingly incompatible positions."
+    ],
+    "point": "have 人 doing は仕事でその役割を担うことを表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2bf16036fd017b9ae0ccf838bb99aa066977eb9b0a766e8ac03a26dc1023ad5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -528,6 +991,28 @@
     }
   },
   {
+    "id": "c_8v9v2k9h",
+    "ja": "私は今年卒業する予定。",
+    "en": "I'm graduating this year.",
+    "alternatives": [
+      "I'm going to graduate this year.",
+      "I plan to graduate this year."
+    ],
+    "point": "予定の進行形で決まっている卒業を伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:393f1c3134175d63b42457a17a3b9339316bf8a1679ec0a11c82d32257ccc47d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8w3u6n3s",
     "ja": "どちらのご出身か伺えますか？",
     "en": "May I ask where you're from?",
@@ -568,6 +1053,28 @@
         "hash": "sha256:99b205cda48aee8a842ce56b9afc01c9b63f8149896bfe2be6c5e5f025818d94",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c7t4r7r",
+    "ja": "私が転職してなければ今も型通りに働く。",
+    "en": "Had I not changed jobs, I'd still work conventionally.",
+    "alternatives": [
+      "Without changing jobs, I'd still be working conventionally.",
+      "I'd still work conventionally had I not changed jobs."
+    ],
+    "point": "Had I not changed jobs は過去の転職がなかった場合と今も型通りに働く結果を結ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef1aae56ff82b1394efb68d975773a4e1f33ee168cec30c5212c96511298d42a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -669,6 +1176,28 @@
         "hash": "sha256:df86dfe589c0a1252e59f275412121a9ead2b88049d32d6db5569197d9f6f6ea",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n8y9y6f",
+    "ja": "分野を変え私は内部の常識を疑った。",
+    "en": "Changing fields, I questioned what insiders take for granted.",
+    "alternatives": [
+      "Changing fields made me question insiders' unexamined assumptions.",
+      "I challenged insiders' unquestioned assumptions when I changed fields."
+    ],
+    "point": "take for granted は疑わず当然と思う。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["participle-clauses", "noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c294c5646bf6e5efc049c55ae7c42d4e222e4db8177d73ae84173cfe4a79af2b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2x2d9g6f",
+    "ja": "私の陶芸はまだ合格点に届かない。",
+    "en": "My pottery isn't up to snuff yet.",
+    "alternatives": [
+      "My pottery isn't up to scratch yet.",
+      "My pottery still isn't good enough."
+    ],
+    "point": "up to snuff は期待される水準に達していること。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e47e0d4074278884e6f1a830d26c4ab5f07b261668eaf30525f086636d173b08",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3a7t2x4r",
     "ja": "退職して初めて、絵を描き始めた。",
     "en": "Only after retiring did I start painting.",
@@ -62,6 +84,25 @@
         "hash": "sha256:95cf21dced8463c550dd38dc168bcea21e613d8993e43a2a094db94f0078bb3d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b9j7z4p",
+    "ja": "君は何を集めてる？",
+    "en": "What do you collect?",
+    "alternatives": ["What things do you collect?", "What do you like collecting?"],
+    "point": "collect は趣味として物を集める。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e2f6cc10020db3fa0eca6fe173338f86b7e7f193be882237d4b656ac75598b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -103,6 +144,28 @@
         "hash": "sha256:b599d992bfbc44d52d8b15e5971c40bb54f7dbd648d18424e587efbbffc43ea7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d9n2p2q",
+    "ja": "私は唐突な救済展開を作品から削った。",
+    "en": "I edited the deus ex machina out.",
+    "alternatives": [
+      "I cut out the contrived last-minute plot rescue.",
+      "I removed the implausibly convenient plot resolution."
+    ],
+    "point": "deus ex machina は唐突な救済で話を解決する展開。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79bd37bb7ee0f35344a6c1a22d559b79df8f986c87d291a605e846c26d4e6fe6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -170,6 +233,50 @@
     }
   },
   {
+    "id": "c_5b7d6u9m",
+    "ja": "写真を加工しなければよかったな。",
+    "en": "If only I'd left that photo untouched.",
+    "alternatives": [
+      "I wish I hadn't edited that photo.",
+      "I wish I'd kept that photo unchanged."
+    ],
+    "point": "leave untouched は手を加えずそのままにすること。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:337be2359777b4ba6cbd155019f0220f14f70f4e671c9fc06dedb1abbe4074f4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5c5p6v9r",
+    "ja": "彼が絵で食えるとは思えない。",
+    "en": "I doubt what he paints pays the bills.",
+    "alternatives": [
+      "I doubt he makes a living painting.",
+      "I don't think his paintings cover his living expenses."
+    ],
+    "point": "pay the bills は生活費をまかなうこと。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67d430316e8dce4117ede5c10613e919d2b2c0397fc09b8303fd30945510d317",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5e6y6x3z",
     "ja": "雨でも走るつもりだよ。",
     "en": "I'll run even if it rains.",
@@ -185,6 +292,25 @@
         "hash": "sha256:0e3e903c7c774d4d24549d15961c5058bf204b17c0f81e6d69d25ba02b550972",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e9a8s8j",
+    "ja": "このゲームの方が簡単。",
+    "en": "This game's easier.",
+    "alternatives": ["This game is simpler.", "This game's less difficult."],
+    "point": "easier は easy の比較級。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:150ca311ad00e15f6942af2b4782b7a89174c7bd9230a3cdfc8254fde130d815",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -375,6 +501,50 @@
     }
   },
   {
+    "id": "c_6b3d6f7p",
+    "ja": "私は将棋の経験がない。",
+    "en": "I've never played shogi.",
+    "alternatives": [
+      "I haven't tried shogi yet.",
+      "I have no experience playing shogi."
+    ],
+    "point": "never と現在完了で経験がないと伝える。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eeaebebb9cc0ab24fe6a1db81a31217ed87032eb4a9460ed0ad3a3f58a35dd5f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6h3t9g3s",
+    "ja": "私は失敗した写真を省くよ。",
+    "en": "I'll weed out the bad shots.",
+    "alternatives": [
+      "I'll remove the failed photos.",
+      "I'll leave out the unsuccessful photos."
+    ],
+    "point": "weed out は不要なものを選んで取り除く。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6e83ec487d7cca2ced6f137f8098a8fb369cc79642ffb89b3a08dcd6bee2f7f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6u3t3a4q",
     "ja": "週末は休むといいよ。",
     "en": "You should rest this weekend.",
@@ -416,6 +586,28 @@
     }
   },
   {
+    "id": "c_6z3e7j8b",
+    "ja": "私は絵の腕を磨きたい。",
+    "en": "I want to refine my painting.",
+    "alternatives": [
+      "I'd like to improve my painting skills.",
+      "I want to hone my painting skills."
+    ],
+    "point": "refine は細部を磨いて質を高める。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd0c086085326d9bda771e98ba15d7892439e4ad0279dfbf5d83eb5460d9cd2e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7a6e6z8j",
     "ja": "先週、釣りに行ったよ。",
     "en": "I went fishing last week.",
@@ -431,6 +623,47 @@
         "hash": "sha256:bba5ec506f26ebbb4284ea3193d43a4455f9bd56d1d1b6e09b8d83c490a4f8a4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a8p8q4u",
+    "ja": "私は抑えた哀感を滅多に見たことがない。",
+    "en": "Rarely have I seen such understated pathos.",
+    "alternatives": [
+      "I've rarely seen such understated sorrow.",
+      "I've seldom seen sadness expressed with such restraint."
+    ],
+    "point": "understated pathos は大げさに表さない哀感。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af57ea47c412afe2b854de41c70e560ca4868ab95b41bc5c8250f2a3f9998ae5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7c3b3p6h",
+    "ja": "君はどこで泳ぐ？",
+    "en": "Where do you swim?",
+    "alternatives": ["Where do you go swimming?", "Where's your swimming spot?"],
+    "point": "where で泳ぐ場所を尋ねる。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6db61d0d812ffd93b63804f3af836026079ae1c80cfc4f0a2457f1e076815ece",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -501,6 +734,25 @@
     }
   },
   {
+    "id": "c_7v2r3v5q",
+    "ja": "私は菓子作りが好き。",
+    "en": "I enjoy making desserts.",
+    "alternatives": ["I like making sweets.", "I like baking desserts."],
+    "point": "enjoy の後は making のように動名詞。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e3555c7401ec0e712783c1d7c78f4ae48f190e4dbbbdb3ceafcab48cc6055d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7v2x6k5z",
     "ja": "週末はキャンプに行くんだ。",
     "en": "I'm going camping this weekend.",
@@ -519,6 +771,28 @@
         "hash": "sha256:f8dd87e2bc9147ab41f95a79c06639d195ddb17db0c1efb409c9935053d0677e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8d7q4f7k",
+    "ja": "写真に熱中して、私は散財した。",
+    "en": "Bitten by the photography bug, I splurged.",
+    "alternatives": [
+      "Hooked on photography, I splurged.",
+      "Hooked on photography, I spent a fortune."
+    ],
+    "point": "photography bug は写真への熱中を表す。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf390bb609ddab3b14f58fcb8f67ac6dbee5a94a655c969907c0bf3bd22f33e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -648,6 +922,28 @@
         "hash": "sha256:266138496321d1499747da162f9e41ca824f2514182f537ae49f530af7df634c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b4x9t3p",
+    "ja": "私は兄に伴奏を頼んだ。",
+    "en": "I asked my older brother to accompany me.",
+    "alternatives": [
+      "I asked my older brother to provide accompaniment.",
+      "I asked my older brother for accompaniment."
+    ],
+    "point": "accompany は歌に合わせて楽器で伴奏する。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ad8a550af123de76c81d6d79fa713792f4db9ee72387587956a746c1437e2f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

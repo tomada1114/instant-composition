@@ -126,6 +126,50 @@
     }
   },
   {
+    "id": "c_2y2e3x8g",
+    "ja": "私が独立してなければ今も周囲に従う。",
+    "en": "Without going independent, I'd still toe the line.",
+    "alternatives": [
+      "I'd still conform if I hadn't gone independent.",
+      "Without becoming independent, I'd still conform to others."
+    ],
+    "point": "独立しなかった過去の仮定と、今も周囲に従う結果を結ぶ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d4765740f774cf4de67543a7e16150fc365ffbcf37a13ce3bb8355199271b6a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2y8z3f3f",
+    "ja": "君が慣れたら私が訪ねるよ。",
+    "en": "I'll visit once you've settled in.",
+    "alternatives": [
+      "I'll come by once you've settled in.",
+      "I'll visit after you've adjusted."
+    ],
+    "point": "settle in は新しい環境に慣れて落ち着く。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3afc7a853b1da3f64c3aca215cd747faeefbc14ddcb29f59ab69d47d863264af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3b4w6e8y",
     "ja": "残っていたら、今ごろ結婚してたかも。",
     "en": "If I'd stayed, I might be married now.",
@@ -230,6 +274,28 @@
     }
   },
   {
+    "id": "c_3j2b3n4g",
+    "ja": "彼女は私の平気なふりを見抜いたと言った。",
+    "en": "She said she'd seen through my calm facade.",
+    "alternatives": [
+      "She said she'd spotted my pretense of calm.",
+      "She said my calmness hadn't fooled her."
+    ],
+    "point": "seen through my calm facade は私の平気なふりを見抜いたことを表す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fe06093c002b6ecff7292cc6ba243e8cf0026c97e9331bb6e11c0ef1a36608b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3s2e2u3q",
     "ja": "こんなに忙しいのは初めてだよ。",
     "en": "Never have I been this busy.",
@@ -271,6 +337,47 @@
     }
   },
   {
+    "id": "c_3s9g7k7n",
+    "ja": "私は最近、人脈を作り直してる。",
+    "en": "I've been rebuilding my network lately.",
+    "alternatives": [
+      "I've been rebuilding my connections recently.",
+      "I've been reestablishing my contacts lately."
+    ],
+    "point": "rebuild my network は人とのつながりを築き直す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd12017dc5fb71dc46294262ec126e19d4e0889b12aa7539a8b4927c6a9144c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3u2f6b6h",
+    "ja": "私、家を買ったよ。",
+    "en": "I bought a house.",
+    "alternatives": ["I purchased a house.", "I bought my own house."],
+    "point": "bought は buy の過去形。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:033b93ce7590cf5cb7984c1b52ce224694859b778e5238c7537448265177b833",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w3a9f2c",
     "ja": "最近どうしてたか教えて。",
     "en": "Tell me how you've been.",
@@ -286,6 +393,91 @@
         "hash": "sha256:279268bd69355b4d0f9dbd4dd9cc0c602d364211b2f9bf30f2533a508af56bb7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z6j8y6t",
+    "ja": "私が面子に固執しなければ謝れたのに。",
+    "en": "Had I swallowed my pride, I could've apologized.",
+    "alternatives": [
+      "If I'd swallowed my pride, I could've said sorry.",
+      "I could've apologized had I set my pride aside."
+    ],
+    "point": "swallow my pride は面子を捨てて行動する。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74fd7dd75a243af9add5ca733e35520fdb79a6876d21bb0f6fa9765b1f6012aa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3z7h8h6w",
+    "ja": "私が辛かったのは努力を無視されたことだ。",
+    "en": "What stung was having my efforts brushed aside.",
+    "alternatives": [
+      "It was the dismissal of my efforts that hurt.",
+      "What hurt was having my hard work disregarded."
+    ],
+    "point": "what stung で心に刺さった出来事を際立たせる。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:555fdd016a203130aa4180e4ffc3134b8f9c2b9346a62d90507c61464b0f9efb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4f2m9b6u",
+    "ja": "私が選べるなら過去を水に流すのに。",
+    "en": "Were it my call, I'd let bygones be bygones.",
+    "alternatives": [
+      "If I could choose, I'd leave the past behind.",
+      "If it were my choice, I'd forget past grievances."
+    ],
+    "point": "let bygones be bygones は過去のわだかまりを水に流す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce73c88eb9a58959add8fe5b103ff71da7f7d4a4d4b7a2a742db084048ce372c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4j9z2s7j",
+    "ja": "母は私に引き継ぎを頼んだ。",
+    "en": "Mom asked me to take over.",
+    "alternatives": ["Mom asked me to assume control.", "Mom asked me to take charge."],
+    "point": "take over は責任や仕事を引き継ぐ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afa4eacb6a77da1233f22a97c2ef9063f28c6d5a00c1e3613016fac34cc9b07d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -308,6 +500,72 @@
         "hash": "sha256:ed5b6a71cc591773a45ef078d95a1d00f240931455d3e112b9a4da4ca6c7f4e4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m6j7e3z",
+    "ja": "母は私に言いたくないことを認めさせた。",
+    "en": "Mom made me admit what I'd rather conceal.",
+    "alternatives": [
+      "Mom made me admit something I'd rather hide.",
+      "Mom forced an admission I'd rather have avoided."
+    ],
+    "point": "would rather leave unsaid は口にせずにおきたいという含み。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["causatives", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1f8d0bd013994452f14c9a1b4754bc14fe399532af9d27060f253b0dc28e97d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4r3t5g8p",
+    "ja": "私は異動で脇に追いやられた。",
+    "en": "I was sidelined by the transfer.",
+    "alternatives": [
+      "The transfer pushed me to the sidelines.",
+      "I was marginalized through the transfer."
+    ],
+    "point": "sidelined は中心的な仕事や役割から外される。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc2ef8c7fffe8c7248048ff6cc216b7279b521d66b8148b065464420cb3af58d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4r8a7h2c",
+    "ja": "私は親切に見せた干渉を見抜けばな。",
+    "en": "I wish I'd recognized that kindness as meddling.",
+    "alternatives": [
+      "I wish I'd seen that kindness was really meddling.",
+      "If only I'd realized that kindness was unwanted interference."
+    ],
+    "point": "meddling は親切に見せても望まれていない干渉を指す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3469cf5a709fcace6d9ffeb59cd604782b3ed079d7009b0e40d26ae818080a2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -356,6 +614,25 @@
     }
   },
   {
+    "id": "c_4x8k4w6c",
+    "ja": "私は今話せるよ。",
+    "en": "I can talk now.",
+    "alternatives": ["I can chat now.", "I'm free to talk now."],
+    "point": "can で今話せる状況を伝える。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e704aa769e0f0343fac29e315145852d7cf03c3f351ff7b42983816837d9241",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4y2z8a2u",
     "ja": "今、猫を飼ってるよ。",
     "en": "I have a cat.",
@@ -390,6 +667,66 @@
         "hash": "sha256:5d93dddfc9569e28f0ad88aaa13ea891f3904d41ba5ab8c16cb8da5ce1e2834f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e6n8j7r",
+    "ja": "その頃には私は就職してた。",
+    "en": "I'd landed a job by then.",
+    "alternatives": ["I'd found a job by then.", "I'd secured a job by that point."],
+    "point": "land a job は仕事を得る。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:271c974cfb2e314ae5598cd455ac1c4aff1d798a9c246667020c3208c8e805e0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5f8a4s9t",
+    "ja": "私の成功は君には受け入れ難かったかも。",
+    "en": "My success might've been a bitter pill for you.",
+    "alternatives": [
+      "You may have struggled to accept my success.",
+      "You might've found my success hard to swallow."
+    ],
+    "point": "a bitter pill は受け入れるのが苦しい出来事。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:85d893e98c053e0e4a5685291f5d24852f12e81443493c9cfeea9f5655fd40a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5h9z5m4r",
+    "ja": "私、犬を飼うよ。",
+    "en": "I'll get a dog.",
+    "alternatives": ["I'm going to get a dog.", "I'm getting a dog."],
+    "point": "will でこれからの予定を話す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c59b5d6892c3846f4ccabb5a451d10a09da3db47c8ad183bdf2e7905dcc04d9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -454,6 +791,28 @@
     }
   },
   {
+    "id": "c_5t9y5x7z",
+    "ja": "私の転職は手放しで成功とは言えない。",
+    "en": "I can't call my job change an unqualified success.",
+    "alternatives": [
+      "My job change wasn't a complete success.",
+      "Calling my job change wholly successful would be misleading."
+    ],
+    "point": "unqualified success は留保のない全面的な成功。転職は job change。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e7dfb57ab23b666db7cc56576bec1db7665692ae7b3777a52760add97effb8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5u5c2m7x",
     "ja": "驚いたのは、彼女が辞めてたこと。",
     "en": "What floored me was that she'd quit.",
@@ -472,6 +831,28 @@
         "hash": "sha256:7ce43f027b7ed4fec24eff1cb578127a52f20031dcf2b2e918110150d50c7ba1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w2j4y6h",
+    "ja": "私はまだ峠を越えたとは言えない。",
+    "en": "I wouldn't say I'm out of the woods.",
+    "alternatives": [
+      "I wouldn't say I'm in the clear.",
+      "I can't say my troubles are over."
+    ],
+    "point": "out of the woods は危険や問題を脱した状態。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:de789d82f9a2d202e75e1745aaf1c1dc8af09b44d891eafb652ead5d3137d028",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -669,6 +1050,28 @@
     }
   },
   {
+    "id": "c_7j7q4p3h",
+    "ja": "私たちは早く仲直りすればよかった。",
+    "en": "I wish we'd buried the hatchet sooner.",
+    "alternatives": [
+      "I wish we'd made peace sooner.",
+      "If only we'd settled our differences sooner."
+    ],
+    "point": "bury the hatchet はけんかを終わりにして仲直りすること。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb8bfc26af02d0a39b32f23871fcb5a207ca2f6b5360027f31aab0383f100665",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7m5r8g3d",
     "ja": "昇進したの君だって噂だよ。",
     "en": "Word is you're the one who got promoted.",
@@ -691,6 +1094,66 @@
     }
   },
   {
+    "id": "c_7p7w7p5w",
+    "ja": "傍目には成功でも私は達成感が薄い。",
+    "en": "Though seemingly successful, I feel little fulfillment.",
+    "alternatives": [
+      "Though I seem successful, I feel scarcely fulfilled.",
+      "I feel little satisfaction despite appearing successful."
+    ],
+    "point": "fulfillment は自分の生き方や達成に満足する感覚。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cfbbd019b6ade08a6bce0190ce154ee70d4a031ad959c5beb0cb0b3d9ced804",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7v9p5a2q",
+    "ja": "私は今歩いてる。",
+    "en": "I'm walking now.",
+    "alternatives": ["I'm walking right now.", "I'm walking at the moment."],
+    "point": "今進んでいる動作は am + walking。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1ac1ffe94c4f48b842e88e010216f69e99b7ea261fb5c190cd42024d2cf209cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y5x7k6w",
+    "ja": "新しい友達が数人いる。",
+    "en": "I've got new friends.",
+    "alternatives": ["I have new friends.", "I've made some new friends."],
+    "point": "複数の友達には friends を使う。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e6d34a137db7f787ac8f882d5bbc940fa103f5cc6faf51253bdce6c2b4d7f0e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8a9b4g2x",
     "ja": "前よりずっと元気そうだね。",
     "en": "You look much better than before.",
@@ -709,6 +1172,28 @@
         "hash": "sha256:958a91d453b0bb1d7ab39657929b254ad557ce41ba111b40a21d557f15c46a43",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8z8e6g7g",
+    "ja": "私が耐えた失望は今は距離感になった。",
+    "en": "The disillusionment I endured has since become detachment.",
+    "alternatives": [
+      "The disappointment I lived through has become emotional distance.",
+      "My earlier disillusionment has now turned into detachment."
+    ],
+    "point": "disillusionment は理想が崩れた失望、detachment は心の距離。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:036ea8f5acb85b6d122d885628a2634c275f3904fd5c9f0fc4e61df29f5c2f0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -753,6 +1238,25 @@
         "hash": "sha256:32ff34073c4435d8cf486414c753dcc6cc06478c369f2002b4ed63cdb83ec9d0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h2g3d4j",
+    "ja": "写真を見てもいい？",
+    "en": "Can I see photos?",
+    "alternatives": ["Could I look at the photos?", "Can you show me the photos?"],
+    "point": "Can I で許可を求める。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d978727c3f9f3e9bacad85ecb00d3cc0f731f1a16afa86fbe8f94501dba0967",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -816,6 +1320,28 @@
         "hash": "sha256:905edc4f16d88b01f4232f1dacfd5992b7d8a3dbf1c1f5b1af3dfb14265a1771",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u8j3a8w",
+    "ja": "私は最近、家を探してる。",
+    "en": "I've been house hunting lately.",
+    "alternatives": [
+      "I've been looking for a home lately.",
+      "I've been searching for a house recently."
+    ],
+    "point": "have been hunting で最近続けている家探し。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f7f71b6566e8735220b544d54c8401c348f7ecca0412393ec69b10699224354",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2a6z2w4g",
+    "ja": "私はこれを運べる。",
+    "en": "I can carry this.",
+    "alternatives": ["I can move this.", "I'm able to carry this."],
+    "point": "can carry で持って運べると伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b705fc135be9768db6473c47f29d40d9824f7726e2002feb56fec04a2d8f794b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2g9z5s9f",
     "ja": "3月からずっとこれ狙ってたんだ。",
     "en": "I've been eyeing it since March.",
@@ -18,6 +37,28 @@
         "hash": "sha256:27a83c1e10292642b8ba2bbda171ad74758c6c06c0983c113192a9eb53fb0808",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r4z8r6n",
+    "ja": "彼女はこの靴は長持ちすると言った。",
+    "en": "She said these shoes would wear well.",
+    "alternatives": [
+      "She said these shoes would last.",
+      "She said these shoes would hold up."
+    ],
+    "point": "wear well は使い続けても傷みにくいこと。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a2aedb094873c2f2b0b708c835994bd20caf7ec56d126369fa131d869a989ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -98,6 +139,28 @@
     }
   },
   {
+    "id": "c_3n4p7z6z",
+    "ja": "彼らの売り物が本物だとは思えない。",
+    "en": "I doubt what they're selling is the real McCoy.",
+    "alternatives": [
+      "I doubt their goods are genuine.",
+      "I don't think they're selling the genuine article."
+    ],
+    "point": "the real McCoy は偽物でない本物のこと。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:032e1ad5e1113d3a0a88cd2965d940938c613c8e12f6701348b4cc1d0fbda982",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3n5w2s4h",
     "ja": "いいのは、返品が簡単なことだ。",
     "en": "What's great is that returns are easy.",
@@ -120,6 +183,25 @@
     }
   },
   {
+    "id": "c_3t2b6u3h",
+    "ja": "もう一つ見せて。",
+    "en": "Show me another one.",
+    "alternatives": ["Let me see another.", "Please show another one."],
+    "point": "another one で同じ種類の別の商品。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce912c465341662936d10bd8194208ba4b1047d6cbc776fcb099a4247bcc1d68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w7k6w9t",
     "ja": "もっと安いのはありますか？",
     "en": "Do you have a cheaper one?",
@@ -135,6 +217,25 @@
         "hash": "sha256:f7ddfea89cad39a1acca0cc20cac72c50ca509640360d0ae3fef246c573ea7fa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z2p3p5a",
+    "ja": "私は現金で払うよ。",
+    "en": "I'll pay cash.",
+    "alternatives": ["I'll pay in cash.", "I'll use cash to pay."],
+    "point": "pay cash は現金で支払う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23b4417d1c41d87e93ce4ee5b0e1c1447ab1bbd7b8b6efebbd81b7f7faf402e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -313,6 +414,44 @@
     }
   },
   {
+    "id": "c_5g9r3z5q",
+    "ja": "君は何色を選んだ？",
+    "en": "Which color did you choose?",
+    "alternatives": ["What color did you pick?", "Which color was your choice?"],
+    "point": "which color で選んだ色を尋ねる。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:efd690e9df288f8de1edceb52b99f7fd698eae4397d04171221a9ef7a909eb01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5p5t8b8k",
+    "ja": "私は代金を払ってる。",
+    "en": "I'm paying now.",
+    "alternatives": ["I'm making a payment.", "I'm paying for this."],
+    "point": "am paying で今支払い中だと伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84295f15065d32e33d26ed89d30088e001175c2f2eb1e336be647873339d70cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5y6e9y9d",
     "ja": "いつ再入荷するか分かりますか？",
     "en": "Do you know when it'll restock?",
@@ -372,6 +511,69 @@
         "hash": "sha256:3255d9d2e20d6a6821bdadc5586789224ef7abbc76e5749733d8c4fb2ecd36d0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6p2q5h6a",
+    "ja": "この店は近い。",
+    "en": "This store is nearby.",
+    "alternatives": ["This shop is close.", "This store's near here."],
+    "point": "nearby は近くにある。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad0c2420550c6f88f5836d169049bc590afc8d486bb4e56b27ee6bce098fbee4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6r7e6m2t",
+    "ja": "お得な話はもう消えていた。",
+    "en": "The bargain had already evaporated.",
+    "alternatives": [
+      "The deal had already vanished.",
+      "The offer had already disappeared."
+    ],
+    "point": "evaporate は比喩的に消えてなくなること。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1da8a6377b6891a20b8fe263f3fe45199a4114fd9189c4f170f82d985cd80501",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6t5q7d4p",
+    "ja": "値引きなら私たちは奮発する。",
+    "en": "We'll splurge if it's discounted.",
+    "alternatives": [
+      "We'll treat ourselves if it's discounted.",
+      "If it's marked down, we'll splurge."
+    ],
+    "point": "splurge はぜいたくにお金を使う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0945343fc4b09dc9fd0db6886f8682bf719d52028d29d06d47d25c0478fa6370",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -454,6 +656,88 @@
         "hash": "sha256:9c2bb142c933c536f70e2a9500ff241a3603b380da2077cf9b94cac749e03b97",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7n7b6n7r",
+    "ja": "私はこれを交換すべき？",
+    "en": "Should I exchange this?",
+    "alternatives": ["Should I swap this item?", "Would exchanging this be better?"],
+    "point": "should I で交換する方がよいか相談する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:838db1dac585ca1130f3e81a571f962f27ea3e9918752c1da176154824318bc9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7t5j2j9d",
+    "ja": "私にはこれはちょっと高すぎるかな。",
+    "en": "This feels a shade too steep for me.",
+    "alternatives": [
+      "This seems a little too expensive for me.",
+      "It's a touch too pricey for me."
+    ],
+    "point": "a shade too steep はほんの少し高すぎるという言い方。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc6a612d5424d560b505e4fe8e328ada6022b3bf9c284636d5f496ab9285dd4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7u2q6n7a",
+    "ja": "この服は値下げされた。",
+    "en": "This item was marked down.",
+    "alternatives": ["This piece was discounted.", "This item's price was reduced."],
+    "point": "was marked down はその服が値下げされたことを表す。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:54641dae1862d1f3ccbd68fbb8e83526192d98e3579cfffd19516d49bee917b3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8a9m5c8s",
+    "ja": "手数料を免除してもらえる？",
+    "en": "Could you waive handling fees?",
+    "alternatives": [
+      "Could you drop the handling fees?",
+      "Could you remove the handling charges?"
+    ],
+    "point": "waive a fee は支払う義務を免除する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa1ba7987678605c688b45d2ce6b91c264250dd7d7d4bab5ae76d318be3bdee6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -621,6 +905,25 @@
         "hash": "sha256:924ae3606e9328c80d0299287859aea7595bd4066441f0040f12481b20fd09dd",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p9a2k6r",
+    "ja": "私は君に選んでほしい。",
+    "en": "I want you to choose.",
+    "alternatives": ["I'd like you to pick.", "I want you to decide."],
+    "point": "want + 人 + to で選択を頼む。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:545ed508013ffa58f25e5b4e8463cd99a3d49ba54662665bc7bb5bc488a0a3f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

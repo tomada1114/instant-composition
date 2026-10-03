@@ -149,6 +149,28 @@
     }
   },
   {
+    "id": "c_3m3b5z4p",
+    "ja": "私が曖昧に頼んでたら君は今も手探りだ。",
+    "en": "Had I equivocated, you'd still be flying blind.",
+    "alternatives": [
+      "If I'd been evasive, you'd still lack essential guidance.",
+      "You'd still be working without guidance if I'd equivocated."
+    ],
+    "point": "equivocate は言葉を濁す、fly blind は情報なしに進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21e6eb55ab2ef8534163882fdb01235371b54f8d15744e810cd3b7b1a062a938",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3y9m6v5h",
     "ja": "お言葉に甘えられたらいいのですが。",
     "en": "I wish I could take you up on that.",
@@ -237,6 +259,28 @@
     }
   },
   {
+    "id": "c_4e5z8v9x",
+    "ja": "顧客の依頼が一件未処理。",
+    "en": "There's one outstanding client request.",
+    "alternatives": [
+      "One client request is still pending.",
+      "There's one client request awaiting action."
+    ],
+    "point": "outstanding はまだ処理されていない意味もある。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e1ce29160595b8f2036010fbd7821dec617ebaa178c8ab23c356d4b9ca4a5c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4x3h9j8f",
     "ja": "よければ、手伝ってもらえない？",
     "en": "I don't suppose you could help?",
@@ -300,6 +344,47 @@
     }
   },
   {
+    "id": "c_4z8t9b5g",
+    "ja": "手空きなら私が問合せをさばくのに。",
+    "en": "If I weren't swamped, I'd field inquiries.",
+    "alternatives": [
+      "If I were free, I'd handle inquiries.",
+      "I'd handle inquiries if I weren't busy."
+    ],
+    "point": "field は問い合わせなどを受けて対応すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12b6bf0c0cf725be5c3192cae7a1c63de551fb423543313688d55afabfa97fb9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5d4y5v8d",
+    "ja": "手が空いたら手伝います。",
+    "en": "I'll help once I'm free.",
+    "alternatives": ["When I'm available, I'll help.", "I'll help when I have time."],
+    "point": "once の後は未来のことも現在形。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:37ccc068d3d65dbb48d26abc7bc6256c0cf4418125ffd790a8a1ce0708b8516f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5k6y2b6x",
     "ja": "チームに、明日やり直させます。",
     "en": "I'll have the team redo it tomorrow.",
@@ -318,6 +403,25 @@
         "hash": "sha256:6e123904d20de64e2933f1e1784419a2de3baa225fb5cd2b5e6e8f2dc8f027d1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5p7u5d5b",
+    "ja": "この仕事の方が要求が厳しい。",
+    "en": "This task is more exacting.",
+    "alternatives": ["This task is more demanding.", "This assignment demands more."],
+    "point": "exacting は高い水準を要求する。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3a73fc4cf4e7c06779011ae7d021d52bdad8cbdc090a4533fd5852f895513c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -359,6 +463,28 @@
         "hash": "sha256:71cd1dc7bed784408b40f0f8fbae2724cf7c57c09b930b9dcb1423559226cf0a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a7x2u4m",
+    "ja": "細かな問題を潰してくれますか？",
+    "en": "Could you iron out the wrinkles?",
+    "alternatives": [
+      "Could you fix the minor issues?",
+      "Could you work out the kinks?"
+    ],
+    "point": "iron out the wrinkles は細かな問題を解消すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:779c6ecf1b58af57bf593dd4b2ceafc06838507241829b540c7a86fd1e7b295b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -550,6 +676,28 @@
     }
   },
   {
+    "id": "c_7w7y5q7g",
+    "ja": "君が濁してたら私は君の職責を誤解した。",
+    "en": "Had you hedged, I'd have misread your remit.",
+    "alternatives": [
+      "If you'd been evasive, I'd have misunderstood your role.",
+      "I'd have misread your responsibilities if you'd hedged."
+    ],
+    "point": "hedge は曖昧にする、remit は依頼された役割や範囲。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ec8a7a27cf7b942ef1d51b7feaa5eeba366acaa3a92cd4d9780e4720834c5d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7x8h3r9p",
     "ja": "何かあれば、連絡してください。",
     "en": "Should anything come up, call me.",
@@ -655,6 +803,28 @@
     }
   },
   {
+    "id": "c_8k6q2k5q",
+    "ja": "承認を早められる人、君は分かる？",
+    "en": "Any idea who could fast-track approval?",
+    "alternatives": [
+      "Do you know who can fast-track approval?",
+      "Do you know who can expedite approval?"
+    ],
+    "point": "fast-track は通常より迅速に進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13e3f0d2477c84c7e92ee1f254330aae4818c8642f7e826e408f19a2cbe43907",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8m4g6w6g",
     "ja": "助けが必要です。",
     "en": "I need some help.",
@@ -692,6 +862,28 @@
         "hash": "sha256:879dbb10cca3695e7f782938f72037d355a98cccd4e3c26f7fcb429335d9a1d9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b7p3z2d",
+    "ja": "顧客の修正依頼を優先して。",
+    "en": "Prioritize the client's requested revisions.",
+    "alternatives": [
+      "Address the client's requested edits first.",
+      "Put the client's requested edits first."
+    ],
+    "point": "prioritize は優先順位を上げること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f66420ef30f11d8773397745dc0ecbfb8eed367e359d6f4c9aa610a5527d16d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -752,6 +944,69 @@
         "hash": "sha256:29faa0590392630b0c1f0d7351631aec95a92513e9f439ebbe4d096e3905fad2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x4v4e7x",
+    "ja": "君が求めてるのはほぼ白紙委任だ。",
+    "en": "What you seek borders on carte blanche.",
+    "alternatives": [
+      "You're asking for almost unrestricted authority.",
+      "You're seeking virtually a free hand."
+    ],
+    "point": "border on はほとんど当たる、carte blanche は全面的な裁量。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36fcf953610e23b127ba07d9bd7a6b43f500dc837b64df7207de3298beb0c7e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9y7s9a2b",
+    "ja": "彼は穴埋めすると言った。",
+    "en": "He said he'd pick up the slack.",
+    "alternatives": [
+      "He said he'd cover the missing work.",
+      "He said he'd make up the shortfall."
+    ],
+    "point": "pick up the slack は足りない分の仕事を引き受けること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ce627cbc8eb8e71a79e270e0df25b733932066a155e6008cd7608e6b43eb18e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9z7k8s8b",
+    "ja": "君を待ち受ける仕事は過酷だ。",
+    "en": "Work awaiting you is grueling.",
+    "alternatives": ["The work ahead of you is exhausting.", "You face grueling work."],
+    "point": "awaiting you は後ろからの説明、grueling は非常にきつい。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:064d90c8991090925c53c43a108cf648eb119a03e4a5d40b46e81356a7060ad0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

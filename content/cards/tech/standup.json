@@ -41,6 +41,47 @@
     }
   },
   {
+    "id": "c_2k3p3b6m",
+    "ja": "彼は我々の業務削減が必要と言った。",
+    "en": "He said we needed to trim scope.",
+    "alternatives": [
+      "He said we had to reduce the scope.",
+      "He said we needed to scale back the work."
+    ],
+    "point": "trim scope は取り組む範囲を絞る。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dbda770b054eb6c8d4d225bb412d4a6d1db59e8900c9317ba08b0e46fe64e91",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2p2c9s8q",
+    "ja": "私は今日、変更を戻すよ。",
+    "en": "I'll roll back the changes today.",
+    "alternatives": ["I'll undo the changes today.", "I'll revert the changes today."],
+    "point": "roll back は変更を以前の状態に戻す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:87b7f091cffc2d790d38dbca76dd840cd44f2b44ac088113721246867fb84d43",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカー一つある。",
     "en": "There's one blocker today.",
@@ -56,6 +97,28 @@
         "hash": "sha256:8caa1da90bf18cd8ec5893fed988da05ab5067712cfd9f371ae6f4c7a3dde16b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p8a9p4w",
+    "ja": "相談してたら我々は今迷わないのに。",
+    "en": "Had we sought advice, we'd have clarity.",
+    "alternatives": [
+      "If we'd sought advice, we'd have clarity now.",
+      "We'd have clarity had we sought advice."
+    ],
+    "point": "clarity は曖昧さが消え、見通しがつくこと。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30458a65ee463b73cc63002d59e24ffcbdf68245c999eb2a1f875673ca683913",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -97,6 +160,25 @@
         "hash": "sha256:9a7f92eef3f30c2afb7ede3427e5a9ae0c2807d0ddef5e59faf6ce4effb053cf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z6b2g3y",
+    "ja": "私は仕様を確認しなきゃ。",
+    "en": "I need to check specs.",
+    "alternatives": ["I have to verify the specifications.", "I must check the specs."],
+    "point": "check specs は仕様を確認する。specs は specifications の略。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17d1969c85f0db288f1e1fa40c762a53cd62cef3c74606d22819235102ddbd93",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -176,6 +258,28 @@
         "hash": "sha256:301bfbd0b9dfc83559ea5739bd2724763ef95dbf240ca26f7e6f6bdd624f922b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m3r2e5z",
+    "ja": "私の作業は予想より厄介。",
+    "en": "My task is trickier than expected.",
+    "alternatives": [
+      "My task is harder than anticipated.",
+      "My task is tougher than expected."
+    ],
+    "point": "trickier than expected は予想より扱いが難しい。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:37624b70a4daff97cfc74eeed8e46dd42848b6c0aaf75f080eda31c8a3c536b2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -344,6 +448,28 @@
     }
   },
   {
+    "id": "c_7p5b9q4j",
+    "ja": "私は文書整理に集中してる。",
+    "en": "I'm focused on organizing documentation.",
+    "alternatives": [
+      "I'm concentrating on organizing the documents.",
+      "My focus is organizing the documentation."
+    ],
+    "point": "on の後の動作は organizing のように動名詞。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cd69b5df5b8a7820f2e6ac07cccf32e0577be239d752a44d96b3b1fc43ba73a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7r9a5a8b",
     "ja": "遅いけど、形になってきたよ。",
     "en": "Slow as it is, it's coming together.",
@@ -404,6 +530,28 @@
         "hash": "sha256:186cb16a99e18e469ad3dacef7478bc06e2e07deffba2626659931a00555a06c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w8w4h4r",
+    "ja": "我々が必要と決めつける修正に疑問だ。",
+    "en": "I question which fixes we assume are necessary.",
+    "alternatives": [
+      "I question the fixes we assume are needed.",
+      "I'm questioning which fixes we believe are necessary."
+    ],
+    "point": "which fixes we assume are necessary で我々が必要と思い込む修正を問う。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3c39d902081eec75471da4dcb9d598fd2433b8c524793f49b93a50f294613d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -509,6 +657,69 @@
     }
   },
   {
+    "id": "c_8q6n9t7k",
+    "ja": "私は作業を終えなきゃ。",
+    "en": "I must finish this.",
+    "alternatives": ["I have to finish the work.", "I need to finish the task."],
+    "point": "must で作業を終える必要を示す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f24695b7c4f3b97de972cd85d44792f8afe09566fb76c47fc87e6d642d3b578",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8r3y5q5h",
+    "ja": "私はずっとレビュー待ち。",
+    "en": "I've been waiting for a review.",
+    "alternatives": [
+      "I've been waiting to be reviewed.",
+      "I've been waiting on a review."
+    ],
+    "point": "have been waiting はレビューを待ち続けていることを表す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c49d93be52a0247efb2cf1d6627c2122cdb51555cacedb5d76dea78dd7faec86",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8t7c9k8a",
+    "ja": "私が嫌なのは対策に見せかけた忙しさだ。",
+    "en": "What bothers me is busyness masquerading as mitigation.",
+    "alternatives": [
+      "It's activity posing as mitigation that bothers me.",
+      "What troubles me is activity presented as a remedy."
+    ],
+    "point": "masquerading as は実態と違うものに見せかける。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9572b933784e886939a717124e6ac83de8216ef71d149a122447a21c00f41161",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8u3s5f5t",
     "ja": "ミアの PR を見てます。",
     "en": "I'm reviewing Mia's PR.",
@@ -610,6 +821,25 @@
     }
   },
   {
+    "id": "c_9h3t2b9s",
+    "ja": "私が休んでもいい？",
+    "en": "May I take a break?",
+    "alternatives": ["Can I rest?", "Is taking a break okay?"],
+    "point": "May I で休憩の許可を求める。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ea8eb773e37aeb113147a45c697ec61db94dd9b16a3f7a1da16e7aa01f65d8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9h9h4q3d",
     "ja": "頼まれた修正が遅れた理由、話します。",
     "en": "I'll explain why the fix you requested slipped.",
@@ -666,6 +896,25 @@
         "hash": "sha256:414028e80e8362deb9a20ae20ef45a1506af00348edbc46fa8c99957872add31",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v2a8u3g",
+    "ja": "私が直した不具合が再発した。",
+    "en": "The bug I fixed resurfaced.",
+    "alternatives": ["The bug I fixed returned.", "The issue I fixed came back."],
+    "point": "resurface は消えた問題が再び現れる。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a66311d2f20ea6ac229b07a45a9518402c7a61c818880f5aa08cb8c4e81be94",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

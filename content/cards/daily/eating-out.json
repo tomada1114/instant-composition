@@ -41,6 +41,28 @@
     }
   },
   {
+    "id": "c_2j4r6s6k",
+    "ja": "食後、私は損した気分だった。",
+    "en": "I felt shortchanged after eating.",
+    "alternatives": [
+      "I felt ripped off after the meal.",
+      "I felt cheated after eating."
+    ],
+    "point": "shortchanged は十分な価値を得られず損した感じ。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f20aa25d2110361b4a1e7fba9ab814ea5d8c1703ea33ee93d19994b3180c09a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2v5b2b3p",
     "ja": "好きな店が潰れたと彼女が言った。",
     "en": "She said my favorite place closed down.",
@@ -105,6 +127,129 @@
     }
   },
   {
+    "id": "c_3b4s4y6s",
+    "ja": "私たち、店を見切ればよかった。",
+    "en": "I wish we'd cut our losses.",
+    "alternatives": [
+      "I wish we'd given up on that restaurant.",
+      "If only we'd left that restaurant sooner."
+    ],
+    "point": "cut our losses はこれ以上の損を避けて撤退する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f706c87feff71ceed09a4c5f6d01c26f76f07595745c447d9930fb14221da828",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3c3v8h5a",
+    "ja": "皿二枚持ってきてね。",
+    "en": "Please bring two plates.",
+    "alternatives": ["Bring me two plates.", "Get me two plates."],
+    "point": "bring は話し手の所へ持ってくる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c20c0109730de61b876467a58738deeff8378e6e8b47186ba8ad45c474ef0d00",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3d3d4x5t",
+    "ja": "売ってるパンはいい香りだ。",
+    "en": "The bread for sale smells great.",
+    "alternatives": [
+      "The bread on sale smells wonderful.",
+      "The bread they sell smells good."
+    ],
+    "point": "for sale は売られているという後ろからの説明。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:135fbec8229bf52f74a2825e55b1bc7a389ca4053ddc7e85f34ba515d7658fa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3d9g6a4f",
+    "ja": "私は魚を食べられる。",
+    "en": "I can eat fish.",
+    "alternatives": ["I'm able to eat fish.", "I can have fish."],
+    "point": "can eat で食べることに問題がないと伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67fbfd461b2c5374aecfd68e00659c5e1b81946f13142e8ad02596dc0c180cf5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3e7f8s3f",
+    "ja": "私は彼女に会計を頼んだ。",
+    "en": "I asked her to pay.",
+    "alternatives": ["I requested that she pay.", "I asked her to handle payment."],
+    "point": "ask 人 to do で人に行動を頼む。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c00cd749e520c7364dad33eaf78945106e67ba51bc567a0d3fe3ce7fd8f237f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3g2g8u2w",
+    "ja": "接客はわざと上から目線に感じる。",
+    "en": "The service smacks of studied condescension.",
+    "alternatives": [
+      "The service feels deliberately patronizing.",
+      "The service comes across as calculated condescension."
+    ],
+    "point": "studied は計算された、condescension は見下す態度。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:de8fc909c347a44cf0c752453b849fdd09fc1be517a58e2bbcc39fc70a1d7a03",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3j2w6j7m",
     "ja": "何か食べるものが欲しいな。",
     "en": "I want something to eat.",
@@ -146,6 +291,47 @@
     }
   },
   {
+    "id": "c_3q7d7t4c",
+    "ja": "私は軽い前菜にしておきます。",
+    "en": "I'll stick to a light appetizer.",
+    "alternatives": [
+      "I'll just have a light appetizer.",
+      "I'll just order a light appetizer."
+    ],
+    "point": "stick to はそれだけにとどめる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:056a94f385c5ceb29be7e84c1f8428fc42cf9862d9334e954e0faeef269bc778",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3q8w4u9f",
+    "ja": "私は外で食べる方がいい。",
+    "en": "I prefer to eat outside.",
+    "alternatives": ["I'd rather eat outside.", "I prefer eating outdoors."],
+    "point": "prefer to はこちらの方がよいという選択。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac47cabf1e757fc2703647cb1d5e6bf3fe6bd3e7ccecd5406aeb66ea58b77d98",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3u4r6r6z",
     "ja": "おすすめは何ですか？",
     "en": "What do you recommend?",
@@ -161,6 +347,47 @@
         "hash": "sha256:3db26f946a2babbe59d260185292edba196734a8e64764f6db0bf3d85f240900",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w4y4u5g",
+    "ja": "我々が折れてたら店の不手際分を払ってた。",
+    "en": "Had we capitulated, we'd have paid for their incompetence.",
+    "alternatives": [
+      "If we'd given in, we'd have paid for their mistakes.",
+      "We'd have paid for their incompetence had we capitulated."
+    ],
+    "point": "Had we capitulated は「我々が折れていたら」という過去の仮定。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca681a3c2777b5ea7ceee7c1dd7a7fe656f237a115fd7e96af7333bce3796628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3y2e8n2p",
+    "ja": "この料理の方が腹にたまる。",
+    "en": "This dish is more filling.",
+    "alternatives": ["This dish fills you up more.", "You get fuller from this dish."],
+    "point": "filling は食べるとお腹が満たされる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a490f2ac49811095d81d2b14a60d892244f0126c3ff6f95746a5cb7883f990ac",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -187,6 +414,28 @@
     }
   },
   {
+    "id": "c_4b8c2r8f",
+    "ja": "頼んだのは別の料理です。",
+    "en": "What I ordered was something else.",
+    "alternatives": [
+      "I ordered a different dish.",
+      "My order was for a different dish."
+    ],
+    "point": "what I ordered は私が注文したもの。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4218e5660a6bde73711050e3abbfb1669b7523731fa69958c4055cc68a355daa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4f5q7f3z",
     "ja": "着いたら、もう閉店してた。",
     "en": "The place had already closed.",
@@ -205,6 +454,28 @@
         "hash": "sha256:4940ac5266de296dd082509e54cea5a584343aeff1cd06a9120c86560ecde8c4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g3m5n8d",
+    "ja": "店は我々の予約を既に見落としてた。",
+    "en": "The restaurant had overlooked our reservation.",
+    "alternatives": [
+      "The restaurant had missed our booking.",
+      "Our reservation had escaped the restaurant's notice."
+    ],
+    "point": "had overlooked で過去のある時点より前の見落とし。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef14a8d95b26d9b68c7f0ea5e4b6a435b8616867b1163cf7f5dbd564beb777f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -247,6 +518,28 @@
     }
   },
   {
+    "id": "c_4x8w6r7n",
+    "ja": "我々がこんな料理に奮発するのは稀。",
+    "en": "Seldom do we splurge on such food.",
+    "alternatives": [
+      "We rarely splurge on food like this.",
+      "We rarely spend this much on food."
+    ],
+    "point": "Seldom を先頭に置くと do we の語順。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf7dd354d0f4a1fd386387a13c52f543aa74634df6a78933aa4eaf9b35fef9c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5g5g6s8d",
     "ja": "私なら、日替わりにするけどね。",
     "en": "If I were you, I'd get the special.",
@@ -265,6 +558,47 @@
         "hash": "sha256:d3eb7f9e0e58a883012439b38f609f7f692b704129c3a2483fe7f5c87b58212e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k2e9g2m",
+    "ja": "私たちもう注文できる？",
+    "en": "Can we order now?",
+    "alternatives": ["Can we order yet?", "May we order now?"],
+    "point": "can we で自分たちが注文してよいか聞く。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4532b33c530c6da3b1bb6b1a88ddca4596e8f61ab7219176648da56ec2c3a26",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5m4q7q7s",
+    "ja": "彼らは注文を取り違えたのかも。",
+    "en": "They might've mixed up the orders.",
+    "alternatives": [
+      "They may have confused the orders.",
+      "Perhaps they got the orders mixed up."
+    ],
+    "point": "might have done は過去の出来事への推測。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:011e309f19021492e4ab1baec2b879d79918b60f75ed4b32d572407d730ad6b9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -332,6 +666,25 @@
     }
   },
   {
+    "id": "c_5x9z4n2b",
+    "ja": "君はゆっくり食べるべきだ。",
+    "en": "You should eat slowly.",
+    "alternatives": ["You ought to eat slowly.", "You should take your time eating."],
+    "point": "should は相手への助言。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:800738c5e357418067cb79d52cd4b4baf78ed720bc77e06eefb803f4752d5ad2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5y3n9k3q",
     "ja": "弟に注文を頼んだよ。",
     "en": "I asked him to order.",
@@ -347,6 +700,28 @@
         "hash": "sha256:267d7de6af8370a20676c302e16c1a2c8b23af403d2ad9e8357d32112bea3edb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y9k5q5w",
+    "ja": "私は辛い料理を控えてる。",
+    "en": "I'm cutting back on spicy dishes.",
+    "alternatives": [
+      "I'm eating spicy food less often.",
+      "I'm having fewer spicy meals."
+    ],
+    "point": "cut back on は量や頻度を減らす。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e922c461050fb6c53e16571e038c1afed86e4feee73a58635a172e59c09d83f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -392,6 +767,44 @@
     }
   },
   {
+    "id": "c_6x7v8z7t",
+    "ja": "このソースは何？",
+    "en": "What's this sauce?",
+    "alternatives": ["What sauce is this?", "Which sauce is this?"],
+    "point": "what でソースの種類や名前を尋ねる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a56dceb0a901ba9fb3c0d739eee7eddc1262fcea10ab6de8e046bfae77d073b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7d4r3r2m",
+    "ja": "請求額に私は頭に血が上った。",
+    "en": "The bill had me seeing red.",
+    "alternatives": ["The bill made me furious.", "The bill had me fuming."],
+    "point": "have 人 doing で状態を引き起こす、see red は激怒する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fdb8dfe24aa60c74c1266b095440c506beeed9d01ec022c1ef9b73cca76594d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7e5h5q4u",
     "ja": "塩辛すぎるかもしれません。",
     "en": "It might be too salty.",
@@ -433,6 +846,28 @@
     }
   },
   {
+    "id": "c_7m6t9r6m",
+    "ja": "外のテーブルは予約済みだ。",
+    "en": "The table outside is reserved.",
+    "alternatives": [
+      "The outdoor table is booked.",
+      "Someone has reserved the outside table."
+    ],
+    "point": "outside は table を後ろから説明する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:965b82423e2c7c78435384b989a6c6c83a8e82e0c5ebb90a00b5f47dbca96e75",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7v2x9f8j",
     "ja": "予約を受け付けてるか、知ってる？",
     "en": "Do you know if they take reservations?",
@@ -451,6 +886,47 @@
         "hash": "sha256:21f861280ce8144949e913d084a91ee52b0f6fbf33191b64b256a80693c4deec",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z5c4f6v",
+    "ja": "料理は別々に出される。",
+    "en": "The dishes are served separately.",
+    "alternatives": [
+      "Each dish is served separately.",
+      "The dishes come out separately."
+    ],
+    "point": "are served は出されるという受動態。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc7527e8557092e3b3bb171e03a35dbc8874f3036ba393c82960dab85a33a523",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8c8j7h7d",
+    "ja": "このスープは塩辛い。",
+    "en": "This soup tastes salty.",
+    "alternatives": ["The soup is salty.", "It tastes salty."],
+    "point": "味の感想には taste と形容詞を使える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c89ef2fed54015f0d1133b1deeab22c6eac8d85a83dbdb57d1c3c004d042de56",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -518,6 +994,28 @@
     }
   },
   {
+    "id": "c_8t8y4f5c",
+    "ja": "地味でもこの店は気取りが嫌だ。",
+    "en": "Though unassuming, this place reeks of pretension.",
+    "alternatives": [
+      "Though plain-looking, this place reeks of pretension.",
+      "Despite looking modest, this place feels pretentious."
+    ],
+    "point": "reek of は不快な印象を強く与える、pretension は気取り。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0731068ca3160a30f203a901186574e899199b9f31786079c957102f478d02ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8x8x5s7g",
     "ja": "メニューを見せて。",
     "en": "Show me the menu.",
@@ -537,6 +1035,25 @@
     }
   },
   {
+    "id": "c_9f5w4h8h",
+    "ja": "私は注文を終えたよ。",
+    "en": "I finished ordering.",
+    "alternatives": ["I'm done ordering.", "I've finished placing my order."],
+    "point": "finish の後は ordering の形。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb5489a2bb08aa4e854a04d082a70b1238c720a53e0f89ac3ee359457b140523",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9g8t3u5p",
     "ja": "予約したほうがいいよ。",
     "en": "You should book ahead.",
@@ -552,6 +1069,50 @@
         "hash": "sha256:e928237ac6fdb5cfbeb34fa76f80466f22c7ed80662d0e9f76ecda4db7c6c9f0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s5a3z6k",
+    "ja": "彼は我々の注文が抜けたと言った。",
+    "en": "He said our order got overlooked.",
+    "alternatives": [
+      "He said they missed our order.",
+      "He said our order was overlooked."
+    ],
+    "point": "said の後で過去の抜けを伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d85ab8a6986125b7855019b1ec27937f50622c09da1c49c8e460ac83c85eb2b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9t3z5u2g",
+    "ja": "私は隠れた追加料金を調べてる。",
+    "en": "I'm checking for hidden surcharges.",
+    "alternatives": [
+      "I'm looking for undisclosed extra charges.",
+      "I'm checking whether there are hidden additional fees."
+    ],
+    "point": "surcharge は通常の代金に加えて請求される料金。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:87a62977472e26126dac8fd7e53652d92ee82ec727decc7bf300d8b689fa4dae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

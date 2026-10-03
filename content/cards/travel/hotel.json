@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d8s2s4u",
+    "ja": "私もちょっと騒音に閉口してます。",
+    "en": "I'm slightly put out by the noise too.",
+    "alternatives": [
+      "The noise is bothering me a little too.",
+      "I find the noise a little irritating too."
+    ],
+    "point": "put out はここでは軽い不満や迷惑を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:623f0c3e86218019521b4fc2d27f8e9dbdcc09f7f901b27b672e2256c6d5c209",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2k9z9r3x",
     "ja": "清掃係にシーツを替えてもらった。",
     "en": "I got housekeeping to change the sheets.",
@@ -18,6 +40,50 @@
         "hash": "sha256:73e74f76971d6c588460d6090859611c233223981a4b419c219d32f973f1e70d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r9t2s7p",
+    "ja": "私は駐車料を確認しとけばな。",
+    "en": "I wish I'd checked parking fees.",
+    "alternatives": [
+      "I wish I'd checked the parking charges.",
+      "If only I'd asked about parking charges."
+    ],
+    "point": "wish + 過去完了で、料金を確認しなかったことを悔やむ。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f14c907873c5afb77bb8486f1cbd2e22547de4c4de91faa1fbbe7d94be8550f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2t5j8k9c",
+    "ja": "私の朝食はまだ届かない。",
+    "en": "My breakfast hasn't arrived yet.",
+    "alternatives": [
+      "My breakfast hasn't come yet.",
+      "I haven't received my breakfast yet."
+    ],
+    "point": "否定の現在完了に yet を添える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f00a45f38bffc83b3b3b081ee48b4850c2a315cfe6cd39fd5c4a7e1cef90ef6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -62,6 +128,47 @@
         "hash": "sha256:45ca937ee68bab21505940f1d935959a51f10bfa7526c11bc72eedcafef45c7d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g2s6n4y",
+    "ja": "私は追加料金を払わないよ。",
+    "en": "I won't cough up extra fees.",
+    "alternatives": ["I'm not paying extra fees.", "I refuse to pay extra charges."],
+    "point": "cough up は渋々お金を出す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60682e5e65241e079e6f3581df6e4f2dc3bc92213a737bed3f030a3213990c04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3h2d5m8w",
+    "ja": "宿が私たちに二重請求したかも。",
+    "en": "The hotel might have double-billed us.",
+    "alternatives": [
+      "The hotel may have charged us twice.",
+      "We may have been double-billed by the hotel."
+    ],
+    "point": "double-bill は同じ料金を二重に請求する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b02db73039dbe962bf7b3e49c57c6fb2ffaac322148257b040c7804ba5924f63",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -178,6 +285,47 @@
     }
   },
   {
+    "id": "c_4j3u3k7x",
+    "ja": "私は鍵をなくした。",
+    "en": "I lost my key.",
+    "alternatives": ["My key went missing.", "I misplaced my key."],
+    "point": "lost は lose の過去形。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:329ecb06f93933406c4858af18c79bf39806858f273de4085bad4924f4910fed",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4s9j3w4z",
+    "ja": "宿は私たちを自力で対処させた。",
+    "en": "The hotel made us fend for ourselves.",
+    "alternatives": [
+      "The hotel made us manage without help.",
+      "The hotel left us to manage without help."
+    ],
+    "point": "fend for ourselves は助けなしに自力で対処する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a4974b5ca3b01c74d2df6e28258e563cc828edb19476f9a0e683e75e8f84fbb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4t5c9h2j",
     "ja": "隣の部屋がうるさいです。",
     "en": "The next room is noisy.",
@@ -260,6 +408,28 @@
     }
   },
   {
+    "id": "c_5f2n7g8d",
+    "ja": "私の到着前に宿は埋まってた。",
+    "en": "It'd filled up before I arrived.",
+    "alternatives": [
+      "The hotel had filled up before I arrived.",
+      "It'd become fully booked before I arrived."
+    ],
+    "point": "had filled up は到着より前に満室になったこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b29c040a83444566f8f1bd6147783069e071f4999c4b3c92e38a25308957b013",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5j9b9r8g",
     "ja": "タオル数枚ください。",
     "en": "Some towels, please.",
@@ -297,6 +467,72 @@
         "hash": "sha256:e2f65527cf6667228732b12e9adb719c540852107645845bf8f455743168955a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m4v2q7n",
+    "ja": "部屋が綺麗なら私は大金も払うのに。",
+    "en": "Were the room clean, I'd pay through the nose.",
+    "alternatives": [
+      "If the room were clean, I'd pay a fortune.",
+      "I'd pay big money if the room were clean."
+    ],
+    "point": "pay through the nose は法外な大金を払うこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b7ae67c50764cbfa653079e4fc9a457262722b3ca51de394d7d419ff26f64d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5t5d8z8m",
+    "ja": "私は苦情を正式に申し立てたい。",
+    "en": "I'd like to file a complaint.",
+    "alternatives": [
+      "I'd like to lodge a complaint.",
+      "I'd like to make an official complaint."
+    ],
+    "point": "file a complaint は正式に苦情を申し立てる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e06a2cba26aa10a84a91fbe184f9096348b1eb29da2c8e03e904ff664f1a538",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5w3s6g4p",
+    "ja": "私は食い違う案内を整理してる。",
+    "en": "I'm reconciling conflicting directions.",
+    "alternatives": [
+      "I'm sorting out conflicting directions.",
+      "I'm resolving inconsistencies in the directions."
+    ],
+    "point": "reconcile は食い違う案内を整理して一致させる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:377d6c235bfea273c52438e1705942dca03eae443b8b4f21efb1744a5c6951b6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -424,6 +660,25 @@
     }
   },
   {
+    "id": "c_6j6b9a9t",
+    "ja": "私は今払わなきゃ。",
+    "en": "I must pay now.",
+    "alternatives": ["I have to pay now.", "I need to pay now."],
+    "point": "must で支払いの必要を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43bb14f6eaf3502e7078404aca2078b038326abdc9259b30e5c2c066cc338a93",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6j6p4a6p",
     "ja": "遅く着いたので、夕食を逃した。",
     "en": "Arriving late, I missed dinner.",
@@ -468,6 +723,28 @@
     }
   },
   {
+    "id": "c_6p2e8b9x",
+    "ja": "私の予約は勝手に取り消された。",
+    "en": "My reservation was canceled without permission.",
+    "alternatives": [
+      "My booking was canceled without my consent.",
+      "They canceled my reservation without asking me."
+    ],
+    "point": "without authorization は許可なく。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50eca19c14bf875ca8a90ab37554d8fcf3310d132f93dbe3d82fcc4e5dba5a16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7g6j8h2g",
     "ja": "遅れるようなら、連絡します。",
     "en": "I'll call if I'm running late.",
@@ -506,6 +783,25 @@
         "hash": "sha256:a53b22e4b3528c46995dd689a2df50ae142febc7f619eada03cd9785039b78fb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7n8e6t5h",
+    "ja": "ここに虫がいます。",
+    "en": "There's a bug here.",
+    "alternatives": ["There's an insect here.", "We have a bug here."],
+    "point": "虫が一匹いるなら there is a bug。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fdb0d3526539d3a21ab13e82cb35b9771761369b13abfd04793f28b022c7028",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -675,6 +971,28 @@
     }
   },
   {
+    "id": "c_9n3f5u5z",
+    "ja": "私は預けた荷物を受け取ってない。",
+    "en": "I haven't retrieved the bags I left.",
+    "alternatives": [
+      "I haven't gotten my bags back yet.",
+      "I haven't collected the bags I left."
+    ],
+    "point": "預けた動作は過去形、未返却は現在完了で表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a80a4681e68817c47d7d99628ae90b1a26f076ddde06b53f707bcec927730ac4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9p5q8y8k",
     "ja": "もっと静かな宿がよかった。",
     "en": "I wish I'd chosen somewhere quieter.",
@@ -698,6 +1016,28 @@
     }
   },
   {
+    "id": "c_9r4x3w5q",
+    "ja": "ホテル側は券で私をあしらった。",
+    "en": "The hotel fobbed me off with a voucher.",
+    "alternatives": [
+      "The hotel brushed me off with a voucher.",
+      "The hotel offered a voucher to dismiss me."
+    ],
+    "point": "fob someone off は適当な対応で相手をあしらうこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3b8e5af26954ae3f7f4a062ac35d29511df8220bcd0af92f4a377e1db8c863f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9t7f8g3x",
     "ja": "もう一泊したいのですが。",
     "en": "I'd like to stay another night.",
@@ -716,6 +1056,25 @@
         "hash": "sha256:f3373d8eb1fc14b05b469ab80d9e0b7d001155fd8e7d765f5f897c1021da8509",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9f4x4c",
+    "ja": "私は係員に来てほしい。",
+    "en": "I want an attendant to come.",
+    "alternatives": ["I'd like an attendant to come.", "I want an attendant here."],
+    "point": "want + 人 + to come で係員に来てほしいと伝える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebb3fd76d91d0a8b4889cde5b82f7d9a49c208758ca5b5346945e024cd9353f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

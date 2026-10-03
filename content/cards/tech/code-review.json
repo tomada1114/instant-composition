@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_2d4h6x7u",
+    "ja": "君が反対してたら我々は見送ってた。",
+    "en": "Had you pushed back, we'd have shelved it.",
+    "alternatives": [
+      "If you'd objected, we'd have shelved it.",
+      "We'd have shelved it if you'd pushed back."
+    ],
+    "point": "Had you は if を使わない過去の仮定。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffd3b52920ebdc4ab44d99b559676098d98ae203f9d79b43ebee6c5208a62efd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2h4h2z6x",
     "ja": "命名が紛らわしいと思った。",
     "en": "I found the naming confusing.",
@@ -56,6 +78,25 @@
         "hash": "sha256:b235e7b231381c464f14abbe6f45fd99b2251c9ec924d784b7ff9666acaaab65",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2m6g7f7p",
+    "ja": "なぜこの名を変える？",
+    "en": "Why change this name?",
+    "alternatives": ["Why rename this?", "Why use another name?"],
+    "point": "Why と動詞の原形で変更の理由を尋ねる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:efeb0ac73458e9943c35dd91e334e1461f2cac9e06c27e257cc598a90f151b83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -123,6 +164,50 @@
     }
   },
   {
+    "id": "c_2r9w4b4b",
+    "ja": "我々は重複処理を省くべきだ。",
+    "en": "We should weed out duplicate logic.",
+    "alternatives": [
+      "We should eliminate duplicate logic.",
+      "We should remove the redundant logic."
+    ],
+    "point": "weed out は不要なものを選んで取り除く。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:add0e394f9d841162a14e37f782c0bd21187d1014b8e4b036356511a8057d932",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2x2c4f3w",
+    "ja": "この変更の暗黙の点を濁さず話そう。",
+    "en": "Let's not gloss over what this change leaves implicit.",
+    "alternatives": [
+      "Let's address what's implicit in this change without evasion.",
+      "Let's not sidestep what's left implicit by this change."
+    ],
+    "point": "gloss over は難しい点を軽く扱って通り過ぎる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cab8821fc219bd63ba9d48c8ced984e23ce7b8db8b598ec7b95665c5f4dfdec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2y6f8r3h",
     "ja": "ここに誤字があるよ。",
     "en": "There's a typo here.",
@@ -142,6 +227,28 @@
     }
   },
   {
+    "id": "c_2z7t8n5j",
+    "ja": "我々は命名を揃えるべきだった。",
+    "en": "We should've standardized the naming.",
+    "alternatives": [
+      "We should've kept the naming consistent.",
+      "We should've used consistent names."
+    ],
+    "point": "should have done は過去の行動への反省。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b21cd0d7539d6a3312f8ed6c734e46be0d0725a902ec280f450de3204c91c571",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3a2w2t7x",
     "ja": "ケンに名前変更を頼んで。",
     "en": "Ask Ken to rename it.",
@@ -157,6 +264,72 @@
         "hash": "sha256:136cff1521aa8161a2c2b42c0e617b5e9335fda31fc1b8a6007870cd070e7955",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3n3c5d5x",
+    "ja": "私たちは行間を読むべきだった。",
+    "en": "We should've read between the lines.",
+    "alternatives": [
+      "We should've picked up the unspoken meaning.",
+      "We should've noticed what wasn't said."
+    ],
+    "point": "read between the lines は言外の意味を読む。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7de5c3f6aea72aa4618bd05fea464be6097a4ca000f69318c80230650a327e6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3r9b7u5b",
+    "ja": "私が推した安全策が今我々に災いしてる。",
+    "en": "The safeguard I backed now haunts us.",
+    "alternatives": [
+      "We're now haunted by the safeguard I backed.",
+      "The safeguard I supported is now hurting us."
+    ],
+    "point": "I backed は私が推した安全策を限定し、now haunts us は今その判断が我々に災いしていることを表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e47cfadf937b189f51677eb22189ba1a0afb8a7f0b32813d545c5f1d28153305",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3s3g8q3j",
+    "ja": "この変更で私は前提を再考した。",
+    "en": "This change made me rethink my assumptions.",
+    "alternatives": [
+      "This change prompted me to reconsider my assumptions.",
+      "This change led me to revisit my assumptions."
+    ],
+    "point": "make + 人 + 動詞の原形で再考させたと伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13565f2c189d1201b964272e4afd9588ec32ec3dca6800f6a120a53946b6a7e3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -195,6 +368,94 @@
         "hash": "sha256:29b9ad670917dffc90be00de95c8fd0c14176aec71bd8c41f6543b40eec8ad2e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4h3h6v2e",
+    "ja": "長くても私は明快な名がいい。",
+    "en": "Length aside, I prefer self-explanatory names.",
+    "alternatives": [
+      "I favor clear names despite their length.",
+      "I prefer self-explanatory names despite their length."
+    ],
+    "point": "self-explanatory は追加説明なしで意味が分かる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48875e08b4ecf1ac9fe98148ba5c1a54d847136fd08d1dbe2e08f698cef4a409",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4k8r9p2x",
+    "ja": "彼が責任者を知ってるか私は疑問だ。",
+    "en": "I doubt he knows who is responsible.",
+    "alternatives": [
+      "I'm not sure he knows who's in charge.",
+      "I doubt he knows who bears responsibility."
+    ],
+    "point": "doubt の中に knows、その中に where 節がある。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ff4ef13206a33312c3933fce04bbe4588860f4b28662ff5c374db8a5b1f4660",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4n3w3p9x",
+    "ja": "この変更は不要かもしれません。",
+    "en": "This change may be unnecessary.",
+    "alternatives": [
+      "Perhaps this change is unnecessary.",
+      "This change might not be needed."
+    ],
+    "point": "may be で不要という指摘を断定せず伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59f1afe2a0db65631206ce0d674cbc48b3ccc38c5e15f58c424a7e3068b2cc40",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4q4h8m5d",
+    "ja": "静的検査なら我々は見抜けたのに。",
+    "en": "If we'd linted, we'd have caught it.",
+    "alternatives": [
+      "If we'd run lint, we'd have spotted it.",
+      "We'd have caught it if we'd linted."
+    ],
+    "point": "過去に実現しなかった条件は if と had done。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e5ba55bea9dbb4b45909881902a8f9a428f99a253f8de606f5bae69f67ad03b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -239,6 +500,25 @@
         "hash": "sha256:b79930287c2d4c14dbae30543e0866458aa3e188386aab0937e7abf72af1ed2b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z6x7t7p",
+    "ja": "私、名前を確認中。",
+    "en": "I'm checking names.",
+    "alternatives": ["I'm checking the names.", "I'm looking over the names."],
+    "point": "進行形で今名前を確認していると伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d655e32feed443443e6ae3a5c1bf4fce2b8e5fbc4685999a9c16a8dbdb5ec563",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -394,6 +674,50 @@
     }
   },
   {
+    "id": "c_6h9d7b7a",
+    "ja": "彼は修正が責任をぼかすだけと言った。",
+    "en": "He said the fix merely blurred who's accountable.",
+    "alternatives": [
+      "He said the fix only obscured who was responsible.",
+      "He said the change just made responsibility less clear."
+    ],
+    "point": "accountable は結果について説明責任を負う。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d988c7d67ac11a32d4c76e001eea72a50efe4dd6b9599917f1e709d67a4c157",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6n4e6x9f",
+    "ja": "私はこの修正が十分とは到底言えない。",
+    "en": "I couldn't possibly call this fix sufficient.",
+    "alternatives": [
+      "I can't possibly say this fix is sufficient.",
+      "I couldn't call this fix sufficient at all."
+    ],
+    "point": "couldn’t possibly call で、その評価は到底できないと強く述べる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9aed6c3a575098f3720a3e8fd970fca3639b23eaeebd98b04ae34e2a415b2e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6p9s7x8d",
     "ja": "ブランチ、リベースしてもいい？",
     "en": "Mind if I rebase this branch?",
@@ -416,6 +740,85 @@
     }
   },
   {
+    "id": "c_6q5p8n5z",
+    "ja": "私がその名前を変える。",
+    "en": "I'll change the name.",
+    "alternatives": ["I'll pick another name.", "I'll use a different name."],
+    "point": "will で修正を引き受ける意思を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3762ad1cc00cf92f77344f290c5190105e8000e0fc4edd190904021e54089f59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6v9w2u8n",
+    "ja": "変更点を見せて。",
+    "en": "Show me the changes.",
+    "alternatives": ["Show me your changes.", "Let me see the changes."],
+    "point": "changes は変えた箇所。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69cc1f805f550df4e953af724bbcab70631697a5a8e97a2f15d2dfbb59e54385",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6y8d6t8a",
+    "ja": "私は処理が遅いと思う。",
+    "en": "I think processing is slow.",
+    "alternatives": ["I believe processing is slow.", "Processing seems slow to me."],
+    "point": "think の後の節で処理への評価を伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9490e564ef4fc4e5e117b934de117990409afb305ec54f160161abba527d9d27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7h6q2d9w",
+    "ja": "嫌なのはこれが責任の所在を隠す点だ。",
+    "en": "What bothers me is how this obscures accountability.",
+    "alternatives": [
+      "It's this concealing accountability that bothers me.",
+      "What concerns me is this hiding who's responsible."
+    ],
+    "point": "What bothers me で不満の焦点を示し、accountability は責任の所在を指す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d0eceae14618a147a2927ddc7de585f658368072543451329b7c9e279a5a1ec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7p9g2z9w",
     "ja": "マージ前に誰か気づいてたらなあ。",
     "en": "I wish someone had caught this before merging.",
@@ -434,6 +837,28 @@
         "hash": "sha256:ddc78183ce9c98134887b6c97184005af1a0fb706d7e0221100638b267adc9b5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r3v7b6s",
+    "ja": "私は機能追加時にテストする。",
+    "en": "I test when adding features.",
+    "alternatives": [
+      "I run tests when adding features.",
+      "I test when I add features."
+    ],
+    "point": "when の後で機能を追加する時のテスト習慣を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d11ce39e155cc85f68f7f9812d2d4d820580a9a920c734eba9c5a44e2e3df10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -482,6 +907,91 @@
     }
   },
   {
+    "id": "c_8d7x6k2n",
+    "ja": "安全策の頼りなさを知っておけばな。",
+    "en": "If only I'd known that safeguard was unreliable.",
+    "alternatives": [
+      "I wish I'd known that safeguard was unreliable.",
+      "I wish I'd realized that safeguard wasn't reliable."
+    ],
+    "point": "If only I’d known は安全策が頼りないと過去に知っておけばよかったという後悔。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:583b3272a016b37fd6f901a5b10f70e98cfd99e53e926c2e98aa4437c90867b5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8e5y3g3c",
+    "ja": "こんな微妙な差なら私は保留にするのに。",
+    "en": "Were the distinction so fine, I'd reserve judgment.",
+    "alternatives": [
+      "If the difference were that subtle, I'd withhold judgment.",
+      "I'd withhold judgment if the distinction were so subtle."
+    ],
+    "point": "reserve judgment は判断を急がず差し控える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24c6ae088ab126839c95236876e5d6388c42404983c957c9d6d3952208d1e85a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8e7c8z4d",
+    "ja": "彼女は我々の修正が表面的だと言った。",
+    "en": "She said what we'd fixed was merely cosmetic.",
+    "alternatives": [
+      "She said our fixes were only superficial.",
+      "She said we'd made nothing more than cosmetic fixes."
+    ],
+    "point": "cosmetic は見た目だけで根本に届かない修正。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c0d08f7310f720c11ac1ad73982392f442be650b885c16f2539e61a248b0dfb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8f7k9z4n",
+    "ja": "その行を残して。",
+    "en": "Keep that line.",
+    "alternatives": ["Leave that line in.", "Don't remove that line."],
+    "point": "keep でコードの行を消さずに残す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f47b829778506602e15d651067fe230259c038f13bd3d8059fcf41101c53002",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8f8x2n8k",
     "ja": "もうテストを直したよ。",
     "en": "I've fixed the tests.",
@@ -497,6 +1007,50 @@
         "hash": "sha256:9c416f0b5d5a2238eb74ac36e39094186c9d877e2fb1d7e1ad3bf51cf156fcc9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8m7q5r5m",
+    "ja": "便利でもこの近道は意図をぼかす。",
+    "en": "Though handy, this shortcut obscures intent.",
+    "alternatives": [
+      "Although handy, this shortcut makes the intent unclear.",
+      "This shortcut obscures intent despite being convenient."
+    ],
+    "point": "Though handy で便利さを認めつつ、この近道が意図を曖昧にする点を述べる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef61b7517e66d8bcae8b41bdb332d0edca3051b1e588c7d1e8d43ccec332091a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8q4z3r8y",
+    "ja": "こんな大幅変更の根拠はほぼ見えない。",
+    "en": "I see little justification for so sweeping a change.",
+    "alternatives": [
+      "I see little basis for this sweeping change.",
+      "I see almost no grounds for this extensive change."
+    ],
+    "point": "so sweeping a change は so + 形容詞 + a + 名詞の語順。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50aa8d59dac329a2fca267c78b255b1b9553a7b94fdb83277d2e027a21f83727",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -538,6 +1092,50 @@
         "hash": "sha256:a91db6980926901c83f0e2c72cf0524252aa70fb0b69b1e0c31b3c39cb57fccb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8z6r9f4h",
+    "ja": "君の説明拒否を私に弁護させないで。",
+    "en": "Don't make me defend your refusal to explain.",
+    "alternatives": [
+      "Don't have me justify your refusal to explain.",
+      "Don't make me defend your unwillingness to explain."
+    ],
+    "point": "make me defend は私に弁護させる。your refusal は君の説明拒否。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["causatives", "infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9160032cc70ac84e19458bb92e81e62e433c0b433b409e01b6ba116250b8939",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8z8u5x3c",
+    "ja": "私が決めるならその主張に留保を付ける。",
+    "en": "Were it my call, I'd qualify that claim.",
+    "alternatives": [
+      "If it were my call, I'd qualify that claim.",
+      "If I decided, I'd qualify that claim."
+    ],
+    "point": "qualify a claim は条件や留保を添えて断定を弱める。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a57d0416dbb2efb70cd3c837bbded13f911f9f4f76fed335f34319f32c563d8b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -661,6 +1259,28 @@
         "hash": "sha256:42a17377461a9867413ca74d5c88f431f888b3df0d398ea01c75cc9b47bfd38a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z4h6u2f",
+    "ja": "この値は自動設定される。",
+    "en": "This value is set automatically.",
+    "alternatives": [
+      "The system sets this value automatically.",
+      "This value gets set automatically."
+    ],
+    "point": "is set は値が設定される受動態。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8bc3b568d35d800bc78224a2562e3d8d6f1948573735064e1b0f0cccbe9242",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

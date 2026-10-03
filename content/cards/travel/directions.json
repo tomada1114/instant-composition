@@ -83,6 +83,28 @@
     }
   },
   {
+    "id": "c_2h6j3v6f",
+    "ja": "道路工事の場所をご存じですか？",
+    "en": "Do you know where the roadwork is?",
+    "alternatives": [
+      "Do you know where they're doing roadwork?",
+      "Do you know where construction's happening?"
+    ],
+    "point": "where の後は疑問文ではなく主語と動詞の順。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2871397a3665be913b42aa059fd0b4538c09db664f9036754bd0d59552c30419",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2n5p2u7v",
     "ja": "信号までまっすぐ行って。",
     "en": "Go straight to the light.",
@@ -124,6 +146,44 @@
     }
   },
   {
+    "id": "c_2t6u4b7z",
+    "ja": "私は北に向かってる。",
+    "en": "I'm going north.",
+    "alternatives": ["I'm heading north.", "I'm traveling north."],
+    "point": "north は北へという方向。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f4bccac9a248bac3a286d7c4c1a494363694e9527d80941f7ae22f3697d3ff9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2u3z7u8f",
+    "ja": "私は道を間違えた。",
+    "en": "I took the wrong street.",
+    "alternatives": ["I went down the wrong street.", "I chose the wrong street."],
+    "point": "take a street はその道を通る。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bf1aa2d28a63280fafe7efd42ad1a9403e98ccfc27027b769e0722775fd7b25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2y7x7h2y",
     "ja": "北へ進めば、目と鼻の先ですよ。",
     "en": "Heading north, you'll be a stone's throw away.",
@@ -143,6 +203,28 @@
         "hash": "sha256:3d5b96e8a35a730c6832424d280dc0c8ff2856229985752dbe7402c64c7c1d5b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b5z3h4b",
+    "ja": "裏道は避けたほうがいい。",
+    "en": "You should steer clear of backstreets.",
+    "alternatives": [
+      "You ought to avoid the backstreets.",
+      "It's best to keep off the backstreets."
+    ],
+    "point": "steer clear of は近づかず避ける。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1687fbbba7fc46cde81b5cb50cd9c81923b0cacf05ddc5e32c536d90e2e2665a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -301,6 +383,28 @@
     }
   },
   {
+    "id": "c_4b9e7d4q",
+    "ja": "この先に何があるか誰も知らない。",
+    "en": "What lies ahead is anyone's guess.",
+    "alternatives": [
+      "Nobody knows what lies ahead.",
+      "What we'll find ahead is a mystery."
+    ],
+    "point": "anyone's guess は誰にも分からないこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf4a58493d78ef63dc5003b787e285cbdd03f4fbcc2ba6c54aebf3b972f277f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4e2y2z9u",
     "ja": "彼女は、駅はすぐそこだと言った。",
     "en": "She said the station was right there.",
@@ -342,6 +446,47 @@
     }
   },
   {
+    "id": "c_4q4y3g5j",
+    "ja": "私、左に曲がるよ。",
+    "en": "I'll turn left.",
+    "alternatives": ["I'm going to turn left.", "I'll make a left turn."],
+    "point": "will でこれから曲がる向きを伝える。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d81be38e3dddb776939feacaa4e9a5b9881650c6864042d8272827b216748dfe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4s3q2v7g",
+    "ja": "人が戸惑うのは道の急な曲がりだ。",
+    "en": "It's the dogleg that throws people.",
+    "alternatives": [
+      "What confuses people is the sharp bend.",
+      "It's the sharp bend that throws people off."
+    ],
+    "point": "dogleg は道などの急な折れ曲がりを指す。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6eaa4a32f15d002d00f210799aa7d2a8b899ea021bdcc0d2a4af04e5336ae169",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4x4g7e8g",
     "ja": "地下鉄の入口はどこ？",
     "en": "Where is the subway entrance?",
@@ -360,6 +505,47 @@
         "hash": "sha256:4dd65b6e500e9ab6d4bcbcf42a59c85dd4938d6cfdd33262dd5fc8d1b40d46a2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x4t7c4n",
+    "ja": "橋の下の道を通って。",
+    "en": "Take the road under the bridge.",
+    "alternatives": [
+      "Follow the road beneath the bridge.",
+      "Use the road below the bridge."
+    ],
+    "point": "under the bridge で道の場所を後ろから説明する。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db833fa2308f86a9a0c05b8c47ade90e1426dd6126628de5f1c3a24625c876d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4x5a7h8z",
+    "ja": "道案内お願いできる？",
+    "en": "Could you guide me?",
+    "alternatives": ["Could you give me directions?", "Could you point the way?"],
+    "point": "Could you は道案内を頼む柔らかい言い方。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d382da427ece39a378a8fe6a36d0024bcad00ede20fd809ea1f0e86363c37cdc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -405,6 +591,28 @@
         "hash": "sha256:c21edba5533a6f522791294c27b06f76721329fcfc3a3e78cbaefb9675d48a65",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g4c6k9k",
+    "ja": "私はもう橋を渡りました。",
+    "en": "I've already crossed the bridge.",
+    "alternatives": [
+      "I've already gone across the bridge.",
+      "I've already made it across."
+    ],
+    "point": "cross は橋などを渡る動詞。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f91047ce24ee55cd0a4e54789110746770c2eb8056c26d95fd843be11b5912ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -548,6 +756,50 @@
     }
   },
   {
+    "id": "c_5v5w8k9p",
+    "ja": "入口は隠れた所にある。",
+    "en": "The entrance is tucked away.",
+    "alternatives": [
+      "The entrance is hidden from view.",
+      "The entrance is out of sight."
+    ],
+    "point": "tucked away は目につかない所にある。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ebc320235d4b48a707a47e7ec23e8aac831f9a3748dc3188b6270ead686ef51",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5w7c8t2e",
+    "ja": "この歩道の方が空いてる。",
+    "en": "This sidewalk is less crowded.",
+    "alternatives": [
+      "This sidewalk has fewer people.",
+      "This sidewalk isn't as crowded."
+    ],
+    "point": "less crowded は人がより少なく混雑していない。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:519195b6c51d08e9d5cbee58409bd0fcfa6d1e8c20f9591277071a25f4e06ee6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6h7e7s9y",
     "ja": "この店、もう二回通ったね。",
     "en": "We've walked past this shop twice.",
@@ -633,6 +885,25 @@
     }
   },
   {
+    "id": "c_7h6r5u2m",
+    "ja": "この道はどこに続く？",
+    "en": "Where does this road lead?",
+    "alternatives": ["Where does this road go?", "Where will this road take me?"],
+    "point": "lead は道がある場所へ続くこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:919a491afe82ea0f251264d8d819ef5592141d0888dc419bbd81168c358c7145",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7y5r9g5z",
     "ja": "バスに乗るほうが早いよ。",
     "en": "Taking the bus is faster.",
@@ -648,6 +919,28 @@
         "hash": "sha256:6f15218d7dacc489546a05f8454333498a7bf96a9ec2882e230cfc08bb0104df",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q3k4m6c",
+    "ja": "左へそれてたら私たちは今楽勝なのに。",
+    "en": "Had we veered left, we'd be home free.",
+    "alternatives": [
+      "If we'd gone left, we'd have it easy now.",
+      "We'd be home and dry if we'd turned left."
+    ],
+    "point": "home free は難所を越えて成功が確実な状態。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1086ba5215dfdb657a531e95e4d631468b17f582bba42b583a8acaf1059551f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

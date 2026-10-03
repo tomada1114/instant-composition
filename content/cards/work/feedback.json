@@ -1,5 +1,46 @@
 [
   {
+    "id": "c_2c8p5u3x",
+    "ja": "私は音読を勧めます。",
+    "en": "I recommend reading aloud.",
+    "alternatives": ["I suggest reading out loud.", "My advice is to read aloud."],
+    "point": "recommend の後の行動は動名詞。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2171f6d7ee2963def6e3d1579dc55ada5d722b27a17631c5d1f8bf78e663488e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2g9j8e2g",
+    "ja": "私たちに嫌味な褒め言葉は不要だった。",
+    "en": "You could've spared us that backhanded compliment.",
+    "alternatives": [
+      "You didn't need to give us that backhanded compliment.",
+      "You could've kept that backhanded compliment to yourself."
+    ],
+    "point": "could have spared は避けてほしかったという遠回しな非難。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7110aa61a6b61aafceb99858450f225e8f82b5d69e038eeca471f678edf8958",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2j9w8c6f",
     "ja": "早く言ってくれたら手伝ったよ。",
     "en": "I'd have helped if you'd asked.",
@@ -85,6 +126,47 @@
         "hash": "sha256:f7c8bf02a3b6da33928269e74c2f3b0d5a08a4f9aa3645cae6e0945af16e1761",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g9d4t5c",
+    "ja": "その写真を使って。",
+    "en": "Use that photo.",
+    "alternatives": ["Put that photo in.", "Include that photo."],
+    "point": "use の命令形で使うよう依頼する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab409be220bce7dcade6e28fa3b48e7a7d3ca198cedcad8f262f8f74b4693f7c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3g9n4n3a",
+    "ja": "君が入れた例は適切だ。",
+    "en": "The example you added is appropriate.",
+    "alternatives": [
+      "The example you included is appropriate.",
+      "The example you added fits well."
+    ],
+    "point": "you added がどの例かを説明する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4bfb09eeb84002100bac7eb478aa8ed1a30fcb70520dd8d816f95060062ffe6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -197,6 +279,28 @@
     }
   },
   {
+    "id": "c_4q5f5f9x",
+    "ja": "君の説明は私を助けた。",
+    "en": "Your explanation helped me.",
+    "alternatives": [
+      "You helped me with your explanation.",
+      "I benefited from your explanation."
+    ],
+    "point": "helped me は私の理解を助けた。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8b65c7adbbf8e53f5227f5ea02f86b7e283343d5ebad6ef6c15a30e88276b94",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4w9z3c2r",
     "ja": "こんな完成度の下書き、初めて見たよ。",
     "en": "Never have I seen such a polished draft.",
@@ -281,6 +385,44 @@
         "hash": "sha256:9506e885af6d635315a6404b1ca64c88f437273d69c2e7e3cd572d2ae88a8442",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5p5m5e7y",
+    "ja": "君の声は前より明瞭。",
+    "en": "Your voice is clearer.",
+    "alternatives": ["Your voice sounds clearer.", "You sound clearer now."],
+    "point": "clearer は clear の比較級。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f341074ad65b26975d860d906515e4e69e5a30bc6125ef19cccc7460e5124a47",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5r8u4a4b",
+    "ja": "君の見出しは褒められた。",
+    "en": "Your heading was praised.",
+    "alternatives": ["Your heading received praise.", "People praised your heading."],
+    "point": "was praised で褒められた側を主語にする。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dd9e02a222541c2ec9bb0bbe4e332123406b7fe85f964dffd502fd0b1b73908",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -614,6 +756,69 @@
     }
   },
   {
+    "id": "c_8m2d3j8t",
+    "ja": "君の文章は前より滑らかだ。",
+    "en": "Your prose flows more smoothly.",
+    "alternatives": [
+      "Your writing flows more smoothly.",
+      "Your prose reads more smoothly."
+    ],
+    "point": "flows more smoothly は文章の流れが更に自然なこと。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f48a4cc93c8ba35d5482dbddd88146fb12537dce10d905a95ce07f2f89b0214e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8r5u6y4m",
+    "ja": "私は色の使い方を見直すよ。",
+    "en": "I'll reconsider the color scheme.",
+    "alternatives": [
+      "I'll rethink the color scheme.",
+      "I'll review how colors are used."
+    ],
+    "point": "reconsider は一度決めた選択を考え直す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e7719b947c43a839147ae154f18cfc8496388a286e0f2384463a43e18bb13ee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8t8w9r6j",
+    "ja": "君の図は役に立つ。",
+    "en": "Your chart helps.",
+    "alternatives": ["Your chart is helpful.", "Your chart is useful."],
+    "point": "helps は図が理解を助けるという意味。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b38fded32d237803995d1027d1a754e8339d72de3f1287b51fa1dd5e6bfb47dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8x3r6w3y",
     "ja": "原稿、見てくれてありがと。",
     "en": "Thanks for reviewing my draft.",
@@ -636,6 +841,28 @@
     }
   },
   {
+    "id": "c_8x7j9t3k",
+    "ja": "表の下の注記が役立つ。",
+    "en": "The note below the table helps.",
+    "alternatives": [
+      "The note beneath the table is useful.",
+      "The note under the table is helpful."
+    ],
+    "point": "below the table で注記の場所を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59ff950c2deddc421310b92f6c3b60b843784e51d728a926ba95656c200dd2e6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8x7x2p5a",
     "ja": "君が直した所、まだ変だと彼は言う。",
     "en": "He says what you fixed still looks off.",
@@ -654,6 +881,28 @@
         "hash": "sha256:de4ab87b633996a60f7e3378a5c55ee9c3a24d24e7b09d6989787303360776d0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b8k2d7t",
+    "ja": "私が言葉を濁してたら君は今も気づかない。",
+    "en": "Had I equivocated, you'd be none the wiser.",
+    "alternatives": [
+      "If I'd been evasive, you still wouldn't know.",
+      "You'd still be unaware if I'd been evasive."
+    ],
+    "point": "equivocate は言葉を濁す、none the wiser は分からないまま。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e392b9269f7673509cb3d22fb1f1cd3de87694fbedbf84b132f112f97646001b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -699,6 +948,50 @@
     }
   },
   {
+    "id": "c_9j6w3p3q",
+    "ja": "君の締めは磨く余地がある。",
+    "en": "Your closing has room to improve.",
+    "alternatives": [
+      "There's room to improve your closing.",
+      "Your closing could use some improvement."
+    ],
+    "point": "room to improve は改善の余地を表す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f3159201ac96cc0e2489b58e60ecb234d66d2c4512d67f55554e1fe301eb826",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9k5h9e5t",
+    "ja": "彼女は私の褒め方が少し偉そうと言った。",
+    "en": "She said my praise sounded faintly patronizing.",
+    "alternatives": [
+      "She said my compliments sounded slightly condescending.",
+      "She said my praise sounded a little patronizing."
+    ],
+    "point": "faintly patronizing はかすかに上から目線の。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:745f3b926fc791cc9ba765b664428e737212b926ba37855db706f4de9a59210b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9p8q6g6r",
     "ja": "要点を絞れと言われた。",
     "en": "I was told to be concise.",
@@ -714,6 +1007,28 @@
         "hash": "sha256:d9f1607f87a7dd2b02e18e197e8376c74585be011b920997b1254242f97b2a47",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v4j6w8t",
+    "ja": "要点が埋もれたら私が言う。",
+    "en": "I'll flag points if they're buried.",
+    "alternatives": [
+      "I'll highlight key points if they're buried.",
+      "I'll mention key points if they're buried."
+    ],
+    "point": "if 節は未来の条件でも現在形にする。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e1cb0bca2d29d65f964bbe62f1c6d83cac20d2b7a20044203b61da674d70644",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

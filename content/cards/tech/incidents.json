@@ -44,6 +44,25 @@
     }
   },
   {
+    "id": "c_2u4a4n5z",
+    "ja": "止まったら私に知らせて。",
+    "en": "Tell me if it stops.",
+    "alternatives": ["Let me know if it stops.", "Alert me if it stops."],
+    "point": "これからの条件でも if 節は現在形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf9bb111d8a85274aac0b098ce0096286d1685be425950a9bf31354b8b71fa73",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2v9b4u3r",
     "ja": "原因を、まだ追ってます。",
     "en": "We're still tracking down the cause.",
@@ -110,6 +129,25 @@
     }
   },
   {
+    "id": "c_3n9v5t2u",
+    "ja": "何が動かない？",
+    "en": "What's not working?",
+    "alternatives": ["What isn't running?", "What's out of action?"],
+    "point": "what で動かないものを尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cec66bbf88bf5437b670050d0fe40e80c93c2bb0bda6a0312f99df91df4c9a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3r3j5q8x",
     "ja": "午前三時から、ずっと火消しです。",
     "en": "We've been firefighting since 3 a.m.",
@@ -128,6 +166,28 @@
         "hash": "sha256:9113a8d52695ed5d5fe9e7f2044a24ba39ae0e776d98f66ca3a627f74ac85859",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r4r6z7e",
+    "ja": "我々が退けた可能性は今は要注意だ。",
+    "en": "The possibility we dismissed now demands attention.",
+    "alternatives": [
+      "We can't ignore the possibility we dismissed anymore.",
+      "The possibility we rejected now demands our attention."
+    ],
+    "point": "we dismissed は我々の過去の判断、now は現在の要注意状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5f7599bbc6cb2f912527e188ce3913bf7b13e09a394e568a74166dac387b196",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -192,6 +252,47 @@
         "hash": "sha256:af36be4dd5211d99b6fdfb59424b8328ae5616350e8aad130bc493cb5fa4e24e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f7f4w2k",
+    "ja": "私たちは確認を終えた。",
+    "en": "We finished checking.",
+    "alternatives": ["We're done checking.", "We completed our checks."],
+    "point": "finish の後は checking の形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68bd5264ed5c4a4c042f54beca3a0ec995be5b708295145cb69e82f95234a268",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4j4a5w7e",
+    "ja": "この障害の引き金は分かる？",
+    "en": "Any idea what triggered this outage?",
+    "alternatives": [
+      "Do you know what triggered this outage?",
+      "Any idea what caused this outage?"
+    ],
+    "point": "Any idea what で原因に心当たりがあるか尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:942b2d47c57037157765b474f1deeb2d81604cef6f879a4a03dee21b514c9866",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -281,6 +382,88 @@
     }
   },
   {
+    "id": "c_4x4n8h8c",
+    "ja": "私が見てもいい？",
+    "en": "May I see it?",
+    "alternatives": ["Can I look at it?", "Could I check it?"],
+    "point": "May I で見る許可を求める。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:404b9155609db373fc19131399d1c8d02732a47bbc93650cd726d85430fcb7a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4x4q9g9g",
+    "ja": "私はもう原因を特定した。",
+    "en": "I've already isolated the cause.",
+    "alternatives": [
+      "I've already identified the cause.",
+      "I've already tracked down the cause."
+    ],
+    "point": "isolate the cause は原因を他の要因から切り分ける。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:804e5e0b4ac0aa5e7cd5f5c3ef9ad75ccf24eb93a7378da5522bd4272cf234ec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5b4c6n4y",
+    "ja": "私たちは運用担当に止めさせた。",
+    "en": "We had ops pull the plug.",
+    "alternatives": ["We got ops to shut it down.", "We had operations stop it."],
+    "point": "pull the plug は稼働中のものを停止させること。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf3bb0fd340318e8381ba0cf13efe7a812e1cabf1565766fb24b1d1efa13c6ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5b8t8r9k",
+    "ja": "我々が早く気づけば今は後手でないのに。",
+    "en": "Had we noticed sooner, we wouldn't be playing catch-up.",
+    "alternatives": [
+      "If we'd noticed sooner, we wouldn't be behind now.",
+      "We wouldn't be playing catch-up had we noticed sooner."
+    ],
+    "point": "過去の発見と今の後手の状態を混合仮定法で結ぶ。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bee7f3caec1be330122042fc0e3cb27ed434f31862ae505c082fb12cdbf54ca0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5k3w9p2z",
     "ja": "前より影響が小さいよ。",
     "en": "The impact is smaller now.",
@@ -299,6 +482,28 @@
         "hash": "sha256:173d9c1af0a3bc7daeae6f52da010b1196dafb05d7ed0433cb3cd190252af58f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n4y4c5j",
+    "ja": "収まって見えても障害は未解決だ。",
+    "en": "Contained though it seems, this outage remains unresolved.",
+    "alternatives": [
+      "Although apparently contained, this outage still isn't resolved.",
+      "This outage remains unresolved despite seeming contained."
+    ],
+    "point": "contained は影響を抑えた状態で、解決済みとは限らない。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3583f98bf7e9b10095c6d06dd218b8caf5a714fba77cfda4db161d6e7b52f49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -344,6 +549,28 @@
     }
   },
   {
+    "id": "c_5x8s8b4x",
+    "ja": "再発を恐れ我々は偽りの安心を疑った。",
+    "en": "Fearing recurrence, we questioned what passed for reassurance.",
+    "alternatives": [
+      "Fearing another occurrence, we challenged the supposedly reassuring statements.",
+      "We challenged what passed for reassurance, fearing another recurrence."
+    ],
+    "point": "pass for は本物でないのにそのものと見なされる含み。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["participle-clauses", "noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:509b77d772f8b8d82f254d15ccadf4a5df978195f53baacb76c5ceb0365a7e62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6b6x7s5x",
     "ja": "30分後にまた報告します。",
     "en": "I'll update you in 30 minutes.",
@@ -384,6 +611,50 @@
         "hash": "sha256:b245f4827f50fee10439f41d4cb9cfbcf6ff6babd20bd4600591c33851d84940",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g4j9m4r",
+    "ja": "落ちたのは中枢だと私たちは見ている。",
+    "en": "We suspect what crashed was the linchpin.",
+    "alternatives": [
+      "We think the core component crashed.",
+      "We suspect the central component failed."
+    ],
+    "point": "linchpin は全体を支える要の部分を指す。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59bc4666b917c63006daf300cbeddec66f52780014864129cc61e2c85d941e81",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6m6n4w9q",
+    "ja": "我々のかつての油断が今災いになった。",
+    "en": "The complacency we displayed has come home to roost.",
+    "alternatives": [
+      "The complacency we showed has now brought unpleasant consequences.",
+      "Our earlier complacency has now brought bad consequences."
+    ],
+    "point": "come home to roost は過去の行いの悪い結果が戻る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["relative-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4638b60b4271e956e225d8d32c8740b48d064c3911b415a3667509d61c6089e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -454,6 +725,25 @@
     }
   },
   {
+    "id": "c_7a8b7x6g",
+    "ja": "問題はいつ始まった？",
+    "en": "When did it start?",
+    "alternatives": ["When did the problem begin?", "When did this problem start?"],
+    "point": "when と過去形で発生時刻を尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5078a6a7ddfbe6d7b6e521de7745eb3a1e718eb2bc2a3a2467bd8607d3ddcda3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7c4h9n9c",
     "ja": "私が閾値を早く見直してればなあ。",
     "en": "I wish I'd revisited the thresholds sooner.",
@@ -472,6 +762,47 @@
         "hash": "sha256:deba61d8ae33687c26eef6f7ccee29545ae4e56a8a985f9e9501b671a5464192",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c5k2r5e",
+    "ja": "私は彼に確認を頼んだ。",
+    "en": "I asked him to check.",
+    "alternatives": ["I asked him to check it.", "I asked him to verify it."],
+    "point": "ask 人 to do で行動を頼む。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d82d826d14f1b59ba15ca41c386467ef5d34578aebddaa2c20d79027d814af0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7q2s3y3m",
+    "ja": "警告に従えば我々は余波を防げたのに。",
+    "en": "Had we heeded warnings, we'd have averted the fallout.",
+    "alternatives": [
+      "If we'd heeded warnings, we'd have prevented the fallout.",
+      "We'd have avoided the fallout had we heeded warnings."
+    ],
+    "point": "heed は警告を重く受け止めて従う。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fc9ea53ddf54092bb7dd1ebaea9c9df757bbe63f9fae95f7ece65ac934fbc61",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -517,6 +848,69 @@
     }
   },
   {
+    "id": "c_7v4d9k9v",
+    "ja": "私は安全宣言には慎重でいたい。",
+    "en": "I'd be wary of declaring the coast clear.",
+    "alternatives": [
+      "I'd hesitate to announce we're in the clear.",
+      "I'd be cautious about saying the danger has passed."
+    ],
+    "point": "the coast is clear は危険が去ったという宣言。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23953d86ee8dfc76ae545a04486dcf7009ac30ab3da6b7970028f8e00115d9d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y8b9u3g",
+    "ja": "後で初めて我々は警告の重みを知った。",
+    "en": "Only in hindsight did we appreciate the warning.",
+    "alternatives": [
+      "We understood the warning's significance only in hindsight.",
+      "Only afterward did we grasp the warning's importance."
+    ],
+    "point": "only の句を先頭に出すと did が主語の前に来る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f5a33f9ead1dc65c7d0bfb3bc8e04517d9eb2216d9d01afba4db5d65449b061",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8a4x9e5w",
+    "ja": "我々は客に伝えなきゃ。",
+    "en": "We must tell customers.",
+    "alternatives": ["We have to tell customers.", "We need to tell customers."],
+    "point": "must で顧客への連絡が必要と伝える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:64810d6db927a11c47731405bc22cde5f3479431ceb1d43ee879e7a84c20bd6e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8g9c2a6e",
     "ja": "原因を調べてるよ。",
     "en": "I'm checking the cause.",
@@ -532,6 +926,28 @@
         "hash": "sha256:a909c55c836aa64ae994ff250ede57bfeee1598b4d519bfea4b9e1994055e64d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h9e4w5t",
+    "ja": "担当は見かけの復旧を一時しのぎと言った。",
+    "en": "Ops said the apparent recovery was a reprieve.",
+    "alternatives": [
+      "Ops said the seeming recovery was just temporary relief.",
+      "Ops said it only looked recovered for the moment."
+    ],
+    "point": "reprieve は問題が消えたのでなく一時的に逃れた状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6320a1742352e449b1d081a8903d9317c59c8160e95bd2eceff368a3e5febf3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -574,6 +990,25 @@
         "hash": "sha256:5be21f25f1f12286c321b548498a33687151844b3573fc99b2682d3e9fe9b6e9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p2n5w7n",
+    "ja": "私たちは被害を抑えなきゃ。",
+    "en": "We need to contain the damage.",
+    "alternatives": ["We have to limit the damage.", "We must contain the damage."],
+    "point": "contain は被害が広がるのを抑える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b143c739b74d17c754deef5ec1e62412358745760af149e1a1f01dac046766",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -657,6 +1092,91 @@
     }
   },
   {
+    "id": "c_9c3b7g3t",
+    "ja": "問題がある。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We've got a problem."],
+    "point": "there is で問題の存在を伝える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27f2a49742af93b13f9b622015e6da27e2583db280929b92b16f884d12cd4225",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9c7g3v4y",
+    "ja": "私が指揮するなら油断は許さないのに。",
+    "en": "Were I in charge, I'd tolerate no complacency.",
+    "alternatives": [
+      "If I led, I wouldn't tolerate any complacency.",
+      "I'd allow no complacency if I were in charge."
+    ],
+    "point": "tolerate no complacency は油断を一切容認しないことを表す。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc1bb5405e195295193844ac486895d7352bf6733651010a40c2f09c95328f25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9d8h8n4w",
+    "ja": "我々の失敗は判断力を手順で代用した点だ。",
+    "en": "What failed us was substituting procedure for judgment.",
+    "alternatives": [
+      "It was substituting procedure for judgment that failed us.",
+      "We failed by substituting procedure for judgment."
+    ],
+    "point": "substitute A for B はBの代わりにAを使う。what の節で失敗の原因を強調する。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2e35f057b2b5f763012d527dc34175e4921819f8bc6bd5c4ad79957ce126a58",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9g5v8q6v",
+    "ja": "修正後もサーバーは延命状態だ。",
+    "en": "Though patched, the server's on borrowed time.",
+    "alternatives": [
+      "Even patched, the server's days are numbered.",
+      "Even patched, the server won't last long."
+    ],
+    "point": "on borrowed time はいつ終わってもおかしくない状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:853eb56cab4b82a65a50a570c2d0ff89851d07f7237ffdfadb7f518684a633d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9j7n3t6w",
     "ja": "変更を戻したので、様子見です。",
     "en": "Having rolled back the change, we're monitoring.",
@@ -679,6 +1199,28 @@
     }
   },
   {
+    "id": "c_9t8n6t5f",
+    "ja": "一時しのぎで我々を油断させないで。",
+    "en": "Don't let a stopgap lull us into complacency.",
+    "alternatives": [
+      "Don't let a stopgap fix give us false confidence.",
+      "Don't allow a temporary fix to make us complacent."
+    ],
+    "point": "lull 人 into complacency は安心させて警戒心を失わせる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:236cd231a12d23c667b125a67c4849e2256ab2b83ca262a64f8d4808445ff32c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9u5c5k9c",
     "ja": "再起動していいですか？",
     "en": "Can I restart it?",
@@ -694,6 +1236,25 @@
         "hash": "sha256:c10866a71b6f8ae88e64824add404e201facbf9a6d28a7bb66ddc99815243599",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u5m3q6a",
+    "ja": "私は直せるよ。",
+    "en": "I can fix it.",
+    "alternatives": ["I can repair it.", "I'm able to fix it."],
+    "point": "can の後は動詞の原形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:935d1366fa8cb4aa990d297ead7920fbb756cb0cb7cf7f0c7649fc3a91ec0242",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

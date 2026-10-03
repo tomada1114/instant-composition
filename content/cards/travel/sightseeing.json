@@ -82,6 +82,28 @@
     }
   },
   {
+    "id": "c_2g7m8u8f",
+    "ja": "私はこの景色を心に刻むよ。",
+    "en": "I'll commit this view to memory.",
+    "alternatives": [
+      "I'll etch this view into my memory.",
+      "I'll make sure I remember this view."
+    ],
+    "point": "commit to memory は意識して記憶に刻む。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:789689cdc2ca37c26191bf88ab7554207b53fcec3109c773daa137bf531eda20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2j8m7g6g",
     "ja": "早めに行った方がいいよ。",
     "en": "You should go early.",
@@ -116,6 +138,63 @@
         "hash": "sha256:a83e5c4ed5cabbeee145c4a083b26fc2f76688f27c39ca4b73507c09af3c54b3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2q5n3x5y",
+    "ja": "城は高いね。",
+    "en": "The castle is tall.",
+    "alternatives": ["It's a tall castle.", "That's a tall castle."],
+    "point": "高さには tall を使う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a78f3faeb13a246c4e8e80ce2258da2586215594693f60f667c8dc7098318e03",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2v8k4j5k",
+    "ja": "君は日焼け止めを持つべき。",
+    "en": "You should pack sunscreen.",
+    "alternatives": ["You ought to bring sunscreen.", "It's best to take sunscreen."],
+    "point": "sunscreen は日焼け止め。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8f810390409da58b8f456b4f4233c4c281987b5c4cd62847adff6811203c5f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3a7x8h7b",
+    "ja": "私は遺跡が見える。",
+    "en": "I can see the ruins.",
+    "alternatives": ["I can spot the ruins.", "I can see some ruins."],
+    "point": "can see は目に入って見えること。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf54f3778378eb6fab621437ab7f287080e18e382741002b154b59ae023015cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -161,6 +240,47 @@
     }
   },
   {
+    "id": "c_3j3m8p5r",
+    "ja": "この塔の方が古い。",
+    "en": "This tower is older.",
+    "alternatives": ["This tower's the older one.", "This is the older tower."],
+    "point": "older で建物の古さを比較する。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58056e6b6a485599ba76e2d93a549c0c53938b583ad3c26fc8e2856cce332edd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3k3p6c3c",
+    "ja": "ここの本物らしさは見せかけだ。",
+    "en": "What passes for authenticity here is window dressing.",
+    "alternatives": [
+      "The supposed authenticity here is merely for show.",
+      "What's presented as authentic here is only superficial."
+    ],
+    "point": "pass for と window dressing で本物らしさを疑う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:985bcde730131cc3dc348e00e7e43b6cea9208e5d1e5ae8ed6ecfd5e34f0ea0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3k4a3r4k",
     "ja": "写真を撮りに来ました。",
     "en": "I came here to take photos.",
@@ -199,6 +319,25 @@
     }
   },
   {
+    "id": "c_3p8m2a6e",
+    "ja": "私が入ってもいい？",
+    "en": "May I enter?",
+    "alternatives": ["Can I come in?", "May I go inside?"],
+    "point": "May I で入場してよいか尋ねる。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad337afb17e5c25e3830f92ecfe0bc899595e094a062feffddf480720210fa16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3q6v2v8g",
     "ja": "予約すれば、私たち入れたのに。",
     "en": "If we'd booked, we'd have gotten in.",
@@ -217,6 +356,50 @@
         "hash": "sha256:77b0a2548cf106af4bb19175587edef5baee1f1ff76b53456542000d726d11ee",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x8r3n9j",
+    "ja": "私たちの後ろの庭園は見事だ。",
+    "en": "The garden behind us is spectacular.",
+    "alternatives": [
+      "The garden behind us is magnificent.",
+      "That garden behind us is stunning."
+    ],
+    "point": "behind us が庭園の位置を後ろから説明する。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d3278198fae87e28ffa452f72659fc6a344e1dc18a30b95b741d4d6b00b15da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4f9t8c6a",
+    "ja": "私は城の見学をもう終えていた。",
+    "en": "I'd already finished the castle tour.",
+    "alternatives": [
+      "I'd already wrapped up the castle tour.",
+      "I'd already finished touring the castle."
+    ],
+    "point": "had already finished で過去の時点より前の完了。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d5e64981c95b0f694068336117465700c7e08b4e88414e55cd0eea36b70628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -255,6 +438,28 @@
         "hash": "sha256:a9d3325bc02ba1651d71f1e31fb37c8e4afde3b24c9251fda3abdf7e89de88b5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t8r8p9u",
+    "ja": "あのガイドは愛想を振りまきすぎた。",
+    "en": "That guide laid the charm on thick.",
+    "alternatives": [
+      "That guide overdid the charm.",
+      "That guide went overboard with the charm."
+    ],
+    "point": "lay the charm on thick は愛想を過剰に振りまくこと。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18e3478f448fff363c2b363aff74311e5dbfe3c4e4b5e0d403497d002e32b8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -367,6 +572,28 @@
     }
   },
   {
+    "id": "c_5e8v7f4k",
+    "ja": "ガイドは景色を絶賛した。",
+    "en": "The guide raved about the views.",
+    "alternatives": [
+      "The guide spoke enthusiastically about the scenery.",
+      "The guide praised the scenery highly."
+    ],
+    "point": "rave about は熱を込めて絶賛する。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a289849516c4368db850af8a555a8425ae8d5e0b76cbeb4ec1b05c504c907ea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5f8j7f6y",
     "ja": "午後のほうが空いてる？",
     "en": "Is the afternoon less crowded?",
@@ -453,6 +680,66 @@
     }
   },
   {
+    "id": "c_5t5e4c3n",
+    "ja": "空いてれば私たちは自由に巡れるのに。",
+    "en": "Were crowds thinner, we'd roam at will.",
+    "alternatives": [
+      "If it were quieter, we could wander freely.",
+      "With fewer crowds, we'd be free to explore."
+    ],
+    "point": "at will は自分の好きなように自由にという意味。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a3bf512073b47e591ddfd7236a7a93218bcca56a6d347eea0da155a0b83657d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5v8j7h3p",
+    "ja": "この切符は無料だ。",
+    "en": "This ticket is free.",
+    "alternatives": ["This ticket costs nothing.", "This is a free ticket."],
+    "point": "free は無料という意味。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:54cc3c1c64cc3da813c43a1834dd4971dc4579a2a949cee10e5d5a1f993ce394",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5y6s5w3p",
+    "ja": "彼女は見学中だ。",
+    "en": "She's looking around.",
+    "alternatives": ["She's having a look.", "She's taking a look."],
+    "point": "look around で見て回っている様子。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d38412293882df85e3b63e7f2cb9147fd6d07f76c7a36c1072f250e668b32423",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6a7a8d9k",
     "ja": "展望台はありますか？",
     "en": "Is there a lookout?",
@@ -468,6 +755,28 @@
         "hash": "sha256:6754b9c32b8fd8a487cb4298256a8db23f1e6d05bdc2c3e8461efb16bc050d08",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b9r5z2u",
+    "ja": "曇ってても眺めは最高だ。",
+    "en": "Even when cloudy, the view's stunning.",
+    "alternatives": [
+      "The view is stunning despite the clouds.",
+      "The view is spectacular even when cloudy."
+    ],
+    "point": "even when でその状況でも変わらないと伝える。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d45b241670763a5fd4d5fcdb902ff2d950b8b7d0922cd38fe65115ac6029a824",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -490,6 +799,25 @@
         "hash": "sha256:d0947845e615ac698a2a52cfdc4be8338aea06098b6d876136a7c10fa9c55826",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6j4u6q2z",
+    "ja": "私は寺巡りが好き。",
+    "en": "I enjoy visiting temples.",
+    "alternatives": ["I like visiting temples.", "I like touring temples."],
+    "point": "enjoy の後は visiting の形。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d9449e83d251b131fdae2a5518bc03e76a2f2fdb9b706c9cfa09571ce0dcf5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -550,6 +878,72 @@
         "hash": "sha256:2bb03b03845c3ac583eab305dc3f45ba805f6449b38fc54f54122b5e12026bb4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7t9y5a6u",
+    "ja": "私はもう城を一巡しました。",
+    "en": "I've already toured the castle.",
+    "alternatives": [
+      "I've already been around the castle.",
+      "I've finished touring the castle."
+    ],
+    "point": "tour は観光目的で見て回る。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08de734a4a2fc869b9afe12a9facb4762c226b0a3cc964642ab485b687f0b8c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y5v5b4k",
+    "ja": "ぐずぐずしてたら我々は今立ち往生だ。",
+    "en": "Had we dawdled, we'd be stranded now.",
+    "alternatives": [
+      "If we'd lingered, we'd be stuck now.",
+      "We'd be stranded now if we'd dawdled."
+    ],
+    "point": "過去の仮定と今の結果を結ぶ、dawdle はぐずぐずする。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:030a81709b6e2799f47abe976be5c5836ee167de5795c5f178476f311e2ec48e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8f3x5y2u",
+    "ja": "この塔は修復済みです。",
+    "en": "This tower has been restored.",
+    "alternatives": [
+      "They've restored this tower.",
+      "Restoration of this tower is complete."
+    ],
+    "point": "restore は古い建物を元の状態に戻す。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a819dcb998b05eb21230d9b8974a38fe80e32ef3d53a988da65290da47675f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -643,6 +1037,50 @@
     }
   },
   {
+    "id": "c_8z4x2d5v",
+    "ja": "私は人混みをかき分け続けてる。",
+    "en": "I've been weaving through crowds.",
+    "alternatives": [
+      "I've been threading my way through crowds.",
+      "I've been making my way through the crowds."
+    ],
+    "point": "weave through は混雑の間を縫って進む。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e99cd34910768b80bd6618a27411a41500cf15918e4da64ced84c03143addd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9c2p5v6h",
+    "ja": "人混みを避け私は穴場を見つけた。",
+    "en": "Avoiding crowds, I unearthed a hidden gem.",
+    "alternatives": [
+      "I found a hidden gem avoiding crowds.",
+      "Avoiding crowds, I discovered a little-known treasure."
+    ],
+    "point": "hidden gem はまだあまり知られていない魅力ある場所。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a0e55d467375192eb8294a20ac42f704215f037239fe6d7ee9685239ea42464",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9j5x3k3z",
     "ja": "ここで撮ってもいいですか？",
     "en": "May I take photos here?",
@@ -658,6 +1096,47 @@
         "hash": "sha256:414bf11b3d2c88c16d0630ed58a4263bb06fa36af5a11ae52055dc336d367f67",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t7z9d5m",
+    "ja": "私はそれを少し期待外れに感じた。",
+    "en": "I found it somewhat underwhelming.",
+    "alternatives": [
+      "It seemed slightly disappointing to me.",
+      "I felt it didn't quite meet expectations."
+    ],
+    "point": "somewhat underwhelming で期待外れを控えめに言う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9fee0f157667f9dfb3147715e92137e140351bb27762e63711e8ad11828df1a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9x5s4m5f",
+    "ja": "この庭は静か。",
+    "en": "This garden is quiet.",
+    "alternatives": ["It's quiet in this garden.", "This is a quiet garden."],
+    "point": "quiet は音が少なく静かな状態。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dcd300611d4292288b1f4387087442fc40303b44393418f57e18d4d4f937806f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

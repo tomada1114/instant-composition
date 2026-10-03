@@ -41,6 +41,25 @@
     }
   },
   {
+    "id": "c_2n7c7d8n",
+    "ja": "空いてる椅子がある。",
+    "en": "There's a free chair.",
+    "alternatives": ["One chair is available.", "There's an unused chair."],
+    "point": "a free chair は今使われていない椅子。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfc032165d1395b389949d6b378624406c8dcc5dac263f1e93ad9222bf162685",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2p6a3p2x",
     "ja": "君が断ってたら、今も困ってる。",
     "en": "If you'd said no, I'd still be stuck.",
@@ -208,6 +227,28 @@
     }
   },
   {
+    "id": "c_3k4m3j3y",
+    "ja": "君が頼む前に私は無理してた。",
+    "en": "I'd overextended myself before you asked.",
+    "alternatives": [
+      "I'd already overextended myself before you asked.",
+      "I'd overdone it before you asked."
+    ],
+    "point": "overextend myself は自分の余力を超えて引き受ける。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f70ee51624ef9d95412a53dbd719f6424ea5a306d4045f66fa123aa988f72d6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3r9t8j7k",
     "ja": "頼む相手は、彼女が知ってるかも。",
     "en": "She might know who I should ask.",
@@ -226,6 +267,113 @@
         "hash": "sha256:0a2bf9c34299e953027e71021c641241316fff5bc24e01ecb9d43bb2f9a3c74b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s3d4m9z",
+    "ja": "君は借りた工具を返すべき。",
+    "en": "You should return borrowed tools.",
+    "alternatives": [
+      "You ought to return borrowed tools.",
+      "You should give borrowed tools back."
+    ],
+    "point": "borrowed tools は借りている工具。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:203b19ec905adc04efc055c6e5bb7ffc82dcec1cbf34189f94dff2a1ac9d5dbb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3v6f2x8k",
+    "ja": "僕を君の防波堤に使わないで。",
+    "en": "Don't have me run interference for you.",
+    "alternatives": [
+      "Don't use me as your shield.",
+      "Don't make me act as your buffer."
+    ],
+    "point": "run interference は邪魔や圧力を引き受けて人を守る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca071668e81738a4577499f0035e2359f263047f7478842852736be3f63a4ef0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3w5f3n8n",
+    "ja": "この箱は壊れやすい。",
+    "en": "This box is fragile.",
+    "alternatives": ["This box breaks easily.", "The box is easily damaged."],
+    "point": "fragile は壊れやすい。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a83536a4fdb9252b5dfec5556db286cf8229aeb67fd4ec3c67bded23a05c41d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3y8p9u8g",
+    "ja": "君の負担が増えるのが心配だ。",
+    "en": "I worry this increases your burden.",
+    "alternatives": [
+      "I'm concerned this increases your workload.",
+      "I'm worried this increases your burden."
+    ],
+    "point": "burden は相手に負担をかける動詞にもなる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd3de80642e7ba69580bc9a900870f68aebb25a695e4e6685fa4236102b5b61e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4a2x9c9j",
+    "ja": "私は君の頼みを断り心苦しい。",
+    "en": "I regret turning down your request.",
+    "alternatives": [
+      "I feel bad about declining your request.",
+      "I'm sorry I declined your request."
+    ],
+    "point": "regret doing はその行為を心苦しく思う。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d5293af17dfc9aaec3de7f961b1e640e769a77fec9df118635793c5ae37bb14",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -290,6 +438,50 @@
     }
   },
   {
+    "id": "c_4p2r5y8m",
+    "ja": "彼女は口利きをすると言った。",
+    "en": "She said she'd pull some strings.",
+    "alternatives": [
+      "She said she'd use her influence.",
+      "She said she'd put in a word."
+    ],
+    "point": "pull strings はコネや影響力を使うこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8bdf72404c41a6a98a193d4f1af1c7aef6396d6277e689132d817d6c6228fa0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4w2q6j8r",
+    "ja": "君が手一杯でも、手を貸して。",
+    "en": "Even if you're swamped, please pitch in.",
+    "alternatives": [
+      "Please help even if you're swamped.",
+      "Even if you're busy, please help."
+    ],
+    "point": "pitch in は協力して手を貸すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:40891cf2ecd5955e7b75d56f43cc909579d94a083fdb7fa75b34ac49665cdb7c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4z5m4c7h",
     "ja": "今、料理中で手が離せない。",
     "en": "I'm busy cooking right now.",
@@ -308,6 +500,25 @@
         "hash": "sha256:80261d22e55d20e6a2f40ba8cf4e9fe36f9d54689fccb4a61404ae0e1229b708",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a3t4m6s",
+    "ja": "私のバッグが重い。",
+    "en": "My bag is heavy.",
+    "alternatives": ["My bag's a heavy one.", "Mine's a heavy bag."],
+    "point": "heavy は持ち運ぶのが大変な重さ。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8372c8b90a2d93ee0b25926f8133e38401ba0d990b43789aad17259eedef70c8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -394,6 +605,66 @@
     }
   },
   {
+    "id": "c_5m7y4p3b",
+    "ja": "私、荷物を運んでる。",
+    "en": "I'm carrying bags.",
+    "alternatives": ["I'm carrying the bags.", "I'm moving the bags."],
+    "point": "進行形で今荷物を運んでいると伝える。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f66f03771b6c193a10e23f4b3c06b1b76d4957d39fe5e53080293e4d3e6f511",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5p7h4r5p",
+    "ja": "受けてたら私は今知らずに操られてる。",
+    "en": "Had I agreed, I'd be an unwitting pawn.",
+    "alternatives": [
+      "If I'd agreed, I'd be an unwitting pawn.",
+      "I'd be an unwitting pawn now had I agreed."
+    ],
+    "point": "unwitting pawn は気づかずに他人に利用される人。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a803fdccb71ff62a54e29f3d8baf5f5fbe4fa20a57f50dbff52204cace8e1a85",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5s4g9r3v",
+    "ja": "父が呼んだら私が手伝う。",
+    "en": "I'll help when Dad calls.",
+    "alternatives": ["I'll help if Dad calls.", "I'll help once Dad calls."],
+    "point": "未来の呼びかけでも when 節は現在形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f6a06721e8c564c933bea0a9ece60d4a8df83f26d2f4bb80052fe45d5e015fe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5t7y6r4w",
     "ja": "頼みは、ざっと見るだけ。",
     "en": "What I need is a quick look.",
@@ -412,6 +683,28 @@
         "hash": "sha256:e1d507e751f1fb3825904b2a128fd76b19608323a779a5b323b641596a219bf6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x6m9c5t",
+    "ja": "私はずっと頼みをさばいてる。",
+    "en": "I've been fielding requests.",
+    "alternatives": [
+      "I've been dealing with requests.",
+      "I've been handling people's requests."
+    ],
+    "point": "field requests は寄せられる頼みに対応する。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff653b5213f81fc3292f39c386f9947995877efd95aff96ca9c14654daeeca7b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -450,6 +743,25 @@
         "hash": "sha256:4c2b1c7e82c418351b0bb91f990a0024adb635eb631287f4fd54c50542f88d6a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6k2b8r9s",
+    "ja": "彼に手加減してと頼んで。",
+    "en": "Ask him to go easy.",
+    "alternatives": ["Ask him to ease up.", "Ask him to be less demanding."],
+    "point": "go easy は厳しさを和らげる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84adf2bb4efcc5eae9a25aa6e65dfc5485ff80a860d5b301807956b6387ef23d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -615,6 +927,50 @@
     }
   },
   {
+    "id": "c_7v4z6a6m",
+    "ja": "私はもう君への貸しを超えて頼んだ。",
+    "en": "I've already overdrawn my favor account with you.",
+    "alternatives": [
+      "I've already asked more than you owe me.",
+      "I've called in more favors than you owed."
+    ],
+    "point": "overdraw は貸しの残高以上に頼むという比喩。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7cb24372ebc8633d2fc50523b95bb1fa6df01c11b629bd767d802da9dd02adf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7x8z2d4r",
+    "ja": "あの子守の頼みは重荷に感じる。",
+    "en": "That request for babysitting feels onerous.",
+    "alternatives": [
+      "That babysitting request feels burdensome.",
+      "That request for babysitting feels burdensome."
+    ],
+    "point": "for babysitting は request の説明、onerous は負担が重い。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da5b226823e9ca63479a5d5e9f2d1b82308e872324e86545aa4237859b11e559",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8d4x3z2v",
     "ja": "頼みを断ることは、めったにないんだ。",
     "en": "Rarely do I turn down a request.",
@@ -633,6 +989,28 @@
         "hash": "sha256:c45a6729a8abf6d8f34759212cdec19de7c0cd1ff6073081e10ad88cd583969a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y3f8r3h",
+    "ja": "私も君に恩返しできたらな。",
+    "en": "I wish I could reciprocate.",
+    "alternatives": [
+      "I wish I could repay your kindness.",
+      "If only I could return the favor."
+    ],
+    "point": "reciprocate は受けた好意を返すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:815ade7bd4f9d54ce2d74db9c45cf48720aaf1c5c1d9ec0c449156c73f8b2a72",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -674,6 +1052,63 @@
         "hash": "sha256:7c96264be75aa9df987059b2812670d5965c325a702a07cb67b7df73423e4d6c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p9w6d9d",
+    "ja": "私は君を車で送れる。",
+    "en": "I can drive you.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "drive you は車で相手を送る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fae7a4d7ac6bfdd5575dcb7defd9eb7f4aeb63890f1802658ffcae540a3a455",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9u6q3b9h",
+    "ja": "軽い方の箱を運んで。",
+    "en": "Carry the lighter box.",
+    "alternatives": ["Take the lighter box.", "Move the lighter box."],
+    "point": "lighter は二つなどを比べて軽い方。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:491cf87b49fd27a58a597294dfb72bd1a5747c26a327b1a061db945206c4bc9d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9v2g8f7f",
+    "ja": "私は彼女を手伝った。",
+    "en": "I helped her.",
+    "alternatives": ["I gave her some help.", "I helped her out."],
+    "point": "helped は help の過去形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:731613bde32e5d61ad9748228c43db3f613ac79dcc8220c3e47f8465b8b9e2df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

@@ -44,6 +44,72 @@
     }
   },
   {
+    "id": "c_2q8m7z6v",
+    "ja": "私は設定が怪しい気がします。",
+    "en": "I'm inclined to suspect the configuration.",
+    "alternatives": [
+      "I suspect the configuration may be responsible.",
+      "I suspect the configuration is to blame."
+    ],
+    "point": "inclined to は断定を避けて見立てを伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:595550e664049e51f002c068db3197c94fdc494ffb2a733c0d7fcb1e7692f5dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2s5t6p7r",
+    "ja": "私が心配なのは修正の脆さだ。",
+    "en": "What worries me is that fix's brittleness.",
+    "alternatives": [
+      "It's that fix's brittleness that worries me.",
+      "That fix's brittleness is what worries me."
+    ],
+    "point": "brittle は小さな変化で壊れやすい実装。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b9bb3848fb98fb67ab862ca765f933cee793a25d277ff1df9ded01767f7530e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2t2s6c9z",
+    "ja": "依存を切ってたら我々は今原因が分かる。",
+    "en": "Had we decoupled it, we'd pinpoint the cause now.",
+    "alternatives": [
+      "If we'd decoupled it, we could identify the cause now.",
+      "We'd pinpoint the cause now had we decoupled it."
+    ],
+    "point": "decouple は他の部分との依存を切り離す。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b9c4eb5223e15f31677505ce68bd0f69e9d5ef6dc08152423bfeacdc00539e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2t4b3c8r",
     "ja": "まず再現手順を書くべき。",
     "en": "You should write repro steps first.",
@@ -88,6 +154,91 @@
     }
   },
   {
+    "id": "c_2v9q6y6s",
+    "ja": "エラーが減れば我々は調査をやめる。",
+    "en": "We'll stop investigating if errors dwindle.",
+    "alternatives": [
+      "We'll stop investigating if errors decrease.",
+      "If errors taper off, we'll stop investigating."
+    ],
+    "point": "dwindle は数などが次第に少なくなること。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6df35c027cdbb6268736e9f4c7c6f7eed8f1a599f432a08f3d4fd70c59da3003",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2w8x8e5y",
+    "ja": "君は変更を個別に検証すべき。",
+    "en": "You should verify changes individually.",
+    "alternatives": [
+      "You should check each change separately.",
+      "You should test changes one by one."
+    ],
+    "point": "individually は一つずつ個別に。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:204a8cdd0f9b61958e0cba1af946c59701563163f08a966506f98782d76d4f76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3b5p3t7q",
+    "ja": "私、入力してなかった。",
+    "en": "I wasn't typing.",
+    "alternatives": ["I wasn't entering text.", "I wasn't keying in text."],
+    "point": "wasn't typing はその時入力していなかった。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe0bc69f41663676bc771e3822280edb8520c20be651452b93f547f60827d50a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3c6u7c5y",
+    "ja": "私は競合する実行経路を解きほぐした。",
+    "en": "I teased apart the competing execution paths.",
+    "alternatives": [
+      "I untangled the competing execution paths.",
+      "I disentangled the competing execution paths."
+    ],
+    "point": "tease apart は絡み合った要素を丁寧に分ける。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b946272ad4d393664fe19ce5379c47fbed3bbb94af70f2e87db5e2da65bf82db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3j7s9w3e",
     "ja": "今回が一番厄介なバグだ。",
     "en": "It's the trickiest bug yet.",
@@ -125,6 +276,28 @@
         "hash": "sha256:9c4cff5c51f6a0e71a3a457bd958fc3accc1573056b41bdc6212f7bf2f9b79e8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q6f7c8x",
+    "ja": "私は原因をもう見つけた。",
+    "en": "I've already found the cause.",
+    "alternatives": [
+      "I've already identified the cause.",
+      "I've already discovered the cause."
+    ],
+    "point": "already found で原因特定の完了。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b62e82c1557a9610f232407f4074f9dfa2858e2f4372eec41cd7227e13a1b64c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -173,6 +346,25 @@
     }
   },
   {
+    "id": "c_3y2z2g6d",
+    "ja": "私は設定を調べなきゃ。",
+    "en": "I need to check settings.",
+    "alternatives": ["I have to check the settings.", "I must check the settings."],
+    "point": "need to check は確認する必要がある。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb5ec41de920c920450b75b2c80a533900ef82f1e74eb4463440b378f9480840",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3z7f9k8j",
     "ja": "ログ上は、タイムアウトだね。",
     "en": "Judging by the logs, it's a timeout.",
@@ -191,6 +383,28 @@
         "hash": "sha256:d12327f0c5896e7824b34d2ddbb4ee851702bf0f2328d791a1d085ab646be73e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j2b9v2z",
+    "ja": "この文字は無視されます。",
+    "en": "This character is ignored.",
+    "alternatives": [
+      "The system ignores this character.",
+      "This character gets ignored."
+    ],
+    "point": "is ignored で入力文字が処理されないと伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e71d95a2a851220ccfa502140f63642a0f4cc2de66486064fe4dbe50c07c3ae0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -217,6 +431,28 @@
     }
   },
   {
+    "id": "c_4y2c9m6c",
+    "ja": "我々は症状を原因と誤認したかも。",
+    "en": "We might've mistaken symptoms for causes.",
+    "alternatives": [
+      "We might have confused symptoms with causes.",
+      "We may have misidentified symptoms as causes."
+    ],
+    "point": "mistake A for B はAをBだと思い違いする。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d3c4feeb7d39db4d5f6fe33a645603f859f6d35c9a95db2e08f4e88b48c390e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4z7j6m2y",
     "ja": "再現する必要がある。",
     "en": "I need to reproduce it.",
@@ -232,6 +468,28 @@
         "hash": "sha256:e460840d7193d90edac74d7bbe1d6122308c415fc1698a5e20e5f03898aea516",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b9d5x3a",
+    "ja": "君はどの手順で詰まった？",
+    "en": "Which step were you stuck on?",
+    "alternatives": [
+      "Which step got you stuck?",
+      "Which step stopped you from proceeding?"
+    ],
+    "point": "be stuck on はその手順で先に進めない状態。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ef3a7b7059697b1ee6e9e9b170690fdbc254f606688b3bd07918346993d37da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -273,6 +531,25 @@
         "hash": "sha256:8139c8f8b764f34253579e8c82952e423c1d4cf07f3a6a9a1e1f01aedec1b856",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h4x8h9s",
+    "ja": "画面は真っ黒だ。",
+    "en": "The screen is black.",
+    "alternatives": ["The screen's completely black.", "The display is black."],
+    "point": "black は画面全体が黒い状態。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08e6682ac7be824ec284fbf308221c4afba4868ca1cc03a972705028a218ef1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -381,6 +658,47 @@
     }
   },
   {
+    "id": "c_6j7z6v5g",
+    "ja": "君、ログを出力できる？",
+    "en": "Can you print logs?",
+    "alternatives": ["Can you output logs?", "Can you produce log entries?"],
+    "point": "print logs はログを出力する。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a206187c487ca899d5dad20a007b54da28ab8e30694e298d744d3cf89d055305",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6x8a7s7y",
+    "ja": "この可能性は排除されてない。",
+    "en": "This possibility hasn't been ruled out.",
+    "alternatives": [
+      "This possibility hasn't yet been eliminated.",
+      "We haven't excluded this possibility yet."
+    ],
+    "point": "rule out は原因の候補から外す。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e92a60feecd15a0fda49ee08c2843ac8154ff6b1e21d98e3e6df37488a5f71b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6x8u8k2m",
     "ja": "キャッシュを消して。",
     "en": "Clear the cache.",
@@ -422,6 +740,25 @@
     }
   },
   {
+    "id": "c_7g8u6k9g",
+    "ja": "私、入力できない。",
+    "en": "I can't type.",
+    "alternatives": ["I can't enter text.", "I can't type anything."],
+    "point": "can't で入力できない症状を伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3d323d1f77698398afc43c524056924c7e904fbed2a0966bb1d1fef0da1e3e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7j5p5v5j",
     "ja": "こんな厄介なバグ、初めて見た。",
     "en": "Never have I seen such a nasty bug.",
@@ -459,6 +796,69 @@
         "hash": "sha256:611f801d709db2f0a494a278233afa81f81a8bca70fca85a37656aeb20fd5bfe",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u4z7d9x",
+    "ja": "私が直したバグはまだ出る。",
+    "en": "The bug I patched still occurs.",
+    "alternatives": [
+      "The bug I fixed still appears.",
+      "The bug I repaired keeps occurring."
+    ],
+    "point": "I patched は過去の修正、still occurs は今も起きる状態。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2917cbd7b0c120be690d257aa1d491d868d9c3e94a99740d4d56d1bfbd4d84f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7v4w2n6t",
+    "ja": "私は決めつけることを避けてる。",
+    "en": "I'm avoiding jumping to conclusions.",
+    "alternatives": [
+      "I'm trying not to draw premature conclusions.",
+      "I'm steering clear of hasty conclusions."
+    ],
+    "point": "jump to conclusions は十分な調査なしに結論を出す。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7876da859ac02be4dc04fa216c1a7ea0b078847eb3569b7fb7592dee9b3de9fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7v9h3x4j",
+    "ja": "私、ボタン試してる。",
+    "en": "I'm trying the button.",
+    "alternatives": ["I'm testing the button.", "I'm trying this button out."],
+    "point": "進行形でボタンを今試していると伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08fb7c716ec33725b0c05e439de6b4fb1beac1c741ca368d25b60a5ce2e1a5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -571,6 +971,28 @@
     }
   },
   {
+    "id": "c_8r5d5t3a",
+    "ja": "私は彼にノイズ除去を頼んだ。",
+    "en": "I asked him to filter out noise.",
+    "alternatives": [
+      "I asked him to remove the noise.",
+      "I asked him to strip out noise."
+    ],
+    "point": "filter out は必要なものとノイズを分ける。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b694965bfe766a45567306d0abd526234287b7ed4ebf88be920f722434bb936",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8v5f6s8p",
     "ja": "問題は、リトライが二重に走る点。",
     "en": "The problem is that retries run twice.",
@@ -589,6 +1011,51 @@
         "hash": "sha256:c054730ad6e8fafe3be54d78f5a429fa7450dc1aeefedc5c8c96ec9b56bd23c3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b5e7d7v",
+    "ja": "負荷で出るバグは追いづらい。",
+    "en": "Bugs that surface under load are elusive.",
+    "alternatives": [
+      "Bugs that surface under load are hard to track.",
+      "Bugs appearing under load are difficult to isolate."
+    ],
+    "point": "elusive は捉えにくく原因をつかみにくい。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e004535a71642f70f044cf64113faf1c4e9c8b823c3ad0c1bcffc4fc26102c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9m3t5j3b",
+    "ja": "君はもう何が引き金か特定した？",
+    "en": "Have you pinpointed what triggers it?",
+    "alternatives": [
+      "Have you identified what's setting it off?",
+      "Have you established what causes it?",
+      "Did you identify what triggers it?"
+    ],
+    "point": "pinpoint は原因を正確に特定する。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:266598f362e3553e3c5d898cb54b77e2533227fffc30e70286aab52a002ca7ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -630,6 +1097,28 @@
         "hash": "sha256:ee88294481052abed9d159e7cd1a3bbd1e342ebba7ac366518e6c8571a1af33e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s2e7y3q",
+    "ja": "我々が深く調べてたら気づけたのに。",
+    "en": "If we'd probed, we'd have caught it.",
+    "alternatives": [
+      "Had we probed, we'd have caught it.",
+      "We'd have caught it if we'd investigated."
+    ],
+    "point": "probe は原因を突き止めようと詳しく調べる。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db5f2d5048db930f03d72b5c6bbf9157615edcc2a10966da96d0c89c63adcca7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

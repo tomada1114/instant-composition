@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2a8f9r3m",
+    "ja": "私が伏せた事情が今は誘いの支障だ。",
+    "en": "What I concealed now complicates the invitation.",
+    "alternatives": [
+      "My undisclosed circumstances now complicate the invitation.",
+      "The facts I withheld now complicate the invitation."
+    ],
+    "point": "what I concealed で、私が過去に伏せた事情を指す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["noun-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e2f27e7993b6f26fa3c97b66c065efc603c5ace4d3e0cf6abbf4949ee0414d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2h3z4d2j",
     "ja": "ねえ、無理に誘わせないでよ。",
     "en": "Don't make me twist your arm.",
@@ -126,6 +148,47 @@
     }
   },
   {
+    "id": "c_3a6a9b5e",
+    "ja": "みんな、遊びに来て。",
+    "en": "Everyone, come visit me.",
+    "alternatives": ["Everyone, come over.", "Everyone, come see me."],
+    "point": "come visit me は私に会いに来てという誘い。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1c134bf7cc7765427d7cb1f1373c2a7fb97ed060a4b4f646363f4cee51fbc1d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3d7x9r3m",
+    "ja": "私は今回は遠慮したいんだけど。",
+    "en": "I'd rather bow out this time.",
+    "alternatives": [
+      "I'd prefer to decline this time.",
+      "I'd rather sit this one out."
+    ],
+    "point": "would rather と bow out で辞退の希望を柔らかく伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e70feb8fbb91193646d87958547b7e0c4d65441c92d9a6d3603390562acf075",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3k3x3g9v",
     "ja": "来るかどうか教えて。",
     "en": "Tell me if you're coming.",
@@ -185,6 +248,28 @@
         "hash": "sha256:72dce28f00f1eeab663cac2a9e3b8f5bd55ac0a7daa234902fb696a592e57595",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q2d6w2s",
+    "ja": "私はその誘いを見送るよ。",
+    "en": "I'll pass on that invitation.",
+    "alternatives": [
+      "I'll decline that invitation.",
+      "I'll turn down that invitation."
+    ],
+    "point": "pass on an invitation は誘いを見送る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d7f711dc029347cadcf2336d87a4fd6c76637feda90039622fcdd9402c58156",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -249,6 +334,28 @@
     }
   },
   {
+    "id": "c_3x2h9q5p",
+    "ja": "私はもう出席すると伝えた。",
+    "en": "I've already confirmed my attendance.",
+    "alternatives": [
+      "I've already said that I'll attend.",
+      "I've already confirmed that I'm coming."
+    ],
+    "point": "現在完了で参加の意思を伝え済みと表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:62cf2670c59be194e50cca2294489536da3edcad3fce456a1fc101b9eacb923f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3x9j3s3d",
     "ja": "カイに来てと頼まれた。",
     "en": "Kai asked me to come.",
@@ -268,6 +375,28 @@
     }
   },
   {
+    "id": "c_4a6z4q8t",
+    "ja": "断ってたら私は今ごろ仲間外れだ。",
+    "en": "Had I declined, I'd be left out now.",
+    "alternatives": [
+      "If I'd declined, I'd be excluded now.",
+      "I'd be excluded now if I'd declined."
+    ],
+    "point": "過去の辞退が今の仲間外れにつながる仮定。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d4535ffc3636245bbad4be5216f5fb8d53cba92789287ae44eb44af651cb6ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4b4p6v9g",
     "ja": "先週、彼に誘われたよ。",
     "en": "He invited me last week.",
@@ -283,6 +412,25 @@
         "hash": "sha256:2cdda2ee36ee0d21ac42b593c9709dcc4bf5fb6526309b13c04d05f0506efb12",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j9q9m5w",
+    "ja": "君は誰を誘ってる？",
+    "en": "Who are you inviting?",
+    "alternatives": ["Who are you asking along?", "Who are you inviting over?"],
+    "point": "who で招待する相手を尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56db1a1b4edb71599144f3ee72e4fed7b35a28d743812e15523c6e4eb20fefa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -432,6 +580,28 @@
     }
   },
   {
+    "id": "c_5c7p3u5q",
+    "ja": "この招待で私の複雑な思いが蘇る。",
+    "en": "This invitation brings back my mixed feelings.",
+    "alternatives": [
+      "This invitation revives my mixed feelings.",
+      "This invitation stirs up my old mixed feelings."
+    ],
+    "point": "bring back my mixed feelings は以前の複雑な思いが再び湧くことを表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:539d575e723e6516118869a0afa0353a9532699f90bafe36c0b9b55e7c85ecb9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5d9w8b2q",
     "ja": "行けたらいいのになあ。",
     "en": "I wish I could make it.",
@@ -451,6 +621,50 @@
     }
   },
   {
+    "id": "c_5n2s6b6t",
+    "ja": "参加費は会費に含まれる。",
+    "en": "Admission's included in membership fees.",
+    "alternatives": [
+      "Membership fees cover admission.",
+      "The membership fee includes admission."
+    ],
+    "point": "is included で費用に含まれると伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b73a6af6d59ba3a9363daab6825120dfcc7f1ffc404d10f8dbdcce9972fa8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5n5k5c6d",
+    "ja": "私が断ってたら今の気まずさはないのに。",
+    "en": "Had I declined, I wouldn't feel awkward now.",
+    "alternatives": [
+      "If I'd declined, I wouldn't feel uncomfortable now.",
+      "I wouldn't feel awkward now if I'd declined."
+    ],
+    "point": "Had I declined は過去に断っていた場合を置き、今の気まずさがない結果と結ぶ。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c018dc8ad1c3ed03cc7aa99edaff68ad586090ab384281d1c7ad0224595329c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5q7k2t8g",
     "ja": "ぜひ行きたいです。",
     "en": "I'd love to go.",
@@ -466,6 +680,25 @@
         "hash": "sha256:45b63803335c9ce99635e1539d5f9d2a697b87c566832ddf905cc461769d94b7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h6r5c7h",
+    "ja": "私、車で送れるよ。",
+    "en": "I can drive you there.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "can で可能な手助けを申し出る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cddd7e1f64cad62dff4cc9c68ca9416485b3f9b4ee23b69c977bee2b8c268dec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -515,6 +748,72 @@
     }
   },
   {
+    "id": "c_6r8y5u9m",
+    "ja": "君を誘い忘れなければよかった。",
+    "en": "I wish I hadn't overlooked you.",
+    "alternatives": [
+      "I wish I'd remembered to invite you.",
+      "If only I'd remembered to invite you."
+    ],
+    "point": "wish + 過去完了で、招待し忘れた過去を悔やむ。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8305f1c96053303329fa7c185a0f8676d48b3287f54688191b2984bd20123b16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6s9x5w9b",
+    "ja": "彼が丁寧に断れないと思ってるか気になる。",
+    "en": "I wonder whether he feels he can't graciously decline.",
+    "alternatives": [
+      "I wonder if he feels unable to decline politely.",
+      "I'm wondering whether he feels he can't tactfully refuse."
+    ],
+    "point": "相手が感じている内容を whether の節の中に入れる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ac9e4338463edb65b01b467b31ffd16dfcdc98b2ae04fa85e7ed3d0cc635a0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6w4n5x5n",
+    "ja": "私の沈黙は同意扱いだと彼女は言った。",
+    "en": "She said my silence would pass for tacit consent.",
+    "alternatives": [
+      "She said my silence would be taken as consent.",
+      "She said silence would be interpreted as my consent."
+    ],
+    "point": "tacit consent は言葉にせず示した同意。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1924c5e92861ecc4afb429f8afb4a1dce309a03ace691ba9e8f1ed743f615d44",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6x2k6u6v",
     "ja": "一番来てほしいのは、君なんだよ。",
     "en": "It's you I most want to come.",
@@ -537,6 +836,47 @@
     }
   },
   {
+    "id": "c_6x5s9h9r",
+    "ja": "同伴者もいいですか？",
+    "en": "May I bring a guest?",
+    "alternatives": ["Could I bring someone along?", "Would bringing a guest be okay?"],
+    "point": "May I は丁寧に許可を求める。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc9816bc24c2745efc9ab6f22e0d456e15cf68debc4efb7867ad3fce6d01725c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6x7a3j7h",
+    "ja": "私の返事は参加を濁してたかも。",
+    "en": "My reply might've sounded evasive about coming.",
+    "alternatives": [
+      "My response may have sounded noncommittal about coming.",
+      "My answer might have seemed evasive about attending."
+    ],
+    "point": "evasive は返事をはぐらかす感じを表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b254bef8b55165d67c249a8f1c4973947cde5372c20c2f7ab8b4fb17595df5b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7b9d2e5w",
     "ja": "終わったら合流するよ。",
     "en": "I'll join you when I'm done.",
@@ -555,6 +895,50 @@
         "hash": "sha256:c6d7ed985d5c37439a4e76b1a0a53f499d544fe66a0eba3218d598a21888ba92",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c3n2j4y",
+    "ja": "私は誘いを滅多に見送らない。",
+    "en": "Rarely do I pass up an invitation.",
+    "alternatives": [
+      "I rarely turn down an invitation.",
+      "I seldom decline an invitation."
+    ],
+    "point": "rarely を先頭に出すと do が主語の前。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd25a0beb6770c7868bb9b033242647e1d1ceca80f40cd00d6811a5c7f05176",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7c5y6d2h",
+    "ja": "断れそうもない誘いを私に断らせないで。",
+    "en": "Don't make me decline what feels impossible to refuse.",
+    "alternatives": [
+      "Don't force me to reject what I can't refuse.",
+      "Don't make me refuse an invitation I can't decline."
+    ],
+    "point": "make me decline と what の節で断れない圧力を表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["causatives", "noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1014942748dc30c0898dd444d405923032fdb6742424ae1951cf9679bfbeed9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -603,6 +987,50 @@
     }
   },
   {
+    "id": "c_8j3p3k8d",
+    "ja": "私、招待客の意向を探り続けてる。",
+    "en": "I've been sounding out guests.",
+    "alternatives": [
+      "I've been gauging guests' wishes.",
+      "I've been asking guests what they want."
+    ],
+    "point": "sound out は相手の意向を探る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9875ea192b0762dafc46fe4cad0a6ef7ad52dba5339061d409fee635d06dc3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8j7p9n4s",
+    "ja": "断ると関係を損なうか私は知りたい。",
+    "en": "I want to know if refusing hurts relations.",
+    "alternatives": [
+      "I'd like to know if refusing hurts relations.",
+      "I'm wondering whether refusing harms relationships."
+    ],
+    "point": "if の節で、断ることが関係を損なうかを尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e61c989d6da1cd5f0ac104b78e3bcbaa242d90b7ccdf48b00a64fa3d4d70fa05",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8p3p3h2k",
     "ja": "雨でなければ、みんなを誘ったのに。",
     "en": "If it hadn't rained, I'd have invited everyone.",
@@ -644,6 +1072,66 @@
     }
   },
   {
+    "id": "c_8w9j9n5j",
+    "ja": "私は彼を昼食に誘い込んだ。",
+    "en": "I roped him into lunch.",
+    "alternatives": ["I talked him into lunch.", "I persuaded him to come to lunch."],
+    "point": "rope 人 into はうまく誘って参加させる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cd5aed931858bda571704305f7026d13ba464eef96e82ef19bb2f8890e0c0e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8y5y3a5s",
+    "ja": "君の招待では本音を言う余地はほぼない。",
+    "en": "Your invitation leaves me little room for candor.",
+    "alternatives": [
+      "Your invitation gives me little scope for frankness.",
+      "Your invitation leaves me hardly any room for honesty."
+    ],
+    "point": "candor は遠慮せず率直に話すことを表し数えない。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6babfbfd02adb73eeb71330a431104fc9321f39dd4aab8a2b245e978fd65fed",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9b3t9g3m",
+    "ja": "私はぜひ君に一緒に来てほしい。",
+    "en": "I'm keen to have you along.",
+    "alternatives": ["I'd love you to come along.", "I'm keen for you to join me."],
+    "point": "keen to はぜひしたいという気持ち。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb51bcef082e8f19503801c55f60a55ea6dee5d13e3474cb01f37bbf1fdeba4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9t5g4w9v",
     "ja": "氷とレモン一個、持ってきてくれる？",
     "en": "Could you bring some ice and a lemon?",
@@ -662,6 +1150,28 @@
         "hash": "sha256:2d01e3e674801bdcf56ed652739bebb18160f661fea55b10591481197bdc2bf9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u8x3q3v",
+    "ja": "夕食より昼食が都合いい。",
+    "en": "Lunch works better than dinner.",
+    "alternatives": [
+      "Lunch is more convenient than dinner.",
+      "Lunch suits me better than dinner."
+    ],
+    "point": "works better は予定の都合がよりよい。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b95b1f828044e991dc53c17a3822bfb395ca64b62c75209c573779de179ec21a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

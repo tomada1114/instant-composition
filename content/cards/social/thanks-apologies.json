@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a6t7d7t",
+    "ja": "私の失言は寛大に見逃された。",
+    "en": "My slip was graciously overlooked.",
+    "alternatives": [
+      "You kindly let my slip pass.",
+      "My tactless remark was kindly excused."
+    ],
+    "point": "graciously は寛大に受け止めた好意を表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa87dcb5d6b7f22ca53798654776311845d80624910d10c3297db59615099e47",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2d2v5f5e",
     "ja": "遅れてごめんね。",
     "en": "Sorry I'm late.",
@@ -64,6 +86,25 @@
     }
   },
   {
+    "id": "c_2r8f3c8p",
+    "ja": "お礼に何を渡せるかな？",
+    "en": "What thank-you gift can I give?",
+    "alternatives": ["What gift could I give you?", "What could I offer as thanks?"],
+    "point": "what でお礼に渡せるものを尋ねる。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7cec9c24682514056c23924df44237ab04abef38040a10ffaef09c99b61ed0b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2z2w7c5k",
     "ja": "思ってた以上に助かったよ。",
     "en": "That helped more than I expected.",
@@ -124,6 +165,28 @@
     }
   },
   {
+    "id": "c_3b2p3d9j",
+    "ja": "君の手間を甘く見てた、ごめん。",
+    "en": "Sorry, I'd underestimated your efforts.",
+    "alternatives": [
+      "Sorry, I'd taken your efforts too lightly.",
+      "I'm sorry I'd undervalued your efforts."
+    ],
+    "point": "underestimate は手間や努力を少なく見積もること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2598c65dd5ed301b532fce211f6e9b6583fc8bd42bdd4ceb529f7dff6cc3ec37",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3c5k4w3a",
     "ja": "お待たせしてすみません。",
     "en": "Sorry to keep you waiting.",
@@ -142,6 +205,25 @@
         "hash": "sha256:5207368c9a06390317212bc39a1c77aeb767234b110bdbd20d647011b05fbc2d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j5x2t6z",
+    "ja": "お礼のカードがある。",
+    "en": "There's a thank-you card.",
+    "alternatives": ["I have a thank-you card.", "A thank-you card is here."],
+    "point": "thank-you card は感謝を伝えるカード。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6ee8855c6fded48accc10324e90565beacc877869e6a75e12e0acce67f05b16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -168,6 +250,28 @@
     }
   },
   {
+    "id": "c_3m9g5u4r",
+    "ja": "私が感謝するのは君の口の堅さだ。",
+    "en": "It's your discretion that I appreciate.",
+    "alternatives": [
+      "What I appreciate is your discretion.",
+      "It's your confidentiality that I appreciate."
+    ],
+    "point": "discretion は秘密を漏らさない配慮も表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5223d6604970e5c80692cb21202309271637223ccffecd22bc06c459705e6821",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3u9m7j6e",
     "ja": "貸してくれた傘、ありがとう。",
     "en": "Thanks for the umbrella you lent me.",
@@ -186,6 +290,25 @@
         "hash": "sha256:498e7bcca3bdea7e22a289d4ea76fdda206529034dd19abfdd6c2042b3ede125",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w6h5q2c",
+    "ja": "君の助けを受けるよ。",
+    "en": "I'll accept your help.",
+    "alternatives": ["I'll let you help me.", "I'll welcome your help."],
+    "point": "accept は差し出された助けを受け入れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46e61c074b7e15301ccef1e5c6afa1f5daf0c49e9b6c3da38f5e12027b4a8200",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -332,6 +455,25 @@
     }
   },
   {
+    "id": "c_5c2p3f4a",
+    "ja": "私からお詫びしてもいい？",
+    "en": "May I offer an apology?",
+    "alternatives": ["Can I offer an apology?", "May I apologize?"],
+    "point": "offer an apology で丁寧にお詫びを申し出る。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08a799f5d6e56e8ba3e378525a8df3e28fdb41f2f817c8d1c199a7c56adf0fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5d4a7b7k",
     "ja": "夕飯おごってもいい？",
     "en": "Can I buy you dinner?",
@@ -347,6 +489,28 @@
         "hash": "sha256:cec678f88b5d92541af65fcad46efc1584c4f347c71259c323d161299a2e36e9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5f9b5u9p",
+    "ja": "君を当然の存在とは決して思わない。",
+    "en": "Never will I take you for granted.",
+    "alternatives": [
+      "I'll never take you for granted.",
+      "I'll always appreciate having you around."
+    ],
+    "point": "take you for granted は君のありがたみを忘れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c4f27344401966c9482c27cb0fcdabd2040895affe5ad79bf20a11f2aa5795f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -369,6 +533,25 @@
         "hash": "sha256:6d0424229cfa02d83a1d8a75c158326d493eefc1fb06a76e7609c5a56f514c63",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5j9x2e7x",
+    "ja": "君は親切だね。",
+    "en": "You're kind.",
+    "alternatives": ["You're so kind.", "You're very nice."],
+    "point": "kind は相手の親切さを褒める。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80f829734ba910bf31c3a555e533191dd0651042998da13a6683fdebb3447995",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -433,6 +616,28 @@
     }
   },
   {
+    "id": "c_5x6v7a3t",
+    "ja": "お礼の品をもう選びました。",
+    "en": "I've picked a thank-you gift.",
+    "alternatives": [
+      "I've chosen a thank-you gift.",
+      "I've selected a thank-you gift."
+    ],
+    "point": "thank-you を名詞の前に置いてお礼用と伝える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6bc53d3c3e28333a2dd75151c45afd9d4f6de4f40f7c175f88bc92ecaaa46e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5z8k3p6x",
     "ja": "こまめに連絡すべきでした。",
     "en": "I should have kept you posted.",
@@ -473,6 +678,72 @@
         "hash": "sha256:06298412202f92aaa6aa35291e4e5c9551098b82b7341b346c70ae114b2624f8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g8c7q3q",
+    "ja": "気づかず君の善意を利用し続けてる。",
+    "en": "I've unknowingly been trading on your goodwill.",
+    "alternatives": [
+      "I've been unknowingly taking advantage of your goodwill.",
+      "I've been unwittingly exploiting your generosity."
+    ],
+    "point": "trade on は相手の善意などを自分の利益に使う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8122436d2c901a83e7abada7c1bd99f8b7cc21cd7b92ee5d571428f92dd087ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6m8t3w6m",
+    "ja": "彼は私の判断ミスを見逃すと言った。",
+    "en": "He said he'd overlook my misjudgment.",
+    "alternatives": [
+      "He said he'd forgive my misjudgment.",
+      "He said he'd excuse my error in judgment."
+    ],
+    "point": "misjudgment は判断を誤ったことを指す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afb46398ee2bcb40213123722e05e7ab2e1e4996f8bdcefb3f26243d06107f41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6w9e3s7g",
+    "ja": "君が犠牲にしたことを私は詫びる。",
+    "en": "I'm sorry for what you gave up.",
+    "alternatives": [
+      "I apologize for what you sacrificed.",
+      "I'm sorry about the sacrifices you made."
+    ],
+    "point": "what you gave up は相手が犠牲にしたことを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["noun-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01e258590259989bc85183f79bb109c88bdaf45db993bea38289878fde3b49b6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -518,6 +789,28 @@
     }
   },
   {
+    "id": "c_6z9q2d7r",
+    "ja": "私が埋め合わせできれば喜んでするのに。",
+    "en": "Were I able, I'd gladly make amends.",
+    "alternatives": [
+      "If I could, I'd gladly make amends.",
+      "I'd gladly make amends if I were able."
+    ],
+    "point": "Were I able は自分が埋め合わせできるという仮定を倒置で表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfa1d638ead23660de578f337185a4ad5548ed5f2549bcf33ac38165ce3e8e76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7c8t6w4t",
     "ja": "アドバイスありがとう。",
     "en": "Thanks for the advice.",
@@ -533,6 +826,28 @@
         "hash": "sha256:2c92ceedfada419eb4c3f121502519e019b51bc3aa9f1c3449ed2e3d22544487",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7n4q8p7u",
+    "ja": "頭が冷えたら私は謝るよ。",
+    "en": "I'll apologize once I cool off.",
+    "alternatives": [
+      "Once I'm calm, I'll apologize.",
+      "I'll apologize after cooling off."
+    ],
+    "point": "cool off は怒りが静まる、once 節は現在形。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d00546994ccc6052c7a4cf9f8ca83004079d8ddc7565ef023a8a2635d8a2ddee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -555,6 +870,117 @@
         "hash": "sha256:7d47859c2105fcd2abf6e9dc10746b95150d11448de3398d033d83c7fa3b8552",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u4v2b4f",
+    "ja": "君の厚意にどう報いるか分からない。",
+    "en": "I don't know how to reciprocate your generosity.",
+    "alternatives": [
+      "I'm unsure how I can repay your kindness.",
+      "I don't know how to repay your kindness."
+    ],
+    "point": "reciprocate は受けた厚意に応える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af54960c9b051542f0db059dedebb3ee140bcc898752299685ae01f8b293f1c7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7w7g3z2x",
+    "ja": "君が見逃してくれて感謝してる。",
+    "en": "I'm grateful you looked the other way.",
+    "alternatives": [
+      "I appreciate that you chose to overlook it.",
+      "Thank you for letting it slide."
+    ],
+    "point": "look the other way はあえて見逃すこと。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90b1bbc8f8d84eaa97cdd8c7af3ea18d68bb9623bfba228a1df43430fb9bc3c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y4a5r6d",
+    "ja": "調整してくれてありがとう。",
+    "en": "Thanks for ironing things out.",
+    "alternatives": [
+      "Thanks for sorting things out.",
+      "Thank you for resolving things."
+    ],
+    "point": "iron out は問題や行き違いを解決する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:841f656f8618ce16836f786b133ed37f51290061c30704f39e5b98ff5b99674c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y6e2m5j",
+    "ja": "君が重大さを察してくれて私は感謝する。",
+    "en": "I'm grateful you knew what was at stake.",
+    "alternatives": [
+      "I'm grateful you grasped what was at stake.",
+      "Thank you for understanding what was at stake."
+    ],
+    "point": "at stake は結果次第で失われかねないものを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1d0c0d3aeafc5f421df92f5544516194d6bdbb4b569c466cbb0e758921f750c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7z7s3z2n",
+    "ja": "私が弁償するよ。",
+    "en": "I'll pay for it.",
+    "alternatives": [
+      "I'll cover the cost.",
+      "I'm going to reimburse you.",
+      "I'll pay for the damage."
+    ],
+    "point": "pay for で壊したものなどの代金を負担する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4a147ac515d4ed1d009afe8e1bdb3ec31480e33649a1121b72d0aceab66674e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -603,6 +1029,25 @@
     }
   },
   {
+    "id": "c_8n9z2q4y",
+    "ja": "私が埋め合わせすべきです。",
+    "en": "I should make amends.",
+    "alternatives": ["I ought to make amends.", "I should make things right."],
+    "point": "make amends は過ちの埋め合わせをする。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:659bb0a0c8e9ee1e152ba97c80801bbe92bcdd59fb5ea8821f5a4bc17bed05d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8s2u8v8r",
     "ja": "彼女は一生恩に着ると言った。",
     "en": "She said she'd be forever in my debt.",
@@ -621,6 +1066,28 @@
         "hash": "sha256:3a6f733f6a54c216b7eec3af5a40f3445da985a12b5c515523cad643eee7818e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8s8b2b7a",
+    "ja": "私への控えめな配慮に感謝します。",
+    "en": "I appreciate your discreet thoughtfulness.",
+    "alternatives": [
+      "I'm grateful for your discreet care.",
+      "Thank you for your unobtrusive thoughtfulness."
+    ],
+    "point": "discreet thoughtfulness は控えめな配慮。thoughtfulness は数えない。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63dd775d23da0b8e153b99a2458cb0007a85a30f1669c12efe7f96cbf84f7672",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -729,6 +1196,25 @@
         "hash": "sha256:d2364a98cdde52b1c26823b86dff6a06d77f56b80a5ee47ffb0aed50216313e7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k9v5d3k",
+    "ja": "誘ってくれてありがとう。",
+    "en": "Thanks for asking me to join.",
+    "alternatives": ["Thanks for inviting me along.", "Thank you for inviting me."],
+    "point": "ask 人 to do で参加するよう誘う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdb1710b3fe8c4578ee3a3dfa4e2c0f792539576be8db72fe155176fac109998",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

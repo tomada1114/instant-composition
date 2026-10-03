@@ -164,6 +164,25 @@
     }
   },
   {
+    "id": "c_4k8t3p8s",
+    "ja": "うちに石鹸が少しある。",
+    "en": "We have some soap at home.",
+    "alternatives": ["There's some soap at home.", "We've got some soap at home."],
+    "point": "soap は量として数えず some を付ける。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11e46954dd07803a6dad343e53a7679686c90ce747d1af6c922991b86797883a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4m6q9n3s",
     "ja": "弟は掃除機をかけてる。",
     "en": "My brother is vacuuming.",
@@ -227,6 +246,25 @@
     }
   },
   {
+    "id": "c_5c6f3d9k",
+    "ja": "私たちは家事を分担する。",
+    "en": "We share the chores.",
+    "alternatives": ["We divide the household tasks.", "We split the housework."],
+    "point": "chores は日々の家事。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b29983715abb79acacef3fed8b2c6faf6d0e6c26273a87fd24914c9ed976352",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6b7z3d3h",
     "ja": "結局、皿は全部私が洗った。",
     "en": "I ended up washing all the dishes.",
@@ -264,6 +302,44 @@
         "hash": "sha256:37c52c29d8d4f09e5fb18a8641b752c13cb6afeb68679b0aff2ea714f3c7f4f6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g9k4w6z",
+    "ja": "この棚は空だ。",
+    "en": "This shelf is empty.",
+    "alternatives": ["There's nothing on this shelf.", "Nothing's on this shelf."],
+    "point": "empty は物が置かれていない。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0a41a03b3e53e83e6d8538e29892dc0a19346cb5c0d3ebb106c9bd5aa34a29a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6h5x6z5z",
+    "ja": "私が窓を閉めていい？",
+    "en": "May I close the window?",
+    "alternatives": ["Can I shut the window?", "Is closing the window okay?"],
+    "point": "May I で窓を閉める許可を求める。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c32e74eae35ecbd69690bca440e7e8746c64b537b2539f024a2c365c4538289",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -331,6 +407,28 @@
     }
   },
   {
+    "id": "c_7k9b4e3j",
+    "ja": "家事が公平なら私も分担を果たすのに。",
+    "en": "Were chores split fairly, I'd pull my weight.",
+    "alternatives": [
+      "If chores were split fairly, I'd do my share.",
+      "I'd do my bit if chores were shared fairly."
+    ],
+    "point": "pull my weight は自分の分担を果たすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:603d17ed0ca826b68b55ba7c6defc57dfe9c15e5df63d89492a7fb338f4f95a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7k9t9w5j",
     "ja": "腹が立つのは、流しが汚いことだ。",
     "en": "What annoys me is the dirty sink.",
@@ -372,6 +470,28 @@
     }
   },
   {
+    "id": "c_7n8z4q3z",
+    "ja": "この部屋の方が湿度が高い。",
+    "en": "This room is more humid.",
+    "alternatives": [
+      "This room has higher humidity.",
+      "Humidity is higher in this room."
+    ],
+    "point": "more humid は湿度がより高い。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:064b6d76f70ddfde6350cd7890c071dc17a530dcaadaa1a0323bbec429c5c801",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7p4q7j9y",
     "ja": "掃除したのに、まだ埃っぽい。",
     "en": "Although I cleaned, it's still dusty.",
@@ -390,6 +510,28 @@
         "hash": "sha256:5f0b477d30224913224b7eb9155b6aa419aa84286bebaaa21ecf8c2128b4539d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p9w3w5m",
+    "ja": "父は片付けで私たちをビクビクさせる。",
+    "en": "Dad has us walking on eggshells about clutter.",
+    "alternatives": [
+      "Dad keeps us on edge about clutter.",
+      "Dad makes us nervous about leaving a mess."
+    ],
+    "point": "walk on eggshells は相手を怒らせぬよう気を遣うこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:faafcbc9d7c4ae1ed0016d7a64d8930c27ecf24c29abf3eb0c2730eddf7287e9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -435,6 +577,28 @@
     }
   },
   {
+    "id": "c_7r9f7c8x",
+    "ja": "私はやっと散らかりを減らせた。",
+    "en": "I've finally made a dent in clutter.",
+    "alternatives": [
+      "I've finally made headway with the clutter.",
+      "I've finally cleared some of the clutter."
+    ],
+    "point": "make a dent in は大きな課題を少しでも減らすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32d51237385354b422f0a8aea645350078fa9a978204ccaaf12de0aedc89eb27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8k2c6u7z",
     "ja": "昨日ゴミを出しておけばよかった。",
     "en": "I wish I'd taken the trash out yesterday.",
@@ -453,6 +617,25 @@
         "hash": "sha256:7c1149b29b5e95869f62b4ecdfbcab0a3a9ea01b7d19bc1f13252bdc53dd2410",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p9a9m2t",
+    "ja": "誰が洗濯物を畳んだ？",
+    "en": "Who folded the laundry?",
+    "alternatives": ["Who folded the clothes?", "Who did the folding?"],
+    "point": "fold the laundry は洗濯物を畳む。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9db6c4408f4e3b79a0ded4330057d0a20e333396847b47e6c6c2b1f2d3bf0ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

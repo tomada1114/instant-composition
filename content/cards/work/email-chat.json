@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2d5g8v6x",
+    "ja": "私ならその返信は和らげる。",
+    "en": "If I were you, I'd soften it.",
+    "alternatives": ["I'd soften that reply.", "In your shoes, I'd soften that reply."],
+    "point": "soften は表現のきつさを和らげる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:011dc92210ff07e70a6cae0d5202eac4cf819b4f080cb5d411cd8fcca2de87d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2g9k5f3c",
     "ja": "先週共有した資料を更新しました。",
     "en": "I updated the file shared last week.",
@@ -18,6 +37,69 @@
         "hash": "sha256:51d63311bb2cb2ff015644754341050cdda5bd202a005edf85094706f25e83a7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r8c7r7m",
+    "ja": "私には法務からまだ返信がない。",
+    "en": "I haven't heard a peep from legal.",
+    "alternatives": [
+      "I've had no reply from legal yet.",
+      "Legal still hasn't gotten back to me."
+    ],
+    "point": "not hear a peep は一言も音沙汰がないこと。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cc792c0b2e2c1584342cfc52755f9d3107954a097a9e5c1f132d80505096c2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3b3p6u9x",
+    "ja": "助言を一つください。",
+    "en": "Please give me a suggestion.",
+    "alternatives": [
+      "Please offer me one suggestion.",
+      "I'd like a suggestion, please."
+    ],
+    "point": "suggestion は一つ二つと数えられる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:daa7d5a3ef4628a025990d0763f2c0a62070fb911d88f2e7bf4d90e576ee9885",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3b3q7r5f",
+    "ja": "私が返信していい？",
+    "en": "May I reply?",
+    "alternatives": ["Can I respond?", "Is replying okay?"],
+    "point": "May I で返信する許可を確認する。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7376f029f336e947e65ed25159ac6f3db65d500d722f14dcb6d8e606fba843ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -84,6 +166,25 @@
         "hash": "sha256:896e68a9a9a0adbf0b3858d13d89c0fe56dd670ead5dc7998b2398fdb32d54df",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g8x9t9k",
+    "ja": "私はメッセージを転送した。",
+    "en": "I forwarded the message.",
+    "alternatives": ["I sent the message on.", "I passed along the message."],
+    "point": "forward は届いたメールなどを転送する。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5e50196a81f523ae6ea74fa6da0d4e03ab8487632f38dd01b3c70df593401c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -238,6 +339,25 @@
     }
   },
   {
+    "id": "c_4x4j8r7z",
+    "ja": "私は添付を開ける。",
+    "en": "I can open attachments.",
+    "alternatives": ["I'm able to open attachments.", "I can open attached files."],
+    "point": "can open で添付ファイルを開ける能力や状況。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d54b87d9d56a0672b439099c9f093ea1368095ec396f2378bdc78996986e7d4e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5c3r4b9s",
     "ja": "助けたいのは山々ですが、手一杯です。",
     "en": "Much as I'd like to help, I'm swamped.",
@@ -279,6 +399,47 @@
     }
   },
   {
+    "id": "c_5m4x4v4m",
+    "ja": "私のメールは雑務に埋もれた。",
+    "en": "My email was lost in the shuffle.",
+    "alternatives": [
+      "My email got overlooked amid the busywork.",
+      "My email got buried under busywork."
+    ],
+    "point": "lost in the shuffle は忙しさの中で見落とされること。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a9efb1205e580b389f54d7f56f3938b5321cfd66cc7646734d5959250a70ee2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5q5u6v3g",
+    "ja": "君は誰にメッセージ送った？",
+    "en": "Who did you message?",
+    "alternatives": ["Who did you send it to?", "Who received your message?"],
+    "point": "who did you で送信先を尋ねる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00f59adf9f59185deb5110700a29ff7e55e56083480b4ef6ce8e71b11649ed82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6g3f5f5b",
     "ja": "Slack が朝から鳴ってる。",
     "en": "My Slack's been pinging all morning.",
@@ -301,6 +462,47 @@
     }
   },
   {
+    "id": "c_6v9r5h3s",
+    "ja": "私はもう関係者を話に加えた。",
+    "en": "I've already looped in the stakeholders.",
+    "alternatives": [
+      "I've already included the stakeholders.",
+      "I've already brought the stakeholders in."
+    ],
+    "point": "loop in は関係者を話に加える。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["present-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35afe11bd728efde65374c51be33d4745e17e0a572b356bd52ebb83c77574cd9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7b3b2a6n",
+    "ja": "私が求めるのは率直な感想。",
+    "en": "What I want is frank feedback.",
+    "alternatives": ["I want frank feedback.", "I'm asking for candid feedback."],
+    "point": "frank は率直な、feedback は数えない。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f84c048b07f86c78ead1e847b59d3927b3b6c0b78b0c34ffcdfc8053d342b2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7c7f8b8x",
     "ja": "読み終えて、すぐ返信した。",
     "en": "Having read it, I replied immediately.",
@@ -319,6 +521,28 @@
         "hash": "sha256:cc95d7ad26e6230a570b17569121fcb8d49fed07e360a510ee4ec2f745876047",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f4f3d4e",
+    "ja": "私はもう宛先を確認した。",
+    "en": "I've already checked the recipients.",
+    "alternatives": [
+      "I've already verified who'll receive it.",
+      "I've already confirmed the recipients."
+    ],
+    "point": "already と現在完了で確認済みを伝える。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0406a9be59a3d75919312543832866dce0e348efaaeee2a9b9009c5e59af6606",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -471,6 +695,28 @@
     }
   },
   {
+    "id": "c_8e8v9x4e",
+    "ja": "君が何を添付したか教えて。",
+    "en": "Tell me what you attached.",
+    "alternatives": [
+      "Let me know which files you attached.",
+      "Tell me what you've attached."
+    ],
+    "point": "what 節を添付したものの意味で使う。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd9748c04447fbf141cb6926df3229c6f297588fa7a88134387bd6a93c6e0885",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8f3e2a9n",
     "ja": "あの返信、寝かせとけばよかった。",
     "en": "I wish I'd sat on that reply.",
@@ -554,6 +800,28 @@
     }
   },
   {
+    "id": "c_9a4m6k2k",
+    "ja": "この文面は前より丁寧。",
+    "en": "This wording is more polite now.",
+    "alternatives": [
+      "This message sounds more polite now.",
+      "This wording is politer than before."
+    ],
+    "point": "more polite now は文面が以前より丁寧になったことを表す。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fed833e5cdf997819aad0ab4a131e88c7b8b4077340ec6dddf62be97e6339b30",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9c7x7m2u",
     "ja": "届いたらすぐ返信します。",
     "en": "I'll reply once I get it.",
@@ -610,6 +878,25 @@
         "hash": "sha256:2100d724245ebafa3530bd64b7dbf37039ef3830a20e7bac3b077a5d684bb9a4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9g7d8d4e",
+    "ja": "私は君に署名してほしい。",
+    "en": "I want you to sign.",
+    "alternatives": ["I'd like you to sign.", "I want your signature."],
+    "point": "want + 人 + to で署名してほしいと伝える。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d000e8ba9032493f6937a27cdf36c57c26e787111b694e221ba857f48869344",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -673,6 +960,28 @@
         "hash": "sha256:ea9013bf1e792007d7080ba27e604e2cc92ef4724a0ab953e06146da7fc79339",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u6c3u5n",
+    "ja": "私は既にその件を決着させていた。",
+    "en": "I'd already closed that loop.",
+    "alternatives": [
+      "I'd already settled that matter.",
+      "I'd already tied up that loose end."
+    ],
+    "point": "close the loop は未決のやり取りを完結させること。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4400c3d291e8def7f53c4b887b2421c008045863f6e48d2b7f985cf06e281275",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

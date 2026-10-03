@@ -19,6 +19,50 @@
     }
   },
   {
+    "id": "c_2h8a9x5m",
+    "ja": "皆で決めた日が私は心配だ。",
+    "en": "The date everyone agreed on troubles me.",
+    "alternatives": [
+      "I'm troubled by the date everyone chose.",
+      "The agreed date worries me."
+    ],
+    "point": "agreed on で具体的な日について合意する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:613c0f14187b706bf149b5005d15b3cf3466d6846a78b9ebefb0608fdb1169c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2j8k6j3j",
+    "ja": "君の懸念で私は旅行を再考中。",
+    "en": "Your reservations have me second-guessing the trip.",
+    "alternatives": [
+      "Your doubts have me reconsidering the trip.",
+      "Your misgivings have me questioning the trip."
+    ],
+    "point": "reservation はここでは懸念、second-guess は判断を疑い直す。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61380811821f61cc60e16b01a9cadb43347eaa56ce3e32feee64be57380deccf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2s2f8f9b",
     "ja": "まだ何も予定を立ててないよ。",
     "en": "I haven't made any plans yet.",
@@ -122,6 +166,47 @@
         "hash": "sha256:20e32dbb84e4ec4caa298495c13fd5d2232dc759b65e9de2153df7d040854326",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3n5c8u3s",
+    "ja": "我々が断ってたら大失敗を免れてた。",
+    "en": "Had we declined, we'd have dodged disaster.",
+    "alternatives": [
+      "If we'd refused, we would've avoided disaster.",
+      "We'd have avoided disaster if we'd declined."
+    ],
+    "point": "Had we は過去の仮定、dodge disaster は惨事を免れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ad4b8fb95cc523b4a8c9654d91347d3d2abbacf9abf7977d622efaa0944020c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3q7p6p8k",
+    "ja": "私は再会が楽しみ。",
+    "en": "I'm excited about our reunion.",
+    "alternatives": ["I look forward to our reunion.", "I'm eager for our reunion."],
+    "point": "look forward to の to の後には名詞や動名詞。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f31836bbd054469fee1563bd76accac9bd9f950503baf5704acf43c43ffc7224",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -281,6 +366,25 @@
     }
   },
   {
+    "id": "c_4w4f2d8t",
+    "ja": "私が時間を決めるよ。",
+    "en": "I'll choose the time.",
+    "alternatives": ["I'll pick the time.", "I'll decide on a time."],
+    "point": "will はその場で引き受ける意思にも使う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08229a54080bbe13a7cf66ce5b71ea345e66f3d4ffe86b973afd4aa930be1c88",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4x9h7w9g",
     "ja": "早く言ってくれればよかったのに。",
     "en": "You could have told me sooner.",
@@ -303,6 +407,50 @@
     }
   },
   {
+    "id": "c_5c7x4y2q",
+    "ja": "私は予定の中止を考えてる。",
+    "en": "I'm considering scrapping our plans.",
+    "alternatives": [
+      "I'm thinking about abandoning our plans.",
+      "I'm considering calling off our plans."
+    ],
+    "point": "scrap は計画を取りやめて白紙に戻す。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ee6f427bb5187e739b54085489afa8faec7d80843504c4c53b63db63f8a6ad",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5h8n9h6b",
+    "ja": "私は家族と予定を調整する。",
+    "en": "I'll coordinate plans with my family.",
+    "alternatives": [
+      "I'll work out plans with my family.",
+      "I'll arrange plans with my family."
+    ],
+    "point": "coordinate は複数人の予定を調整する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd31359fcd902df22c883e38c73e0342a1ef628308c64aee86d3c5a5927339ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5n2y2p4f",
     "ja": "彼はいつも私たちを待たせる。",
     "en": "He always makes us wait.",
@@ -318,6 +466,28 @@
         "hash": "sha256:6ee7b67c0b0803b21ba04079c4e9138e6cb4bea2e9cb74b5ef3449fd3baf0f6b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r4p6y7r",
+    "ja": "彼女が条件を変え続ける理由分かる？",
+    "en": "Know why she keeps moving the goalposts?",
+    "alternatives": [
+      "Do you know why she keeps changing the conditions?",
+      "Any idea why she continually changes the requirements?"
+    ],
+    "point": "move the goalposts は途中で条件を変える。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6629b195cffb5bac97aaecfc4e703e1f1c33a4a38e7fafb7967bbded784bc09a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -401,6 +571,28 @@
     }
   },
   {
+    "id": "c_6m3h6j8q",
+    "ja": "私、空気を読んでおけばよかった。",
+    "en": "I wish I'd read the room.",
+    "alternatives": [
+      "I wish I'd picked up on everyone's mood.",
+      "If only I'd sensed how everyone felt."
+    ],
+    "point": "read the room は場の雰囲気や相手の気持ちを察する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:361bd59e35426398b6ae1081d53ce04a160f5ada24a2a819cadd66d6a2709322",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6n9p4b3x",
     "ja": "その時はもう皆帰っていた。",
     "en": "Everyone had left by then.",
@@ -438,6 +630,28 @@
         "hash": "sha256:93c514d14d4b46135eb0150a1a796e844f1c781b6084388010419c72079135fb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y8k7n9j",
+    "ja": "彼女は誰が水を差すか知らないかも。",
+    "en": "I doubt she knows who's playing spoilsport.",
+    "alternatives": [
+      "I'm not sure she knows who is spoiling things.",
+      "She may not know who is ruining the fun."
+    ],
+    "point": "spoilsport は人の楽しみに水を差す人。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a458eb196f9a5a142c2b17f9c51c30ab3cc8b0014d8b74d40cae0d9a3652bc27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -486,6 +700,28 @@
     }
   },
   {
+    "id": "c_7d5x2r4v",
+    "ja": "彼女は金曜は望み薄だと言った。",
+    "en": "She said Friday was a long shot.",
+    "alternatives": [
+      "She said Friday was unlikely to work.",
+      "She said Friday had little chance of working."
+    ],
+    "point": "a long shot は実現する見込みが低いこと。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cba57a49226a3a0092fdc6487536c43f7c94d0927b936a7876ff39ff6fd5fdcc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7k5b8d3a",
     "ja": "時間があれば、行くのに。",
     "en": "If I had time, I'd go.",
@@ -501,6 +737,25 @@
         "hash": "sha256:2d7077908b8186880480400a1e31bf06459d2ca05731d13a61fcca4c13697bde",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7m8m4s4r",
+    "ja": "日程がかち合ってる。",
+    "en": "There's a scheduling clash.",
+    "alternatives": ["The schedules clash.", "The schedules conflict."],
+    "point": "a scheduling clash は日程が重なること。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:442cdec7f74465cdbbaf6490b0dc8e2964c845c9073a23d9e28511155b980ded",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -527,6 +782,28 @@
     }
   },
   {
+    "id": "c_7v9f8u5n",
+    "ja": "私は代替の予定を残したい。",
+    "en": "I want to keep a fallback.",
+    "alternatives": [
+      "I'd like to keep a backup plan.",
+      "I want to retain an alternative plan."
+    ],
+    "point": "fallback は予定が無理なときに使える代案。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18aa94756433819ec24cc265dac86997c83f059af2ceab8d983453b2f5be3736",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7w6t8z5w",
     "ja": "その約束、金曜に延期できる？",
     "en": "Can we push it back to Friday?",
@@ -545,6 +822,72 @@
         "hash": "sha256:a7e59b36448650f7c554b91bc2e76fba7117cc3f9694b68d68ef297c223656f5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7y7s8k9x",
+    "ja": "私は最後通告を誘いと呼びかねる。",
+    "en": "I'd hesitate to call ultimatums invitations.",
+    "alternatives": [
+      "I'd be reluctant to call ultimatums invitations.",
+      "I'd balk at calling ultimatums invitations."
+    ],
+    "point": "hesitate to で断定を控える、ultimatum は最後通告。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6bd4d48ff1236f115f0672bab86f8be5aa6b1bcd76882bbe68d3384fb66b8da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y8z3z4j",
+    "ja": "表向き任意でもこの外出は強制に感じる。",
+    "en": "Though ostensibly optional, this outing feels coercive.",
+    "alternatives": [
+      "Though supposedly optional, this outing feels forced.",
+      "Despite being nominally optional, this outing feels coercive."
+    ],
+    "point": "ostensibly は表向きには、coercive は強制的な。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92d0dd2cd68db22a6b6e89487dd41a35e65faffedd4787d80329a62cbca0e099",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8b4x4e3m",
+    "ja": "私は皆の週末の予定を詰めてる。",
+    "en": "I'm sorting out our weekend plans.",
+    "alternatives": [
+      "I'm finalizing our weekend plans.",
+      "I'm working out our weekend plans."
+    ],
+    "point": "sort out は予定を整理して決める。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["progressive-aspect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7b759cbed538388f1fbc696934310c41d772bc42aa1a3219610bc3acf8c54a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -571,6 +914,69 @@
     }
   },
   {
+    "id": "c_8g5r8f5b",
+    "ja": "私は君に決めてほしい。",
+    "en": "I want you to decide.",
+    "alternatives": ["I'd like you to decide.", "I want you to choose."],
+    "point": "want + 人 + to で相手にしてほしいことを言う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6c5f49a6b07a7f163ba709499bfd801336ec40d4554fa9f4ef88c72c9f934fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8j7v4v6p",
+    "ja": "急かされ私は日取りを確定した。",
+    "en": "Pressed, I nailed down a date.",
+    "alternatives": [
+      "Under pressure, I finalized a date.",
+      "Feeling rushed, I fixed a date."
+    ],
+    "point": "nail down は日取りを曖昧なままにせず確定する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cec42b0cc5427e54f0a5e3350756f20ffbf541c93c585bb882e2606004a2c99",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8q8p2b7z",
+    "ja": "彼女は旅行をずっと決めかねてる。",
+    "en": "She's been vacillating over the trip.",
+    "alternatives": [
+      "She's been wavering about the trip.",
+      "She's been unable to decide about the trip."
+    ],
+    "point": "vacillate は決められず気持ちが揺れ動く。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd4a95d76139a5a1372bf4854700a8076d5ebfd36914c1a8777ace0c78896fc2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8x2v6k8x",
     "ja": "私たち、決めなきゃ。",
     "en": "We have to decide.",
@@ -586,6 +992,28 @@
         "hash": "sha256:344aabeb7d71ecb12715cb8fb7888a20c8ec7ba2d272232310bd85b07caea206",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p7g7r8v",
+    "ja": "我々は金曜を仮予定にしていい？",
+    "en": "Could we pencil in Friday?",
+    "alternatives": [
+      "Can we tentatively schedule Friday?",
+      "Can we put Friday down provisionally?"
+    ],
+    "point": "pencil in は変更の余地を残して予定に入れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["requests-permission", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5ba2a3c31718e88d1ac531e8e105cda9410ff9ee2c85d098d600bd11f7cc895",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

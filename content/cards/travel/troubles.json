@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2f2n2n2m",
+    "ja": "彼らに無理やり署名させられないで。",
+    "en": "Don't let them railroad you into signing.",
+    "alternatives": [
+      "Don't allow them to pressure you into signing.",
+      "Don't let them strong-arm you into signing."
+    ],
+    "point": "railroad 人 into は強引に承諾させる。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:70a0e062030aa8ccc78c3e31ca25ac4ebe1b2025bfd6241c509ea1d507b46d28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2k3g9z2c",
     "ja": "財布は昨日なくなりました。",
     "en": "My wallet went missing yesterday.",
@@ -15,6 +37,25 @@
         "hash": "sha256:1915328b6c2243f0fabbebcc04e8717c90b6b8866afde2c12e1662a83cbb305e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2m3x9t7s",
+    "ja": "私の荷物はどこ？",
+    "en": "Where's my luggage?",
+    "alternatives": ["Where is my baggage?", "Where are my bags?"],
+    "point": "luggage は数えないので is を使う。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d160b3a74f92297abaf932c52a80861f720cf239c33be7ba835604cda72e2b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -60,6 +101,50 @@
     }
   },
   {
+    "id": "c_2v4e8y4r",
+    "ja": "彼が旅の危うさを分かるとは思えない。",
+    "en": "I doubt he grasps how precarious travel is.",
+    "alternatives": [
+      "I'm unsure he understands how risky travel is.",
+      "He may not grasp how precarious this trip is."
+    ],
+    "point": "doubt の中に grasps、その中に how 節、precarious は危うい。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c421447288fdf20d66c7e7d8a4c5ab5c292e8c9f73a6dcc54dd167f55de150d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2x8m7e6r",
+    "ja": "私が疑ってるのは相手の誠意だ。",
+    "en": "It's their sincerity I'm calling into question.",
+    "alternatives": [
+      "What I'm questioning is their good faith.",
+      "It's their sincerity that I'm questioning."
+    ],
+    "point": "call into question は信頼性を疑問に付す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9884cb0b71f3bc5eadad19d52e992aaf557c48c64a4d75ba179f2f72a5dc9937",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2y7y5k4n",
     "ja": "カードを止めてもらいたいです。",
     "en": "I need my card blocked.",
@@ -79,6 +164,28 @@
         "hash": "sha256:6c7199d3675fbbb1e94a6cf19d4c2ebe267f144c5639f1123c5406f5c09feeeb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z4r8z2f",
+    "ja": "足止めでも私は卑屈にならない。",
+    "en": "Though stranded, I won't grovel.",
+    "alternatives": [
+      "I won't grovel, even though I'm stranded.",
+      "I refuse to grovel, though I'm stranded."
+    ],
+    "point": "grovel は卑屈に振る舞って頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:464f28c91cd165251dac2038d63c10be45e1e71fb8112be62710c8df946e5db6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -105,6 +212,25 @@
     }
   },
   {
+    "id": "c_3s4d8z4g",
+    "ja": "私、家に電話したい。",
+    "en": "I want to call home.",
+    "alternatives": ["I'd like to phone home.", "I want to phone my family."],
+    "point": "want to do は行動の希望。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3086451e3a7d9d335d7a5efe42c6d2b4166317a06c9acc89e193a42b954213ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3t4t4v7q",
     "ja": "バッグがなくなったみたいです。",
     "en": "It seems my bag's gone missing.",
@@ -127,6 +253,25 @@
     }
   },
   {
+    "id": "c_3u6a8t5z",
+    "ja": "私、領事館へ行くよ。",
+    "en": "I'll visit the consulate.",
+    "alternatives": ["I'm going to the consulate.", "I'll go to the consulate."],
+    "point": "consulate は領事館。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9f9a17f38b651c3852f9477ff17eb3f8aa7b95f46c2f7d75dbdef6d2cfc407e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w9t2t2m",
     "ja": "パスポートが、どこにもなかった。",
     "en": "Nowhere could I find my passport.",
@@ -145,6 +290,47 @@
         "hash": "sha256:f3968bf10e53a8db35beba9ca7a01aafaa403ea34e67d02b100f019e4871e7aa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x4f6d6c",
+    "ja": "荷物が見つかったら知らせて。",
+    "en": "Tell me when it turns up.",
+    "alternatives": ["Tell me when it's found.", "Let me know when it shows up."],
+    "point": "turn up は探していた物が見つかること。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:abc152675e21cac5dc9934244b75354487f40ba0fe155f897cc7efc9b2d05db0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4c5b3q8m",
+    "ja": "私は既に口上を鵜呑みにしてた。",
+    "en": "I'd already swallowed their spiel.",
+    "alternatives": [
+      "I'd already bought their sales pitch.",
+      "I'd already taken their pitch at face value."
+    ],
+    "point": "swallow a spiel は口上を鵜呑みにする。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63f7285ac4463feec1fa8ea88b7358e6c3b3dbe9491890775f2285e65cb0840c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -228,6 +414,25 @@
     }
   },
   {
+    "id": "c_4k6m6e6h",
+    "ja": "私は紛失の届け出を終えた。",
+    "en": "I finished reporting the loss.",
+    "alternatives": ["I've finished filing a loss report.", "I filed the loss report."],
+    "point": "finish の後には動名詞。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8d3151844b9357b5555f40c9340312848a230d97f17c1018bdafd3636a88a9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4n7j2g5d",
     "ja": "予約にミスがあります。",
     "en": "There's a booking error.",
@@ -292,6 +497,44 @@
     }
   },
   {
+    "id": "c_5c2a8j8w",
+    "ja": "私は助けを待ってる。",
+    "en": "I'm waiting for help.",
+    "alternatives": ["I'm waiting for some help.", "I'm still waiting for help."],
+    "point": "am waiting で助けを待っている最中と伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bef8e557a8be721594844642c6f732baff2b9ab4f14d88b339cedac505a12ef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5d5v8z5x",
+    "ja": "ここで止まって。",
+    "en": "Stop here, please.",
+    "alternatives": ["Please stop right here.", "Please stop at this spot."],
+    "point": "stop here でその場で止まるよう頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6ef6cca8cd4521f1579099a3eaf9fe8fc839adc454e38b015070ac84194f8ec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5d9a9y5j",
     "ja": "確認メールが、まだ届いてません。",
     "en": "My confirmation email hasn't arrived yet.",
@@ -310,6 +553,28 @@
         "hash": "sha256:831165a0eadc7f81ae5bb02b6a9a6bf2b943172a3e4f8bbfbcaf9e78c1668555",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h4x8u8x",
+    "ja": "私が領収書を残してたら今争えるのに。",
+    "en": "Had I kept receipts, I'd have recourse.",
+    "alternatives": [
+      "If I'd kept receipts, I'd have recourse now.",
+      "Keeping the receipts would've given me recourse."
+    ],
+    "point": "Had I kept は if を省く倒置で、今の対抗手段を仮定する。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d888a7cfe4ddb5f2a08d9e7298c86054177921d9a95ff60027779e2efb0428a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -333,6 +598,28 @@
     }
   },
   {
+    "id": "c_6p9w9a6w",
+    "ja": "私なら予約の証拠を見せる。",
+    "en": "I'd show proof of booking.",
+    "alternatives": [
+      "In your shoes, I'd show booking confirmation.",
+      "I'd show reservation confirmation in your place."
+    ],
+    "point": "I'd は相手の立場ならそうするという助言。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8926fa65e22591e385b79d588adb9877a0d4c7909d42c80086ef65b12fe8795",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6u4y7m6f",
     "ja": "係員が荷物を探しています。",
     "en": "They're looking for my luggage.",
@@ -351,6 +638,44 @@
         "hash": "sha256:d8cd21512e720febe63d6ceecf747c6a559223fd6ffb183580b86384b3459f91",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u8b4g6c",
+    "ja": "私は歩けない。",
+    "en": "I can't walk.",
+    "alternatives": ["I'm not able to walk.", "Walking is impossible for me."],
+    "point": "cannot walk で歩くことができないと伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3aebd02bc26d34e82b34ea3ef9fbe70579631353a4d81123cc88df9088c7c4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6y5r8r6s",
+    "ja": "私たちは宿へ戻るよ。",
+    "en": "We'll return to the hotel.",
+    "alternatives": ["We're going back to the hotel.", "We'll head back to the hotel."],
+    "point": "will はこれからの行動を伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e48c1573328d68bec0dc29d627033c9579affb6ee7ed8cac045dbbf153acd55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -486,6 +811,25 @@
     }
   },
   {
+    "id": "c_7t3w4x9v",
+    "ja": "私の鍵が効かなくなった。",
+    "en": "My key stopped working.",
+    "alternatives": ["My key no longer worked.", "My key quit working."],
+    "point": "stopped working は使えなくなった過去。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["gerunds", "past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8679ebae16c1505608584d70be9c1b52d2cd9b4e80ebbf222d09603ad4c329c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7y2x4u4h",
     "ja": "別の便に振り替えは可能ですか？",
     "en": "Would it be possible to rebook me?",
@@ -545,6 +889,28 @@
         "hash": "sha256:8b3b18a6cbcf45885c2c78654005ec9a167c4d46c10eb97d94b20bd3dce1a95a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j5t2p4n",
+    "ja": "私はあの保証を鵜呑みにすべきでなかった。",
+    "en": "I shouldn't have taken that assurance at face value.",
+    "alternatives": [
+      "I shouldn't have accepted that assurance without question.",
+      "I should've questioned that assurance instead of trusting it."
+    ],
+    "point": "take at face value は言われたことを疑わず受け取る。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9f7e91302549008b7d20a61594bfdb054ee9ccc713ed46179c18f3e1a6bb1b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -631,6 +997,25 @@
         "hash": "sha256:adb2ee86cbc4b0740f00449b36402c471938f305055316dabdedac459dded24d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8w5g4w8q",
+    "ja": "私、宿を探さなきゃ。",
+    "en": "I must find accommodation.",
+    "alternatives": ["I have to find accommodation.", "I need somewhere to stay."],
+    "point": "accommodation は宿泊先を表す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ded3ffd112bfa440a44efac5fc7ced7174f8b06c5a860c2b1742dac55124e54f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

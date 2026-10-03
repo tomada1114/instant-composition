@@ -42,6 +42,28 @@
     }
   },
   {
+    "id": "c_2e3c7y4r",
+    "ja": "我々が出すのは試作品です。",
+    "en": "What we're shipping is a prototype.",
+    "alternatives": [
+      "We're releasing a prototype.",
+      "Our upcoming release is a prototype."
+    ],
+    "point": "what 節で出すものをひとまとまりにする。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:05dd38be03ec11a5651ce093c8be1171b8c734571337d387f16dc0e8b9d036d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2n4d8c7a",
     "ja": "ユーザーに試すよう頼んで。",
     "en": "Ask users to try it.",
@@ -57,6 +79,25 @@
         "hash": "sha256:7518a56317fb15e0a29e698178e174a5458aad7896438e46d758704f77e753bc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2n5y5v4b",
+    "ja": "我々は公開を遅らせるべき。",
+    "en": "We should delay the release.",
+    "alternatives": ["We should wait before releasing.", "We should hold the release."],
+    "point": "should で公開を急がず待つべきだと伝える。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5345b996bc40cf4562218be3a3b1390c9b2062b58bf62d0a1c0491b7e810689d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -190,6 +231,25 @@
     }
   },
   {
+    "id": "c_3h8d8b3d",
+    "ja": "このボタンの方が大きい。",
+    "en": "This button is bigger.",
+    "alternatives": ["This button's larger.", "This is the larger button."],
+    "point": "bigger でボタンのサイズを比較する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0110339a1d9ce05dc22c8c791f9bd71f99daba44b34c093ee9eb426eac323a6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3k3d3t4u",
     "ja": "もうリリースした？",
     "en": "Have you released it yet?",
@@ -243,6 +303,25 @@
         "hash": "sha256:621a999dc124f66545254e5bb094fc18847f0ca0ce52c1b7ceddeb0db189dfa8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w6k4x7b",
+    "ja": "我々は利用者の感想が必要。",
+    "en": "We need user feedback.",
+    "alternatives": ["We need feedback from users.", "We need users' opinions."],
+    "point": "feedback は数えないので a をつけない。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e559024e2b3294cee63d1f65a7c88e4950b333258e9b35bb8ba808678df5df27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -333,6 +412,28 @@
     }
   },
   {
+    "id": "c_4v8h4b4q",
+    "ja": "手軽でも登録は暗黙の強制に当たる。",
+    "en": "Though frictionless, sign-up amounts to tacit coercion.",
+    "alternatives": [
+      "Despite its ease, signing up involves implicit coercion.",
+      "Though easy, sign-up is effectively subtle coercion."
+    ],
+    "point": "tacit は暗黙の、coercion は強制。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78e6aa1ac779f4ca1bedf9bc83ac19987c7b836d278ca99ac3489194ae6cfa28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5h8a6d8f",
     "ja": "先にユーザーに聞くべき。",
     "en": "We should ask users first.",
@@ -374,6 +475,28 @@
     }
   },
   {
+    "id": "c_5u4m4z5z",
+    "ja": "彼女は注目と需要を混同するなと言った。",
+    "en": "She said not to conflate attention with demand.",
+    "alternatives": [
+      "She said not to confuse attention with demand.",
+      "She said not to mistake attention for demand."
+    ],
+    "point": "conflate A with B は別のものを混同する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cea8e72ac6228d1651272df66219ee496f6b722d96746339f0b6bc0277c4124",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5w6x5t3z",
     "ja": "離脱防止のために作った。",
     "en": "We built it to prevent churn.",
@@ -389,6 +512,28 @@
         "hash": "sha256:46fb9db02b2e35bd559a3327278892adcd5066aedb4b286c6e22fdc597773b8c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x2p3c8p",
+    "ja": "資金難で私たちは新機能を見送る。",
+    "en": "Lacking funds, we're shelving extra features.",
+    "alternatives": [
+      "Short of funds, we're postponing extra features.",
+      "We're shelving extra features because money's tight."
+    ],
+    "point": "shelve は計画などの実行を見送ること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:81f07c0f09c9b4c5d5021a7ff48a7a2ffd86f58e5598cd1c68e6ae128c803ed5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -411,6 +556,28 @@
         "hash": "sha256:ca5884188b84f1fbd61dfceeba1a569ea9f11bb98ef64e48832194884149e89a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y8b9r9q",
+    "ja": "私たちがケチってたら駄作を出してた。",
+    "en": "Had we skimped, we'd have shipped a dud.",
+    "alternatives": [
+      "If we'd skimped, we'd have shipped a dud.",
+      "We'd have released a dud if we'd cut corners."
+    ],
+    "point": "skimp は必要な手間や費用まで切り詰めること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b119ffb97e7cba15455367bdb1a4d3bc7ec24801c60c4633748183a5a7a0a53",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -471,6 +638,47 @@
         "hash": "sha256:002076c6ff13f193b29ffe9532fa436f0a5853c216dcd8e5a9fc8584512372be",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6v2x8k9v",
+    "ja": "この通知を消して。",
+    "en": "Remove this notice.",
+    "alternatives": ["Delete this notification.", "Get rid of this notice."],
+    "point": "remove は表示や機能を取り除く。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c97a2d64db9da1b39949af1b11762c11db4152ba2465e39c0f4ebc428c3bfa96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6y4m9v2p",
+    "ja": "その時初めて解約理由に納得した。",
+    "en": "Only then did churn make sense.",
+    "alternatives": [
+      "Only then did I understand the churn.",
+      "The reason for churn finally clicked then."
+    ],
+    "point": "Only then did は「その時初めて」を強める倒置。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f43547772c8e7dfed6b70d0389d10571fe4359bc9e9fdd874927b8605f1fe0e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -557,6 +765,25 @@
     }
   },
   {
+    "id": "c_7t4r7f7x",
+    "ja": "君、これ使える？",
+    "en": "Can you use this?",
+    "alternatives": ["Can you work with this?", "Can you operate this?"],
+    "point": "Can you で可能かを尋ねる。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc95d712560f065c91713423db0ba898320f596711c1230df7f22511572e9088",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7x8w3s9j",
     "ja": "先月、ダークモードを出した。",
     "en": "We shipped dark mode last month.",
@@ -597,6 +824,69 @@
         "hash": "sha256:7bddad30597e0c7078081cdeb75fec579e266be5665a300a060ed734ad0fa79f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p9g5j6p",
+    "ja": "公開前に我々は需要を測ってた。",
+    "en": "We'd gauged demand before launch.",
+    "alternatives": [
+      "Before launch, we'd assessed demand.",
+      "We'd measured demand before releasing it."
+    ],
+    "point": "had gauged で公開より前の判断を表す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6453b387ba86617ffb2ca1f67e7f26dd870294dd76d7e7827576296aa91c4e9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8r2b7e5m",
+    "ja": "この画面は新しい。",
+    "en": "This screen is new.",
+    "alternatives": ["This is a new screen.", "The screen is new."],
+    "point": "new はこれまでなかったもの。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74b7a87c6d079802cbb828558f318d225dc55920fc813a6f1ba96b3dadacce2d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8x7u4k4p",
+    "ja": "私たちが折れてたら今は客が激減だ。",
+    "en": "Had we capitulated, we'd now be hemorrhaging customers.",
+    "alternatives": [
+      "If we'd given in, we'd now be hemorrhaging customers.",
+      "We'd be hemorrhaging customers now had we capitulated."
+    ],
+    "point": "過去の仮定で今の結果を表す、hemorrhage は大量に失う。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca57300a5227139d93b26a79a69050896ee947c74d0d5d63000b51318e36540e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -704,6 +994,28 @@
         "hash": "sha256:0bdaefbbc01f9bdbbcc404c3afcbb640001500ee8b0b5366890ca8acc149349a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9w5k9j2d",
+    "ja": "新機能を試してもらえますか？",
+    "en": "Mind giving the new feature a whirl?",
+    "alternatives": [
+      "Could you try the new feature?",
+      "Could you give the new feature a try?"
+    ],
+    "point": "give something a whirl は気軽に試す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59ecab4febf56479de70e6aff94d83958b5fd5fbbca5c33fe71ca7f661b9fac3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

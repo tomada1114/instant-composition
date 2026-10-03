@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b7c9a6t",
+    "ja": "私はやっと風邪の峠を越えた。",
+    "en": "I've turned the corner with my cold.",
+    "alternatives": [
+      "My cold has finally started getting better.",
+      "I'm finally recovering from my cold."
+    ],
+    "point": "turn the corner は最悪の状態を越えて回復へ向かうこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7959eefd224a24d0746215237c7a2321d23ec8c271b1d4654f9b5ef12839b9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2e3k7h6j",
     "ja": "ちょっと熱がある気がします。",
     "en": "I might have a fever.",
@@ -15,6 +37,25 @@
         "hash": "sha256:428a185c6cfc524b0cee85e80b4b2acabed8347d10eda24d9b49cca764fc965b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2g2m4p8b",
+    "ja": "ここが痛い。",
+    "en": "It hurts here.",
+    "alternatives": ["This spot hurts.", "I feel pain here."],
+    "point": "hurt は痛むという動詞。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae617c787ab50baa1cdf5feea764dfb368d8e51a0b22571fd48ea6e2b4697a7f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -145,6 +186,25 @@
     }
   },
   {
+    "id": "c_3r8a6t9v",
+    "ja": "私は歩けるよ。",
+    "en": "I can walk.",
+    "alternatives": ["I'm able to walk.", "I'm capable of walking."],
+    "point": "can で歩ける能力を伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:004e5f312ee5f304ac06fda8d466aa02cadf60c8e0b7cb5db60d01e78fa7b419",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3u5e8j5b",
     "ja": "彼女は私の発疹はうつらないと言う。",
     "en": "She says my rash isn't contagious.",
@@ -211,6 +271,28 @@
     }
   },
   {
+    "id": "c_4r4q6z9p",
+    "ja": "疲れてなければ私は運動するのに。",
+    "en": "Were I less run-down, I'd exercise.",
+    "alternatives": [
+      "If I weren't worn out, I'd exercise.",
+      "I'd work out if I weren't exhausted."
+    ],
+    "point": "Were I は If I were の if を省いた形。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b533f10af4b8c7ba6144bc5e25d54ef9cf2a9d400c95413e3e02d97624af6d7b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4t5e2b4s",
     "ja": "スマホを見るのはやめたんだ。",
     "en": "I've quit checking my phone.",
@@ -226,6 +308,28 @@
         "hash": "sha256:7f99826aea95e902f174513b2ded5363dd3bba6dd7156d91d12c7b2f33da9d83",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n2q6n7h",
+    "ja": "私が前兆に対処してたら今は回復期なのに。",
+    "en": "Had I heeded warning signs, I'd be convalescing.",
+    "alternatives": [
+      "If I'd acted on the warning signs, I'd be recovering.",
+      "I'd be recuperating if I'd taken those signs seriously."
+    ],
+    "point": "過去の仮定から今の回復を表す、convalesce は病後回復する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:253904a8576a58c51c4c5e3ad3294d2feaf944292e333f0a95a00f4b66305799",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -352,6 +456,47 @@
         "hash": "sha256:5b35e5f0211bb6b759f7578310f1010409423d553d053a8c38999e480b1256ab",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b6n7z4j",
+    "ja": "私、元気そうでも気力は底だ。",
+    "en": "Though outwardly chipper, I'm running on fumes.",
+    "alternatives": [
+      "I seem cheerful, though I'm completely spent.",
+      "Despite looking upbeat, I'm barely keeping going."
+    ],
+    "point": "chipper は快活な、run on fumes は気力が尽きかけた状態。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60088e35637da84ef4277775fcd236ede2b01d4e5b0ec41b910c015440a7b105",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6c7z4j5n",
+    "ja": "私、よく眠れた。",
+    "en": "I slept well.",
+    "alternatives": ["I had a good sleep.", "I slept soundly."],
+    "point": "slept は sleep の過去形。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a17b579c6dd5c71e2cb1576434c8412dce01ebed95feb0b834e096ee42ad80f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -524,6 +669,25 @@
     }
   },
   {
+    "id": "c_6s3n4n4z",
+    "ja": "私の症状は一度も和らがなかった。",
+    "en": "Never once did my symptoms let up.",
+    "alternatives": ["My symptoms never eased up.", "My symptoms never subsided."],
+    "point": "let up は症状や強さが和らぐこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac376ecbad006348d98c22e9b67b9ef2a425ef5abf8a37f92bd46693e691ccb2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6w2f3t3r",
     "ja": "家に帰ったら休むよ。",
     "en": "I'll rest once I'm home.",
@@ -561,6 +725,28 @@
         "hash": "sha256:ec94bcac116ca5529601de93919bdac4a1b1cb18fc30a55159113fafc1c82780",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z9h3q7j",
+    "ja": "私は忍耐と健康を混同してるかも。",
+    "en": "I may be conflating fortitude with wellness.",
+    "alternatives": [
+      "I might be confusing mental toughness with good health.",
+      "I may be mistaking endurance for being healthy."
+    ],
+    "point": "fortitude は苦痛に耐える強さ、健康そのものとは区別する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7433f823c5465baca1fc243259ff81a27de5d9b0009410e573b8a3c9a282931",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -707,6 +893,25 @@
     }
   },
   {
+    "id": "c_8f4n2e5g",
+    "ja": "私は水を飲む必要がある。",
+    "en": "I need to drink water.",
+    "alternatives": ["I have to drink water.", "I must drink some water."],
+    "point": "need to + 動詞で必要な行動を伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0c80ae7e802e3567d8cd7388cedf29269c630ed7ee93a251cb96794b57b844f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8h8c8j4h",
     "ja": "たっぷり寝たのに、ぐったりだ。",
     "en": "Despite a full night's sleep, I'm wiped out.",
@@ -725,6 +930,25 @@
         "hash": "sha256:9790b1d005d25ce2fb3d9625e9de5a88b5d8520ce2a497fbf1bae45126a70c80",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8k7v9c7b",
+    "ja": "私の足が震えてる。",
+    "en": "My legs are shaking.",
+    "alternatives": ["My legs are trembling.", "My legs are shaky."],
+    "point": "are shaking で今震えていると伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e7a1d577c1ec1b85e718b7823b3881c9cbad0aaf862b6f5ec0ab6c28252a36b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -763,6 +987,47 @@
         "hash": "sha256:65f075cbdec9fab73a14273b5e5a8f1973b3ae7a233a102594b63c057c6b014a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d4k8y7k",
+    "ja": "水が必要です。",
+    "en": "I need water.",
+    "alternatives": ["I need some water.", "Water is what I need."],
+    "point": "water は数えないので a をつけない。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a56b7152e9cfaf1631d6872c9c217a232068d448658bf7d06be946f77d153d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9d7u6m2m",
+    "ja": "私は小康を回復と誤解したはず。",
+    "en": "I must've confused respite with recovery.",
+    "alternatives": [
+      "I must have mistaken temporary relief for recovery.",
+      "I must've taken a brief improvement for recovery."
+    ],
+    "point": "respite は一時の休息や軽快、recovery は回復。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfb5fe85a18fe2fe3b2832a547e0f837d5918964077aeca33af23d6a9ab976df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

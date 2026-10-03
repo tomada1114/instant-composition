@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2s2t9t9z",
+    "ja": "この案の方が明確だ。",
+    "en": "This plan is clearer.",
+    "alternatives": [
+      "This plan is easier to understand.",
+      "This plan is less confusing."
+    ],
+    "point": "clearer は前の案などより分かりやすい。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4edac2dc8891a615ffc6df29252ac6821eb6a949fe5f8782f6089aee2fb1d63f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2t5h9y9g",
+    "ja": "我々は先に論点を整理すべき。",
+    "en": "We should clarify the issues first.",
+    "alternatives": [
+      "We ought to clarify the issues first.",
+      "We should sort out the points first."
+    ],
+    "point": "clarify は曖昧な論点を明確にする。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4319ddaedc0e373501fdcc95a0d850dc4d92383115159476a2e22365d7c96fce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2w3u5x6a",
     "ja": "質問していいですか？",
     "en": "May I ask a question?",
@@ -41,6 +85,72 @@
     }
   },
   {
+    "id": "c_3c8b4c3b",
+    "ja": "彼らは誰が裏で操るか知らなそう。",
+    "en": "I doubt they know who's pulling the strings.",
+    "alternatives": [
+      "They may not know who's pulling the strings.",
+      "I'm not sure they know who's in control."
+    ],
+    "point": "pull the strings は裏で実権を握り人を動かす。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f0d3d8f9838da24539ca4c7a2860000e36bb73b17bc88a3c4147494b966b95b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3e9r6x2t",
+    "ja": "我々が誰を不快にしてるか分かる？",
+    "en": "Any idea whose feathers we're ruffling?",
+    "alternatives": [
+      "Do you know who we are upsetting?",
+      "Do you know who is irritated by us?"
+    ],
+    "point": "ruffle feathers は人を不快にさせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c311778416703af8c00bea98fe0dac703ed2623dd8a13a564c5c49bded0d92c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3f4s7j6t",
+    "ja": "彼女は我々に相違を整理させた。",
+    "en": "She had us reconcile our differences.",
+    "alternatives": [
+      "She made us resolve our disagreements.",
+      "She got us to settle our differences."
+    ],
+    "point": "reconcile differences は相違をすり合わせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c63971ecc10a7a0f84a300275f241755184208fc8a972b1da0b7e77cf0ddb85",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3q2v6z6c",
     "ja": "議事録は私が取ります？",
     "en": "Shall I take the minutes?",
@@ -56,6 +166,25 @@
         "hash": "sha256:1e78dce8478159d69ef60e3f6689bd4c3306caf8c54f6108664843cfd2891b1f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s7s2x8r",
+    "ja": "我々の意見は私が集約する。",
+    "en": "I'll consolidate our views.",
+    "alternatives": ["I'll bring our views together.", "I'll combine our opinions."],
+    "point": "consolidate は複数の意見を一つにまとめる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:251ae219b12996f5a146e28e202cdcb19f2e04ecbf11bf40c16b99455f961301",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -143,6 +272,28 @@
     }
   },
   {
+    "id": "c_4e6w9b6v",
+    "ja": "私たちはもう懸念を解消した。",
+    "en": "We've already allayed the concerns.",
+    "alternatives": [
+      "We've already dispelled those concerns.",
+      "We've already put those concerns to rest."
+    ],
+    "point": "allay concerns は懸念を和らげて解消すること。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c924c15c6d633bd78180844496a41947e941cff71d23749f1111665b0bb8baf1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4s7d5g5y",
     "ja": "資料を読んだので、次に行こう。",
     "en": "Having read the handout, let's move on.",
@@ -205,6 +356,25 @@
         "hash": "sha256:36c6c61d9a919b20a8dc5e0da3dacc21ca233228eb24cd5592365be46775df5f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m2k8r4r",
+    "ja": "私は目標を決めなきゃ。",
+    "en": "I need to set goals.",
+    "alternatives": ["I have to choose goals.", "I must decide on goals."],
+    "point": "need to set は設定する必要がある。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e33dc1080ad68569a4f7f8fc1d03a63567ed4cf0bc4d5717418f468f9fdb589f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -291,6 +461,25 @@
         "hash": "sha256:08e8c7f386577510f2a42a20a016fdc8838fc81e6cd030e7b044502472bcb581",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h3v2r3q",
+    "ja": "意見が三つあります。",
+    "en": "There are three opinions.",
+    "alternatives": ["We have three opinions.", "There are three different opinions."],
+    "point": "three の後は opinions と複数形。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcdbd91fe4a55c83993e5d980a8c698362f4255eb47abfce5b4cd953ffb5ab41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -383,6 +572,47 @@
     }
   },
   {
+    "id": "c_7h2k5w7a",
+    "ja": "我々が譲れば妥協点に達したのに。",
+    "en": "If we'd conceded, we'd have reached a compromise.",
+    "alternatives": [
+      "Had we conceded, we'd have reached a compromise.",
+      "We'd have found a compromise if we'd conceded."
+    ],
+    "point": "concede は争点について相手の言い分を認める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f97132276aff7c04818481aa8a8daee31cc58c1a69ab81ad8975596a4e9daed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7h6n8z2r",
+    "ja": "会議は短くしてね。",
+    "en": "Keep the meeting short.",
+    "alternatives": ["Make the meeting short.", "Keep the meeting brief."],
+    "point": "keep 人や物 形容詞でその状態に保つ。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00356f05d102449251e1d8ed98a32948e1d67de63d78a68c07bfaa2d36d114a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7j3k3x7m",
     "ja": "私は開始前に資料を送っていた。",
     "en": "I'd sent the slides beforehand.",
@@ -427,6 +657,28 @@
     }
   },
   {
+    "id": "c_7x9h8s9p",
+    "ja": "私は議論を脱線させたくない。",
+    "en": "I want to avoid derailing the discussion.",
+    "alternatives": [
+      "I don't want to derail the discussion.",
+      "I'd rather not derail the discussion."
+    ],
+    "point": "avoid の後は動名詞、derail は脱線させる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:734bcc0c0bd1b2284b0744e6d36d28de06c406104a651dc6984f5ee3f953b8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7z3h6x8b",
     "ja": "次の会議は私が進行します。",
     "en": "I'll lead the next meeting.",
@@ -442,6 +694,50 @@
         "hash": "sha256:6f35fe79e48651cb863b6240653159da01b4e29a90985e030bcb3d0206086cfa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f5p7j7g",
+    "ja": "彼女はあえて反対役だったはず。",
+    "en": "She must've been playing devil's advocate.",
+    "alternatives": [
+      "She must've deliberately argued the other side.",
+      "She must've argued against it to test us."
+    ],
+    "point": "play devil's advocate は議論を深めるため敢えて反対する。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b196192ce1cf3da70df859f891a2a9cac993249a7bcdc9cfbcda5f9404ac8f0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8f9u9g9u",
+    "ja": "私が進行役なら順番を変えるのに。",
+    "en": "If I chaired, I'd change the order.",
+    "alternatives": [
+      "I'd reorder things if I were chairing.",
+      "I'd change the order if I chaired."
+    ],
+    "point": "chair は会議の進行役を務める動詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd12da687387af88c19a3aa4fcdc63d238159b4eab0c89837b639ce3e9ecf79",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -509,6 +805,47 @@
     }
   },
   {
+    "id": "c_8w7g2r5d",
+    "ja": "見解は違うが方針は支持します。",
+    "en": "Despite disagreeing, I support the approach.",
+    "alternatives": [
+      "Although I disagree, I back the approach.",
+      "I support the approach despite my disagreement."
+    ],
+    "point": "despite の後は名詞か動名詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1341deafbe5a9e467ab6209aca72b079016756556300c566d6513ab4559aac9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8x5k7z2f",
+    "ja": "私たちいつ会った？",
+    "en": "When did we meet?",
+    "alternatives": ["When did we get together?", "When did we see each other?"],
+    "point": "過去の時点を尋ねるときは did we meet。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9152675c66a5dcf45fb7478fef34dbe56fa267357c1952ba934b5bc0f52edae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9d5j3y7d",
     "ja": "課長は来週で大丈夫と言ってた。",
     "en": "Our manager said next week would work.",
@@ -546,6 +883,25 @@
         "hash": "sha256:c80a770cd5882208411a91392eb3f6cf573f59c4431ce69c6045f16bec75884d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j5z8g6h",
+    "ja": "私が先に話してもいい？",
+    "en": "Can I speak first?",
+    "alternatives": ["May I go first?", "Is it okay to speak first?"],
+    "point": "Can I で先に話す許可を求める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e56f46846f5048693e66621b71860373b919fc9f381b750b5abd380a0991058b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

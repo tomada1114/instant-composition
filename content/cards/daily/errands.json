@@ -41,6 +41,28 @@
     }
   },
   {
+    "id": "c_2f5x4q3f",
+    "ja": "私が腹立つのは彼らの後出しの条件変更だ。",
+    "en": "What rankles me is how they moved the goalposts.",
+    "alternatives": [
+      "What annoys me is their changing the rules afterward.",
+      "I'm irritated that they changed the requirements after the fact."
+    ],
+    "point": "move the goalposts は途中で条件や基準を変える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:568287c03557c8e80f5aff4f672582f6237f92651fa6380456b9aa122fa4789d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2j2w6m7c",
     "ja": "窓口の人が、郵送でいいと言ってた。",
     "en": "The clerk said mailing it would be fine.",
@@ -59,6 +81,47 @@
         "hash": "sha256:a25b22838db29e992629023e334230ecb7205cc41df336ac8aa17e670fde9096",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2n5f2k9b",
+    "ja": "私に何の書類が要る？",
+    "en": "What documents do I need?",
+    "alternatives": ["Which papers do I need?", "What documents must I provide?"],
+    "point": "What documents do I need は自分に必要な書類を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cd2a0a9fba1809c0d6d9f99496d14f0dce66ba15c35a5baffc8cff0194d0221",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2u4c8r7x",
+    "ja": "私は彼らが書面の約束を守るか疑ってる。",
+    "en": "I doubt they'll honor what's down in writing.",
+    "alternatives": [
+      "I doubt they'll stand by their written promise.",
+      "I doubt they'll honor what they promised in writing."
+    ],
+    "point": "honor は約束を正式に履行するという意味。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5c496ba1e28415dd65f734b85f7644d39e4f7408b6a78d2a7c20008a8af4304",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -145,6 +208,47 @@
     }
   },
   {
+    "id": "c_2z8q3h2r",
+    "ja": "私、煩雑な手続きを甘く見たかも。",
+    "en": "I might've underestimated the red tape.",
+    "alternatives": [
+      "I may have misjudged the bureaucratic hurdles.",
+      "I might've underestimated the paperwork involved."
+    ],
+    "point": "red tape は煩雑な手続き。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0cd3178af12345bc1117a3c26fce6371710899c303378c460202a3078814dff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3a9p9b4x",
+    "ja": "私は郵便を転送できる。",
+    "en": "I can forward my mail.",
+    "alternatives": ["I can have my mail forwarded.", "I'm able to forward my mail."],
+    "point": "forward my mail は郵便を別の住所へ転送する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b818f66c73ff94512e27326df500c6ce2e68220399eff7f5bacf4c175439b5b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3d2w6x4x",
     "ja": "身分証が必要です。",
     "en": "You'll need an ID.",
@@ -227,6 +331,25 @@
     }
   },
   {
+    "id": "c_3t2y4t9p",
+    "ja": "私は申込書を書き直した。",
+    "en": "I filled out the form again.",
+    "alternatives": ["I completed the form a second time.", "I redid the form."],
+    "point": "fill out は書類の空欄を記入する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:47291334714beda5e9586407d842725e91311fbbfa911414691152511c403dcc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4a3h4t5w",
     "ja": "手間取ったのは本人確認だった。",
     "en": "What took so long was the ID check.",
@@ -287,6 +410,25 @@
     }
   },
   {
+    "id": "c_4j5e6a7w",
+    "ja": "ここに判を押してくれる？",
+    "en": "Could you stamp here?",
+    "alternatives": ["Could you put your stamp here?", "Would you stamp right here?"],
+    "point": "stamp は判を押すという動詞でも使う。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd286591e6adce45a5c0d5658b44da0a4feaaa437330928db23531b4188fc065",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4r2a9z2s",
     "ja": "今、列に並んでるよ。",
     "en": "I'm standing in line now.",
@@ -302,6 +444,47 @@
         "hash": "sha256:872a1ddd376443247d427b14909fae914710c4b19abd45f0678c83408d5d201d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v5c9y4m",
+    "ja": "ペンが二本ある。",
+    "en": "There are two pens.",
+    "alternatives": ["We have two pens.", "Two pens are here."],
+    "point": "two の後は pens と複数形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dc2f3c709afdc2989ae6bebe741ced9a6d43d80b9fd54d27c6c8910636afa31",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5a9p7a8p",
+    "ja": "私は書類を揃えている。",
+    "en": "I'm gathering the documents.",
+    "alternatives": [
+      "I'm putting the documents together.",
+      "I'm assembling the paperwork."
+    ],
+    "point": "gather は必要なものを集める。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bed399f36f2cf58d548569e1e57fbf41bbb365154bb70f8abef762feb50ce8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -343,6 +526,28 @@
         "hash": "sha256:fe7603f80ebdbf5bc6668e4f25cbf7ee18de283d24cbed11ab95b49ed6cb8592",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r6n8a9j",
+    "ja": "慣例でも私はこの手数料に反対だ。",
+    "en": "Despite convention, I take issue with this fee.",
+    "alternatives": [
+      "Despite the custom, I object to this fee.",
+      "Despite convention, I object to this fee."
+    ],
+    "point": "take issue with は問題があるとして異議を唱える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f148c6bf76722c6a4b8139cf2b658dad1e5e094000a16bfcfa6245b3254feeef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -391,6 +596,25 @@
     }
   },
   {
+    "id": "c_6d4m5b2j",
+    "ja": "私は住所を変更した。",
+    "en": "I changed my address.",
+    "alternatives": ["I updated my address.", "I made an address change."],
+    "point": "changed は住所を変更したという過去形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bcee29bf62398f095e261e987ec59214a7e2592ad16c40d7da17b79ee5930a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6e6a6k6n",
     "ja": "これ、どの窓口かご存じですか？",
     "en": "Do you know which window handles this?",
@@ -409,6 +633,28 @@
         "hash": "sha256:46abd431b923871c673074ca013fdb3e40874aa57170c07a528223cc0d18b75f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a9y9a5t",
+    "ja": "係員は異議はもう拒むと言い張った。",
+    "en": "The clerk insisted they'd reject further objections.",
+    "alternatives": [
+      "The clerk insisted they'd refuse further objections.",
+      "The clerk insisted they'd reject any further objections."
+    ],
+    "point": "insisted は異議を拒むと強く言い張ったことを伝える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b611c5dd1122c930ef58ea991199a152dbb28df6794d1377098613c67f7d71de",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -435,6 +681,25 @@
     }
   },
   {
+    "id": "c_7f2c6m9v",
+    "ja": "何時に閉まる？",
+    "en": "When does it close?",
+    "alternatives": ["What time does it close?", "When's closing time?"],
+    "point": "when で閉まる時刻を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7080bf603f357151a2a1dfa4d51926f02bfd87cb3a41d4a47f52cbd9ff21be4b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7f4b2z3x",
     "ja": "必要なのは、身分証明書ですね。",
     "en": "What you need is an ID.",
@@ -450,6 +715,28 @@
         "hash": "sha256:665113b29c1a7862dd4a0fddaabbd57dbf1c477f465109804d4f99abb4cf8615",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r4k6y4p",
+    "ja": "私はずっと窓口でたらい回しだ。",
+    "en": "I've been getting the runaround.",
+    "alternatives": [
+      "They've been sending me from one counter to another.",
+      "I've been passed around between offices."
+    ],
+    "point": "get the runaround はまともに対応されずたらい回しに遭う。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00064e9583d3af3c538efabb303f28e3e05f3a61fb11a86b8c01d4ac7e314ff2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -600,6 +887,50 @@
     }
   },
   {
+    "id": "c_8t7q4a8d",
+    "ja": "私はもう申請書を出した。",
+    "en": "I've already submitted the application.",
+    "alternatives": [
+      "I've already handed in the application.",
+      "I've already filed the application."
+    ],
+    "point": "submit は窓口などに正式に提出する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b64366c03e7834286eaaa6d6ffeff0ed60bbcf974a211fbed406dcfb5efdc41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8t8r2q7f",
+    "ja": "契約のごまかしを見抜けばよかった。",
+    "en": "I wish I'd seen through the contract's tricks.",
+    "alternatives": [
+      "I wish I'd spotted the contract's tricks.",
+      "If only I'd recognized the contract's trickery."
+    ],
+    "point": "see through は巧妙なごまかしの本質を見抜く。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5be27b6e0b2be17c3559236ebb03a40f75ad74f3142dcf292b024b610a8409eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8y3w4m3q",
     "ja": "ここに窓口があるよ。",
     "en": "There's a counter here.",
@@ -653,6 +984,88 @@
         "hash": "sha256:ee30a3399904b358107f2e59c8939cbf4e524f556f0080a7128853d6ef2a6ae6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f8f3h6x",
+    "ja": "この封筒を開けて。",
+    "en": "Open this envelope.",
+    "alternatives": ["Open up this envelope.", "Get this envelope open."],
+    "point": "open の命令形で封筒を開けるよう頼む。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50610d74e9d8eae818cba1f885f7d357f337a98024b4e920a7924614cdeddf25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9n2b4g2e",
+    "ja": "君が求めた書類は筋違いだ。",
+    "en": "The document you requested is beside the point.",
+    "alternatives": [
+      "The document you asked for is irrelevant.",
+      "That document you requested isn't relevant."
+    ],
+    "point": "beside the point は問題の本筋と関係がない。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60a0d17b50645dc4a3928e61ef36320b703a594647d46660f1bc70eb4c3f62f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9n5q5t4e",
+    "ja": "私は口座を既に解約してた。",
+    "en": "I'd already closed the account.",
+    "alternatives": [
+      "I'd already shut down the account.",
+      "I'd already canceled the account."
+    ],
+    "point": "had already closed で過去の時点より前の完了。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3dfea7a2ef4b4c2a767ca719fab00036d25380b23300b8f119ee9667488494b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9p2s8f9t",
+    "ja": "こっちの配達が安い。",
+    "en": "This delivery is cheaper.",
+    "alternatives": ["This shipping option is cheaper.", "This delivery costs less."],
+    "point": "cheaper は料金がより安いこと。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49e9a8d99b778cd17820b9fb822b4b650c51a7746e0b7e382d60338a66030591",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

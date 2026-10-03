@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_2f3t7g5q",
+    "ja": "空席があるよ。",
+    "en": "There's an empty seat.",
+    "alternatives": ["One seat is free.", "A seat is available."],
+    "point": "an empty seat は空いている席。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6b6237af17e07e11b4d4963510fc18d4cc13171691cb61e13e3ab33633c6f5f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2h3v2r5e",
+    "ja": "追加の運賃がかかる。",
+    "en": "There's an extra fare.",
+    "alternatives": ["An extra fare applies.", "You pay an extra fare."],
+    "point": "an extra fare は追加の運賃。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8e8eadae4bcda10a11f48021b4d7e1477f061785de298bf89e4dca35b877b82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2n4h3y9f",
     "ja": "私がタクシーを呼ぶよ。",
     "en": "I'll call a taxi.",
@@ -60,6 +98,28 @@
     }
   },
   {
+    "id": "c_2y7v3z3c",
+    "ja": "乗り換えが私には難関だ。",
+    "en": "What stumps me is changing trains.",
+    "alternatives": [
+      "Changing trains is what confuses me.",
+      "What confuses me is switching trains."
+    ],
+    "point": "stump は困らせて分からなくさせる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1eee045a4a2b0dbfdc6d3dcbe7268ac162a1de1bf92912c954a777d9a5250e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3j2h5n9z",
     "ja": "電車は遅れた上に、運休になった。",
     "en": "Not only was it late, it was canceled.",
@@ -78,6 +138,44 @@
         "hash": "sha256:dc92978799a2d38fcf9c10900cb4ed1b781c0ca5a98bd67f9848e7e556d0635d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k7z9v8k",
+    "ja": "運転手は休んでいい？",
+    "en": "Can the driver rest?",
+    "alternatives": ["May the driver rest?", "Can the driver take a break?"],
+    "point": "Can はここでは休む許可を求める。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1709e827c3951037b9fcaaef23c04f127089ae717d2610c631e668486d388b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3s3f8n8q",
+    "ja": "席にいてね。",
+    "en": "Stay in your seat.",
+    "alternatives": ["Remain in your seat.", "Don't leave your seat."],
+    "point": "stay はその場所にとどまる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb16b6e9084ff179f207d2706c5bd9397b43bfc35e4b0676ddc4bf84f66c8768",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -165,6 +263,50 @@
     }
   },
   {
+    "id": "c_4z2z6e9j",
+    "ja": "私はもうカードに入金した。",
+    "en": "I've already topped up my card.",
+    "alternatives": [
+      "I've already reloaded my card.",
+      "I've already recharged my transit card."
+    ],
+    "point": "top up は残高を追加する。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a2433c86f9b79a71ba0b2c5c905125cce4270a1d699cc3ea324b4cfe5c4d111",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_5f9d2u3t",
+    "ja": "この時刻表は頼れない。",
+    "en": "This timetable isn't reliable.",
+    "alternatives": [
+      "You can't rely on this timetable.",
+      "This timetable isn't dependable."
+    ],
+    "point": "reliable は当てにできる、信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21d6198f1f81b6822d36440122bb871afe750723682821349c7c503398b84068",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5g4x3w5w",
     "ja": "往復を一枚ください。",
     "en": "A round-trip ticket, please.",
@@ -221,6 +363,25 @@
         "hash": "sha256:6abaf4e9f1234b31780cbac3b6633dd1ba28ea11b165e57bc1da93d052ce80a0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q8n8k3p",
+    "ja": "私たちはタクシーを避けるべき。",
+    "en": "We should steer clear of taxis.",
+    "alternatives": ["We ought to avoid taxis.", "We should keep away from taxis."],
+    "point": "steer clear of は関わらないよう避ける。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8962886b1695f16b3096f9bda0bd751ca35d6338414351a5ea31a558343a9b2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -330,6 +491,25 @@
     }
   },
   {
+    "id": "c_6n8j8x9z",
+    "ja": "私、彼女に乗り換えを頼んだ。",
+    "en": "I asked her to change trains.",
+    "alternatives": ["I asked her to switch trains.", "I requested she change trains."],
+    "point": "ask 人 to do は行動を頼む。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:798a0960b70a73c5a3928354f68c2a1a0a20bbad103c82b20d4b098f680ed948",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6t5a7q5r",
     "ja": "駅員は、この電車は運休と言った。",
     "en": "The staff said this train was canceled.",
@@ -389,6 +569,28 @@
         "hash": "sha256:b767e45afc9a7fa02669b01953ef164fd9a34af4d50e1f88951103287079526f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6x5n4d4e",
+    "ja": "私が迷ってたら今も鉄道路線を検討中だ。",
+    "en": "Had I vacillated, I'd still be weighing rail routes.",
+    "alternatives": [
+      "If I'd wavered, I'd still be considering rail routes.",
+      "I'd still be weighing rail routes had I hesitated."
+    ],
+    "point": "過去の仮定で今の迷いを表す、vacillate は決めかねる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a56686e77e00ef3a02f7d886dc89ffb1dc07bd9f594ac8a36584a90503975e10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -498,6 +700,25 @@
     }
   },
   {
+    "id": "c_8e2z4m3d",
+    "ja": "私の定期はもう失効した。",
+    "en": "My pass has already lapsed.",
+    "alternatives": ["My pass has already expired.", "My pass is no longer valid."],
+    "point": "has lapsed は失効して今も使えない状態。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:99ef183e5712d2d62cf5ef4f7b4bd0f86fdfa6aa9805e647bbd8926d5bfbd162",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8f3u7z7u",
     "ja": "バスが遅れたら、歩いて行きます。",
     "en": "If the bus is late, I'll walk.",
@@ -566,6 +787,69 @@
     }
   },
   {
+    "id": "c_8t2v5g6t",
+    "ja": "バスはもう発車していた。",
+    "en": "The bus had already pulled away.",
+    "alternatives": [
+      "The bus had already departed.",
+      "The bus had already driven off."
+    ],
+    "point": "had pulled away はその時より前に発車したこと。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:95cd4ef5a1d16bd5bc88aaff46b4eb6214726ce25872863f6dae4a962731ace9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8x3u4t6n",
+    "ja": "切符はすぐ出せるように。",
+    "en": "Keep your ticket handy.",
+    "alternatives": ["Have your ticket ready.", "Keep your ticket within reach."],
+    "point": "handy はすぐ使える場所にある。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b46b3b1bf09ae28b04b6bc72f20e0380da102c4a85548b8851660cce6bfb618",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8x6k2d4w",
+    "ja": "私が信じた路線は一度も当てになってない。",
+    "en": "Never has the route I trusted proved reliable.",
+    "alternatives": [
+      "The route I trusted has never proved reliable.",
+      "The route I trusted has never been dependable."
+    ],
+    "point": "never を先頭に出すと has が主語より前に出る。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["relative-clauses", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef647846c03f38749c3ffb68a2f4cdcf023ef1a032627dc2c938b8b7376d3dca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8x7n5n6u",
     "ja": "電車が来ています。",
     "en": "The train is coming.",
@@ -603,6 +887,28 @@
         "hash": "sha256:c92fe4cd10b3d0c7ee74596dbd89e8f5d3a551098c0356fd4cc3bc72185a9d6d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a4b8w8h",
+    "ja": "私が確認してれば立ち往生せず済んだ。",
+    "en": "Had I checked, I wouldn't have been stranded.",
+    "alternatives": [
+      "If I'd checked, I wouldn't have been stranded.",
+      "I wouldn't have been stranded if I'd checked."
+    ],
+    "point": "had I で過去の反実仮想を倒置して表す。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:feb2368610010b541179c15fbfef7d71bf64eb678d03ab3c8eea697defa5d84b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -674,6 +980,25 @@
     }
   },
   {
+    "id": "c_9u9k6g2c",
+    "ja": "バスが動いてる。",
+    "en": "The bus is moving.",
+    "alternatives": ["The bus is rolling.", "The bus is traveling."],
+    "point": "進行形でバスが今動いていると伝える。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bf1fe108e1723cdc14850875119049cae0a2564ca03f76ee96b97f1730438a6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9v5k3a8y",
     "ja": "運転手に待ってもらった。",
     "en": "I got the driver to wait.",
@@ -689,6 +1014,28 @@
         "hash": "sha256:4362a40de8dfb662c156459ebe30aed0776911399d7f1671c6224bc8a1569c7d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9y4k3a7v",
+    "ja": "車掌は推測を確かな案内と偽った。",
+    "en": "The conductor palmed off conjecture as authoritative guidance.",
+    "alternatives": [
+      "The conductor passed off guesses as reliable guidance.",
+      "The conductor passed off conjecture as authoritative guidance."
+    ],
+    "point": "palm off は偽って渡す、conjecture は推測、authoritative は信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e89744475ab884324c31035d6772b3c7093e021a40329d599171406e632fce0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

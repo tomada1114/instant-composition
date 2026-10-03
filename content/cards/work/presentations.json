@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2t8p6d6x",
+    "ja": "拡大したら私たちの利幅は薄まる。",
+    "en": "If we expanded, our margins would shrink.",
+    "alternatives": [
+      "Our margins would shrink if we expanded.",
+      "If we grew, our margins would narrow."
+    ],
+    "point": "margins は金額そのものではなく利幅。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b02b5b6e21d2fd10a8bfe267d334eee9b187fd87a6cbcc4761381705ef8d9776",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2w2d2x4h",
     "ja": "これは何の図ですか？",
     "en": "What is this chart?",
@@ -81,6 +103,44 @@
         "hash": "sha256:8f2f98ecaf3fa17917928bc746a1053b68c3abc966acf98d2b4fe5e416337fae",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b4w9c4z",
+    "ja": "動画を流して。",
+    "en": "Start the video.",
+    "alternatives": ["Play the video.", "Put the video on."],
+    "point": "start は動画の再生を始める。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:15e0cc917806fc30f3c07cce4efc51df0ed6719ae4be08c534fb17b5f44719a1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3b7d2n8s",
+    "ja": "私、結論を飛ばした。",
+    "en": "I skipped the conclusion.",
+    "alternatives": ["I left out the conclusion.", "I missed out the conclusion."],
+    "point": "skip は扱わずに飛ばす。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0a8b77c611f554df84381847d8e448e7a5ae725157d3294f9ddd9d804e60105",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -122,6 +182,28 @@
         "hash": "sha256:03b7bd41498dc6d9fdb638bde2a8924dd8b6ea897f00af0a4ec6a6786ab04dbc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r6q7j6d",
+    "ja": "この数字が何を隠すか分かりますか？",
+    "en": "Can you see what these figures obscure?",
+    "alternatives": [
+      "Can you tell what these figures hide?",
+      "Do you see what these numbers conceal?"
+    ],
+    "point": "obscure は大事なことを見えにくくすること。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf3cc4d5fe7bb706bb505ff1c73feb0ce49209b9c3e71b929772993a857f3ed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -401,6 +483,44 @@
     }
   },
   {
+    "id": "c_6k9t7j8j",
+    "ja": "私が実演します。",
+    "en": "I'll demonstrate it.",
+    "alternatives": ["I'm going to demonstrate it.", "I'll show how it works."],
+    "point": "demonstrate は実際に動かして見せる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cd4227345397f790284a58ccf4f2f5068fb090037d935a59a718d61bb9898d8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6n7p4r7g",
+    "ja": "君は図を省くべきだよ。",
+    "en": "You should omit diagrams.",
+    "alternatives": ["You should leave out diagrams.", "You should skip the diagrams."],
+    "point": "should は助言を表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36de1742bbdf7419dac6d932383daa4dfd1e91cda98abbcc70efbe40a41c1616",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7b2y3n4k",
     "ja": "部長に、発表を頼まれました。",
     "en": "My director asked me to present.",
@@ -460,6 +580,44 @@
         "hash": "sha256:f4eccb71bdee07e96c3012e632c4fb92ebe23de8888484f1dc4e736f083cba58",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j6e6p2p",
+    "ja": "これは写真です。",
+    "en": "This is a photo.",
+    "alternatives": ["It's a photo.", "This is a photograph."],
+    "point": "a photo は一枚の写真。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e990786dc7a05c34905d8ada965f7c5ea7f70a759454b2ad90c199324a887b52",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7r2t8y5j",
+    "ja": "私は写真を見せられる。",
+    "en": "I can show photos.",
+    "alternatives": ["I can display pictures.", "I can present photographs."],
+    "point": "can は写真を見せられることを表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6832d090ad9012f94938d5d5bd094d61d8b34fc782abf3707d0e370a91487d4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -605,6 +763,28 @@
         "hash": "sha256:3a34b66a69db6e16a0688cf82214b30bc7b4b53566271c08ea8d47c931e2a857",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b6q3q6v",
+    "ja": "伸びが鈍った訳を彼は知らないと思う。",
+    "en": "I doubt he knows why growth tapered off.",
+    "alternatives": [
+      "I don't think he understands why growth lost momentum.",
+      "I doubt he understands why growth slowed down."
+    ],
+    "point": "taper off は伸びや勢いが徐々に弱まる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29352ec8dede16d1c83fcc6e060eb33b0b2cc14e708317e0e7ee1ed4efa7a743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

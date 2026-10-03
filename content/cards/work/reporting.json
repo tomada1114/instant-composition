@@ -85,6 +85,28 @@
     }
   },
   {
+    "id": "c_2q2t4n2t",
+    "ja": "私たちは不足分を補える。",
+    "en": "We can make up the shortfall.",
+    "alternatives": [
+      "We can cover the shortfall.",
+      "We're able to make up the deficit."
+    ],
+    "point": "make up the shortfall は不足分を埋め合わせる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4764e0162c79f42faa3e0d4a66f76493f26284c691cc4e911e1b80c3188cb63e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2s3k7u5f",
     "ja": "私があなたなら、上司に話します。",
     "en": "If I were you, I'd tell your boss.",
@@ -126,6 +148,25 @@
     }
   },
   {
+    "id": "c_3b8a8g9t",
+    "ja": "私は彼に報告を頼んだ。",
+    "en": "I asked him to report.",
+    "alternatives": ["I asked him for a report.", "I requested that he report."],
+    "point": "ask 人 to do で依頼した内容を伝える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:823c33b4beb71216ed827a4ee34876e6c28fd290e4ec0090bc87465d3eebc7d6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3j2v4m3g",
     "ja": "予算案は棚上げだと彼女に言われた。",
     "en": "She said the budget was shelved.",
@@ -144,6 +185,69 @@
         "hash": "sha256:dbca709cdef01a7cd9981288a7e2360fc461e83a9da6147ff382c8af5c575286",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p4f4y8e",
+    "ja": "君はいつ始める？",
+    "en": "When do you start?",
+    "alternatives": ["When are you starting?", "When will you begin?"],
+    "point": "when で作業を始める時を尋ねる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b97832051297e5c417ce9d099a2f9361d57af45b8ff02d4e9c8b5930e107d72",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3t2r8s3m",
+    "ja": "確認前に彼は引き下がってた。",
+    "en": "He'd backed down before the review.",
+    "alternatives": [
+      "He'd withdrawn his claim before the review.",
+      "He'd dropped his objection before the review."
+    ],
+    "point": "back down は主張を引っ込める。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b69a67813da9f11a529b86fc89578f21c83ed5b61e4e7ee5392218dae5a034e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3t6s3k6g",
+    "ja": "保留中の資金が足かせです。",
+    "en": "Funding on hold is a bottleneck.",
+    "alternatives": [
+      "The funding on hold is delaying us.",
+      "The pending funding is holding us back."
+    ],
+    "point": "on hold は保留中、bottleneck は進行の妨げ。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9537ded959ca2595bb173c50c1dc6d96cea97c5ee9d9aa9855a17a5756bd4eaf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -234,6 +338,25 @@
     }
   },
   {
+    "id": "c_4e7t2h6z",
+    "ja": "私には紙が必要。",
+    "en": "I need paper.",
+    "alternatives": ["I need some paper.", "Some paper would help."],
+    "point": "paper は紙の素材として数えないので an を付けない。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9f6893c5d670d851bc5883c0ded0a5ce85f57ef5f433ff7d132df1221fb9fe3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4m3j8y9u",
     "ja": "何が問題ですか？",
     "en": "What's the problem?",
@@ -249,6 +372,28 @@
         "hash": "sha256:94cb92e3929cee57898f04a2cd02130a0a2dc2015dba4dfa1c76f6dd66e79287",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4r3u2q4m",
+    "ja": "承認に遅れがあります。",
+    "en": "There's a delay in approval.",
+    "alternatives": [
+      "Approval is running late.",
+      "Approval is taking longer than expected."
+    ],
+    "point": "a delay in でどこに遅れがあるか示す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:517281efee828e5cb8cb1b1601af5cb10f2a248338bcd327d419c7fc813fa8b7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -360,6 +505,28 @@
     }
   },
   {
+    "id": "c_5t2u9s5d",
+    "ja": "遅延で我々は現状維持だけでも必死だ。",
+    "en": "Delays have us running to stand still.",
+    "alternatives": [
+      "Delays leave us barely holding our ground.",
+      "With delays, we're barely treading water."
+    ],
+    "point": "run to stand still は努力しても現状維持が精いっぱい。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1405ce519554b9429838dc75b23b60e5ee2d22eda749a223cba583f954a1aac7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5u9m9k6b",
     "ja": "進み具合を知らせてね。",
     "en": "Keep me posted.",
@@ -379,6 +546,28 @@
         "hash": "sha256:3025ecb36bc75a6d77a722a7c40c25b2e47d0dd0dc637ad72ab06295b4ffb009",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y7d5h2k",
+    "ja": "承認後に私が手配するよ。",
+    "en": "I'll arrange it once approval arrives.",
+    "alternatives": [
+      "I'll arrange it when approval comes through.",
+      "I'll make arrangements once we get approval."
+    ],
+    "point": "once は承認が下り次第という条件を表す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d8c6e6b7a2ff64332f9097ed1155fcdeec165062f319d2dcf3e804865a9f4a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -420,6 +609,25 @@
         "hash": "sha256:22ce162ad3878294e750c871b9e023173cb9dd9a0a3f702c0a6523995541a90e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6c2y7a2f",
+    "ja": "私は目標を達成しました。",
+    "en": "I met the target.",
+    "alternatives": ["I achieved my goal.", "I reached my goal."],
+    "point": "meet a target は目標を達成する。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e14b0dd1a17b4daa5e228cbff189eaafb0f4cca17b9dd0070d8a36d27cd598f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -487,6 +695,28 @@
     }
   },
   {
+    "id": "c_6y3u4n9d",
+    "ja": "私たちは問題を取り繕ってるかも。",
+    "en": "We may be papering over the cracks.",
+    "alternatives": [
+      "We might be glossing over the problems.",
+      "Perhaps we're covering up the underlying problems."
+    ],
+    "point": "paper over the cracks は根本を直さず取り繕う。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42c90203d6dfcdd3dd6d9507b53acd00bc9bcd7237944e12e1d1b67d8ce15970",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7h7q2u3y",
     "ja": "予算がきついです。",
     "en": "The budget is tight.",
@@ -524,6 +754,28 @@
         "hash": "sha256:63dabb52b4790ca21184c5df2ea34d05e8f1900bade48852359dac29794e7e01",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7y5y9q6z",
+    "ja": "我々は甘い試算だと知った。",
+    "en": "We found the estimate was too optimistic.",
+    "alternatives": [
+      "We discovered the estimate was too optimistic.",
+      "We learned our estimate was too optimistic."
+    ],
+    "point": "too optimistic は見積もりが楽観的すぎて甘いこと。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9065ff66b70103714e353b12f333fb2ff0110f311e773cebf588f409437344ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -591,6 +843,28 @@
         "hash": "sha256:3a486350e2616daf4642692c0f45d12bf0e708b72392ccd16703fe3c7e4772ee",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g6n4f3m",
+    "ja": "それでも我々の試算は精査に耐えない。",
+    "en": "Even so, our estimates don't bear scrutiny.",
+    "alternatives": [
+      "Nevertheless, our estimates don't stand up to scrutiny.",
+      "Still, our estimates don't withstand close examination."
+    ],
+    "point": "bear scrutiny は厳しく調べても成り立つこと。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcb05e83330558613592745ed3a0ce423b975c41d210bafaafad5c0f335cfdc7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -700,6 +974,47 @@
         "hash": "sha256:fac7cf2992a99046ee924f813f9afd241acaf04e31671794fa2d1373a6e79e53",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e8n4z2b",
+    "ja": "この数字を見て。",
+    "en": "Look at this number.",
+    "alternatives": ["Check this number.", "Look at the number here."],
+    "point": "look at で報告中のこの数字を見るよう促す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6965207ac3ecd4d035679a9c8b242d8b52ce79ae5cd77d122d68d329c31c77b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9f8n4b5e",
+    "ja": "私たちは損失を抑えたいです。",
+    "en": "We aim to contain the losses.",
+    "alternatives": [
+      "Our goal is to limit the losses.",
+      "We want to keep the losses down."
+    ],
+    "point": "contain は損失が広がるのを抑える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:decc63f6427dfc93e6036c98e00ce2d818524cadb724fe8a008b5e6230963fb8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

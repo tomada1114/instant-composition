@@ -60,6 +60,88 @@
     }
   },
   {
+    "id": "c_2g9t8g9r",
+    "ja": "Gitが私に面倒な手順を強いる。",
+    "en": "Git makes me jump through hoops.",
+    "alternatives": [
+      "Git makes me take unnecessarily complicated steps.",
+      "Git forces me through needless procedural hurdles."
+    ],
+    "point": "jump through hoops は面倒な手順を踏まされる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a1fab8c1825c228b473c5e467a56d8871e7e45734ac9976901d7109474f5a09",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2n9p4f3k",
+    "ja": "私はどのキーを押す？",
+    "en": "Which key do I press?",
+    "alternatives": ["Which key should I press?", "What key do I press?"],
+    "point": "which key で押すキーを尋ねる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bf2998b5a49d76218af971e4e567ec46bc5e42b2f7102bce839466bdb9d6307",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2u9s7u8z",
+    "ja": "この道具の安心感は見せかけかも。",
+    "en": "This tool's reassurance may be more apparent than real.",
+    "alternatives": [
+      "This tool may offer the illusion of reassurance.",
+      "The reassurance this tool offers may be illusory."
+    ],
+    "point": "more apparent than real は実態より見かけの方が大きい。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a37e848f90c8bdf117e66b1086d92d3b0cb4b338017f60dce76b8d9ce9db44d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_2w7b6g6n",
+    "ja": "必要なら私が導入するよ。",
+    "en": "I'll install it if needed.",
+    "alternatives": ["I'll install it if it's necessary.", "I'll put it in if needed."],
+    "point": "if needed は必要な場合という条件を表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19284d5679a8a423f5d8a138329eeed06ed6756fdb0711d4b7afc4bdb86bca35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3a7n4b5f",
     "ja": "時短のため、エイリアスにした。",
     "en": "I aliased it to save time.",
@@ -97,6 +179,28 @@
         "hash": "sha256:4366a2ed45effdc772b9a6cbf62561b0e7042a9569f9123d5bf693b0a83785d9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3e7r2f4p",
+    "ja": "そのプラグインはもう非推奨だ。",
+    "en": "That plugin has already been deprecated.",
+    "alternatives": [
+      "That plugin is already marked as deprecated.",
+      "They're already advising against using that plugin."
+    ],
+    "point": "deprecated は使用を推奨しなくなったという意味。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a9479f97d44b1750b47fa3fb03541654d1842980c8f157f003d681e2754eb96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -154,6 +258,91 @@
         "hash": "sha256:9c95b8e8da22a54f0623eb25a0ce1b7809682e236ecf2422fe873fa8437fa6ab",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w7h7e9w",
+    "ja": "窓口は定型文で私をあしらった。",
+    "en": "Support fobbed me off with boilerplate.",
+    "alternatives": [
+      "Support brushed me off with canned replies.",
+      "Support dismissed me with stock responses."
+    ],
+    "point": "fob off はその場しのぎの説明であしらう。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d374cb50bb9579ef43778f876ebdc20a8eac3629755e2472eb046f7034e2e346",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3x3m7w8f",
+    "ja": "私は今設定を開いてる。",
+    "en": "I'm opening settings now.",
+    "alternatives": ["I'm bringing up the settings.", "I'm loading the settings now."],
+    "point": "am opening で設定画面を開く動作中。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e202d226d72e00dcc8f8a55895055d6cddb860e35f6fe9c420636dd4d3e7b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3z6k7f2p",
+    "ja": "洗練されて見えてもこの道具は癖がある。",
+    "en": "Polished though it seems, this tool has quirks.",
+    "alternatives": [
+      "Although it looks polished, this tool has peculiarities.",
+      "This tool has idiosyncrasies despite appearing refined."
+    ],
+    "point": "polished はよく仕上がっているように見える。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec5fce3d155b5d965b12a3b5dabfb1947bcac0a0041ff84d1e123052983d26d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4f5s2y9m",
+    "ja": "私が更新を許せばアクセスを失ったのに。",
+    "en": "Had I let it update, I'd have lost access.",
+    "alternatives": [
+      "If I'd let it update, I'd have lost access.",
+      "I'd have lost access had I allowed the update."
+    ],
+    "point": "let + 動詞の原形を過去の反実仮想の条件に置く。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["causatives", "third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74dfcd44bc261a3bbd74fbf9be291702b63452c6b90b203b92aea1b533def205",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -224,6 +413,50 @@
     }
   },
   {
+    "id": "c_4h7d3y6d",
+    "ja": "あの更新は見かけ倒しかも。",
+    "en": "That upgrade might be fool's gold.",
+    "alternatives": [
+      "That upgrade may just seem worthwhile.",
+      "That upgrade might not be truly valuable."
+    ],
+    "point": "fool's gold は価値があるようで実はないもの。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a54a9f368fad6ccfbffe9b491080f9e34f309855a29444bbcd6295a97420bbd2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4s8r9r7j",
+    "ja": "私はこのツールの癖を探ってる。",
+    "en": "I'm exploring this tool's quirks.",
+    "alternatives": [
+      "I'm studying this tool's unusual behavior.",
+      "I'm figuring out this tool's quirks."
+    ],
+    "point": "quirks はツール独特の癖や挙動。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cfe502f833a423b8682f77c93e4bf173b43d0924c83160cb4db1c6096bfff8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5d4c3d5a",
     "ja": "このツールは無料です。",
     "en": "This tool is free.",
@@ -239,6 +472,25 @@
         "hash": "sha256:8d995256167348ba1fa9f2140fe40dcf155878dd05893b66b242883d687c97ee",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5j3g8e6y",
+    "ja": "私が保存するよ。",
+    "en": "I'll save it.",
+    "alternatives": ["I'll keep a copy.", "I'll store it."],
+    "point": "will で保存を引き受ける意思を表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:efc388e6d159a6eab9bf2b4f247db21f5f7cb0c694e6ed2de7e0b48c92bd90a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -261,6 +513,28 @@
         "hash": "sha256:7debad39099c4de7cdc04273bc4e00a15d04df0abb0a9326a262fb1159305862",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q2y8g5e",
+    "ja": "このツールの扱いづらい所が分かる？",
+    "en": "Do you know where this tool gets finicky?",
+    "alternatives": [
+      "Do you know where this tool gets fussy?",
+      "Can you tell where this tool gets finicky?"
+    ],
+    "point": "finicky は細かい条件に敏感で扱いにくい。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b54ec21c7bac23f5cd4953aeea475da93d34b28e800324a96e08cf1663734ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -309,6 +583,28 @@
     }
   },
   {
+    "id": "c_5v5c4z7s",
+    "ja": "この便利さが何を隠すか気になる。",
+    "en": "I wonder what this convenience conceals.",
+    "alternatives": [
+      "I'm curious about what this convenience hides.",
+      "I wonder what's hidden behind this convenience."
+    ],
+    "point": "wonder what this convenience conceals は便利さの裏で何が隠れているか気になること。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:196b5ead27570f8f5e0dc43a7cea66e55901727740584987f187b7149b69002c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5x8f3f8w",
     "ja": "最新版を入れたよ。",
     "en": "I installed the latest version.",
@@ -327,6 +623,28 @@
         "hash": "sha256:cf71fcaf7caf2694ed78230926776be5fd7428f5357d1e602a31769e177e8bdf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5z6x2s5m",
+    "ja": "我々は設定いじらなきゃよかった。",
+    "en": "We should've left well enough alone.",
+    "alternatives": [
+      "We shouldn't have tinkered with the settings.",
+      "We should've left the settings untouched."
+    ],
+    "point": "leave well enough alone は十分よい状態をいじらない。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:abb6a162f173805b3fdcda588857d9d99b6defb958400b1ff7f555fb296fe153",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -372,6 +690,94 @@
     }
   },
   {
+    "id": "c_6j2d9d3k",
+    "ja": "一時的な回避策がある。",
+    "en": "There's a temporary workaround.",
+    "alternatives": [
+      "We have a temporary way around it.",
+      "A temporary workaround is available."
+    ],
+    "point": "workaround は根本修正までの回避策。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:486937723620a4b08575eb9090145f091efb5a47310a288bd044c1f99ae76f6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6k7s5z8k",
+    "ja": "私は自動保存が好き。",
+    "en": "I like autosave.",
+    "alternatives": [
+      "I like automatic saving.",
+      "I like having files saved automatically."
+    ],
+    "point": "autosave はファイルを自動保存する機能。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac002e3c9fe3b22ca79d780f0e55486f32f6b42b4908c148452eca119d0aaaeb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6p9m3e7u",
+    "ja": "私はずっと設定をいじってる。",
+    "en": "I've been fiddling with the configuration.",
+    "alternatives": [
+      "I've been tinkering with the settings.",
+      "I've been tweaking the settings."
+    ],
+    "point": "fiddle with は細かくいじる感じを含む。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65608b84f9f12035ff3c1a9f1f9dc5aaf1818b59e60bedc3b74494566e57f798",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6r6e5g5m",
+    "ja": "不満なのはツールの計画的陳腐化だ。",
+    "en": "What rankles is this tool's planned obsolescence.",
+    "alternatives": [
+      "This tool's planned obsolescence is what bothers me.",
+      "The planned obsolescence of this tool irritates me."
+    ],
+    "point": "rankle は不満を残す、What と is の形で問題を強調する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28c621468ee0145fff41062935b9616e26e3172129f23eb9c6b9e9b79515fe8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6z2m4s6c",
     "ja": "新しい方のツールが速い。",
     "en": "The new tool is faster.",
@@ -387,6 +793,28 @@
         "hash": "sha256:d37b9db993e546a30066f11d1953bc899515b42eafcf71e7d4509c718aca3d74",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z5c5y8x",
+    "ja": "標準搭載のこのツールは重すぎる。",
+    "en": "This tool bundled by default is bloated.",
+    "alternatives": [
+      "This default tool has unnecessary bulk.",
+      "This bundled tool is needlessly heavy."
+    ],
+    "point": "bloated は不要なものが多く重い状態。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ea1d094774f804b7b2c62b2892e9effe9746f5afb179f93595a53ace6e6f0fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -413,6 +841,72 @@
     }
   },
   {
+    "id": "c_7b9s6x4j",
+    "ja": "更新後に私は初めて隠れた代償を悟った。",
+    "en": "Only after updating did I discover hidden costs.",
+    "alternatives": [
+      "I discovered hidden costs only after updating.",
+      "Hidden costs became clear only after I updated."
+    ],
+    "point": "Only after updating を前に置き、更新して初めて隠れた代償を知ったことを did I で強調する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad1398b565b513f76003434bbd52219a544b9a2849bdadd82a227e340a757529",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7j3v5r2a",
+    "ja": "窓口は我々の試みが筋違いと言った。",
+    "en": "Support said what we'd tried was beside the point.",
+    "alternatives": [
+      "Support said our attempts were irrelevant to the issue.",
+      "Support maintained that our attempts were irrelevant."
+    ],
+    "point": "beside the point は今の論点とは関係がない。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dacade196000e96a35d80a29a2c1ec4436737a3561bf2f5a33f3610477218a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7p8t5b5a",
+    "ja": "継ぎはぎしたこのツールは脆い。",
+    "en": "This cobbled-together tool is brittle.",
+    "alternatives": [
+      "This makeshift tool is fragile.",
+      "This patched-together tool breaks easily."
+    ],
+    "point": "cobbled together は間に合わせで継ぎはぎした。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b491b5c1a8f9583bcb6b3aebaf770933981bd246c2ad406b80551e7279eeba0c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_7v5k2d9e",
     "ja": "失敗したら、教えて。",
     "en": "Tell me if it fails.",
@@ -432,6 +926,44 @@
     }
   },
   {
+    "id": "c_8c6a6v7w",
+    "ja": "設定が三つある。",
+    "en": "There are three settings.",
+    "alternatives": ["We have three settings.", "Three settings are available."],
+    "point": "three の後は settings と複数形。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:567d7ea783a7675b3230b554fa77c934d10e2085a5551b6153301820ba0d2fba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8e4d2a8v",
+    "ja": "私は拡大できる。",
+    "en": "I can zoom in.",
+    "alternatives": ["I can enlarge it.", "I can make it bigger."],
+    "point": "zoom in は画面の表示を拡大する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:392c571cc2d0602d8bf73b80419b31b14271058f31363873bcf51ffd59381f04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8f6m5r6w",
     "ja": "バグを一つ見つけたよ。",
     "en": "I found a bug.",
@@ -447,6 +979,28 @@
         "hash": "sha256:a5ce3f37792107c8450ea4e8c20b317e0fbdf99b2c8738b885a4cb9729de98da",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r4t7v3n",
+    "ja": "ツールは既に自動停止してた。",
+    "en": "The tool had already shut itself off.",
+    "alternatives": [
+      "The tool had already stopped automatically.",
+      "The tool had already switched itself off."
+    ],
+    "point": "had already shut itself off は過去の時点より前にツール自身が既に停止したことを表す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8854a32b4f535c5a8eccacc6357076690cfcfceee141c20ceb93576abc0ebf17",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -491,6 +1045,47 @@
         "hash": "sha256:6446da6ef7e2b4730bad31f321a456ee2237af457f5cc882f99cb0cd6584175b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8u9j2b3n",
+    "ja": "文字を大きくして。",
+    "en": "Make the text bigger.",
+    "alternatives": ["Make the letters bigger.", "Make the writing larger."],
+    "point": "make + 物 + bigger で表示を大きくする。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c482252f9dab5ce325700636183c37ed741cb5005ec0bd950d2488678588b439",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8v7x9p5y",
+    "ja": "君はこの設定を微調整すべき。",
+    "en": "You should fine-tune this configuration.",
+    "alternatives": [
+      "You should refine this configuration.",
+      "You ought to adjust this configuration carefully."
+    ],
+    "point": "fine-tune は少しずつ調整して最適化する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ece9cb509f85fb713a41210cf1e3bc70978d8650ab4f8692961f42f3cda945",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -562,6 +1157,28 @@
     }
   },
   {
+    "id": "c_9f4v4d9z",
+    "ja": "バグに悩み私はツールを捨てた。",
+    "en": "Plagued by glitches, I ditched it.",
+    "alternatives": [
+      "Troubled by glitches, I abandoned the tool.",
+      "I dropped the tool because of persistent glitches."
+    ],
+    "point": "plagued by は繰り返す問題に悩まされる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bd667d15e1ef5b738f6b802a86b8385019aec1d470ba2cfef57f7243c880953",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9f5x5f8w",
     "ja": "その時初めて、ログを確認した。",
     "en": "Only then did I check the logs.",
@@ -606,6 +1223,91 @@
     }
   },
   {
+    "id": "c_9g3n7c9j",
+    "ja": "依存が逃げ道を奪うと知っておけばな。",
+    "en": "I wish I'd known dependence would leave no recourse.",
+    "alternatives": [
+      "I wish I'd realized dependence would remove my alternatives.",
+      "If only I'd known dependence would leave no recourse."
+    ],
+    "point": "recourse は困った時に頼れる別の手段。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["wishes-regrets", "nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:33df387d8ee47a3e87867629fed962433817c40d7c59e92024fdb201fac2bed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9g8b5b5s",
+    "ja": "メニューがない。",
+    "en": "There's no menu.",
+    "alternatives": ["No menu is available.", "We don't have a menu."],
+    "point": "there is no でメニューがないことを伝える。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3894b1b0d1400f494c663116294af0c35b537cfde9680b38d635560ec32fb91f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9j3d8v7c",
+    "ja": "彼がツールの拒否理由を知るか疑問。",
+    "en": "I doubt he knows why it balked.",
+    "alternatives": [
+      "I'm not sure he knows why it refused.",
+      "He may not know why the tool balked."
+    ],
+    "point": "balk は要求に抵抗して動かない、doubt の中に疑問節。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d8e3d9fb4fb52031d76260885cd7631c3dc8b14137fe7c3c845fbfa0dc8651d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9q3w9n4q",
+    "ja": "Gitが気まぐれじゃなきゃな。",
+    "en": "I wish Git weren't so temperamental.",
+    "alternatives": [
+      "If only Git weren't so unpredictable.",
+      "I wish Git behaved more consistently."
+    ],
+    "point": "temperamental は機嫌に左右されるように不安定。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c26087857478f65d31e0b8ef15e1a0e3eeedd5dca6f2343d647b6fb0188a9efd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_9r4d4b3t",
     "ja": "試すには Docker が要るよ。",
     "en": "You need Docker to test it.",
@@ -621,6 +1323,28 @@
         "hash": "sha256:f71407954f2eb6cd417535f1a452a3cf96d5b780cff45e11805e606c2fa3fc66",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s6w3g6e",
+    "ja": "私は古い設定を移した。",
+    "en": "I migrated the old settings.",
+    "alternatives": [
+      "I transferred the old configuration.",
+      "I moved the old settings over."
+    ],
+    "point": "migrate は設定などを別の環境へ移す。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a920a0210be5ea89a6994363ca19ddcf45253a145d0232399bebe7fe8519194",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   }

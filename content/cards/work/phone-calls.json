@@ -148,6 +148,47 @@
     }
   },
   {
+    "id": "c_3h3x9h8u",
+    "ja": "私は彼にかけ直してほしい。",
+    "en": "I want him to call back.",
+    "alternatives": ["I'd like him to call back.", "I'd like a callback from him."],
+    "point": "want him to call back は彼に電話をかけ直してほしいという希望。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:063673c4d23ae50d58641ad3d160deee7955c498eeeb29be991428dda5cbb7aa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3w2b4b9g",
+    "ja": "私は君を内線につなげられる。",
+    "en": "I can connect you to an extension.",
+    "alternatives": [
+      "I can transfer you to an extension.",
+      "I can put you through internally."
+    ],
+    "point": "extension は社内の内線番号や回線。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26a2de65546521aba32795b38306aba3353f8cb1560a65230020f7b6f28a64ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3w5n2w4v",
     "ja": "受付にお客様がいます。",
     "en": "There's a visitor at reception.",
@@ -211,6 +252,47 @@
     }
   },
   {
+    "id": "c_4k3d6x6e",
+    "ja": "君が電話してたら私は今手探りじゃない。",
+    "en": "Had you called, I wouldn't be flying blind.",
+    "alternatives": [
+      "If you'd called, I wouldn't be in the dark.",
+      "I'd have some clue now if you'd called."
+    ],
+    "point": "flying blind は必要な情報なしで手探りすること。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9e815fb25ad38e509022b4e3eecc2a5e65995954dfa942020e6db15739a95d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4n3g5d6e",
+    "ja": "君は声を大きくすべき。",
+    "en": "You should speak louder.",
+    "alternatives": ["You ought to speak louder.", "You should raise your voice."],
+    "point": "louder は今より大きな声で。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1de05ad6a60463110984ecadb7bcc4d58dec07d587bd470d8395add376cbc0c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4q6y8h8b",
     "ja": "詳しい者を呼びますね。",
     "en": "I'll get someone who knows more.",
@@ -229,6 +311,28 @@
         "hash": "sha256:d65bbd7941e024137bf8f020f52f1a1c98a47bbadf9a21f6e09f0dd03f84fd51",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z2b6b2b",
+    "ja": "私は給与係とずっと電話が行き違う。",
+    "en": "I've been playing phone tag with payroll.",
+    "alternatives": [
+      "Payroll and I keep playing phone tag.",
+      "Payroll and I can't connect by phone."
+    ],
+    "point": "play phone tag は互いの折り返し電話が行き違うこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8703845e382843f326dd42bbb63383b7ed6b005ab3bbad53c6070835247dca8f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -315,6 +419,50 @@
         "hash": "sha256:7cac94157d9f0b24eb30cfc6ab3dd7cede7629c7f2d9ea2cd447097f95c0c8fb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d6n3g9d",
+    "ja": "私は接続を確かめなきゃ。",
+    "en": "I need to check the connection.",
+    "alternatives": [
+      "I have to verify the connection.",
+      "I must check the connection."
+    ],
+    "point": "check the connection は通話の接続状態を確かめる。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3dec949481119747ead7c28173b4331e19bfe4946c1d9a78d083d1244b63441",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6k2c7g3h",
+    "ja": "恐縮ですが私にはお話が理解不能でした。",
+    "en": "I'm afraid what you said went over my head.",
+    "alternatives": [
+      "I'm afraid I couldn't understand what you said.",
+      "Sorry, what you said was beyond me."
+    ],
+    "point": "go over my head は難しくて理解できないこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7b35428ddd78fe9cf243fc13a5f2f47281d7cca93e066a3d398ef0ef60d0c3d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -496,6 +644,25 @@
     }
   },
   {
+    "id": "c_8b8t4y8v",
+    "ja": "君の声が小さい。",
+    "en": "Your voice is quiet.",
+    "alternatives": ["Your voice is soft.", "You sound quiet."],
+    "point": "voice の状態を is で表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d49923d74330fab618e9154191c7e95b58be88f758ac82099128935efcf3e751",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8h7h9v7u",
     "ja": "通話は録音されています。",
     "en": "This call is being recorded.",
@@ -533,6 +700,25 @@
         "hash": "sha256:30e9b358863cd72e98ba6d581da0eee8b0960c1134f5a3614cf937d6e4df5323",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y9m8m9s",
+    "ja": "私が電話を切った。",
+    "en": "I ended the call.",
+    "alternatives": ["I hung up.", "I finished the call."],
+    "point": "ended で通話を終えた過去を表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4b46ccb140b4d11de607f951f60d9b96b89aa19e08857dcb67e5940e1319eca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

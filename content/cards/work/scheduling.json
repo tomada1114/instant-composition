@@ -19,6 +19,72 @@
     }
   },
   {
+    "id": "c_2n4u4c5k",
+    "ja": "日程に迷い私は判断を保留した。",
+    "en": "Torn between dates, I postponed deciding.",
+    "alternatives": [
+      "Unable to choose dates, I postponed my decision.",
+      "I put off deciding, torn between dates."
+    ],
+    "point": "torn は選択肢の間で気持ちが揺れている。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ecdc9896597428d404fd0c75e1333c7d91fb9d7119b5e3b378d4bffd69fc5a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3b9q6d9a",
+    "ja": "火曜の方が私たちは楽だ。",
+    "en": "Tuesday is less taxing for us.",
+    "alternatives": [
+      "Tuesday puts less strain on us.",
+      "Tuesday is less demanding for us."
+    ],
+    "point": "taxing は負担が大きい、骨が折れるという意味。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18892977d401d0f3af76936d336d5414cb8b43b3c51888512eb4689d717c4d65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_3j7e7v8t",
+    "ja": "私は締切の再交渉を避けたい。",
+    "en": "I'm keen to avoid renegotiating deadlines.",
+    "alternatives": [
+      "I want to avoid renegotiating deadlines.",
+      "I'd rather not renegotiate deadlines."
+    ],
+    "point": "avoid の後は renegotiating のように動名詞。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74019741746928eca6808d9a55feaf51c7b545139824db64162da69fdf6571d4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3k7p2s6k",
     "ja": "いつなら空いていますか？",
     "en": "When are you free?",
@@ -34,6 +100,25 @@
         "hash": "sha256:3874046cfb02490c373db6c76bbc924ff3c90626e0d3b4528c957c62e5724d02",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r4s3q3m",
+    "ja": "私はもっと早く来るべき。",
+    "en": "I should come earlier.",
+    "alternatives": ["I should arrive earlier.", "I ought to come earlier."],
+    "point": "earlier は予定などより早い時間に。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:faf47087048036289798a3ed2af83bce56c08c794a390bfdcca22c6edb87fb82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -146,6 +231,28 @@
     }
   },
   {
+    "id": "c_4d9f6y6s",
+    "ja": "日程が動くと彼らは分かってないと思う。",
+    "en": "I doubt they grasp how fluid our schedule is.",
+    "alternatives": [
+      "I doubt they realize our schedule can change.",
+      "They probably don't grasp how changeable our schedule is."
+    ],
+    "point": "fluid は予定がまだ動き得る状態。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:775d2e6fcb45457ef250402f4b428ca2607483d7f2fe8ea66a9a9deda5595f19",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_4e9b2f6z",
     "ja": "これ、30分前倒しにできますか？",
     "en": "Could we move it up by 30 minutes?",
@@ -164,6 +271,47 @@
         "hash": "sha256:76ed67cfbac58b6b6068f271b3c008ed9b2d6f2ffe2c836d58c934f8bbd7f1bd",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g2e4a4e",
+    "ja": "交渉中の日程はまだ流動的だ。",
+    "en": "The dates under negotiation remain fluid.",
+    "alternatives": [
+      "The dates being negotiated are still unsettled.",
+      "The dates we're negotiating remain subject to change."
+    ],
+    "point": "under negotiation で日程を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:deb8620d71c5806226ce8220bd6e9a88f0e82fa5849c8cafb6ad47cf70d3f0b6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_4j7b3c9e",
+    "ja": "私、早く帰っていい？",
+    "en": "Can I leave early?",
+    "alternatives": ["Is leaving early okay?", "Could I go home early?"],
+    "point": "Can I は早く帰る許可を求める。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6977e64d6122e32a178c8f1f446bfa9b9e784318d2f512457be79ce5c85b2c58",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -208,6 +356,28 @@
         "hash": "sha256:b23011b4c63083881773cd91d05e65bc58e30f4d85702ae7e91a1bacb4ac127c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5c4d9j5z",
+    "ja": "私は会議をずらすのに抵抗がある。",
+    "en": "I'm reluctant to reschedule the meeting.",
+    "alternatives": [
+      "I'm hesitant about moving the meeting.",
+      "I'd rather not reschedule the meeting."
+    ],
+    "point": "reluctant to は気が進まない。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0ad2724b3470e616ea9f8e8c463dfba7cdecd905757e087910a8a31958940cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -271,6 +441,28 @@
         "hash": "sha256:b0bd8a21f1603dc664838c27c635170e891ff48ad28c834baaa5b765a0064e7f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k9t3k5t",
+    "ja": "私が選んだ日はもう埋まってる。",
+    "en": "The date I chose is already booked.",
+    "alternatives": [
+      "The day I picked is already taken.",
+      "My chosen date is already booked."
+    ],
+    "point": "I chose が選んだ日を限定し、already booked は既に埋まっている状態を表す。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef83021fd01bb9c266dbd0c2643ff4b30df76a193b4c4ce423b97bb342d02491",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -360,6 +552,66 @@
     }
   },
   {
+    "id": "c_6w5s9q2e",
+    "ja": "私は日付を選んでる。",
+    "en": "I'm choosing dates.",
+    "alternatives": ["I'm picking the dates.", "I'm selecting dates."],
+    "point": "進行形で日付を今選んでいると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:251dc3e73195d4b3b38b27151f14de31a2682c58b827f4b7bebbfc6322119386",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6w6u5u2s",
+    "ja": "君が提案した日は空いてる。",
+    "en": "The date you suggested is available.",
+    "alternatives": [
+      "The day you proposed is open.",
+      "There's availability on the date you suggested."
+    ],
+    "point": "you suggested がどの日かを絞る。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8324fb54787232bbe1f666bdbde9fc09d3a36a3812892a1fe8c14690cdc499a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6y3b2p9d",
+    "ja": "私は火曜を選んだ。",
+    "en": "I chose Tuesday.",
+    "alternatives": ["I picked Tuesday.", "Tuesday was my choice."],
+    "point": "chose は choose の過去形。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ee6ae54a545d85aa69d5f973855917f1ef49414098d7d020578c19ab3cfd0a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6y4d7x9c",
     "ja": "月曜の会議は中止です。",
     "en": "Monday's meeting is canceled.",
@@ -419,6 +671,72 @@
         "hash": "sha256:5ea1be8fa6e6e6fc9709b0fe07e33525e9ae939232368bd6d90bd5cfc6a80baa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z8u2r7j",
+    "ja": "我々は日程をやり繰りしてる。",
+    "en": "We're juggling the schedule.",
+    "alternatives": [
+      "We're juggling the dates.",
+      "We're trying to fit the dates together."
+    ],
+    "point": "juggle は複数の都合をやり繰りする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:634c6690da9690e8ff8f4579f7b9eeb66e74ad55f095558e555c50f5bb000208",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6z9a2g5x",
+    "ja": "私たちが日程に余裕を残してたらな。",
+    "en": "I wish we'd built float into the schedule.",
+    "alternatives": [
+      "I wish we'd allowed leeway in the schedule.",
+      "If only we'd left slack in the schedule."
+    ],
+    "point": "float は日程に組み込む余裕時間。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0423ef7e53119fa2f7eaf2b6c9fed3d18ca82c8eee1ab8d131dad9fcea468d40",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7c6s3n5d",
+    "ja": "私は日程に余裕を持たせた。",
+    "en": "I've built slack into the schedule.",
+    "alternatives": [
+      "I've allowed extra time in the schedule.",
+      "I've included breathing room in the schedule."
+    ],
+    "point": "slack は遅れを吸収できる時間の余裕。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:137889b595def49f51d0d3261c8a701afba2bca1015f706884be9e53d044b61f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -590,6 +908,50 @@
     }
   },
   {
+    "id": "c_8f6d5b6j",
+    "ja": "仕事を前倒ししてたら今我々は余裕なのに。",
+    "en": "Had we front-loaded work, we'd have slack now.",
+    "alternatives": [
+      "If we'd done more upfront, we'd have leeway now.",
+      "We'd have breathing room now had we worked ahead."
+    ],
+    "point": "front-load は仕事を前半に集中させる。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:414367f55ec7afbc62f9fbfa7ac69a1031105d85f3c0fd45498fb7ac8a76849c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8g7r6s9a",
+    "ja": "我々に必要なのは確約だ。",
+    "en": "What we need is a firm commitment.",
+    "alternatives": [
+      "A firm commitment is what we need.",
+      "We need a definite commitment."
+    ],
+    "point": "firm commitment は曖昧な予定ではなく確かな約束。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28f7853d42731bbf91a29802eaca611ae5a536eac4df98336f400dcec058624c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8h2s9b3m",
     "ja": "いつ空いてるか、教えてもらえる？",
     "en": "Could you tell me when you're free?",
@@ -612,6 +974,25 @@
     }
   },
   {
+    "id": "c_8n7k6d7a",
+    "ja": "私は今会える。",
+    "en": "I can meet now.",
+    "alternatives": ["I can meet right now.", "I'm able to meet now."],
+    "point": "can で今すぐ会えると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d1829bba51ed7d67719a12abe91812d08ce3c963cd48b30cd5c92d5aaf05a69",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_8p2d4u9a",
     "ja": "午後なら空いています。",
     "en": "I'm free in the afternoon.",
@@ -627,6 +1008,28 @@
         "hash": "sha256:a3d93c8206c271f5579e31a01a201eac7240795233970e815d2bd58ac14819e8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q3z3k6u",
+    "ja": "私たちは候補日を絞るべき。",
+    "en": "We should shortlist possible dates.",
+    "alternatives": [
+      "We should narrow down possible dates.",
+      "We should choose fewer possible dates."
+    ],
+    "point": "shortlist possible dates は候補日を少数に絞る。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb55a2a24a2147210eb07152501f77a172d4d3936c49912fe49a81b557493a9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -694,6 +1097,47 @@
         "hash": "sha256:27a0e8c98bc736253125aa8f8fd9bb6546ea650781e6b5111d17d994756e671a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a3a2t5e",
+    "ja": "我々がその期限を緩める。",
+    "en": "We'll relax that deadline.",
+    "alternatives": [
+      "We'll make that deadline flexible.",
+      "We won't enforce that deadline strictly."
+    ],
+    "point": "relax a deadline は締め切りを厳しくなくする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fe42fccb3199b6bbf0d26be3afb32b40e4200493a6e9a8023c2de1fcf0ca88f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_9k8p2n5h",
+    "ja": "空き時間がない。",
+    "en": "There's no free time.",
+    "alternatives": ["There's no spare time.", "No free time is left."],
+    "point": "time は数えないので there is。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:181f2ba6d1576405ec03ba4c6f45049d732dcb2b6d37bc45fa9d52a5a4196743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

@@ -403,6 +403,25 @@
     }
   },
   {
+    "id": "c_5c9x6z4y",
+    "ja": "プリンターは紙切れだ。",
+    "en": "The printer's out of paper.",
+    "alternatives": ["The printer has no paper.", "The printer's paper has run out."],
+    "point": "out of paper は紙を使い切った状態。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13034a840c368db8889db023ec451ea0d1c21dc67e6a5346f59d23831d40a250",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5g7w7f7s",
     "ja": "新しい椅子が届いた。",
     "en": "The new chair arrived.",
@@ -589,6 +608,50 @@
     }
   },
   {
+    "id": "c_6e9t2c5e",
+    "ja": "ここでコーヒーと称する物には呆れる。",
+    "en": "What passes for coffee here beggars belief.",
+    "alternatives": [
+      "I can't believe they call this coffee.",
+      "What they call coffee here is a joke."
+    ],
+    "point": "pass for はそれらしく見なされることを皮肉にも使う。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3dddaa014594565834d505fb7198a5072cd828fdef168340a68fdb7d406e8b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6g2r3k9n",
+    "ja": "その台車を廊下に戻して。",
+    "en": "Return that cart to the hallway.",
+    "alternatives": [
+      "Put that cart back in the hallway.",
+      "Take that cart back to the hall."
+    ],
+    "point": "return + 物 + to で元の場所に戻す。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:031d9b387179684ac8c485cac9bfc51d7fc9ba15c073f1f3a3fe1089c54c413b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6k5e4d5g",
     "ja": "時間があれば手伝うのに。",
     "en": "If I had time, I'd help.",
@@ -604,6 +667,69 @@
         "hash": "sha256:69a24d481c197d7937ec0aa9f2bcc61a171f5c28f3a93b52ab415bcd2764338d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m5t7j4w",
+    "ja": "このオフィスに要るのは動ける広さだ。",
+    "en": "What this office needs is elbow room.",
+    "alternatives": [
+      "What this office needs is room to move.",
+      "It's space to move that this office needs."
+    ],
+    "point": "elbow room は窮屈でなく動ける空間のこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d5cdddb424eaad08161e53f969a63791a62077b84d2ae320b3a3970fb4d765",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6z7g3s7s",
+    "ja": "私は備品共有が好き。",
+    "en": "I like sharing office supplies.",
+    "alternatives": [
+      "I enjoy sharing workplace supplies.",
+      "I like letting others use office supplies."
+    ],
+    "point": "supplies は職場で使う消耗品や備品。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92e880e7891e1f907350acc82a6c71f2b9610cd35b3814dd0f79f8b4d54fe7d9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7b8g9f8z",
+    "ja": "私が席を外してもいい？",
+    "en": "May I step away?",
+    "alternatives": ["Could I leave my desk?", "Would it be okay to step out?"],
+    "point": "step away は仕事の場所を一時離れる。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:caa9259d156ee0832337f91ac4eda89f09793445aebb3b3922c7788048c28264",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -712,6 +838,66 @@
         "hash": "sha256:e68a27831154a7ee095f8f1f3c73fd1b2a78fe2711dcf22770f31ae62e5b3dd4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g2s6h9n",
+    "ja": "総務は私たちを手続きで振り回す。",
+    "en": "Admin has us jumping through hoops.",
+    "alternatives": [
+      "Admin makes us deal with red tape.",
+      "Admin puts us through endless bureaucratic hassle."
+    ],
+    "point": "jump through hoops は厄介な手続きをいくつもこなすこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:64f9b967b4da2d6bdac8cfea33ccfd3ba260510fc6d60a7b625e4fa2048595fa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8h6s6r3a",
+    "ja": "この椅子の方が楽だ。",
+    "en": "This chair is more comfortable.",
+    "alternatives": ["This chair feels comfier.", "This chair feels more comfortable."],
+    "point": "more comfortable はより座り心地がよい。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0898ede931032c2cf87d2f4dab30de50f2b224362d71f02352772793912b2edf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8q7h9u5v",
+    "ja": "昼食後は私に電話して。",
+    "en": "Call me when lunch is over.",
+    "alternatives": ["Call me after lunch.", "Phone me once lunch is over."],
+    "point": "未来の昼食後でも when 節は現在形。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed2c7e93565ca1fe61b9440a1ade2ee924ffe17dedbb0c36f45caf78195201f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
