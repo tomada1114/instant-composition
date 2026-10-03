@@ -10,7 +10,11 @@ import {
   readStamp,
 } from "../scripts/cards/schema.mjs";
 import { loadLists } from "../scripts/cards/store.mjs";
-import { findNearDuplicates, isNearDuplicate } from "../scripts/cards/similarity.mjs";
+import {
+  createDuplicateIndex,
+  findNearDuplicates,
+  isNearDuplicate,
+} from "../scripts/cards/similarity.mjs";
 import {
   blanksMatch,
   blanksOf,
@@ -327,6 +331,180 @@ describe("n-gram similarity", () => {
     };
     const twin = { ...card, key: "c_3b3b3b3b" };
     expect(findNearDuplicates([card, twin], [card, twin], [])).toHaveLength(1);
+  });
+
+  it("preserves the recorded candidates, rounded scores and order", () => {
+    const fixture = {
+      subject: {
+        key: "subject",
+        topic: "work",
+        subtopic: "meetings",
+        level: 4,
+        ja: "私は会議に遅れました。",
+        en: "I was late for the meeting.",
+      },
+      cards: [
+        {
+          key: "subject",
+          topic: "work",
+          subtopic: "meetings",
+          level: 4,
+          ja: "私は会議に遅れました。",
+          en: "I was late for the meeting.",
+        },
+        {
+          key: "near",
+          topic: "work",
+          subtopic: "meetings",
+          level: 5,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+        },
+        {
+          key: "normalized",
+          topic: "work",
+          subtopic: "meetings",
+          level: 4,
+          ja: "私は会議に遅れました。",
+          en: "Ｉ WAS late for THE meeting！",
+        },
+        {
+          key: "far",
+          topic: "work",
+          subtopic: "meetings",
+          level: 7,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+        },
+        {
+          key: "elsewhere",
+          topic: "travel",
+          subtopic: "meetings",
+          level: 5,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+        },
+      ],
+      tombstones: [
+        {
+          key: "deleted",
+          topic: "work",
+          subtopic: "meetings",
+          level: 10,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+        },
+        {
+          key: "replaced",
+          topic: "work",
+          subtopic: "meetings",
+          level: 10,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+          replacedBy: "subject",
+        },
+        {
+          key: "other-cell",
+          topic: "work",
+          subtopic: "requests",
+          level: 10,
+          ja: "彼は会議に遅れました。",
+          en: "He was late for the meeting.",
+        },
+      ],
+      pairs: [
+        {
+          a: "subject",
+          b: "normalized",
+          against: "card",
+          ja: 1,
+          en: 0.96,
+        },
+        {
+          a: "subject",
+          b: "deleted",
+          against: "tombstone",
+          ja: 0.89,
+          en: 0.96,
+        },
+        {
+          a: "subject",
+          b: "near",
+          against: "card",
+          ja: 0.89,
+          en: 0.96,
+        },
+      ],
+    };
+    const index = createDuplicateIndex(fixture.cards, fixture.tombstones);
+    expect(index.find([fixture.subject])).toStrictEqual(fixture.pairs);
+    expect(
+      findNearDuplicates([fixture.subject], fixture.cards, fixture.tombstones),
+    ).toStrictEqual(fixture.pairs);
+  });
+  it("makes earlier admissions visible to the next subject in the batch", () => {
+    const first = {
+      key: "admitted",
+      topic: "work",
+      subtopic: "requests",
+      level: 3,
+      ja: "資料を送ってもらえますか？",
+      en: "Could you send me the materials?",
+    };
+    const index = createDuplicateIndex([], []);
+    expect(index.find([first])).toStrictEqual([]);
+    index.add(first);
+    const next = { ...first, key: "input[1]" };
+    expect(index.find([next])).toStrictEqual([
+      { a: "input[1]", b: "admitted", against: "card", ja: 1, en: 1 },
+    ]);
+    expect(index.find([{ ...next, level: 5 }])).toStrictEqual([]);
+    expect(index.find([{ ...next, topic: "travel" }])).toStrictEqual([]);
+  });
+  it("prepares the corpus once plus admissions and skips unrelated buckets", () => {
+    let textReads = 0;
+    let unrelatedKeys = 0;
+    const card = (key: string, topic = "work", level = 4, unrelated = false) => ({
+      get key() {
+        if (unrelated) unrelatedKeys += 1;
+        return key;
+      },
+      topic,
+      subtopic: "meetings",
+      level,
+      get ja() {
+        textReads += 1;
+        return "same phrase";
+      },
+      get en() {
+        textReads += 1;
+        return "same sentence";
+      },
+    });
+    const cards = Array.from({ length: 40 }, (_, index) =>
+      card(
+        `card-${String(index)}`,
+        index < 10 ? "work" : "travel",
+        index < 5 || index >= 10 ? 4 : 8,
+        index >= 5,
+      ),
+    );
+    const index = createDuplicateIndex(cards, [card("deleted", "work", 10)]);
+    expect(textReads).toBe(82);
+    for (let input = 0; input < 10; input += 1) {
+      const subject = {
+        key: `input[${String(input)}]`,
+        topic: "work",
+        subtopic: "meetings",
+        level: 4,
+        ja: "same phrase",
+        en: "same sentence",
+      };
+      expect(index.find([subject]).some((pair) => pair.b === "deleted")).toBe(true);
+      index.add(card(`accepted-${String(input)}`));
+    }
+    expect(textReads).toBe(102);
+    expect(unrelatedKeys).toBe(0);
   });
 
   const pair = (ja: [string, string], en: [string, string]) =>

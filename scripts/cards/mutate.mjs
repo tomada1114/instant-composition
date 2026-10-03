@@ -14,7 +14,7 @@ import { CardsError } from "./errors.mjs";
 import { declaredField, freshIds, takenIds } from "./inspect.mjs";
 import { lintCard, targetWarnings } from "./rules.mjs";
 import { CORE_FIELDS, coreHash, fieldHash } from "./schema.mjs";
-import { findNearDuplicates } from "./similarity.mjs";
+import { createDuplicateIndex } from "./similarity.mjs";
 import {
   appendTombstones,
   withLock,
@@ -148,6 +148,8 @@ function addLocked(parsed, context) {
     .filter((tombstone) => tombstone.id !== replacing)
     .map((tombstone) => ({ ...tombstone, key: tombstone.id }));
 
+  const duplicateIndex = createDuplicateIndex(pool, tombstones);
+
   /** @type {{ index: number, id: string, topic: string, subtopic: string, level: number, warnings: string[] }[]} */
   const admitted = [];
   /** @type {{ index: number, ja: string, reasons: Reason[] }[]} */
@@ -187,16 +189,12 @@ function addLocked(parsed, context) {
     );
     const typed = asTyped(card);
     if (reasons.length === 0 && typed !== undefined) {
-      const duplicates = findNearDuplicates(
-        [{ ...typed, key: label }],
-        pool,
-        tombstones,
-      );
+      const duplicates = duplicateIndex.find([{ ...typed, key: label }]);
       if (duplicates.length === 0) {
         const file = cardFile(typed.topic, typed.subtopic);
         files.set(file, [...(files.get(file) ?? []), card]);
         touched.add(file);
-        pool.push({ ...typed, key: id });
+        duplicateIndex.add({ ...typed, key: id });
         admitted.push({
           index,
           id,
