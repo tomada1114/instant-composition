@@ -101,57 +101,111 @@ export function isNearDuplicate(scores) {
  * @returns {Pair[]} Candidate pairs, highest score first.
  */
 export function findNearDuplicates(subjects, cards, tombstones) {
-  const preparedCards = cards.map(prepare);
-  const preparedTombstones = tombstones.map(prepare);
-  const subjectKeys = new Set(subjects.map((subject) => subject.key));
-  /** @type {Set<string>} */
-  const seen = new Set();
-  /** @type {Pair[]} */
-  const pairs = [];
+  return createDuplicateIndex(cards, tombstones).find(subjects);
+}
 
-  for (const subject of subjects.map(prepare)) {
-    for (const other of preparedCards) {
-      const { item } = other;
-      if (
-        item.key === subject.item.key ||
-        item.topic !== subject.item.topic ||
-        item.subtopic !== subject.item.subtopic ||
-        Math.abs(item.level - subject.item.level) > DUPES.levelSpan
-      ) {
-        continue;
-      }
-      const both = subjectKeys.has(item.key);
-      const id = [subject.item.key, item.key].sort().join(" ");
-      if (both && seen.has(id)) continue;
-      seen.add(id);
-      const scores = score(subject, other);
-      if (isNearDuplicate(scores)) {
-        pairs.push({ a: subject.item.key, b: item.key, against: "card", ...scores });
-      }
+/** @typedef {{ cards: Map<number, Prepared[]>, tombstones: Prepared[] }} Cell */
+/** @typedef {{ find: (subjects: readonly Comparable[]) => Pair[], add: (card: Comparable) => void }} DuplicateIndex */
+
+/**
+ * @param {Comparable} item - A fixed corpus value or a query subject.
+ * @returns {string} Collision-free topic/subtopic identity.
+ */
+function cellKey(item) {
+  return JSON.stringify([item.topic, item.subtopic]);
+}
+
+/**
+ * Prepare a corpus once for a batch. Values stay fixed; admitted cards enter through
+ * `add`, so subsequent subjects also see earlier admissions. Cards have level buckets;
+ * tombstones compare at every level. No prepared state survives this caller's batch.
+ *
+ * @param {readonly Comparable[]} cards - Existing cards.
+ * @param {readonly Comparable[]} tombstones - Every tombstone.
+ * @returns {DuplicateIndex} Shared preparation for `cards:add` and `cards:dupes`.
+ */
+export function createDuplicateIndex(cards, tombstones) {
+  /** @type {Map<string, Cell>} */
+  const cells = new Map();
+
+  /**
+   * @param {Comparable} item - A fixed corpus value.
+   * @returns {Cell} Its topic/subtopic bucket.
+   */
+  function cellFor(item) {
+    const key = cellKey(item);
+    let cell = cells.get(key);
+    if (cell === undefined) {
+      cell = { cards: new Map(), tombstones: [] };
+      cells.set(key, cell);
     }
-    for (const other of preparedTombstones) {
-      if (
-        other.item.replacedBy === subject.item.key ||
-        other.item.topic !== subject.item.topic ||
-        other.item.subtopic !== subject.item.subtopic
-      ) {
-        continue;
-      }
-      const scores = score(subject, other);
-      if (isNearDuplicate(scores)) {
-        pairs.push({
-          a: subject.item.key,
-          b: other.item.key,
-          against: "tombstone",
-          ...scores,
-        });
-      }
-    }
+    return cell;
   }
-  return pairs.sort(
-    (left, right) =>
-      Math.max(right.ja, right.en) - Math.max(left.ja, left.en) ||
-      left.a.localeCompare(right.a) ||
-      left.b.localeCompare(right.b),
-  );
+
+  /**
+   * @param {Comparable} card - One newly admitted card.
+   * @returns {void}
+   */
+  function add(card) {
+    const cell = cellFor(card);
+    let level = cell.cards.get(card.level);
+    if (level === undefined) {
+      level = [];
+      cell.cards.set(card.level, level);
+    }
+    level.push(prepare(card));
+  }
+  for (const card of cards) add(card);
+  for (const tombstone of tombstones)
+    cellFor(tombstone).tombstones.push(prepare(tombstone));
+
+  /**
+   * @param {readonly Comparable[]} subjects - Values checked in their original order.
+   * @returns {Pair[]} Candidates in the existing score/key order.
+   */
+  function find(subjects) {
+    const subjectKeys = new Set(subjects.map((subject) => subject.key));
+    /** @type {Set<string>} */
+    const seen = new Set();
+    /** @type {Pair[]} */
+    const pairs = [];
+    for (const subject of subjects.map(prepare)) {
+      const cell = cells.get(cellKey(subject.item));
+      if (cell === undefined) continue;
+      const candidates = [...cell.cards].flatMap(([level, items]) =>
+        Math.abs(level - subject.item.level) > DUPES.levelSpan ? [] : items,
+      );
+      for (const other of candidates) {
+        const { item } = other;
+        if (item.key === subject.item.key) continue;
+        const both = subjectKeys.has(item.key);
+        const id = [subject.item.key, item.key].sort().join(" ");
+        if (both && seen.has(id)) continue;
+        seen.add(id);
+        const scores = score(subject, other);
+        if (isNearDuplicate(scores)) {
+          pairs.push({ a: subject.item.key, b: item.key, against: "card", ...scores });
+        }
+      }
+      for (const other of cell.tombstones) {
+        if (other.item.replacedBy === subject.item.key) continue;
+        const scores = score(subject, other);
+        if (isNearDuplicate(scores)) {
+          pairs.push({
+            a: subject.item.key,
+            b: other.item.key,
+            against: "tombstone",
+            ...scores,
+          });
+        }
+      }
+    }
+    return pairs.sort(
+      (left, right) =>
+        Math.max(right.ja, right.en) - Math.max(left.ja, left.en) ||
+        left.a.localeCompare(right.a) ||
+        left.b.localeCompare(right.b),
+    );
+  }
+  return { find, add };
 }
