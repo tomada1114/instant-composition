@@ -40,6 +40,11 @@ function recordChunk(
     }
     const reviews = await store.reviewsOf(round.value.id);
     const recorded = new Set(reviews.map((review) => review.id));
+    const firstCards = new Set(
+      reviews
+        .filter((review) => review.detail.pass === "first")
+        .map((review) => review.item.id),
+    );
     const checked = checkAnswers(round.value, command.answers, facts, recorded);
     if (!checked.ok) {
       return checked;
@@ -60,6 +65,7 @@ function recordChunk(
         day: tally?.value,
         items: itemValues(items),
         recorded,
+        firstCards,
       },
       chunk,
       facts,
@@ -106,8 +112,8 @@ export async function recordInto(
 }
 
 /**
- * Records answers against an open round, ignoring ids it already holds; a
- * batch of held ids alone is taken, and writes nothing, after finish too. A
+ * Records answers against an open round, ignoring held ids and first cards
+ * already adopted. Held ids alone are also taken without writes after finish. A
  * round crossing the day boundary keeps taking answers for the day it started.
  */
 export async function recordAnswers(

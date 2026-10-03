@@ -82,8 +82,16 @@ written under.
 - A command that can be retried carries an identity the client made (an answer id, a
   round id), and the commit's condition turns a repeat into a no-op that returns the
   first result. An answer whose client-made id a round already holds is skipped
-  (`packages/domain/src/answers.ts`), and finishing a finished round answers with the
-  summary it kept (`packages/application/src/finish-round.ts`).
+  (`packages/domain/src/answers.ts`). A round adopts the first successfully committed
+  first answer for each card; later valid first answers under different ids succeed
+  without changing that answer, counters or FSRS. A transaction chunk chooses in clamped
+  answer-time/id order, and earlier committed chunks prevail. Multiple retries still get
+  separate log entries. Adoption is loaded from the existing append-only log and guarded
+  by the round version in the same transaction, with no new stored shape. The answers
+  endpoint keeps its empty 204 response; reload and summary return the adopted result.
+  After finish, only recorded-id resends are accepted, preserving the closed-round
+  validation. Finishing a finished round answers with the summary it kept
+  (`packages/application/src/finish-round.ts`).
 - For non-deterministic work, idempotency means storing the first result under the
   work's key and returning it — not expecting the same output twice.
 - Offline clients send late. Accept an answer for an older round, take its day from the

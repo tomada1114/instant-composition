@@ -71,6 +71,7 @@ function state(overrides: Partial<AnswersState> = {}): AnswersState {
     day: makeDay(),
     items: new Map(),
     recorded: new Set(),
+    firstCards: new Set(),
     ...overrides,
   };
 }
@@ -90,6 +91,28 @@ describe("checkAnswers", () => {
     expect(
       checkAnswers(makeRound({ finishedAt: 5 }), [held], CARDS, new Set([held.id])),
     ).toStrictEqual({ ok: true, value: undefined });
+  });
+
+  it("preserves the finished-round rejection for an unrecorded first id", () => {
+    expect(
+      checkAnswers(
+        makeRound({ finishedAt: 5 }),
+        [answer()],
+        CARDS,
+        new Set(["previous-id"]),
+      ),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_ROUND_CLOSED" } });
+  });
+
+  it("refuses an invalid logical duplicate without replacing the adopted answer", () => {
+    expect(
+      checkAnswers(
+        makeRound(),
+        [answer({ result: undefined })],
+        CARDS,
+        new Set(["r1:f:c1"]),
+      ),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
   });
 
   it.each([
@@ -122,6 +145,48 @@ describe("decideAnswers", () => {
   it("takes a repeated id once", () => {
     const change = decideAnswers(state(), [answer(), answer()], CARDS, 9);
     expect(change?.entries).toHaveLength(1);
+  });
+
+  it("adopts one first answer in log order when different ids grade the same card", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ id: "z", result: "ng" }), answer({ id: "a", result: "ok" })],
+      CARDS,
+      9_000,
+    );
+    expect(change?.entries).toHaveLength(1);
+    expect(change?.entries[0]).toMatchObject({ id: "a", detail: { result: "ok" } });
+    expect(change?.round.firstPass).toBe(1);
+    expect(change?.portion?.progress).toBe(1);
+    expect(change?.day).toMatchObject({ firstPass: 1, answers: 1 });
+    expect(change?.items[0]?.fsrs?.reps).toBe(1);
+  });
+
+  it("keeps an adopted first answer when another id arrives, while retaining multiple retries", () => {
+    const change = decideAnswers(
+      state({ firstCards: new Set(["c1"]) }),
+      [
+        answer({ id: "other-first", result: "ng" }),
+        answer({ id: "retry-a", pass: "retry" }),
+        answer({ id: "retry-b", pass: "retry", result: "ng" }),
+      ],
+      CARDS,
+      9_000,
+    );
+    expect(change?.entries.map((entry) => entry.id)).toStrictEqual([
+      "retry-a",
+      "retry-b",
+    ]);
+    expect(change?.round.firstPass).toBe(0);
+    expect(change?.portion?.progress).toBe(0);
+    expect(change?.day).toMatchObject({ firstPass: 0, answers: 2 });
+    expect(change?.items).toStrictEqual([]);
+  });
+
+  it("changes nothing for a logical first answer already adopted under another id", () => {
+    expect(
+      decideAnswers(state({ firstCards: new Set(["c1"]) }), [answer()], CARDS, 9_000),
+    ).toBeUndefined();
   });
 
   const HELD = [

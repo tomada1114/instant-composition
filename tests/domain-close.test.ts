@@ -473,7 +473,15 @@ function playDays(
     });
     const now = startedAt + 60_000;
     const taken = decideAnswers(
-      { round, stats, portion: undefined, day: undefined, items, recorded: new Set() },
+      {
+        round,
+        stats,
+        portion: undefined,
+        day: undefined,
+        items,
+        recorded: new Set(),
+        firstCards: new Set(),
+      },
       inputs,
       facts,
       now,
