@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import type { ReactElement } from "react";
+import { useEffect, useRef, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 import { FocusStrip } from "../lib/frame";
 import { usePrimaryKey } from "../lib/use-primary-key";
@@ -21,6 +21,10 @@ export function VocabDone({
   const t = useTranslations("Vocab");
   const nav = useTranslations("Nav");
   const navigate = useNavigate();
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    heading.current?.focus();
+  }, []);
   usePrimaryKey();
   const title =
     summary.kind === "weak"
@@ -44,7 +48,13 @@ export function VocabDone({
           </IconButton>
         }
       />
-      <h1 className="text-center">{title}</h1>
+      <h1
+        ref={heading}
+        tabIndex={-1}
+        className="text-center focus-visible:outline-none"
+      >
+        {title}
+      </h1>
       <dl className="grid grid-cols-3 divide-x-2 divide-border">
         {figures.map(([label, count]) => (
           <div key={label} className="flex flex-col gap-2 px-3">

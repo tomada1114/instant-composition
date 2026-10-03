@@ -315,6 +315,14 @@ describe("an untimed vocabulary session", () => {
 });
 
 describe("vocabulary completion", () => {
+  it("moves focus from grading to the completion heading", async () => {
+    serve({ session: vocabSession({ cards: [vocabCard()] }) });
+    await renderApp("/vocab/study");
+    await flipAndGrade();
+    const heading = screen.getByRole("heading", { name: ja.Vocab.done, level: 1 });
+    expect(heading).toHaveAttribute("tabindex", "-1");
+    expect(heading).toHaveFocus();
+  });
   it.each([
     [null, "today", ja.Vocab.done],
     ["word", "today", "単語の今日の分は完了"],

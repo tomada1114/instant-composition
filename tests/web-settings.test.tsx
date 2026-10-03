@@ -1388,6 +1388,16 @@ describe("vocabulary limits in settings", () => {
         }),
       }),
     );
-    expect(section.getByText(ja.Settings.daily.reviewsInfo)).toBeVisible();
+    expect(section.getByText(ja.Settings.daily.vocabReviewsInfo)).toBeVisible();
+    expect(section.queryByText(ja.Settings.daily.reviewsInfo)).toBeNull();
+    fireEvent.click(
+      section.getByRole("button", {
+        name: fill(ja.Settings.daily.infoLabel, {
+          title: ja.Settings.daily.vocabNewTitle,
+        }),
+      }),
+    );
+    expect(section.getByText(ja.Settings.daily.vocabNewInfo)).toBeVisible();
+    expect(section.queryByText(ja.Settings.daily.newInfo)).toBeNull();
   });
 });

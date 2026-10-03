@@ -381,7 +381,9 @@
       "unlimited": "無制限",
       "completed": "この枚数で今日は完了です",
       "vocabNewTitle": "新しい語 / 日",
-      "vocabCount": "{count} 語"
+      "vocabCount": "{count} 語",
+      "vocabNewInfo": "まだ答えたことのない語を 1 日に出す数です",
+      "vocabReviewsInfo": "復習がこの数に届いた日は、新しい語は出ません"
     },
     "limit": {
       "title": "1 文の持ち時間",

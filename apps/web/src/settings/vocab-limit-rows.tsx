@@ -28,7 +28,7 @@ export function VocabLimitRows({
         info={
           <InfoTip
             label={t("infoLabel", { title: t("vocabNewTitle") })}
-            text={t("newInfo")}
+            text={t("vocabNewInfo")}
           />
         }
       >
@@ -50,7 +50,7 @@ export function VocabLimitRows({
         info={
           <InfoTip
             label={t("infoLabel", { title: t("reviewsTitle") })}
-            text={t("reviewsInfo")}
+            text={t("vocabReviewsInfo")}
           />
         }
       >

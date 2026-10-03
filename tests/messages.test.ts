@@ -616,6 +616,8 @@ const MESSAGE_KEYS = [
   "Settings.sections.vocab",
   "Settings.daily.vocabNewTitle",
   "Settings.daily.vocabCount",
+  "Settings.daily.vocabNewInfo",
+  "Settings.daily.vocabReviewsInfo",
   "Vocab.front",
   "Vocab.title",
   "Vocab.today",
