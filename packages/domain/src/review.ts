@@ -1,7 +1,8 @@
 import { movesItem, resultOf, type Graded } from "./card-state";
 import { scheduleCard } from "./fsrs";
 import type { FirstPassMark, ItemProgress, ItemSnapshot, ReviewEntry } from "./records";
-import type { CardState, DayKey, Pass } from "./types";
+import { orderedMoves } from "./review-order";
+import type { DayKey, Pass } from "./types";
 
 /** Everything known of one answer once it is accepted into a round. */
 export interface AcceptedAnswer extends Graded {
@@ -43,6 +44,7 @@ function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemPr
   const last = progress?.last ?? null;
   return {
     item: entry.item,
+    ...(entry.revision === undefined ? {} : { revision: entry.revision }),
     ...(memory === undefined ? {} : { memory }),
     ...(fsrs === undefined ? {} : { fsrs }),
     okDays,
@@ -76,6 +78,7 @@ export function reviewAnswer(
     item: { kind: "composition", id: answer.cardId },
     sessionId: answer.sessionId,
     answeredAt: answer.answeredAt,
+    ...(moves ? { revision: (progress?.revision ?? 0) + 1 } : {}),
     day: answer.day,
     outcome: answer.grade,
     before: leitner,
@@ -110,46 +113,15 @@ export function logOrder(a: ReviewEntry, b: ReviewEntry): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
-function sameState(a: CardState, b: CardState): boolean {
-  return (
-    a.box === b.box &&
-    a.lastDay === b.lastDay &&
-    a.dueDay === b.dueDay &&
-    a.seenCount === b.seenCount
-  );
-}
-
-/**
- * Whether an entry moved its item. Since FSRS, a move counts one more
- * repetition; before it, a first pass moved the Leitner state unless it came
- * late, which left the state as found.
- */
-function movedItem(entry: ReviewEntry): boolean {
-  if (entry.detail.pass !== "first") {
-    return false;
-  }
-  if (entry.fsrs !== undefined) {
-    const { before, after } = entry.fsrs;
-    return after !== null && after.reps !== (before?.reps ?? 0);
-  }
-  return (
-    entry.before === null ||
-    entry.after === null ||
-    !sameState(entry.before, entry.after)
-  );
-}
-
 /**
  * Every item's progress, rebuilt from the log alone. Each review keeps the
- * state it left, so a replay copies it rather than scheduling again: a
- * scheduler change applies from the next answer on.
+ * state it left, so replay copies it rather than scheduling again. Causal
+ * revisions and legacy state chains determine order, never client time.
  */
 export function replayItems(log: readonly ReviewEntry[]): Map<string, ItemProgress> {
   const items = new Map<string, ItemProgress>();
-  for (const entry of [...log].sort(logOrder)) {
-    if (movedItem(entry)) {
-      items.set(entry.item.id, advance(items.get(entry.item.id), entry));
-    }
+  for (const entry of orderedMoves(log)) {
+    items.set(entry.item.id, advance(items.get(entry.item.id), entry));
   }
   return items;
 }

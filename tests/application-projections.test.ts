@@ -9,6 +9,7 @@ import {
   type LearnerStores,
 } from "@instant-composition/application";
 import { replayItems } from "@instant-composition/domain";
+import { makeRound } from "./application-fixtures";
 
 import {
   answersFor,
@@ -99,6 +100,73 @@ async function lateArrival(h: Harness): Promise<void> {
 }
 
 describe("the projections a command keeps", () => {
+  it("replays two committed state changes in arrival order when their client times are reversed", async () => {
+    const h = makeHarness();
+    const store = h.stores.forLearner(h.learner);
+    const cardId = "work-a-5-0";
+    await store.commit({
+      puts: [
+        {
+          type: "round",
+          value: makeRound({
+            id: "old",
+            deck: [cardId],
+            startedAt: NOON,
+            abandonedAt: NOON + DAY_MS,
+          }),
+        },
+        {
+          type: "round",
+          value: makeRound({
+            id: "new",
+            day: "2026-09-23",
+            portionDay: "2026-09-23",
+            deck: [cardId],
+            startedAt: NOON + DAY_MS,
+          }),
+        },
+      ],
+      updates: [],
+      expect: [],
+    });
+    const first = await recordAnswers(h.deps, h.context(NOON + DAY_MS + 120_000), {
+      roundId: "old",
+      answers: [
+        {
+          id: "old-answer",
+          cardId,
+          roundId: "old",
+          pass: "first",
+          result: "ok",
+          elapsedMs: 1_000,
+          answeredAt: NOON + DAY_MS + 60_000,
+        },
+      ],
+    });
+    const second = await recordAnswers(h.deps, h.context(NOON + DAY_MS + 180_000), {
+      roundId: "new",
+      answers: [
+        {
+          id: "new-answer",
+          cardId,
+          roundId: "new",
+          pass: "first",
+          result: "ok",
+          elapsedMs: 1_000,
+          answeredAt: NOON + DAY_MS + 30_000,
+        },
+      ],
+    });
+    const log = await store.reviews();
+    const item = (await store.items()).get(cardId)?.value;
+
+    expect(first.ok).toBe(true);
+    expect(second.ok).toBe(true);
+    expect(log.map((entry) => entry.revision)).toStrictEqual([2, 1]);
+    expect(item).toMatchObject({ revision: 2, fsrs: { reps: 2 } });
+    expect(replayItems(log).get(cardId)).toStrictEqual(item);
+  });
+
   it("equal what replaying the review log rebuilds when a round's answers arrive late", async () => {
     const h = makeHarness();
     await lateArrival(h);
