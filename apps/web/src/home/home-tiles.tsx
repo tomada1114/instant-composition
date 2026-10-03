@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import { useId, type ReactElement, type ReactNode } from "react";
+import { type ReactElement, type ReactNode } from "react";
 import { useTranslations } from "use-intl";
 
+import { Tile } from "./home-tile";
+import { VocabTile } from "./vocab-tile";
 import { RECORDS_QUERY } from "../lib/queries";
 import type { ReachTopic, RecordsView, WeakPoints } from "../openapi";
 import { Button } from "../ui/button";
@@ -10,27 +12,6 @@ import { ArrowGlyph } from "../ui/glyphs";
 
 /** The most names a weak row shows on home; the records page lists them all. */
 const WEAK_NAMES = 3;
-
-/** `home-tile`: the card, its title, its body, and what it leads to at its foot; the tile itself is no link. */
-function Tile({
-  title,
-  foot,
-  children,
-}: Readonly<{ title: string; foot: ReactNode; children?: ReactNode }>): ReactElement {
-  const id = useId();
-  return (
-    <section
-      aria-labelledby={id}
-      className="flex flex-col gap-4 rounded-card border-2 border-border bg-card p-5"
-    >
-      <h2 id={id} className="text-heading">
-        {title}
-      </h2>
-      <div className="flex flex-1 flex-col gap-3">{children}</div>
-      <div className="flex">{foot}</div>
-    </section>
-  );
-}
 
 /** The `text` link from a records tile to the records page. */
 function SeeRecords(): ReactElement {
@@ -135,7 +116,7 @@ function ReachRows({
 }
 
 /**
- * Home's three tiles: the weak points and the reach, read from the records
+ * Home's four tiles: the weak points and the reach, read from the records
  * query beside the home view — titles alone until it answers, one line if it
  * fails, while the rest of home works — and the talk, with its own start.
  */
@@ -147,17 +128,8 @@ export function HomeTiles({
   const records = useQuery(RECORDS_QUERY);
   const failed = records.isError;
   return (
-    <div className="grid grid-cols-1 gap-6 pc:grid-cols-3">
-      <Tile title={t("weak")} foot={<SeeRecords />}>
-        <RecordsBody records={records.data} failed={failed}>
-          {(view) => <WeakRows weak={view.weak} />}
-        </RecordsBody>
-      </Tile>
-      <Tile title={t("reach")} foot={<SeeRecords />}>
-        <RecordsBody records={records.data} failed={failed}>
-          {(view) => <ReachRows topics={view.reach.topics} />}
-        </RecordsBody>
-      </Tile>
+    <div className="grid grid-cols-1 gap-6 pc:grid-cols-2">
+      <VocabTile />
       <Tile
         title={t("talk")}
         foot={
@@ -173,6 +145,16 @@ export function HomeTiles({
           </span>
         </p>
         <p className="text-muted-foreground">{talk("scene")}</p>
+      </Tile>
+      <Tile title={t("weak")} foot={<SeeRecords />}>
+        <RecordsBody records={records.data} failed={failed}>
+          {(view) => <WeakRows weak={view.weak} />}
+        </RecordsBody>
+      </Tile>
+      <Tile title={t("reach")} foot={<SeeRecords />}>
+        <RecordsBody records={records.data} failed={failed}>
+          {(view) => <ReachRows topics={view.reach.topics} />}
+        </RecordsBody>
       </Tile>
     </div>
   );

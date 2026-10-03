@@ -18,7 +18,7 @@ import { StreakFigure, WeekRow } from "./streak-figure";
 
 /**
  * W3, on the dashboard grid: the date with the sound switch at its right;
- * today's panel (8 columns) beside the streak tile (4); then the three home
+ * today's panel (8 columns) beside the streak tile (4); then the four home
  * tiles. One column below `pc`.
  * `onReload` reads the home view again, for when the cards could not be read.
  */

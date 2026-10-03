@@ -30,7 +30,11 @@ export function feedbackMs(feedback: {
  * Feeds the reducer its clock: `shown` on the frame the front is drawn, a
  * tick while it runs, and `advance` once a grade's feedback is over.
  */
-export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>): void {
+export function useDrillClock(
+  state: DrillState,
+  dispatch: Dispatch<DrillEvent>,
+  timed = true,
+): void {
   const { phase, paused } = state;
   const card = currentCard(state);
   const cardKey = card === undefined ? "" : `${String(card.ask)}:${card.cardId}`;
@@ -49,14 +53,14 @@ export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>)
   }, [waiting, cardKey, dispatch]);
 
   useEffect(() => {
-    if (!running) return undefined;
+    if (!running || !timed) return undefined;
     const timer = setInterval(() => {
       dispatch({ type: "tick", at: performance.now() });
     }, TICK_MS);
     return () => {
       clearInterval(timer);
     };
-  }, [running, dispatch]);
+  }, [running, dispatch, timed]);
 
   useEffect(() => {
     if (hold === undefined) return undefined;

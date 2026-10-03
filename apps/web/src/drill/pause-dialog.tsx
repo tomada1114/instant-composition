@@ -12,7 +12,9 @@ import { Dialog } from "../ui/dialog";
  * variant): the three grades' keys — the default ones with their digits
  * beside the arrows, or the three chosen.
  */
-function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeyTrio }>): ReactElement {
+export function KeyLegend({
+  gradeKeys,
+}: Readonly<{ gradeKeys: GradeKeyTrio }>): ReactElement {
   const t = useTranslations("Drill");
   const fallback = isDefaultGradeKeys(gradeKeys);
   const rows = [

@@ -8,6 +8,7 @@ import {
   getSettings,
   type ApiError,
 } from "./endpoints";
+import { getVocab } from "./vocab-endpoints";
 import type { RoundSummary } from "../openapi";
 import type { Result } from "./result";
 
@@ -48,6 +49,12 @@ export function isSignedOut(error: unknown): boolean {
  * drill for the sound switch, the daily size and whether this is the
  * placement.
  */
+/** The hub and home tile share one vocabulary read. */
+export const VOCAB_QUERY = queryOptions({
+  queryKey: ["vocab"],
+  queryFn: () => valueOf(getVocab()),
+});
+
 export const HOME_QUERY = queryOptions({
   queryKey: ["home"],
   queryFn: () => valueOf(getHome()),

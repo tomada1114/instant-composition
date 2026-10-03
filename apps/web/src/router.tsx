@@ -16,6 +16,9 @@ import type { RoundKind } from "./openapi";
 import { RecordsPage } from "./records/records-page";
 import { SettingsPage } from "./settings/settings-page";
 import { RecapPage } from "./summary/recap-page";
+import { VocabPage } from "./vocab/vocab-page";
+import { VocabStudyPage } from "./vocab/vocab-study-page";
+import { vocabSearch } from "./vocab/sessions";
 import { TalkPage } from "./talk/talk-page";
 
 /**
@@ -91,9 +94,29 @@ const welcomeRoute = createRoute({
   component: WelcomePage,
 });
 
+const vocabRoute = createRoute({
+  getParentRoute: () => shellRoute,
+  path: "vocab",
+  component: VocabPage,
+});
+const vocabStudyRoute = createRoute({
+  getParentRoute: () => focusRoute,
+  path: "vocab/study",
+  validateSearch: vocabSearch,
+  component: function VocabStudyRoute(): ReactElement {
+    return <VocabStudyPage search={vocabStudyRoute.useSearch()} />;
+  },
+});
+
 const routeTree = rootRoute.addChildren([
-  shellRoute.addChildren([homeRoute, recordsRoute, settingsRoute, talkRoute]),
-  focusRoute.addChildren([drillRoute, recapRoute]),
+  shellRoute.addChildren([
+    homeRoute,
+    vocabRoute,
+    recordsRoute,
+    settingsRoute,
+    talkRoute,
+  ]),
+  focusRoute.addChildren([drillRoute, recapRoute, vocabStudyRoute]),
   welcomeRoute,
 ]);
 

@@ -60,6 +60,8 @@ export const vocabCategoryViewSchema = z.object({
   category: vocabCategorySchema,
   due: countSchema,
   new: countSchema,
+  extra: countSchema,
+  weak: countSchema,
   learning: countSchema,
   total: countSchema,
 });
@@ -68,6 +70,7 @@ export const vocabCategoryViewSchema = z.object({
 export const vocabHubSchema = z.object({
   /** True when the language pair has no vocabulary card at all. */
   empty: z.boolean(),
+  extra: countSchema,
   today: z.object({ due: countSchema, new: countSchema, minutes: countSchema }),
   categories: z.array(vocabCategoryViewSchema),
   weak: countSchema,

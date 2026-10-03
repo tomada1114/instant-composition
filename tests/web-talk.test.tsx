@@ -371,6 +371,7 @@ describe("W2, the talk tab before a talk", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/vocab", null],
         ["/talk", "page"],
         ["/records", null],
         ["/settings", null],

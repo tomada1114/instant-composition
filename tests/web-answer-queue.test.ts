@@ -267,6 +267,40 @@ function listed(initial: Record<string, string>): ListedStorage & {
 }
 
 describe("flushEarlierRounds", () => {
+  it.each([
+    ["sent", true],
+    ["failed", false],
+  ] as const)(
+    "awaits a shared in-flight %s flush and reports %s to both arrivals",
+    async (outcome, empty) => {
+      const storage = listed({ "drill-answers:r": JSON.stringify([answer("c1")]) });
+      let finish: (value: SendOutcome) => void = () => undefined;
+      const sending = new Promise<SendOutcome>((resolve) => {
+        finish = resolve;
+      });
+      const sender = scriptedSender();
+      const send = (item: AnswerInput) => {
+        void sender.send(item);
+        return sending;
+      };
+      const options = { currentId: "new", send, storage };
+      const first = flushEarlierRounds(options);
+      const second = flushEarlierRounds(options);
+      let arrived = 0;
+      void first.then(() => {
+        arrived += 1;
+      });
+      void second.then(() => {
+        arrived += 1;
+      });
+      await Promise.resolve();
+      expect(arrived).toBe(0);
+      expect(sender.sent).toStrictEqual(["c1"]);
+      finish(outcome);
+      expect(await Promise.all([first, second])).toStrictEqual([empty, empty]);
+      expect(storage.data.has("drill-answers:r")).toBe(!empty);
+    },
+  );
   const stored = (...cards: string[]): string =>
     JSON.stringify(cards.map((cardId) => answer(cardId)));
 
@@ -295,11 +329,26 @@ describe("flushEarlierRounds", () => {
   it("keeps what failed to send for the next arrival", async () => {
     const storage = listed({ "drill-answers:r": stored("c1", "c2") });
     const sender = scriptedSender("failed");
-    await flushEarlierRounds({ currentId: "new", send: sender.send, storage });
+    expect(
+      await flushEarlierRounds({ currentId: "new", send: sender.send, storage }),
+    ).toBe(false);
     expect(sender.sent).toStrictEqual(["c1"]);
     expect(storage.data.get("drill-answers:r")).toBe(stored("c1", "c2"));
   });
 
+  it("reports a partial failure and preserves only the unsent tail for retry", async () => {
+    const storage = listed({ "drill-answers:r": stored("c1", "c2") });
+    const sender = scriptedSender("sent", "failed", "sent");
+    expect(
+      await flushEarlierRounds({ currentId: "new", send: sender.send, storage }),
+    ).toBe(false);
+    expect(storage.data.get("drill-answers:r")).toBe(stored("c2"));
+    expect(
+      await flushEarlierRounds({ currentId: "new", send: sender.send, storage }),
+    ).toBe(true);
+    expect(sender.sent).toStrictEqual(["c1", "c2", "c2"]);
+    expect(storage.data.has("drill-answers:r")).toBe(false);
+  });
   it("clears an unreadable key without a request, and leaves the current round and other keys alone", async () => {
     const storage = listed({
       "drill-answers:r": "not json",

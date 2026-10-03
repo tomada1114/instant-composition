@@ -98,6 +98,8 @@ export interface DrillInit {
 }
 
 export interface DrillState {
+  /** Vocabulary uses the same state machine without a timer or fast grading. */
+  readonly untimed?: boolean;
   readonly roundId: string;
   readonly retries: boolean;
   readonly limits: Readonly<Record<string, number>>;

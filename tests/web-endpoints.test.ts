@@ -2,6 +2,14 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   API_ROOT,
+  getVocab,
+  startVocabSession,
+  recordVocabAnswers,
+  finishVocabSession,
+  requestVocabFinish,
+  requestVocabSession,
+  vocabSearch,
+  sendVocabAnswer,
   beginVisit,
   finishRound,
   getHome,
@@ -615,5 +623,176 @@ describe("an unauthenticated answer", () => {
     await getHome();
     expect(calls).toHaveLength(1);
     expect(visited).toStrictEqual([]);
+  });
+});
+
+describe("vocabulary calls", () => {
+  it("reads the hub and starts a category session without a learner id", async () => {
+    const calls: { url: unknown; body: unknown }[] = [];
+    vi.stubGlobal("fetch", (url: unknown, init?: RequestInit) => {
+      calls.push({
+        url,
+        body:
+          typeof init?.body === "string" ? (JSON.parse(init.body) as unknown) : null,
+      });
+      return Promise.resolve(Response.json({ value: "fixture" }));
+    });
+    await getVocab();
+    await startVocabSession({ sessionId: "s1", kind: "today", category: "word" });
+    expect(calls).toStrictEqual([
+      { url: "/api/v1/vocab", body: null },
+      {
+        url: "/api/v1/vocab/sessions",
+        body: { sessionId: "s1", kind: "today", category: "word" },
+      },
+    ]);
+  });
+  it.each([
+    [204, "", "sent"],
+    [409, "ERR_CONFLICT", "failed"],
+    [409, "ERR_SESSION_CLOSED", "rejected"],
+    [404, "ERR_SESSION_NOT_FOUND", "rejected"],
+    [503, "ERR_CONTENT_UNREADABLE", "failed"],
+  ] as const)(
+    "classifies vocabulary status %s %s as %s",
+    async (status, code, expected) => {
+      vi.stubGlobal("fetch", () =>
+        Promise.resolve(
+          status === 204
+            ? new Response(null, { status })
+            : Response.json({ error: { code } }, { status }),
+        ),
+      );
+      expect(await recordVocabAnswers("s1", [])).toBe(expected);
+    },
+  );
+  it("keeps a vocabulary network failure queued and returns finish errors", async () => {
+    vi.stubGlobal("fetch", () => Promise.reject(new Error("offline")));
+    expect(await sendVocabAnswer(ANSWER)).toBe("failed");
+    expect(await finishVocabSession("s1", [])).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_NETWORK" },
+    });
+  });
+  it("sends more than 60 pending answers in bounded batches, without timer fields", async () => {
+    const calls: { url: unknown; body: unknown }[] = [];
+    vi.stubGlobal("fetch", (url: unknown, init?: RequestInit) => {
+      calls.push({
+        url,
+        body:
+          typeof init?.body === "string" ? (JSON.parse(init.body) as unknown) : null,
+      });
+      return Promise.resolve(
+        String(url).endsWith("/answers")
+          ? new Response(null, { status: 204 })
+          : Response.json({ answered: 121 }),
+      );
+    });
+    const inputs = Array.from({ length: 121 }, (_, index) => ({
+      ...ANSWER,
+      id: `a${String(index)}`,
+    }));
+    await requestVocabFinish("s1", inputs);
+    expect(
+      calls.map((call) => [
+        (call.url as string).split("/").at(-1),
+        (call.body as { answers: unknown[] }).answers.length,
+      ]),
+    ).toStrictEqual([
+      ["answers", 60],
+      ["answers", 60],
+      ["finish", 1],
+    ]);
+    expect((calls[0]?.body as { answers: object[] }).answers[0]).not.toHaveProperty(
+      "timedOut",
+    );
+  });
+  it("blocks overlapping starts until prior answers drain, preserves failures and retries the same ids", async () => {
+    const stored = JSON.stringify([ANSWER]);
+    const data = new Map([["vocab-answers:r", stored]]);
+    vi.stubGlobal("window", {
+      sessionStorage: {
+        get length() {
+          return data.size;
+        },
+        key: (index: number) => [...data.keys()][index] ?? null,
+        getItem: (key: string) => data.get(key) ?? null,
+        setItem: (key: string, value: string) => void data.set(key, value),
+        removeItem: (key: string) => void data.delete(key),
+      },
+    });
+    let finish: (response: Response) => void = () => undefined;
+    const sending = new Promise<Response>((resolve) => {
+      finish = resolve;
+    });
+    const failedCalls = stubFetch(() => sending);
+    const first = requestVocabSession({ kind: "today" }, "new");
+    const second = requestVocabSession({ kind: "today" }, "new");
+    await Promise.resolve();
+    expect(failedCalls.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+    ]);
+    finish(envelope(503, "ERR_CONTENT_UNREADABLE"));
+    expect(await Promise.all([first, second])).toStrictEqual([
+      { ok: false, error: { code: "ERR_NETWORK" } },
+      { ok: false, error: { code: "ERR_NETWORK" } },
+    ]);
+    expect(data.get("vocab-answers:r")).toBe(stored);
+    let completeRetry: (response: Response) => void = () => undefined;
+    const retrySending = new Promise<Response>((resolve) => {
+      completeRetry = resolve;
+    });
+    let retriedRequests = 0;
+    const retried = stubFetch(() => {
+      retriedRequests += 1;
+      return retriedRequests === 1
+        ? retrySending
+        : Promise.resolve(Response.json({ sessionId: "new" }));
+    });
+    const retryFirst = requestVocabSession({ kind: "today" }, "new");
+    const retrySecond = requestVocabSession({ kind: "today" }, "new");
+    await Promise.resolve();
+    expect(retried.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+    ]);
+    completeRetry(new Response(null, { status: 204 }));
+    expect(
+      (await Promise.all([retryFirst, retrySecond])).map((result) => result.ok),
+    ).toStrictEqual([true, true]);
+    expect(retried.map((call) => call.url)).toStrictEqual([
+      "/api/v1/vocab/sessions/r/answers",
+      "/api/v1/vocab/sessions",
+      "/api/v1/vocab/sessions",
+    ]);
+    expect(retried[0]?.body).toStrictEqual(failedCalls[0]?.body);
+    expect(retried.slice(1).map((call) => call.body)).toStrictEqual([
+      { sessionId: "new", kind: "today" },
+      { sessionId: "new", kind: "today" },
+    ]);
+    expect(data.has("vocab-answers:r")).toBe(false);
+  });
+  it("stops finishing on a failed earlier vocabulary batch", async () => {
+    const sent: unknown[] = [];
+    vi.stubGlobal("fetch", (url: unknown) => {
+      sent.push(url);
+      return Promise.resolve(new Response(null, { status: 503 }));
+    });
+    expect(
+      await requestVocabFinish(
+        "s1",
+        Array.from({ length: 61 }, () => ANSWER),
+      ),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_NETWORK" } });
+    expect(sent).toStrictEqual(["/api/v1/vocab/sessions/s1/answers"]);
+  });
+  it.each([
+    [{}, { kind: "today" }],
+    [{ kind: "bogus", category: "bogus" }, { kind: "today" }],
+    [
+      { kind: "weak", category: "phrase" },
+      { kind: "weak", category: "phrase" },
+    ],
+  ])("normalizes vocabulary search %j", (search, expected) => {
+    expect(vocabSearch(search)).toStrictEqual(expected);
   });
 });

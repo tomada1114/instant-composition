@@ -72,6 +72,16 @@ export function SpeakerGlyph({
   );
 }
 
+/** Stacked cards: the vocabulary section. */
+export function CardStackGlyph({ className }: GlyphProps): ReactElement {
+  return (
+    <Glyph className={className}>
+      <rect x="3.5" y="7" width="13" height="10" rx="2" />
+      <path d="M5 4.5h10M6.5 2h7" />
+    </Glyph>
+  );
+}
+
 export function HomeGlyph({ className }: GlyphProps): ReactElement {
   return (
     <Glyph className={className}>

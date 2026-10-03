@@ -71,7 +71,7 @@ function onFront(
       const used = usedMs(phase, event.at);
       const limit = limitOf(state);
       // The timer running out flips the card and records nothing: the learner grades it.
-      if (used >= limit) {
+      if (state.untimed !== true && used >= limit) {
         return {
           ...state,
           phase: { kind: "back", mode: "timeout", elapsedMs: limit, since: event.at },
@@ -97,6 +97,7 @@ function onBack(
   if (event.type !== "grade") return state;
   if (event.key && event.at - phase.since < TUNING.keyLockAfterFlipMs) return state;
   const fast =
+    state.untimed !== true &&
     phase.mode === "self" &&
     event.grade !== "again" &&
     phase.elapsedMs <= fastThresholdOf(state);

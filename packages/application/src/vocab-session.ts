@@ -41,15 +41,18 @@ export async function vocabHub(
   const figures = vocabFigures(loaded.value.state);
   return ok({
     empty: loaded.value.cards.size === 0,
+    extra: dealVocab(loaded.value.state, "extra", null).length,
     today: { due: figures.due, new: figures.fresh, minutes: figures.minutes },
     categories: figures.categories.map(({ category, due, fresh, learning, total }) => ({
       category,
+      extra: dealVocab(loaded.value.state, "extra", category).length,
+      weak: dealVocab(loaded.value.state, "weak", category).length,
       due,
       new: fresh,
       learning,
       total,
     })),
-    weak: figures.weak,
+    weak: dealVocab(loaded.value.state, "weak", null).length,
     tomorrow: figures.tomorrow,
   });
 }

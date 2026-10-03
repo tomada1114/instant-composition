@@ -278,7 +278,11 @@ describe("the settings screen, W11 focus", () => {
 
 /** The radio for `count` (or 「無制限」) in the radiogroup named `group`. */
 function limitRadio(group: string, count: number | null): HTMLElement {
-  return within(screen.getByRole("radiogroup", { name: group })).getByRole("radio", {
+  return within(
+    within(document.getElementById("cards") ?? document.body).getByRole("radiogroup", {
+      name: group,
+    }),
+  ).getByRole("radio", {
     name:
       count === null
         ? ja.Settings.daily.unlimited
@@ -304,7 +308,12 @@ describe("the settings screen, W11 daily limits and sound", () => {
       [ja.Settings.limit.title, ["30", "60"]],
     ] as const) {
       expect(
-        within(screen.getByRole("radiogroup", { name }))
+        within(
+          within(document.getElementById("cards") ?? document.body).queryByRole(
+            "radiogroup",
+            { name },
+          ) ?? screen.getByRole("radiogroup", { name }),
+        )
           .getAllByRole("radio")
           .map((radio) => radio.textContent),
       ).toStrictEqual(values);
@@ -332,9 +341,12 @@ describe("the settings screen, W11 daily limits and sound", () => {
   it("offers the review limit with 「無制限」 last, and saves it as null (example 5)", async () => {
     const { patches } = serveSettings();
     await renderApp("/settings");
-    const group = screen.getByRole("radiogroup", {
-      name: ja.Settings.daily.reviewsTitle,
-    });
+    const group = within(document.getElementById("cards") ?? document.body).getByRole(
+      "radiogroup",
+      {
+        name: ja.Settings.daily.reviewsTitle,
+      },
+    );
     expect(
       within(group)
         .getAllByRole("radio")
@@ -363,14 +375,21 @@ describe("the settings screen, W11 daily limits and sound", () => {
       [ja.Settings.daily.newTitle, ja.Settings.daily.newInfo],
       [ja.Settings.daily.reviewsTitle, ja.Settings.daily.reviewsInfo],
     ] as const) {
-      const tip = screen.getByRole("button", {
-        name: fill(ja.Settings.daily.infoLabel, { title }),
-      });
+      const tip = within(document.getElementById("cards") ?? document.body).getByRole(
+        "button",
+        {
+          name: fill(ja.Settings.daily.infoLabel, { title }),
+        },
+      );
       expect(tip).toHaveAttribute("aria-expanded", "false");
-      expect(screen.getByText(info)).not.toBeVisible();
+      expect(
+        within(document.getElementById("cards") ?? document.body).getByText(info),
+      ).not.toBeVisible();
       fireEvent.click(tip);
       expect(tip).toHaveAttribute("aria-expanded", "true");
-      expect(screen.getByText(info)).toBeVisible();
+      expect(
+        within(document.getElementById("cards") ?? document.body).getByText(info),
+      ).toBeVisible();
     }
   });
 
@@ -422,6 +441,8 @@ describe("the settings screen, W11 daily limits and sound", () => {
         .map((group) => group.getAttribute("aria-label")),
     ).toStrictEqual([
       ja.Settings.daily.newTitle,
+      ja.Settings.daily.reviewsTitle,
+      ja.Settings.daily.vocabNewTitle,
       ja.Settings.daily.reviewsTitle,
       ja.Settings.difficulty.mode,
       ja.Settings.difficulty.levels,
@@ -806,12 +827,14 @@ describe("the settings screen, W12 measuring again", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
       ],
       [
         ["#cards", "true"],
+        ["#vocab", null],
         ["#level", null],
         ["#app", null],
         ["#account", null],
@@ -1004,6 +1027,7 @@ describe("the settings screen, one page", () => {
       ]),
     ).toStrictEqual([
       ["cards", ja.Settings.sections.cards],
+      ["vocab", ja.Settings.sections.vocab],
       ["level", ja.Settings.difficulty.title],
       ["app", ja.Settings.sections.app],
       ["account", ja.Settings.signOut.title],
@@ -1013,7 +1037,10 @@ describe("the settings screen, one page", () => {
       screen.getByRole("radiogroup", { name: ja.Settings.daily.newTitle }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("radiogroup", { name: ja.Settings.daily.reviewsTitle }),
+      within(document.getElementById("cards") ?? document.body).getByRole(
+        "radiogroup",
+        { name: ja.Settings.daily.reviewsTitle },
+      ),
     ).toBeInTheDocument();
     expect(retest()).toBeInTheDocument();
     expect(
@@ -1037,6 +1064,7 @@ describe("the settings screen, one page", () => {
         .map((link) => [link.textContent, link.getAttribute("href")]),
     ).toStrictEqual([
       [ja.Settings.sections.cards, "#cards"],
+      [ja.Settings.sections.vocab, "#vocab"],
       [ja.Settings.difficulty.title, "#level"],
       [ja.Settings.sections.app, "#app"],
       [ja.Settings.signOut.title, "#account"],
@@ -1108,6 +1136,7 @@ describe("the settings screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
@@ -1125,6 +1154,7 @@ describe("the settings screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/vocab", null],
         ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
@@ -1309,5 +1339,65 @@ describe("the settings screen, the time zone", () => {
     await settle();
     expect(select).toHaveValue(second);
     expect(screen.queryByRole("alert")).toBeNull();
+  });
+});
+
+describe("vocabulary limits in settings", () => {
+  it("shows the server's six new choices and four review choices, saving on each press", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings");
+    expect(
+      within(
+        screen.getByRole("navigation", { name: ja.Settings.sections.label }),
+      ).getByRole("link", { name: ja.Settings.sections.vocab }),
+    ).toHaveAttribute("href", "#vocab");
+    const section = within(document.getElementById("vocab") ?? document.body);
+    const fresh = section.getByRole("radiogroup", {
+      name: ja.Settings.daily.vocabNewTitle,
+    });
+    const reviews = section.getByRole("radiogroup", {
+      name: ja.Settings.daily.reviewsTitle,
+    });
+    expect(
+      within(fresh)
+        .getAllByRole("radio")
+        .map((radio) => radio.textContent),
+    ).toStrictEqual(["0", "5", "10", "15", "20", "30"]);
+    expect(
+      within(reviews)
+        .getAllByRole("radio")
+        .map((radio) => radio.textContent),
+    ).toStrictEqual(["50", "100", "200", ja.Settings.daily.unlimited]);
+    fireEvent.click(
+      within(fresh).getByRole("radio", {
+        name: fill(ja.Settings.daily.vocabCount, { count: 0 }),
+      }),
+    );
+    fireEvent.click(
+      within(reviews).getByRole("radio", { name: ja.Settings.daily.unlimited }),
+    );
+    await settle();
+    expect(patches).toStrictEqual([
+      { vocabNewPerDay: 0 },
+      { vocabReviewsPerDay: null },
+    ]);
+    fireEvent.click(
+      section.getByRole("button", {
+        name: fill(ja.Settings.daily.infoLabel, {
+          title: ja.Settings.daily.reviewsTitle,
+        }),
+      }),
+    );
+    expect(section.getByText(ja.Settings.daily.vocabReviewsInfo)).toBeVisible();
+    expect(section.queryByText(ja.Settings.daily.reviewsInfo)).toBeNull();
+    fireEvent.click(
+      section.getByRole("button", {
+        name: fill(ja.Settings.daily.infoLabel, {
+          title: ja.Settings.daily.vocabNewTitle,
+        }),
+      }),
+    );
+    expect(section.getByText(ja.Settings.daily.vocabNewInfo)).toBeVisible();
+    expect(section.queryByText(ja.Settings.daily.newInfo)).toBeNull();
   });
 });
