@@ -1,13 +1,21 @@
 import { type ChildProcess, spawn } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { once } from "node:events";
-import { existsSync, mkdtempSync, readdirSync, rmSync, statSync } from "node:fs";
+import {
+  existsSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  statSync,
+} from "node:fs";
 import { createServer } from "node:net";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { z } from "zod";
 
 import { deleteLearnerTable, localDynamoDbClient } from "@instant-composition/adapters";
 import { API_ENV_NAMES } from "@instant-composition/api";
@@ -420,6 +428,59 @@ afterAll(async () => {
 });
 
 describe("the built web client, served by `vite preview`", () => {
+  it("keeps activity screens outside the entry's static dependency graph", async () => {
+    const manifest = z
+      .record(
+        z.string(),
+        z.object({
+          file: z.string(),
+          isEntry: z.boolean().optional(),
+          isDynamicEntry: z.boolean().optional(),
+          imports: z.array(z.string()).default([]),
+          dynamicImports: z.array(z.string()).default([]),
+        }),
+      )
+      .parse(
+        JSON.parse(
+          readFileSync(path.join(webRoot, "dist/.vite/manifest.json"), "utf8"),
+        ),
+      );
+    const entry = Object.keys(manifest).find((key) => manifest[key]?.isEntry);
+    expect(entry).toBe("index.html");
+    function dependencies(keys: string[], includeDynamic: boolean): Set<string> {
+      const seen = new Set<string>();
+      for (const key of keys) {
+        if (seen.has(key)) continue;
+        seen.add(key);
+        const chunk = manifest[key];
+        if (chunk === undefined) throw new Error(`missing manifest chunk: ${key}`);
+        keys.push(...chunk.imports, ...(includeDynamic ? chunk.dynamicImports : []));
+      }
+      return seen;
+    }
+    const initial = dependencies(["index.html"], false);
+    const reachable = dependencies(["index.html"], true);
+    for (const page of [
+      "drill/drill",
+      "summary/recap",
+      "talk/talk",
+      "vocab/vocab",
+      "vocab/vocab-study",
+      "records/records",
+      "settings/settings",
+    ]) {
+      const key = `src/${page}-page.tsx`;
+      expect(initial.has(key)).toBe(false);
+      expect(reachable.has(key)).toBe(true);
+      expect(manifest[key]?.isDynamicEntry).toBe(true);
+      const file = manifest[key]?.file;
+      if (file === undefined) throw new Error(`missing route output: ${key}`);
+      const response = await fetch(new URL(file, baseUrl));
+      expect(response.status).toBe(200);
+      expect(response.headers.get("content-type")).toContain("javascript");
+    }
+  });
+
   it("serves the document, in light and dark and in Japanese", async () => {
     const response = await fetch(baseUrl);
 

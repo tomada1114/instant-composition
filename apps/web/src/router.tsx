@@ -2,24 +2,52 @@ import {
   createRootRoute,
   createRoute,
   createRouter,
+  lazyRouteComponent,
   Outlet,
 } from "@tanstack/react-router";
-import type { ReactElement } from "react";
+import { useEffect, type ReactElement } from "react";
 
-import { DrillPage } from "./drill/drill-page";
 import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
 import { WelcomePage } from "./home/welcome-page";
 import { FocusLayout, ShellLayout } from "./lib/frame";
 import { NotFound } from "./not-found";
 import type { RoundKind } from "./openapi";
-import { RecordsPage } from "./records/records-page";
-import { SettingsPage } from "./settings/settings-page";
-import { RecapPage } from "./summary/recap-page";
-import { VocabPage } from "./vocab/vocab-page";
-import { VocabStudyPage } from "./vocab/vocab-study-page";
 import { vocabSearch } from "./vocab/sessions";
-import { TalkPage } from "./talk/talk-page";
+
+import { PageLoading, PageLoadFailed } from "./lib/page-shell";
+
+const DrillPage = lazyRouteComponent(() => import("./drill/drill-page"), "DrillPage");
+const RecordsPage = lazyRouteComponent(
+  () => import("./records/records-page"),
+  "RecordsPage",
+);
+const SettingsPage = lazyRouteComponent(
+  () => import("./settings/settings-page"),
+  "SettingsPage",
+);
+const RecapPage = lazyRouteComponent(() => import("./summary/recap-page"), "RecapPage");
+const VocabPage = lazyRouteComponent(() => import("./vocab/vocab-page"), "VocabPage");
+const VocabStudyPage = lazyRouteComponent(
+  () => import("./vocab/vocab-study-page"),
+  "VocabStudyPage",
+);
+const TalkPage = lazyRouteComponent(() => import("./talk/talk-page"), "TalkPage");
+
+/** Reload the document to recover a failed module URL; tab-stored answer queues survive. */
+function RouteLoadFailed(): ReactElement {
+  useEffect(() => {
+    document.getElementById("main")?.focus();
+  }, []);
+  return (
+    <PageLoadFailed
+      withNav
+      onReload={() => {
+        window.location.reload();
+      }}
+    />
+  );
+}
 
 /**
  * The route tree, written as code rather than generated from files:
@@ -58,10 +86,13 @@ const drillRoute = createRoute({
   validateSearch: (search: Record<string, unknown>): { kind: RoundKind } => ({
     kind: roundKindFrom(search["kind"]),
   }),
-  component: function DrillRoute(): ReactElement {
-    const { kind } = drillRoute.useSearch();
-    return <DrillPage kind={kind} />;
-  },
+  component: Object.assign(
+    function DrillRoute(): ReactElement {
+      const { kind } = drillRoute.useSearch();
+      return <DrillPage kind={kind} />;
+    },
+    { preload: () => DrillPage.preload?.() ?? Promise.resolve() },
+  ),
 });
 
 const recordsRoute = createRoute({
@@ -103,9 +134,12 @@ const vocabStudyRoute = createRoute({
   getParentRoute: () => focusRoute,
   path: "vocab/study",
   validateSearch: vocabSearch,
-  component: function VocabStudyRoute(): ReactElement {
-    return <VocabStudyPage search={vocabStudyRoute.useSearch()} />;
-  },
+  component: Object.assign(
+    function VocabStudyRoute(): ReactElement {
+      return <VocabStudyPage search={vocabStudyRoute.useSearch()} />;
+    },
+    { preload: () => VocabStudyPage.preload?.() ?? Promise.resolve() },
+  ),
 });
 
 const routeTree = rootRoute.addChildren([
@@ -120,7 +154,15 @@ const routeTree = rootRoute.addChildren([
   welcomeRoute,
 ]);
 
-const buildRouter = () => createRouter({ routeTree });
+const buildRouter = () =>
+  createRouter({
+    routeTree,
+    defaultPreload: "intent",
+    defaultPendingMs: 0,
+    defaultPendingMinMs: 0,
+    defaultPendingComponent: (): ReactElement => <PageLoading withNav />,
+    defaultErrorComponent: RouteLoadFailed,
+  });
 
 export type AppRouter = ReturnType<typeof buildRouter>;
 
