@@ -47,6 +47,7 @@ secrets/
 tmp/
 # Held by a running `pnpm cards:*` write command; never committed
 content/.cards.lock
+content/.cards.lock.claim
 
 # Logs
 *.log

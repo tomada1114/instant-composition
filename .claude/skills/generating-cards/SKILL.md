@@ -107,8 +107,10 @@ The procedure above, with these changes and no others:
   report it; do not patch the script or the data to get past it. Card-level, and so not
   a reason to stop: `ERR_CARDS_LINT`, `ERR_CARDS_STAMP_REFUSED`, a card `cards:add`
   dropped or `cards:update` rejected, and an `unknown id …` line.
-- `ERR_CARDS_BUSY`: another write command holds `content/.cards.lock`. Run write
-  commands one at a time; wait and rerun.
+- `ERR_CARDS_BUSY`: another writer or unverified ownership holds the content lock. Old
+  same-host locks are recovered only when their owner is confirmed dead; unknown locks
+  or an interrupted `.cards.lock.claim` need manual inspection. Run write commands one
+  at a time; wait and rerun.
 - The writer's file is missing or does not parse: send it one message quoting the error;
   if the file is still bad, stop and report.
 - `pnpm cards:lint` reports an ERROR in a card you did not write this run: leave it for
