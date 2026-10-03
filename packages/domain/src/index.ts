@@ -89,6 +89,7 @@ export type { SubtopicRef, TopicInfo } from "./types";
 export type { VocabAnswer, VocabProgress, VocabReview, VocabSession } from "./vocab";
 export { fitsCardText, normalizeHeadword } from "./vocab-card";
 export type { CardText, PersonalCard } from "./vocab-card";
+export { planVocab, type VocabPlan } from "./vocab-plan";
 export { dealVocab, decideVocabAnswers, vocabFigures } from "./vocab-study";
 export { weaknesses, type ConceptWeakness, type SubtopicWeakness } from "./weakness";
 export type { WeaknessEvidence, WeaknessInput, Weaknesses } from "./weakness";

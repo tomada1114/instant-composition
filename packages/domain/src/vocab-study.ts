@@ -1,11 +1,11 @@
 import type { VocabError } from "./errors";
 import { scheduleCard } from "./fsrs";
+import { planVocab, type VocabPlan } from "./vocab-plan";
 import type { QueuedCard } from "./queue";
 import { err, ok, type Result } from "./result";
 import { VOCAB_TUNING } from "./tuning";
 import type { Pass } from "./types";
 import {
-  isNewCard,
   type VocabAnswer,
   type VocabCategory,
   type VocabProgress,
@@ -15,7 +15,7 @@ import {
   type VocabSnapshot,
   type VocabState,
 } from "./vocab";
-import { dueTomorrow, inCategory, vocabQueue, weakCards } from "./vocab-queue";
+import { inCategory, vocabQueue, weakCards } from "./vocab-queue";
 
 /**
  * The cards a session of `kind` deals, in order: today's queue, the extra
@@ -38,50 +38,14 @@ export function dealVocab(
     : extra.filter(wanted).slice(0, VOCAB_TUNING.extraSize);
 }
 
-function count(cards: readonly QueuedCard[], kind: QueuedCard["kind"]): number {
-  return cards.filter((card) => card.kind === kind).length;
-}
-
 /**
  * What the hub shows: today's reviews and new cards and the minutes they
  * take, each category's share of them with how many of its cards are in
  * learning and in all, the weak cards a weak session could deal, and
  * tomorrow's reviews.
  */
-export function vocabFigures(state: VocabState): {
-  readonly due: number;
-  readonly fresh: number;
-  readonly minutes: number;
-  readonly categories: readonly {
-    readonly category: VocabCategory;
-    readonly due: number;
-    readonly fresh: number;
-    readonly learning: number;
-    readonly total: number;
-  }[];
-  readonly weak: number;
-  readonly tomorrow: number;
-} {
-  const { queue } = vocabQueue(state);
-  return {
-    due: count(queue, "review"),
-    fresh: count(queue, "new"),
-    minutes: Math.ceil((queue.length * VOCAB_TUNING.secondsPerCard) / 60),
-    categories: VOCAB_TUNING.categories.map((category) => {
-      const share = queue.filter(inCategory(state, category));
-      const cards = state.cards.filter((card) => card.category === category);
-      return {
-        category,
-        due: count(share, "review"),
-        fresh: count(share, "new"),
-        learning: cards.filter((card) => !isNewCard(state.progress.get(card.id)))
-          .length,
-        total: cards.length,
-      };
-    }),
-    weak: weakCards(state).length,
-    tomorrow: dueTomorrow(state),
-  };
+export function vocabFigures(state: VocabState): VocabPlan["figures"] {
+  return planVocab(state).figures;
 }
 
 /** Whether an answer for `day` moves the card: only its first answer of a practice day does. */

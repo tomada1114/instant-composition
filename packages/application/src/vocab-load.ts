@@ -138,10 +138,12 @@ export function summaryOf(
   session: VocabSession,
   reviews: readonly VocabReview[],
 ): VocabSummary {
-  const firsts = reviews.filter(
-    (review, index) =>
-      reviews.findIndex((other) => other.cardId === review.cardId) === index,
-  );
+  const seen = new Set<string>();
+  const firsts = reviews.filter(({ cardId }) => {
+    if (seen.has(cardId)) return false;
+    seen.add(cardId);
+    return true;
+  });
   return {
     sessionId: session.id,
     kind: session.kind,

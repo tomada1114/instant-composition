@@ -1,7 +1,7 @@
 import {
   dealVocab,
   ok,
-  vocabFigures,
+  planVocab,
   type Result,
   type VocabSession,
 } from "@instant-composition/domain";
@@ -38,21 +38,22 @@ export async function vocabHub(
   if (!loaded.ok) {
     return loaded;
   }
-  const figures = vocabFigures(loaded.value.state);
+  const plan = planVocab(loaded.value.state);
+  const { figures } = plan;
   return ok({
     empty: loaded.value.cards.size === 0,
-    extra: dealVocab(loaded.value.state, "extra", null).length,
+    extra: plan.deal("extra", null).length,
     today: { due: figures.due, new: figures.fresh, minutes: figures.minutes },
     categories: figures.categories.map(({ category, due, fresh, learning, total }) => ({
       category,
-      extra: dealVocab(loaded.value.state, "extra", category).length,
-      weak: dealVocab(loaded.value.state, "weak", category).length,
+      extra: plan.deal("extra", category).length,
+      weak: plan.deal("weak", category).length,
       due,
       new: fresh,
       learning,
       total,
     })),
-    weak: dealVocab(loaded.value.state, "weak", null).length,
+    weak: plan.deal("weak", null).length,
     tomorrow: figures.tomorrow,
   });
 }
