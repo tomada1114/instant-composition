@@ -5,7 +5,6 @@ import {
   vocabFigures,
   type Result,
   type VocabAnswer,
-  type VocabReview,
 } from "@instant-composition/domain";
 
 import type { RequestContext } from "./context";
@@ -23,25 +22,15 @@ export interface VocabAnswersCommand {
 }
 
 /**
- * Answers per commit: each puts a review and at most a card's progress, and
- * the session is written once, which keeps a commit well inside the store's
- * limit for the largest batch the contract takes.
+ * Each answer puts a review and at most a card's progress and checks a personal
+ * card's version. With one session update, 32 distinct personal cards use 97
+ * transaction items, inside the store's limit for any batch the contract takes.
  */
-const ANSWERS_PER_COMMIT = 40;
-
-type Snapshots = ReadonlyMap<string, VocabReview["snapshot"]>;
-
-/** What a review keeps of each card an answer may name: the catalog's and the learner's own. */
-async function snapshotsOf(
-  store: LearnerStore,
-  snapshot: CatalogSnapshot,
-): Promise<Snapshots> {
-  return vocabSnapshots(shownCards(snapshot, await store.cards()));
-}
+const ANSWERS_PER_COMMIT = 32;
 
 function recordChunk(
   store: LearnerStore,
-  snapshots: Snapshots,
+  snapshot: CatalogSnapshot,
   context: RequestContext,
   command: VocabAnswersCommand,
   chunk: readonly VocabAnswer[],
@@ -51,10 +40,12 @@ function recordChunk(
     if (session === undefined) {
       return err({ code: "ERR_SESSION_NOT_FOUND" });
     }
-    const [reviews, items] = await Promise.all([
+    const [reviews, items, cards] = await Promise.all([
       store.vocabReviewsOf(command.sessionId),
       store.vocabItems(),
+      store.cards(),
     ]);
+    const snapshots = vocabSnapshots(shownCards(snapshot, cards));
     const state = {
       session: session.value,
       progress: new Map([...items].map(([id, stored]) => [id, stored.value])),
@@ -81,13 +72,19 @@ function recordChunk(
       // Written unchanged, so a finish racing these answers makes one of them load again.
       [{ type: "vocabSession", value: session.value }, session],
     ];
-    return ok({ value: undefined, writes });
+    const expect = [...new Set(entries.map((entry) => entry.cardId))].flatMap((id) => {
+      const card = cards.get(id);
+      return card === undefined
+        ? []
+        : [{ key: { type: "card" as const, id }, version: card.version }];
+    });
+    return ok({ value: undefined, writes, expect });
   });
 }
 
 async function recordInto(
   store: LearnerStore,
-  snapshots: Snapshots,
+  snapshot: CatalogSnapshot,
   context: RequestContext,
   command: VocabAnswersCommand,
 ): Promise<Result<undefined, ApplicationError>> {
@@ -96,7 +93,7 @@ async function recordInto(
     chunks.push(command.answers.slice(start, start + ANSWERS_PER_COMMIT));
   }
   for (const chunk of chunks.length === 0 ? [[]] : chunks) {
-    const recorded = await recordChunk(store, snapshots, context, command, chunk);
+    const recorded = await recordChunk(store, snapshot, context, command, chunk);
     if (!recorded.ok) {
       return recorded;
     }
@@ -108,6 +105,7 @@ async function recordInto(
  * Records a batch of a session's answers, ignoring ids it already holds; a
  * batch of held ids alone is taken, and writes nothing, after finish too. A
  * session crossing the day boundary keeps taking answers for the day it started.
+ * Deleted personal cards are skipped on a fresh load; already logged answers stay.
  */
 export async function recordVocabAnswers(
   deps: ApplicationDeps,
@@ -122,8 +120,7 @@ export async function recordVocabAnswers(
   if (!snapshot.ok) {
     return snapshot;
   }
-  const snapshots = await snapshotsOf(bound.value, snapshot.value);
-  return recordInto(bound.value, snapshots, context, command);
+  return recordInto(bound.value, snapshot.value, context, command);
 }
 
 /**
@@ -160,8 +157,7 @@ export async function finishVocabSession(
   if (!snapshot.ok) {
     return snapshot;
   }
-  const snapshots = await snapshotsOf(store, snapshot.value);
-  const recorded = await recordInto(store, snapshots, context, command);
+  const recorded = await recordInto(store, snapshot.value, context, command);
   if (!recorded.ok) {
     return recorded.error.code === "ERR_SESSION_CLOSED"
       ? ((await kept()) ?? recorded)

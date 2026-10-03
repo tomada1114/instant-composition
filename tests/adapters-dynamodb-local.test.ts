@@ -13,6 +13,7 @@ import { answersFor, fixedCatalog, makeHarness, NOON } from "./application-harne
 import { localTables } from "./dynamodb-local";
 import { describeLearnerDirectoryContract } from "./learner-directory-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
+import { describeVocabCardDeletionContract } from "./vocab-card-deletion-contract";
 
 // The DynamoDB store and directory against DynamoDB local: both contract
 // suites, each case on a table of its own, then a command flow through the
@@ -30,6 +31,9 @@ afterAll(async () => {
 });
 
 describeLearnerStoreContract("the DynamoDB store", () => tables.fresh());
+describeVocabCardDeletionContract("personal card deletion with DynamoDB", () =>
+  tables.fresh(),
+);
 describeLearnerDirectoryContract("the DynamoDB directory", () => tables.freshBacking());
 
 /** Every read of the learner's store, versions included. */
