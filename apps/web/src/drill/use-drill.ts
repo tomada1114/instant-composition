@@ -2,14 +2,11 @@ import { useEffect, useRef, useState, type Dispatch } from "react";
 
 import { TUNING } from "../lib/tuning";
 import type { Grade, GradeKeyTrio, RoundSummary } from "../openapi";
-import {
-  currentCard,
-  type AnswerInput,
-  type DrillEvent,
-  type DrillState,
-} from "./drill-state";
+import { currentCard, type DrillEvent, type DrillState } from "./drill-state";
 import { requestFinish } from "./rounds";
 import { keyAction, type DrillKeyAction } from "./keys";
+import type { AnswerQueue } from "./answer-queue";
+import { queuedFinish } from "./queued-finish";
 
 /** How often the front's clock is read; also the timer bar's step. */
 const TICK_MS = 100;
@@ -129,15 +126,13 @@ export type FinishState =
 
 /**
  * Asks for the round's summary once the drill is finishing, sending what the
- * server may not hold yet — `unrecorded`, read at each attempt — ahead of it
+ * server may not hold yet — read from the settled queue at each attempt — ahead of it
  * and with it, so the summary is whole even when some single sends failed.
  */
 export function useRoundFinish(options: {
   readonly roundId: string;
   readonly finishing: boolean;
-  readonly unrecorded: () => readonly AnswerInput[];
-  readonly notBefore?: () => number;
-  readonly onDeferred?: (deadline: number) => void;
+  readonly queue: AnswerQueue;
   readonly onDone: (summary: RoundSummary) => void;
 }): FinishState {
   const { roundId, finishing } = options;
@@ -153,18 +148,14 @@ export function useRoundFinish(options: {
   useEffect(() => {
     if (!finishing) return undefined;
     let current = true;
-    void requestFinish(
-      roundId,
-      latest.current.unrecorded(),
-      latest.current.notBefore?.(),
+    void queuedFinish(latest.current.queue, (pending, notBefore) =>
+      requestFinish(roundId, pending, notBefore),
     ).then((finished) => {
       if (!current) return;
       if (finished.ok) {
         latest.current.onDone(finished.value);
         setResult({ status: "done", summary: finished.value });
       } else {
-        if (finished.error.retryAt !== undefined)
-          latest.current.onDeferred?.(finished.error.retryAt);
         setResult({ status: "failed" });
       }
     });

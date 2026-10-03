@@ -378,6 +378,38 @@ describe("an untimed vocabulary session", () => {
     await settle();
     expect(window.location.pathname).toBe("/vocab");
   });
+  it("waits for the in-flight last answer and its retry deadline before finishing", async () => {
+    let now = 10_000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    let resolve: (response: Response) => void = () => undefined;
+    const sending = new Promise<Response>((done) => {
+      resolve = done;
+    });
+    const calls = fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
+      if (call.url === "/api/v1/vocab/sessions") return Response.json(vocabSession());
+      if (call.url.endsWith("/answers")) return sending;
+      if (call.url.endsWith("/finish")) return Response.json(vocabSummary());
+      return undefined;
+    });
+    await renderApp("/vocab/study?kind=today");
+    await flipAndGrade();
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    resolve(new Response("down", { status: 429, headers: { "Retry-After": "10" } }));
+    await settle();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(1);
+    now += 10_000;
+    await settle();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(1);
+    expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
+  });
   it("keeps failed answers in the vocabulary queue and finishes by resending their fixed ids", async () => {
     const calls = serve({ offline: true });
     await renderApp("/vocab/study?kind=today");

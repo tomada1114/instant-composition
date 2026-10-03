@@ -12,6 +12,8 @@ export interface QueueStorage {
 export interface AnswerQueue {
   pending(): readonly AnswerInput[];
   retryAt(): number;
+  /** Wait for sends already scheduled without starting another attempt. */
+  settled(): Promise<void>;
   deferUntil(deadline: number): void;
   /** Queues `answer` and sends everything pending; `true` when nothing is left. */
   enqueue(answer: AnswerInput): Promise<boolean>;
@@ -169,6 +171,7 @@ export function createAnswerQueue(options: {
   return {
     pending: () => pending,
     retryAt: () => retryAt,
+    settled: () => chain.then(() => undefined),
     deferUntil(deadline) {
       retryAt = Math.max(retryAt, deadline);
       persist();

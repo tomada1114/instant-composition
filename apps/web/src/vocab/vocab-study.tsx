@@ -1,3 +1,4 @@
+import { queuedFinish } from "../drill/queued-finish";
 import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
@@ -66,19 +67,16 @@ export function VocabStudy({
   useEffect(() => {
     if (!finishing) return undefined;
     let active = true;
-    void requestVocabFinish(session.sessionId, queue.pending(), queue.retryAt()).then(
-      (result) => {
-        if (!active) return;
-        if (result.ok) {
-          queue.clear();
-          setSummary(result.value);
-          void cache.invalidateQueries({ queryKey: ["vocab"] });
-        } else {
-          queue.deferUntil(result.error.retryAt ?? 0);
-          setFailed(true);
-        }
-      },
-    );
+    void queuedFinish(queue, (pending, notBefore) =>
+      requestVocabFinish(session.sessionId, pending, notBefore),
+    ).then((result) => {
+      if (!active) return;
+      if (result.ok) {
+        queue.clear();
+        setSummary(result.value);
+        void cache.invalidateQueries({ queryKey: ["vocab"] });
+      } else setFailed(true);
+    });
     return () => {
       active = false;
     };

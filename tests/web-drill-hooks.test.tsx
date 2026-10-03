@@ -3,6 +3,7 @@ import { useReducer } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
+  createAnswerQueue,
   drillReducer,
   feedbackMs,
   initDrill,
@@ -306,9 +307,40 @@ describe("useAnswerQueue on arrival at a new round", () => {
 });
 
 describe("useRoundFinish", () => {
+  it("waits for the last answer in flight before consulting its deadline", async () => {
+    vi.spyOn(Date, "now").mockReturnValue(10_000);
+    let resolve: (outcome: { status: "failed"; retryAt: number }) => void = () =>
+      undefined;
+    const sending = new Promise<{ status: "failed"; retryAt: number }>((done) => {
+      resolve = done;
+    });
+    const queue = createAnswerQueue({ key: "test", send: () => sending });
+    const queued = queue.enqueue(answer("c1"));
+    const fetch = vi.fn();
+    vi.stubGlobal("fetch", fetch);
+    const { result } = renderHook(() =>
+      useRoundFinish({ roundId: "r", finishing: true, queue, onDone: vi.fn() }),
+    );
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(result.current.status).toBe("sending");
+    expect(fetch).not.toHaveBeenCalled();
+    await act(async () => {
+      resolve({ status: "failed", retryAt: 20_000 });
+      await queued;
+    });
+    expect(result.current.status).toBe("failed");
+    expect(fetch).not.toHaveBeenCalled();
+    expect(queue.pending()).toStrictEqual([answer("c1")]);
+  });
   it("stores finish retry hints and waits for the queue deadline on manual retry", async () => {
     let now = 10_000;
-    let deadline = 0;
+    const queue = createAnswerQueue({
+      key: "test",
+      send: () => Promise.resolve("failed"),
+    });
+    await queue.enqueue(answer("c1"));
     vi.spyOn(Date, "now").mockImplementation(() => now);
     const fetch = vi.fn(() =>
       Promise.resolve(
@@ -320,18 +352,14 @@ describe("useRoundFinish", () => {
       useRoundFinish({
         roundId: "r",
         finishing: true,
-        unrecorded: () => [answer("c1")],
-        notBefore: () => deadline,
-        onDeferred: (value) => {
-          deadline = value;
-        },
+        queue,
         onDone: vi.fn(),
       }),
     );
     await act(async () => {
       await vi.runAllTimersAsync();
     });
-    expect(deadline).toBe(20_000);
+    expect(queue.retryAt()).toBe(20_000);
     act(() => result.current.retry());
     await act(async () => {
       await vi.runAllTimersAsync();
@@ -357,12 +385,17 @@ describe("useRoundFinish", () => {
       );
     });
     const onDone = vi.fn();
+    const queue = createAnswerQueue({
+      key: "test",
+      send: () => Promise.resolve("failed"),
+    });
+    await queue.enqueue(answer("c1"));
     const { result, rerender } = renderHook(
       ({ finishing }: { finishing: boolean }) =>
         useRoundFinish({
           roundId: "r",
           finishing,
-          unrecorded: () => [answer("c1")],
+          queue,
           onDone,
         }),
       { initialProps: { finishing: false } },
