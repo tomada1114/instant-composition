@@ -47,6 +47,19 @@ export async function deleteVocabCard(
             },
           ]),
     ];
-    return ok({ value: undefined, writes: [], deletes });
+    return ok({
+      value: undefined,
+      writes: [],
+      deletes,
+      expect:
+        progress === undefined
+          ? [
+              {
+                key: { type: "vocabItem", cardId: command.cardId } as const,
+                version: null,
+              },
+            ]
+          : [],
+    });
   });
 }

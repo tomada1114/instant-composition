@@ -28,13 +28,14 @@ export type Removal = NonNullable<Commit["deletes"]>[number];
 export function commitOf(
   writes: readonly Write[],
   deletes: readonly Removal[] = [],
+  expect: Commit["expect"] = [],
 ): Commit {
   return {
     puts: writes.filter(([, read]) => read === undefined).map(([entry]) => entry),
     updates: writes.flatMap(([entry, read]) =>
       read === undefined ? [] : [{ entry, version: read.version }],
     ),
-    expect: [],
+    expect,
     ...(deletes.length === 0 ? {} : { deletes }),
   };
 }
@@ -44,6 +45,7 @@ export interface Planned<T> {
   readonly value: T;
   readonly writes: readonly Write[];
   readonly deletes?: readonly Removal[];
+  readonly expect?: Commit["expect"];
 }
 
 /** How often a command re-runs from its load after another write won the race. */
@@ -62,11 +64,11 @@ export async function committed<T, E = ApplicationError>(
     if (!planned.ok) {
       return planned;
     }
-    const { writes, deletes = [] } = planned.value;
+    const { writes, deletes = [], expect = [] } = planned.value;
     if (writes.length === 0 && deletes.length === 0) {
       return ok(planned.value.value);
     }
-    const written = await store.commit(commitOf(writes, deletes));
+    const written = await store.commit(commitOf(writes, deletes, expect));
     if (written.ok) {
       return ok(planned.value.value);
     }

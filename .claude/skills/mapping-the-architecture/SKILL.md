@@ -188,11 +188,15 @@ IDENTITY#<sub> LEARNER                              the identity mapping
 - Each command commits as one `TransactWriteItems`, puts conditioned on absence and
   updates and deletes on the version read — deleting a personal card with its progress
   is the one delete, and no commit updates or deletes a log entry; projections change in
-  the same commit that appends to the log, so reads are point lookups. Answers commit
-  per batch rather than all at `finish`, because one transaction holds at most
-  `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a long round with resends would not fit.
-  The in-memory store and DynamoDB local run the same contract suite. **REQUIRED:**
-  `designing-application-core` for the commit shape.
+  the same commit that appends to the log, so reads are point lookups. A vocabulary
+  answer checks each personal card's version in that transaction and reloads its
+  snapshot on conflict; deletion checks progress's version or continued absence. Deleted
+  personal cards are skipped on a fresh answer load, while existing answer logs remain.
+  Vocabulary answers use chunks of 32 so even a personal-card check per answer stays
+  under the transaction limit. Answers commit per batch rather than all at `finish`,
+  because one transaction holds at most `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a
+  long round with resends would not fit. The in-memory store and DynamoDB local run the
+  same contract suite. **REQUIRED:** `designing-application-core` for the commit shape.
 - Nothing migrates stored items. A field a record gains is optional and read with its
   default when absent; a field a type drops stays in old items, and both stores read
   settings, rounds, review details, item progress, talks and personal cards through the

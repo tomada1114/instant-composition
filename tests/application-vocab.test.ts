@@ -14,6 +14,7 @@ import {
 import type { VocabAnswer } from "@instant-composition/domain";
 
 import { makePersonalCard, makeStats, makeVocabProgress } from "./application-fixtures";
+import { describeVocabCardDeletionContract } from "./vocab-card-deletion-contract";
 import {
   DAY_MS,
   fixedCatalog,
@@ -24,6 +25,11 @@ import {
   unreadableCatalog,
   type Harness,
 } from "./application-harness";
+
+describeVocabCardDeletionContract(
+  "personal card deletion with the in-memory store",
+  () => makeHarness().stores,
+);
 
 /** A learner the drill placed at `level`. */
 async function atLevel(h: Harness, level = 4): Promise<void> {
