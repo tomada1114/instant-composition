@@ -3,6 +3,7 @@ import path from "node:path";
 
 import { afterEach, describe, expect, it } from "vitest";
 
+import { describeCardsLockContract } from "./cards-lock-contract";
 import { CardsError } from "../scripts/cards/errors.mjs";
 import { coreHash, fieldHash } from "../scripts/cards/schema.mjs";
 import { vocabCoreHash } from "../scripts/cards/vocab-schema.mjs";
@@ -27,6 +28,8 @@ import {
 // Every `cards:*` command driven in-process through `main`, against a
 // throwaway content root. The formatter is a no-op here; the lifecycle suite
 // runs the real one.
+
+describeCardsLockContract(makeContentRoot);
 
 afterEach(() => {
   removeContentRoots();
@@ -1595,15 +1598,15 @@ describe("write safety", () => {
     expect(existsSync(lockPath(root))).toBe(true);
   });
 
-  it("breaks a lock older than ten minutes and says so", () => {
+  it("retains an old legacy lock whose ownership cannot be verified", () => {
     const root = makeContentRoot();
     writeUnder(root, ".cards.lock", "123\n");
     const old = new Date(Date.now() - 11 * 60 * 1000);
     utimesSync(lockPath(root), old, old);
     const run = runCards(root, ["add", writeInput(root, "add.json", [makeInput()])]);
-    expect(run.code).toBe(0);
-    expect(run.err).toMatch(/^Breaking a stale lock: /u);
-    expect(existsSync(lockPath(root))).toBe(false);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_BUSY");
+    expect(readFileSync(lockPath(root), "utf8")).toBe("123\n");
   });
 
   it.each([

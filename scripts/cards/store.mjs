@@ -4,17 +4,13 @@
 // the files keep one canonical shape.
 import {
   appendFileSync,
-  closeSync,
   existsSync,
   mkdirSync,
-  openSync,
   readdirSync,
   readFileSync,
   renameSync,
   rmSync,
-  statSync,
   writeFileSync,
-  writeSync,
 } from "node:fs";
 import path from "node:path";
 import process from "node:process";
@@ -24,6 +20,8 @@ import { repoRoot, runNode } from "../lib/node-tools.mjs";
 import { CardsError } from "./errors.mjs";
 import { CORE_FIELDS } from "./schema.mjs";
 import { VOCAB_CORE_FIELDS } from "./vocab-schema.mjs";
+
+export { LOCK_FILE, STALE_LOCK_MS, withLock } from "./lock.mjs";
 
 /** The content root this repository ships. */
 export const DEFAULT_ROOT = path.join(repoRoot, "content");
@@ -908,89 +906,6 @@ function writeSorted(directory, files, order, formatter) {
   for (const { absolute, temp } of plans) {
     if (temp === undefined) rmSync(absolute, { force: true });
     else renameSync(temp, absolute);
-  }
-}
-
-/** The lock file every write command holds, under the content root. */
-export const LOCK_FILE = ".cards.lock";
-
-/** A lock older than this is taken to be left by a crashed command. */
-export const STALE_LOCK_MS = 10 * 60 * 1000;
-
-/**
- * @param {string} lock - Lock path.
- * @returns {number | undefined} An open descriptor, or undefined when the
- *   lock already exists.
- * @throws {CardsError} `ERR_CARDS_CONTENT` when it cannot be created at all.
- */
-function tryLock(lock) {
-  try {
-    return openSync(lock, "wx");
-  } catch (error) {
-    if (error instanceof Error && "code" in error && error.code === "EEXIST") {
-      return undefined;
-    }
-    throw new CardsError("ERR_CARDS_CONTENT", "The content root is not writable.", {
-      expected: `a writable directory holding ${LOCK_FILE}`,
-      actual: error instanceof Error ? error.message : String(error),
-      next: "check that the content root exists (`--root`) and is writable.",
-      cause: error,
-    });
-  }
-}
-
-/**
- * Run a write under the content root's exclusive lock.
- *
- * @remarks
- * Every write command loads the whole root, changes it in memory and writes
- * back, so two running at once would each overwrite what the other wrote.
- * The lock makes the second one fail fast instead. A lock left by a crashed
- * command is broken once it is older than {@link STALE_LOCK_MS}.
- *
- * @template T
- * @param {string} root - Content root.
- * @param {(text: string) => void} warn - Where to say a stale lock was broken.
- * @param {() => T} action - The write.
- * @returns {T} What the write returned.
- * @throws {CardsError} `ERR_CARDS_BUSY` while another command holds the lock.
- */
-export function withLock(root, warn, action) {
-  const lock = path.join(root, LOCK_FILE);
-  let fd = tryLock(lock);
-  if (fd === undefined) {
-    /** @type {number} */
-    let age;
-    try {
-      age = Date.now() - statSync(lock).mtimeMs;
-    } catch {
-      age = Number.POSITIVE_INFINITY;
-    }
-    if (age >= STALE_LOCK_MS) {
-      warn(
-        `Breaking a stale lock: ${LOCK_FILE} is ${String(Math.round(age / 60_000))} minutes old, so the command that took it is gone.`,
-      );
-      rmSync(lock, { force: true });
-      fd = tryLock(lock);
-    }
-  }
-  if (fd === undefined) {
-    throw new CardsError(
-      "ERR_CARDS_BUSY",
-      "Another cards:* write command is running.",
-      {
-        expected: `no ${LOCK_FILE} under the content root`,
-        actual: `${LOCK_FILE} exists and is younger than ${String(STALE_LOCK_MS / 60_000)} minutes`,
-        next: "wait for the other command to finish and rerun; run write commands one at a time. A lock left by a crash is broken automatically after 10 minutes.",
-      },
-    );
-  }
-  try {
-    writeSync(fd, `${String(process.pid)}\n`);
-    return action();
-  } finally {
-    closeSync(fd);
-    rmSync(lock, { force: true });
   }
 }
 
