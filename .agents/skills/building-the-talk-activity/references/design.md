@@ -335,12 +335,12 @@ Japanese.
 
 ## The web client
 
-- The route is `/talk`, the navigation's second section 「会話」 with a speech-bubble
+- The route is `/talk`, the navigation's third section 「会話」 with a speech-bubble
   glyph. The current step stays in React state; this browser reloads the open talk from
   its saved id and continues after its kept turns (requirements §3.1).
-- New parts go into designing-ui's inventory first (ux-flows §4.1): the fourth section,
-  the talk line, the waiting line, the hidden model answer, and the underline field
-  rebuilt.
+- New parts go into designing-ui's inventory first (ux-flows §4.1): the talk navigation
+  item, the talk line, the waiting line, the hidden model answer, and the underline
+  field rebuilt.
 - Requests follow the operations above: 「始める」 → `startTalk`; 「送る」 on the
   English or「わからない」 → `sendTurn`; the held reply shows after 「言えた」 or with
   the ○; W3g's「もう一度」 → `retryReply`; W4's 「終える」 → `endTalk`. Leaving mid-talk

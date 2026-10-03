@@ -21,7 +21,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 
 | #   | Screen                                            | Requirement served          | States                                               |
 | --- | ------------------------------------------------- | --------------------------- | ---------------------------------------------------- |
-| W1  | Bottom tabs (four)                                | §3.1 entry                  | —                                                    |
+| W1  | Shell navigation (five sections)                  | §3.1 entry                  | —                                                    |
 | W2  | The talk start screen (the 「会話」 ("talk") tab) | §3.1                        | before start / preparing / could not start           |
 | W3  | The talk screen                                   | §3.1 to 3.4                 | W3a to W3h (the bottom panel changes with each step) |
 | W4  | Leave-confirmation dialog                         | §3.1 ending midway          | 1 or more turns / 0 turns                            |
@@ -38,7 +38,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 
 ### W1 The navigation
 
-「会話」 is the second of the shell's four sections — ホーム, 会話, 記録, 設定 — as
+「会話」 is the third of the shell's five sections — ホーム, 語彙, 会話, 記録, 設定 — as
 glyph + label in the sidebar from 1024 and in the top bar below it (designing-ui's
 `sidebar` and `top-bar` recipes); its glyph is a speech-bubble line drawing, 20. A talk
 under way is in the focus layout, so no navigation shows; leaving is ✕ or the browser's
