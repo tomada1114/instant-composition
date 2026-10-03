@@ -108,11 +108,16 @@ export function VocabStudy({
   const shown = currentCard(state);
   const card = session.cards.find((value) => value.id === shown?.cardId);
   const announcement =
-    phase.kind === "front" && card !== undefined
-      ? `${shown?.pass === "retry" ? t("card.again") : ""} ${vocab("front")} ${card.definition}`
-      : phase.kind === "feedback"
-        ? t(`grade.${phase.grade}`)
-        : "";
+    phase.kind === "front" && card !== undefined ? (
+      <>
+        {`${shown?.pass === "retry" ? t("card.again") : ""} ${vocab("front")} `}
+        <span lang="en">{card.definition}</span>
+      </>
+    ) : phase.kind === "feedback" ? (
+      t(`grade.${phase.grade}`)
+    ) : (
+      ""
+    );
   if (summary !== undefined)
     return (
       <VocabDone

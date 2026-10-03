@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactElement } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 import { currentCard, progress, type DrillState } from "../drill/drill-state";
 import { playMotion } from "../drill/motion";
@@ -19,7 +19,7 @@ export function VocabExample({
   back,
 }: Readonly<{ example: string; back: boolean }>): ReactElement {
   return (
-    <p className="font-latin whitespace-pre-line">
+    <p lang="en" className="font-latin whitespace-pre-line">
       {example.split(/(\{\{[^}]+\}\})/u).map((part, index) =>
         part.startsWith("{{") ? (
           back ? (
@@ -60,6 +60,20 @@ export function VocabCard({
   const reAsk = currentCard(state)?.pass === "retry";
   const where = progress(state);
   const face = useRef<HTMLDivElement>(null);
+  const [overflowing, setOverflowing] = useState(false);
+  useLayoutEffect(() => {
+    function measure(): void {
+      const element = face.current;
+      setOverflowing(
+        !front && element !== null && element.scrollHeight > element.clientHeight,
+      );
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+    };
+  }, [front, card.id]);
   useEffect(() => {
     playMotion(face.current, front ? "fade" : "rise");
   }, [front, state.card]);
@@ -85,6 +99,7 @@ export function VocabCard({
       <div
         ref={face}
         data-part="back-scroll"
+        tabIndex={!front && overflowing ? 0 : undefined}
         className="flex min-h-0 w-full flex-col gap-5 overflow-y-auto rounded-panel border-2 border-border bg-card p-8"
       >
         {reAsk ? (
@@ -104,12 +119,15 @@ export function VocabCard({
             className="flex flex-col gap-6 text-left hover:text-muted-foreground"
             style={{ visibility: state.paused ? "hidden" : "visible" }}
           >
-            <p className="font-latin">{card.definition}</p>
+            <p lang="en" className="font-latin">
+              {card.definition}
+            </p>
             <VocabExample example={card.example} back={false} />
           </button>
         ) : (
           <>
             <p
+              lang="en"
               className={cn(
                 "font-latin text-answer transition-colors duration-160",
                 feedback === "good"
@@ -124,7 +142,9 @@ export function VocabCard({
             <p className="text-heading">{card.meaning}</p>
             <hr className="border-border" />
             <VocabExample example={card.example} back />
-            <p className="font-latin text-muted-foreground">{card.example2}</p>
+            <p lang="en" className="font-latin text-muted-foreground">
+              {card.example2}
+            </p>
           </>
         )}
       </div>

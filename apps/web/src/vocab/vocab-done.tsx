@@ -89,7 +89,9 @@ export function VocabDone({
           <ul className="flex flex-col gap-3">
             {summary.again.map((row) => (
               <li key={row.cardId} className="flex flex-wrap justify-between gap-2">
-                <span className="font-latin">{row.headword}</span>
+                <span lang="en" className="font-latin">
+                  {row.headword}
+                </span>
                 <span className="text-muted-foreground">{row.meaning}</span>
               </li>
             ))}

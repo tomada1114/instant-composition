@@ -169,6 +169,113 @@ describe("the vocabulary hub", () => {
 });
 
 describe("an untimed vocabulary session", () => {
+  it("marks English front and back fragments while retaining Japanese meaning and controls", async () => {
+    const card = vocabCard();
+    serve();
+    await renderApp("/vocab/study");
+    expect(screen.getByText(card.definition, { selector: "p" })).toHaveAttribute(
+      "lang",
+      "en",
+    );
+    expect(screen.getByLabelText("…").closest("p")).toHaveAttribute("lang", "en");
+    expect(
+      screen.getByText(ja.Vocab.categories.phrase).closest('[lang="en"]'),
+    ).toBeNull();
+    fireEvent.click(
+      screen.getAllByRole("button", { name: ja.Drill.card.flip })[0] ?? document.body,
+    );
+    expect(screen.getByText(card.headword)).toHaveAttribute("lang", "en");
+    expect(
+      screen.getByText("No worries", { selector: "strong" }).closest("p"),
+    ).toHaveAttribute("lang", "en");
+    expect(screen.getByText(card.example2)).toHaveAttribute("lang", "en");
+    expect(screen.getByText(card.meaning).closest('[lang="en"]')).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "忘れた 明日" }).closest('[lang="en"]'),
+    ).toBeNull();
+  });
+  it("announces the English definition with its language while keeping pause and feedback Japanese", async () => {
+    const card = vocabCard();
+    serve({ session: vocabSession({ cards: [card, vocabCard("v_next")] }) });
+    await renderApp("/vocab/study");
+    const definition = screen.getByText(card.definition, { selector: "span" });
+    expect(definition).toHaveAttribute("lang", "en");
+    const announcement = definition.closest("p");
+    expect(announcement).toHaveAttribute("aria-live", "polite");
+    expect(announcement).not.toHaveAttribute("lang", "en");
+    expect(announcement).toHaveTextContent(ja.Vocab.front);
+    press("?");
+    expect(announcement).toBeEmptyDOMElement();
+    press("Escape");
+    expect(screen.getByText(card.definition, { selector: "span" })).toHaveAttribute(
+      "lang",
+      "en",
+    );
+    await settle(16);
+    press(" ");
+    await settle(151);
+    press("3");
+    expect(announcement).toHaveTextContent(ja.Drill.grade.good);
+    expect(announcement?.querySelector('[lang="en"]')).toBeNull();
+  });
+  it.each([
+    [100, -1],
+    [200, -1],
+    [400, 0],
+  ])(
+    "makes only an overflowing back tabbable when its height is %s",
+    async (height, tabIndex) => {
+      vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(height);
+      vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(200);
+      serve();
+      await renderApp("/vocab/study");
+      const area =
+        screen
+          .getByText(vocabCard().definition, { selector: "p" })
+          .closest<HTMLElement>("[data-part=back-scroll]") ?? document.body;
+      expect(area).not.toHaveAttribute("tabindex");
+      const flip =
+        screen.getAllByRole("button", { name: ja.Drill.card.flip })[0] ?? document.body;
+      flip.focus();
+      expect(flip).toHaveFocus();
+      fireEvent.click(flip);
+      expect(area.tabIndex).toBe(tabIndex);
+    },
+  );
+  it("remeasures a back on resize, allows focus and arrow scrolling, and resets for the next front", async () => {
+    let height = 100;
+    vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockImplementation(
+      () => height,
+    );
+    vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(200);
+    serve({ session: vocabSession({ cards: [vocabCard(), vocabCard("v_next")] }) });
+    await renderApp("/vocab/study");
+    const area =
+      screen
+        .getByText(vocabCard().definition, { selector: "p" })
+        .closest<HTMLElement>("[data-part=back-scroll]") ?? document.body;
+    const scrollBy = vi.fn();
+    Object.defineProperty(area, "scrollBy", { value: scrollBy });
+    await settle(16);
+    press(" ");
+    expect(area).not.toHaveAttribute("tabindex");
+    height = 400;
+    fireEvent(window, new Event("resize"));
+    expect(area).toHaveAttribute("tabindex", "0");
+    area.focus();
+    expect(area).toHaveFocus();
+    expect(area).not.toHaveClass("outline-none", "focus-visible:outline-none");
+    await settle(151);
+    press("ArrowDown");
+    press("ArrowUp");
+    expect(scrollBy.mock.calls).toStrictEqual([[{ top: 48 }], [{ top: -48 }]]);
+    press("3");
+    await settle(300);
+    expect(
+      screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
+    ).toBeInTheDocument();
+    expect(area).not.toHaveAttribute("tabindex");
+  });
   it("shows a dialogue with a fixed blank, flips by click, and emphasizes the filled answer", async () => {
     serve();
     await renderApp("/vocab/study?kind=today");
@@ -218,10 +325,14 @@ describe("an untimed vocabulary session", () => {
     await renderApp("/vocab/study?kind=today");
     await flipAndGrade("1");
     for (const index of [1, 2, 3, 4]) {
-      expect(screen.getByText(cards[index]?.definition ?? "")).toBeInTheDocument();
+      expect(
+        screen.getByText(cards[index]?.definition ?? "", { selector: "p" }),
+      ).toBeInTheDocument();
       await flipAndGrade();
     }
-    expect(screen.getByText(cards[0]?.definition ?? "")).toBeInTheDocument();
+    expect(
+      screen.getByText(cards[0]?.definition ?? "", { selector: "p" }),
+    ).toBeInTheDocument();
     expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
     await settle(16);
     press(" ");
@@ -346,7 +457,9 @@ describe("an untimed vocabulary session", () => {
       calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
     ).toStrictEqual({ sessionId: arrival, kind: "today" });
     expect(ids).toHaveBeenCalledTimes(1);
-    expect(screen.getByText(vocabCard().definition)).toBeInTheDocument();
+    expect(
+      screen.getByText(vocabCard().definition, { selector: "p" }),
+    ).toBeInTheDocument();
   });
   it("retries a failed start under the same id and closes to the hub", async () => {
     let fails = true;
@@ -371,7 +484,9 @@ describe("an untimed vocabulary session", () => {
       calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
       calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
     ]);
-    expect(screen.getByText(vocabCard().definition)).toBeInTheDocument();
+    expect(
+      screen.getByText(vocabCard().definition, { selector: "p" }),
+    ).toBeInTheDocument();
   });
 });
 
@@ -407,7 +522,8 @@ describe("vocabulary completion", () => {
       expect(screen.getByText("22 枚")).toBeInTheDocument();
       expect(screen.getByText("10 枚")).toBeInTheDocument();
       expect(screen.getByText("14 枚")).toBeInTheDocument();
-      expect(screen.getByText("give up")).toBeInTheDocument();
+      expect(screen.getByText("give up")).toHaveAttribute("lang", "en");
+      expect(screen.getByText("あきらめる").closest('[lang="en"]')).toBeNull();
       expect(
         screen.queryByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
       ).toBeNull();
@@ -559,7 +675,9 @@ describe("vocabulary recovery and scoped continuation", () => {
       screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 20 }) }),
     );
     await settle(16);
-    expect(screen.getByText(vocabCard("v_next").definition)).toBeInTheDocument();
+    expect(
+      screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
+    ).toBeInTheDocument();
     expect(screen.queryByText(ja.Vocab.weakDone)).toBeNull();
     expect(calls.filter((call) => call.url === "/api/v1/vocab/sessions")).toHaveLength(
       2,
