@@ -129,22 +129,6 @@
     }
   },
   {
-    "id": "c_2x8j6s2p",
-    "ja": "私は最近、近所づきあいを控えてる。",
-    "en": "I'm avoiding mingling with neighbors lately.",
-    "alternatives": [
-      "I'm avoiding socializing with neighbors lately.",
-      "I'm keeping neighborly socializing to a minimum lately."
-    ],
-    "point": "mingle with は人の輪に入って付き合う。",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_3d2b3f8n",
     "ja": "彼が引っ越してたら今は心の支えがない。",
     "en": "If he'd moved, he'd feel unmoored now.",
@@ -297,10 +281,16 @@
     "point": "aloofness は距離を置いて打ち解けない様子。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["noun-clauses"],
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1a30655f59a8825f89da2f67a4e4f4329f24f90ba8c298189a2defe738b6266",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3x8s6n7y",
@@ -462,10 +452,16 @@
     "point": "bearable は暑さなどが我慢できる程度という意味。",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b21dcec15cc0f71167b23f67abf3600deb9a04749777871d46ad9af5076704cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z6t7m3b",
@@ -824,6 +820,28 @@
         "hash": "sha256:783d648bd1d1b5d5e13a22a323cfadc02b4fd9c1bb4093f1c59e3ef2915fc45a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p5t5b7v",
+    "ja": "私は最近、近所づきあいを控えてる。",
+    "en": "I've been socializing less with neighbors lately.",
+    "alternatives": [
+      "I've been cutting back on neighborhood socializing.",
+      "I've been keeping neighborly socializing to a minimum."
+    ],
+    "point": "socializing less は付き合いをやめず、量を控えること。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ba0813c14e415be8e07f53f9ed468e7e1198b107746ef27a260d298b63aef9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

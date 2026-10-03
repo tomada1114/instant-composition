@@ -187,7 +187,7 @@
   },
   {
     "id": "c_2x2c4f3w",
-    "ja": "この変更の暗黙の点をごまかさず話そう。",
+    "ja": "この変更の暗黙の点を濁さず話そう。",
     "en": "Let's not gloss over what this change leaves implicit.",
     "alternatives": [
       "Let's address what's implicit in this change without evasion.",
@@ -196,10 +196,16 @@
     "point": "gloss over は難しい点を軽く扱って通り過ぎる。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["phrasal-verbs", "nested-clauses"],
+    "level": 8,
+    "grammar": ["phrasal-verbs", "noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cab8821fc219bd63ba9d48c8ced984e23ce7b8db8b598ec7b95665c5f4dfdec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y6f8r3h",
@@ -646,22 +652,6 @@
     }
   },
   {
-    "id": "c_6b6j7z4p",
-    "ja": "君が説明を拒む点を私に弁護させないで。",
-    "en": "Don't have me defend what you won't explain.",
-    "alternatives": [
-      "Don't make me justify what you refuse to explain.",
-      "Don't get me to defend what you won't clarify."
-    ],
-    "point": "have 人 + 動詞で、その役割を引き受けさせる。",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["causatives", "nested-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_6c7q3f7n",
     "ja": "テストあったら、今は安心なのに。",
     "en": "If we'd had tests, I'd feel safer.",
@@ -700,6 +690,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9d988c7d67ac11a32d4c76e001eea72a50efe4dd6b9599917f1e709d67a4c157",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_6n4e6x9f",
+    "ja": "私はこの修正が十分とは到底言えない。",
+    "en": "I couldn't possibly call this fix sufficient.",
+    "alternatives": [
+      "I can't possibly say this fix is sufficient.",
+      "I couldn't call this fix sufficient at all."
+    ],
+    "point": "couldn’t possibly call で、その評価は到底できないと強く述べる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9aed6c3a575098f3720a3e8fd970fca3639b23eaeebd98b04ae34e2a415b2e4",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -783,22 +795,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_7d3y9f4b",
-    "ja": "私にはこの修正が十分とは到底言えない。",
-    "en": "I wouldn't go so far as to call this sufficient.",
-    "alternatives": [
-      "I'd stop short of saying this fix is sufficient.",
-      "I wouldn't venture to say this fix is adequate."
-    ],
-    "point": "would not go so far as to で十分という評価に慎重な含みを出す。",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_7h6q2d9w",
@@ -1096,6 +1092,28 @@
         "hash": "sha256:a91db6980926901c83f0e2c72cf0524252aa70fb0b69b1e0c31b3c39cb57fccb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8z6r9f4h",
+    "ja": "君の説明拒否を私に弁護させないで。",
+    "en": "Don't make me defend your refusal to explain.",
+    "alternatives": [
+      "Don't have me justify your refusal to explain.",
+      "Don't make me defend your unwillingness to explain."
+    ],
+    "point": "make me defend は私に弁護させる。your refusal は君の説明拒否。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["causatives", "infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9160032cc70ac84e19458bb92e81e62e433c0b433b409e01b6ba116250b8939",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },

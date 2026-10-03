@@ -22,20 +22,26 @@
     }
   },
   {
-    "id": "c_2c9a8r7h",
-    "ja": "私が知りたいのは断ると関係を損なうかです。",
-    "en": "What I need to know is whether declining costs goodwill.",
+    "id": "c_2a8f9r3m",
+    "ja": "私が伏せた事情が今は誘いの支障だ。",
+    "en": "What I concealed now complicates the invitation.",
     "alternatives": [
-      "I need to know whether declining would damage goodwill.",
-      "My question is whether refusing will strain our goodwill."
+      "My undisclosed circumstances now complicate the invitation.",
+      "The facts I withheld now complicate the invitation."
     ],
-    "point": "cost goodwill は断ることで好意や関係を損なう。",
+    "point": "what I concealed で、私が過去に伏せた事情を指す。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["noun-clauses", "nested-clauses"],
+    "level": 7,
+    "grammar": ["noun-clauses", "tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e2f27e7993b6f26fa3c97b66c065efc603c5ace4d3e0cf6abbf4949ee0414d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2h3z4d2j",
@@ -181,22 +187,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_3g7v8b4a",
-    "ja": "私が伏せた事情が今は誘いの支障だ。",
-    "en": "The circumstances I withheld have now complicated the invitation.",
-    "alternatives": [
-      "What I left unspoken has now complicated the invitation.",
-      "The circumstances I didn't disclose now obstruct the invitation."
-    ],
-    "point": "withhold は事情を意図的に明かさずにおく。",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_3k3x3g9v",
@@ -935,16 +925,22 @@
     "ja": "断れそうもない誘いを私に断らせないで。",
     "en": "Don't make me decline what feels impossible to refuse.",
     "alternatives": [
-      "Don't force me to reject what seems impossible to decline.",
+      "Don't force me to reject what I can't refuse.",
       "Don't make me refuse an invitation I can't decline."
     ],
     "point": "make me decline と what の節で断れない圧力を表す。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["causatives", "nested-clauses"],
+    "level": 8,
+    "grammar": ["causatives", "noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1014942748dc30c0898dd444d405923032fdb6742424ae1951cf9679bfbeed9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t2b3s2p",
@@ -1007,6 +1003,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9875ea192b0762dafc46fe4cad0a6ef7ad52dba5339061d409fee635d06dc3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_8j7p9n4s",
+    "ja": "断ると関係を損なうか私は知りたい。",
+    "en": "I want to know if refusing hurts relations.",
+    "alternatives": [
+      "I'd like to know if refusing hurts relations.",
+      "I'm wondering whether refusing harms relationships."
+    ],
+    "point": "if の節で、断ることが関係を損なうかを尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e61c989d6da1cd5f0ac104b78e3bcbaa242d90b7ccdf48b00a64fa3d4d70fa05",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }

@@ -126,6 +126,28 @@
     }
   },
   {
+    "id": "c_2y2e3x8g",
+    "ja": "私が独立してなければ今も周囲に従う。",
+    "en": "Without going independent, I'd still toe the line.",
+    "alternatives": [
+      "I'd still conform if I hadn't gone independent.",
+      "Without becoming independent, I'd still conform to others."
+    ],
+    "point": "独立しなかった過去の仮定と、今も周囲に従う結果を結ぶ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d4765740f774cf4de67543a7e16150fc365ffbcf37a13ce3bb8355199271b6a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_2y8z3f3f",
     "ja": "君が慣れたら私が訪ねるよ。",
     "en": "I'll visit once you've settled in.",
@@ -377,18 +399,24 @@
   {
     "id": "c_3z6j8y6t",
     "ja": "私が面子に固執しなければ謝れたのに。",
-    "en": "Had I swallowed my pride, I could have apologized.",
+    "en": "Had I swallowed my pride, I could've apologized.",
     "alternatives": [
       "If I'd swallowed my pride, I could've said sorry.",
-      "I could have apologized had I set my pride aside."
+      "I could've apologized had I set my pride aside."
     ],
     "point": "swallow my pride は面子を捨てて行動する。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74fd7dd75a243af9add5ca733e35520fdb79a6876d21bb0f6fa9765b1f6012aa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3z7h8h6w",
@@ -763,20 +791,26 @@
     }
   },
   {
-    "id": "c_5q6z8u5p",
+    "id": "c_5t9y5x7z",
     "ja": "私の転職は手放しで成功とは言えない。",
-    "en": "I'd hesitate to call my career change an unqualified success.",
+    "en": "I can't call my job change an unqualified success.",
     "alternatives": [
-      "I wouldn't confidently describe my career change as wholly successful.",
-      "I'd stop short of calling my career change entirely successful."
+      "My job change wasn't a complete success.",
+      "Calling my job change wholly successful would be misleading."
     ],
-    "point": "unqualified success は何の留保もない全面的な成功。",
+    "point": "unqualified success は留保のない全面的な成功。転職は job change。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e7dfb57ab23b666db7cc56576bec1db7665692ae7b3777a52760add97effb8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5u5c2m7x",
@@ -1206,22 +1240,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_9c8r3c8b",
-    "ja": "私が独立してなければ今も周囲に従う。",
-    "en": "Had I not gone freelance, I'd still toe the line.",
-    "alternatives": [
-      "If I hadn't become independent, I'd still conform to expectations.",
-      "I'd still toe the line if I hadn't gone freelance."
-    ],
-    "point": "toe the line は求められた方針や規範に従う。",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 10,
-    "grammar": ["mixed-conditional", "inversion"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_9h2g3d4j",

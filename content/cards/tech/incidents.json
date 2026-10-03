@@ -170,6 +170,28 @@
     }
   },
   {
+    "id": "c_3r4r6z7e",
+    "ja": "我々が退けた可能性は今は要注意だ。",
+    "en": "The possibility we dismissed now demands attention.",
+    "alternatives": [
+      "We can't ignore the possibility we dismissed anymore.",
+      "The possibility we rejected now demands our attention."
+    ],
+    "point": "we dismissed は我々の過去の判断、now は現在の要注意状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5f7599bbc6cb2f912527e188ce3913bf7b13e09a394e568a74166dac387b196",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_3s4f7h9d",
     "ja": "何が起きたか、まだ不明です。",
     "en": "We still don't know what happened.",
@@ -338,22 +360,6 @@
     }
   },
   {
-    "id": "c_4u7a3d6k",
-    "ja": "我々が否定した可能性は今や無視できない。",
-    "en": "The possibility we dismissed has since become impossible to ignore.",
-    "alternatives": [
-      "The possibility we rejected now demands our attention.",
-      "We can no longer ignore the possibility we previously dismissed."
-    ],
-    "point": "dismissed と has become で過去の判断と今の状態を対比する。",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4v2f9t3r",
     "ja": "警報が壊れたら誰も気づかない。",
     "en": "If alerts failed, nobody would know.",
@@ -438,18 +444,24 @@
   {
     "id": "c_5b8t8r9k",
     "ja": "我々が早く気づけば今は後手でないのに。",
-    "en": "Had we caught it sooner, we wouldn't be playing catch-up.",
+    "en": "Had we noticed sooner, we wouldn't be playing catch-up.",
     "alternatives": [
-      "If we'd noticed sooner, we wouldn't be scrambling now.",
-      "We wouldn't be playing catch-up had we caught it earlier."
+      "If we'd noticed sooner, we wouldn't be behind now.",
+      "We wouldn't be playing catch-up had we noticed sooner."
     ],
     "point": "過去の発見と今の後手の状態を混合仮定法で結ぶ。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 9,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bee7f3caec1be330122042fc0e3cb27ed434f31862ae505c082fb12cdbf54ca0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k3w9p2z",
@@ -1122,7 +1134,7 @@
   },
   {
     "id": "c_9d8h8n4w",
-    "ja": "我々の失敗は手順を判断力の代用にした点だ。",
+    "ja": "我々の失敗は判断力を手順で代用した点だ。",
     "en": "What failed us was substituting procedure for judgment.",
     "alternatives": [
       "It was substituting procedure for judgment that failed us.",
@@ -1131,10 +1143,16 @@
     "point": "substitute A for B はBの代わりにAを使う。what の節で失敗の原因を強調する。",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2e35f057b2b5f763012d527dc34175e4921819f8bc6bd5c4ad79957ce126a58",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9g5v8q6v",

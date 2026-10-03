@@ -326,7 +326,7 @@
   },
   {
     "id": "c_4f5s2y9m",
-    "ja": "私が更新させてたら使えなくなったのに。",
+    "ja": "私が更新を許せばアクセスを失ったのに。",
     "en": "Had I let it update, I'd have lost access.",
     "alternatives": [
       "If I'd let it update, I'd have lost access.",
@@ -335,10 +335,16 @@
     "point": "let + 動詞の原形を過去の反実仮想の条件に置く。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 9,
     "grammar": ["causatives", "third-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74dfcd44bc261a3bbd74fbf9be291702b63452c6b90b203b92aea1b533def205",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4g6q5g5s",

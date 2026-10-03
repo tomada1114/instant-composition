@@ -555,22 +555,6 @@
     }
   },
   {
-    "id": "c_5n5z4h7a",
-    "ja": "書類は十分でも私には通過の保証がない。",
-    "en": "Complete though my papers are, clearance is no foregone conclusion.",
-    "alternatives": [
-      "Even with complete papers, I'm not assured clearance.",
-      "Having all my documents doesn't guarantee I'll be cleared."
-    ],
-    "point": "a foregone conclusion は結果が既に決まっていること。",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_5n6u8h4u",
     "ja": "時間を気にしないなら私は乗継便を選ぶ。",
     "en": "Were time no object, I'd choose a connecting flight.",
@@ -670,10 +654,16 @@
     "point": "forestall は問題が生じる前に先手を打って防ぐ。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:65801a382a3e0a119a3d4c813dd40294aac9daec7897a5f90d2d7bfbeac2723b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5u3g4s8q",
@@ -700,7 +690,7 @@
   {
     "id": "c_5x6r3m5e",
     "ja": "私が疑うのは優先搭乗が名ばかりかだ。",
-    "en": "What I question is whether priority boarding is merely nominal.",
+    "en": "What I question is whether priority boarding is nominal.",
     "alternatives": [
       "I question whether priority boarding is only in name.",
       "I'm wondering whether priority boarding has any real substance."
@@ -708,10 +698,16 @@
     "point": "nominal は名前や建前だけで実質がない。",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
-    "grammar": ["noun-clauses", "nested-clauses"],
+    "level": 8,
+    "grammar": ["cleft-emphasis", "indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a74e3b303bc15ac0f296f56f8f977fd0738f3a6a3c22468e7053d53c0eb17c53",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6j8v9u4v",
@@ -834,6 +830,28 @@
         "hash": "sha256:64d8bdfb99af2a63841a6b121c2e8cfc59b3207c4e561960b6dfd73c5cde78aa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r8r6n4n",
+    "ja": "書類は揃っても私に通過の保証はない。",
+    "en": "Even with complete papers, I'm not guaranteed clearance.",
+    "alternatives": [
+      "Complete papers don't guarantee I'll be cleared.",
+      "Having all my documents doesn't guarantee clearance."
+    ],
+    "point": "even with で書類が揃っても通過は保証されないと譲歩する。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["concession-contrast", "passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23084fcfcb7b32d59845510b398cdb88bd6fa71602cb17a60342cf11203d9e5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
