@@ -82,7 +82,7 @@ describe("Cloud dependency installation", () => {
         packageManager,
         "install",
         "--frozen-lockfile",
-        "CI=unset",
+        "CI=true",
         "/tmp/instant-composition-corepack",
         "/tmp/instant-composition-pnpm",
         "/tmp/instant-composition-xdg/data",

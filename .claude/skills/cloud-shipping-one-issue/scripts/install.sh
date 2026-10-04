@@ -14,5 +14,5 @@ pnpm_spec=$(node -p 'require("./package.json").packageManager')
 # Cached dependency lifecycle output can omit checkout-specific hooks. Install
 # dependencies in CI mode, then enforce authoring hooks explicitly below.
 CI=true corepack "$pnpm_spec" install --frozen-lockfile
-corepack "$pnpm_spec" run hooks:install
+CI=true corepack "$pnpm_spec" run hooks:install
 node scripts/verify-hooks.mjs
