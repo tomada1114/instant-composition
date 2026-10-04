@@ -57,8 +57,10 @@ container afterwards.
 
 This checkout uses pnpm scripts; it has no justfile and needs no `just` installation.
 For test-driven iteration, use `pnpm exec vitest run tests/<name>.test.ts` or
-`pnpm test:watch`, then the everyday gate above. Unit, component and repository-script
-tests use local fixtures and stand-ins for authentication and model calls.
+`pnpm test:watch --watch tests/<name>.test.ts`, then the everyday gate above. Explicit
+`--watch` keeps Vitest watching even when the environment defaults to CI mode. Unit,
+component and repository-script tests use local fixtures and stand-ins for
+authentication and model calls.
 
 The saved environment checked on 2026-10-04 supplied Node 24, pnpm, Corepack, Python 3,
 Git, GitHub CLI and a working Docker daemon with Compose, but no installed project
