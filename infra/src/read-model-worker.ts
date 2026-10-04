@@ -8,6 +8,7 @@ import { LogGroup, RetentionDays } from "aws-cdk-lib/aws-logs";
 import type { Construct } from "constructs";
 
 import { LAMBDA_CATALOG_PATH } from "./api-function";
+import { declareStorageWriter } from "./storage-writers";
 
 /** Day preparation runs independently of screen visits, with a retained DynamoDB checkpoint. */
 export function addReadModelWorker(
@@ -21,7 +22,7 @@ export function addReadModelWorker(
   const root = props.repositoryRoot;
   const worker = new NodejsFunction(scope, "ReadModelWorker", {
     entry: `${root}/apps/api/src/read-model-worker.ts`,
-    handler: "handler",
+    handler: "storage.handler",
     projectRoot: root,
     depsLockFilePath: `${root}/pnpm-lock.yaml`,
     runtime: Runtime.NODEJS_24_X,
@@ -46,10 +47,14 @@ export function addReadModelWorker(
         beforeInstall: () => [],
         afterBundling: (inputDir: string, outputDir: string) => [
           `node "${inputDir}/scripts/catalog/build.mjs" --out "${outputDir}/catalog"`,
+          `node "${inputDir}/scripts/release.mjs" bundle "${inputDir}" "${outputDir}"`,
+          `node "${inputDir}/scripts/storage-bundle.mjs" "${inputDir}" "${outputDir}"`,
+          `node "${inputDir}/scripts/release.mjs" bundle "${inputDir}" "${outputDir}"`,
         ],
       },
     },
   });
+  declareStorageWriter(scope, worker, 1);
   Table.fromTableArn(scope, "ReadModelWorkerTable", props.tableArn).grantReadWriteData(
     worker,
   );

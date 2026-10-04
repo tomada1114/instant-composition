@@ -9,7 +9,7 @@
       "preserves": [0, 1, 2, 3, 4],
       "fixture": "tests/fixtures/storage-v4.json",
       "sha256": "7e0882bd4f1359f3101020b28a40248fd9fe2e12d68cdf98691f126b3bb379c2",
-      "schemaFingerprint": "b53d7c4919ab02f3f00d9cba546f3b0ed80ecf68d0e51a08920e094846e484a2",
+      "schemaFingerprint": "c1c07077fe9e7d1f72427ec472de0cb22a473cc6efb39fa0080d2a2ce7507eec",
       "writes": 4
     },
     {

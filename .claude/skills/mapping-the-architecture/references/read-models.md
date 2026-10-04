@@ -51,12 +51,14 @@ normal worker Scan.
 
 In AWS, EventBridge invokes the separate read-model Lambda every minute. One concurrent
 invocation runs at most 100 checkpoint steps, with two retries and five-minute event
-age. Locally, `pnpm api` advances the same worker independently every second. Neither
-driver runs in an HTTP handler. The worker prepares the current practice day and the
-next day using the learner's stored time zone and boundary. A late scheduler resumes its
-checkpoint against the current day; failures preserve completed pages and retry without
-double counts. Source changes during a build cause a guarded restart. Sustained writes
-can delay an incomplete build; the ready current day remains incrementally maintained.
+age. Locally, `pnpm api` first discovers existing profiles in fixed 100-row Scan pages
+before serving requests, then advances the same worker independently every second.
+Neither driver runs in an HTTP handler. The worker prepares the current practice day and
+the next day using the learner's stored time zone and boundary. A late scheduler resumes
+its checkpoint against the current day; failures preserve completed pages and retry
+without double counts. Source changes during a build cause a guarded restart. Sustained
+writes can delay an incomplete build; the ready current day remains incrementally
+maintained.
 
 ## Missing generations and old offline sessions
 

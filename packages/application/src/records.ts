@@ -63,7 +63,7 @@ export async function records(
   const store = bound.value;
   const today = todayOf(context);
   const calendarStart = calendarWeeks(today, 12)[0]?.[0] ?? today;
-  const [{ snapshot }, settings, stored, portion, tallies, portions] =
+  const [{ snapshot, unreadable }, settings, stored, portion, tallies, portions] =
     await Promise.all([
       snapshotOrEmpty(deps.catalog),
       store.settings(),
@@ -73,18 +73,20 @@ export async function records(
       store.portionsPage({ from: calendarStart, to: today, limit: 100 }),
     ]);
   const stats = stored?.value ?? EMPTY_STATS;
-  const projected = await compositionProjection(
-    store,
-    snapshot,
-    today,
-    settings,
-    stored,
-    portion,
-    tallies.get(today),
-    context.now,
-  );
-  if (!projected.ok) return projected;
-  const model = projected.value;
+  const projected = unreadable
+    ? undefined
+    : await compositionProjection(
+        store,
+        snapshot,
+        today,
+        settings,
+        stored,
+        portion,
+        tallies.get(today),
+        context.now,
+      );
+  if (projected !== undefined && !projected.ok) return projected;
+  const model = projected?.value;
   const status = await loadStreakStatus(store, today, stats.streak?.longest ?? 0);
   const completed = new Set(
     portions.entries
@@ -99,11 +101,11 @@ export async function records(
     reach: reachViewOf(
       chosen.map((topic) => ({
         topic: topic.id,
-        count: model.reach[topic.id] ?? 0,
+        count: model?.reach[topic.id] ?? 0,
         added: 0,
       })),
       snapshot,
-      model.pending,
+      model?.pending ?? 0,
     ),
     breakdown: chosen.map((topic) => ({
       id: topic.id,
@@ -111,15 +113,15 @@ export async function records(
       subtopics: topic.subtopics.map((subtopic) => ({
         id: subtopic.id,
         name: subtopic.name,
-        count: model.breakdown[`${topic.id}/${subtopic.id}`] ?? 0,
+        count: model?.breakdown[`${topic.id}/${subtopic.id}`] ?? 0,
       })),
     })),
     weak: {
-      grammar: model.weak.grammar.map(({ concept }) => ({
+      grammar: (model?.weak.grammar ?? []).map(({ concept }) => ({
         id: concept,
         name: conceptName(snapshot, concept),
       })),
-      subtopics: model.weak.subtopics.map(({ topic, subtopic }) => ({
+      subtopics: (model?.weak.subtopics ?? []).map(({ topic, subtopic }) => ({
         topic,
         subtopic,
         name: subtopicName(snapshot, { topic, subtopic }),
