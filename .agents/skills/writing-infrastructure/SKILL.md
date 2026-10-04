@@ -154,12 +154,13 @@ a second design.
 
 ## Deploying
 
-- `.github/workflows/deploy-dev.yml` runs on every push to `main`, with no approval
-  step. It runs `pnpm web:build`, assumes the deploy role, and deploys `foundation`,
-  then `edge`, then `app`, each with `--exclusively` so no command drags in another.
-  Deploys queue in merge order and are never cancelled. `deploy-access` is never
-  deployed from CI. Deploying another stack from CI is a change to those commands, made
-  per `changing-gates`.
+- `.github/workflows/deploy-dev.yml` starts after trusted `main` push CI succeeds,
+  checks out that exact SHA and skips it if `main` has advanced before deployment. It
+  fixes one CDK assembly before assuming the OIDC role and deploys `foundation`, `edge`,
+  then `app` from it, without approval; `deploy-access` stays manual. Running
+  deployments are never cancelled; GitHub concurrency does not promise FIFO. Release
+  verification and the read-only CloudFront smoke are described in
+  [the deployment release checks](references/releases.md).
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
   by the bootstrap roles, so the deploy role keeps its one permission. Fingerprinted

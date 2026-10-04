@@ -39,12 +39,17 @@ gate at every commit; AGENTS.md's "Enforcement layers" explains why nothing here
 it.
 
 Useful focused commands are `pnpm check:source`, `pnpm test`, and `pnpm test:coverage`.
-Neither of the last two is the whole suite: both leave out the `smoke` project, which
-serves the output of `pnpm web:build` with `vite preview` in front of the API on
-DynamoDB local and asserts over HTTP, and which refuses to run against a missing or
-stale build rather than reporting on one, and the `dynamodb` project, which runs the
-store contract suite against DynamoDB local. Both need Docker: run them with
-`pnpm db:up`, then `pnpm web:build && pnpm run test:smoke` and `pnpm run test:dynamodb`.
+On a busy machine, `INSTANT_COMPOSITION_TEST_WORKERS=1 pnpm check:source` limits test
+worker processes. The same optional positive integer applies to
+`INSTANT_COMPOSITION_TEST_WORKERS=1 git commit -m 'fix: describe the change'`, including
+the ordinary related-test hook. It preserves the full selected suite, timeouts and
+coverage floors; unset it to use the runner's default parallelism. Neither of the last
+two is the whole suite: both leave out the `smoke` project, which serves the output of
+`pnpm web:build` with `vite preview` in front of the API on DynamoDB local and asserts
+over HTTP, and which refuses to run against a missing or stale build rather than
+reporting on one, and the `dynamodb` project, which runs the store contract suite
+against DynamoDB local. Both need Docker: run them with `pnpm db:up`, then
+`pnpm web:build && pnpm run test:smoke` and `pnpm run test:dynamodb`.
 `pnpm check:source` runs all of them once `pnpm db:up` has, and `pnpm db:down` stops the
 container afterwards.
 

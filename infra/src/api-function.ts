@@ -88,7 +88,7 @@ export function addApiFunction(
   const { repositoryRoot: root, webUrl } = props;
   const handler = new NodejsFunction(scope, "ApiFunction", {
     entry: `${root}/apps/api/src/lambda.ts`,
-    handler: "handler",
+    handler: "release.handler",
     projectRoot: root,
     depsLockFilePath: `${root}/pnpm-lock.yaml`,
     runtime: Runtime.NODEJS_24_X,
@@ -130,6 +130,7 @@ export function addApiFunction(
         beforeInstall: () => [],
         afterBundling: (inputDir: string, outputDir: string) => [
           `node "${inputDir}/scripts/catalog/build.mjs" --out "${outputDir}/catalog"`,
+          `node "${inputDir}/scripts/release.mjs" bundle "${inputDir}" "${outputDir}"`,
         ],
       },
     },

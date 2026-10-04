@@ -1,6 +1,6 @@
 name: Deploy dev
 
-# `dev` deploys on every merge to main, with no approval. The job
+# `dev` deploys after successful CI for a trusted main push, with no approval. The job
 # assumes the deploy role from infra/'s `deploy-access` stack through GitHub's
 # OIDC token, so no AWS access key exists anywhere; that role may only assume
 # the CDK bootstrap roles, which do the deploying. Its ARN is the repository
@@ -8,13 +8,15 @@ name: Deploy dev
 # The web build reaches the SPA bucket through the `app` stack itself, so the
 # role needs no S3 or CloudFront permission of its own.
 on:
-  push:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
     branches: [main]
 
 permissions: {}
 
 concurrency:
-  # One deploy at a time, in merge order. Never cancelled: stopping a
+  # One deploy at a time, in CI completion order. Never cancelled: stopping a
   # CloudFormation update part-way leaves it to roll back on its own, and the
   # cancelled push loses its only record.
   group: deploy-dev
@@ -22,6 +24,15 @@ concurrency:
 
 jobs:
   deploy:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    env:
+      RELEASE_SHA: ${{ github.event.workflow_run.head_sha }}
+      RELEASE_REPOSITORY: ${{ github.repository }}
+      RELEASE_ASSEMBLY: ${{ github.workspace }}/dist/release-assembly
     name: Deploy the dev foundation, edge and app stacks
     runs-on: ubuntu-latest
     # Three stacks now, and `app` waits on CloudFront twice: for the
@@ -37,6 +48,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
@@ -47,34 +59,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Verify trusted CI and checkout identity
+        run: pnpm release trust "$GITHUB_EVENT_PATH" "$RELEASE_SHA" "$RELEASE_REPOSITORY"
+
       # The `app` stack uploads this build; the Lambda bundle builds its own
       # catalog snapshot while it is synthesized.
       - name: Build the web client
-        run: pnpm web:build
+        run: |
+          set -euo pipefail
+          pnpm web:build
+          pnpm release web "$RELEASE_SHA"
 
-      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
-        with:
-          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
-          aws-region: ap-northeast-1
-
-      # --exclusively deploys the named stack alone; without it, deploying
-      # `app` would deploy its dependencies `foundation` and `edge` a second
-      # time.
-      - name: Deploy the foundation stack
-        run: pnpm cdk deploy -c stage=dev foundation --exclusively --require-approval never
-
-      # `edge` is the one stack in us-east-1, where a CLOUDFRONT-scope web ACL
-      # has to live; the CLI deploys it there through us-east-1's bootstrap
-      # roles, whatever aws-region above says.
-      - name: Deploy the edge stack
-        run: pnpm cdk deploy -c stage=dev edge --exclusively --require-approval never
-
-      # `app` reads foundation's parameters and edge's web ACL output as it
-      # deploys, so it goes last.
-      # ALARM_EMAIL is a secret so the address stays masked in the run's log;
-      # a deploy without it removes the alarm topic's subscription, so its
-      # absence is reported rather than silent.
-      - name: Deploy the app stack
+      - name: Synthesize and record the release
         env:
           ALARM_EMAIL: ${{ secrets.ALARM_EMAIL }}
         run: |
@@ -85,4 +81,56 @@ jobs:
           else
             echo "::warning::ALARM_EMAIL is not set: the alarm topic has no subscription."
           fi
-          pnpm cdk deploy "${context[@]}" app --exclusively --require-approval never
+          pnpm cdk synth "${context[@]}" --output "$RELEASE_ASSEMBLY"
+          pnpm release record "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
+          pnpm release verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
+
+      - name: Skip a superseded main release
+        id: current
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: pnpm release current "$RELEASE_REPOSITORY" "$RELEASE_SHA"
+
+      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        if: steps.current.outputs.deploy == 'true'
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ap-northeast-1
+
+      # --exclusively deploys the named stack alone; without it, deploying
+      # `app` would deploy its dependencies `foundation` and `edge` a second
+      # time.
+      - name: Deploy the foundation stack
+        if: steps.current.outputs.deploy == 'true'
+        run: pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation --exclusively --require-approval never
+
+      # `edge` is the one stack in us-east-1, where a CLOUDFRONT-scope web ACL
+      # has to live; the CLI deploys it there through us-east-1's bootstrap
+      # roles, whatever aws-region above says.
+      - name: Deploy the edge stack
+        if: steps.current.outputs.deploy == 'true'
+        run: pnpm cdk deploy --app "$RELEASE_ASSEMBLY" edge --exclusively --require-approval never
+
+      # `app` reads foundation's parameters and edge's web ACL output as it
+      # deploys, so it goes last.
+      # ALARM_EMAIL is a secret so the address stays masked in the run's log;
+      # a deploy without it removes the alarm topic's subscription, so its
+      # absence is reported rather than silent.
+      - name: Deploy the app stack
+        if: steps.current.outputs.deploy == 'true'
+        run: |
+          set -euo pipefail
+          pnpm release verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
+          pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app --exclusively --require-approval never --outputs-file "$GITHUB_WORKSPACE/dist/deploy-outputs.json"
+
+      - name: Smoke the deployed CloudFront release
+        if: steps.current.outputs.deploy == 'true'
+        run: pnpm release smoke dist/deploy-outputs.json
+
+      - name: Record release evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ -f dist/release.json ]; then
+            cat dist/release.json >> "$GITHUB_STEP_SUMMARY"
+          fi

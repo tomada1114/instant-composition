@@ -1,8 +1,10 @@
 import { defineConfig } from "vitest/config";
+import { testWorkers } from "./scripts/lib/test-workers.mjs";
 
 // Without this, a fixture suite written to fail is collected as one of this
 // repository's own tests.
 const fixtures = "tests/fixtures/**";
+const localWorkers = testWorkers(process.env["INSTANT_COMPOSITION_TEST_WORKERS"]);
 
 // Tests that import repository automation, touch the filesystem, spawn a
 // subprocess, or use git. They are listed explicitly so a new test defaults to
@@ -45,6 +47,7 @@ const automationTests = [
   "tests/node-tools.test.ts",
   "tests/placeholders.test.ts",
   "tests/repo-tree.test.ts",
+  "tests/release.test.ts",
   "tests/skills-frontmatter.test.ts",
   "tests/sync-agents.test.ts",
   "tests/sync-labels.test.ts",
@@ -87,6 +90,9 @@ const dynamodbTests = [
 
 export default defineConfig({
   test: {
+    // Also applies to the unmodified pre-commit related-test command. This
+    // changes resource use only; all projects, timeouts and floors still apply.
+    ...(localWorkers === undefined ? {} : { maxWorkers: localWorkers }),
     environment: "node",
     // Cleanup is the runner's job, not each test's. A spy, a stubbed env var or
     // a stubbed global that outlives the test that created it turns a later

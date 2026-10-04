@@ -185,3 +185,34 @@ describe("the dev app stack's web upload", () => {
     ).toThrow(/missing/);
   });
 });
+
+describe("release health routing through the deployed origin", () => {
+  it("forwards the API namespace through CloudFront to the same HTTP API catch-all Lambda", () => {
+    expect(() => {
+      TEMPLATE.hasResourceProperties("AWS::CloudFront::Distribution", {
+        DistributionConfig: {
+          CacheBehaviors: [
+            {
+              PathPattern: "/api/*",
+              AllowedMethods: [
+                "GET",
+                "HEAD",
+                "OPTIONS",
+                "PUT",
+                "PATCH",
+                "POST",
+                "DELETE",
+              ],
+            },
+          ],
+        },
+      });
+      TEMPLATE.hasResourceProperties("AWS::ApiGatewayV2::Route", {
+        RouteKey: "ANY /{proxy+}",
+      });
+      TEMPLATE.hasResourceProperties("AWS::Lambda::Function", {
+        Handler: "release.handler",
+      });
+    }).not.toThrow();
+  });
+});

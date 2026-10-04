@@ -99,6 +99,7 @@ pnpm cards:new-id  # print fresh card ids
 pnpm cards:lint --kind vocab # every cards:* command, run on content/vocab/'s vocabulary cards
 pnpm catalog:build # write content/'s snapshot per language pair to dist/catalog/<target>/<l1>.json
 pnpm contracts:openapi # rewrite packages/contracts/openapi.json from the schemas
+pnpm release        # trusted release identity, assembly verification and read-only deployed smoke
 pnpm cdk synth -c stage=dev # run the CDK CLI in infra/; synthesis needs no AWS credentials
 ```
 
