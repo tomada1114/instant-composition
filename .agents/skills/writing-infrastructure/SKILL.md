@@ -220,13 +220,17 @@ a second design.
 - Capacity restoration intentionally differs from the paused template: API returns to
   unreserved and worker to its recorded one. The next transition explicitly sets zero
   again before deploying another paused assembly, so this drift is repeat-safe. Current
-  main and code revisions are checked immediately before/after restoration; the shared
-  deploy concurrency group is required because Lambda concurrency changes have no
-  code-revision compare-and-swap. Transition phase evidence is persisted in the job
-  summary. Publisher-generated assembly `.cache` files are derived outputs; postdeploy
-  certification uses fetched ZIP contents rather than cache file names. The immutable
-  web/API/catalog release checks and read-only CloudFront smoke are described in
-  [the deployment release checks](references/releases.md).
+  main, code, configuration and capacity are checked around restoration. Each controlled
+  concurrency mutation returns a freshly observed revision receipt; subsequent checks
+  require that exact revision. The complete configuration digest excludes only top-level
+  RevisionId and LastModified, retaining every nested field without persisting secrets.
+  The shared deploy concurrency group is required because concurrency changes have no
+  code-revision compare-and-swap. Cleanup attempts every owned writer, drains them, and
+  refuses recovery if any barrier failed. Transition phase evidence is persisted in the
+  job summary. Publisher-generated assembly `.cache` files are derived outputs;
+  postdeploy certification uses fetched ZIP contents rather than cache file names. The
+  immutable web/API/catalog release checks and read-only CloudFront smoke are described
+  in [the deployment release checks](references/releases.md).
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
   by the bootstrap roles, so uploads need no direct S3 or CloudFront permissions on the
