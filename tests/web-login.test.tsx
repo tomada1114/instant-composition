@@ -90,6 +90,21 @@ async function submit(email: string, password: string): Promise<void> {
   await settle();
 }
 
+/**
+ * Waits for `check` to pass. The real API signs in through `crypto.subtle`,
+ * whose work finishes off the main thread, so settling the timers once does
+ * not reach its answer on a loaded machine.
+ */
+async function until(check: () => void): Promise<void> {
+  await vi.waitFor(
+    async () => {
+      await settle();
+      check();
+    },
+    { timeout: 5000 },
+  );
+}
+
 const signIns = (calls: readonly ApiCall[]): ApiCall[] =>
   calls.filter((call) => call.url === SIGN_IN_URL);
 
@@ -334,8 +349,10 @@ describe("the sign-in page over the API, with a user pool configured", () => {
     const paths = connect(web);
     await renderApp("/login");
     await submit("learner@example.com", PASSWORD);
+    await until(() => {
+      expect(visited).toStrictEqual(["/"]);
+    });
 
-    expect(visited).toStrictEqual(["/"]);
     expect([...web.browser.cookies.keys()].sort()).toStrictEqual(
       [REFRESH_COOKIE, SESSION_COOKIE].sort(),
     );
@@ -357,12 +374,15 @@ describe("the sign-in page over the API, with a user pool configured", () => {
     await renderApp("/login");
     const before = paths.length;
     await submit("learner@example.com", "not the password");
-
-    expect(screen.getByRole("alert")).toHaveTextContent(ja.Login.refused);
+    await until(() => {
+      expect(screen.getByRole("alert")).toHaveTextContent(ja.Login.refused);
+    });
 
     await submit("new@example.com", PASSWORD);
+    await until(() => {
+      expect(screen.getByRole("alert")).toHaveTextContent(ja.Login.actionRequired);
+    });
 
-    expect(screen.getByRole("alert")).toHaveTextContent(ja.Login.actionRequired);
     expect(paths.slice(before)).toStrictEqual(["/v1/auth/login", "/v1/auth/login"]);
     expect(web.browser.cookies.size).toBe(0);
     expect(visited).toStrictEqual([]);
