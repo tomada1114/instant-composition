@@ -84,15 +84,26 @@ handed a `webSession`, so with the stand-in they answer a bare 404.
 
 `/refresh` and `/logout` change state from a page, so a missing or foreign `Origin` is
 `ERR_FORBIDDEN` before anything is read. A grant the pool refuses (`invalid_grant`) is
-`ERR_UNAUTHENTICATED`, and a refused refresh also drops the session's cookies. Any other
+`ERR_UNAUTHENTICATED`. A refused refresh leaves cookies alone: a late refusal cannot
+delete cookies another tab successfully rotated. Explicit logout drops them. Any other
 answer from the pool throws `TokenEndpointError` (`ERR_API_TOKEN_ENDPOINT`), a bare 500
 whose log line names the class alone. Every call to the pool gives up after 10 seconds.
 
-The web client (`apps/web/src/lib/api-call.ts`) answers an `ERR_UNAUTHENTICATED` by
-posting to `/refresh` once and retrying; when that does not answer `204`, or the retry
-is refused too, it navigates to `/api/v1/auth/login`. Sign-out is a top-level form post,
-because the answer is a redirect to another origin. **REQUIRED:** `building-web-screens`
-before changing either.
+The web client (`apps/web/src/lib/api-call.ts`) shares one renewal per tab, including
+late initial refusals. `session-renewal.ts` serializes cookie changes across tabs with
+Web Locks; local storage carries only a random revision hint, never a credential or an
+authentication decision. Success retries each original request once. A terminal refusal
+also probes the original once with current cookies before sending an established visit
+to login. Temporary failures, including unreadable or unexpected refresh responses,
+return `ERR_NETWORK` and keep answers queued for retry; a missing refresh endpoint is
+the local stand-in's terminal refusal. Browsers without Web Locks fail closed as
+unavailable before renewing; explicit native logout remains usable. Already-loaded older
+clients may still overlap, but refused renewals never delete cookies.
+
+Sign-out waits for renewal, then submits its top-level form under that same lock until
+pagehide; the redirect goes to another origin. Earlier calls cannot sign the visit back
+in or replay after sign-out begins, and a failed native submit permits another attempt.
+**REQUIRED:** `building-web-screens` before changing either.
 
 ## Which authenticator runs where
 

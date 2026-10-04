@@ -166,7 +166,8 @@ export function cognitoWebSession(options: CognitoWebSessionOptions): WebSession
             withCookies(new Response(null, { status: 204 }), keep(issued.value)),
             "ok",
           )
-        : refused(issued.error, DROP_SESSION);
+        : // An older tab's refused rotation must not clear cookies a newer success set.
+          refused(issued.error);
     },
 
     signOut: async (request) => {

@@ -362,7 +362,7 @@ describe("POST /v1/auth/refresh", () => {
     expect(web.cognito.calls).toStrictEqual([]);
   });
 
-  it("drops the session when the pool refuses the refresh token", async () => {
+  it("refuses an expired refresh without clearing another request's newer cookies", async () => {
     const web = makeWebApi();
     await web.signIn();
     web.browser.cookies.set(REFRESH_COOKIE, "refresh.revoked-long-ago");
@@ -370,10 +370,7 @@ describe("POST /v1/auth/refresh", () => {
 
     expect(response.status).toBe(401);
     expect(await codeOf(response)).toBe("ERR_UNAUTHENTICATED");
-    expect(response.headers.getSetCookie()).toStrictEqual([
-      `${SESSION_COOKIE}=; Max-Age=0; ${ATTRIBUTES}`,
-      `${REFRESH_COOKIE}=; Max-Age=0; ${ATTRIBUTES}`,
-    ]);
+    expect(response.headers.getSetCookie()).toStrictEqual([]);
   });
 });
 

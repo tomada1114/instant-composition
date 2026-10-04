@@ -2,6 +2,12 @@
 // contract path becomes, and how an answer is read into a `Result`.
 import { retryAt } from "./retry-after";
 import { err, ok, type Result } from "./result";
+import {
+  renewSession,
+  observeSession,
+  submitSignOut,
+  visitSession,
+} from "./session-renewal";
 
 /**
  * The API's root on the SPA's own origin: `openapi.json`'s
@@ -81,19 +87,6 @@ async function isUnauthenticated(response: Response): Promise<boolean> {
   return errorCode(body) === "ERR_UNAUTHENTICATED";
 }
 
-/** Only a 204 renews the session; a 404 (no user pool configured) or a refusal does not. */
-async function refreshSession(): Promise<boolean> {
-  try {
-    const response = await fetch(REFRESH_URL, {
-      method: "POST",
-      credentials: "same-origin",
-    });
-    return response.status === 204;
-  } catch {
-    return false;
-  }
-}
-
 /**
  * Whether a call in this visit has been answered signed in. Until one has, a
  * refusal the refresh cannot lift means nobody signed in before the visit
@@ -101,27 +94,48 @@ async function refreshSession(): Promise<boolean> {
  */
 let signedIn = false;
 let redirecting: Promise<never> | undefined;
+let visit = 0;
 
 /** Starts a visit in which nobody is yet known to be signed in: each page load, and each mount of the app. */
 export function beginVisit(): void {
+  visit += 1;
   signedIn = false;
   redirecting = undefined;
+  visitSession();
+}
+
+/** Leaves only after cookie renewal settles; stale calls cannot sign the visit in again. */
+export function signOut(form: HTMLFormElement): Promise<void> {
+  visit += 1;
+  signedIn = false;
+  return submitSignOut(form);
 }
 
 /**
- * Sends one call. An `ERR_UNAUTHENTICATED` answer renews the session once and
- * sends the call again. When renewal fails, or the retry is refused too, the
- * refusal is the answer if nothing in this visit was signed in yet — a visitor
- * who is signed out, whom the screens show the landing screen — and otherwise
- * the browser is sent to sign in. At most one refresh per call, so this never
- * loops. Once the browser is on its way to sign in, the call never settles, so
- * a screen stays in its loading state instead of flashing a failure before
- * the page unloads.
+ * Shares cookie renewal across concurrent 401s and retries each original call
+ * once. Temporary renewal failures return a retryable network error. A terminal
+ * refusal is checked once against the current cookies before signing in, so an
+ * older tab's failed rotation cannot overrule another tab's newer success.
+ * A signed-in visit navigates to login only after confirmed refusal; navigation
+ * stays pending to preserve the current screen until the document unloads.
  */
 export async function send(method: Method, data: OperationData): Promise<Response> {
+  const currentVisit = visit;
+  const observed = observeSession();
   let answer = await request(method, data);
-  if ((await isUnauthenticated(answer)) && (await refreshSession())) {
+  if (await isUnauthenticated(answer)) {
+    if (currentVisit !== visit) return answer;
+    const renewed = await renewSession(REFRESH_URL, observed);
+    if (renewed === "unavailable") {
+      return Response.json({ error: NETWORK }, { status: 503 });
+    }
+    if (currentVisit !== visit) return answer;
+    // A terminal refusal may be from an older cookie another tab already rotated.
+    // One retry checks the actual credential before deciding to sign in.
     answer = await request(method, data);
+  }
+  if (currentVisit !== visit) {
+    return Response.json({ error: { code: "ERR_UNAUTHENTICATED" } }, { status: 401 });
   }
   if (!(await isUnauthenticated(answer))) {
     if (answer.ok) signedIn = true;

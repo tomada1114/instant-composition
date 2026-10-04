@@ -2,6 +2,7 @@ import { useId, useSyncExternalStore, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { LOGOUT_URL } from "../lib/endpoints";
+import { signOut } from "../lib/api-call";
 import { isTouchOnly, TOUCH_ONLY } from "../lib/touch";
 import { Button } from "../ui/button";
 import { Toggle } from "../ui/toggle";
@@ -53,7 +54,15 @@ export function AppRows({
 export function SignOutRow(): ReactElement {
   const t = useTranslations("Settings.signOut");
   return (
-    <form method="post" action={LOGOUT_URL} className="flex min-h-16 items-center">
+    <form
+      method="post"
+      action={LOGOUT_URL}
+      className="flex min-h-16 items-center"
+      onSubmit={(event) => {
+        event.preventDefault();
+        void signOut(event.currentTarget);
+      }}
+    >
       <Button type="submit" variant="secondary">
         {t("action")}
       </Button>

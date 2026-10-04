@@ -1,4 +1,4 @@
-import { afterEach } from "vitest";
+import { afterEach, beforeEach, vi } from "vitest";
 import { cleanup } from "@testing-library/react";
 
 // `@testing-library/jest-dom/vitest` extends Vitest's `expect` with DOM
@@ -7,6 +7,24 @@ import { cleanup } from "@testing-library/react";
 // available to every test in the jsdom project without each file repeating
 // the import.
 import "@testing-library/jest-dom/vitest";
+
+// jsdom omits Web Locks; the default fixture represents a supported browser.
+beforeEach(() => {
+  let tail = Promise.resolve();
+  vi.stubGlobal("navigator", {
+    userAgent: navigator.userAgent,
+    locks: {
+      request: <T>(_name: string, work: () => Promise<T>) => {
+        const result = tail.then(work);
+        tail = result.then(
+          () => undefined,
+          () => undefined,
+        );
+        return result;
+      },
+    },
+  });
+});
 
 // `@testing-library/react`'s automatic cleanup registers itself only when it
 // finds a global `afterEach` — which requires `test.globals: true` in

@@ -679,7 +679,11 @@ describe("an unauthenticated answer", () => {
     async (_, refresh) => {
       const visited = stubLocation();
       await answeredSignedIn();
-      const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
+      const answers = [
+        envelope(401, "ERR_UNAUTHENTICATED"),
+        refresh(),
+        envelope(401, "ERR_UNAUTHENTICATED"),
+      ];
       const calls = stubFetch(() =>
         Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
       );
@@ -687,6 +691,7 @@ describe("an unauthenticated answer", () => {
       expect(calls.map((call) => call.url)).toStrictEqual([
         "/api/v1/home",
         REFRESH_URL,
+        "/api/v1/home",
       ]);
       expect(visited).toStrictEqual([LOGIN_URL]);
       expect(LOGIN_URL).toBe("/api/v1/auth/login");
@@ -700,7 +705,11 @@ describe("an unauthenticated answer", () => {
     "answers the refusal, and leaves the browser where it is, when the refresh is %s before anything was answered signed in",
     async (_, refresh) => {
       const visited = stubLocation();
-      const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
+      const answers = [
+        envelope(401, "ERR_UNAUTHENTICATED"),
+        refresh(),
+        envelope(401, "ERR_UNAUTHENTICATED"),
+      ];
       stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
       expect(await getHome()).toStrictEqual({
         ok: false,
@@ -720,6 +729,7 @@ describe("an unauthenticated answer", () => {
     stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
     expect((await getSettings()).ok).toBe(true);
     const expired = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
       envelope(401, "ERR_UNAUTHENTICATED"),
       envelope(401, "ERR_UNAUTHENTICATED"),
     ];

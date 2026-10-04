@@ -61,6 +61,7 @@ export { createTranslator } from "use-intl";
 export {
   API_ROOT,
   beginVisit,
+  signOut,
   finishRound,
   getHome,
   getRecords,

@@ -232,7 +232,7 @@ export interface WebHarness {
   readonly signIn: (subject?: string) => Promise<Response>;
 }
 
-export function makeWebApi(): WebHarness {
+export function makeWebApi(wrapProvider?: (fetch: Fetch) => Fetch): WebHarness {
   const cognito = fakeCognito(POOL_KEY);
   const api = makeApi({
     authenticator: cognitoAuthenticator({
@@ -245,7 +245,7 @@ export function makeWebApi(): WebHarness {
       clientId: CLIENT_ID,
       clientSecret: CLIENT_SECRET,
       domain: DOMAIN,
-      fetch: cognito.fetch,
+      fetch: wrapProvider?.(cognito.fetch) ?? cognito.fetch,
       webOrigins: [WEB_ORIGIN],
       callbackUrl: CALLBACK_URL,
       signOutUrl: SIGN_OUT_URL,

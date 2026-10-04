@@ -1196,6 +1196,22 @@ describe("the settings screen, sign-out", () => {
     expect(form).toHaveAttribute("method", "post");
     expect(form).toHaveAttribute("action", "/api/v1/auth/logout");
   });
+
+  it("submits the native logout form through the session coordinator when clicked", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const submit = vi
+      .spyOn(HTMLFormElement.prototype, "submit")
+      .mockImplementation(() => undefined);
+    try {
+      fireEvent.click(screen.getByRole("button", { name: ja.Settings.signOut.action }));
+      await settle();
+      expect(submit).toHaveBeenCalledTimes(1);
+    } finally {
+      window.dispatchEvent(new Event("pagehide"));
+      await settle();
+    }
+  });
 });
 
 describe("the settings screen, the time zone", () => {
