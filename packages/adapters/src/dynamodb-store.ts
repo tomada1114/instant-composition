@@ -15,6 +15,7 @@ import type {
 import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
 import { isConflict, transactItemsOf } from "./dynamodb-commit";
+import { validateStorageSources } from "./storage-source";
 import { byTime, storedOf, type Row, type ValueOf } from "./dynamodb-rows";
 import {
   CARDS_PREFIX,
@@ -42,9 +43,7 @@ function dynamoDbStore(
   table: string,
   partition: string,
 ): LearnerStore {
-  async function get<T extends Entry["type"]>(
-    key: Key & { readonly type: T },
-  ): Promise<Stored<ValueOf<T>> | undefined> {
+  async function rawGet(key: Key): Promise<Row | undefined> {
     const { Item } = await documents.send(
       new GetCommand({
         TableName: table,
@@ -55,7 +54,14 @@ function dynamoDbStore(
         ConsistentRead: true,
       }),
     );
-    return Item === undefined ? undefined : storedOf(key.type, Item);
+    return Item;
+  }
+
+  async function get<T extends Entry["type"]>(
+    key: Key & { readonly type: T },
+  ): Promise<Stored<ValueOf<T>> | undefined> {
+    const row = await rawGet(key);
+    return row === undefined ? undefined : storedOf(key.type, row);
   }
 
   /** Every row of the partition whose sort key meets `condition`, across pages. */
@@ -161,6 +167,8 @@ function dynamoDbStore(
       if (items.length === 0) {
         return ok(undefined);
       }
+      if (!(await validateStorageSources(commit, rawGet)))
+        return err({ code: "ERR_CONFLICT" });
       try {
         await documents.send(new TransactWriteCommand({ TransactItems: items }));
       } catch (error) {

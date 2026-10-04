@@ -1,5 +1,7 @@
 import {
   buildApp,
+  AppStack,
+  StorageWriterConfigurationError,
   DEPLOY_ROLE_ARN_OUTPUT,
   DeployAccessStack,
 } from "@instant-composition/infra";
@@ -104,4 +106,46 @@ describe("the dev deploy-access stack", () => {
     const outputs = deployAccessTemplate().findOutputs(DEPLOY_ROLE_ARN_OUTPUT);
     expect(Object.keys(outputs)).toStrictEqual([DEPLOY_ROLE_ARN_OUTPUT]);
   });
+});
+
+it("adds only exact owned dev writer operations without widening OIDC trust", () => {
+  const arn =
+    "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned";
+  const context = {
+    ...infraContext("dev"),
+    "storage-writer-arns": JSON.stringify([arn]),
+    "storage-writers-paused": true,
+  };
+  const staged = buildApp(context);
+  const access = staged.app.node.findChild("deploy-access");
+  if (!(access instanceof DeployAccessStack))
+    throw new TypeError("Deploy stack required.");
+  const policies = Template.fromStack(access).findResources("AWS::IAM::Policy");
+  expect(JSON.stringify(policies)).toContain('"lambda:PutFunctionConcurrency"');
+  expect(JSON.stringify(policies)).toContain(arn);
+  expect(JSON.stringify(policies)).not.toContain('"lambda:*"');
+  expect(
+    JSON.stringify(Template.fromStack(access).findResources("AWS::IAM::Role")),
+  ).toContain(
+    "repo:tomada1114@68495563/instant-composition@1382590627:ref:refs/heads/main",
+  );
+  const app = staged.app.node.findChild("app");
+  if (!(app instanceof AppStack)) throw new TypeError("App stack required.");
+  const writers = Template.fromStack(app).findResources("AWS::Lambda::Function");
+  const api = Object.entries(writers).find(([id]) => id.startsWith("ApiFunction"))?.[1];
+  expect(api).toMatchObject({
+    Properties: { Handler: "storage.handler", ReservedConcurrentExecutions: 0 },
+    Metadata: { "instant-composition:storage-capacity": "unreserved" },
+  });
+});
+
+it.each([
+  "*",
+  "arn:aws:lambda:ap-northeast-1:123456789012:function:other",
+  "arn:aws:lambda:us-east-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned",
+  "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned:alias",
+])("rejects unsafe direct permission subject %s", (arn) => {
+  expect(() =>
+    buildApp({ ...infraContext("dev"), "storage-writer-arns": JSON.stringify([arn]) }),
+  ).toThrow(StorageWriterConfigurationError);
 });

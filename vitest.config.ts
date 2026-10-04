@@ -23,6 +23,12 @@ const localWorkers = testWorkers(process.env["INSTANT_COMPOSITION_TEST_WORKERS"]
 const automationTests = [
   "tests/adapters-catalog.test.ts",
   "tests/adapters-dynamodb-store.test.ts",
+  "tests/adapters-storage-schema.test.ts",
+  "tests/storage-release.test.ts",
+  "tests/storage-transition.test.ts",
+  "tests/storage-aws.test.ts",
+  "tests/storage-aws-transport.test.ts",
+  "tests/storage-migrate-cli.test.ts",
   "tests/api-local-run.test.ts",
   "tests/boundaries.test.ts",
   "tests/cards-cli.test.ts",
@@ -86,6 +92,7 @@ const smokeTests = ["tests/stack-smoke.test.ts"];
 const dynamodbTests = [
   "tests/api-critical-flows-dynamodb.test.ts",
   "tests/adapters-dynamodb-local.test.ts",
+  "tests/storage-migration-local.test.ts",
   "tests/api-dynamodb-local.test.ts",
 ];
 

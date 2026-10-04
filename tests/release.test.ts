@@ -134,6 +134,41 @@ describe("trusted release", () => {
       ReleaseError,
     );
   });
+  it("retains a prototype-named file in both generated and decoded inventories", () => {
+    const root = fixture();
+    writeFileSync(path.join(root, "__proto__"), "original");
+    const release = metadata(
+      JSON.parse(JSON.stringify({ sha: SHA, files: hashes(root) })),
+    );
+    expect(Object.hasOwn(release.files, "__proto__")).toBe(true);
+    expect(release.files["__proto__"]).toBe(digest("original"));
+    verifyFiles(root, release);
+    writeFileSync(path.join(root, "__proto__"), "changed");
+    expect(() => verifyFiles(root, release)).toThrow(ReleaseError);
+  });
+  it("preserves verified storage and Lambda context through the release wrapper", async () => {
+    const root = fixture();
+    writeFileSync(path.join(root, "index.mjs"), "original");
+    writeFileSync(
+      path.join(root, "release.json"),
+      JSON.stringify({ sha: SHA, files: hashes(root) }),
+    );
+    const next = vi.fn(() => Promise.resolve("app"));
+    const event = {
+      rawPath: "/api/v1/home",
+      requestContext: { http: { method: "GET" } },
+    };
+    const context = {
+      storageRelease: {
+        sha: SHA,
+        contract: "storage-v1",
+        schemaFingerprint: "a".repeat(64),
+      },
+      awsRequestId: "fixture",
+    };
+    expect(await releaseHandler(root, next)(event, context)).toBe("app");
+    expect(next).toHaveBeenCalledWith(event, context);
+  });
   it("serves release health without invoking the app and forwards other methods and paths", async () => {
     const root = fixture();
     writeFileSync(path.join(root, "index.mjs"), "original");

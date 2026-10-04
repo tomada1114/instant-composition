@@ -781,26 +781,30 @@ export function describeLearnerStoreContract(
         { length: MAX_COMMIT_ITEMS + 1 },
         (_, index) => ({
           type: "day",
-          value: makeDay({ day: `2026-01-${String(index).padStart(3, "0")}` }),
+          value: makeDay({
+            day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+          }),
         }),
       );
 
       await expect(async () =>
         store.commit({ puts: days, updates: [], expect: [] }),
       ).rejects.toThrow(RangeError);
-      expect(await store.days(["2026-01-000"])).toStrictEqual(new Map());
+      expect(await store.days(["2026-01-01"])).toStrictEqual(new Map());
     });
 
     it("accepts a commit of exactly the transaction limit", async () => {
       const days: Entry[] = Array.from({ length: MAX_COMMIT_ITEMS }, (_, index) => ({
         type: "day",
-        value: makeDay({ day: `2026-01-${String(index).padStart(3, "0")}` }),
+        value: makeDay({
+          day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+        }),
       }));
 
       expect((await store.commit({ puts: days, updates: [], expect: [] })).ok).toBe(
         true,
       );
-      expect((await store.days(["2026-01-000", "2026-01-099"])).size).toBe(2);
+      expect((await store.days(["2026-01-01", "2026-04-16"])).size).toBe(2);
     });
 
     it("refuses a commit that names one key twice", async () => {
@@ -822,7 +826,9 @@ export function describeLearnerStoreContract(
     it("counts deletes toward the transaction limit", async () => {
       const days: Entry[] = Array.from({ length: MAX_COMMIT_ITEMS }, (_, index) => ({
         type: "day",
-        value: makeDay({ day: `2026-01-${String(index).padStart(3, "0")}` }),
+        value: makeDay({
+          day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+        }),
       }));
 
       await expect(async () =>

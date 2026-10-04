@@ -15,8 +15,8 @@ import { digest, metadata, ReleaseError, verifyFiles } from "./release-runtime.m
 
 /** @param {string} root @returns {Record<string, string>} */
 export function hashes(root) {
-  /** @type {Record<string, string>} */
-  const files = {};
+  /** @type {Map<string, string>} */
+  const files = new Map();
   /** @param {string} relative */
   function visit(relative) {
     for (const entry of readdirSync(path.join(root, relative), {
@@ -25,11 +25,13 @@ export function hashes(root) {
       const name = relative === "" ? entry.name : `${relative}/${entry.name}`;
       if (entry.isSymbolicLink()) throw new ReleaseError("symlink");
       if (entry.isDirectory()) visit(name);
-      else files[name] = digest(readFileSync(path.join(root, name)));
+      else if (entry.isFile())
+        files.set(name, digest(readFileSync(path.join(root, name))));
+      else throw new ReleaseError("non-file input");
     }
   }
   visit("");
-  return files;
+  return Object.fromEntries(files);
 }
 
 /** @param {string} root @returns {string} */

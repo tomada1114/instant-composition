@@ -81,3 +81,5 @@ export {
   type WebSession,
   type WebSessionAnswer,
 } from "./web-session";
+
+export { validateStoredRecords, type MaintenanceAnswer } from "./storage-maintenance";

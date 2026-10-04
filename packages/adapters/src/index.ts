@@ -22,3 +22,18 @@ export {
   type StandInModel,
   type StandInScript,
 } from "./stand-in-model";
+
+export {
+  decodeStorageRecord,
+  STORAGE_FAMILIES,
+  decodeStorageRow,
+  encodeStorageValue,
+  StorageSchemaError,
+  STORAGE_SCHEMA_VERSION,
+  type DecodedStorage,
+  type StorageFamily,
+} from "./storage-schema";
+
+export { executeStorageMaintenance } from "./storage-maintenance";
+export { createDynamoDbReadModelBootstrapStorage } from "./dynamodb-storage-bootstrap";
+export { decodeReadModelBootstrapState } from "./storage-bootstrap-schema";

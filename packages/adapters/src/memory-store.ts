@@ -9,20 +9,9 @@ import {
 } from "@instant-composition/application";
 import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
-import { declaredValue } from "./declared";
+import { encodeStorageValue, STORAGE_SCHEMA_VERSION } from "./storage-schema";
+import { copyEntry, readMemorySlot, type Slot, type ValueOf } from "./storage-memory";
 import { checkShape, sortKeyOf } from "./keys";
-
-interface Slot {
-  readonly entry: Entry;
-  readonly version: number;
-}
-
-type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
-
-/** A serialized copy, as a real store hands back: no caller shares a stored object. */
-function copy<T>(value: T): T {
-  return JSON.parse(JSON.stringify(value)) as T;
-}
 
 /** The fields both logs sort by. */
 type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
@@ -36,22 +25,24 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
     key: Key & { readonly type: T },
   ): Stored<ValueOf<T>> | undefined {
     const slot = slots.get(sortKeyOf(key));
-    return slot === undefined
-      ? undefined
-      : { value: declaredValue(copy(slot.entry)) as ValueOf<T>, version: slot.version };
+    return slot === undefined ? undefined : readMemorySlot(key.type, slot);
   }
 
   function all<T extends Entry["type"]>(type: T): Stored<ValueOf<T>>[] {
     return [...slots.values()]
       .filter((slot) => slot.entry.type === type)
-      .map((slot) => ({
-        value: declaredValue(copy(slot.entry)) as ValueOf<T>,
-        version: slot.version,
-      }));
+      .map((slot) => readMemorySlot(type, slot));
   }
 
   function holds(key: Key, version: number | null): boolean {
-    return (slots.get(sortKeyOf(key))?.version ?? null) === version;
+    const slot = slots.get(sortKeyOf(key));
+    return (
+      (slot?.version ?? null) === version &&
+      (slot === undefined ||
+        (Number.isInteger(slot.schemaVersion) &&
+          slot.schemaVersion >= 0 &&
+          slot.schemaVersion <= STORAGE_SCHEMA_VERSION))
+    );
   }
 
   function reviews(sessionId?: string): readonly ReviewEntry[] {
@@ -149,13 +140,22 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       if (conflict) {
         return Promise.resolve(err({ code: "ERR_CONFLICT" }));
       }
+      // The same strict source validation protects legacy whole-row changes.
+      for (const { entry } of commit.updates) read(keyOf(entry));
+      for (const { key } of deletes) read(key);
+      // Validate all writes before changing even one slot.
+      for (const { entry } of writes) encodeStorageValue(entry.type, entry.value);
       for (const { key } of deletes) {
         slots.delete(sortKeyOf(key));
       }
       for (const { entry, version } of writes) {
         slots.set(sortKeyOf(keyOf(entry)), {
-          entry: copy(entry),
+          entry: copyEntry({
+            ...entry,
+            value: encodeStorageValue(entry.type, entry.value),
+          }),
           version: (version ?? 0) + 1,
+          schemaVersion: STORAGE_SCHEMA_VERSION,
         });
       }
       return Promise.resolve(ok(undefined));

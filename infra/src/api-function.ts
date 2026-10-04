@@ -11,6 +11,7 @@ import { NodejsFunction, OutputFormat } from "aws-cdk-lib/aws-lambda-nodejs";
 import { LogGroup, RetentionDays } from "aws-cdk-lib/aws-logs";
 import { type Construct } from "constructs";
 import { type Stage } from "./stage";
+import { declareStorageWriter } from "./storage-writers";
 
 /**
  * The AWS Parameters and Secrets Lambda extension, arm64, in `ap-northeast-1`.
@@ -88,7 +89,7 @@ export function addApiFunction(
   const { repositoryRoot: root, webUrl } = props;
   const handler = new NodejsFunction(scope, "ApiFunction", {
     entry: `${root}/apps/api/src/lambda.ts`,
-    handler: "release.handler",
+    handler: "storage.handler",
     projectRoot: root,
     depsLockFilePath: `${root}/pnpm-lock.yaml`,
     runtime: Runtime.NODEJS_24_X,
@@ -131,10 +132,13 @@ export function addApiFunction(
         afterBundling: (inputDir: string, outputDir: string) => [
           `node "${inputDir}/scripts/catalog/build.mjs" --out "${outputDir}/catalog"`,
           `node "${inputDir}/scripts/release.mjs" bundle "${inputDir}" "${outputDir}"`,
+          `node "${inputDir}/scripts/storage-bundle.mjs" "${inputDir}" "${outputDir}"`,
+          `node "${inputDir}/scripts/release.mjs" bundle "${inputDir}" "${outputDir}"`,
         ],
       },
     },
   });
+  declareStorageWriter(scope, handler, null);
 
   Table.fromTableArn(scope, "LearnerTable", props.tableArn).grantReadWriteData(handler);
   const { region, account, urlSuffix } = Stack.of(scope);

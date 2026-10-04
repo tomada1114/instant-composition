@@ -8,6 +8,11 @@ import {
 } from "@instant-composition/application";
 
 import { LEARNER_TABLE_KEY, sortKeyOf } from "./keys";
+import {
+  encodeStorageValue,
+  STORAGE_SCHEMA_VERSION,
+  storageSchemaFence,
+} from "./storage-schema";
 
 type TransactItem = NonNullable<TransactWriteCommandInput["TransactItems"]>[number];
 
@@ -19,10 +24,14 @@ const ABSENT = {
 
 /** An entry must still be at the version it was read at. */
 function atVersion(version: number) {
+  const fence = storageSchemaFence();
   return {
-    ConditionExpression: "#version = :version",
-    ExpressionAttributeNames: { "#version": "version" },
-    ExpressionAttributeValues: { ":version": version },
+    ConditionExpression: `#version = :version AND ${fence.condition}`,
+    ExpressionAttributeNames: { "#version": "version", "#schema": "schemaVersion" },
+    ExpressionAttributeValues: {
+      ":version": version,
+      ...fence.values,
+    },
   };
 }
 
@@ -56,7 +65,8 @@ export function transactItemsOf(
     ...keyFor(keyOf(entry)),
     type: entry.type,
     version,
-    value: entry.value,
+    schemaVersion: STORAGE_SCHEMA_VERSION,
+    value: encodeStorageValue(entry.type, entry.value),
     ...expiryOf(entry),
   });
   return [
