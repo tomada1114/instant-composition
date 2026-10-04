@@ -1,7 +1,8 @@
-import { ok, type Result } from "@instant-composition/domain";
+import { ok, type DayKey, type Result } from "@instant-composition/domain";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
+import type { LearnerStore } from "./store";
 import { rebuildVocabReadModel } from "./rebuild-read-model";
 
 /** One queued day per tick. Completed requests disappear; no candidate row discovers work. */
@@ -40,4 +41,14 @@ export async function advanceRequestedVocabDay(
     ],
   });
   return removed.ok ? ok({ complete: false, rows: step.value.rows }) : removed;
+}
+
+/** Authenticated commands enqueue a stale original day; queries never advance maintenance. */
+export async function requestVocabDay(store: LearnerStore, day: DayKey): Promise<void> {
+  if ((await store.vocabReadModelRequest(day)) !== undefined) return;
+  await store.commit({
+    puts: [{ type: "vocabReadModelRequest", value: { schema: 1, day } }],
+    updates: [],
+    expect: [],
+  });
 }

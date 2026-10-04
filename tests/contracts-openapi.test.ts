@@ -99,6 +99,11 @@ describe("openApiDocument", () => {
       "POST /v1/talks/{talkId}/reply retryReply",
       "POST /v1/talks/{talkId}/turns sendTurn",
       "POST /v1/talks/{talkId}/turns/{turn}/recital recordRecital",
+      "POST /v1/vocab/paged-sessions startPagedVocabSession",
+      "POST /v1/vocab/paged-sessions/{sessionId}/answers recordPagedVocabAnswers",
+      "POST /v1/vocab/paged-sessions/{sessionId}/finish finishPagedVocabSession",
+      "POST /v1/vocab/paged-sessions/{sessionId}/page getPagedVocabPage",
+      "POST /v1/vocab/paged-sessions/{sessionId}/prepare preparePagedVocabSession",
       "POST /v1/vocab/sessions startVocabSession",
       "POST /v1/vocab/sessions/{sessionId}/answers recordVocabAnswers",
       "POST /v1/vocab/sessions/{sessionId}/finish finishVocabSession",
@@ -246,7 +251,7 @@ describe("openApiDocument", () => {
 
   it("builds a route it is handed rather than only the shipped table", () => {
     expect(Object.keys(openApiDocument([probe]).paths)).toStrictEqual(["/v1/probe"]);
-    expect(ROUTES).toHaveLength(26);
+    expect(ROUTES).toHaveLength(31);
   });
 
   it.each([

@@ -5,6 +5,7 @@ import {
   decodeStorageRow,
   encodeStorageValue,
   STORAGE_FAMILIES,
+  STORAGE_SCHEMA_VERSION,
   StorageSchemaError,
 } from "@instant-composition/adapters";
 import { learnerId } from "@instant-composition/application";
@@ -14,16 +15,16 @@ import { makeCompositionCandidate } from "./composition-fixtures";
 function row(type: string, value: unknown, schemaVersion = 4) {
   return { type, value, schemaVersion, version: 1 };
 }
-describe("cap4 storage declarations", () => {
-  it("activates exactly28 families", () => {
-    expect(STORAGE_FAMILIES).toHaveLength(28);
-    expect(new Set(STORAGE_FAMILIES).size).toBe(28);
+describe("read-model storage declarations", () => {
+  it("activates exactly32 families at cap5", () => {
+    expect(STORAGE_FAMILIES).toHaveLength(32);
+    expect(new Set(STORAGE_FAMILIES).size).toBe(32);
   });
   it.each([-1, -0.5, 0])("retains signed historical candidate mark %s", (at) => {
     const value = makeCompositionCandidate({ at });
     expect(encodeStorageValue("compositionCandidate", value)).toStrictEqual(value);
   });
-  it.each([undefined, 0, 1, 2, 3, 5])(
+  it.each([undefined, 0, 1, 2, 3, STORAGE_SCHEMA_VERSION + 1])(
     "refuses readmodel source declaration %s",
     (schemaVersion) => {
       const input = {
@@ -93,7 +94,7 @@ describe("cap4 storage declarations", () => {
         {
           PK: "SYSTEM#READMODEL_LEARNERS",
           SK: "a",
-          schemaVersion: 5,
+          schemaVersion: STORAGE_SCHEMA_VERSION + 1,
           type: "readModelLearner",
           version: 1,
           value: { schema: 1, id: "a", profile },
@@ -152,7 +153,7 @@ it.each(["future", "malformed"])(
         SK: id,
         type: "readModelLearner",
         version: 1,
-        schemaVersion: at === 100 && kind === "future" ? 5 : 4,
+        schemaVersion: at === 100 && kind === "future" ? STORAGE_SCHEMA_VERSION + 1 : 4,
         value: {
           schema: 1,
           id,

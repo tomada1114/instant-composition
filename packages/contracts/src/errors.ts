@@ -31,6 +31,7 @@ export const STATUS_BY_CODE = {
   ERR_ROUND_CLOSED: 409,
   ERR_TALK_CLOSED: 409,
   ERR_SESSION_CLOSED: 409,
+  ERR_PAGED_SESSION_REQUIRED: 409,
   ERR_NOT_ENOUGH_CARDS: 409,
   ERR_CONFLICT: 409,
   ERR_PAYLOAD_TOO_LARGE: 413,
@@ -51,6 +52,8 @@ export const MESSAGE_BY_CODE = {
     "That card is the catalog's; only a card made from a talk can be deleted.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",
   ERR_TALK_NOT_FOUND: "No talk has that id.",
+  ERR_PAGED_SESSION_REQUIRED:
+    "This session needs the paged vocabulary API. Reload the web client before starting.",
   ERR_SESSION_NOT_FOUND: "No vocabulary session has that id.",
   ERR_CARD_NOT_FOUND: "No vocabulary card of the learner's own has that id.",
   ERR_ROUND_CLOSED: "That round or day can no longer take this request.",

@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState, type Dispatch } from "react";
-import type { AnswerQueue } from "../study/answer-queue";
+import type { PagedOutbox } from "./paged-outbox";
 import type { StudyEvent, StudyState } from "../study/study-state";
 import { deleteVocabCard } from "../lib/vocab-endpoints";
 
@@ -8,7 +8,7 @@ import { deleteVocabCard } from "../lib/vocab-endpoints";
 export function useVocabDelete(
   state: StudyState,
   dispatch: Dispatch<StudyEvent>,
-  queue: AnswerQueue,
+  queue: PagedOutbox,
   onClose: () => void,
 ): {
   readonly asking: boolean;
@@ -50,9 +50,9 @@ export function useVocabDelete(
       void queue
         .flush()
         .then(() => deleteVocabCard(cardId))
-        .then((result) => {
+        .then(async (result) => {
           if (result.ok) {
-            queue.removeCard(cardId);
+            await queue.removeCard(cardId);
             void cache.invalidateQueries({ queryKey: ["vocab"] });
           }
           if (!live.current) return;

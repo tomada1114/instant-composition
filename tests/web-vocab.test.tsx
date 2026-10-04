@@ -2,7 +2,6 @@ import { act, cleanup, fireEvent, screen } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { type VocabSession, type VocabSummary } from "@instant-composition/web";
 import {
-  fakeApi,
   fakeTimers,
   fill,
   homeView,
@@ -16,6 +15,7 @@ import {
   settle,
   warmUp,
 } from "./web-harness";
+import { fakeFiniteVocabApi as fakeApi } from "./web-vocab-finite-api";
 import { vocabCard, vocabHub, vocabSession, vocabSummary } from "./web-vocab-fixtures";
 
 beforeAll(warmUp);
@@ -52,7 +52,7 @@ function serve(
             : {},
         ),
       );
-    if (call.url === "/api/v1/vocab/sessions")
+    if (call.url === "/api/v1/vocab/paged-sessions")
       return Response.json(options.session ?? vocabSession());
     if (call.method === "DELETE")
       return options.delete?.() ?? new Response(null, { status: 204 });
@@ -70,6 +70,7 @@ async function flipAndGrade(key = "3"): Promise<void> {
   press(" ");
   await settle(151);
   press(key);
+  await settle();
   await settle(300);
 }
 
@@ -218,6 +219,7 @@ describe("an untimed vocabulary session", () => {
     press(" ");
     await settle(151);
     press("3");
+    await settle();
     expect(announcement).toHaveTextContent(ja.Drill.grade.good);
     expect(announcement?.querySelector('[lang="en"]')).toBeNull();
   });
@@ -273,6 +275,7 @@ describe("an untimed vocabulary session", () => {
     press("ArrowUp");
     expect(scrollBy.mock.calls).toStrictEqual([[{ top: 48 }], [{ top: -48 }]]);
     press("3");
+    await settle();
     await settle(300);
     expect(
       screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
@@ -311,6 +314,7 @@ describe("an untimed vocabulary session", () => {
     expect(screen.getByText("No worries v_card0001")).toBeInTheDocument();
     await settle(151);
     press("2");
+    await settle();
     await settle(300);
     expect(calls.find((call) => call.url.endsWith("/answers"))?.body).toMatchObject({
       answers: [
@@ -389,8 +393,10 @@ describe("an untimed vocabulary session", () => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
       if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
-      if (call.url === "/api/v1/vocab/sessions") return Response.json(vocabSession());
-      if (call.url.endsWith("/answers")) return sending;
+      if (call.url === "/api/v1/vocab/paged-sessions")
+        return Response.json(vocabSession());
+      if (call.url.endsWith("/answers"))
+        return now < 20_000 ? sending : new Response(null, { status: 204 });
       if (call.url.endsWith("/finish")) return Response.json(vocabSummary());
       return undefined;
     });
@@ -410,14 +416,23 @@ describe("an untimed vocabulary session", () => {
     expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(1);
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
   });
-  it("keeps failed answers in the vocabulary queue and finishes by resending their fixed ids", async () => {
-    const calls = serve({ offline: true });
+  it("keeps failed paged answers until retry acknowledges them before logical finish", async () => {
+    const options = { offline: true };
+    const calls = serve(options);
     await renderApp("/vocab/study?kind=today");
     await flipAndGrade();
-    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toMatchObject({
-      answers: [{ id: "session-1:f:v_card0001", grade: "good" }],
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    expect(localStorage.getItem("vocab-outbox:session-1:page:0")).toContain("p:0:0:0");
+    options.offline = false;
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      generation: 1,
+      answers: [],
     });
-    expect(sessionStorage.getItem("vocab-answers:session-1")).toBeNull();
+    expect(
+      JSON.parse(localStorage.getItem("vocab-outbox:session-1") ?? "{}"),
+    ).toMatchObject({ count: 0 });
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
   });
   it("resends abandoned sessions before starting a fresh session on reload", async () => {
@@ -439,9 +454,13 @@ describe("an untimed vocabulary session", () => {
     await renderApp("/vocab/study?kind=today");
     expect(
       calls.filter((call) => call.method === "POST").map((call) => call.url),
-    ).toStrictEqual(["/api/v1/vocab/sessions/old/answers", "/api/v1/vocab/sessions"]);
+    ).toStrictEqual([
+      "/api/v1/vocab/sessions/old/answers",
+      "/api/v1/vocab/paged-sessions",
+      calls.find((call) => call.url.endsWith("/page"))?.url,
+    ]);
     expect(
-      calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
+      calls.find((call) => call.url === "/api/v1/vocab/paged-sessions")?.body,
     ).toMatchObject({ kind: "today" });
   });
   it("keeps a failed earlier answer and retries it before dealing a fresh queue", async () => {
@@ -467,7 +486,8 @@ describe("an untimed vocabulary session", () => {
         return offline
           ? refusal(503, "ERR_CONTENT_UNREADABLE")
           : new Response(null, { status: 204 });
-      if (call.url === "/api/v1/vocab/sessions") return Response.json(vocabSession());
+      if (call.url === "/api/v1/vocab/paged-sessions")
+        return Response.json(vocabSession());
       return undefined;
     });
     await renderApp("/vocab/study");
@@ -483,13 +503,14 @@ describe("an untimed vocabulary session", () => {
     ).toStrictEqual([
       "/api/v1/vocab/sessions/old/answers",
       "/api/v1/vocab/sessions/old/answers",
-      "/api/v1/vocab/sessions",
+      "/api/v1/vocab/paged-sessions",
+      calls.find((call) => call.url.endsWith("/page"))?.url,
     ]);
     const sends = calls.filter((call) => call.url.endsWith("/answers"));
     expect(sends[1]?.body).toStrictEqual(sends[0]?.body);
     expect(sessionStorage.getItem("vocab-answers:old")).toBeNull();
     expect(
-      calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
+      calls.find((call) => call.url === "/api/v1/vocab/paged-sessions")?.body,
     ).toStrictEqual({ sessionId: arrival, kind: "today" });
     expect(ids).toHaveBeenCalledTimes(1);
     expect(
@@ -501,7 +522,7 @@ describe("an untimed vocabulary session", () => {
     const calls = fakeApi((call) =>
       call.url === "/api/v1/home"
         ? Response.json(homeView({ kind: "ready", streak: COUNT }))
-        : call.url === "/api/v1/vocab/sessions"
+        : call.url === "/api/v1/vocab/paged-sessions"
           ? fails
             ? refusal(503, "ERR_CONTENT_UNREADABLE")
             : Response.json(vocabSession())
@@ -513,11 +534,11 @@ describe("an untimed vocabulary session", () => {
     await settle();
     expect(
       calls
-        .filter((call) => call.url === "/api/v1/vocab/sessions")
+        .filter((call) => call.url === "/api/v1/vocab/paged-sessions")
         .map((call) => call.body),
     ).toStrictEqual([
-      calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
-      calls.find((call) => call.url === "/api/v1/vocab/sessions")?.body,
+      calls.find((call) => call.url === "/api/v1/vocab/paged-sessions")?.body,
+      calls.find((call) => call.url === "/api/v1/vocab/paged-sessions")?.body,
     ]);
     expect(
       screen.getByText(vocabCard().definition, { selector: "p" }),
@@ -579,7 +600,7 @@ describe("vocabulary completion", () => {
             ),
           }),
         );
-      if (call.url === "/api/v1/vocab/sessions")
+      if (call.url === "/api/v1/vocab/paged-sessions")
         return Response.json(vocabSession({ cards: [], category: "word" }));
       if (call.url.endsWith("/finish"))
         return Response.json(vocabSummary({ category: "word" }));
@@ -600,7 +621,7 @@ describe("vocabulary completion", () => {
       screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 10 }) }),
     );
     await settle();
-    const starts = calls.filter((call) => call.url === "/api/v1/vocab/sessions");
+    const starts = calls.filter((call) => call.url === "/api/v1/vocab/paged-sessions");
     expect(starts).toHaveLength(2);
     expect(starts[1]?.body).not.toStrictEqual(starts[0]?.body);
   });
@@ -631,8 +652,9 @@ describe("vocabulary recovery and scoped continuation", () => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
       if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
-      if (call.url === "/api/v1/vocab/sessions") return Response.json(vocabSession());
-      if (call.url.endsWith("/answers")) return refusal(503, "ERR_CONFLICT");
+      if (call.url === "/api/v1/vocab/paged-sessions")
+        return Response.json(vocabSession());
+      if (call.url.endsWith("/answers")) return new Response(null, { status: 204 });
       if (call.url.endsWith("/finish"))
         return finishFails
           ? refusal(503, "ERR_CONFLICT")
@@ -644,9 +666,7 @@ describe("vocabulary recovery and scoped continuation", () => {
     expect(
       screen.getByRole("button", { name: ja.Drill.save.resend }),
     ).toBeInTheDocument();
-    expect(sessionStorage.getItem("vocab-answers:session-1")).toContain(
-      "session-1:f:v_card0001",
-    );
+    expect(localStorage.getItem("vocab-outbox:session-1:recent")).toContain("p:0:0:0");
     finishFails = false;
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
     await settle();
@@ -670,7 +690,7 @@ describe("vocabulary recovery and scoped continuation", () => {
             ),
           }),
         );
-      if (call.url === "/api/v1/vocab/sessions")
+      if (call.url === "/api/v1/vocab/paged-sessions")
         return Response.json(vocabSession({ cards: [], category: "word" }));
       if (call.url.endsWith("/finish"))
         return Response.json(vocabSummary({ category: "word" }));
@@ -690,7 +710,7 @@ describe("vocabulary recovery and scoped continuation", () => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
       if (call.url === "/api/v1/vocab") return Response.json(vocabHub({ weak: 20 }));
-      if (call.url === "/api/v1/vocab/sessions")
+      if (call.url === "/api/v1/vocab/paged-sessions")
         return Response.json(
           next
             ? vocabSession({
@@ -714,9 +734,9 @@ describe("vocabulary recovery and scoped continuation", () => {
       screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
     ).toBeInTheDocument();
     expect(screen.queryByText(ja.Vocab.weakDone)).toBeNull();
-    expect(calls.filter((call) => call.url === "/api/v1/vocab/sessions")).toHaveLength(
-      2,
-    );
+    expect(
+      calls.filter((call) => call.url === "/api/v1/vocab/paged-sessions"),
+    ).toHaveLength(2);
   });
 });
 
@@ -725,7 +745,8 @@ describe("deleting a vocabulary card from a talk", () => {
     cards = [vocabCard("v_own", { personal: true }), vocabCard("v_next")],
     options: Parameters<typeof serve>[0] = {},
   ) {
-    const calls = serve({ session: vocabSession({ cards }), ...options });
+    options.session = vocabSession({ cards });
+    const calls = serve(options);
     await renderApp("/vocab/study");
     expect(screen.getByText(ja.Vocab.fromTalk)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: ja.Vocab.delete.go })).toBeNull();
@@ -835,7 +856,7 @@ describe("deleting a vocabulary card from a talk", () => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
       if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
-      if (call.url === "/api/v1/vocab/sessions")
+      if (call.url === "/api/v1/vocab/paged-sessions")
         return Response.json(
           vocabSession({ cards: [vocabCard("v_own", { personal: true })] }),
         );
@@ -862,6 +883,7 @@ describe("deleting a vocabulary card from a talk", () => {
     await settle();
     expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(1);
     expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      generation: 1,
       answers: [],
     });
     expect(screen.getByRole("heading", { name: ja.Vocab.done })).toBeInTheDocument();
@@ -874,13 +896,16 @@ describe("deleting a vocabulary card from a talk", () => {
     await settle();
     expect(screen.getByRole("heading", { name: ja.Vocab.done })).toBeInTheDocument();
     expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      generation: 1,
       answers: [],
     });
   });
-  it("drops only a deleted re-ask's failed pending answers and finishes with unrelated answers", async () => {
-    const calls = await personalBack(undefined, { offline: true });
+  it("retains unrelated pending answers after deleting a re-ask and acknowledges them before finish", async () => {
+    const options = { offline: true };
+    const calls = await personalBack(undefined, options);
     await settle(151);
     press("1");
+    await settle();
     await settle(300);
     await flipAndGrade("3");
     expect(
@@ -891,16 +916,22 @@ describe("deleting a vocabulary card from a talk", () => {
     openDelete();
     confirmDelete();
     await settle();
-    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toMatchObject({
-      answers: [{ cardId: "v_next", grade: "good" }],
+    expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
+    expect(localStorage.getItem("vocab-outbox:session-1:removed:v_own")).toBe("1");
+    options.offline = false;
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      generation: 1,
+      answers: [],
     });
     expect(
-      calls
-        .filter((call) => call.url.endsWith("/answers"))
-        .every((call) => JSON.stringify(call.body).includes("v_own")),
-    ).toBe(true);
+      calls.filter((call) => call.url.endsWith("/answers")).at(-1)?.body,
+    ).toMatchObject({ answers: [{ cardId: "v_next", grade: "good" }] });
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
-    expect(sessionStorage.getItem("vocab-answers:session-1")).toBeNull();
+    expect(
+      JSON.parse(localStorage.getItem("vocab-outbox:session-1") ?? "{}"),
+    ).toMatchObject({ count: 0 });
   });
   it("waits for an in-flight answer before deleting its re-ask and does not resend it afterwards", async () => {
     let resolve!: (response: Response) => void;
@@ -910,7 +941,7 @@ describe("deleting a vocabulary card from a talk", () => {
       if (call.url === "/api/v1/home")
         return Response.json(homeView({ kind: "ready", streak: COUNT }));
       if (call.url === "/api/v1/vocab") return Response.json(vocabHub());
-      if (call.url === "/api/v1/vocab/sessions")
+      if (call.url === "/api/v1/vocab/paged-sessions")
         return Response.json(vocabSession({ cards }));
       if (call.url.endsWith("/answers"))
         return answering
@@ -938,6 +969,7 @@ describe("deleting a vocabulary card from a talk", () => {
     expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
     expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(2);
     expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
+      generation: 1,
       answers: [],
     });
   });

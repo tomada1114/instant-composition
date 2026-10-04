@@ -1,3 +1,4 @@
+import { clearLearnerStorage } from "./learner-storage";
 // How every call in `endpoints.ts` reaches the API: the root, the URL a
 // contract path becomes, and how an answer is read into a `Result`.
 import { waitForPreparedRead } from "./read-model-wait";
@@ -142,6 +143,7 @@ export async function send(method: Method, data: OperationData): Promise<Respons
     if (answer.ok) signedIn = true;
     return answer;
   }
+  await clearLearnerStorage();
   return signedIn ? signIn() : answer;
 }
 

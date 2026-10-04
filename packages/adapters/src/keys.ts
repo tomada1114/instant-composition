@@ -65,6 +65,13 @@ export function sortKeyOf(key: Key): string {
   switch (key.type) {
     case "compositionCandidate":
       return compositionCandidateSortKey(key.candidate);
+    case "vocabSessionGuard":
+      return `VOCAB#${part(key.id)}#GUARD`;
+    case "vocabPagedSession":
+      return `VOCAB_PAGED#${part(key.id)}`;
+    case "vocabDeckPage":
+    case "vocabPageProgress":
+      return `VOCAB_PAGED#${part(key.sessionId)}#GEN#${String(key.generation)}#${key.type === "vocabDeckPage" ? "DECK" : "PROGRESS"}#${String(key.page)}`;
     case "profile":
       return "PROFILE";
     case "settings":
@@ -159,7 +166,7 @@ export function checkShape(commit: Commit): void {
     throw new RangeError("A commit names each key once.");
   }
   const logged = (type: Key["type"]): boolean =>
-    type === "review" || type === "vocabReview";
+    type === "review" || type === "vocabReview" || type === "vocabDeckPage";
   if (
     commit.updates.some(({ entry }) => logged(entry.type)) ||
     deletes.some(({ key }) => logged(key.type))

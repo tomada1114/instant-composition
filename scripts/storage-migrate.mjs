@@ -8,7 +8,7 @@ import { readCheckpoint, saveCheckpoint } from "./lib/storage-checkpoint.mjs";
 import { migrateStorage, StorageMigrationError } from "./lib/storage-migration.mjs";
 import { createStorageValidator } from "./lib/storage-validator.mjs";
 
-/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, plan: "legacy-to-storage-v1" | "expand-to-storage-v2" | "expand-to-storage-v3" | "expand-to-storage-v4", apply: boolean, resume: boolean, maxPages?: number}} Options */
+/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, plan: "legacy-to-storage-v1" | "expand-to-storage-v2" | "expand-to-storage-v3" | "expand-to-storage-v4" | "expand-to-storage-v5", apply: boolean, resume: boolean, maxPages?: number}} Options */
 
 /** @param {string[]} args @returns {Options} */
 function optionsOf(args) {
@@ -68,7 +68,8 @@ function optionsOf(args) {
     plan !== "legacy-to-storage-v1" &&
     plan !== "expand-to-storage-v2" &&
     plan !== "expand-to-storage-v3" &&
-    plan !== "expand-to-storage-v4"
+    plan !== "expand-to-storage-v4" &&
+    plan !== "expand-to-storage-v5"
   )
     throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
   const pages = pairs.get("--max-pages"),
@@ -118,7 +119,9 @@ export async function main(args) {
         ? 2
         : options.plan === "expand-to-storage-v3"
           ? 3
-          : 4;
+          : options.plan === "expand-to-storage-v4"
+            ? 4
+            : 5;
   preflightStorageRelease(root, `storage-v${String(targetSchema)}`);
   const file = path.resolve(options.checkpoint),
     lock = `${file}.lock`;
@@ -171,7 +174,9 @@ export async function main(args) {
               ? [0, 1]
               : targetSchema === 3
                 ? [0, 1, 2]
-                : [0, 1, 2, 3],
+                : targetSchema === 4
+                  ? [0, 1, 2, 3]
+                  : [0, 1, 2, 3, 4],
         targetSchema,
         async transform(row) {
           const decoded = readKey(await validator.request([row]), "rows");

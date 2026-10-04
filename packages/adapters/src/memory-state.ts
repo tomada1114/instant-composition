@@ -32,25 +32,28 @@ function checked<T extends Entry["type"]>(
   slot: Slot,
   type: T,
   sort: string,
+  partition: string,
 ): Stored<ValueOf<T>> {
-  const decoded = decodeStorageRow(type, memoryRow(slot, sort));
+  const decoded = decodeStorageRow(type, memoryRow(slot, sort, partition));
   return { value: decoded.value as ValueOf<T>, version: decoded.version };
 }
 export function readMemory<T extends Entry["type"]>(
   slots: ReadonlyMap<string, Slot>,
   key: Key & { readonly type: T },
+  partition = "LEARNER#memory",
 ): Stored<ValueOf<T>> | undefined {
   const sk = sortKeyOf(key),
     slot = slots.get(sk);
-  return slot === undefined ? undefined : checked(slot, key.type, sk);
+  return slot === undefined ? undefined : checked(slot, key.type, sk, partition);
 }
 export function allMemory<T extends Entry["type"]>(
   slots: ReadonlyMap<string, Slot>,
   type: T,
+  partition = "LEARNER#memory",
 ): Stored<ValueOf<T>>[] {
   return [...slots]
     .filter(([, slot]) => slot.entry.type === type)
-    .map(([sk, slot]) => checked(slot, type, sk));
+    .map(([sk, slot]) => checked(slot, type, sk, partition));
 }
 export function pageMemory<T extends Entry["type"]>(
   slots: ReadonlyMap<string, Slot>,
@@ -68,7 +71,7 @@ export function pageMemory<T extends Entry["type"]>(
   return {
     rows: chosen.flatMap((sk) => {
       const slot = slots.get(sk);
-      return slot === undefined ? [] : [checked(slot, type, sk)];
+      return slot === undefined ? [] : [checked(slot, type, sk, partition)];
     }),
     cursor:
       keys.length > chosen.length && chosen.at(-1) !== undefined
@@ -85,6 +88,7 @@ export function rangeMemory<T extends Entry["type"]>(
   limit: number,
   after: string | undefined,
   forward = true,
+  partition = "LEARNER#memory",
 ): {
   readonly rows: readonly {
     readonly key: string;
@@ -101,7 +105,9 @@ export function rangeMemory<T extends Entry["type"]>(
   return {
     rows: keys.slice(0, limit).flatMap((key) => {
       const slot = slots.get(key);
-      return slot === undefined ? [] : [{ key, stored: checked(slot, type, key) }];
+      return slot === undefined
+        ? []
+        : [{ key, stored: checked(slot, type, key, partition) }];
     }),
     more: keys.length > limit,
   };

@@ -113,3 +113,14 @@ export {
 export type { WeaknessEvidence, WeaknessInput, Weaknesses } from "./weakness";
 
 export { answeredOn, isNewCard, isWeak, recallOf, newCardOrder } from "./vocab";
+
+export {
+  VOCAB_PAGE_SIZE,
+  VOCAB_AGAIN_PREVIEW,
+  vocabFreshPosition,
+  type VocabPagedSession,
+  type VocabDeckPage,
+  type VocabPageProgress,
+  type VocabPagedAnswer,
+  type VocabSessionGuard,
+} from "./vocab-pages";

@@ -81,8 +81,19 @@ export function VocabDone({
       <section className="flex flex-col gap-4 rounded-card border-2 border-border bg-card p-5">
         <h2 className="flex justify-between text-heading">
           {t("againTitle")}
-          <span className="font-latin text-count">{summary.again.length}</span>
+          <span className="font-latin text-count">
+            {"againCount" in summary && typeof summary.againCount === "number"
+              ? summary.againCount
+              : summary.again.length}
+          </span>
         </h2>
+        {"againCount" in summary &&
+        typeof summary.againCount === "number" &&
+        summary.againCount > summary.again.length ? (
+          <p className="text-muted-foreground">
+            {t("againPreview", { count: summary.again.length })}
+          </p>
+        ) : null}
         {summary.again.length === 0 ? (
           <p className="text-muted-foreground">{t("againNone")}</p>
         ) : (

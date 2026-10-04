@@ -1,3 +1,11 @@
+import {
+  vocabPageRequestSchema,
+  vocabPreparationSchema,
+  vocabPageSchema,
+  vocabPagedAnswerSchema,
+  vocabPagedAnswersRequestSchema,
+  vocabPagedSummarySchema,
+} from "./vocab-pages";
 import { errorResponseSchema } from "./errors";
 import {
   answerResultSchema,
@@ -91,6 +99,12 @@ import {
  * response body has to be listed, which `openApiDocument` checks.
  */
 export const COMPONENTS = {
+  VocabPageRequest: vocabPageRequestSchema,
+  VocabPreparation: vocabPreparationSchema,
+  VocabPage: vocabPageSchema,
+  VocabPagedAnswer: vocabPagedAnswerSchema,
+  VocabPagedAnswersRequest: vocabPagedAnswersRequestSchema,
+  VocabPagedSummary: vocabPagedSummarySchema,
   RoundKind: roundKindSchema,
   Pass: passSchema,
   AnswerResult: answerResultSchema,

@@ -379,7 +379,7 @@ describe("a commit", () => {
       Item: { SK: { S: "STATS" }, version: { N: "4" } },
       ExpressionAttributeValues: {
         ":observedVersion": { N: "3" },
-        ":observedSchema": { N: "4" },
+        ":observedSchema": { N: String(STORAGE_SCHEMA_VERSION) },
       },
     });
     expect(items[3]?.["ConditionCheck"]?.["Key"]).toStrictEqual({
@@ -414,7 +414,7 @@ describe("a commit", () => {
         Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
         ExpressionAttributeValues: {
           ":observedVersion": { N: "2" },
-          ":observedSchema": { N: "4" },
+          ":observedSchema": { N: String(STORAGE_SCHEMA_VERSION) },
         },
       },
       { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
@@ -514,7 +514,7 @@ describe("a commit", () => {
         ":observedVersion": { N: "1" },
         ":observedSchema": { N: "3" },
         ":storage3": { N: "3" },
-        ":schema": { N: "4" },
+        ":schema": { N: String(STORAGE_SCHEMA_VERSION) },
         ":claim": { S: "req-1:1" },
       },
     });
@@ -1014,7 +1014,7 @@ describe("the explicit storage maintenance adapter", () => {
         ExpressionAttributeValues: {
           ":observedVersion": { N: "1" },
           ":observedSchema": { N: String(schema) },
-          ":schema": { N: "4" },
+          ":schema": { N: String(STORAGE_SCHEMA_VERSION) },
         },
       });
       expect(calls.at(-1)?.body["ConditionExpression"]).toContain(

@@ -1,3 +1,4 @@
+import { VOCAB_PAGED_ROUTES } from "./vocab-paged-routes";
 import type * as z from "zod";
 
 import type { ErrorCode } from "./errors";
@@ -193,5 +194,6 @@ export const ROUTES: readonly Route[] = [
     errors: QUERY_ERRORS,
   },
   ...VOCAB_ROUTES,
+  ...VOCAB_PAGED_ROUTES,
   ...TALK_ROUTES,
 ];
