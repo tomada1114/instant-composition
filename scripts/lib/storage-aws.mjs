@@ -118,7 +118,7 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   const authorized = new Set();
   let deployed = false;
   const checkpoint = path.join(root, "dist/storage-transition.json");
-  // Work stops with twenty minutes left: five for barriers, fifteen for drain.
+  // Work stops with 21 minutes left: five for barriers, fifteen for drain, one for final overhead.
   const closingDeadline = (options.deadline ?? Date.now()) + 5 * 60000;
   mkdirSync(path.dirname(checkpoint), { recursive: true });
   /** @param {import('./storage-transition.mjs').Writer} writer @returns {import('./storage-transition.mjs').Writer} */

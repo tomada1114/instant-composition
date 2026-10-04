@@ -10,16 +10,32 @@ import { parseJson, readKey, readString } from "./json.mjs";
 import { StorageTransitionError } from "./storage-runtime.mjs";
 import { sameStorageWriter } from "./storage-configuration.mjs";
 
-/** Existing workflow time limit, with twenty minutes reserved for re-pause/drain.
- * @param {string} root @param {number} minutes @param {number} [now] @returns {void}
+/** The actual job start includes setup. Reserve barriers, maximum drain and final overhead.
+ * @param {string} root @param {number} minutes @param {number} [now]
+ * @param {number} [startedAt] @returns {void}
  */
-export function recordStorageJobBudget(root, minutes, now = Date.now()) {
-  if (!Number.isSafeInteger(minutes) || minutes <= 20 || minutes > 45)
+export function recordStorageJobBudget(
+  root,
+  minutes,
+  now = Date.now(),
+  startedAt = now,
+) {
+  const deadline = startedAt + (minutes - 21) * 60000;
+  if (
+    !Number.isSafeInteger(minutes) ||
+    minutes <= 21 ||
+    minutes > 45 ||
+    !Number.isSafeInteger(now) ||
+    !Number.isSafeInteger(startedAt) ||
+    startedAt < 0 ||
+    startedAt > now ||
+    deadline <= now
+  )
     throw new StorageTransitionError("deployment job budget");
   mkdirSync(path.join(root, "dist"), { recursive: true });
   writeFileSync(
     path.join(root, "dist/storage-job.json"),
-    JSON.stringify({ startedAt: now, deadline: now + (minutes - 20) * 60000 }),
+    JSON.stringify({ startedAt, deadline }),
     { mode: 0o600 },
   );
 }
@@ -37,7 +53,7 @@ export function storageJobDeadline(root, now = Date.now()) {
     typeof deadline !== "number" ||
     !Number.isSafeInteger(deadline) ||
     deadline <= now ||
-    deadline - startedAt > 25 * 60000 ||
+    deadline - startedAt > 24 * 60000 ||
     deadline <= startedAt
   )
     throw new StorageTransitionError("deployment job budget");

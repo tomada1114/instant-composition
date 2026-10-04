@@ -872,14 +872,38 @@ it("persists a bounded bootstrap checkpoint and resumes after a stopped or unkno
     },
   });
 });
+it("subtracts setup time from work while reserving closing, maximum drain and final evidence", () => {
+  const root = mkdtempSync(path.join(tmpdir(), "storage-job-setup-"));
+  folders.push(root);
+  const startedAt = 1000000;
+  const afterSetup = startedAt + 8 * 60000;
+  recordStorageJobBudget(root, 45, afterSetup, startedAt);
+  const deadline = storageJobDeadline(root, afterSetup);
+  expect(deadline - afterSetup).toBe(16 * 60000);
+  expect(deadline + (5 + 15 + 1) * 60000).toBe(startedAt + 45 * 60000);
+  expect(
+    JSON.parse(readFileSync(path.join(root, "dist/storage-job.json"), "utf8")),
+  ).toEqual({ startedAt, deadline });
+});
+
+it.each([24, 30, 45])("refuses exhausted work after %i minutes of setup", (setup) => {
+  const root = mkdtempSync(path.join(tmpdir(), "storage-job-expired-"));
+  folders.push(root);
+  const startedAt = 1000000;
+  expect(() =>
+    recordStorageJobBudget(root, 45, startedAt + setup * 60000, startedAt),
+  ).toThrow(StorageTransitionError);
+  expect(() => readFileSync(path.join(root, "dist/storage-job.json"))).toThrow();
+});
+
 it("uses the existing job budget beyond three minutes and still closes worker admission at its deadline", async () => {
   const root = mkdtempSync(path.join(tmpdir(), "storage-job-budget-"));
   folders.push(root);
   const startedAt = 1000000;
   recordStorageJobBudget(root, 45, startedAt);
   const deadline = storageJobDeadline(root, startedAt + 1000);
-  expect(deadline).toBe(startedAt + 25 * 60000);
-  expect(startedAt + 45 * 60000 - deadline).toBeGreaterThanOrEqual(20 * 60000);
+  expect(deadline).toBe(startedAt + 24 * 60000);
+  expect(startedAt + 45 * 60000 - deadline).toBeGreaterThanOrEqual(21 * 60000);
   expect(() => storageJobDeadline(root, deadline)).toThrow(StorageTransitionError);
   const { port, paused } = fixture();
   const writer = {

@@ -14,6 +14,7 @@ import {
 } from "./lib/storage-bootstrap.mjs";
 import { parseJson, readKey, readString } from "./lib/json.mjs";
 import { storageHashes, StorageTransitionError } from "./lib/storage-runtime.mjs";
+import { storageDeployJobStart } from "./lib/storage-job-budget.mjs";
 
 /** @param {string} root @param {string} assembly @param {string} sha @returns {void} */
 export function verifyTransitionAssembly(root, assembly, sha) {
@@ -57,7 +58,13 @@ export async function main(
   root = fileURLToPath(new URL("../", import.meta.url)),
 ) {
   if (args.length === 2 && args[0] === "budget") {
-    recordStorageJobBudget(root, Number(args[1]));
+    const startedAt = await storageDeployJobStart({
+      repository: process.env["GITHUB_REPOSITORY"] ?? "",
+      run: process.env["GITHUB_RUN_ID"] ?? "",
+      attempt: process.env["GITHUB_RUN_ATTEMPT"] ?? "",
+      token: process.env["GITHUB_TOKEN"] ?? "",
+    });
+    recordStorageJobBudget(root, Number(args[1]), Date.now(), startedAt);
     return;
   }
   if (args.length === 1 && args[0] === "evidence") {

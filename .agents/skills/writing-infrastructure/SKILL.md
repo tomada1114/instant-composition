@@ -212,12 +212,14 @@ a second design.
   timeout even after an unknown invoke outcome. Failed readiness remains paused for a
   forward fix; it never recovers the predecessor after preparation starts. The job
   summary records phase/counts/completion, omitting the private checkpoint. The existing
-  45-minute job budget is recorded once the Node24 runtime is ready before install with
-  twenty minutes reserved for cleanup: five for re-closing barriers and fifteen for the
-  maximum configured timeout drain. Bootstrap checks that absolute deadline before each
-  bounded invocation. A stopped job leaves durable progress for the next trusted run
-  instead of restarting discovery. No direct table permission or execution-role
-  assumption is added.
+  45-minute budget uses this exact run attempt's actual job start from GitHub Actions,
+  including checkout and runtime setup. The job grants Actions read access only for this
+  timestamp; an ambiguous or unavailable lookup refuses before AWS access. It reserves
+  21 minutes: five for re-closing barriers, fifteen for the maximum timeout drain, and
+  one for final evidence and execution overhead. Bootstrap checks the absolute work
+  deadline before each bounded invocation. A stopped job leaves durable progress for the
+  next trusted run instead of restarting discovery. No direct table permission or
+  execution-role assumption is added.
 - Capacity restoration intentionally differs from the paused template: API returns to
   unreserved and worker to its recorded one. The next transition explicitly sets zero
   again before deploying another paused assembly, so this drift is repeat-safe. Current
