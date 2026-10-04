@@ -847,6 +847,7 @@ describe("a visitor who is not signed in", () => {
     expect(calls.map((call) => call.url)).toStrictEqual([
       "/api/v1/home",
       "/api/v1/auth/refresh",
+      "/api/v1/home",
     ]);
   });
 
@@ -899,8 +900,9 @@ describe("a session that runs out while the app is open", () => {
     await settle(TUNING.skeletonDelayMs);
     expect(visited).toStrictEqual(["/api/v1/auth/login"]);
     expect(where()).toBe("/records");
-    expect(calls.filter((call) => call.url === "/api/v1/records")).toHaveLength(1);
-    expect(calls.filter((call) => call.url === "/api/v1/auth/refresh")).toHaveLength(2);
+    expect(calls.filter((call) => call.url === "/api/v1/records")).toHaveLength(2);
+    // Concurrent refused reads share one renewal, then probe their original route once.
+    expect(calls.filter((call) => call.url === "/api/v1/auth/refresh")).toHaveLength(1);
     // The records page's loading state: its column, and nothing in it.
     const mains = document.querySelectorAll("main");
     expect(mains).toHaveLength(1);
