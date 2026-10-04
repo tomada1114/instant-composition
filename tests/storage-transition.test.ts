@@ -8,6 +8,7 @@ import {
   unlinkSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -130,6 +131,30 @@ afterEach(() => {
 });
 
 describe("storage deployment admission", () => {
+  it.each([
+    [new StorageTransitionError("installed file"), "installed file"],
+    [new Error("private-provider-response-with-signed-url"), "unexpected failure"],
+  ])(
+    "retains a safe failure stage without exposing dependency content: %s",
+    async (failure, stage) => {
+      const { port, paused } = fixture();
+      const records: unknown[] = [];
+      port.verify = () => Promise.reject(failure);
+      port.record = (state) => {
+        records.push(state);
+        return Promise.resolve();
+      };
+      await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+      expect(records.at(-1)).toMatchObject({
+        phase: "paused-forward-fix",
+        failure: stage,
+      });
+      expect(JSON.stringify(records)).not.toContain(
+        "private-provider-response-with-signed-url",
+      );
+      expect(paused.size).toBe(2);
+    },
+  );
   it("keeps the API paused through code update and creates its worker paused before certifying both", async () => {
     const { port, calls, paused } = fixture();
     await transitionStorageWriters(port);
@@ -159,17 +184,22 @@ describe("storage deployment admission", () => {
     await expect(transitionStorageWriters(port)).rejects.toThrow("failed deployment");
     expect(paused.has(api.arn)).toBe(true);
   });
-  it("recovers only an unchanged fixture-certified predecessor after stable rollback", async () => {
-    const { port, paused, calls } = fixture();
-    port.deploy = () => {
-      return Promise.resolve().then(() => {
-        throw new Error("failed deployment");
-      });
-    };
+  it("reports recovery without claiming restored writers remain paused", async () => {
+    const { port, paused } = fixture();
+    const failure = new StorageTransitionError("deployment");
+    const records: unknown[] = [];
+    port.deploy = () => Promise.reject(failure);
     port.certifyPredecessor = () => Promise.resolve(true);
-    await expect(transitionStorageWriters(port)).rejects.toThrow("failed deployment");
+    port.record = (state) => {
+      records.push(state);
+      return Promise.resolve();
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
     expect(paused.size).toBe(0);
-    expect(calls.at(-1)).toContain("recovered-certified-predecessor");
+    expect(records.at(-1)).toMatchObject({
+      phase: "recovered-certified-predecessor",
+      failure: "deployment",
+    });
   });
   it("leaves both writers paused after a partial rollout even when the old API was certified", async () => {
     const { port, paused } = fixture();
@@ -774,4 +804,23 @@ it("rechecks the trusted current main identity and refuses an untrusted reposito
     currentStorageMain("untrusted/repository", sha, request),
   ).rejects.toBeInstanceOf(StorageTransitionError);
   expect(request).toHaveBeenCalledTimes(2);
+});
+
+it("prints a safe failure stage and neutral recovery guidance on the CLI", () => {
+  const result = spawnSync(
+    process.execPath,
+    [
+      path.resolve(import.meta.dirname, "../scripts/storage-transition.mjs"),
+      "--invalid",
+    ],
+    { encoding: "utf8" },
+  );
+  expect(result.status).toBe(1);
+  expect(result.stdout).toBe("");
+  expect(result.stderr).toContain(
+    "ERR_STORAGE_TRANSITION: Admission refused at arguments.",
+  );
+  expect(result.stderr).toContain("inspect the recovery checkpoint");
+  expect(result.stderr).toContain("writers may remain paused");
+  expect(result.stderr).not.toContain("keep writers paused");
 });

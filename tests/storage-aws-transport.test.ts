@@ -26,6 +26,26 @@ afterEach(() => {
   vi.resetAllMocks();
 });
 describe("storage transition transport", () => {
+  it("reports only a known AWS operation and error code, retaining no provider response", () => {
+    vi.mocked(execFileSync).mockImplementation(() => {
+      throw Object.assign(new Error("private details"), {
+        stderr: Buffer.from("AccessDeniedException signed-private-url"),
+      });
+    });
+    let failure: unknown;
+    try {
+      awsJson(["lambda", "get-function", "--function-name", "private-resource"], {});
+    } catch (error) {
+      failure = error;
+    }
+    expect(failure).toBeInstanceOf(StorageTransitionError);
+    expect(failure).toHaveProperty(
+      "part",
+      "AWS lambda get-function AccessDeniedException",
+    );
+    expect(JSON.stringify(failure)).not.toContain("signed-private-url");
+    expect(JSON.stringify(failure)).not.toContain("private-resource");
+  });
   it("executes bounded AWS JSON commands with sanitized failures", () => {
     vi.mocked(execFileSync).mockReturnValue('{"Account":"123456789012"}');
     expect(awsJson(["sts", "get-caller-identity"], {})).toEqual({
