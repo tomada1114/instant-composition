@@ -6,6 +6,7 @@ import {
   ScanCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { z } from "zod";
+import { observeStorageRow, observedStorageGuard } from "./storage-observed";
 import { regionalDynamoDbClient } from "./dynamodb-client";
 import { localDynamoDbClient } from "./dynamodb-local";
 import {
@@ -87,7 +88,8 @@ export async function executeStorageMaintenance(input: unknown): Promise<unknown
       }),
     );
     if (source.Item === undefined) return false;
-    const prior = decodeStorageRecord(source.Item);
+    const prior = observeStorageRow(decoded.type, operation.key, source.Item);
+    if (prior === undefined) return false;
     if (
       prior.type !== decoded.type ||
       prior.version !== operation.version ||
@@ -108,19 +110,7 @@ export async function executeStorageMaintenance(input: unknown): Promise<unknown
               ? { expiresAt: operation.row["expiresAt"] }
               : {}),
           },
-          ConditionExpression:
-            "#version = :version AND " +
-            (operation.schema === 0
-              ? "(attribute_not_exists(#schema) OR #schema = :schema)"
-              : "#schema = :schema"),
-          ExpressionAttributeNames: {
-            "#version": "version",
-            "#schema": "schemaVersion",
-          },
-          ExpressionAttributeValues: {
-            ":version": operation.version,
-            ":schema": operation.schema,
-          },
+          ...observedStorageGuard(prior),
         }),
       );
       return true;

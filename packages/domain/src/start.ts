@@ -5,7 +5,7 @@ import { emptyTally } from "./empty";
 import type { DayTally, LearnerStats, Portion, Round } from "./records";
 import { err, ok, type Result } from "./result";
 import { dealExtra, dealPlacement, dealPortion, type Dealt } from "./start-deal";
-import { isYesterdayRecoverable } from "./streak";
+import { isYesterdayRecoverable, type CompletedDays } from "./streak";
 import type { DayKey, RoundKind } from "./types";
 
 export interface StartCommand {
@@ -27,6 +27,7 @@ export interface StartState {
   /** Today's and yesterday's portions, where they exist. */
   readonly portions: ReadonlyMap<DayKey, Portion>;
   readonly tally: DayTally | undefined;
+  readonly completed?: CompletedDays;
 }
 
 export interface StartChange {
@@ -66,7 +67,7 @@ export function decideStart(
   }
   const { practice, now } = state;
   const today = practice.today;
-  const completed = new Set(state.stats.completedDays);
+  const completed = state.completed ?? new Set(state.stats.completedDays);
   const kind =
     command.kind === "today" && completed.has(today) ? "extra" : command.kind;
   const open = state.open;

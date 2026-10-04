@@ -36,15 +36,15 @@ export async function startRound(
     const { practice, snapshot } = loaded.value;
     const stats = statsOf(loaded.value);
     const today = practice.today;
-    const [existing, open, todayPortion, yesterdayPortion, tallies] = await Promise.all(
-      [
+    const [existing, open, todayPortion, yesterdayPortion, tallies, beforePortion] =
+      await Promise.all([
         store.round(command.roundId),
         stats.openRound === null ? undefined : store.round(stats.openRound.id),
         store.portion(today),
         store.portion(addDays(today, -1)),
         store.days([today]),
-      ],
-    );
+        store.portion(addDays(today, -2)),
+      ]);
     const openReviews = open === undefined ? [] : await store.reviewsOf(open.value.id);
     const portions = new Map(
       [todayPortion, yesterdayPortion].flatMap((portion) =>
@@ -58,6 +58,12 @@ export async function startRound(
         practice,
         hasSettings: loaded.value.settings !== undefined,
         stats,
+        completed: new Set(
+          [todayPortion, yesterdayPortion, beforePortion]
+            .flatMap((portion) => (portion === undefined ? [] : [portion.value]))
+            .filter((portion) => portion.completedAt !== null)
+            .map((portion) => portion.day),
+        ),
         existing: existing?.value,
         open: open?.value,
         openAnswered: new Set(

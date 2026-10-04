@@ -3,6 +3,8 @@ import { dayOf, err, ok, type DayKey, type Result } from "@instant-composition/d
 import type { Catalog } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
+import { maintainedReadModelStore } from "./maintain-read-model";
+import { maintainedCompositionStore } from "./maintain-composition";
 import { authorize, type OperationKind } from "./operations";
 import type {
   Commit,
@@ -78,12 +80,22 @@ export async function committed<T, E = ApplicationError>(
 
 /** The learner's store, once the actor is allowed to run `kind`. */
 export function storeFor(
-  deps: { readonly stores: LearnerStores },
+  deps: { readonly stores: LearnerStores; readonly catalog?: Catalog },
   context: RequestContext,
   kind: OperationKind,
 ): Result<LearnerStore, ApplicationError> {
   const allowed = authorize(context.actor, { kind });
-  return allowed.ok ? ok(deps.stores.forLearner(context.learner.id)) : allowed;
+  if (!allowed.ok) return allowed;
+  const store = deps.stores.forLearner(context.learner.id);
+  return ok(
+    deps.catalog === undefined || kind === "rebuildProjections"
+      ? store
+      : maintainedReadModelStore(
+          maintainedCompositionStore(store, deps.catalog, context),
+          deps.catalog,
+          context,
+        ),
+  );
 }
 
 /** The practice day `context.now` falls on, in the learner's own time zone. */

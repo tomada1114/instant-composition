@@ -1,3 +1,4 @@
+import { describeRawReadModelContract } from "./raw-read-model-contract";
 import { createServer, type Server } from "node:http";
 import type { AddressInfo } from "node:net";
 
@@ -5,6 +6,8 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import {
   createDynamoDbDirectory,
+  createDynamoDbReadModelMaintenance,
+  backfillReadModelLearners,
   createDynamoDbStores,
   createLearnerTable,
   deleteLearnerTable,
@@ -23,6 +26,7 @@ import {
 import {
   makeItem,
   makeReview,
+  makeVocabCandidate,
   makeStats,
   makeTalk,
   makePersonalCard,
@@ -30,6 +34,11 @@ import {
   makeVocabReview,
   without,
 } from "./application-fixtures";
+import {
+  makeCompositionCandidate,
+  makeCompositionBuild,
+  makeCompositionReadModel,
+} from "./composition-fixtures";
 
 // The DynamoDB store's side of the wire, against a fake DynamoDB on a loopback
 // port: what each call asks for, and how each answer is read. The contract
@@ -105,15 +114,20 @@ function pointRow(key: string, type: string, value: unknown): void {
     SK: { S: key },
     type: { S: type },
     version: { N: "1" },
+    schemaVersion: { N: String(STORAGE_SCHEMA_VERSION) },
     value: wireValue(value),
   });
 }
+let compositionSourceAnswer: Answer | undefined;
+let vocabSourceAnswer: Answer | undefined;
 
 beforeEach(async () => {
   calls = [];
   answers = [];
   pointRows = new Map();
   returnedRows = 0;
+  compositionSourceAnswer = undefined;
+  vocabSourceAnswer = undefined;
   server = createServer((request, response) => {
     const chunks: Buffer[] = [];
     request.on("data", (chunk: Buffer) => chunks.push(chunk));
@@ -127,13 +141,21 @@ beforeEach(async () => {
         >,
       });
       const key = calls.at(-1)?.body["Key"] as
-        Record<string, { S: string }> | undefined;
+        Record<string, { S?: string }> | undefined;
       const found = pointRows.get(key?.["SK"]?.S ?? "");
       if (found !== undefined) returnedRows += 1;
-      const answer = answers.shift() ?? {
-        status: 200,
-        body: found === undefined ? {} : { Item: found },
-      };
+      const sourceRead =
+        target.endsWith("GetItem") && key?.["SK"]?.S === "READMODEL#COMPOSITION#SOURCE";
+      const vocabSourceRead =
+        target.endsWith("GetItem") && key?.["SK"]?.S === "READMODEL#SOURCE";
+      const answer = sourceRead
+        ? (compositionSourceAnswer ?? { status: 200, body: {} })
+        : vocabSourceRead
+          ? (vocabSourceAnswer ?? { status: 200, body: {} })
+          : (answers.shift() ?? {
+              status: 200,
+              body: found === undefined ? {} : { Item: found },
+            });
       response.writeHead(answer.status, { "content-type": JSON_1_0 });
       response.end(JSON.stringify(answer.body));
     });
@@ -190,26 +212,128 @@ function modelTaskResult() {
   };
 }
 
-function modelTaskRow(value: unknown, version: number) {
+function modelTaskRow(
+  value: unknown,
+  version: number,
+  schemaVersion = STORAGE_SCHEMA_VERSION,
+) {
   return {
     PK: { S: "LEARNER#learner-a" },
     SK: { S: "MODEL_TASK#t%231#talk-scene#0#talk-scene%401" },
     type: { S: "modelTask" },
-    schemaVersion: { N: "3" },
+    schemaVersion: { N: String(schemaVersion) },
     version: { N: String(version) },
     expiresAt: { N: "86401" },
     value: wire(value),
   };
 }
+it("rejects a composition source CAS mismatch before any transaction or model writes", async () => {
+  compositionSourceAnswer = {
+    status: 200,
+    body: {
+      Item: {
+        PK: { S: "LEARNER#learner-a" },
+        SK: { S: "READMODEL#COMPOSITION#SOURCE" },
+        schemaVersion: { N: String(STORAGE_SCHEMA_VERSION) },
+        type: { S: "compositionSource" },
+        version: { N: "3" },
+        value: { M: { schema: { N: "1" }, epoch: { N: "3" } } },
+      },
+    },
+  };
+  expect(
+    await storeOf().commit({
+      compositionSourceVersion: 2,
+      puts: [{ type: "stats", value: makeStats() }],
+      updates: [],
+      expect: [],
+    }),
+  ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+  expect(calls.map(({ operation }) => operation)).toStrictEqual(["GetItem"]);
+});
+
+it("refuses future composition and compact-stats schemas without coercing them into ready schema1", async () => {
+  compositionSourceAnswer = {
+    status: 200,
+    body: {
+      Item: {
+        PK: { S: "LEARNER#learner-a" },
+        SK: { S: "READMODEL#COMPOSITION#SOURCE" },
+        schemaVersion: { N: String(STORAGE_SCHEMA_VERSION) },
+        type: { S: "compositionSource" },
+        version: { N: "1" },
+        value: { M: { schema: { N: "2" }, epoch: { N: "1" } } },
+      },
+    },
+  };
+  await expect(storeOf().compositionSource()).rejects.toBeInstanceOf(
+    StorageSchemaError,
+  );
+  answers.push({
+    status: 200,
+    body: {
+      Item: {
+        type: { S: "stats" },
+        version: { N: "1" },
+        value: { M: { streak: { M: { schema: { N: "2" }, longest: { N: "1" } } } } },
+      },
+    },
+  });
+  await expect(storeOf().stats()).rejects.toBeInstanceOf(StorageSchemaError);
+});
+
+it("writes a ten-candidate composition maintenance page and both cache TTL mirrors within the wire transaction budget", async () => {
+  const build = {
+    ...makeCompositionBuild(),
+    expiresAt: 1800000000,
+    concepts: {
+      "en:grammar/a": { seen: 10, misses: 5 },
+      "en:grammar/b": { seen: 10, misses: 5 },
+    },
+  };
+  const candidates = Array.from({ length: 10 }, (_, at) =>
+    makeCompositionCandidate({
+      id: `c-${String(at)}`,
+      order: String(at).padStart(3, "0"),
+      expiresAt: build.expiresAt,
+    }),
+  );
+  expect(
+    (
+      await storeOf().commit({
+        puts: [
+          ...candidates.map((value) => ({
+            type: "compositionCandidate" as const,
+            value,
+          })),
+          { type: "compositionBuild", value: build },
+          {
+            type: "compositionReadModel",
+            value: { ...makeCompositionReadModel(), expiresAt: build.expiresAt },
+          },
+        ],
+        updates: [],
+        expect: [{ key: { type: "compositionSource" }, version: null }],
+      })
+    ).ok,
+  ).toBe(true);
+  const call = calls.find(({ operation }) => operation === "TransactWriteItems");
+  const items = call?.body["TransactItems"] as {
+    Put?: { Item: Record<string, { S?: string; N?: string }> };
+  }[];
+  expect(items).toHaveLength(13);
+  expect(Buffer.byteLength(JSON.stringify(call?.body), "utf8")).toBeLessThan(
+    4 * 1024 * 1024,
+  );
+  for (const write of items.slice(0, 12))
+    expect(write.Put?.Item["expiresAt"]?.N).toBe("1800000000");
+});
 
 describe("a commit", () => {
   it("is one TransactWriteItems in the learner's partition, a resent answer refused by attribute_not_exists", async () => {
-    answers.push({
-      status: 200,
-      body: {
-        Item: { type: { S: "stats" }, version: { N: "3" }, value: wire(makeStats()) },
-      },
-    });
+    pointRow("STATS", "stats", makeStats());
+    const statsRow = pointRows.get("STATS") as Record<string, unknown>;
+    statsRow["version"] = { N: "3" };
     await storeOf().commit({
       puts: [{ type: "review", value: makeReview() }],
       updates: [{ entry: { type: "stats", value: makeStats() }, version: 3 }],
@@ -218,9 +342,11 @@ describe("a commit", () => {
 
     expect(calls.map((call) => call.operation)).toStrictEqual([
       "GetItem",
+      "GetItem",
+      "GetItem",
       "TransactWriteItems",
     ]);
-    expect(calls[0]?.body).toMatchObject({
+    expect(calls[1]?.body).toMatchObject({
       ConsistentRead: true,
       Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "STATS" } },
     });
@@ -228,56 +354,45 @@ describe("a commit", () => {
       string,
       Record<string, unknown>
     >[];
-    expect(
-      items.map(
-        (item) =>
-          item["Put"]?.["ConditionExpression"] ??
-          item["ConditionCheck"]?.["ConditionExpression"],
-      ),
-    ).toStrictEqual([
+    expect(items[0]?.["Put"]?.["ConditionExpression"]).toBe(
       "attribute_not_exists(#pk)",
-      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1 OR #schema = :storage2)",
+    );
+    expect(items[1]?.["Put"]?.["ConditionExpression"]).toBe(
       "attribute_not_exists(#pk)",
-    ]);
+    );
+    expect(items[2]?.["Put"]?.["ConditionExpression"]).toContain(
+      "#value = :observedValue",
+    );
+    expect(items[2]?.["Put"]?.["ConditionExpression"]).toContain(
+      "#schema = :observedSchema",
+    );
+    expect(items[3]?.["ConditionCheck"]?.["ConditionExpression"]).toBe(
+      "attribute_not_exists(#pk)",
+    );
     expect(items[0]?.["Put"]?.["Item"]).toMatchObject({
       PK: { S: "LEARNER#learner-a" },
       SK: { S: "ROUND#r1#ANSWER#a1" },
       type: { S: "review" },
       version: { N: "1" },
     });
-    expect(items[1]?.["Put"]).toMatchObject({
+    expect(items[2]?.["Put"]).toMatchObject({
       Item: { SK: { S: "STATS" }, version: { N: "4" } },
-      ExpressionAttributeValues: { ":version": { N: "3" } },
+      ExpressionAttributeValues: {
+        ":observedVersion": { N: "3" },
+        ":observedSchema": { N: "4" },
+      },
     });
-    expect(items[2]?.["ConditionCheck"]?.["Key"]).toStrictEqual({
+    expect(items[3]?.["ConditionCheck"]?.["Key"]).toStrictEqual({
       PK: { S: "LEARNER#learner-a" },
       SK: { S: "ROUND#r1" },
     });
   });
 
   it("deletes a personal card under CARD# at the version read, in the same transaction", async () => {
-    answers.push(
-      {
-        status: 200,
-        body: {
-          Item: {
-            type: { S: "card" },
-            version: { N: "2" },
-            value: wire(makePersonalCard({ id: "p_a#b" })),
-          },
-        },
-      },
-      {
-        status: 200,
-        body: {
-          Item: {
-            type: { S: "vocabItem" },
-            version: { N: "1" },
-            value: wire(makeVocabProgress({ cardId: "p_a#b" })),
-          },
-        },
-      },
-    );
+    pointRow("CARD#p_a%23b", "card", makePersonalCard({ id: "p_a#b" }));
+    const cardRow = pointRows.get("CARD#p_a%23b") as Record<string, unknown>;
+    cardRow["version"] = { N: "2" };
+    pointRow("ITEM#vocab#p_a%23b", "vocabItem", makeVocabProgress({ cardId: "p_a#b" }));
     await storeOf().commit({
       puts: [],
       updates: [],
@@ -292,28 +407,22 @@ describe("a commit", () => {
       string,
       Record<string, unknown>
     >[];
-    expect(items.map((item) => item["Delete"])).toMatchObject([
+    expect(
+      items.flatMap((item) => (item["Delete"] === undefined ? [] : [item["Delete"]])),
+    ).toMatchObject([
       {
         Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
-        ConditionExpression:
-          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1 OR #schema = :storage2)",
-        ExpressionAttributeValues: { ":version": { N: "2" } },
+        ExpressionAttributeValues: {
+          ":observedVersion": { N: "2" },
+          ":observedSchema": { N: "4" },
+        },
       },
       { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
     ]);
   });
 
   it("writes an open talk's expiry beside its value as the TTL attribute, and a kept talk without one", async () => {
-    answers.push({
-      status: 200,
-      body: {
-        Item: {
-          type: { S: "talk" },
-          version: { N: "1" },
-          value: wire(makeTalk({ id: "t2" })),
-        },
-      },
-    });
+    pointRow("TALK#t2", "talk", makeTalk({ id: "t2" }));
     await storeOf().commit({
       puts: [
         { type: "talk", value: makeTalk({ id: "t#1", expiresAt: 1_790_000_000 }) },
@@ -368,7 +477,7 @@ describe("a commit", () => {
       ConsistentRead: true,
     });
 
-    answers.push({ status: 200, body: { Item: modelTaskRow(claim, 1) } });
+    answers.push({ status: 200, body: { Item: modelTaskRow(claim, 1, 3) } });
     await storeOf().commit({
       puts: [],
       updates: [
@@ -394,12 +503,18 @@ describe("a commit", () => {
       "GetItem",
       "TransactWriteItems",
     ]);
+    expect(finished[0]?.["Put"]?.["ConditionExpression"]).toContain(
+      "#value.#claim = :claim",
+    );
+    expect(finished[0]?.["Put"]?.["ConditionExpression"]).toContain(
+      "#value = :observedValue",
+    );
     expect(finished[0]?.["Put"]).toMatchObject({
-      ConditionExpression:
-        "#version = :version AND (#schema = :schema) AND #value.#claim = :claim",
       ExpressionAttributeValues: {
-        ":version": { N: "1" },
-        ":schema": { N: "3" },
+        ":observedVersion": { N: "1" },
+        ":observedSchema": { N: "3" },
+        ":storage3": { N: "3" },
+        ":schema": { N: "4" },
         ":claim": { S: "req-1:1" },
       },
     });
@@ -477,6 +592,69 @@ describe("a read", () => {
       Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "ROUND#r%231" } },
       ConsistentRead: true,
     });
+  });
+
+  it("reads one strong primary calendar page and binds its cursor to the learner and range", async () => {
+    answers.push({
+      status: 200,
+      body: {
+        Items: [],
+        LastEvaluatedKey: {
+          PK: { S: "LEARNER#learner-a" },
+          SK: { S: "PORTION#2026-09-10" },
+        },
+      },
+    });
+    const range = { from: "2026-09-01", to: "2026-09-30", limit: 10 };
+    const first = await storeOf().portionsPage(range);
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toMatchObject({
+      operation: "Query",
+      body: {
+        ConsistentRead: true,
+        Limit: 10,
+        KeyConditionExpression: "#pk = :pk AND #sk BETWEEN :first AND :last",
+        ExpressionAttributeValues: {
+          ":pk": { S: "LEARNER#learner-a" },
+          ":first": { S: "PORTION#2026-09-01" },
+          ":last": { S: "PORTION#2026-09-30" },
+        },
+      },
+    });
+    expect(calls[0]?.body).not.toHaveProperty("IndexName");
+    if (first.cursor === null) throw new Error("The page cursor fixture is missing.");
+    await storeOf().portionsPage({ ...range, cursor: first.cursor });
+    expect(calls[1]?.body["ExclusiveStartKey"]).toStrictEqual({
+      PK: { S: "LEARNER#learner-a" },
+      SK: { S: "PORTION#2026-09-10" },
+    });
+    await expect(
+      storeOf("learner-b").portionsPage({ ...range, cursor: first.cursor }),
+    ).rejects.toThrow(RangeError);
+    await expect(
+      storeOf().portionsPage({ ...range, to: "2026-10-01", cursor: first.cursor }),
+    ).rejects.toThrow(RangeError);
+    expect(calls).toHaveLength(2);
+  });
+
+  it("looks up streak predecessor and successor with two strong queries limited to one each", async () => {
+    expect(await storeOf().streakNeighbours("2026-09-22")).toStrictEqual([]);
+    expect(calls).toHaveLength(2);
+    expect(calls.map(({ operation }) => operation)).toStrictEqual(["Query", "Query"]);
+    expect(calls.map(({ body }) => body)).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          ConsistentRead: true,
+          Limit: 1,
+          ScanIndexForward: false,
+        }),
+        expect.objectContaining({
+          ConsistentRead: true,
+          Limit: 1,
+          ScanIndexForward: true,
+        }),
+      ]),
+    );
   });
 
   it("follows a query across its pages", async () => {
@@ -599,12 +777,21 @@ describe("the learner directory", () => {
       value: undefined,
     });
 
-    expect(calls.map((call) => call.operation)).toStrictEqual(["TransactWriteItems"]);
-    const items = calls[0]?.body["TransactItems"] as Record<
+    expect(calls.map((call) => call.operation)).toStrictEqual([
+      "GetItem",
+      "GetItem",
+      "GetItem",
+      "TransactWriteItems",
+    ]);
+    expect(
+      calls.slice(0, 3).every((call) => call.body["ConsistentRead"] === true),
+    ).toBe(true);
+    const items = calls.at(-1)?.body["TransactItems"] as Record<
       string,
       Record<string, unknown>
     >[];
     expect(items.map((item) => item["Put"]?.["ConditionExpression"])).toStrictEqual([
+      "attribute_not_exists(#pk)",
       "attribute_not_exists(#pk)",
       "attribute_not_exists(#pk)",
     ]);
@@ -636,7 +823,12 @@ describe("the learner directory", () => {
     ["a subject already mapped", ["ConditionalCheckFailed", "None"]],
     ["a concurrent registration", ["TransactionConflict", "None"]],
   ])("answers ERR_CONFLICT when cancelled for %s", async (_, codes) => {
-    answers.push(cancelled(...codes));
+    answers.push(
+      { status: 200, body: {} },
+      { status: 200, body: {} },
+      { status: 200, body: {} },
+      cancelled(...codes),
+    );
 
     expect(await directoryOf().register("sub-1", REGISTRATION)).toStrictEqual({
       ok: false,
@@ -819,15 +1011,18 @@ describe("the explicit storage maintenance adapter", () => {
         }),
       ).toBe(true);
       expect(calls.at(-1)?.body).toMatchObject({
-        ConditionExpression:
-          schema === 0
-            ? "#version = :version AND (attribute_not_exists(#schema) OR #schema = :schema)"
-            : "#version = :version AND #schema = :schema",
         ExpressionAttributeValues: {
-          ":version": { N: "1" },
-          ":schema": { N: String(schema) },
+          ":observedVersion": { N: "1" },
+          ":observedSchema": { N: String(schema) },
+          ":schema": { N: "4" },
         },
       });
+      expect(calls.at(-1)?.body["ConditionExpression"]).toContain(
+        "#value = :observedValue",
+      );
+      expect(calls.at(-1)?.body["ConditionExpression"]).toContain(
+        "attribute_not_exists(#expiry)",
+      );
       answers.push(
         { status: 200, body: { Item: wireRow(source) } },
         failure("ConditionalCheckFailedException"),
@@ -907,7 +1102,7 @@ describe("the explicit storage maintenance adapter", () => {
         version: 1,
         schema: 0,
       }),
-    ).rejects.toThrow("Invalid migration replacement");
+    ).rejects.toBeInstanceOf(StorageSchemaError);
     await expect(
       executeStorageMaintenance({
         ...options(),
@@ -1039,4 +1234,102 @@ describe("keyed answer reads", () => {
     );
     expect(calls).toHaveLength(2);
   });
+});
+
+describe("read-model registry and cache transport", () => {
+  it("queries only the strongly consistent primary registry with a fixed page, regardless of unrelated history", async () => {
+    const options = { client: localDynamoDbClient(endpoint), tableName: "learners" };
+    const maintenance = createDynamoDbReadModelMaintenance(options);
+    for (const history of [0, 1_000_000]) {
+      answers.push({ status: 200, body: { Items: [], ScannedCount: history } });
+      expect(await maintenance.profiles(null)).toStrictEqual({
+        learners: [],
+        cursor: null,
+      });
+    }
+    expect(calls.map(({ operation }) => operation)).toStrictEqual(["Query", "Query"]);
+    for (const call of calls)
+      expect(call.body).toMatchObject({
+        ConsistentRead: true,
+        Limit: 100,
+        KeyConditionExpression: "#pk = :registry",
+        ExpressionAttributeValues: { ":registry": { S: "SYSTEM#READMODEL_LEARNERS" } },
+      });
+  });
+  it("keeps legacy Scan discovery an explicit bounded backfill operation", async () => {
+    const options = { client: localDynamoDbClient(endpoint), tableName: "learners" };
+    answers.push({ status: 200, body: { Items: [], ScannedCount: 100 } });
+    expect(await backfillReadModelLearners(options, null)).toStrictEqual({
+      cursor: null,
+      rows: 100,
+    });
+    expect(calls).toMatchObject([
+      { operation: "Scan", body: { ConsistentRead: true, Limit: 100 } },
+    ]);
+  });
+  it("copies cache expiry beside the value for TTL and guards raw source schema", async () => {
+    await storeOf().commit({
+      puts: [
+        { type: "vocabReadModelRequest", value: { schema: 1, day: "2026-09-19" } },
+      ],
+      updates: [],
+      expect: [],
+    });
+    expect(
+      (calls[0]?.body["TransactItems"] as Record<string, unknown>[])[0],
+    ).toMatchObject({ Put: { Item: { type: { S: "vocabReadModelRequest" } } } });
+    expect(
+      (
+        calls[0]?.body["TransactItems"] as Record<string, Record<string, unknown>>[]
+      )[0]?.["Put"]?.["Item"],
+    ).not.toHaveProperty("expiresAt");
+  });
+});
+
+describe("versioned cache decoding", () => {
+  it("mirrors generated candidate TTL beside its declared value", async () => {
+    await storeOf().commit({
+      puts: [
+        {
+          type: "vocabCandidate",
+          value: makeVocabCandidate({ expiresAt: 1_800_000_000 }),
+        },
+      ],
+      updates: [],
+      expect: [],
+    });
+    expect(
+      (calls[0]?.body["TransactItems"] as Record<string, unknown>[])[0],
+    ).toMatchObject({
+      Put: {
+        Item: {
+          expiresAt: { N: "1800000000" },
+          value: { M: { expiresAt: { N: "1800000000" } } },
+        },
+      },
+    });
+  });
+  it("rejects unknown source schema rather than returning a usable empty epoch", async () => {
+    vocabSourceAnswer = {
+      status: 200,
+      body: {
+        Item: {
+          type: { S: "readModelSource" },
+          value: { M: { schema: { N: "2" } } },
+          version: { N: "1" },
+        },
+      },
+    };
+    await expect(storeOf().readModelSource()).rejects.toBeInstanceOf(Error);
+  });
+});
+
+describeRawReadModelContract("DynamoDB wire", (rows) => {
+  for (const row of rows)
+    pointRows.set(String(row["SK"]), (wire(row) as { M: unknown }).M);
+  const options = { client: localDynamoDbClient(endpoint), tableName: "learners" };
+  return {
+    stores: createDynamoDbStores(options),
+    maintenance: createDynamoDbReadModelMaintenance(options),
+  };
 });

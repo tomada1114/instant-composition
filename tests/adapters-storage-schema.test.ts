@@ -7,8 +7,6 @@ import {
   STORAGE_SCHEMA_VERSION,
   StorageSchemaError,
   decodeReadModelBootstrapState,
-  createDynamoDbReadModelBootstrapStorage,
-  localDynamoDbClient,
 } from "@instant-composition/adapters";
 import { validateStoredRecords } from "@instant-composition/api";
 import { parseJson, readKey, readString } from "../scripts/lib/json.mjs";
@@ -51,10 +49,10 @@ function taskFixture(state: string) {
 }
 
 describe("schema3 model task history", () => {
-  it("covers all active families and keeps all cap2 values plus complete task outcomes through the maintenance next write", () => {
+  it("covers all cap3 families and keeps all cap2 values plus complete task outcomes through the maintenance next write", () => {
     expect(
       new Set(cap3.map((fixture) => readKey(readKey(fixture, "row"), "type"))),
-    ).toStrictEqual(new Set(STORAGE_FAMILIES));
+    ).toStrictEqual(new Set(STORAGE_FAMILIES.slice(0, 15)));
     expect(cap3).toHaveLength(30);
     expect(taskFixtures).toHaveLength(8);
     for (const fixture of cap3) {
@@ -63,7 +61,7 @@ describe("schema3 model task history", () => {
       const result = validateStoredRecords([row]);
       expect(result.ok).toBe(true);
       if (!result.ok) throw new TypeError("Supported fixture refused.");
-      expect(readKey(result.rows[0], "targetSchema")).toBe(3);
+      expect(readKey(result.rows[0], "targetSchema")).toBe(STORAGE_SCHEMA_VERSION);
       expect(readKey(result.rows[0], "targetValue")).toStrictEqual(
         readKey(fixture, "expected"),
       );
@@ -71,7 +69,7 @@ describe("schema3 model task history", () => {
     }
   });
 
-  it.each([undefined, 0, 1, 2, 4, 5])(
+  it.each([undefined, 0, 1, 2, STORAGE_SCHEMA_VERSION + 1])(
     "refuses tasks outside their birth/current schema %s",
     (schemaVersion) => {
       const { schemaVersion: ignored, ...row } = taskFixture("in-flight");
@@ -192,7 +190,7 @@ describe("storage decoders and subsequent writes", () => {
   it("covers every persistent family, including identity", () => {
     expect(
       fixtures.slice(0, 14).map((fixture) => readKey(fixture.row, "type")),
-    ).toStrictEqual(STORAGE_FAMILIES.filter((type) => type !== "modelTask"));
+    ).toStrictEqual(STORAGE_FAMILIES.slice(0, 14));
   });
   it.each(fixtures)(
     "keeps supported values from legacy $name through the next guarded write",
@@ -423,7 +421,7 @@ it("admits the reviewed round checkpoint expansion and keeps compact stats inact
     }),
   ).toThrow(StorageSchemaError);
 });
-it("prepares a strictly bound future durable checkpoint without admitting the family to cap1", async () => {
+it("admits a strictly bound durable checkpoint only at its cap4 birth", () => {
   const checkpoint = {
     schema: 1,
     phase: "discovery",
@@ -459,29 +457,23 @@ it("prepares a strictly bound future durable checkpoint without admitting the fa
     { ...value, complete: true },
   ])
     expect(() => decodeReadModelBootstrapState(invalid)).toThrow(StorageSchemaError);
-  expect(() =>
+  expect(
     decodeStorageRecord({
       type: "readModelBootstrap",
       version: 1,
       schemaVersion: 4,
       value,
-    }),
-  ).toThrow(StorageSchemaError);
-  const client = localDynamoDbClient("http://127.0.0.1:1");
-  try {
-    const port = createDynamoDbReadModelBootstrapStorage({
-      client,
-      tableName: "unused",
-    });
-    await expect(port.checkpoint()).rejects.toMatchObject({
-      code: "ERR_STORAGE_SCHEMA_UNKNOWN",
-    });
-    await expect(
-      port.save(decodeReadModelBootstrapState(value), null),
-    ).rejects.toMatchObject({ code: "ERR_STORAGE_SCHEMA_UNKNOWN" });
-  } finally {
-    client.destroy();
-  }
+    }).value,
+  ).toStrictEqual(value);
+  for (const schemaVersion of [0, 1, 2, 3, 5])
+    expect(() =>
+      decodeStorageRecord({
+        type: "readModelBootstrap",
+        version: 1,
+        schemaVersion,
+        value,
+      }),
+    ).toThrow(StorageSchemaError);
 });
 
 it("preserves every cap2 checkpoint and guarded-v1 row through the actual maintenance next write", () => {

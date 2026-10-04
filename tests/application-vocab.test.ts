@@ -2,15 +2,20 @@ import { describe, expect, it } from "vitest";
 
 import {
   deleteVocabCard,
-  finishVocabSession,
+  finishVocabSession as readFinishVocabSession,
+  type VocabAnswersCommand,
   learnerId,
   recordVocabAnswers,
-  startVocabSession,
+  startVocabSession as readStartVocabSession,
+  type StartVocabSessionCommand,
   updateSettings,
-  vocabHub,
+  vocabHub as readVocabHub,
+  type ApplicationDeps,
   type RequestContext,
   type VocabSessionView,
 } from "@instant-composition/application";
+import { prepareVocabReadModels } from "./read-model-harness";
+
 import type { VocabAnswer } from "@instant-composition/domain";
 
 import { makePersonalCard, makeStats, makeVocabProgress } from "./application-fixtures";
@@ -727,3 +732,29 @@ describe("server-derived vocabulary session availability", () => {
     expect(other.ok && other.value).toMatchObject({ weak: 0, today: { new: 2 } });
   });
 });
+
+async function vocabHub(deps: ApplicationDeps, context: RequestContext) {
+  if (context.actor.kind === "learner" && (await deps.catalog.snapshot()).ok)
+    await prepareVocabReadModels(deps, context);
+  return readVocabHub(deps, context);
+}
+
+async function startVocabSession(
+  deps: ApplicationDeps,
+  context: RequestContext,
+  command: StartVocabSessionCommand,
+) {
+  if (context.actor.kind === "learner" && (await deps.catalog.snapshot()).ok)
+    await prepareVocabReadModels(deps, context);
+  return readStartVocabSession(deps, context, command);
+}
+
+async function finishVocabSession(
+  deps: ApplicationDeps,
+  context: RequestContext,
+  command: VocabAnswersCommand,
+) {
+  if (context.actor.kind === "learner" && (await deps.catalog.snapshot()).ok)
+    await prepareVocabReadModels(deps, context);
+  return readFinishVocabSession(deps, context, command);
+}

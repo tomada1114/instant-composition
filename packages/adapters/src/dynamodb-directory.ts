@@ -10,6 +10,8 @@ import {
 } from "@instant-composition/application";
 import { err, ok } from "@instant-composition/domain";
 
+import { observeDynamoStorage } from "./dynamodb-observed";
+import { registryKey, registryItem } from "./read-model-registry";
 import { isConflict } from "./dynamodb-commit";
 import {
   decodeStorageRow,
@@ -84,6 +86,24 @@ export function createDynamoDbDirectory(
       return { learnerId: id, profile };
     },
     async register(subject, registration) {
+      const existing = await Promise.all([
+        observeDynamoStorage(documents, table, "identity", {
+          PK: identityKeyOf(subject),
+          SK: IDENTITY_SORT_KEY.mapping,
+        }),
+        observeDynamoStorage(documents, table, "profile", {
+          PK: partitionKeyOf(registration.learnerId),
+          SK: IDENTITY_SORT_KEY.profile,
+        }),
+        observeDynamoStorage(
+          documents,
+          table,
+          "readModelLearner",
+          registryKey(registration.learnerId),
+        ),
+      ]);
+      if (existing.some((row) => row !== undefined))
+        return err({ code: "ERR_CONFLICT" });
       const put = (
         partition: string,
         sort: string,
@@ -116,6 +136,13 @@ export function createDynamoDbDirectory(
                 "profile",
                 registration.profile,
               ),
+              {
+                Put: {
+                  TableName: table,
+                  Item: registryItem(registration.learnerId, registration.profile, 1),
+                  ...ABSENT,
+                },
+              },
             ],
           }),
         );

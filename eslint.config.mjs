@@ -250,6 +250,8 @@ const INFRA_NPM_EDGES = [
   "aws-cdk-lib/aws-cloudwatch-actions",
   "aws-cdk-lib/aws-cognito",
   "aws-cdk-lib/aws-dynamodb",
+  "aws-cdk-lib/aws-events",
+  "aws-cdk-lib/aws-events-targets",
   "aws-cdk-lib/aws-iam",
   "aws-cdk-lib/aws-lambda",
   "aws-cdk-lib/aws-lambda-nodejs",

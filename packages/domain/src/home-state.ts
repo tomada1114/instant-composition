@@ -1,4 +1,9 @@
-import { longestRun, streakStatus, type CompletedDays } from "./streak";
+import {
+  longestRun,
+  streakStatus,
+  type CompletedDays,
+  type StreakStatus,
+} from "./streak";
 import { TUNING } from "./tuning";
 import type { DayKey, RoundKind } from "./types";
 
@@ -24,6 +29,8 @@ export interface HomeInput {
   readonly activeRound: ActiveRound | undefined;
   /** How many cards today's portion could be dealt from. */
   readonly available: number;
+  readonly status?: StreakStatus;
+  readonly longest?: number;
 }
 
 /** The number above the week: a run to show, or "day 1 from today" instead of a 0. */
@@ -93,7 +100,7 @@ export function homeState(input: HomeInput): HomeState {
     return { kind: "placement" };
   }
 
-  const status = streakStatus(input.completed, input.today);
+  const status = input.status ?? streakStatus(input.completed, input.today);
   switch (status.kind) {
     case "done":
       return {
@@ -115,7 +122,10 @@ export function homeState(input: HomeInput): HomeState {
       if (resumed?.kind === "in-progress" && resumed.portion === "today") {
         return {
           ...resumed,
-          streak: { kind: "restart", longest: longestRun(input.completed) },
+          streak: {
+            kind: "restart",
+            longest: input.longest ?? longestRun(input.completed),
+          },
         };
       }
       return (

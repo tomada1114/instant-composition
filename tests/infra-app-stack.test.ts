@@ -103,7 +103,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
 // The cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
-  it("are only the bucket, the distribution and its plan, the HTTP API, the function, their alarms, the web client and the Bedrock budget", () => {
+  it("are only the bucket, the distribution and its plan, the HTTP API, the API and maintenance functions, their schedule and alarms, the web client and the Bedrock budget", () => {
     // The CLI adds its own AWS::CDK::Metadata, which bills nothing.
     const types = new Set(
       Object.values(TEMPLATE.toJSON()["Resources"] as Record<string, { Type: string }>)
@@ -125,6 +125,7 @@ describe("the dev app stack's resources", () => {
         "AWS::CloudWatch::Dashboard",
         "AWS::Cognito::ManagedLoginBranding",
         "AWS::Cognito::UserPoolClient",
+        "AWS::Events::Rule",
         "AWS::IAM::ManagedPolicy",
         "AWS::IAM::Policy",
         "AWS::IAM::Role",
@@ -659,6 +660,29 @@ describe("the dev app stack's outputs", () => {
       [DISTRIBUTION_ID_OUTPUT]: {
         Value: { Ref: logicalIdOf("AWS::CloudFront::Distribution") },
       },
+    });
+  });
+});
+
+describe("independent read-model maintenance", () => {
+  it("schedules a separate bounded worker every minute with one concurrent invocation", () => {
+    expect(Object.keys(TEMPLATE.findResources("AWS::Events::Rule"))).toHaveLength(1);
+    TEMPLATE.hasResourceProperties("AWS::Lambda::Function", {
+      Runtime: "nodejs24.x",
+      Timeout: 60,
+      ReservedConcurrentExecutions: 1,
+      Environment: {
+        Variables: Match.objectLike({ API_CATALOG_PATH: LAMBDA_CATALOG_PATH }),
+      },
+    });
+    TEMPLATE.hasResourceProperties("AWS::Events::Rule", {
+      ScheduleExpression: "rate(1 minute)",
+      State: "ENABLED",
+      Targets: Match.arrayWith([
+        Match.objectLike({
+          RetryPolicy: { MaximumEventAgeInSeconds: 300, MaximumRetryAttempts: 2 },
+        }),
+      ]),
     });
   });
 });

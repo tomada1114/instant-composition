@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { MAX_REQUEST_BODY_BYTES } from "@instant-composition/api";
+import { createMemoryStores } from "@instant-composition/adapters";
 import { learnerId, type RoundPayload } from "@instant-composition/application";
 import { addDays, isFast, TALK_TUNING, TUNING } from "@instant-composition/domain";
 import {
@@ -46,6 +47,48 @@ async function finished(api: ApiHarness, roundId = "p1"): Promise<unknown> {
 }
 
 describe("the queries", () => {
+  it("serves answers followed by home/records without a foreground traversal, and recovers a late day through independent maintenance", async () => {
+    const stores = createMemoryStores();
+    let forbid = false;
+    const api = makeApi({
+      stores: {
+        forLearner(id) {
+          const store = stores.forLearner(id);
+          return {
+            ...store,
+            items: () =>
+              forbid
+                ? Promise.reject(new Error("The HTTP journey read all progress."))
+                : store.items(),
+            compositionItemsPage: (request) =>
+              forbid
+                ? Promise.reject(new Error("The HTTP journey rebuilt a model."))
+                : store.compositionItemsPage(request),
+            reviewsOf: (round) =>
+              forbid
+                ? Promise.reject(new Error("The HTTP journey read round history."))
+                : store.reviewsOf(round),
+          };
+        },
+      },
+    });
+    const round = await startedPlacement(api);
+    forbid = true;
+    expect(
+      (await api.call("POST", `/v1/rounds/${round.id}/answers`, batchFor(round)))
+        .status,
+    ).toBe(204);
+    expect((await api.call("GET", "/v1/home")).status).toBe(200);
+    expect((await api.call("GET", "/v1/records")).status).toBe(200);
+    api.advance(3 * 86_400_000);
+    const late = await api.call("GET", "/v1/home");
+    expect(await refusal(late)).toStrictEqual([503, "ERR_READ_MODEL_NOT_READY"]);
+    expect(late.headers.get("Retry-After")).toBe("2");
+    forbid = false;
+    await api.prepareComposition();
+    forbid = true;
+    expect((await api.call("GET", "/v1/home")).status).toBe(200);
+  });
   it("serves the learner's day boundary and the domain's talk length", async () => {
     const api = makeApi();
     expect(
@@ -373,6 +416,7 @@ describe("the level picked by hand", () => {
       difficulty: { mode: "manual", level: 5, toeic: "500" },
     });
     expect((page as { levels: unknown[] }).levels).toHaveLength(10);
+    await api.prepareComposition();
     const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
     expect(home).toMatchObject({ state: { kind: "ready" } });
     const records = await contracted(
@@ -411,6 +455,7 @@ describe("the grade keys", () => {
   it("reads → and ← for a learner who never chose a pair, in the settings and the home view", async () => {
     const api = makeApi();
     const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    await api.prepareComposition();
     const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
     expect(page).toMatchObject({ settings: { gradeKeys: DEFAULT } });
     expect(home).toMatchObject({ gradeKeys: DEFAULT });
@@ -425,6 +470,7 @@ describe("the grade keys", () => {
       settings: { gradeKeys },
     });
     const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    await api.prepareComposition();
     const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
     expect(page).toMatchObject({ settings: { gradeKeys } });
     expect(home).toMatchObject({ gradeKeys });
@@ -440,6 +486,7 @@ describe("the grade keys", () => {
     expect(await contracted(saved, "updateSettings")).toMatchObject({
       settings: { gradeKeys },
     });
+    await api.prepareComposition();
     const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
     expect(home).toMatchObject({ gradeKeys });
     const taken = await api.call("PATCH", "/v1/settings", {

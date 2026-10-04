@@ -3,7 +3,6 @@ import {
   DynamoDBDocumentClient,
   GetCommand,
   paginateQuery,
-  TransactWriteCommand,
 } from "@aws-sdk/lib-dynamodb";
 import type {
   Entry,
@@ -12,16 +11,16 @@ import type {
   LearnerStores,
   Stored,
 } from "@instant-composition/application";
-import { err, ok, type ReviewEntry } from "@instant-composition/domain";
+import { type ReviewEntry } from "@instant-composition/domain";
 
-import { keyedReads } from "./keyed-reads";
+import { dynamoDbPageReader } from "./dynamodb-read-model-page";
+import { readModelReads } from "./read-model-reads";
+import { dynamoLearnerCommit } from "./dynamodb-learner-commit";
+import { dynamoCompositionReads } from "./dynamodb-composition";
 import { dynamoReviewPage } from "./review-page";
-import { isConflict, transactItemsOf } from "./dynamodb-commit";
-import { validateStorageSources } from "./storage-source";
 import { byTime, storedOf, type Row, type ValueOf } from "./dynamodb-rows";
 import {
   CARDS_PREFIX,
-  checkShape,
   itemsPrefix,
   LEARNER_TABLE_KEY,
   partitionKeyOf,
@@ -49,18 +48,14 @@ function dynamoDbStore(
     const { Item } = await documents.send(
       new GetCommand({
         TableName: table,
-        Key: {
-          [LEARNER_TABLE_KEY.partition]: partition,
-          [LEARNER_TABLE_KEY.sort]: sortKeyOf(key),
-        },
+        Key: { PK: partition, SK: sortKeyOf(key) },
         ConsistentRead: true,
       }),
     );
     return Item;
   }
-
   async function get<T extends Entry["type"]>(
-    key: Extract<Key, { readonly type: T }>,
+    key: Key & { readonly type: T },
   ): Promise<Stored<ValueOf<T>> | undefined> {
     const row = await rawGet(key);
     return row === undefined ? undefined : storedOf(key.type, row);
@@ -103,15 +98,18 @@ function dynamoDbStore(
       .sort(byTime);
   }
 
+  const page = dynamoDbPageReader(documents, table, partition);
+
   return {
-    ...keyedReads(get),
-    reviewPage: (sessionId, cursor) =>
-      dynamoReviewPage(documents, table, partition, sessionId, cursor),
+    ...readModelReads((key) => get<typeof key.type>(key), page, partition),
+    ...dynamoCompositionReads(documents, table, partition),
     profile: () => get({ type: "profile" }),
     settings: () => get({ type: "settings" }),
     stats: () => get({ type: "stats" }),
     round: (id) => get({ type: "round", id }),
     reviewsOf: (sessionId) => reviews(reviewsPrefix(sessionId)),
+    reviewPage: (sessionId, cursor) =>
+      dynamoReviewPage(documents, table, partition, sessionId, cursor),
     reviews: () => reviews("ROUND#"),
     portion: (day) => get({ type: "portion", day }),
     async days(days) {
@@ -167,22 +165,8 @@ function dynamoDbStore(
           .map((stored) => [stored.value.id, stored]),
       );
     },
-    async commit(commit) {
-      checkShape(commit);
-      const items = transactItemsOf(table, partition, commit);
-      if (items.length === 0) return ok(undefined);
-      if (!(await validateStorageSources(commit, rawGet)))
-        return err({ code: "ERR_CONFLICT" });
-      try {
-        await documents.send(new TransactWriteCommand({ TransactItems: items }));
-      } catch (error) {
-        if (isConflict(error)) {
-          return err({ code: "ERR_CONFLICT" });
-        }
-        throw error;
-      }
-      return ok(undefined);
-    },
+    commit: (commit) =>
+      dynamoLearnerCommit(documents, table, partition, rawGet, commit),
   };
 }
 

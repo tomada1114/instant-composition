@@ -11,6 +11,8 @@ import {
 } from "@instant-composition/infra";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
+import { storageAssembly } from "../scripts/lib/storage-assembly.mjs";
+import { storagePolicy } from "../scripts/lib/storage-compatibility.mjs";
 import { metadata, verifyFiles } from "../scripts/lib/release-runtime.mjs";
 
 import { REPOSITORY_ROOT } from "./infra-context";
@@ -29,6 +31,8 @@ describe("the dev app stack's function bundle", () => {
       stage: "dev",
       [REPOSITORY_ROOT_CONTEXT]: REPOSITORY_ROOT,
       "aws:cdk:bundling-stacks": ["app"],
+      "storage-writers-paused": true,
+      "aws:cdk:enable-asset-metadata": true,
     }).app.synth();
     const template: unknown = assembly.getStackArtifact("app").template;
     // The API's function, not the web client secret writer beside it.
@@ -51,6 +55,29 @@ describe("the dev app stack's function bundle", () => {
   afterAll(() => {
     vi.unstubAllEnvs();
     rmSync(outdir, { recursive: true, force: true });
+  });
+
+  it("certifies both actual paused writer bundles before deployment can resume them", () => {
+    const release = metadata(
+      JSON.parse(readFileSync(path.join(bundle, "release.json"), "utf8")),
+    );
+    const policy = storagePolicy(
+      JSON.parse(
+        readFileSync(path.join(REPOSITORY_ROOT, "storage-release-policy.json"), "utf8"),
+      ),
+    );
+    const writers = storageAssembly(outdir, release.sha, policy);
+    expect(writers).toHaveLength(2);
+    expect(
+      writers.find((writer) => writer.logicalId.startsWith("ApiFunction")),
+    ).toMatchObject({ capacity: null, timeout: 25 });
+    expect(
+      writers.find((writer) => writer.logicalId.startsWith("ReadModelWorker")),
+    ).toMatchObject({ capacity: 1, timeout: 60 });
+    expect(writers.map((writer) => writer.release.sha)).toStrictEqual([
+      release.sha,
+      release.sha,
+    ]);
   });
 
   it("holds the handler module and the catalog snapshot where the function reads it", () => {

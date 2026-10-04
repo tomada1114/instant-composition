@@ -1,3 +1,4 @@
+import { describeReadModelStoreContract } from "./read-model-store-contract";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -8,6 +9,7 @@ import { learnerId } from "@instant-composition/application";
 
 import { oneOfEach } from "./application-fixtures";
 import { describeLearnerDirectoryContract } from "./learner-directory-contract";
+import { describeCompositionStoreContract } from "./composition-store-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
 
 describeLearnerStoreContract("the in-memory store", createMemoryStores);
@@ -29,3 +31,6 @@ describe("the in-memory store", () => {
     expect(stores.readCount()).toBe(3);
   });
 });
+
+describeReadModelStoreContract("the in-memory store", createMemoryStores);
+describeCompositionStoreContract("memory", createMemoryStores);

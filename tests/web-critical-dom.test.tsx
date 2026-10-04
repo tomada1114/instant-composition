@@ -41,6 +41,8 @@ async function readyApi() {
   expect(
     (await api.call("PATCH", "/v1/level", { mode: "manual", level: 4 })).status,
   ).toBe(200);
+  await api.prepareComposition();
+  await api.prepareVocab();
   return api;
 }
 
@@ -126,6 +128,7 @@ describe("DOM interaction connected to actual client/API/application/persistence
         })
       ).ok,
     ).toBe(true);
+    await api.prepareVocab();
     const wire = connectClient(api);
     await renderApp("/vocab/study");
     press("Escape");

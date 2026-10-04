@@ -15,7 +15,34 @@ import {
   makeVocabProgress,
   makeVocabReview,
 } from "./application-fixtures";
-import { makeApi, subjectAuthenticator, type ApiHarness } from "./api-harness";
+import {
+  makeApi as rawApi,
+  subjectAuthenticator,
+  type ApiHarness,
+} from "./api-harness";
+
+import { fixedCatalog, makeHarness } from "./application-harness";
+import { prepareVocabReadModels } from "./read-model-harness";
+
+/** Fixture maintenance after onboarding/raw seeding, independent of the tested GET. */
+async function prepare(api: ApiHarness, id = "learner-1") {
+  const profile = await api.stores.forLearner(learnerId(id)).profile();
+  if (profile === undefined)
+    throw new Error("Register the fixture learner before maintenance.");
+  const context = makeHarness().context();
+  await prepareVocabReadModels(
+    { stores: api.stores, catalog: fixedCatalog() },
+    {
+      ...context,
+      learner: {
+        ...profile.value,
+        id: learnerId(id),
+        dayBoundaryHour: context.learner.dayBoundaryHour,
+      },
+    },
+  );
+}
+const makeApi = rawApi;
 
 // The vocabulary routes over HTTP, on the in-memory store and the fixture
 // catalog's forty cards: the hub, a session from start to finish, the weak
@@ -37,6 +64,8 @@ async function refusal(response: Response): Promise<[number, string]> {
 
 /** The learner the API registered on its first request, placed at `level` by the drill. */
 async function placedAt(api: ApiHarness, id: string, level = 4): Promise<LearnerStore> {
+  expect((await api.call("GET", "/v1/settings")).status).toBe(200);
+  await prepare(api, id);
   expect((await api.call("GET", "/v1/vocab")).status).toBe(200);
   const store = api.stores.forLearner(learnerId(id));
   const stats = await store.stats();
@@ -266,6 +295,7 @@ describe("the weak session", () => {
       expect: [],
     });
 
+    await prepare(api);
     const hub = await contracted(await api.call("GET", "/v1/vocab"), "getVocab");
     const session = await opened(api, { sessionId: "w1", kind: "weak" });
 
@@ -332,6 +362,7 @@ describe("the vocabulary limits in the settings", () => {
       [400, "ERR_BAD_REQUEST"],
       [400, "ERR_BAD_REQUEST"],
     ]);
+    await prepare(api);
     expect(
       await contracted(await api.call("GET", "/v1/vocab"), "getVocab"),
     ).toMatchObject({
@@ -353,6 +384,9 @@ describe("another learner's session", () => {
       authenticator: subjectAuthenticator("subject-b"),
       newLearnerId: () => learnerId("learner-b"),
     });
+    await b.call("GET", "/v1/settings");
+    await prepare(b, "learner-b");
+    b.lines.length = 0;
     const mine = a.stores.forLearner(learnerId("learner-1"));
     const snapshot = async () =>
       Promise.all([
@@ -434,6 +468,7 @@ describe("deleting a personal card", () => {
       expect: [],
     });
     expect(written.ok).toBe(true);
+    await prepare(a);
     const b = makeApi({
       stores: a.stores,
       directory: a.directory,
@@ -526,5 +561,21 @@ describe("vocabulary availability over HTTP", () => {
     );
     expect(after.extra).toBe(0);
     expect(after.categories.map((row) => row.extra)).toStrictEqual([0, 0, 0, 0]);
+  });
+});
+
+describe("vocabulary generation readiness", () => {
+  it("returns typed retryable unavailability until independent preparation, then keeps ordinary answers ready", async () => {
+    const api = rawApi();
+    const waiting = await api.call("GET", "/v1/vocab");
+    expect(waiting.headers.get("Retry-After")).toBe("2");
+    expect(await refusal(waiting)).toStrictEqual([503, "ERR_READ_MODEL_NOT_READY"]);
+    await prepare(api);
+    const session = await opened(api, { sessionId: "ready", kind: "today" });
+    expect(
+      (await api.call("POST", "/v1/vocab/sessions/ready/finish", goodBatch(session)))
+        .status,
+    ).toBe(200);
+    expect((await api.call("GET", "/v1/vocab")).status).toBe(200);
   });
 });

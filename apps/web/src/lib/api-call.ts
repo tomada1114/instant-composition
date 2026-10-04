@@ -1,5 +1,6 @@
 // How every call in `endpoints.ts` reaches the API: the root, the URL a
 // contract path becomes, and how an answer is read into a `Result`.
+import { waitForPreparedRead } from "./read-model-wait";
 import { retryAt } from "./retry-after";
 import { err, ok, type Result } from "./result";
 import {
@@ -172,7 +173,11 @@ export async function call<TResponses extends { 200: unknown }>(
   data: OperationData,
 ): Promise<Result<TResponses[200], ApiError>> {
   try {
-    const response = await send(method, data);
+    const initial = await send(method, data);
+    const response =
+      method === "GET"
+        ? await waitForPreparedRead(initial, () => send(method, data), errorCode)
+        : initial;
     if (response.ok) return ok((await response.json()) as TResponses[200]);
     const code = errorCode(await response.json().catch(() => null)) ?? "ERR_NETWORK";
     const deadline = retryAt(response.headers.get("Retry-After"));

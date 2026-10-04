@@ -1,6 +1,9 @@
 import type { ReviewPage } from "@instant-composition/application";
 
-import { readMemorySlot, type Slot } from "./storage-memory";
+import type { Slot } from "./storage-memory";
+import { memoryRow } from "./memory-state";
+import { decodeStorageRow } from "./storage-schema";
+import type { ReviewEntry } from "@instant-composition/domain";
 import { reviewsPrefix } from "./keys";
 import { REVIEW_PAGE_SIZE } from "./review-page";
 
@@ -21,7 +24,7 @@ export function memoryReviewPage(
     entries: page.flatMap((key) => {
       const slot = slots.get(key);
       return slot?.entry.type === "review"
-        ? [readMemorySlot("review", slot).value]
+        ? [decodeStorageRow("review", memoryRow(slot, key)).value as ReviewEntry]
         : [];
     }),
     cursor: keys.length > REVIEW_PAGE_SIZE ? (page.at(-1) ?? null) : null,

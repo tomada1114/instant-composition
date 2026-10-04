@@ -28,12 +28,14 @@ export async function updateLevel(
     return bound;
   }
   const store = bound.value;
-  return committed(store, async () => {
+  return committed<LevelView>(store, async () => {
     const [stored, { snapshot }] = await Promise.all([
       store.stats(),
       snapshotOrEmpty(deps.catalog),
     ]);
     const stats = stored?.value ?? EMPTY_STATS;
+    if (stored !== undefined && stats.streak === undefined)
+      return { ok: false, error: { code: "ERR_READ_MODEL_NOT_READY" } };
     const decided = decideLevel(stats, choice, context.now);
     if (!decided.ok) {
       return decided;

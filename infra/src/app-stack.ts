@@ -11,6 +11,7 @@ import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { type Construct } from "constructs";
 
 import { addApiFunction, TALK_MODEL } from "./api-function";
+import { addReadModelWorker } from "./read-model-worker";
 import { addBedrockBudget, roleOf } from "./bedrock-budget";
 import { addDistribution } from "./distribution";
 import { addObservability } from "./observability";
@@ -120,6 +121,11 @@ export class AppStack extends Stack {
     });
 
     const tableName = foundation(FOUNDATION_PARAMETERS.learnerTableName);
+    const readModels = addReadModelWorker(this, {
+      repositoryRoot,
+      tableName,
+      tableArn: foundation(FOUNDATION_PARAMETERS.learnerTableArn),
+    });
     const handler = addApiFunction(this, {
       repositoryRoot,
       tableName,
@@ -133,6 +139,7 @@ export class AppStack extends Stack {
     });
     // A replaced client's function never starts before its secret is written.
     handler.node.addDependency(webClient.secretWritten);
+    handler.node.addDependency(readModels);
     const integration = new HttpLambdaIntegration("ApiIntegration", handler);
     api.addRoutes({ path: "/{proxy+}", integration });
     const talkRoutes = TALK_ROUTE_PATHS.flatMap((path) =>

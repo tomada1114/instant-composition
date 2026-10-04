@@ -24,6 +24,8 @@ import {
   vocabItem,
 } from "./application-harness";
 
+import { prepareVocabReadModels } from "./read-model-harness";
+
 const CARD = makePersonalCard();
 const OTHER = vocabItem("word", 4, 1);
 const B = learnerId("learner-b");
@@ -81,6 +83,7 @@ async function ready(
     stores,
     catalog: fixedCatalog(makeSnapshot({ vocab: [OTHER] })),
   };
+  await prepareVocabReadModels(deps, h.context());
   return {
     deps,
     store,

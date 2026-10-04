@@ -83,7 +83,8 @@ describe("decideClose", () => {
     );
 
     expect(closed.portion).toMatchObject({ completedAt: 50, completedRound: "r1" });
-    expect(closed.stats.completedDays).toStrictEqual(["2026-09-22"]);
+    expect(closed.stats).not.toHaveProperty("completedDays");
+    expect(closed.stats.streak).toStrictEqual({ schema: 1, longest: 1 });
     expect(closed.outcome).toMatchObject({
       portionCompleted: true,
       filled: "2026-09-22",

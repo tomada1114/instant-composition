@@ -1,5 +1,9 @@
 import type { z } from "zod";
-import type { Entry } from "@instant-composition/application";
+import type {
+  Entry,
+  MaintenanceCheckpoint,
+  ReadModelBootstrapState,
+} from "@instant-composition/application";
 import type { StorageFamily } from "./storage-schema";
 import { compositionSchemas } from "./storage-composition";
 import { talkSchema, vocabularySchemas } from "./storage-vocabulary";
@@ -8,14 +12,16 @@ import { readModelSchemas } from "./storage-projections";
 import { compositionReadModelSchemas } from "./storage-calendar";
 import { readModelBootstrapSchema } from "./storage-bootstrap-schema";
 
-type WireCompatible<T> = T extends readonly (infer V)[]
-  ? readonly WireCompatible<V>[]
-  : T extends object
-    ? {
-        readonly [K in keyof T]:
-          WireCompatible<T[K]> | (undefined extends T[K] ? undefined : never);
-      }
-    : T;
+type WireCompatible<T> = T extends string
+  ? string
+  : T extends readonly (infer V)[]
+    ? readonly WireCompatible<V>[]
+    : T extends object
+      ? {
+          readonly [K in keyof T]:
+            WireCompatible<T[K]> | (undefined extends T[K] ? undefined : never);
+        }
+      : T;
 type FamilyValue<K extends StorageFamily> = K extends "identity"
   ? { readonly learnerId: string }
   : K extends "stats"
@@ -25,7 +31,15 @@ type FamilyValue<K extends StorageFamily> = K extends "identity"
       }
     : K extends Entry["type"]
       ? Extract<Entry, { type: K }>["value"]
-      : unknown;
+      : K extends "readModelLearner"
+        ? {
+            readonly schema: 1;
+            readonly id: string;
+            readonly profile: Extract<Entry, { type: "profile" }>["value"];
+          }
+        : K extends "readModelMaintenance"
+          ? MaintenanceCheckpoint
+          : ReadModelBootstrapState;
 type StorageSchemas = {
   readonly [K in StorageFamily]: z.ZodType<WireCompatible<FamilyValue<K>>>;
 };

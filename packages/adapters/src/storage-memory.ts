@@ -6,6 +6,7 @@ export interface Slot {
   readonly entry: Entry;
   readonly version: number;
   readonly schemaVersion: number;
+  readonly expiresAt?: number;
 }
 export type { ValueOf } from "./storage-values";
 

@@ -260,6 +260,7 @@ describe("the card candidates at a talk's end", () => {
     expect(pick).toMatchObject({ headword: "catch up", added: true, catalog: false });
     expect(pick?.cardId).toMatch(/^p_/);
 
+    await api.prepareVocab();
     const session = await api.call("POST", "/v1/vocab/sessions", {
       sessionId: "s1",
       kind: "today",

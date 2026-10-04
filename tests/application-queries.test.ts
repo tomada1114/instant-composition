@@ -29,6 +29,17 @@ import {
   type Harness,
 } from "./application-harness";
 
+import { settleComposition } from "./composition-maintenance-harness";
+
+async function settledHome(deps: ApplicationDeps, context: RequestContext) {
+  await settleComposition(deps, context);
+  return home(deps, context);
+}
+async function settledRecords(deps: ApplicationDeps, context: RequestContext) {
+  await settleComposition(deps, context);
+  return records(deps, context);
+}
+
 async function started(
   h: Harness,
   kind: "placement" | "today",
@@ -133,7 +144,7 @@ describe("every query", () => {
 
 describe("home", () => {
   async function stateOf(h: Harness, now = NOON): Promise<string | undefined> {
-    const view = await home(h.deps, h.context(now));
+    const view = await settledHome(h.deps, h.context(now));
     return view.ok ? view.value.state.kind : undefined;
   }
 
@@ -156,8 +167,8 @@ describe("home", () => {
     await placed(h);
     const tomorrow = NOON + DAY_MS;
 
-    const ready = await home(h.deps, h.context(tomorrow));
-    const today = await home(h.deps, h.context());
+    const ready = await settledHome(h.deps, h.context(tomorrow));
+    const today = await settledHome(h.deps, h.context());
 
     // Nothing placed yesterday is due yet, so today is the five new cards the limit allows.
     expect(ready.ok && ready.value.preview).toMatchObject({
@@ -180,7 +191,7 @@ describe("home", () => {
     const h = makeHarness();
     await placed(h);
     // 20:00 UTC on the 22nd is already 05:00 on the 23rd in Tokyo, past the day boundary.
-    const view = await home(h.deps, h.context(Date.UTC(2026, 8, 22, 20, 0)));
+    const view = await settledHome(h.deps, h.context(Date.UTC(2026, 8, 22, 20, 0)));
     expect(view.ok && view.value.today).toBe("2026-09-23");
   });
 
@@ -189,7 +200,7 @@ describe("home", () => {
     await placed(h);
     await updateSettings(h.deps, h.context(), { limitSeconds: 60 });
 
-    const view = await home(h.deps, h.context(NOON + DAY_MS));
+    const view = await settledHome(h.deps, h.context(NOON + DAY_MS));
 
     expect(view.ok && view.value.preview).toMatchObject({ size: 5, minutes: 5 });
   });
@@ -200,8 +211,8 @@ describe("home", () => {
     const clean = makeHarness();
     await placed(clean);
 
-    const weak = await home(missed.deps, missed.context(NOON + DAY_MS));
-    const none = await home(clean.deps, clean.context(NOON + DAY_MS));
+    const weak = await settledHome(missed.deps, missed.context(NOON + DAY_MS));
+    const none = await settledHome(clean.deps, clean.context(NOON + DAY_MS));
 
     expect(weak.ok && weak.value.preview?.weakNames).toStrictEqual(["命令文"]);
     expect(none.ok && none.value.preview?.weakNames).toStrictEqual([]);
@@ -210,7 +221,7 @@ describe("home", () => {
   it("names today's last finished round, and none on a day with none", async () => {
     const h = makeHarness();
     const lastRoundOf = async (now: number) => {
-      const view = await home(h.deps, h.context(now));
+      const view = await settledHome(h.deps, h.context(now));
       return view.ok ? view.value.todayLastRoundId : "not ok";
     };
     expect(await lastRoundOf(NOON)).toBeUndefined();
@@ -232,7 +243,7 @@ describe("home", () => {
       answers: answersFor(round).slice(0, 3),
     });
 
-    const view = await home(h.deps, h.context(tomorrow));
+    const view = await settledHome(h.deps, h.context(tomorrow));
 
     expect(view.ok && view.value.state).toMatchObject({
       kind: "in-progress",
@@ -245,7 +256,7 @@ describe("home", () => {
   it("offers to make up yesterday when it was missed after a completed day", async () => {
     const h = makeHarness();
     await placed(h);
-    const view = await home(h.deps, h.context(NOON + 2 * DAY_MS));
+    const view = await settledHome(h.deps, h.context(NOON + 2 * DAY_MS));
     expect(view.ok && view.value.state.kind).toBe("recover-offer");
     // Two portions of five cards at 30 seconds each.
     expect(view.ok && view.value.preview?.minutes).toBe(5);
@@ -253,7 +264,7 @@ describe("home", () => {
 
   it("still draws the screen when the catalog cannot be read", async () => {
     const h = makeHarness(unreadableCatalog);
-    const view = await home(h.deps, h.context());
+    const view = await settledHome(h.deps, h.context());
     expect(view.ok && view.value).toMatchObject({
       contentError: true,
       state: { kind: "onboarding" },
@@ -425,10 +436,29 @@ describe("roundPayload", () => {
 });
 
 describe("records", () => {
+  it("preserves practiced totals and calendar when a previously published catalog becomes unreadable", async () => {
+    const h = makeHarness();
+    await placed(h);
+    await settleComposition(h.deps, h.context());
+    const before = await h.stores.forLearner(h.learner).stats();
+    const view = await records({ ...h.deps, catalog: unreadableCatalog }, h.context());
+    expect(view.ok && view.value).toMatchObject({
+      said: 10,
+      practicedDays: 1,
+      points: 20,
+      toeic: "",
+      reach: { topics: [], pending: 0 },
+      breakdown: [],
+      weak: { grammar: [], subtopics: [] },
+      streak: { current: 1, longest: 1 },
+    });
+    expect(view.ok && view.value.calendar).toHaveLength(12);
+    expect(await h.stores.forLearner(h.learner).stats()).toStrictEqual(before);
+  });
   it("shows the totals, the run and the calendar", async () => {
     const h = makeHarness();
     await placed(h);
-    const view = await records(h.deps, h.context());
+    const view = await settledRecords(h.deps, h.context());
     expect(view.ok && view.value).toMatchObject({
       said: 10,
       practicedDays: 1,
@@ -452,7 +482,7 @@ describe("records", () => {
     async ({ missed, pending }) => {
       const h = makeHarness();
       await placed(h, {}, missed);
-      const view = await records(h.deps, h.context());
+      const view = await settledRecords(h.deps, h.context());
       const summary = await roundSummary(h.deps, h.context(), "p0");
 
       expect(
@@ -466,7 +496,7 @@ describe("records", () => {
   it("counts mastered cards by topic and subtopic, and groups the titles they earned", async () => {
     const h = makeHarness();
     const now = await practiced(h, 5, true);
-    const view = await records(h.deps, h.context(now));
+    const view = await settledRecords(h.deps, h.context(now));
     const mastered = view.ok
       ? view.value.reach.topics.reduce((sum, topic) => sum + topic.count, 0)
       : 0;
@@ -489,8 +519,8 @@ describe("records' weak points", () => {
     const clean = makeHarness();
     await placed(clean);
 
-    const weak = await records(missed.deps, missed.context());
-    const none = await records(clean.deps, clean.context());
+    const weak = await settledRecords(missed.deps, missed.context());
+    const none = await settledRecords(clean.deps, clean.context());
 
     expect(weak.ok && weak.value.weak.grammar).toStrictEqual([
       { id: "en:grammar/imperatives", name: "命令文" },
@@ -507,7 +537,7 @@ describe("records' weak points", () => {
     const h = makeHarness(fixedCatalog({ ...makeSnapshot(), conceptNames: new Map() }));
     await placed(h, {}, true);
 
-    const view = await records(h.deps, h.context());
+    const view = await settledRecords(h.deps, h.context());
 
     expect(view.ok && view.value.weak.grammar).toStrictEqual([
       { id: "en:grammar/imperatives", name: "en:grammar/imperatives" },

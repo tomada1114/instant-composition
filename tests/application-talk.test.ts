@@ -14,6 +14,7 @@ import {
   type LanguageModel,
   type SendTurnCommand,
 } from "@instant-composition/application";
+import { prepareVocabReadModels } from "./read-model-harness";
 import { TALK_TUNING } from "@instant-composition/domain";
 
 import { makeVocabProgress, without } from "./application-fixtures";
@@ -919,6 +920,7 @@ describe("makeCandidates", () => {
         source: { kind: "talk", talkId: "t1", turn: 2 },
         createdAt: NOON,
       });
+      await prepareVocabReadModels(h.deps, h.context());
       const opened = await startVocabSession(h.deps, h.context(), {
         sessionId: "s1",
         kind: "today",

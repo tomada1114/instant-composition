@@ -69,8 +69,9 @@ function makeCompositionSchemas(strict: boolean, storageVersion = 1) {
     ).refine(
       (value) =>
         (storageVersion >= 4 || value.streak === undefined) &&
-        (value.completedDays !== undefined ||
-          (storageVersion >= 4 && value.streak !== undefined)),
+        (storageVersion >= 4
+          ? (value.completedDays !== undefined) !== (value.streak !== undefined)
+          : value.completedDays !== undefined),
     ),
     round: object(
       {

@@ -1,18 +1,11 @@
 import { TransactionCanceledException } from "@aws-sdk/client-dynamodb";
 import type { TransactWriteCommandInput } from "@aws-sdk/lib-dynamodb";
-import {
-  keyOf,
-  type Commit,
-  type Entry,
-  type Key,
-} from "@instant-composition/application";
+import { keyOf, type Entry, type Key } from "@instant-composition/application";
 
+import type { ValidatedCommit } from "./projection-commit";
+import { observedStorageGuard, type ObservedStorage } from "./storage-observed";
 import { LEARNER_TABLE_KEY, sortKeyOf } from "./keys";
-import {
-  encodeStorageValue,
-  STORAGE_SCHEMA_VERSION,
-  storageSchemaFence,
-} from "./storage-schema";
+import { STORAGE_SCHEMA_VERSION, storageSchemaFence } from "./storage-schema";
 
 type TransactItem = NonNullable<TransactWriteCommandInput["TransactItems"]>[number];
 
@@ -46,8 +39,15 @@ function atVersion(version: number, type: Key["type"], modelClaim?: string) {
  * one drops it, since every write replaces the whole item.
  */
 function expiryOf(entry: Entry): { readonly expiresAt?: number } {
-  return (entry.type === "talk" || entry.type === "modelTask") &&
-    entry.value.expiresAt !== undefined
+  return [
+    "talk",
+    "modelTask",
+    "vocabReadModel",
+    "vocabCandidate",
+    "compositionReadModel",
+    "compositionBuild",
+    "compositionCandidate",
+  ].includes(entry.type) && "expiresAt" in entry.value
     ? { expiresAt: entry.value.expiresAt }
     : {};
 }
@@ -61,18 +61,39 @@ function expiryOf(entry: Entry): { readonly expiresAt?: number } {
 export function transactItemsOf(
   table: string,
   partition: string,
-  commit: Commit,
+  commit: ValidatedCommit,
+  observed: ReadonlyMap<string, ObservedStorage | undefined> = new Map(),
 ): TransactItem[] {
   const keyFor = (key: Key) => ({
     [LEARNER_TABLE_KEY.partition]: partition,
     [LEARNER_TABLE_KEY.sort]: sortKeyOf(key),
   });
+  const guard = (key: Key, version: number | null, modelClaim?: string) => {
+    const sk = sortKeyOf(key);
+    if (!observed.has(sk))
+      return version === null ? ABSENT : atVersion(version, key.type, modelClaim);
+    const prepared = observedStorageGuard(observed.get(sk));
+    return modelClaim === undefined
+      ? prepared
+      : {
+          ...prepared,
+          ConditionExpression: `${prepared.ConditionExpression} AND #value.#claim = :claim`,
+          ExpressionAttributeNames: {
+            ...prepared.ExpressionAttributeNames,
+            "#claim": "claimId",
+          },
+          ExpressionAttributeValues: {
+            ...prepared.ExpressionAttributeValues,
+            ":claim": modelClaim,
+          },
+        };
+  };
   const item = (entry: Entry, version: number) => ({
     ...keyFor(keyOf(entry)),
     type: entry.type,
     version,
     schemaVersion: STORAGE_SCHEMA_VERSION,
-    value: encodeStorageValue(entry.type, entry.value),
+    value: entry.value,
     ...expiryOf(entry),
   });
   return [
@@ -83,18 +104,18 @@ export function transactItemsOf(
       Put: {
         TableName: table,
         Item: item(entry, version + 1),
-        ...atVersion(version, entry.type, modelClaim),
+        ...guard(keyOf(entry), version, modelClaim),
       },
     })),
     ...commit.expect.map(({ key, version }) => ({
       ConditionCheck: {
         TableName: table,
         Key: keyFor(key),
-        ...(version === null ? ABSENT : atVersion(version, key.type)),
+        ...guard(key, version),
       },
     })),
     ...(commit.deletes ?? []).map(({ key, version }) => ({
-      Delete: { TableName: table, Key: keyFor(key), ...atVersion(version, key.type) },
+      Delete: { TableName: table, Key: keyFor(key), ...guard(key, version) },
     })),
   ];
 }

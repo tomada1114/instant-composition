@@ -106,7 +106,7 @@ describe("guarded storage on DynamoDB local", () => {
         const siblingBefore = await getSibling();
         const args = [
           "--plan",
-          "expand-to-storage-v3",
+          "expand-to-storage-v4",
           "--table",
           table,
           "--endpoint",
@@ -187,7 +187,7 @@ describe("guarded storage on DynamoDB local", () => {
       });
       const args = [
         "--plan",
-        "expand-to-storage-v3",
+        "expand-to-storage-v4",
         "--table",
         table,
         "--endpoint",
@@ -230,7 +230,7 @@ describe("guarded storage on DynamoDB local", () => {
       rmSync(folder, { recursive: true, force: true });
     }
   });
-  it("resumes the v3 expansion preserving signed marks, answer state and exact TTL presence", async () => {
+  it("resumes the v4 expansion preserving signed marks, answer state and exact TTL presence", async () => {
     const table = `storage436-${randomUUID()}`,
       client = localDynamoDbClient(endpoint);
     const folder = mkdtempSync(path.join(tmpdir(), "storage436-v3-"));
@@ -292,13 +292,16 @@ describe("guarded storage on DynamoDB local", () => {
           ...(mirror ? { expiresAt: makeTalk().expiresAt } : {}),
         });
     }
-    for (const mirror of [false, true]) {
-      const row: Record<string, unknown> = {
-        ...task,
-        PK: `LEARNER#task-${String(mirror)}`,
-      };
-      if (!mirror) delete row["expiresAt"];
-      rows.push(row);
+    for (const schemaVersion of [3, 4]) {
+      for (const mirror of [false, true]) {
+        const row: Record<string, unknown> = {
+          ...task,
+          schemaVersion,
+          PK: `LEARNER#task-${String(schemaVersion)}-${String(mirror)}`,
+        };
+        if (!mirror) delete row["expiresAt"];
+        rows.push(row);
+      }
     }
     // Force a bounded first page so resume must process a later source page.
     for (let index = rows.length; index < 101; index += 1)
@@ -307,7 +310,7 @@ describe("guarded storage on DynamoDB local", () => {
         SK: "SETTINGS",
         type: "settings",
         version: 1,
-        schemaVersion: index % 3,
+        schemaVersion: index % 4,
         value: makeSettings(),
       });
     await createLearnerTable(client, table);
@@ -322,7 +325,7 @@ describe("guarded storage on DynamoDB local", () => {
       const before = await Promise.all(rows.map(get));
       const args = [
         "--plan",
-        "expand-to-storage-v3",
+        "expand-to-storage-v4",
         "--table",
         table,
         "--endpoint",
@@ -358,21 +361,21 @@ describe("guarded storage on DynamoDB local", () => {
         seen: 101,
         migrated: 99,
         unchanged: 2,
-        migration: "expand-to-storage-v3",
-        targetSchema: 3,
+        migration: "expand-to-storage-v4",
+        targetSchema: 4,
       });
       expect(
         await main([...args, "--apply", "--writers-stopped", "--resume"]),
       ).toStrictEqual(complete);
       for (const [index, row] of rows.entries()) {
         const after = await get(row);
-        if (row["schemaVersion"] === 3) expect(after).toStrictEqual(before[index]);
+        if (row["schemaVersion"] === 4) expect(after).toStrictEqual(before[index]);
         else
           expect(readKey(after, "Item")).toStrictEqual(
             readKey(
               wire({
                 ...row,
-                schemaVersion: 3,
+                schemaVersion: 4,
                 version: Number(row["version"]) + 1,
               }),
               "M",
@@ -464,7 +467,7 @@ describe("guarded storage on DynamoDB local", () => {
         {
           SK: "STATS",
           type: "stats",
-          schemaVersion: 4,
+          schemaVersion: STORAGE_SCHEMA_VERSION + 1,
           value: {
             ...Object.fromEntries(
               Object.entries(makeStats()).filter(([key]) => key !== "completedDays"),

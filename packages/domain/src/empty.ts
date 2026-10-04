@@ -15,7 +15,7 @@ export function emptyTally(day: DayKey): DayTally {
 /** A learner's totals before anything has been recorded. */
 export const EMPTY_STATS: LearnerStats = {
   points: 0,
-  completedDays: [],
+  streak: { schema: 1, longest: 0 },
   firstDay: null,
   said: 0,
   practicedDays: 0,

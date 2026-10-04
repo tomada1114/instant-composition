@@ -1,3 +1,4 @@
+import { storageFamilyBirth } from "./storage-families";
 import type { Commit, Entry, Key } from "@instant-composition/application";
 import { keyOf } from "@instant-composition/application";
 import {
@@ -10,7 +11,7 @@ import {
 function supportedSourceSchema(type: Key["type"], schemaVersion: number): boolean {
   return (
     Number.isInteger(schemaVersion) &&
-    schemaVersion >= (type === "modelTask" ? 3 : 0) &&
+    schemaVersion >= storageFamilyBirth(type) &&
     schemaVersion <= STORAGE_SCHEMA_VERSION
   );
 }

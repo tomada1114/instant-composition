@@ -113,3 +113,43 @@ export function weaknesses(input: WeaknessInput): Weaknesses {
     subtopics: weakest(subtopics, (place, evidence) => ({ ...place, ...evidence })),
   };
 }
+
+/** The same ranking over incrementally maintained counts. */
+export function rankWeaknesses(input: {
+  readonly concepts: Iterable<{
+    readonly concept: ConceptId;
+    readonly seen: number;
+    readonly misses: number;
+  }>;
+  readonly subtopics: Iterable<{
+    readonly topic: string;
+    readonly subtopic: string;
+    readonly seen: number;
+    readonly misses: number;
+  }>;
+}): Weaknesses {
+  return {
+    grammar: weakest(
+      new Map(
+        [...input.concepts].map((entry) => [
+          entry.concept,
+          { subject: entry.concept, seen: entry.seen, misses: entry.misses },
+        ]),
+      ),
+      (concept, evidence) => ({ concept, ...evidence }),
+    ),
+    subtopics: weakest(
+      new Map(
+        [...input.subtopics].map((entry) => [
+          `${entry.topic}/${entry.subtopic}`,
+          {
+            subject: { topic: entry.topic, subtopic: entry.subtopic },
+            seen: entry.seen,
+            misses: entry.misses,
+          },
+        ]),
+      ),
+      (place, evidence) => ({ ...place, ...evidence }),
+    ),
+  };
+}

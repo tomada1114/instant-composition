@@ -1,7 +1,12 @@
+import { describeRawReadModelContract } from "./raw-read-model-contract";
+import { describeReadModelStoreContract } from "./read-model-store-contract";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { randomUUID } from "node:crypto";
 import {
   createDynamoDbStores,
+  createDynamoDbReadModelMaintenance,
+  createDynamoDbReadModelBootstrapStorage,
+  executeStorageMaintenance,
   createLearnerTable,
   deleteLearnerTable,
   localDynamoDbClient,
@@ -10,6 +15,9 @@ import {
 
 import {
   finishRound,
+  DEFAULT_PROFILE,
+  learnerId,
+  vocabHub,
   recordAnswers,
   startRound,
   updateSettings,
@@ -19,15 +27,26 @@ import {
 } from "@instant-composition/application";
 
 import { answersFor, fixedCatalog, makeHarness, NOON } from "./application-harness";
+import {
+  makeProfile,
+  makeSettings,
+  makeTalk,
+  makeReview,
+} from "./application-fixtures";
+import {
+  createReadModelWorkerHandler,
+  readModelBootstrapValidity,
+  runReadModelWorker,
+} from "@instant-composition/api";
 import { localTables } from "./dynamodb-local";
 import { describeLearnerDirectoryContract } from "./learner-directory-contract";
+import { describeCompositionStoreContract } from "./composition-store-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
 import { describeBoundedAnswerContract } from "./bounded-answer-contract";
 import { describeModelTaskContract } from "./model-task-contract";
 import { describeFirstAnswerContract } from "./first-answer-contract";
 import { describeVocabCardDeletionContract } from "./vocab-card-deletion-contract";
 import { makeTalkHarness } from "./application-talk-harness";
-import { makeReview } from "./application-fixtures";
 import { TALK_TUNING } from "@instant-composition/domain";
 import { parseJson, readKey } from "../scripts/lib/json.mjs";
 
@@ -231,5 +250,338 @@ describe("the DynamoDB store under the application", () => {
     const finished = await finishRound(deps, h.context(), batch);
     expect(finished.ok).toBe(true);
     expect((await store.round("p1"))?.value.finishedAt).toBe(NOON);
+  });
+});
+
+describeReadModelStoreContract("the DynamoDB store", () => tables.fresh());
+
+describe("the independent worker with DynamoDB", () => {
+  it("discovers a new registration through the registry and keeps profile changes current", async () => {
+    const backing = await tables.freshMaintenance();
+    const h = makeHarness();
+    expect(
+      (
+        await backing.directory.register("worker-subject", {
+          learnerId: h.learner,
+          profile: DEFAULT_PROFILE,
+        })
+      ).ok,
+    ).toBe(true);
+    expect((await backing.maintenance.profiles(null)).learners).toStrictEqual([
+      { id: h.learner, profile: DEFAULT_PROFILE },
+    ]);
+    const beforeHistory = await backing.maintenance.profiles(null);
+    const learnerStore = backing.stores.forLearner(h.learner);
+    for (let offset = 0; offset < 600; offset += 100)
+      await learnerStore.commit({
+        puts: Array.from({ length: 100 }, (_, index) => ({
+          type: "review" as const,
+          value: makeReview({
+            id: `history-${String(offset + index)}`,
+            sessionId: "unrelated",
+          }),
+        })),
+        updates: [],
+        expect: [],
+      });
+    expect(await backing.maintenance.profiles(null)).toStrictEqual(beforeHistory);
+    const deps = { stores: backing.stores, catalog: fixedCatalog() };
+    expect((await runReadModelWorker(deps, backing.maintenance, NOON)).rows).toBe(80);
+    expect((await vocabHub(deps, h.context())).ok).toBe(true);
+    const store = backing.stores.forLearner(h.learner);
+    const profile = await store.profile();
+    if (profile === undefined) throw new Error("No registered fixture profile.");
+    const changed = { ...profile.value, timeZone: "Europe/London" };
+    expect(
+      (
+        await store.commit({
+          puts: [],
+          updates: [
+            { entry: { type: "profile", value: changed }, version: profile.version },
+          ],
+          expect: [],
+        })
+      ).ok,
+    ).toBe(true);
+    expect((await backing.maintenance.profiles(null)).learners).toStrictEqual([
+      { id: h.learner, profile: changed },
+    ]);
+    expect(
+      await backing.stores.forLearner(learnerId("other")).vocabReadModel("2026-09-22"),
+    ).toBeUndefined();
+  });
+});
+describeCompositionStoreContract("DynamoDB", () => tables.fresh());
+
+const rawReadModelClient = localDynamoDbClient("http://127.0.0.1:8000");
+const rawReadModelTables: string[] = [];
+afterAll(async () => {
+  await Promise.all(
+    rawReadModelTables.map((table) => deleteLearnerTable(rawReadModelClient, table)),
+  );
+  rawReadModelClient.destroy();
+});
+describeRawReadModelContract("DynamoDB local", async (rows) => {
+  const tableName = `raw-read-model-${randomUUID()}`;
+  await createLearnerTable(rawReadModelClient, tableName);
+  rawReadModelTables.push(tableName);
+  for (const row of rows)
+    await rawLocal("PutItem", { TableName: tableName, Item: wireRow(row) });
+  const options = { client: rawReadModelClient, tableName };
+  return {
+    stores: createDynamoDbStores(options),
+    maintenance: createDynamoDbReadModelMaintenance(options),
+  };
+});
+
+describe("raw global preimage races with DynamoDB", () => {
+  it.each(["schema", "value", "version", "expiry", "profile"] as const)(
+    "preserves every learner/global sibling on a same-version %s mutation",
+    async (change) => {
+      const client = localDynamoDbClient("http://127.0.0.1:8000"),
+        tableName = `global-race-${randomUUID()}`;
+      await createLearnerTable(client, tableName);
+      try {
+        const store = createDynamoDbStores({ client, tableName }).forLearner(
+          learnerId("a"),
+        );
+        expect(
+          (
+            await store.commit({
+              puts: [{ type: "profile", value: makeProfile() }],
+              updates: [],
+              expect: [],
+            })
+          ).ok,
+        ).toBe(true);
+        const registryKey = { PK: "SYSTEM#READMODEL_LEARNERS", SK: "a" };
+        const key =
+          change === "profile" ? { PK: "LEARNER#a", SK: "PROFILE" } : registryKey;
+        const replacement = {
+          ...key,
+          type: change === "profile" ? "profile" : "readModelLearner",
+          version: change === "version" ? 2 : 1,
+          schemaVersion: change === "schema" ? 5 : 4,
+          value:
+            change === "profile"
+              ? makeProfile({ timeZone: "Europe/Paris" })
+              : {
+                  schema: 1,
+                  id: "a",
+                  profile: makeProfile({
+                    timeZone: change === "value" ? "Europe/Paris" : "Asia/Tokyo",
+                  }),
+                },
+          ...(change === "expiry" ? { expiresAt: 123 } : {}),
+        };
+        let injected = false;
+        client.middlewareStack.add(
+          (next) => async (args) => {
+            if (!injected && "TransactItems" in args.input) {
+              injected = true;
+              await rawLocal("PutItem", {
+                TableName: tableName,
+                Item: wireRow(replacement),
+              });
+            }
+            return next(args);
+          },
+          { step: "initialize", name: "changeRawGlobalPreimageAfterStrongRead" },
+        );
+        expect(
+          await store.commit({
+            puts: [{ type: "settings", value: makeSettings() }],
+            updates: [
+              {
+                entry: {
+                  type: "profile",
+                  value: makeProfile({ timeZone: "America/Los_Angeles" }),
+                },
+                version: 1,
+              },
+            ],
+            expect: [],
+          }),
+        ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+        expect(injected).toBe(true);
+        expect(
+          readKey(
+            await rawLocal("GetItem", {
+              TableName: tableName,
+              Key: wireRow(key),
+              ConsistentRead: true,
+            }),
+            "Item",
+          ),
+        ).toStrictEqual(wireRow(replacement));
+        expect(await store.settings()).toBeUndefined();
+        expect(await store.profile()).toStrictEqual({
+          value:
+            change === "profile"
+              ? makeProfile({ timeZone: "Europe/Paris" })
+              : makeProfile(),
+          version: 1,
+        });
+      } finally {
+        await deleteLearnerTable(client, tableName);
+        client.destroy();
+      }
+    },
+  );
+  it("preserves a maintenance replacement made after its strong preflight", async () => {
+    const client = localDynamoDbClient("http://127.0.0.1:8000"),
+      tableName = `checkpoint-race-${randomUUID()}`;
+    await createLearnerTable(client, tableName);
+    try {
+      const maintenance = createDynamoDbReadModelMaintenance({ client, tableName });
+      const value = {
+        schema: 1 as const,
+        cursor: null,
+        pending: [],
+        index: 1,
+        passCompletedAt: 1000,
+      };
+      expect((await maintenance.save(value, null)).ok).toBe(true);
+      const key = { PK: "SYSTEM#READMODEL", SK: "CHECKPOINT" };
+      const replacement = {
+        ...key,
+        type: "readModelMaintenance",
+        version: 1,
+        schemaVersion: 4,
+        value: { ...value, passCompletedAt: 2000 },
+      };
+      let injected = false;
+      client.middlewareStack.add(
+        (next) => async (args) => {
+          if (!injected && "Item" in args.input) {
+            injected = true;
+            await rawLocal("PutItem", {
+              TableName: tableName,
+              Item: wireRow(replacement),
+            });
+          }
+          return next(args);
+        },
+        { step: "initialize", name: "changeSystemCheckpointAfterStrongRead" },
+      );
+      expect(
+        await maintenance.save({ ...value, passCompletedAt: 3000 }, 1),
+      ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+      expect(injected).toBe(true);
+      expect(await maintenance.checkpoint()).toStrictEqual({
+        value: replacement.value,
+        version: 1,
+      });
+    } finally {
+      await deleteLearnerTable(client, tableName);
+      client.destroy();
+    }
+  });
+  it.each([false, true])(
+    "preserves historical top-level TTL presence %s through explicit cap4 maintenance",
+    async (present) => {
+      const client = localDynamoDbClient("http://127.0.0.1:8000"),
+        tableName = `ttl-history-${randomUUID()}`;
+      await createLearnerTable(client, tableName);
+      try {
+        const key = { PK: "LEARNER#a", SK: "TALK#t1" },
+          value = makeTalk({ expiresAt: 123 });
+        const source = {
+          ...key,
+          type: "talk",
+          version: 1,
+          schemaVersion: 3,
+          value,
+          ...(present ? { expiresAt: 123 } : {}),
+        };
+        await rawLocal("PutItem", { TableName: tableName, Item: wireRow(source) });
+        expect(
+          await executeStorageMaintenance({
+            table: tableName,
+            region: "ap-northeast-1",
+            endpoint: "http://127.0.0.1:8000",
+            command: "replace",
+            key,
+            row: { ...source, version: 2, schemaVersion: 4 },
+            version: 1,
+            schema: 3,
+          }),
+        ).toBe(true);
+        expect(
+          readKey(
+            await rawLocal("GetItem", {
+              TableName: tableName,
+              Key: wireRow(key),
+              ConsistentRead: true,
+            }),
+            "Item",
+          ),
+        ).toStrictEqual(wireRow({ ...source, version: 2, schemaVersion: 4 }));
+      } finally {
+        await deleteLearnerTable(client, tableName);
+        client.destroy();
+      }
+    },
+  );
+  it("resumes the actual durable factory through fresh hosted handlers with null checkpoints", async () => {
+    const client = localDynamoDbClient("http://127.0.0.1:8000"),
+      tableName = `hosted-bootstrap-${randomUUID()}`;
+    await createLearnerTable(client, tableName);
+    try {
+      const options = { client, tableName },
+        h = makeHarness();
+      const deps = { stores: createDynamoDbStores(options), catalog: fixedCatalog() };
+      await deps.stores.forLearner(h.learner).commit({
+        puts: [{ type: "profile", value: makeProfile() }],
+        updates: [],
+        expect: [],
+      });
+      const storage = createDynamoDbReadModelBootstrapStorage(options),
+        release = {
+          sha: "a".repeat(40),
+          contract: "storage-v4",
+          schemaFingerprint: "b".repeat(64),
+        };
+      let discoveries = 0,
+        closed = 0;
+      const fresh = () =>
+        createReadModelWorkerHandler(() => ({
+          deps,
+          maintenance: createDynamoDbReadModelMaintenance(options),
+          storage,
+          backfill: () => {
+            discoveries += 1;
+            return Promise.resolve({ cursor: null, rows: 1 });
+          },
+          ready: (context) => readModelBootstrapValidity(deps, context),
+          now: NOON,
+          close: () => {
+            closed += 1;
+          },
+        }));
+      const step = () =>
+        fresh()(
+          { storageBootstrap: true, checkpoint: null },
+          { storageRelease: release },
+        );
+      expect(await step()).toMatchObject({ complete: false, phase: "preparation" });
+      expect(await step()).toMatchObject({ complete: false, phase: "verification" });
+      expect(await step()).toMatchObject({
+        complete: true,
+        phase: "verification",
+        checkpoint: null,
+      });
+      expect(await step()).toMatchObject({
+        complete: true,
+        phase: "verification",
+        checkpoint: null,
+      });
+      expect(discoveries).toBe(1);
+      expect(closed).toBe(4);
+      expect((await storage.checkpoint())?.value.release).toStrictEqual(release);
+    } finally {
+      await deleteLearnerTable(client, tableName);
+      client.destroy();
+    }
   });
 });

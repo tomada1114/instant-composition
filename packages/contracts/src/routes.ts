@@ -59,6 +59,7 @@ const COMMAND_ERRORS = [
   "ERR_FORBIDDEN",
   "ERR_CONFLICT",
   "ERR_CONTENT_UNREADABLE",
+  "ERR_READ_MODEL_NOT_READY",
 ] as const;
 
 /**
@@ -120,7 +121,7 @@ export const ROUTES: readonly Route[] = [
     summary: "The home view: today's portion, the streak and the next action.",
     requestBody: null,
     success: { status: 200, body: homeViewSchema },
-    errors: QUERY_ERRORS,
+    errors: [...QUERY_ERRORS, "ERR_READ_MODEL_NOT_READY"],
   },
   {
     method: "post",
@@ -179,7 +180,7 @@ export const ROUTES: readonly Route[] = [
       "The records view: mastery by topic, the run, the calendar and the totals.",
     requestBody: null,
     success: { status: 200, body: recordsViewSchema },
-    errors: QUERY_ERRORS,
+    errors: [...QUERY_ERRORS, "ERR_READ_MODEL_NOT_READY"],
   },
   {
     method: "get",

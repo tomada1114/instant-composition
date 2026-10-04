@@ -1,10 +1,17 @@
-import { err, ok, vocabFigures, type Result } from "@instant-composition/domain";
+import {
+  DEFAULT_SETTINGS,
+  err,
+  ok,
+  withDefaults,
+  type Result,
+} from "@instant-composition/domain";
 
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps } from "./execute";
-import { loadVocab, summaryOf } from "./vocab-load";
+import { summaryOf } from "./vocab-load";
 import { recordVocabInto, type VocabAnswersCommand } from "./vocab-answers";
+import type { Commit } from "./store";
 import type { VocabSummary } from "./vocab-views";
 
 /**
@@ -47,7 +54,7 @@ export async function finishVocabSession(
       ? ((await kept()) ?? recorded)
       : recorded;
   }
-  return committed(store, async () => {
+  return committed<VocabSummary>(store, async () => {
     const session = await store.vocabSession(command.sessionId);
     if (session === undefined) {
       return err({ code: "ERR_SESSION_NOT_FOUND" });
@@ -56,18 +63,62 @@ export async function finishVocabSession(
     if (session.value.finishedAt !== null) {
       return ok({ value: summaryOf(session.value, reviews), writes: [] });
     }
-    const loaded = await loadVocab(store, deps.catalog, context, session.value.day);
-    if (!loaded.ok) {
-      return loaded;
+    let tomorrow: number;
+    let expect: Commit["expect"];
+    {
+      const [model, source, settings] = await Promise.all([
+        store.vocabReadModel(session.value.day),
+        store.readModelSource(),
+        store.settings(),
+      ]);
+      if (
+        model?.value.schema !== 1 ||
+        (model.value.expiresAt !== undefined &&
+          model.value.expiresAt * 1_000 <= context.now) ||
+        model.value.status !== "ready" ||
+        model.value.catalog !== snapshot.value.version ||
+        model.value.sourceVersion !== (source?.version ?? 0)
+      ) {
+        const requested = await store.vocabReadModelRequest(session.value.day);
+        if (requested === undefined)
+          await store.commit({
+            puts: [
+              {
+                type: "vocabReadModelRequest",
+                value: { schema: 1, day: session.value.day },
+              },
+            ],
+            updates: [],
+            expect: [],
+          });
+        return err({ code: "ERR_READ_MODEL_NOT_READY" });
+      }
+      const due = model.value.counts.reduce(
+        (total, count) => total + count.tomorrow,
+        0,
+      );
+      const limit = withDefaults(
+        settings?.value ?? DEFAULT_SETTINGS,
+      ).vocabReviewsPerDay;
+      tomorrow = limit === null ? due : Math.min(due, limit);
+      expect = [
+        { key: { type: "readModelSource" }, version: source?.version ?? null },
+        {
+          key: { type: "vocabReadModel", day: session.value.day },
+          version: model.version,
+        },
+        { key: { type: "settings" }, version: settings?.version ?? null },
+      ];
     }
     const finished = {
       ...session.value,
       finishedAt: context.now,
-      tomorrow: vocabFigures(loaded.value.state).tomorrow,
+      tomorrow,
     };
     return ok({
       value: summaryOf(finished, reviews),
       writes: [[{ type: "vocabSession", value: finished }, session]],
+      expect,
     });
   });
 }

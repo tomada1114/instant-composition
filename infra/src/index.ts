@@ -70,3 +70,5 @@ export {
   ALARM_EMAIL_CONTEXT,
   type ObservabilityProps,
 } from "./observability";
+
+export { addReadModelWorker } from "./read-model-worker";

@@ -2,7 +2,6 @@ import type {
   DayKey,
   DayTally,
   ItemProgress,
-  ItemRef,
   LearnerStats,
   ModelTask,
   ModelTaskKey,
@@ -12,79 +11,38 @@ import type {
   ReviewEntry,
   Round,
   Settings,
+  StreakRun,
   Talk,
   VocabProgress,
   VocabReview,
   VocabSession,
 } from "@instant-composition/domain";
-
+import type {
+  CompositionBuild,
+  CompositionReadModel,
+  CompositionSource,
+  ItemPageRequest,
+  PortionRange,
+  StorePage,
+  StreakMigration,
+} from "./composition-model";
+import type {
+  CandidatePage,
+  CandidatePageRequest,
+  PersonalCardPage,
+  ReadModelSource,
+  VocabCandidate,
+  VocabReadModel,
+  VocabReadModelRequest,
+  VocabReadModelRequestPage,
+} from "./read-model";
 import type { LearnerId, Profile } from "./context";
-
-/** One record of a learner's data. Its key is derived from its value (`keyOf`). */
-export type Entry =
-  | { readonly type: "profile"; readonly value: Profile }
-  | { readonly type: "settings"; readonly value: Settings }
-  | { readonly type: "stats"; readonly value: LearnerStats }
-  | { readonly type: "round"; readonly value: Round }
-  | { readonly type: "review"; readonly value: ReviewEntry }
-  | { readonly type: "portion"; readonly value: Portion }
-  | { readonly type: "day"; readonly value: DayTally }
-  | { readonly type: "item"; readonly value: ItemProgress }
-  | { readonly type: "talk"; readonly value: Talk }
-  | { readonly type: "modelTask"; readonly value: ModelTask }
-  | { readonly type: "vocabItem"; readonly value: VocabProgress }
-  | { readonly type: "vocabSession"; readonly value: VocabSession }
-  | { readonly type: "vocabReview"; readonly value: VocabReview }
-  | { readonly type: "card"; readonly value: PersonalCard };
-
-/** Where an entry lives inside the learner's own data; no key names a learner. */
-export type Key =
-  | { readonly type: "profile" }
-  | { readonly type: "settings" }
-  | { readonly type: "stats" }
-  | { readonly type: "round"; readonly id: string }
-  | { readonly type: "review"; readonly sessionId: string; readonly id: string }
-  | { readonly type: "portion"; readonly day: DayKey }
-  | { readonly type: "day"; readonly day: DayKey }
-  | { readonly type: "item"; readonly item: ItemRef }
-  | { readonly type: "talk"; readonly id: string }
-  | { readonly type: "modelTask"; readonly task: ModelTaskKey }
-  | { readonly type: "vocabItem"; readonly cardId: string }
-  | { readonly type: "vocabSession"; readonly id: string }
-  | { readonly type: "vocabReview"; readonly sessionId: string; readonly id: string }
-  | { readonly type: "card"; readonly id: string };
-
-export function keyOf(entry: Entry): Key {
-  switch (entry.type) {
-    case "profile":
-    case "settings":
-    case "stats":
-      return { type: entry.type };
-    case "round":
-      return { type: "round", id: entry.value.id };
-    case "review":
-      return { type: "review", sessionId: entry.value.sessionId, id: entry.value.id };
-    case "portion":
-    case "day":
-      return { type: entry.type, day: entry.value.day };
-    case "item":
-      return { type: "item", item: entry.value.item };
-    case "modelTask":
-      return { type: "modelTask", task: entry.value.key };
-    case "talk":
-    case "vocabSession":
-    case "card":
-      return { type: entry.type, id: entry.value.id };
-    case "vocabItem":
-      return { type: "vocabItem", cardId: entry.value.cardId };
-    case "vocabReview":
-      return {
-        type: "vocabReview",
-        sessionId: entry.value.sessionId,
-        id: entry.value.id,
-      };
-  }
-}
+import type { Entry, Key } from "./store-entry";
+import type {
+  CompositionCandidate,
+  CompositionCandidateRequest,
+} from "./composition-candidate";
+export { keyOf, type Entry, type Key } from "./store-entry";
 
 /** A value as read, with the version a later commit names to say "unchanged since". */
 export interface Stored<T> {
@@ -104,11 +62,13 @@ export interface Stored<T> {
  * append-only, and no commit updates or deletes one.
  */
 export interface Commit {
+  /** A source-changing commit may guard the automatically incremented source version. */
+  readonly readModelSourceVersion?: number | null;
+  readonly compositionSourceVersion?: number | null;
   readonly puts: readonly Entry[];
   readonly updates: readonly {
     readonly entry: Entry;
     readonly version: number;
-    /** For modelTask reclaim/finalization, fence the observed token after row recreation. */
     readonly modelClaim?: string;
   }[];
   readonly expect: readonly { readonly key: Key; readonly version: number | null }[];
@@ -121,18 +81,33 @@ export interface CommitConflict {
   readonly code: "ERR_CONFLICT";
 }
 
-/** A bounded page in storage-key order, used only to initialize legacy adoption. */
-export interface ReviewPage {
-  readonly entries: readonly ReviewEntry[];
-  /** The last storage key, or null when the log has no next page. */
-  readonly cursor: string | null;
-}
-
 /**
  * One learner's data, and nobody else's: no method takes a learner id, so no
  * caller can express a read or a write of another learner's entries.
  */
 export interface LearnerStore {
+  reviewsByIds(
+    sessionId: string,
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<ReviewEntry>>>;
+  reviewPage(sessionId: string, cursor: string | null): Promise<ReviewPage>;
+  compositionCandidates(request: CompositionCandidateRequest): Promise<{
+    readonly rows: readonly Stored<CompositionCandidate>[];
+    readonly cursor: string | null;
+  }>;
+  compositionCandidatesByKeys(
+    candidates: readonly CompositionCandidate[],
+  ): Promise<ReadonlyMap<string, Stored<CompositionCandidate>>>;
+  compositionSource(): Promise<Stored<CompositionSource> | undefined>;
+  compositionReadModel(day: DayKey): Promise<Stored<CompositionReadModel> | undefined>;
+  compositionBuild(day: DayKey): Promise<Stored<CompositionBuild> | undefined>;
+  streakMigration(): Promise<Stored<StreakMigration> | undefined>;
+  /** At most the immediately preceding and following interval, strongly consistent. */
+  streakNeighbours(day: DayKey): Promise<readonly Stored<StreakRun>[]>;
+  /** Strong primary-key range; the opaque cursor is bound to this learner and range. */
+  portionsPage(range: PortionRange): Promise<StorePage<Portion>>;
+  /** Explicit maintenance only; screens never traverse these pages. */
+  compositionItemsPage(request: ItemPageRequest): Promise<StorePage<ItemProgress>>;
   /** The profile the learner directory wrote at registration, as changed since. */
   profile(): Promise<Stored<Profile> | undefined>;
   settings(): Promise<Stored<Settings> | undefined>;
@@ -140,13 +115,6 @@ export interface LearnerStore {
   round(id: string): Promise<Stored<Round> | undefined>;
   /** A session's reviews, ordered by `answeredAt` and then by id. */
   reviewsOf(sessionId: string): Promise<readonly ReviewEntry[]>;
-  /** Only the named answer ids of this round, without reading its other answers. */
-  reviewsByIds(
-    sessionId: string,
-    ids: readonly string[],
-  ): Promise<ReadonlyMap<string, Stored<ReviewEntry>>>;
-  /** At most 32 legacy log entries; cursor is opaque and bound to this round. */
-  reviewPage(sessionId: string, cursor: string | null): Promise<ReviewPage>;
   /** The whole review log in the same order, for rebuilding projections. */
   reviews(): Promise<readonly ReviewEntry[]>;
   portion(day: DayKey): Promise<Stored<Portion> | undefined>;
@@ -154,28 +122,13 @@ export interface LearnerStore {
   days(days: readonly DayKey[]): Promise<ReadonlyMap<DayKey, Stored<DayTally>>>;
   /** Every item the learner has progress on, keyed by item id. */
   items(): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
-  /** Only progress for the named composition cards. */
-  itemsByIds(
-    ids: readonly string[],
-  ): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
-  /**
-   * The talk with that id, as stored: one past its `expiresAt` is still
-   * returned until the table's TTL deletes it, so a command reads it through
-   * the domain's `liveTalk`.
-   */
   talk(id: string): Promise<Stored<Talk> | undefined>;
-  /** A semantic model job in this learner's partition; commits claim and finish by version. */
-  modelTask(key: ModelTaskKey): Promise<Stored<ModelTask> | undefined>;
+  modelTask(task: ModelTaskKey): Promise<Stored<ModelTask> | undefined>;
   /** Every vocabulary card the learner has progress on, keyed by card id. */
   vocabItems(): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
-  /** Only progress for the named vocabulary cards. */
-  vocabItemsByIds(
-    ids: readonly string[],
-  ): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
   vocabSession(id: string): Promise<Stored<VocabSession> | undefined>;
   /** A vocabulary session's answers, ordered by `answeredAt` and then by id. */
   vocabReviewsOf(sessionId: string): Promise<readonly VocabReview[]>;
-  /** Only the named answer ids of this vocabulary session. */
   vocabReviewsByIds(
     sessionId: string,
     ids: readonly string[],
@@ -184,7 +137,24 @@ export interface LearnerStore {
   card(id: string): Promise<Stored<PersonalCard> | undefined>;
   /** Every personal vocabulary card the learner has, keyed by id. */
   cards(): Promise<ReadonlyMap<string, Stored<PersonalCard>>>;
-  /** Only personal cards with the named ids, in this learner's partition. */
+  /** Strongly consistent fixed pages; a cursor belongs to this learner and bucket. */
+  vocabCandidatesByKeys(
+    candidates: readonly VocabCandidate[],
+  ): Promise<ReadonlyMap<string, Stored<VocabCandidate>>>;
+  vocabCandidates(request: CandidatePageRequest): Promise<CandidatePage>;
+  vocabReadModel(day: DayKey): Promise<Stored<VocabReadModel> | undefined>;
+  vocabReadModelRequest(
+    day: DayKey,
+  ): Promise<Stored<VocabReadModelRequest> | undefined>;
+  vocabReadModelRequests(cursor: string | null): Promise<VocabReadModelRequestPage>;
+  readModelSource(): Promise<Stored<ReadModelSource> | undefined>;
+  personalCardPage(cursor: string | null): Promise<PersonalCardPage>;
+  vocabItemsByIds(
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
+  itemsByIds(
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
   cardsByIds(
     ids: readonly string[],
   ): Promise<ReadonlyMap<string, Stored<PersonalCard>>>;
@@ -194,4 +164,9 @@ export interface LearnerStore {
 /** The only way to a store: bound to the learner the request context names. */
 export interface LearnerStores {
   forLearner(id: LearnerId): LearnerStore;
+}
+
+export interface ReviewPage {
+  readonly entries: readonly ReviewEntry[];
+  readonly cursor: string | null;
 }

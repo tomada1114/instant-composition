@@ -35,6 +35,7 @@ export const STATUS_BY_CODE = {
   ERR_CONFLICT: 409,
   ERR_PAYLOAD_TOO_LARGE: 413,
   ERR_CONTENT_UNREADABLE: 503,
+  ERR_READ_MODEL_NOT_READY: 503,
   ERR_MODEL_UNAVAILABLE: 503,
 } as const;
 
@@ -59,6 +60,8 @@ export const MESSAGE_BY_CODE = {
   ERR_CONFLICT: "Another write to the same data kept winning; send the request again.",
   ERR_PAYLOAD_TOO_LARGE: "The request body is too large.",
   ERR_CONTENT_UNREADABLE: "The card content could not be read.",
+  ERR_READ_MODEL_NOT_READY:
+    "The learner read model is being prepared; read again shortly.",
   ERR_MODEL_UNAVAILABLE:
     "The language model gave no usable answer; send the request again.",
 } as const satisfies Record<ErrorCode, string>;

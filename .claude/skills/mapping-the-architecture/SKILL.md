@@ -88,6 +88,12 @@ The packages, domain contexts, and practice/vocabulary interactions are mapped i
   `learner`, `system` and `agent` actor kinds; only learners act today. **REQUIRED:**
   `isolating-learner-data` before touching any of it.
 
+## Read models
+
+Bounded vocabulary and learner queries are mapped in
+[Read models](references/read-models.md) and
+[Composition read models](references/composition-read-models.md).
+
 ## Persistence
 
 The storage history, family keys, claim recovery, and paused deployment protocol are

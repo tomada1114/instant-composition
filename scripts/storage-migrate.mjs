@@ -8,7 +8,7 @@ import { readCheckpoint, saveCheckpoint } from "./lib/storage-checkpoint.mjs";
 import { migrateStorage, StorageMigrationError } from "./lib/storage-migration.mjs";
 import { createStorageValidator } from "./lib/storage-validator.mjs";
 
-/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, plan: "legacy-to-storage-v1" | "expand-to-storage-v2" | "expand-to-storage-v3", apply: boolean, resume: boolean, maxPages?: number}} Options */
+/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, plan: "legacy-to-storage-v1" | "expand-to-storage-v2" | "expand-to-storage-v3" | "expand-to-storage-v4", apply: boolean, resume: boolean, maxPages?: number}} Options */
 
 /** @param {string[]} args @returns {Options} */
 function optionsOf(args) {
@@ -67,7 +67,8 @@ function optionsOf(args) {
   if (
     plan !== "legacy-to-storage-v1" &&
     plan !== "expand-to-storage-v2" &&
-    plan !== "expand-to-storage-v3"
+    plan !== "expand-to-storage-v3" &&
+    plan !== "expand-to-storage-v4"
   )
     throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
   const pages = pairs.get("--max-pages"),
@@ -115,7 +116,9 @@ export async function main(args) {
       ? 1
       : options.plan === "expand-to-storage-v2"
         ? 2
-        : 3;
+        : options.plan === "expand-to-storage-v3"
+          ? 3
+          : 4;
   preflightStorageRelease(root, `storage-v${String(targetSchema)}`);
   const file = path.resolve(options.checkpoint),
     lock = `${file}.lock`;
@@ -162,7 +165,13 @@ export async function main(args) {
         id: options.plan,
         target: JSON.stringify(target),
         sourceSchemas:
-          targetSchema === 1 ? [0] : targetSchema === 2 ? [0, 1] : [0, 1, 2],
+          targetSchema === 1
+            ? [0]
+            : targetSchema === 2
+              ? [0, 1]
+              : targetSchema === 3
+                ? [0, 1, 2]
+                : [0, 1, 2, 3],
         targetSchema,
         async transform(row) {
           const decoded = readKey(await validator.request([row]), "rows");
@@ -173,7 +182,7 @@ export async function main(args) {
             throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
           const value = readKey(record, "targetValue");
           // Validation is required even for current rows; preserve their exact envelope.
-          if (targetSchema === 3 && readKey(row, "schemaVersion") === 3) return row;
+          if (readKey(row, "schemaVersion") === targetSchema) return row;
           return {
             PK: readString(row, "PK"),
             SK: readString(row, "SK"),
@@ -181,7 +190,7 @@ export async function main(args) {
             version: readKey(record, "version"),
             schemaVersion: targetSchema,
             value,
-            ...(targetSchema === 3
+            ...(targetSchema >= 3
               ? Object.hasOwn(row, "expiresAt")
                 ? { expiresAt: readKey(row, "expiresAt") }
                 : {}

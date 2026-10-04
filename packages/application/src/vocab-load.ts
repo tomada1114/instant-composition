@@ -34,46 +34,6 @@ export interface VocabLoad {
   readonly state: VocabState;
 }
 
-/**
- * The catalog's vocabulary and the learner's own cards, the learner's limits
- * and level, and their progress on each card, as the state of `today` — the practice day of
- * `context.now` unless a session names its own.
- */
-export async function loadVocab(
-  store: LearnerStore,
-  catalog: Catalog,
-  context: RequestContext,
-  today: DayKey = todayOf(context),
-): Promise<Result<VocabLoad, ApplicationError>> {
-  const snapshot = await catalog.snapshot();
-  if (!snapshot.ok) {
-    return snapshot;
-  }
-  const [settings, stats, items, personal] = await Promise.all([
-    store.settings(),
-    store.stats(),
-    store.vocabItems(),
-    store.cards(),
-  ]);
-  const limits = withDefaults(settings?.value ?? DEFAULT_SETTINGS);
-  const cards = shownCards(snapshot.value, personal);
-  return ok({
-    snapshot: snapshot.value,
-    cards,
-    personal,
-    items,
-    state: {
-      today,
-      // Before a placement or a pick sets the drill's level, the band starts at the bottom.
-      level: stats?.value.level?.level ?? 1,
-      cards: [...cards.values()],
-      progress: new Map([...items].map(([id, stored]) => [id, stored.value])),
-      newPerDay: limits.vocabNewPerDay,
-      reviewsPerDay: limits.vocabReviewsPerDay,
-    },
-  });
-}
-
 /** What a review keeps of each card the learner's vocabulary deals. */
 export function vocabSnapshots(
   cards: ReadonlyMap<string, ShownCard>,
@@ -147,4 +107,44 @@ export function summaryOf(
     ...summarizeVocabReviews(reviews),
     tomorrow: session.tomorrow ?? 0,
   };
+}
+
+/** A bounded session/card load; progress and personal text are read only for named ids. */
+export async function loadVocabSubset(
+  store: LearnerStore,
+  catalog: Catalog,
+  context: RequestContext,
+  ids: readonly string[],
+  today: DayKey = todayOf(context),
+): Promise<Result<VocabLoad, ApplicationError>> {
+  const snapshot = await catalog.snapshot();
+  if (!snapshot.ok) return snapshot;
+  const [settings, stats, items, personal] = await Promise.all([
+    store.settings(),
+    store.stats(),
+    store.vocabItemsByIds(ids),
+    store.cardsByIds(ids),
+  ]);
+  const limits = withDefaults(settings?.value ?? DEFAULT_SETTINGS);
+  const shown = shownCards(snapshot.value, personal);
+  const cards = new Map(
+    ids.flatMap((id) => {
+      const card = shown.get(id);
+      return card === undefined ? [] : [[id, card] as const];
+    }),
+  );
+  return ok({
+    snapshot: snapshot.value,
+    cards,
+    personal,
+    items,
+    state: {
+      today,
+      level: stats?.value.level?.level ?? 1,
+      cards: [...cards.values()],
+      progress: new Map([...items].map(([id, stored]) => [id, stored.value])),
+      newPerDay: limits.vocabNewPerDay,
+      reviewsPerDay: limits.vocabReviewsPerDay,
+    },
+  });
 }

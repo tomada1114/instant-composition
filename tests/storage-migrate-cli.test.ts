@@ -77,8 +77,8 @@ describe("storage maintenance operator", () => {
     expect(existsSync(`${checkpoint}.lock`)).toBe(false);
   });
   it.each(
-    ["legacy-to-storage-v1", "expand-to-storage-v2"].flatMap((plan) =>
-      ["dry-run", "apply", "resume"].map((mode) => ({ plan, mode })),
+    ["legacy-to-storage-v1", "expand-to-storage-v2", "expand-to-storage-v3"].flatMap(
+      (plan) => ["dry-run", "apply", "resume"].map((mode) => ({ plan, mode })),
     ),
   )(
     "refuses archived $plan in $mode before creating child, lock or checkpoint",
@@ -102,12 +102,12 @@ describe("storage maintenance operator", () => {
       expect(existsSync(`${checkpoint}.lock`)).toBe(false);
     },
   );
-  it("admits only the explicit v3 expansion before attempting data access", async () => {
-    const checkpoint = path.join(folder(), "v3.json");
+  it("admits only the explicit v4 expansion before attempting data access", async () => {
+    const checkpoint = path.join(folder(), "v4.json");
     await expect(
       main([
         "--plan",
-        "expand-to-storage-v3",
+        "expand-to-storage-v4",
         "--table",
         "fixture",
         "--endpoint",

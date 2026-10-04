@@ -1020,3 +1020,58 @@ describe("deleting a personal vocabulary card", () => {
     });
   });
 });
+
+describe("waiting for independent read-model preparation", () => {
+  it("retries only the bounded GET and leaves maintenance to its independent worker", async () => {
+    vi.useFakeTimers();
+    try {
+      let number = 0;
+      const calls = stubFetch(() => {
+        number += 1;
+        return Promise.resolve(
+          number < 3
+            ? Response.json(
+                { error: { code: "ERR_READ_MODEL_NOT_READY" } },
+                { status: 503, headers: { "Retry-After": "2" } },
+              )
+            : Response.json({ today: { due: 0, new: 10 } }),
+        );
+      });
+      const pending = getVocab();
+      await vi.advanceTimersByTimeAsync(4_000);
+      expect(await pending).toStrictEqual({
+        ok: true,
+        value: { today: { due: 0, new: 10 } },
+      });
+      expect(calls.map(({ url, method }) => [url, method])).toStrictEqual(
+        Array.from({ length: 3 }, () => ["/api/v1/vocab", "GET"]),
+      );
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+  it("stops after a fixed wait budget and returns the typed refusal", async () => {
+    vi.useFakeTimers();
+    try {
+      const calls = stubFetch(() =>
+        Promise.resolve(
+          Response.json(
+            { error: { code: "ERR_READ_MODEL_NOT_READY" } },
+            { status: 503, headers: { "Retry-After": "2" } },
+          ),
+        ),
+      );
+      const pending = getVocab();
+      await vi.advanceTimersByTimeAsync(60_000);
+      expect(await pending).toMatchObject({
+        ok: false,
+        error: { code: "ERR_READ_MODEL_NOT_READY" },
+      });
+      expect(calls).toHaveLength(31);
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});

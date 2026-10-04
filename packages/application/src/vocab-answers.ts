@@ -19,12 +19,8 @@ export interface VocabAnswersCommand {
   readonly answers: readonly VocabAnswer[];
 }
 
-/**
- * Each answer puts a review and at most a card's progress and checks a personal
- * card's version. With one session update, 32 distinct personal cards use 97
- * transaction items, inside the store's limit for any batch the contract takes.
- */
-const ANSWERS_PER_COMMIT = 32;
+/** Each source change also maintains both prepared days, so chunks reserve projection actions. */
+const ANSWERS_PER_COMMIT = 2;
 
 function recordChunk(
   store: LearnerStore,
