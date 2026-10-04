@@ -1458,6 +1458,10 @@ export type SendTurnErrors = {
      * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
      */
     413: ErrorResponse;
+    /**
+     * ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.
+     */
+    503: ErrorResponse;
 };
 
 export type SendTurnError = SendTurnErrors[keyof SendTurnErrors];
