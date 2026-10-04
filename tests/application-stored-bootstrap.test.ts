@@ -7,6 +7,7 @@ import {
   type ReadModelBootstrapStorage,
   type ReadModelBootstrapState,
   type ReadModelBootstrapDriver,
+  type ReadModelMaintenance,
   type StorageBootstrapRelease,
   type Stored,
 } from "@instant-composition/application";
@@ -43,6 +44,28 @@ function durable() {
   };
   return { storage, current: () => value };
 }
+
+describe("scheduled read-model worker", () => {
+  it("ends its invocation without failing when an overlapping one won the shared checkpoint", async () => {
+    const h = makeHarness();
+    const shared = h.stores.maintenance();
+    let saves = 0;
+    const maintenance: ReadModelMaintenance = {
+      checkpoint: () => shared.checkpoint(),
+      profiles: (cursor) => shared.profiles(cursor),
+      save: () => {
+        saves += 1;
+        return Promise.resolve({ ok: false, error: { code: "ERR_CONFLICT" } });
+      },
+    };
+    await expect(runReadModelWorker(h.deps, maintenance, NOON)).resolves.toStrictEqual({
+      status: "idle",
+      learners: 0,
+      rows: 0,
+    });
+    expect(saves).toBe(1);
+  });
+});
 
 describe("durable deployment bootstrap", () => {
   it("requires the trusted second-handler release context and keeps the operator response on five fields", async () => {

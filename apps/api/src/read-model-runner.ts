@@ -26,6 +26,9 @@ export async function runReadModelWorker(
   let rows = 0;
   for (let index = 0; index < READ_MODEL_WORKER_STEPS; index += 1) {
     const result = await advanceReadModelMaintenance(deps, maintenance, now);
+    // Overlapping invocations share one checkpoint and the worker reserves no
+    // concurrency: the conflict's winner advanced it, and the next tick resumes.
+    if (!result.ok && result.error.code === "ERR_CONFLICT") break;
     if (!result.ok) throw new Error(result.error.code);
     learners += result.value.learners;
     rows += result.value.rows;

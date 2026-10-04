@@ -29,7 +29,8 @@ export function addReadModelWorker(
     architecture: Architecture.ARM_64,
     memorySize: 512,
     timeout: Duration.seconds(60),
-    reservedConcurrentExecutions: 1,
+    // Unreserved: an account at Lambda's default quota of ten can reserve none,
+    // and overlapping invocations already serialize through the checkpoint CAS.
     logGroup: new LogGroup(scope, "ReadModelWorkerLogs", {
       retention: RetentionDays.ONE_MONTH,
     }),
@@ -54,7 +55,7 @@ export function addReadModelWorker(
       },
     },
   });
-  declareStorageWriter(scope, worker, 1);
+  declareStorageWriter(scope, worker, null);
   Table.fromTableArn(scope, "ReadModelWorkerTable", props.tableArn).grantReadWriteData(
     worker,
   );

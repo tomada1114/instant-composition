@@ -167,7 +167,7 @@ function fixture() {
             ...api,
             logicalId: "ReadModelWorkerDEF456",
             arn: "worker",
-            capacity: 1,
+            capacity: null,
             timeout: 60,
             revision: "new",
             codeHash: "new",
@@ -185,7 +185,7 @@ function fixture() {
     current: () => Promise.resolve(true),
     restore: (writer) => {
       return Promise.resolve().then(() => {
-        calls.push(`resume:${String(writer.capacity)}`);
+        calls.push(`resume:${writer.arn}:${String(writer.capacity)}`);
         paused.delete(writer.arn);
         return { ...writer };
       });
@@ -508,10 +508,14 @@ describe("storage deployment admission", () => {
     const { port, calls, paused } = fixture();
     await transitionStorageWriters(port);
     expect(calls.indexOf("wait:900000")).toBeLessThan(calls.indexOf("deploy"));
-    expect(calls.indexOf("deploy")).toBeLessThan(calls.indexOf("resume:null"));
-    expect(calls.indexOf("verify")).toBeLessThan(calls.indexOf("resume:null"));
+    expect(calls.indexOf("deploy")).toBeLessThan(
+      calls.indexOf(`resume:${api.arn}:null`),
+    );
+    expect(calls.indexOf("verify")).toBeLessThan(
+      calls.indexOf(`resume:${api.arn}:null`),
+    );
     expect(calls).toContain("access:2");
-    expect(calls).toContain("resume:1");
+    expect(calls).toContain("resume:worker:null");
     expect(paused.size).toBe(0);
   });
   it("refuses a barrier that still admits a synchronous invocation", async () => {
@@ -652,7 +656,7 @@ describe("storage deployment admission", () => {
     await expect(transitionStorageWriters(port)).rejects.toBeInstanceOf(
       StorageTransitionError,
     );
-    expect(calls).not.toContain("resume:null");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
     expect(paused.size).toBe(2);
   });
   it("refuses to resume while CloudFormation can still change configurations", async () => {
@@ -714,7 +718,7 @@ describe("storage deployment admission", () => {
     const planned = [
       {
         logicalId,
-        capacity: 1,
+        capacity: null,
         timeout: 60,
         release: {
           sha: "a".repeat(40),
@@ -987,7 +991,7 @@ it("prepares an introduced worker with API paused, then closes admission before 
     ...api,
     logicalId: "ReadModelWorkerDEF456",
     arn: "worker",
-    capacity: 1,
+    capacity: null,
     timeout: 60,
   };
   let steps = 0;
@@ -1019,8 +1023,8 @@ it("prepares an introduced worker with API paused, then closes admission before 
     },
   });
   expect(steps).toBe(2);
-  expect(calls).toContain("resume:1");
-  expect(calls).not.toContain("resume:null");
+  expect(calls).toContain("resume:worker:null");
+  expect(calls).not.toContain(`resume:${api.arn}:null`);
   expect(calls).toContain("wait:60000");
   expect(paused.has("worker")).toBe(true);
   expect(
@@ -1035,6 +1039,36 @@ it("prepares an introduced worker with API paused, then closes admission before 
   expect(storageBootstrapEvidence(root)).not.toHaveProperty("checkpoint");
 });
 
+it.each([0, 2])(
+  "refuses to bootstrap a worker whose restored capacity would be %s",
+  async (capacity) => {
+    const root = mkdtempSync(path.join(tmpdir(), "storage-bootstrap-"));
+    folders.push(root);
+    const { port, calls } = fixture();
+    let invoked = false;
+    await expect(
+      prepareStorageReadModels({
+        root,
+        sha: "a".repeat(40),
+        writer: {
+          ...api,
+          logicalId: "ReadModelWorkerDEF456",
+          arn: "worker",
+          capacity,
+          timeout: 60,
+        },
+        port,
+        invoke: () => {
+          invoked = true;
+          return Promise.resolve(null);
+        },
+      }),
+    ).rejects.toMatchObject({ part: "bootstrap worker configuration" });
+    expect(invoked).toBe(false);
+    expect(calls).toStrictEqual([]);
+  },
+);
+
 it("persists a bounded bootstrap checkpoint and resumes after a stopped or unknown outcome", async () => {
   const root = mkdtempSync(path.join(tmpdir(), "storage-bootstrap-"));
   folders.push(root);
@@ -1044,7 +1078,7 @@ it("persists a bounded bootstrap checkpoint and resumes after a stopped or unkno
       ...api,
       logicalId: "ReadModelWorkerDEF456",
       arn: "worker",
-      capacity: 1,
+      capacity: null,
       timeout: 60,
     };
   await expect(
@@ -1137,7 +1171,7 @@ it("uses the existing job budget beyond three minutes and still closes worker ad
     ...api,
     logicalId: "ReadModelWorkerDEF456",
     arn: "worker",
-    capacity: 1,
+    capacity: null,
     timeout: 60,
   };
   let elapsed = 0,
@@ -1197,7 +1231,7 @@ it.each([false, true])(
       ...api,
       logicalId: "ReadModelWorkerDEF456",
       arn: "worker",
-      capacity: 1,
+      capacity: null,
       timeout: 60,
     };
     let actual: Writer = { ...worker };
@@ -1275,7 +1309,7 @@ it("cannot recover an already guarded worker left paused by an earlier failed bo
     ...api,
     logicalId: "ReadModelWorkerDEF456",
     arn: "worker",
-    capacity: 1,
+    capacity: null,
     timeout: 60,
   };
   port.discover = () => Promise.resolve([{ ...api }, worker]);

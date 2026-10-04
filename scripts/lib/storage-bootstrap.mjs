@@ -111,7 +111,11 @@ export function storageBootstrapEvidence(root) {
  */
 export async function prepareStorageReadModels(options) {
   const { root, sha, writer, port, invoke } = options;
-  if (writer.timeout < 1 || writer.timeout > 60 || writer.capacity !== 1)
+  if (
+    writer.timeout < 1 ||
+    writer.timeout > 60 ||
+    (writer.capacity !== null && writer.capacity !== 1)
+  )
     throw new StorageTransitionError("bootstrap worker configuration");
   const file = path.join(root, "dist/storage-bootstrap.json"),
     clock = options.now ?? Date.now,
