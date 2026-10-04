@@ -1,6 +1,7 @@
 import { appendFileSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { setTimeout } from "node:timers/promises";
 import { parseJson, readKey, readString } from "./lib/json.mjs";
 import {
   bundleRelease,
@@ -14,9 +15,15 @@ import {
   hashes,
 } from "./lib/release.mjs";
 import { ReleaseError } from "./lib/release-runtime.mjs";
+import { mainChecks } from "./lib/release-checks.mjs";
 
-/** @param {string[]} args @param {string} [root] @param {typeof fetch} [request] @returns {Promise<void>} */
-export async function main(args, root = repositoryRoot, request = globalThis.fetch) {
+/** @param {string[]} args @param {string} [root] @param {typeof fetch} [request] @param {() => Promise<unknown>} [wait] @returns {Promise<void>} */
+export async function main(
+  args,
+  root = repositoryRoot,
+  request = globalThis.fetch,
+  wait = () => setTimeout(10000),
+) {
   const [command, first, second, third] = args;
   if (
     command === "trust" &&
@@ -29,12 +36,18 @@ export async function main(args, root = repositoryRoot, request = globalThis.fet
     return;
   }
   if (command === "current" && first !== undefined && second !== undefined) {
-    const current = await isCurrentMain(
-      first,
-      second,
-      process.env["GITHUB_TOKEN"] ?? "",
-      request,
-    );
+    const token = process.env["GITHUB_TOKEN"] ?? "";
+    let current;
+    for (;;) {
+      current = await isCurrentMain(first, second, token, request);
+      if (!current) break;
+      if (await mainChecks(first, second, token, request)) {
+        current = await isCurrentMain(first, second, token, request);
+        break;
+      }
+      process.stdout.write("Waiting for required main checks for this SHA.\n");
+      await wait();
+    }
     const output = process.env["GITHUB_OUTPUT"];
     if (output === undefined) throw new ReleaseError("step output path");
     appendFileSync(output, `deploy=${String(current)}\n`);

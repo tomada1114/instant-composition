@@ -32,9 +32,28 @@ import {
 
 vi.mock("node:child_process", () => ({ execFileSync: vi.fn(() => "a".repeat(40)) }));
 import { main } from "../scripts/release.mjs";
+import { mainChecks } from "../scripts/lib/release-checks.mjs";
 const SHA = "a".repeat(40);
 const REPOSITORY = "tomada1114/instant-composition";
 const roots: string[] = [];
+function requestUrl(input: Parameters<typeof fetch>[0]): string {
+  if (typeof input === "string") return input;
+  return input instanceof URL ? input.href : input.url;
+}
+function successfulChecks(): { total_count: number; check_runs: object[] } {
+  const check_runs = [
+    "Static checks",
+    "Test (ubuntu-latest)",
+    "Spell check code and docs",
+  ].map((name) => ({
+    name,
+    head_sha: SHA,
+    app: { slug: "github-actions" },
+    status: "completed",
+    conclusion: "success",
+  }));
+  return { total_count: check_runs.length, check_runs };
+}
 function fixture(): string {
   const root = mkdtempSync(path.join(tmpdir(), "release-"));
   roots.push(root);
@@ -438,6 +457,54 @@ describe("superseded main guard", () => {
 });
 
 describe("current main CLI output", () => {
+  it("waits for the separate spell check before enabling deployment", async () => {
+    const output = path.join(fixture(), "output");
+    vi.stubEnv("GITHUB_TOKEN", "test");
+    vi.stubEnv("GITHUB_OUTPUT", output);
+    let calls = 0;
+    const wait = vi.fn(() => Promise.resolve());
+    await main(
+      ["current", REPOSITORY, SHA],
+      fixture(),
+      (url) => {
+        const body = successfulChecks();
+        if (requestUrl(url).includes("/check-runs?")) {
+          if (calls++ === 0)
+            body.check_runs[2] = {
+              ...body.check_runs[2],
+              status: "in_progress",
+              conclusion: null,
+            };
+          return Promise.resolve(Response.json(body));
+        }
+        return Promise.resolve(Response.json({ object: { sha: SHA } }));
+      },
+      wait,
+    );
+    expect(wait).toHaveBeenCalledOnce();
+    expect(calls).toBe(2);
+    expect(readFileSync(output, "utf8")).toBe("deploy=true\n");
+  });
+  it("skips a main advance while waiting for a required check", async () => {
+    const output = path.join(fixture(), "output");
+    vi.stubEnv("GITHUB_TOKEN", "test");
+    vi.stubEnv("GITHUB_OUTPUT", output);
+    let current = SHA;
+    await main(
+      ["current", REPOSITORY, SHA],
+      fixture(),
+      (url) => {
+        if (requestUrl(url).includes("/check-runs?"))
+          return Promise.resolve(Response.json({ total_count: 0, check_runs: [] }));
+        return Promise.resolve(Response.json({ object: { sha: current } }));
+      },
+      () => {
+        current = "b".repeat(40);
+        return Promise.resolve();
+      },
+    );
+    expect(readFileSync(output, "utf8")).toBe("deploy=false\n");
+  });
   it.each([
     [SHA, "true"],
     ["b".repeat(40), "false"],
@@ -445,8 +512,14 @@ describe("current main CLI output", () => {
     const output = path.join(fixture(), "output");
     vi.stubEnv("GITHUB_TOKEN", "test");
     vi.stubEnv("GITHUB_OUTPUT", output);
-    await main(["current", REPOSITORY, SHA], fixture(), () =>
-      Promise.resolve(Response.json({ object: { sha } })),
+    await main(["current", REPOSITORY, SHA], fixture(), (url) =>
+      Promise.resolve(
+        Response.json(
+          requestUrl(url).includes("/check-runs?")
+            ? successfulChecks()
+            : { object: { sha } },
+        ),
+      ),
     );
     expect(readFileSync(output, "utf8")).toBe(`deploy=${eligible}\n`);
   });
@@ -454,8 +527,72 @@ describe("current main CLI output", () => {
     vi.stubEnv("GITHUB_TOKEN", "test");
     vi.stubEnv("GITHUB_OUTPUT", undefined);
     await expect(
-      main(["current", REPOSITORY, SHA], fixture(), () =>
-        Promise.resolve(Response.json({ object: { sha: SHA } })),
+      main(["current", REPOSITORY, SHA], fixture(), (url) =>
+        Promise.resolve(
+          Response.json(
+            requestUrl(url).includes("/check-runs?")
+              ? successfulChecks()
+              : { object: { sha: SHA } },
+          ),
+        ),
+      ),
+    ).rejects.toBeInstanceOf(ReleaseError);
+  });
+});
+
+describe("required main check gate", () => {
+  it.each([
+    ["invalid", SHA, "test"],
+    [REPOSITORY, "bad", "test"],
+    [REPOSITORY, SHA, ""],
+  ])("refuses invalid configuration %s/%s", async (repository, sha, token) => {
+    await expect(mainChecks(repository, sha, token)).rejects.toBeInstanceOf(
+      ReleaseError,
+    );
+  });
+  it("includes the separate spell workflow for the exact release SHA", async () => {
+    expect(
+      await mainChecks(REPOSITORY, SHA, "test", () =>
+        Promise.resolve(Response.json(successfulChecks())),
+      ),
+    ).toBe(true);
+  });
+  it.each([
+    { status: "queued", conclusion: null },
+    { status: "in_progress", conclusion: null },
+    { head_sha: "b".repeat(40) },
+    { app: { slug: "another-app" } },
+  ])("waits when the required spell result is not ready: %j", async (change) => {
+    const body = successfulChecks();
+    body.check_runs[2] = { ...body.check_runs[2], ...change };
+    expect(
+      await mainChecks(REPOSITORY, SHA, "test", () =>
+        Promise.resolve(Response.json(body)),
+      ),
+    ).toBe(false);
+  });
+  it.each(["failure", "cancelled", "skipped", null])(
+    "refuses a non-successful required spell result: %s",
+    async (conclusion) => {
+      const body = successfulChecks();
+      body.check_runs[2] = { ...body.check_runs[2], conclusion };
+      await expect(
+        mainChecks(REPOSITORY, SHA, "test", () => Promise.resolve(Response.json(body))),
+      ).rejects.toBeInstanceOf(ReleaseError);
+    },
+  );
+  it.each([{}, { total_count: 4, check_runs: [] }])(
+    "refuses incomplete or malformed check pages: %j",
+    async (body) => {
+      await expect(
+        mainChecks(REPOSITORY, SHA, "test", () => Promise.resolve(Response.json(body))),
+      ).rejects.toBeInstanceOf(ReleaseError);
+    },
+  );
+  it("refuses a failed GitHub lookup", async () => {
+    await expect(
+      mainChecks(REPOSITORY, SHA, "test", () =>
+        Promise.resolve(new Response(null, { status: 403 })),
       ),
     ).rejects.toBeInstanceOf(ReleaseError);
   });

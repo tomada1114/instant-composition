@@ -41,6 +41,7 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: read
+      checks: read
       # The OIDC token the deploy role's trust policy checks; nothing else here
       # writes.
       id-token: write

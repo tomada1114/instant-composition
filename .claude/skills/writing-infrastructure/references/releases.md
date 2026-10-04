@@ -22,12 +22,17 @@ summary, including on failure once recording succeeded.
 
 The current-main guard queries GitHub with the job's read-only token just before AWS
 credentials. A superseded completion is explicitly skipped; an unavailable or malformed
-GitHub answer fails closed. Concurrency prevents simultaneous running deploys and does
-not cancel an active CloudFormation update, but GitHub does not guarantee FIFO. Main can
-advance during an active deployment: its smoke still verifies that candidate, and the
-newest successful main CI completion reconciles the subsequent release. Pending GitHub
-concurrency jobs can be superseded, so there is no claim that every intermediate commit
-is deployed.
+GitHub answer fails closed. The guard also requires successful GitHub Actions check runs
+for that exact SHA: Static checks, Test (ubuntu-latest) and the separate Spell check
+code and docs job. Missing or pending checks are polled while repeatedly checking main;
+a failed, cancelled or skipped required check or incomplete response fails closed.
+`checks: read` is confined to the deployment job. PR-only checks remain required before
+merging and do not register for a main-push SHA. Concurrency prevents simultaneous
+running deploys and does not cancel an active CloudFormation update, but GitHub does not
+guarantee FIFO. Main can advance during an active deployment: its smoke still verifies
+that candidate, and the newest successful main CI completion reconciles the subsequent
+release. Pending GitHub concurrency jobs can be superseded, so there is no claim that
+every intermediate commit is deployed.
 
 After CloudFormation and invalidation finish, `pnpm release smoke <outputs-file>` uses
 the app's `WebUrl` through CloudFront. It fetches every web file and compares SHA256,
