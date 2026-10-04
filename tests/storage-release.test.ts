@@ -280,7 +280,13 @@ describe("storage release and rollback preflight", () => {
     expect(guard).toBeLessThan(
       workflow.indexOf("aws-actions/configure-aws-credentials"),
     );
-    expect(guard).toBeLessThan(workflow.indexOf("pnpm cdk deploy"));
+    for (const command of [
+      'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation',
+      'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" edge',
+      'node scripts/storage-transition.mjs deploy "$RELEASE_ASSEMBLY"',
+    ]) {
+      expect(workflow.indexOf(command)).toBeGreaterThan(guard);
+    }
   });
 });
 

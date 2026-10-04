@@ -11,10 +11,11 @@ import {
   StorageCompatibilityError,
 } from "./lib/storage-compatibility.mjs";
 
-/** @param {string[]} args @param {string} [root] @returns {Promise<void>} */
+/** @param {string[]} args @param {string} [root] @param {number} [deadline] @returns {Promise<void>} */
 export async function main(
   args,
   root = fileURLToPath(new URL("../", import.meta.url)),
+  deadline,
 ) {
   const [candidate, artifact] = args;
   if ((args.length !== 1 && args.length !== 2) || candidate === undefined)
@@ -36,7 +37,7 @@ export async function main(
   )
     throw new StorageCompatibilityError("fixture contract/schema");
   const fixtures = readKey(document, "fixtures");
-  const validator = createStorageValidator();
+  const validator = createStorageValidator(undefined, deadline);
   try {
     await certifyStorageFixtures(
       fixtures,

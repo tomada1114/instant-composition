@@ -8,17 +8,34 @@ import {
 import path from "node:path";
 import { parseJson, readKey, readString } from "./json.mjs";
 import { StorageTransitionError } from "./storage-runtime.mjs";
+import { sameStorageWriter } from "./storage-configuration.mjs";
 
-/** Existing workflow time limit, with five minutes reserved for re-pause/drain.
- * @param {string} root @param {number} minutes @param {number} [now] @returns {void}
+/** The actual job start includes setup. Reserve barriers, maximum drain and final overhead.
+ * @param {string} root @param {number} minutes @param {number} [now]
+ * @param {number} [startedAt] @returns {void}
  */
-export function recordStorageJobBudget(root, minutes, now = Date.now()) {
-  if (!Number.isSafeInteger(minutes) || minutes <= 5 || minutes > 45)
+export function recordStorageJobBudget(
+  root,
+  minutes,
+  now = Date.now(),
+  startedAt = now,
+) {
+  const deadline = startedAt + (minutes - 21) * 60000;
+  if (
+    !Number.isSafeInteger(minutes) ||
+    minutes <= 21 ||
+    minutes > 45 ||
+    !Number.isSafeInteger(now) ||
+    !Number.isSafeInteger(startedAt) ||
+    startedAt < 0 ||
+    startedAt > now ||
+    deadline <= now
+  )
     throw new StorageTransitionError("deployment job budget");
   mkdirSync(path.join(root, "dist"), { recursive: true });
   writeFileSync(
     path.join(root, "dist/storage-job.json"),
-    JSON.stringify({ startedAt: now, deadline: now + (minutes - 5) * 60000 }),
+    JSON.stringify({ startedAt, deadline }),
     { mode: 0o600 },
   );
 }
@@ -36,7 +53,7 @@ export function storageJobDeadline(root, now = Date.now()) {
     typeof deadline !== "number" ||
     !Number.isSafeInteger(deadline) ||
     deadline <= now ||
-    deadline - startedAt > 40 * 60000 ||
+    deadline - startedAt > 24 * 60000 ||
     deadline <= startedAt
   )
     throw new StorageTransitionError("deployment job budget");
@@ -90,7 +107,7 @@ export function storageBootstrapEvidence(root) {
 }
 /** Only certified worker code is admitted while the API remains paused. No table IAM is needed.
  * A fresh job's null checkpoint resumes the certified worker's durable state.
- * @param {{root:string,sha:string,writer:import('./storage-transition.mjs').Writer,port:import('./storage-transition.mjs').TransitionPort,invoke:(checkpoint:string|null)=>Promise<unknown>,maxSteps?:number,deadline?:number,now?:()=>number}} options @returns {Promise<void>}
+ * @param {{root:string,sha:string,writer:import('./storage-transition.mjs').Writer,port:import('./storage-transition.mjs').TransitionPort,invoke:(checkpoint:string|null)=>Promise<unknown>,maxSteps?:number,deadline?:number,now?:()=>number}} options @returns {Promise<import('./storage-transition.mjs').Writer>}
  */
 export async function prepareStorageReadModels(options) {
   const { root, sha, writer, port, invoke } = options;
@@ -99,6 +116,7 @@ export async function prepareStorageReadModels(options) {
   const file = path.join(root, "dist/storage-bootstrap.json"),
     clock = options.now ?? Date.now,
     deadline = options.deadline ?? Infinity;
+  /** @type {string|null} */
   let checkpoint = null;
   if (existsSync(file)) {
     const previous = parseJson(readFileSync(file, "utf8"));
@@ -110,21 +128,26 @@ export async function prepareStorageReadModels(options) {
     checkpoint = storageBootstrapAnswer(readKey(previous, "result")).checkpoint;
   }
   const before = await port.verify(writer);
-  if (
-    before.revision !== writer.revision ||
-    before.codeHash !== writer.codeHash ||
-    !(await port.current())
-  )
+  if (!sameStorageWriter(before, writer) || !(await port.current()))
     throw new StorageTransitionError("bootstrap admission identity");
+  let receipt = writer;
   async function closeAdmission() {
-    await port.pause(writer);
-    if (!(await port.isPaused(writer)) || !(await port.probePaused(writer)))
+    const paused = await port.pause(receipt);
+    if (!(await port.isPaused(paused)) || !(await port.probePaused(paused)))
       throw new StorageTransitionError("bootstrap admission barrier");
-    // An accepted bootstrap/tick may still run after an unknown invoke outcome.
     await port.wait(writer.timeout * 1000);
+    const checked = await port.verify(paused);
+    if (!sameStorageWriter(paused, checked))
+      throw new StorageTransitionError("bootstrap close identity");
+    return checked;
   }
-  try {
-    await port.restore(writer);
+  async function preparePages() {
+    receipt = await port.restore(writer);
+    if (
+      !sameStorageWriter(writer, receipt, false) ||
+      !sameStorageWriter(receipt, await port.verify(receipt))
+    )
+      throw new StorageTransitionError("bootstrap capacity identity");
     for (
       let steps = 0;
       steps < (options.maxSteps ?? Infinity) &&
@@ -142,7 +165,11 @@ export async function prepareStorageReadModels(options) {
       if (result.complete) return;
     }
     throw new StorageTransitionError("bootstrap bounded budget");
-  } finally {
-    await closeAdmission();
   }
+  try {
+    await preparePages();
+  } finally {
+    receipt = await closeAdmission();
+  }
+  return receipt;
 }

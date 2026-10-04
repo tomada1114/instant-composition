@@ -223,12 +223,15 @@ retargeting a plan automatically; a reader-only fixture is insufficient.
 The first guarded transition drains the unguarded API before any expanded writes. The
 dev workflow synthesizes a paused assembly, updates exact owned ARN permissions in two
 phases, keeps every old/new Lambda at zero through code/configuration updates, then
-verifies installed ZIP bytes and guard metadata before restoring capacity.
-`node scripts/storage-transition.mjs verify <assembly> <sha>` runs before OIDC;
-`deploy <assembly> <sha> <deploy-role-arn> tomada1114/instant-composition` performs the
-authorized transition. Failed preguard/partial rollouts remain paused for a compatible
-forward fix. `writing-infrastructure` owns the admission, timeout, recovery and intended
-capacity drift details.
+verifies installed ZIP bytes and guard metadata before restoring capacity. Controlled
+concurrency changes carry fresh revision receipts and a complete configuration digest;
+later observations must match exactly, including a final all-writer capacity check.
+Cleanup closes every known owned writer before considering certified predecessor
+recovery. `node scripts/storage-transition.mjs verify <assembly> <sha>` runs before
+OIDC; `deploy <assembly> <sha> <deploy-role-arn> tomada1114/instant-composition`
+performs the authorized transition. Failed preguard/partial rollouts remain paused for a
+compatible forward fix. `writing-infrastructure` owns the admission, timeout, recovery
+and intended capacity drift details.
 
 Deploy the guarded baseline before any persistence expansion. Each later shape change
 raises the global envelope version, adds explicit runtime fixtures and updates the

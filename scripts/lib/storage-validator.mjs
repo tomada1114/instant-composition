@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import path from "node:path";
 import process from "node:process";
+import { setTimeout, clearTimeout } from "node:timers";
 import { fileURLToPath } from "node:url";
 import { parseJson, readKey } from "./json.mjs";
 
@@ -16,9 +17,12 @@ function refusal() {
 
 /** Installed program owns all decoding and SDK operations. Bodies never enter
  * arguments or logs; one process serves bounded requests without repeated startup.
- * @param {string | undefined} [profile] @returns {StorageValidator}
+ * @param {string | undefined} [profile] @param {number} [deadline] @returns {StorageValidator}
  */
-export function createStorageValidator(profile) {
+export function createStorageValidator(profile, deadline) {
+  const remaining = deadline === undefined ? undefined : deadline - Date.now();
+  if (remaining !== undefined && (!Number.isFinite(remaining) || remaining <= 0))
+    throw refusal();
   const child = spawn(
     process.execPath,
     [
@@ -40,16 +44,22 @@ export function createStorageValidator(profile) {
   let pending;
   let output = "",
     stopped = false;
+  const timer =
+    remaining === undefined
+      ? undefined
+      : setTimeout(() => child.kill("SIGKILL"), remaining);
   child.stdin.on("error", () => {
     pending?.reject(refusal());
     pending = undefined;
   });
   child.on("error", () => {
+    clearTimeout(timer);
     stopped = true;
     pending?.reject(refusal());
     pending = undefined;
   });
   child.on("close", () => {
+    clearTimeout(timer);
     stopped = true;
     pending?.reject(refusal());
     pending = undefined;
