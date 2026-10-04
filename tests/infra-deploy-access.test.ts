@@ -124,6 +124,16 @@ it("adds only exact owned dev writer operations without widening OIDC trust", ()
   expect(JSON.stringify(policies)).toContain('"lambda:PutFunctionConcurrency"');
   expect(JSON.stringify(policies)).toContain(arn);
   expect(JSON.stringify(policies)).not.toContain('"lambda:*"');
+  const statements = Object.values(policies).flatMap(
+    (policy) =>
+      (policy as { Properties: { PolicyDocument: { Statement: unknown[] } } })
+        .Properties.PolicyDocument.Statement,
+  );
+  expect(
+    statements.filter((statement) => JSON.stringify(statement).includes('"*"')),
+  ).toStrictEqual([
+    { Action: "lambda:GetAccountSettings", Effect: "Allow", Resource: "*" },
+  ]);
   expect(
     JSON.stringify(Template.fromStack(access).findResources("AWS::IAM::Role")),
   ).toContain(

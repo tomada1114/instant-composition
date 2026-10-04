@@ -130,7 +130,11 @@ a second design.
   owned dev app stack. CloudFormation shortens the stack-name part of a generated
   function name to fit Lambda's 64 characters (the worker is
   `instant-composition-dev-ap-ReadModelWorker…`), so both name checks accept that
-  shortening and still require the logical id whole. Wildcard function resources,
+  shortening and still require the logical id whole. The role also reads
+  `lambda:GetAccountSettings`, account-level and read-only, so the transition refuses
+  with `account concurrency` before any pause when the account's unreserved concurrency
+  cannot keep Lambda's minimum (`min(100, limit)`) after the recorded reservations — a
+  10-execution account cannot hold the worker's one (#471). Wildcard function resources,
   aliases and other stacks are rejected before the deploy-access update.
 - The role's ARN reaches the workflow as the repository **variable**
   `AWS_DEPLOY_ROLE_ARN`, never as a secret and never in the tree. No long-lived AWS
