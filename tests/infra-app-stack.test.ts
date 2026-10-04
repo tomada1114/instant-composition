@@ -444,7 +444,7 @@ describe("the dev app stack's function", () => {
     expect(properties).toMatchObject({
       Runtime: "nodejs24.x",
       Architectures: ["arm64"],
-      Handler: "index.handler",
+      Handler: "release.handler",
       Layers: [PARAMETERS_EXTENSION_LAYER_ARN],
     });
     expect(properties).not.toHaveProperty("VpcConfig");

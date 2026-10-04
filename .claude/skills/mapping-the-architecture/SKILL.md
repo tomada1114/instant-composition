@@ -280,8 +280,13 @@ browser ─► CloudFront (flat-rate Free plan, WAF web ACL from `edge`)
   URL would make every client send a body hash on `POST`, putting AWS in the contract.
 - Four CDK stacks: `foundation` (table and user pool, retained), `edge`, `app`
   (everything rebuilt often, alarms included) and `deploy-access` (GitHub OIDC). `app`
-  reads `foundation` by Parameter Store name, never by export. A merge to `main` deploys
-  through OIDC; no long-lived key exists.
+  reads `foundation` by Parameter Store name, never by export. Successful CI for the
+  exact trusted `main` SHA gates automatic OIDC deployment of a fixed assembly;
+  superseded main completions are skipped before AWS credentials. The API bundle's
+  read-only `/api/release` verifies packaged code/catalog hashes, and post-deploy
+  CloudFront smoke checks that identity, web bytes, a SPA route and the unauthenticated
+  contract. No model call or learner mutation runs in that smoke. No long-lived key
+  exists.
 - The function's timeout is 25 s, under API Gateway's and CloudFront's 30 s, because a
   talk turn waits on two model calls. The talk routes, `/api/v1/talks` and below, are
   throttled on the HTTP API's stage at 2 requests per second, burst 10, since each turn

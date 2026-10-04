@@ -2934,9 +2934,54 @@ describe("the workflows in .github/workflows", () => {
         .map((line) => line.text)
         .filter((text) => text.endsWith(": write")),
     ).toEqual(["id-token: write"]);
-    expect(source).toMatch(/^on:\n {2}push:\n {4}branches: \[main\]\n\n/m);
+    expect(source).toContain("workflow_run:");
+    expect(source).toContain("workflows: [CI]");
+    expect(source).toContain("types: [completed]");
+    expect(source).toContain("branches: [main]");
+    expect(source).toContain("github.event.workflow_run.conclusion == 'success'");
+    expect(source).toContain("github.event.workflow_run.event == 'push'");
+    expect(source).toContain("github.event.workflow_run.head_branch == 'main'");
+    expect(source).toContain(
+      "github.event.workflow_run.head_repository.full_name == github.repository",
+    );
+    expect(source).toContain("ref: ${{ github.event.workflow_run.head_sha }}");
+    expect(source).toContain(
+      'pnpm release trust "$GITHUB_EVENT_PATH" "$RELEASE_SHA" "$RELEASE_REPOSITORY"',
+    );
     expect(source).toContain("role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}");
-    expect(source).toContain("pnpm cdk deploy -c stage=dev foundation");
+    expect(source).toContain('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation');
+  });
+
+  it("installs dependencies before invoking trust verification and checks identity before building or obtaining AWS credentials", () => {
+    const source = workflowSource("deploy-dev.yml");
+    const install = source.indexOf("run: pnpm install --frozen-lockfile");
+    const trust = source.indexOf("run: pnpm release trust");
+    const build = source.indexOf("pnpm web:build");
+    const credentials = source.indexOf("aws-actions/configure-aws-credentials@");
+    expect(install).toBeGreaterThanOrEqual(0);
+    expect(trust).toBeGreaterThan(install);
+    expect(build).toBeGreaterThan(trust);
+    expect(credentials).toBeGreaterThan(build);
+  });
+
+  it("deploys only the fixed assembly, skips superseded main and fails on smoke failure", () => {
+    const source = workflowSource("deploy-dev.yml");
+    const commands = runCommands(source)
+      .map(({ command }) => command)
+      .join("\n");
+    expect(
+      commands.indexOf('pnpm release record "$RELEASE_ASSEMBLY" "$RELEASE_SHA"'),
+    ).toBeLessThan(commands.indexOf("pnpm cdk deploy"));
+    expect(
+      commands.indexOf('pnpm release current "$RELEASE_REPOSITORY" "$RELEASE_SHA"'),
+    ).toBeLessThan(commands.indexOf("pnpm cdk deploy"));
+    expect(source.match(/if: steps.current.outputs.deploy == 'true'/g)).toHaveLength(5);
+    expect(source).not.toContain("continue-on-error");
+    expect(commands.indexOf("pnpm release smoke")).toBeGreaterThan(
+      commands.indexOf('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app'),
+    );
+    expect(source).toContain("cancel-in-progress: false");
+    expect(source).not.toContain("download-artifact");
   });
 
   // #157: a merge reaches the dev URL with no manual step. The build comes
@@ -2948,19 +2993,23 @@ describe("the workflows in .github/workflows", () => {
     );
     const build = commands.findIndex((command) => command.includes("pnpm web:build"));
     const foundation = commands.findIndex((command) =>
-      command.includes("pnpm cdk deploy -c stage=dev foundation --exclusively"),
+      command.includes(
+        'pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation --exclusively',
+      ),
     );
     const edge = commands.findIndex((command) =>
-      command.includes("pnpm cdk deploy -c stage=dev edge --exclusively"),
+      command.includes('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" edge --exclusively'),
     );
     const app = commands.findIndex((command) =>
-      command.includes('pnpm cdk deploy "${context[@]}" app --exclusively'),
+      command.includes('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app --exclusively'),
     );
     expect(build).toBeGreaterThanOrEqual(0);
     expect(foundation).toBeGreaterThan(build);
     expect(edge).toBeGreaterThan(foundation);
     expect(app).toBeGreaterThan(edge);
-    expect(commands[app]).toContain('-c "web-dist=$GITHUB_WORKSPACE/apps/web/dist"');
+    expect(commands.join("\n")).toContain(
+      '-c "web-dist=$GITHUB_WORKSPACE/apps/web/dist"',
+    );
   });
 
   // Without alarm-email a deploy removes the alarm topic's subscription

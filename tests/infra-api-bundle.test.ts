@@ -11,6 +11,8 @@ import {
 } from "@instant-composition/infra";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 
+import { metadata, verifyFiles } from "../scripts/lib/release-runtime.mjs";
+
 import { REPOSITORY_ROOT } from "./infra-context";
 
 // The one suite that bundles the API the way a deploy does: esbuild through
@@ -53,6 +55,15 @@ describe("the dev app stack's function bundle", () => {
 
   it("holds the handler module and the catalog snapshot where the function reads it", () => {
     expect(existsSync(path.join(bundle, "index.mjs"))).toBe(true);
+    expect(existsSync(path.join(bundle, "release.mjs"))).toBe(true);
+    const value: unknown = JSON.parse(
+      readFileSync(path.join(bundle, "release.json"), "utf8"),
+    );
+    const release = metadata(value);
+    expect(release.sha).toMatch(/^[a-f0-9]{40}$/);
+    expect(release.files).toHaveProperty("index.mjs");
+    expect(release.files).toHaveProperty("catalog/en/ja.json");
+    verifyFiles(bundle, release);
     const catalog = path.join(bundle, path.relative("/var/task", LAMBDA_CATALOG_PATH));
     expect(JSON.parse(readFileSync(catalog, "utf8"))).toMatchObject({
       target: "en",
@@ -68,7 +79,7 @@ describe("the dev app stack's function bundle", () => {
       [
         "--input-type=module",
         "-e",
-        `const { handler } = await import(${JSON.stringify(path.join(bundle, "index.mjs"))});
+        `const { handler } = await import(${JSON.stringify(path.join(bundle, "release.mjs"))});
 const answer = await handler({
   version: "2.0", routeKey: "$default", rawPath: "/api/v1/nowhere", rawQueryString: "",
   headers: { host: "example.cloudfront.net" }, isBase64Encoded: false,
@@ -111,7 +122,7 @@ process.stderr.write(JSON.stringify({ status: answer.statusCode }));`,
       [
         "--input-type=module",
         "-e",
-        `await import(${JSON.stringify(path.join(bundle, "index.mjs"))});`,
+        `await import(${JSON.stringify(path.join(bundle, "release.mjs"))});`,
       ],
       { cwd: bundle, encoding: "utf8", env: { PATH: process.env["PATH"] ?? "" } },
     );
