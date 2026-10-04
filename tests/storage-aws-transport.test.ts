@@ -243,3 +243,244 @@ describe("storage transition transport", () => {
     },
   );
 });
+
+const signedCode = {
+  Code: { Location: "https://owned.s3.amazonaws.com/code?token=private-signed-token" },
+};
+function transportError(code: string, nested = true): TypeError {
+  return Object.assign(
+    new TypeError("private-signed-token provider body"),
+    nested ? { cause: { code } } : { code },
+  );
+}
+function brokenBody(error: unknown): Response {
+  return new Response(
+    new ReadableStream({
+      start(controller) {
+        controller.error(error);
+      },
+    }),
+  );
+}
+describe("bounded deployed ZIP download failures", () => {
+  it("sanitizes a native malformed URL before any fetch", async () => {
+    const request = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", request);
+    const error = await deployedStorageZip({
+      Code: { Location: "private-signed-token" },
+    }).catch((failure: unknown) => failure);
+    expect(error).toBeInstanceOf(StorageTransitionError);
+    expect(error).toMatchObject({ part: "AWS code location TypeError" });
+    expect(JSON.stringify(error)).not.toContain("private-signed-token");
+    expect(request).not.toHaveBeenCalled();
+  });
+  it.each([
+    ["fetch", new TypeError("private-signed-token"), "AWS code fetch TypeError"],
+    [
+      "body",
+      new DOMException("private-signed-token", "AbortError"),
+      "AWS code body AbortError",
+    ],
+    [
+      "body",
+      Object.assign(new Error("private-signed-token"), {
+        name: "private-signed-token",
+      }),
+      "AWS code body unknown",
+    ],
+  ] as const)(
+    "sanitizes %s native rejection without a blind retry",
+    async (stage, failure, part) => {
+      const request = vi.fn<typeof fetch>();
+      if (stage === "fetch") request.mockRejectedValue(failure);
+      else request.mockResolvedValue(brokenBody(failure));
+      vi.stubGlobal("fetch", request);
+      const error = await deployedStorageZip(signedCode).catch(
+        (value: unknown) => value,
+      );
+      expect(error).toBeInstanceOf(StorageTransitionError);
+      expect(error).toMatchObject({ part });
+      expect(JSON.stringify(error)).not.toContain("private-signed-token");
+      expect(error).not.toHaveProperty("cause");
+      expect(request).toHaveBeenCalledTimes(1);
+    },
+  );
+  it.each(["EAI_AGAIN", "ECONNRESET", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT"])(
+    "retries positive transient %s once with the same URL and shared signal",
+    async (code) => {
+      vi.useFakeTimers();
+      try {
+        const request = vi
+          .fn<typeof fetch>()
+          .mockRejectedValueOnce(transportError(code))
+          .mockResolvedValueOnce(new Response(new Uint8Array([7, 8])));
+        vi.stubGlobal("fetch", request);
+        const result = deployedStorageZip(signedCode, Date.now() + 1000).catch(
+          (error: unknown) => error,
+        );
+        await vi.advanceTimersByTimeAsync(99);
+        expect(request).toHaveBeenCalledTimes(1);
+        await vi.advanceTimersByTimeAsync(1);
+        expect(await result).toEqual(Buffer.from([7, 8]));
+        expect(request).toHaveBeenCalledTimes(2);
+        expect(request.mock.calls[1]?.[0]).toBe(request.mock.calls[0]?.[0]);
+        expect(request.mock.calls[1]?.[1]?.signal).toBe(
+          request.mock.calls[0]?.[1]?.signal,
+        );
+        expect(request.mock.calls[1]?.[1]?.redirect).toBe("error");
+        expect(vi.getTimerCount()).toBe(0);
+      } finally {
+        vi.useRealTimers();
+      }
+    },
+  );
+  it("discards a transient partial body and returns only the second response", async () => {
+    vi.useFakeTimers();
+    try {
+      const first = new Response(
+        new ReadableStream({
+          start(controller) {
+            controller.enqueue(new Uint8Array([99]));
+            controller.error(transportError("ECONNRESET", false));
+          },
+        }),
+      );
+      const request = vi
+        .fn<typeof fetch>()
+        .mockResolvedValueOnce(first)
+        .mockResolvedValueOnce(new Response(new Uint8Array([1, 2])));
+      vi.stubGlobal("fetch", request);
+      const result = deployedStorageZip(signedCode).catch((error: unknown) => error);
+      await vi.advanceTimersByTimeAsync(100);
+      expect(await result).toEqual(Buffer.from([1, 2]));
+      expect(request).toHaveBeenCalledTimes(2);
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+  it("stops persistent transient failures after two attempts", async () => {
+    vi.useFakeTimers();
+    try {
+      const request = vi
+        .fn<typeof fetch>()
+        .mockRejectedValue(transportError("EAI_AGAIN"));
+      vi.stubGlobal("fetch", request);
+      const result = deployedStorageZip(signedCode).catch((value: unknown) => value);
+      await vi.advanceTimersByTimeAsync(100);
+      expect(await result).toMatchObject({ part: "AWS code fetch TypeError" });
+      expect(request).toHaveBeenCalledTimes(2);
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+  it.each([1000, 30000])(
+    "expires at the original %ims total window despite a delayed first failure and hanging retry body",
+    async (window) => {
+      vi.useFakeTimers();
+      try {
+        const request = vi
+          .fn<typeof fetch>()
+          .mockImplementationOnce(
+            () =>
+              new Promise((_resolve, reject) => {
+                setTimeout(() => reject(transportError("ETIMEDOUT")), 400);
+              }),
+          )
+          .mockResolvedValueOnce(new Response(new ReadableStream()));
+        vi.stubGlobal("fetch", request);
+        const result = deployedStorageZip(
+          signedCode,
+          Date.now() + window + (window === 30000 ? 10000 : 0),
+        ).catch((value: unknown) => value);
+        await vi.advanceTimersByTimeAsync(500);
+        expect(request).toHaveBeenCalledTimes(2);
+        await vi.advanceTimersByTimeAsync(window - 500);
+        expect(await result).toMatchObject({ part: "AWS code download TimeoutError" });
+        expect(request.mock.calls[1]?.[1]?.signal?.aborted).toBe(true);
+        expect(vi.getTimerCount()).toBe(0);
+      } finally {
+        vi.useRealTimers();
+      }
+    },
+  );
+  it("does not retry a transient failure without room for the backoff", async () => {
+    vi.useFakeTimers();
+    try {
+      const request = vi
+        .fn<typeof fetch>()
+        .mockRejectedValue(transportError("ECONNRESET"));
+      vi.stubGlobal("fetch", request);
+      await expect(
+        deployedStorageZip(signedCode, Date.now() + 100),
+      ).rejects.toMatchObject({ part: "AWS code fetch TypeError" });
+      expect(request).toHaveBeenCalledTimes(1);
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+  it.each([
+    "CERT_HAS_EXPIRED",
+    "ERR_TLS_CERT_ALTNAME_INVALID",
+    "ECONNREFUSED",
+    "unknown",
+  ])("does not retry non-allowlisted transport code %s", async (code) => {
+    const request = vi.fn<typeof fetch>().mockRejectedValue(transportError(code));
+    vi.stubGlobal("fetch", request);
+    await expect(deployedStorageZip(signedCode)).rejects.toMatchObject({
+      part: "AWS code fetch TypeError",
+    });
+    expect(request).toHaveBeenCalledTimes(1);
+  });
+  it.each([
+    [
+      "HTTP refusal",
+      new Response("private-signed-token", { status: 503 }),
+      "AWS code download",
+    ],
+    [
+      "declared oversize",
+      new Response("", { headers: { "content-length": String(65 * 1024 * 1024) } }),
+      "AWS code download",
+    ],
+  ] as const)("keeps %s permanent without retry", async (_, response, part) => {
+    vi.useFakeTimers();
+    try {
+      const request = vi.fn<typeof fetch>().mockResolvedValue(response);
+      vi.stubGlobal("fetch", request);
+      await expect(deployedStorageZip(signedCode)).rejects.toMatchObject({ part });
+      expect(request).toHaveBeenCalledTimes(1);
+      expect(request.mock.calls[0]?.[1]?.signal?.aborted).toBe(true);
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
+
+describe("deployed ZIP total expiry", () => {
+  it("never retries an expired first fetch, aborts it, and cleans the deadline timer", async () => {
+    vi.useFakeTimers();
+    try {
+      const request = vi
+        .fn<typeof fetch>()
+        .mockImplementation(() => new Promise(() => undefined));
+      vi.stubGlobal("fetch", request);
+      const result = deployedStorageZip(signedCode, Date.now() + 1000).catch(
+        (value: unknown) => value,
+      );
+      await vi.advanceTimersByTimeAsync(1000);
+      expect(await result).toMatchObject({ part: "AWS code download TimeoutError" });
+      expect(request).toHaveBeenCalledTimes(1);
+      expect(request.mock.calls[0]?.[1]?.signal?.aborted).toBe(true);
+      expect(request.mock.calls[0]?.[1]?.signal?.reason).toMatchObject({
+        part: "AWS code download TimeoutError",
+      });
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});

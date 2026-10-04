@@ -80,10 +80,15 @@ export function storageZipFiles(bytes) {
       if (total > 256 * 1024 * 1024)
         throw new StorageTransitionError("zip expanded size");
       const raw = zip.subarray(data, data + compressed);
-      const value =
-        method === 0
-          ? raw
-          : inflateRawSync(raw, { maxOutputLength: Math.max(1, expanded) });
+      let value;
+      try {
+        value =
+          method === 0
+            ? raw
+            : inflateRawSync(raw, { maxOutputLength: Math.max(1, expanded) });
+      } catch {
+        throw new StorageTransitionError("zip decompression");
+      }
       if (value.length !== expanded) throw new StorageTransitionError("zip length");
       files.set(name, value);
     } else directories.push(name);
@@ -107,7 +112,7 @@ export function verifyStorageZip(zip, codeSha256, expected) {
   const files = storageZipFiles(zip),
     metadata = files.get("storage-release.json");
   if (metadata === undefined) throw new StorageTransitionError("installed guard");
-  const installed = guardMetadata(parseJson(metadata.toString("utf8")));
+  const installed = guardMetadata(zipMetadata(metadata, "installed guard JSON"));
   const outer = files.get("release.json");
   if (
     !metadata.equals(Buffer.from(JSON.stringify(expected))) ||
@@ -122,7 +127,7 @@ export function verifyStorageZip(zip, codeSha256, expected) {
   }
   if (outer !== undefined)
     verifyOuterStorageRelease(
-      parseJson(outer.toString("utf8")),
+      zipMetadata(outer, "outer release JSON"),
       expected.sha,
       Object.fromEntries(
         [...files]
@@ -130,4 +135,13 @@ export function verifyStorageZip(zip, codeSha256, expected) {
           .map(([name, bytes]) => [name, storageDigest(bytes)]),
       ),
     );
+}
+
+/** @param {Buffer} bytes @param {string} stage @returns {unknown} */
+function zipMetadata(bytes, stage) {
+  try {
+    return parseJson(bytes.toString("utf8"));
+  } catch {
+    throw new StorageTransitionError(stage);
+  }
 }

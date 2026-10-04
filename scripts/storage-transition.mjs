@@ -45,20 +45,30 @@ export async function currentStorageMain(
   const timeout =
     deadline === undefined ? 30000 : Math.min(30000, deadline - Date.now());
   if (timeout <= 0) throw new StorageTransitionError("transition work deadline");
-  const response = await request(
-    `https://api.github.com/repos/${repository}/git/ref/heads/main`,
-    {
-      headers: {
-        authorization: `Bearer ${token}`,
-        accept: "application/vnd.github+json",
-        "x-github-api-version": "2022-11-28",
+  let response;
+  try {
+    response = await request(
+      `https://api.github.com/repos/${repository}/git/ref/heads/main`,
+      {
+        headers: {
+          authorization: `Bearer ${token}`,
+          accept: "application/vnd.github+json",
+          "x-github-api-version": "2022-11-28",
+        },
+        redirect: "error",
+        signal: AbortSignal.timeout(timeout),
       },
-      redirect: "error",
-      signal: AbortSignal.timeout(timeout),
-    },
-  );
+    );
+  } catch {
+    throw new StorageTransitionError("main identity request");
+  }
   if (response.status !== 200) throw new StorageTransitionError("main identity lookup");
-  /** @type {unknown} */ const data = await response.json();
+  /** @type {unknown} */ let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new StorageTransitionError("main identity JSON");
+  }
   if (deadline !== undefined && Date.now() >= deadline)
     throw new StorageTransitionError("transition work deadline");
   return readString(readKey(data, "object"), "sha") === sha;

@@ -119,6 +119,7 @@ export async function transitionStorageWriters(port) {
     }
     return { remaining: closed, verified, admissionClosed, deploymentStable };
   }
+  let failureStage = "initial admission pause";
   try {
     port.assertWorkTime();
     const initiallyPaused = [];
@@ -131,21 +132,30 @@ export async function transitionStorageWriters(port) {
     }
     writers = initiallyPaused;
     await port.record({ phase: "paused", writers });
+    failureStage = "initial invocation drain";
     await port.wait(Math.max(...writers.map((writer) => writer.timeout)) * 1000);
+    failureStage = "main identity before deployment";
     if (!(await port.current())) throw new StorageTransitionError("current main");
     port.assertWorkTime();
+    failureStage = "app deployment";
     await port.deploy();
     port.assertWorkTime();
+    failureStage = "postdeployment CloudFormation status";
     if (!(await port.stable()))
       throw new StorageTransitionError("CloudFormation status");
+    failureStage = "postdeployment writer discovery";
     writers = await port.discover();
+    failureStage = "postdeployment writer permissions";
     await port.extendAccess(writers);
+    failureStage = "postdeployment writer discovery";
     writers = await port.discover();
     const verified = [];
     for (const writer of writers) {
       port.assertWorkTime();
+      failureStage = "installed admission barrier";
       if (!(await port.isPaused(writer)) || !(await port.probePaused(writer)))
         throw new StorageTransitionError("deployment quiescence");
+      failureStage = "installed ZIP certification";
       const checked = await port.verify(writer);
       if (!sameStorageWriter(writer, checked))
         throw new StorageTransitionError("certification revision race");
@@ -156,6 +166,7 @@ export async function transitionStorageWriters(port) {
       writer.logicalId.startsWith("ReadModelWorker"),
     );
     port.assertWorkTime();
+    failureStage = "worker preparation";
     const prepared = await port.prepare(verified);
     port.assertWorkTime();
     if (
@@ -177,13 +188,17 @@ export async function transitionStorageWriters(port) {
       if (!(await port.isPaused(receipt)) || !(await port.probePaused(receipt)))
         throw new StorageTransitionError("prepared writer quiescence");
     }
+    failureStage = "main identity before resume";
     if (!(await port.current())) throw new StorageTransitionError("current main");
     const resumed = [];
     for (const writer of prepared) {
       port.assertWorkTime();
+      failureStage = "pre-resume ZIP certification";
       if (!sameStorageWriter(writer, await port.verify(writer)))
         throw new StorageTransitionError("code revision race");
+      failureStage = "capacity restoration";
       const receipt = await port.restore(writer);
+      failureStage = "post-resume ZIP certification";
       if (
         !sameStorageWriter(writer, receipt, false) ||
         !sameStorageWriter(receipt, await port.verify(receipt))
@@ -191,13 +206,16 @@ export async function transitionStorageWriters(port) {
         throw new StorageTransitionError("code revision race");
       resumed.push(receipt);
     }
+    failureStage = "main identity after resume";
     if (!(await port.current())) throw new StorageTransitionError("current main");
+    failureStage = "final writer inventory";
     const finalInventory = await port.discover();
     if (
       finalInventory.length !== resumed.length ||
       new Set(finalInventory.map((writer) => writer.arn)).size !== resumed.length
     )
       throw new StorageTransitionError("installed writer inventory");
+    failureStage = "final writer certification";
     for (const writer of resumed) {
       const actual = finalInventory.find((entry) => entry.arn === writer.arn);
       if (
@@ -278,6 +296,20 @@ export async function transitionStorageWriters(port) {
       cleanupVerified: cleanup.verified,
       admissionClosed: recovered ? false : cleanup.admissionClosed,
       cloudFormationStable: cleanup.deploymentStable,
+      failureStage,
+      failureKind:
+        error instanceof StorageTransitionError
+          ? "StorageTransitionError"
+          : error instanceof Error &&
+              [
+                "TypeError",
+                "SyntaxError",
+                "RangeError",
+                "AbortError",
+                "TimeoutError",
+              ].includes(error.name)
+            ? error.name
+            : "unknown",
       failure:
         error instanceof StorageTransitionError ? error.part : "unexpected failure",
     });
