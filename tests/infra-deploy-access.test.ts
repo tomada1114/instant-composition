@@ -139,8 +139,29 @@ it("adds only exact owned dev writer operations without widening OIDC trust", ()
   });
 });
 
+it("permits the read-model worker whose generated name CloudFormation shortened", () => {
+  const arns = [
+    "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-app-ApiFunctionCE271BD4-T0EgjaNG24sB",
+    "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-ap-ReadModelWorker815A8EF5-s6YIrionyg07",
+  ];
+  const staged = buildApp({
+    ...infraContext("dev"),
+    "storage-writer-arns": JSON.stringify(arns),
+  });
+  const access = staged.app.node.findChild("deploy-access");
+  if (!(access instanceof DeployAccessStack))
+    throw new TypeError("Deploy stack required.");
+  const policies = JSON.stringify(
+    Template.fromStack(access).findResources("AWS::IAM::Policy"),
+  );
+  for (const arn of arns) expect(policies).toContain(arn);
+});
+
 it.each([
   "*",
+  "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-x-ReadModelWorker815A8EF5-s6YIrionyg07",
+  "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-prod-app-ReadModelWorker815A8EF5-s6YIrionyg07",
+  `arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-ap-ReadModelWorker815A8EF5-${"a".repeat(14)}`,
   "arn:aws:lambda:ap-northeast-1:123456789012:function:other",
   "arn:aws:lambda:us-east-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned",
   "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned:alias",

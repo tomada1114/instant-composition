@@ -68,10 +68,13 @@ export function ownedStorageWriters(value, account, planned) {
       return [];
     }
     const physical = string(resource, "PhysicalResourceId");
+    // CloudFormation shortens the stack-name part to keep a generated function
+    // name within Lambda's 64 characters: ReadModelWorker's is `…-dev-ap-…`.
     if (
-      !new RegExp(`^instant-composition-dev-app-${logicalId}[A-Za-z0-9-]+$`).test(
-        physical,
-      )
+      physical.length > 64 ||
+      !new RegExp(
+        `^instant-composition-dev(?:-a(?:pp?)?)?-${logicalId}[A-Za-z0-9-]+$`,
+      ).test(physical)
     )
       throw new StorageTransitionError("writer resource provenance");
     return [
