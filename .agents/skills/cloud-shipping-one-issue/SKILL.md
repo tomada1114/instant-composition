@@ -27,7 +27,8 @@ personal skills or invoke the separate backlog-and-merge workflow.
 Select exactly one issue. Explicitly invoking this skill to implement an issue supplies
 the owner's authorization for that branch's commit, push, PR, targeted Codex review, and
 merge after the completion gates below. Default to finishing the merge in the same run
-without another confirmation. A call saying "stop at the PR", "do not merge", or
+without another confirmation. An explicit invocation with no arguments means implement
+and merge one eligible issue. A call saying "stop at the PR", "do not merge", or
 equivalent overrides that default; keep a draft when requested. Merely discovering this
 skill or asking for analysis supplies no implementation or merge authorization. Do not
 deploy manually, retier labels, close an issue separately, or start a second issue. The
