@@ -26,6 +26,11 @@ export function storageWritersPaused(scope: Construct): boolean {
   throw new StorageWriterConfigurationError();
 }
 
+// CloudFormation shortens the stack-name part to keep a generated function name
+// within Lambda's 64 characters: ReadModelWorker's is `…-dev-ap-…`.
+const WRITER_ARN =
+  /^arn:aws:lambda:ap-northeast-1:[0-9]{12}:function:(instant-composition-dev(?:-a(?:pp?)?)?-(?:ApiFunction|ReadModelWorker)[A-Za-z0-9-]+)$/;
+
 /** The operator verifies physical resources against CloudFormation before supplying these ARNs. */
 export function storageWriterArns(scope: Construct): readonly string[] {
   const value: unknown = scope.node.tryGetContext(STORAGE_WRITER_ARNS_CONTEXT);
@@ -41,13 +46,11 @@ export function storageWriterArns(scope: Construct): readonly string[] {
   if (
     !Array.isArray(parsed) ||
     parsed.length > 2 ||
-    !parsed.every(
-      (arn: unknown) =>
-        typeof arn === "string" &&
-        /^arn:aws:lambda:ap-northeast-1:[0-9]{12}:function:instant-composition-dev-app-(ApiFunction|ReadModelWorker)[A-Za-z0-9-]+$/.test(
-          arn,
-        ),
-    ) ||
+    !parsed.every((arn: unknown) => {
+      if (typeof arn !== "string") return false;
+      const name = WRITER_ARN.exec(arn)?.[1];
+      return name !== undefined && name.length <= 64;
+    }) ||
     new Set(parsed).size !== parsed.length
   )
     throw new StorageWriterConfigurationError();

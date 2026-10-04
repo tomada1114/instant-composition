@@ -127,8 +127,11 @@ a second design.
   Region: a bootstrap role's name carries its Region, so `cdk-*` matches every one.
   Storage transitions additionally grant configuration/code inspection, concurrency
   changes and synchronous probes only on the exact API/worker ARNs discovered from the
-  owned dev app stack. Wildcard function resources, aliases and other stacks are
-  rejected before the deploy-access update.
+  owned dev app stack. CloudFormation shortens the stack-name part of a generated
+  function name to fit Lambda's 64 characters (the worker is
+  `instant-composition-dev-ap-ReadModelWorker…`), so both name checks accept that
+  shortening and still require the logical id whole. Wildcard function resources,
+  aliases and other stacks are rejected before the deploy-access update.
 - The role's ARN reaches the workflow as the repository **variable**
   `AWS_DEPLOY_ROLE_ARN`, never as a secret and never in the tree. No long-lived AWS
   access key exists anywhere, for a person or for CI.
