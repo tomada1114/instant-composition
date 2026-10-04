@@ -116,7 +116,13 @@ function downloadCategory(error) {
 }
 /** @param {unknown} error @returns {boolean} */
 function transientDownload(error) {
-  const allowed = ["EAI_AGAIN", "ECONNRESET", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT"];
+  const allowed = [
+    "EAI_AGAIN",
+    "ECONNRESET",
+    "ETIMEDOUT",
+    "UND_ERR_CONNECT_TIMEOUT",
+    "UND_ERR_SOCKET",
+  ];
   return [readString(error, "code"), readString(readKey(error, "cause"), "code")].some(
     (code) => code !== undefined && allowed.includes(code),
   );

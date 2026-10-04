@@ -1,4 +1,5 @@
 import { EventEmitter } from "node:events";
+import { createServer, type ServerResponse } from "node:http";
 import { PassThrough } from "node:stream";
 import {
   existsSync,
@@ -305,7 +306,13 @@ describe("bounded deployed ZIP download failures", () => {
       expect(request).toHaveBeenCalledTimes(1);
     },
   );
-  it.each(["EAI_AGAIN", "ECONNRESET", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT"])(
+  it.each([
+    "EAI_AGAIN",
+    "ECONNRESET",
+    "ETIMEDOUT",
+    "UND_ERR_CONNECT_TIMEOUT",
+    "UND_ERR_SOCKET",
+  ])(
     "retries positive transient %s once with the same URL and shared signal",
     async (code) => {
       vi.useFakeTimers();
@@ -359,22 +366,23 @@ describe("bounded deployed ZIP download failures", () => {
       vi.useRealTimers();
     }
   });
-  it("stops persistent transient failures after two attempts", async () => {
-    vi.useFakeTimers();
-    try {
-      const request = vi
-        .fn<typeof fetch>()
-        .mockRejectedValue(transportError("EAI_AGAIN"));
-      vi.stubGlobal("fetch", request);
-      const result = deployedStorageZip(signedCode).catch((value: unknown) => value);
-      await vi.advanceTimersByTimeAsync(100);
-      expect(await result).toMatchObject({ part: "AWS code fetch TypeError" });
-      expect(request).toHaveBeenCalledTimes(2);
-      expect(vi.getTimerCount()).toBe(0);
-    } finally {
-      vi.useRealTimers();
-    }
-  });
+  it.each(["EAI_AGAIN", "UND_ERR_SOCKET"])(
+    "stops persistent transient %s failures after two attempts",
+    async (code) => {
+      vi.useFakeTimers();
+      try {
+        const request = vi.fn<typeof fetch>().mockRejectedValue(transportError(code));
+        vi.stubGlobal("fetch", request);
+        const result = deployedStorageZip(signedCode).catch((value: unknown) => value);
+        await vi.advanceTimersByTimeAsync(100);
+        expect(await result).toMatchObject({ part: "AWS code fetch TypeError" });
+        expect(request).toHaveBeenCalledTimes(2);
+        expect(vi.getTimerCount()).toBe(0);
+      } finally {
+        vi.useRealTimers();
+      }
+    },
+  );
   it.each([1000, 30000])(
     "expires at the original %ims total window despite a delayed first failure and hanging retry body",
     async (window) => {
@@ -405,22 +413,23 @@ describe("bounded deployed ZIP download failures", () => {
       }
     },
   );
-  it("does not retry a transient failure without room for the backoff", async () => {
-    vi.useFakeTimers();
-    try {
-      const request = vi
-        .fn<typeof fetch>()
-        .mockRejectedValue(transportError("ECONNRESET"));
-      vi.stubGlobal("fetch", request);
-      await expect(
-        deployedStorageZip(signedCode, Date.now() + 100),
-      ).rejects.toMatchObject({ part: "AWS code fetch TypeError" });
-      expect(request).toHaveBeenCalledTimes(1);
-      expect(vi.getTimerCount()).toBe(0);
-    } finally {
-      vi.useRealTimers();
-    }
-  });
+  it.each(["ECONNRESET", "UND_ERR_SOCKET"])(
+    "does not retry transient %s without room for the backoff",
+    async (code) => {
+      vi.useFakeTimers();
+      try {
+        const request = vi.fn<typeof fetch>().mockRejectedValue(transportError(code));
+        vi.stubGlobal("fetch", request);
+        await expect(
+          deployedStorageZip(signedCode, Date.now() + 100),
+        ).rejects.toMatchObject({ part: "AWS code fetch TypeError" });
+        expect(request).toHaveBeenCalledTimes(1);
+        expect(vi.getTimerCount()).toBe(0);
+      } finally {
+        vi.useRealTimers();
+      }
+    },
+  );
   it.each([
     "CERT_HAS_EXPIRED",
     "ERR_TLS_CERT_ALTNAME_INVALID",
@@ -478,6 +487,76 @@ describe("deployed ZIP total expiry", () => {
       expect(request.mock.calls[0]?.[1]?.signal?.reason).toMatchObject({
         part: "AWS code download TimeoutError",
       });
+      expect(vi.getTimerCount()).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
+
+const nodeFetch = globalThis.fetch;
+
+/** A real Node fetch receives headers and bytes before the local socket closes. */
+async function truncatedNodeBodyFailure(): Promise<unknown> {
+  let wire: ServerResponse | undefined;
+  const server = createServer((_request, response) => {
+    wire = response;
+    response.writeHead(200, { "content-length": "8" });
+    response.write(new Uint8Array([99]));
+  });
+  try {
+    await new Promise<void>((resolve, reject) => {
+      server.once("error", reject);
+      server.listen(0, "127.0.0.1", resolve);
+    });
+    const address = server.address();
+    if (address === null || typeof address === "string")
+      throw new Error("No fixture port");
+    const response = await nodeFetch(`http://127.0.0.1:${String(address.port)}/code`);
+    expect(response.status).toBe(200);
+    wire?.destroy();
+    return await response.arrayBuffer().catch((error: unknown) => error);
+  } finally {
+    server.closeAllConnections();
+    await new Promise<void>((resolve, reject) =>
+      server.close((error) => {
+        if (error === undefined) resolve();
+        else reject(error);
+      }),
+    );
+  }
+}
+
+describe("Node truncated download bodies", () => {
+  it("reproduces the actual fetch body failure as TypeError with immediate UND_ERR_SOCKET cause", async () => {
+    const failure = await truncatedNodeBodyFailure();
+    expect(failure).toBeInstanceOf(TypeError);
+    expect(failure).toMatchObject({ cause: { code: "UND_ERR_SOCKET" } });
+  });
+  it("retries the exact native socket failure from a truncated Node body once", async () => {
+    // Consume real HTTP under real timers; reuse its exact error at the body boundary.
+    const failure = await truncatedNodeBodyFailure();
+    const first = brokenBody(failure);
+    vi.useFakeTimers();
+    try {
+      const request = vi
+        .fn<typeof fetch>()
+        .mockResolvedValueOnce(first)
+        .mockResolvedValueOnce(new Response(new Uint8Array([7, 8])));
+      vi.stubGlobal("fetch", request);
+      const result = deployedStorageZip(signedCode, Date.now() + 1000).catch(
+        (error: unknown) => error,
+      );
+      await vi.advanceTimersByTimeAsync(99);
+      expect(request).toHaveBeenCalledTimes(1);
+      await vi.advanceTimersByTimeAsync(1);
+      expect(await result).toEqual(Buffer.from([7, 8]));
+      expect(request).toHaveBeenCalledTimes(2);
+      expect(request.mock.calls[1]?.[0]).toBe(request.mock.calls[0]?.[0]);
+      expect(request.mock.calls[1]?.[1]?.signal).toBe(
+        request.mock.calls[0]?.[1]?.signal,
+      );
+      expect(request.mock.calls[1]?.[1]?.signal?.aborted).toBe(true);
       expect(vi.getTimerCount()).toBe(0);
     } finally {
       vi.useRealTimers();
