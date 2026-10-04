@@ -662,7 +662,7 @@ export type UpdateProfileErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -736,7 +736,7 @@ export type UpdateSettingsErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -781,7 +781,7 @@ export type UpdateLevelErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -813,6 +813,10 @@ export type GetHomeErrors = {
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
+    /**
+     * ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
+     */
+    503: ErrorResponse;
 };
 
 export type GetHomeError = GetHomeErrors[keyof GetHomeErrors];
@@ -855,7 +859,7 @@ export type StartRoundErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -949,7 +953,7 @@ export type RecordAnswersErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1000,7 +1004,7 @@ export type FinishRoundErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1071,6 +1075,10 @@ export type GetRecordsErrors = {
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
+    /**
+     * ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
+     */
+    503: ErrorResponse;
 };
 
 export type GetRecordsError = GetRecordsErrors[keyof GetRecordsErrors];
@@ -1130,7 +1138,11 @@ export type GetVocabErrors = {
      */
     403: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1175,7 +1187,7 @@ export type StartVocabSessionErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1226,7 +1238,7 @@ export type RecordVocabAnswersErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1277,7 +1289,7 @@ export type FinishVocabSessionErrors = {
      */
     413: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };
@@ -1324,7 +1336,7 @@ export type DeleteVocabCardErrors = {
      */
     409: ErrorResponse;
     /**
-     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     * ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.
      */
     503: ErrorResponse;
 };

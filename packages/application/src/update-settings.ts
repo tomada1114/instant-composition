@@ -13,10 +13,17 @@ import {
 import { loadClose, planClose } from "./close-round";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
-import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
+import {
+  committed,
+  storeFor,
+  type ApplicationDeps,
+  type Write,
+  type Removal,
+} from "./execute";
 import { loadPractice, statsOf, type PracticeLoad } from "./practice";
 import { shownSettingsOf } from "./present";
 import type { LearnerStore } from "./store";
+import { completionPlan } from "./streak-maintenance";
 import type { SettingsView } from "./views";
 
 /**
@@ -30,11 +37,15 @@ async function applyLimits(
   load: PracticeLoad,
   settings: Settings,
   now: number,
-): Promise<{ readonly completed: boolean; readonly writes: readonly Write[] }> {
+): Promise<{
+  readonly completed: boolean;
+  readonly writes: readonly Write[];
+  readonly deletes: readonly Removal[];
+}> {
   const today = load.practice.today;
   const stored = await store.portion(today);
   if (stored?.value.completedAt !== null) {
-    return { completed: false, writes: [] };
+    return { completed: false, writes: [], deletes: [] };
   }
   const done = stored.value.progress;
   const portion = {
@@ -48,14 +59,19 @@ async function applyLimits(
   if (done >= portion.target) {
     if (counting !== undefined) {
       const close = await loadClose(store, counting);
-      return {
-        completed: true,
-        writes: planClose(close, load.snapshot, settings.topics, now, portion).writes,
-      };
+      const plan = planClose(close, load.snapshot, settings.topics, now, portion);
+      return { completed: true, writes: plan.writes, deletes: plan.deletes };
     }
+    const completion = completionPlan(
+      await store.streakNeighbours(today),
+      today,
+      stats,
+    );
     return {
       completed: true,
+      deletes: completion.deletes,
       writes: [
+        ...completion.writes,
         [
           {
             type: "portion",
@@ -66,7 +82,7 @@ async function applyLimits(
         [
           {
             type: "stats",
-            value: { ...stats, completedDays: [...stats.completedDays, today] },
+            value: completion.stats,
           },
           load.stats,
         ],
@@ -90,7 +106,7 @@ async function applyLimits(
       writes.push([{ type: "round", value: { ...counting.value, deck } }, counting]);
     }
   }
-  return { completed: false, writes };
+  return { completed: false, writes, deletes: [] };
 }
 
 /**
@@ -123,6 +139,7 @@ export async function updateSettings(
     const { settings, removedFocus } = decided.value;
     const writes: Write[] = [[{ type: "settings", value: settings }, current]];
     let completedToday = false;
+    const deletes: Removal[] = [];
     const [was, will] = [drillLimitsOf(before), drillLimitsOf(settings)];
     if (was.newPerDay !== will.newPerDay || was.reviewsPerDay !== will.reviewsPerDay) {
       const load = await loadPractice(store, deps.catalog, context, settings);
@@ -132,10 +149,12 @@ export async function updateSettings(
       const applied = await applyLimits(store, load.value, settings, context.now);
       completedToday = applied.completed;
       writes.push(...applied.writes);
+      deletes.push(...applied.deletes);
     }
     return ok({
       value: { settings: shownSettingsOf(settings), removedFocus, completedToday },
       writes,
+      deletes,
     });
   });
 }

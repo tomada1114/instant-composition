@@ -1,78 +1,34 @@
 import {
   addDays,
-  availableFor,
-  deal,
   EMPTY_STATS,
   estimateMinutes,
   gradeKeysOf,
   homeState,
+  limitSecondsOf,
   ok,
-  portionSize,
-  practiceState,
-  seedFor,
-  TUNING,
   TALK_TUNING,
-  wantedToday,
+  TUNING,
   weekDots,
+  weekOf,
   type DayKey,
   type PortionProgress,
-  type PracticeState,
   type Result,
-  type Settings,
 } from "@instant-composition/domain";
-
-import {
-  conceptName,
-  snapshotOrEmpty,
-  subtopicName,
-  type CatalogSnapshot,
-} from "./catalog";
+import { snapshotOrEmpty } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, todayOf, type ApplicationDeps } from "./execute";
-import { itemValues } from "./practice";
-import type { HomePreview, HomeView } from "./query-views";
+import { compositionProjection } from "./composition-load";
+import { loadStreakStatus } from "./streak-maintenance";
+import type { HomeView } from "./query-views";
 
-function preview(
-  practice: PracticeState,
-  settings: Settings | undefined,
-  snapshot: CatalogSnapshot,
-  portionTarget: number | undefined,
-  roundsStarted: number,
-  twoPortions: boolean,
-): HomePreview | undefined {
-  const size = portionTarget ?? portionSize(practice, 0);
-  const dealt = deal(practice, {
-    size,
-    seed: seedFor(practice.today, "today", roundsStarted),
-  });
-  if (!dealt.ok) {
-    return undefined;
-  }
-  const wanted = wantedToday(practice);
-  return {
-    size,
-    setting: wanted,
-    shortage: size < wanted,
-    reviewCount: dealt.value.reviewCount,
-    newCount: dealt.value.newCount,
-    focusNames: (settings?.focus ?? []).map((ref) => subtopicName(snapshot, ref)),
-    weakNames: dealt.value.weakConcepts.map((concept) =>
-      conceptName(snapshot, concept),
-    ),
-    minutes: estimateMinutes(twoPortions ? size * 2 : size, practice.limitSeconds),
-  };
-}
-
-/** Everything the start screen shows, from point lookups: nothing replays the log. */
+/** Fixed point/range reads; independent maintenance publishes all progress-dependent figures. */
 export async function home(
   deps: ApplicationDeps,
   context: RequestContext,
 ): Promise<Result<HomeView, ApplicationError>> {
   const bound = storeFor(deps, context, "home");
-  if (!bound.ok) {
-    return bound;
-  }
+  if (!bound.ok) return bound;
   const store = bound.value;
   const today = todayOf(context);
   const yesterday = addDays(today, -1);
@@ -80,32 +36,51 @@ export async function home(
     { snapshot, unreadable },
     settings,
     stats,
-    items,
     portionToday,
     portionYesterday,
     tallies,
+    calendar,
   ] = await Promise.all([
     snapshotOrEmpty(deps.catalog),
     store.settings(),
     store.stats(),
-    store.items(),
     store.portion(today),
     store.portion(yesterday),
     store.days([today]),
+    store.portionsPage({
+      from: addDays(weekOf(today)[0] ?? today, -2),
+      to: today,
+      limit: 12,
+    }),
   ]);
   const totals = stats?.value ?? EMPTY_STATS;
-  const completed = new Set(totals.completedDays);
+  if (totals.streak?.schema !== 1)
+    return { ok: false, error: { code: "ERR_READ_MODEL_NOT_READY" } };
+  const completed = new Set(
+    calendar.entries
+      .filter(({ value }) => value.completedAt !== null)
+      .map(({ value }) => value.day),
+  );
   const open =
     totals.openRound?.day === today
       ? await store.round(totals.openRound.id)
       : undefined;
-  const practice = practiceState({
-    today,
-    stats: totals,
-    settings: settings?.value,
-    cards: [...snapshot.shown.values()],
-    items: itemValues(items),
-  });
+  const status = await loadStreakStatus(store, today, totals.streak.longest);
+  const tally = tallies.get(today);
+  const projected = unreadable
+    ? undefined
+    : await compositionProjection(
+        store,
+        snapshot,
+        today,
+        settings,
+        stats,
+        portionToday,
+        tally,
+        context.now,
+      );
+  if (projected !== undefined && !projected.ok) return projected;
+  const model = projected?.value;
   const portions = new Map<DayKey, PortionProgress>(
     [portionToday, portionYesterday].flatMap((portion) =>
       portion === undefined
@@ -123,29 +98,33 @@ export async function home(
     hasLevel: totals.level !== null,
     today,
     completed,
+    status,
+    longest: totals.streak.longest,
     portions,
     activeRound: open?.value,
-    available: unreadable ? 0 : availableFor(practice),
+    available: model?.available ?? 0,
   });
-  const tally = tallies.get(today)?.value;
+  const preview =
+    state.kind === "ready" || state.kind === "recover-offer"
+      ? (model?.preview ?? undefined)
+      : undefined;
   return ok({
     state,
     week: weekDots(completed, today, totals.firstDay ?? undefined),
     today,
     preview:
-      state.kind === "ready" || state.kind === "recover-offer"
-        ? preview(
-            practice,
-            settings?.value,
-            snapshot,
-            portionToday?.value.target,
-            tally?.roundsStarted ?? 0,
-            state.kind === "recover-offer",
-          )
-        : undefined,
-    todayRounds: tally?.roundsFinished ?? 0,
-    todayCards: tally?.firstPass ?? 0,
-    todayLastRoundId: tally?.lastFinishedRound ?? undefined,
+      preview === undefined
+        ? undefined
+        : {
+            ...preview,
+            minutes: estimateMinutes(
+              preview.size * (state.kind === "recover-offer" ? 2 : 1),
+              limitSecondsOf(settings?.value),
+            ),
+          },
+    todayRounds: tally?.value.roundsFinished ?? 0,
+    todayCards: tally?.value.firstPass ?? 0,
+    todayLastRoundId: tally?.value.lastFinishedRound ?? undefined,
     dailySize: TUNING.extraSize,
     dayBoundaryHour: context.learner.dayBoundaryHour,
     talkTurns: TALK_TUNING.turns,

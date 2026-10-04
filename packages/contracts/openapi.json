@@ -95,7 +95,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -197,7 +197,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -269,7 +269,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -302,6 +302,14 @@
           },
           "403": {
             "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -373,7 +381,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -518,7 +526,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -606,7 +614,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -700,6 +708,14 @@
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
               }
             }
+          },
+          "503": {
+            "description": "ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
           }
         }
       }
@@ -765,8 +781,16 @@
               }
             }
           },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -838,7 +862,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -919,7 +943,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -1007,7 +1031,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -1072,7 +1096,7 @@
             }
           },
           "503": {
-            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_READ_MODEL_NOT_READY: The learner read model is being prepared; read again shortly.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }

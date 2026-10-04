@@ -2,12 +2,18 @@ import { randomUUID } from "node:crypto";
 
 import {
   createDynamoDbDirectory,
+  createDynamoDbReadModelMaintenance,
+  backfillReadModelLearners,
   createDynamoDbStores,
   createLearnerTable,
   deleteLearnerTable,
   localDynamoDbClient,
 } from "@instant-composition/adapters";
-import type { LearnerDirectory, LearnerStores } from "@instant-composition/application";
+import type {
+  LearnerDirectory,
+  LearnerStores,
+  ReadModelMaintenance,
+} from "@instant-composition/application";
 
 // DynamoDB local for the `dynamodb` vitest project, where `pnpm db:up` and
 // ci.yml's service container both publish it. Nothing here asks for more than
@@ -23,6 +29,14 @@ export interface LocalTables {
   freshBacking(): Promise<{ directory: LearnerDirectory; stores: LearnerStores }>;
   /** Fails with what to run when DynamoDB local is not answering. */
   reachable(): Promise<void>;
+  freshMaintenance(): Promise<{
+    stores: LearnerStores;
+    directory: LearnerDirectory;
+    maintenance: ReadModelMaintenance;
+    backfill: (
+      cursor: string | null,
+    ) => Promise<{ cursor: string | null; rows: number }>;
+  }>;
   close(): Promise<void>;
 }
 
@@ -47,6 +61,15 @@ export function localTables(): LocalTables {
       return {
         directory: createDynamoDbDirectory(table),
         stores: createDynamoDbStores(table),
+      };
+    },
+    async freshMaintenance() {
+      const table = { client, tableName: await create() };
+      return {
+        stores: createDynamoDbStores(table),
+        directory: createDynamoDbDirectory(table),
+        maintenance: createDynamoDbReadModelMaintenance(table),
+        backfill: (cursor) => backfillReadModelLearners(table, cursor),
       };
     },
     async reachable() {

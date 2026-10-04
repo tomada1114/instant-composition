@@ -74,6 +74,6 @@ export async function finishRound(
       store.settings(),
     ]);
     const plan = planClose(load, catalog, settings?.value.topics ?? [], context.now);
-    return ok({ value: plan.summary, writes: plan.writes });
+    return ok({ value: plan.summary, writes: plan.writes, deletes: plan.deletes });
   });
 }

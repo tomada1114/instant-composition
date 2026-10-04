@@ -32,6 +32,8 @@ export function describeCriticalFlows(
         ...(await backing()),
         catalog: fixedCatalog(makeSnapshot({ vocab: [card] })),
       });
+      await api.call("GET", "/v1/me");
+      await api.prepareVocab();
       const session = await api.call("POST", "/v1/vocab/sessions", {
         sessionId: "s1",
         kind: "today",
@@ -136,6 +138,7 @@ export function describeCriticalFlows(
           })
         ).ok,
       ).toBe(true);
+      await api.prepareVocab();
       beginVisit();
       const wire = connectClient(api);
       const result = await startVocabSession({ sessionId: "s1", kind: "today" });

@@ -23,12 +23,9 @@ import {
   LOCAL_MODEL_NAMES,
   localModelSettings,
 } from "./env-model";
+import { readModelEnv, type ReadModelEnv } from "./env-read-model";
 import type { ApiEnv, HostedEnv } from "./env-settings";
 
-// The only module in `apps/api` that reads `process.env`, which Node may have
-// filled from `.env.local` (`pnpm api`'s `--env-file-if-exists`); no file is read here.
-
-/** The variables naming the user pool: all set, or none. */
 const COGNITO_NAMES = [
   "API_COGNITO_USER_POOL_ID",
   "API_COGNITO_CLIENT_ID",
@@ -180,7 +177,6 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     signOutUrl === undefined ||
     model === undefined
   ) {
-    // `required` has named each of these that is undefined, so `invalid` is never empty here.
     throw invalidVariables(invalid);
   }
   return {
@@ -197,4 +193,8 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     extension: { port: extensionPort, sessionToken },
     model,
   };
+}
+
+export function readReadModelEnv(source: Source = process.env): ReadModelEnv {
+  return readModelEnv(source);
 }

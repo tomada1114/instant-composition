@@ -12,6 +12,7 @@ import path from "node:path";
 import { serve } from "@hono/node-server";
 import {
   createDynamoDbDirectory,
+  createDynamoDbReadModelMaintenance,
   createDynamoDbStores,
   createLearnerTable,
   localDynamoDbClient,
@@ -23,6 +24,7 @@ import { API_ROOT, createApp } from "./app";
 import { readApiEnv } from "./env";
 import { localRunAuthenticator, localRunWebSession } from "./local-run-authenticator";
 import { ensureTable } from "./local-table";
+import { runReadModelWorker } from "./read-model-worker";
 import { jsonLines } from "./log";
 import { localModel } from "./served-model";
 
@@ -38,8 +40,9 @@ const catalog = snapshotCatalog(path.resolve(env.catalogPath));
 const table = { client, tableName: env.tableName };
 const { kind, authenticator } = localRunAuthenticator(env.cognito);
 const model = localModel(env.model, (request) => fetch(request));
+const stores = createDynamoDbStores(table);
 const app = createApp({
-  stores: createDynamoDbStores(table),
+  stores,
   catalog,
   directory: createDynamoDbDirectory(table),
   newLearnerId: () => learnerId(crypto.randomUUID()),
@@ -51,6 +54,21 @@ const app = createApp({
   model,
 });
 const readable = (await catalog.snapshot()).ok;
+const maintenance = createDynamoDbReadModelMaintenance(table);
+let preparing = false;
+setInterval(() => {
+  if (preparing) return;
+  preparing = true;
+  void runReadModelWorker({ stores, catalog }, maintenance, Date.now())
+    .catch(() => {
+      write(
+        `${JSON.stringify({ event: "read-model-maintenance", outcome: "failed" })}\n`,
+      );
+    })
+    .finally(() => {
+      preparing = false;
+    });
+}, 1_000).unref();
 
 serve({ fetch: app.fetch, port: env.port, hostname: LOOPBACK }, (info) => {
   write(

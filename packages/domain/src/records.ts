@@ -9,12 +9,10 @@ import type {
   RoundKind,
   SubtopicRef,
 } from "./types";
-
 /**
  * What a learner's history is kept as: one append-only log of reviews, and the
  * state a command maintains beside it so that no read replays the log.
  */
-
 /** An item another context can point at; vocabulary adds its own `kind`. */
 export interface ItemRef {
   readonly kind: "composition";
@@ -184,7 +182,9 @@ export interface DayTally {
 export interface LearnerStats {
   readonly points: number;
   /** Days whose portion was completed, oldest first. */
-  readonly completedDays: readonly DayKey[];
+  readonly completedDays?: readonly DayKey[];
+  /** Exact longest run; intervals and calendar portions hold the history separately. */
+  readonly streak?: { readonly schema: 1; readonly longest: number };
   readonly firstDay: DayKey | null;
   readonly said: number;
   readonly practicedDays: number;

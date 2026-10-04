@@ -13,6 +13,7 @@ import {
   type CatalogSnapshot,
 } from "@instant-composition/application";
 
+import { settleComposition } from "./composition-maintenance-harness";
 import { makeItem, makeStats } from "./application-fixtures";
 import {
   answersFor,
@@ -342,6 +343,7 @@ describe("the records of a card no longer shown", () => {
       expect: [],
     });
 
+    await settleComposition(h.deps, h.context());
     const view = await records(h.deps, h.context());
     expect(view.ok && view.value.breakdown).toStrictEqual([
       {

@@ -6,6 +6,9 @@ import {
 } from "@instant-composition/application";
 import { modelTaskSortKey } from "./storage-model-task";
 
+import { candidateSortKey, READ_MODEL_SOURCE_KEY } from "./read-model-keys";
+import { compositionCandidateSortKey } from "./composition-candidate-keys";
+
 /**
  * The attribute names of the learner table's primary key: one partition per
  * learner, one sort key per entry.
@@ -60,12 +63,32 @@ export const CARDS_PREFIX = "CARD#";
  */
 export function sortKeyOf(key: Key): string {
   switch (key.type) {
+    case "compositionCandidate":
+      return compositionCandidateSortKey(key.candidate);
     case "profile":
       return "PROFILE";
     case "settings":
       return "SETTINGS";
     case "stats":
       return "STATS";
+    case "readModelSource":
+      return READ_MODEL_SOURCE_KEY;
+    case "vocabReadModelRequest":
+      return `READMODEL#VOCAB_REQUEST#${part(key.day)}`;
+    case "vocabReadModel":
+      return `READMODEL#VOCAB#${part(key.day)}#STATE`;
+    case "vocabCandidate":
+      return candidateSortKey(key.candidate);
+    case "compositionSource":
+      return "READMODEL#COMPOSITION#SOURCE";
+    case "compositionReadModel":
+      return `READMODEL#COMPOSITION#${part(key.day)}#STATE`;
+    case "compositionBuild":
+      return `READMODEL#COMPOSITION#${part(key.day)}#BUILD`;
+    case "streakRun":
+      return `STREAK#${part(key.start)}`;
+    case "streakMigration":
+      return "READMODEL#STREAK#MIGRATION";
     case "round":
       return `ROUND#${part(key.id)}`;
     case "review":

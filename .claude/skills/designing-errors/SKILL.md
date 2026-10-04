@@ -120,6 +120,14 @@ what happened, and a copy breaks that.
   with several optional fields — a consumer should be able to `switch` on `code` and get
   every field narrowed, not check which optional fields happen to be set.
 
+## Read-model readiness
+
+`ERR_READ_MODEL_NOT_READY` is retryable HTTP 503 with Retry-After 2. It means the
+independent worker has not prepared a matching live generation; GET stays read-only. An
+old offline vocabulary finish may schedule its original day, retain recorded answers,
+and retry once maintenance is ready. The envelope adds no required field under /v1. The
+client bounds its GET wait and then uses its existing retry flow.
+
 ## Changing a `code`
 
 Nothing here is published, so this is not a semver decision. It is still a contract

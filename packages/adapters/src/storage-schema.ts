@@ -1,29 +1,19 @@
 import { z } from "zod";
-import type { Entry } from "@instant-composition/application";
 import { withoutRetired } from "./storage-retired";
 import { storageSchemasAt } from "./storage-history";
-import { modelTaskStorageKeyMatches } from "./storage-model-task";
 
-/** Optimistic `version` counts writes; this identifies the storage contract. */
-export const STORAGE_SCHEMA_VERSION = 3;
-export type StorageFamily = Entry["type"] | "identity" | "readModelBootstrap";
-export const STORAGE_FAMILIES = [
-  "identity",
-  "profile",
-  "settings",
-  "stats",
-  "round",
-  "review",
-  "portion",
-  "day",
-  "item",
-  "talk",
-  "vocabItem",
-  "vocabSession",
-  "vocabReview",
-  "card",
-  "modelTask",
-] as const satisfies readonly StorageFamily[];
+import {
+  STORAGE_FAMILIES,
+  STORAGE_SCHEMA_VERSION,
+  storageFamilyBirth,
+  type StorageFamily,
+} from "./storage-families";
+import { storageKeysMatch } from "./storage-key-binding";
+export {
+  STORAGE_FAMILIES,
+  STORAGE_SCHEMA_VERSION,
+  type StorageFamily,
+} from "./storage-families";
 const family = z.enum(STORAGE_FAMILIES);
 export type StorageErrorCode = "ERR_STORAGE_SCHEMA_UNKNOWN" | "ERR_STORAGE_SHAPE";
 
@@ -69,7 +59,7 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
   const { version, schemaVersion = 0, value } = parsed.data;
   if (
     schemaVersion > STORAGE_SCHEMA_VERSION ||
-    (type === "modelTask" && schemaVersion < 3)
+    schemaVersion < storageFamilyBirth(type)
   ) {
     throw new StorageSchemaError("ERR_STORAGE_SCHEMA_UNKNOWN", "schemaVersion");
   }
@@ -85,10 +75,7 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
       decoded.error.issues[0]?.path.join(".") ?? "value",
     );
   }
-  if (
-    type === "modelTask" &&
-    !modelTaskStorageKeyMatches(decoded.data, parsed.data.PK, parsed.data.SK)
-  )
+  if (!storageKeysMatch(type, decoded.data, parsed.data.PK, parsed.data.SK))
     throw new StorageSchemaError("ERR_STORAGE_SHAPE", "key");
   if (
     parsed.data.expiresAt !== undefined &&
@@ -102,7 +89,6 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
       "compositionCandidate",
     ].includes(type) ||
       typeof decoded.data !== "object" ||
-      decoded.data === null ||
       Reflect.get(decoded.data, "expiresAt") !== parsed.data.expiresAt)
   )
     throw new StorageSchemaError("ERR_STORAGE_SHAPE", "expiresAt");
@@ -134,22 +120,16 @@ export function storageSchemaFence(type?: StorageFamily): {
   readonly condition: string;
   readonly values: Readonly<Record<string, number>>;
 } {
-  if (type === "modelTask")
-    return {
-      condition: "(#schema = :schema)",
-      values: { ":schema": STORAGE_SCHEMA_VERSION },
-    };
-  const values: Record<string, number> = {
-    ":legacy": 0,
-    ":schema": STORAGE_SCHEMA_VERSION,
-  };
-  const terms = [
-    "attribute_not_exists(#schema)",
-    "#schema = :legacy",
-    "#schema = :schema",
-  ];
-  for (let version = 1; version < STORAGE_SCHEMA_VERSION; version += 1) {
-    const name = `:storage${String(version)}`;
+  const first = type === undefined ? 0 : storageFamilyBirth(type);
+  const values: Record<string, number> = {};
+  const terms: string[] = first === 0 ? ["attribute_not_exists(#schema)"] : [];
+  for (let version = first; version <= STORAGE_SCHEMA_VERSION; version += 1) {
+    const name =
+      version === 0
+        ? ":legacy"
+        : version === STORAGE_SCHEMA_VERSION
+          ? ":schema"
+          : `:storage${String(version)}`;
     values[name] = version;
     terms.push(`#schema = ${name}`);
   }

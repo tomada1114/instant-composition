@@ -57,6 +57,8 @@ export async function loadPractice(
     store.stats(),
     store.items(),
   ]);
+  if (stats !== undefined && stats.value.streak === undefined)
+    return { ok: false, error: { code: "ERR_READ_MODEL_NOT_READY" } };
   return ok({
     snapshot: snapshot.value,
     settings: stored,

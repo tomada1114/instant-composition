@@ -1,3 +1,5 @@
+import { settleComposition } from "./composition-maintenance-harness";
+import { prepareVocabReadModels } from "./read-model-harness";
 import {
   finishRound,
   history,
@@ -681,6 +683,8 @@ describe("what the application answers parses under the contract", () => {
       levelViewSchema,
       await value(updateLevel(h.deps, h.context(), { mode: "manual", level: 3 })),
     );
+    await settleComposition(h.deps, h.context());
+    await settleComposition(h.deps, h.context(), "2026-09-23");
     const placement = await value(
       startRound(h.deps, h.context(), { kind: "placement", roundId: "p0" }),
     );
@@ -738,6 +742,7 @@ describe("what the application answers parses under the contract", () => {
     note("home done", homeViewSchema, await value(home(h.deps, h.context(later))));
     note("records", recordsViewSchema, await value(records(h.deps, h.context(later))));
     note("history", historySchema, await value(history(h.deps, h.context(later))));
+    await prepareVocabReadModels(h.deps, h.context(later));
     note("vocabHub", vocabHubSchema, await value(vocabHub(h.deps, h.context(later))));
     const session = await value(
       startVocabSession(h.deps, h.context(later), { sessionId: "s1", kind: "today" }),

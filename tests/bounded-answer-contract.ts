@@ -1,3 +1,4 @@
+import { prepareVocabReadModels } from "./read-model-harness";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -134,7 +135,9 @@ export function describeBoundedAnswerContract(
       },
       { type: "card", value: makePersonalCard({ id: "p_target" }) },
     ]);
-    return { stores, catalog: fixedCatalog(snapshot) };
+    const deps = { stores, catalog: fixedCatalog(snapshot) };
+    await prepareVocabReadModels(deps, h.context());
+    return deps;
   }
   describe(`${name}: bounded answer reads`, () => {
     it.each([1, 20])(
@@ -179,7 +182,14 @@ export function describeBoundedAnswerContract(
           expect((await store.reviewsByIds("r1", ["new-0", "absent"])).size).toBe(1);
         }
         expect(observed[1]).toStrictEqual(observed[0]);
-        expect(observed[0]).toStrictEqual([size, 0, 1, 0]);
+        const counts = observed[0] ?? [];
+        expect(
+          counts.filter((_, at) => at % 2 === 0).reduce((sum, count) => sum + count, 0),
+        ).toBe(size === 1 ? 2 : 210);
+        expect(
+          counts.filter((_, at) => at % 2 === 1).reduce((sum, count) => sum + count, 0),
+        ).toBe(size === 1 ? 0 : 90);
+        expect(counts).toHaveLength(size === 1 ? 4 : 40);
       },
     );
     it.each([1, 20])(
@@ -225,7 +235,14 @@ export function describeBoundedAnswerContract(
           observed.push(counts);
         }
         expect(observed[1]).toStrictEqual(observed[0]);
-        expect(observed[0]).toStrictEqual([size, 0, 1, 0, 1, 1]);
+        const counts = observed[0] ?? [];
+        expect(
+          counts.filter((_, at) => at % 2 === 0).reduce((sum, count) => sum + count, 0),
+        ).toBe(size === 1 ? 3 : 220);
+        expect(
+          counts.filter((_, at) => at % 2 === 1).reduce((sum, count) => sum + count, 0),
+        ).toBe(size === 1 ? 1 : 100);
+        expect(counts).toHaveLength(size === 1 ? 6 : 60);
       },
     );
     it("accepts a maximum distinct legacy-result drill batch, each answer only once", async () => {

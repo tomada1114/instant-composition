@@ -62,6 +62,12 @@ export { err, ok, type Result } from "./result";
 export { calendarDots, isYesterdayRecoverable, longestRun } from "./streak";
 export { runEndingAt, streakStatus, weekDots } from "./streak";
 export type { CompletedDays, Dot, DotState, StreakStatus } from "./streak";
+export {
+  compactStats,
+  joinStreakRun,
+  streakFromRuns,
+  type StreakRun,
+} from "./streak-runs";
 export type { Judgment, Scene, SceneKind, Talk, TalkTask, Turn } from "./talk";
 export type { AddedCandidate, CardCandidate, TalkCards } from "./talk";
 export { correctedTurns, decideAddCards, decideCandidates } from "./talk-cards";
@@ -98,5 +104,12 @@ export type { CardText, PersonalCard } from "./vocab-card";
 export { summarizeVocabReviews, type VocabReviewSummary } from "./vocab-summary";
 export { planVocab, type VocabPlan } from "./vocab-plan";
 export { dealVocab, decideVocabAnswers, vocabFigures } from "./vocab-study";
-export { weaknesses, type ConceptWeakness, type SubtopicWeakness } from "./weakness";
+export {
+  rankWeaknesses,
+  weaknesses,
+  type ConceptWeakness,
+  type SubtopicWeakness,
+} from "./weakness";
 export type { WeaknessEvidence, WeaknessInput, Weaknesses } from "./weakness";
+
+export { answeredOn, isNewCard, isWeak, recallOf, newCardOrder } from "./vocab";

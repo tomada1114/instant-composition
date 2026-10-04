@@ -20,11 +20,28 @@ schema. Whole-row changes first strongly read and decode their source, so direct
 cannot erase an unknown unversioned field by skipping a prior application read. Domain
 types retain their pure data shape and import no schema library.
 
-The schema 3 contract admits durable model tasks alongside the schema 2 round adoption
-checkpoint. A task declares schema 3; absent or earlier envelopes cannot certify that
-family. Results and failures omit the lease; in-flight tasks require one, including
-zero. Canonical learner/task keys bind the nested identity, and the top-level TTL must
-match its expiry. Every declared historical envelope keeps its own strict shape.
+The schema 4 contract admits twenty-eight families: the original fourteen, durable model
+tasks born at schema 3, and thirteen read-model families born at schema 4. The canonical
+family/key inventory lives in `storage-families.ts` and `storage-key-binding.ts`.
+`readModelLearner` is the primary system registry family; its profile mirror changes
+atomically with the learner profile. Registry backfill and global maintenance/bootstrap
+ports strongly decode every existing destination and condition writes on its exact raw
+value, optimistic version, observed schema presence, and matching TTL presence/value.
+Memory prepares every learner/system condition before one synchronous application.
+
+Tasks admit schema 3 and 4; absent or earlier envelopes cannot certify that family.
+Results and failures omit the lease; in-flight tasks require one, including zero.
+Canonical learner/task keys bind the nested identity, and a present top-level TTL must
+match its expiry. Every declared historical envelope keeps its own strict shape. Stats
+at schema 4 have exactly one representation: legacy completed days or compact streaks;
+schemas 0 through 3 retain legacy completed days. Signed finite answer/ranking
+timestamps remain historical data; counts, leases and expiry use safe nonnegative
+integers.
+
+Incoming commit values are validated once before normalization. A private prepared
+commit retains those checked copies through epoch expansion and encoding; every raw
+existing row is still freshly decoded and guarded. Expanded actions and complete
+marshalled values, including raw-preimage expressions, obey the transaction budgets.
 
 The round adoption checkpoint's first-card ids, log cursor and completion flag survive
 legacy initialization and later writes. The current checkpoint fixtures retain the
@@ -60,10 +77,11 @@ its distinct checkpoint identity prevents resuming a v1 plan against a different
 The reviewed `--plan expand-to-storage-v3` explicitly admits schema 0, 1 and 2 rows and
 targets storage-v3/schema 3 with its own checkpoint identity. It validates already-v3
 rows without rewriting them and preserves top-level TTL presence on expanded rows
-without renewing expiry. The default v1 and explicit v2 plans stay fixed; a newer
-trusted writer refuses them before opening a child or checkpoint. Later noncompatible
-plans require their own transformation/decoder rather than retargeting a plan
-automatically; a reader-only fixture is insufficient.
+without renewing expiry. The explicit `--plan expand-to-storage-v4` targets schema 4
+under its own checkpoint identity and retains valid historical TTL presence. The v1, v2
+and v3 plans stay fixed; a newer trusted writer refuses them before opening a child or
+checkpoint. Later noncompatible plans require their own transformation/decoder rather
+than retargeting a plan automatically; a reader-only fixture is insufficient.
 
 The first guarded transition drains the unguarded API before any expanded writes. The
 dev workflow synthesizes a paused assembly, updates exact owned ARN permissions in two
@@ -91,7 +109,7 @@ preflight from the trusted current guard against the selected immutable artifact
 an old checkout's policy. Never deploy a preguard workflow directly to bypass this
 check.
 
-The future read-model release adds a separate system bootstrap checkpoint at
+The read-model release includes a separate system bootstrap checkpoint at
 `SYSTEM#READMODEL / BOOTSTRAP`, guarded by the same envelope cap and optimistic CAS. Its
 strict value binds trusted release SHA/contract/fingerprint, catalog, opaque bounded
 position, phase, practice-day validity and diagnostic maintenance version. The initial
@@ -114,14 +132,15 @@ tested transformation and target decoder before registration.
 
 A checkpoint names the migration and exact table/endpoint, cursor, pending keys/digests
 and counters; it contains no learner values. Pending pages are checkpointed before any
-write. Each replacement is conditional on the read optimistic/schema versions, and the
-optimistic version advances once. `--resume` recognizes a completed replacement whose
-acknowledgement was interrupted by matching its digest and exact resulting version. A
-competing update fails closed. Page boundaries survive interruption even when all rows
-were already current, and completion/replay verifies target decoders and the total
-count. `--max-pages` bounds an operator run. Keep the checkpoint after any refusal;
-inspect the conflict and deploy a compatible forward fix before resuming, never silently
-restart a partially applied noncompatible transformation.
+write. Each replacement is conditional on the exact read value, optimistic/schema
+versions and TTL presence/value, and the optimistic version advances once. `--resume`
+recognizes a completed replacement whose acknowledgement was interrupted by matching its
+digest and exact resulting version. A competing update fails closed. Page boundaries
+survive interruption even when all rows were already current, and completion/replay
+verifies target decoders and the total count. `--max-pages` bounds an operator run. Keep
+the checkpoint after any refusal; inspect the conflict and deploy a compatible forward
+fix before resuming, never silently restart a partially applied noncompatible
+transformation.
 
 - One DynamoDB table, on-demand, one partition per learner, with TTL on `expiresAt`
   (epoch seconds) for records that should lapse, such as an abandoned talk. The key

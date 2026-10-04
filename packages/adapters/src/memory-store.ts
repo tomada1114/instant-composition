@@ -1,20 +1,27 @@
 import {
-  keyOf,
   type Entry,
   type Key,
   type LearnerId,
   type LearnerStore,
   type LearnerStores,
-  type Stored,
+  type ReadModelMaintenance,
 } from "@instant-composition/application";
-import { err, ok, type ReviewEntry } from "@instant-composition/domain";
+import { type ReviewEntry } from "@instant-composition/domain";
 
-import { encodeStorageValue, STORAGE_SCHEMA_VERSION } from "./storage-schema";
-import { copyEntry, readMemorySlot, type Slot, type ValueOf } from "./storage-memory";
-import { checkShape, sortKeyOf } from "./keys";
-import { keyedReads } from "./keyed-reads";
+import { commitMemoryStore } from "./memory-commit";
+import { memoryCompositionReads } from "./memory-composition";
+import { memoryReadModelMaintenance } from "./memory-read-model-maintenance";
+import { partitionKeyOf } from "./keys";
+import {
+  allMemory,
+  pageMemory,
+  rangeMemory,
+  readMemory,
+  type Slot,
+} from "./memory-state";
+import { readModelReads } from "./read-model-reads";
+import { memorySystemKey, type MemorySystemRows } from "./memory-system";
 import { memoryReviewPage } from "./memory-review-page";
-import { matchesModelClaim, sourceVersionHolds } from "./storage-source";
 
 /** The fields both logs sort by. */
 type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
@@ -23,23 +30,15 @@ function byTime(a: Timed, b: Timed): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
-function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStore {
-  function read<T extends Entry["type"]>(
-    key: Extract<Key, { readonly type: T }>,
-  ): Stored<ValueOf<T>> | undefined {
-    const slot = slots.get(sortKeyOf(key));
-    return slot === undefined ? undefined : readMemorySlot(key.type, slot);
-  }
-
-  function all<T extends Entry["type"]>(type: T): Stored<ValueOf<T>>[] {
-    return [...slots.values()]
-      .filter((slot) => slot.entry.type === type)
-      .map((slot) => readMemorySlot(type, slot));
-  }
-
-  const holds = (key: Key, version: number | null): boolean =>
-    sourceVersionHolds(key, slots.get(sortKeyOf(key)), version);
-
+function memoryStore(
+  slots: Map<string, Slot>,
+  counted: () => void,
+  partition: string,
+  system: MemorySystemRows,
+): LearnerStore {
+  const read = <T extends Entry["type"]>(key: Key & { readonly type: T }) =>
+    readMemory<T>(slots, key);
+  const all = <T extends Entry["type"]>(type: T) => allMemory(slots, type);
   function reviews(sessionId?: string): readonly ReviewEntry[] {
     counted();
     return all("review")
@@ -48,18 +47,27 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       .sort(byTime);
   }
 
-  function get<T extends Entry["type"]>(
-    key: Extract<Key, { readonly type: T }>,
-  ): Promise<Stored<ValueOf<T>> | undefined> {
-    counted();
-    return Promise.resolve(read<T>(key));
-  }
   return {
-    ...keyedReads(get),
-    reviewPage(sessionId, cursor) {
-      counted();
-      return Promise.resolve(memoryReviewPage(slots, sessionId, cursor));
-    },
+    ...memoryCompositionReads({
+      partition,
+      read: (key) => read<typeof key.type>(key),
+      range: (type, first, last, limit, after, forward) =>
+        rangeMemory(slots, type, first, last, limit, after, forward),
+      counted,
+    }),
+    ...readModelReads(
+      async (key) => {
+        counted();
+        return Promise.resolve(read<typeof key.type>(key));
+      },
+      async (type, prefix, limit, cursor) => {
+        counted();
+        return Promise.resolve(
+          pageMemory(slots, partition, type, prefix, limit, cursor),
+        );
+      },
+      partition,
+    ),
     profile() {
       counted();
       return Promise.resolve(read({ type: "profile" }));
@@ -78,6 +86,10 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
     },
     reviewsOf(sessionId) {
       return Promise.resolve(reviews(sessionId));
+    },
+    reviewPage(sessionId, cursor) {
+      counted();
+      return Promise.resolve(memoryReviewPage(slots, sessionId, cursor));
     },
     reviews() {
       return Promise.resolve(reviews());
@@ -137,43 +149,8 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
         new Map(all("card").map((stored) => [stored.value.id, stored])),
       );
     },
-    commit(commit) {
-      checkShape(commit);
-      const writes = [
-        ...commit.puts.map((entry) => ({ entry, version: null })),
-        ...commit.updates,
-      ];
-      const deletes = commit.deletes ?? [];
-      const conflict =
-        writes.some(({ entry, version }) => !holds(keyOf(entry), version)) ||
-        commit.updates.some(
-          ({ entry, modelClaim }) =>
-            !matchesModelClaim(slots.get(sortKeyOf(keyOf(entry)))?.entry, modelClaim),
-        ) ||
-        [...commit.expect, ...deletes].some(({ key, version }) => !holds(key, version));
-      if (conflict) {
-        return Promise.resolve(err({ code: "ERR_CONFLICT" }));
-      }
-      // The same strict source validation protects legacy whole-row changes.
-      for (const { entry } of commit.updates) read(keyOf(entry));
-      for (const { key } of deletes) read(key);
-      // Validate all writes before changing even one slot.
-      for (const { entry } of writes) encodeStorageValue(entry.type, entry.value);
-      for (const { key } of deletes) {
-        slots.delete(sortKeyOf(key));
-      }
-      for (const { entry, version } of writes) {
-        slots.set(sortKeyOf(keyOf(entry)), {
-          entry: copyEntry({
-            ...entry,
-            value: encodeStorageValue(entry.type, entry.value),
-          }),
-          version: (version ?? 0) + 1,
-          schemaVersion: STORAGE_SCHEMA_VERSION,
-        });
-      }
-      return Promise.resolve(ok(undefined));
-    },
+    commit: async (commit) =>
+      Promise.resolve(commitMemoryStore(slots, commit, system, partition)),
   };
 }
 
@@ -181,20 +158,39 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
 export interface MemoryStores extends LearnerStores {
   /** Reads made so far through any learner's store; one per method call. */
   readCount(): number;
+  maintenance(): ReadModelMaintenance;
 }
 
-export function createMemoryStores(): MemoryStores {
+export function createMemoryStores(
+  options: { readonly systemRows?: readonly unknown[] } = {},
+): MemoryStores {
   const partitions = new Map<LearnerId, Map<string, Slot>>();
+  const system: MemorySystemRows = new Map();
+  for (const raw of options.systemRows ?? []) {
+    if (
+      typeof raw !== "object" ||
+      raw === null ||
+      !("PK" in raw) ||
+      !("SK" in raw) ||
+      typeof raw.PK !== "string" ||
+      typeof raw.SK !== "string"
+    )
+      throw new TypeError("Trusted initial system rows need complete primary keys.");
+    const copy = JSON.parse(JSON.stringify(raw)) as Readonly<Record<string, unknown>>;
+    system.set(memorySystemKey({ PK: raw.PK, SK: raw.SK }), copy);
+  }
+  const maintenance = memoryReadModelMaintenance(system);
   let reads = 0;
   const counted = (): void => {
     reads += 1;
   };
   return {
     readCount: () => reads,
+    maintenance: () => maintenance,
     forLearner(id) {
       const slots = partitions.get(id) ?? new Map<string, Slot>();
       partitions.set(id, slots);
-      return memoryStore(slots, counted);
+      return memoryStore(slots, counted, partitionKeyOf(id), system);
     },
   };
 }

@@ -15,7 +15,14 @@ import type {
 } from "./records";
 import { growthOf } from "./round-growth";
 import type { RoundOutcome } from "./round-outcome";
-import { streakStatus, weekDots, type CompletedDays } from "./streak";
+import {
+  longestRun,
+  streakStatus,
+  weekDots,
+  type CompletedDays,
+  type StreakStatus,
+} from "./streak";
+import { compactStats } from "./streak-runs";
 import type { DayKey, SubtopicRef } from "./types";
 
 /** The run shown for `day`; 0 stands for "day 1 from today" and is never displayed. */
@@ -47,6 +54,10 @@ export interface CloseState {
   /** The tallies of the fourteen days ending with the round's day. */
   readonly tallies: ReadonlyMap<DayKey, DayTally>;
   readonly catalog: CloseCatalog;
+  readonly completed?: CompletedDays;
+  readonly streakBefore?: StreakStatus;
+  readonly streakAfter?: StreakStatus;
+  readonly longestAfter?: number;
 }
 
 export interface CloseChange {
@@ -89,16 +100,18 @@ export function decideClose(state: CloseState, now: number): CloseChange {
       ? { ...portion, completedAt: now, completedRound: round.id }
       : undefined;
   const completing = completedPortion !== undefined;
-  const before = new Set(stats.completedDays);
+  const before = new Set(state.completed ?? stats.completedDays);
   const completedDays =
     completing && round.portionDay !== null
-      ? [...stats.completedDays, round.portionDay]
-      : stats.completedDays;
+      ? [...before, round.portionDay]
+      : [...before];
   const after = new Set(completedDays);
   const level = settleLevel(round, stats, state.reviews, now);
   const counts = reach(state);
-  const streakBefore = streakValue(before, day);
-  const streakAfter = streakValue(after, day);
+  const valueOf = (status: StreakStatus): number =>
+    status.kind === "broken" ? 0 : status.current;
+  const streakBefore = valueOf(state.streakBefore ?? streakStatus(before, day));
+  const streakAfter = valueOf(state.streakAfter ?? streakStatus(after, day));
   const titles = newTitles({
     streakBefore,
     streakAfter,
@@ -157,9 +170,8 @@ export function decideClose(state: CloseState, now: number): CloseChange {
     round: { ...round, finishedAt: now, outcome },
     outcome,
     stats: {
-      ...stats,
+      ...compactStats(stats, state.longestAfter ?? longestRun(after)),
       points: stats.points + earned,
-      completedDays,
       level: level.entry ?? stats.level,
       // Only a placement starts the window over: a move keeps the answers that made it.
       levelWindow: level.placement === null ? stats.levelWindow : [],

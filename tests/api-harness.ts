@@ -16,6 +16,7 @@ import {
   type WebSession,
 } from "@instant-composition/api";
 import {
+  rebuildCompositionReadModel,
   learnerId,
   type Catalog,
   type LearnerDirectory,
@@ -23,9 +24,10 @@ import {
   type LearnerStores,
   type RoundPayload,
 } from "@instant-composition/application";
-import { ok } from "@instant-composition/domain";
+import { addDays, dayOf, TUNING, ok } from "@instant-composition/domain";
 
 import { fixedCatalog, NOON } from "./application-harness";
+import { prepareVocabReadModels } from "./read-model-harness";
 
 // The API app over the in-memory store and directory — the directory keeping
 // its profiles in those stores, as the DynamoDB one does — the fixture catalog
@@ -43,6 +45,8 @@ export interface ApiHarness {
   readonly model: StandInModel;
   /** Moves the clock the app reads; it stands still otherwise. */
   readonly advance: (ms: number) => void;
+  readonly prepareComposition: (learner?: LearnerId) => Promise<void>;
+  readonly prepareVocab: (learner?: LearnerId) => Promise<void>;
   readonly call: (method: string, path: string, body?: unknown) => Promise<Response>;
 }
 
@@ -104,6 +108,27 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
     webSession: options.webSession,
     model: options.servedModel ?? { provider: "stand-in", modelId: "stand-in", model },
   });
+  async function fixtureContext(
+    learner = learnerId(lines.at(-1)?.learnerId ?? "learner-1"),
+  ) {
+    const profile = await stores.forLearner(learner).profile();
+    if (profile === undefined)
+      throw new Error("Register the fixture learner before maintenance.");
+    return {
+      actor: {
+        kind: "system" as const,
+        job: "rebuild-projections" as const,
+        onBehalfOf: learner,
+      },
+      learner: {
+        ...profile.value,
+        id: learner,
+        dayBoundaryHour: TUNING.dayBoundaryHour,
+      },
+      now,
+      requestId: "fixture-maintenance",
+    };
+  }
   return {
     app,
     stores,
@@ -111,6 +136,31 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
     lines,
     modelCalls,
     model,
+    async prepareVocab(learner) {
+      await prepareVocabReadModels(
+        { stores, catalog: options.catalog ?? fixedCatalog() },
+        await fixtureContext(learner),
+      );
+    },
+    async prepareComposition(learner) {
+      const context = await fixtureContext(learner);
+      const today = dayOf(now, context.learner.timeZone, TUNING.dayBoundaryHour);
+      for (const day of [today, addDays(today, 1)])
+        for (let step = 0; step < 1000; step += 1) {
+          if (
+            (
+              await rebuildCompositionReadModel(
+                { stores, catalog: options.catalog ?? fixedCatalog() },
+                context,
+                day,
+              )
+            ).status === "ready"
+          )
+            break;
+          if (step === 999)
+            throw new Error("The fixture composition worker is incomplete.");
+        }
+    },
     advance: (ms) => {
       now += ms;
     },
@@ -139,6 +189,7 @@ export async function startedPlacement(
   });
   if (saved.status !== 200)
     throw new Error(`Saving settings answered ${String(saved.status)}.`);
+  await api.prepareComposition();
   const started = await api.call("POST", "/v1/rounds", { roundId, kind: "placement" });
   if (started.status !== 200)
     throw new Error(`Starting answered ${String(started.status)}.`);

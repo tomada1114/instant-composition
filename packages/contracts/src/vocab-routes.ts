@@ -15,6 +15,7 @@ const SESSION_ERRORS = [
   "ERR_FORBIDDEN",
   "ERR_CONFLICT",
   "ERR_CONTENT_UNREADABLE",
+  "ERR_READ_MODEL_NOT_READY",
   "ERR_SESSION_NOT_FOUND",
   "ERR_SESSION_CLOSED",
 ] as const;
@@ -33,7 +34,13 @@ export const VOCAB_ROUTES: readonly Route[] = [
       "The vocabulary hub: today's reviews and new cards and the minutes they take, each category's share of them with its cards in learning and in all, the weak cards and tomorrow's reviews.",
     requestBody: null,
     success: { status: 200, body: vocabHubSchema },
-    errors: ["ERR_UNAUTHENTICATED", "ERR_FORBIDDEN", "ERR_CONTENT_UNREADABLE"],
+    errors: [
+      "ERR_UNAUTHENTICATED",
+      "ERR_FORBIDDEN",
+      "ERR_CONTENT_UNREADABLE",
+      "ERR_READ_MODEL_NOT_READY",
+      "ERR_CONFLICT",
+    ],
   },
   {
     method: "post",
@@ -50,6 +57,7 @@ export const VOCAB_ROUTES: readonly Route[] = [
       "ERR_FORBIDDEN",
       "ERR_CONFLICT",
       "ERR_CONTENT_UNREADABLE",
+      "ERR_READ_MODEL_NOT_READY",
     ],
   },
   {
@@ -86,6 +94,7 @@ export const VOCAB_ROUTES: readonly Route[] = [
       "ERR_FORBIDDEN",
       "ERR_CONFLICT",
       "ERR_CONTENT_UNREADABLE",
+      "ERR_READ_MODEL_NOT_READY",
       "ERR_CARD_NOT_FOUND",
       "ERR_CARD_NOT_PERSONAL",
     ],

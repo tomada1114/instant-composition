@@ -17,10 +17,16 @@ function projectionSchemas(strict: boolean) {
     },
     strict,
   );
-  const scanCursor = text.refine((cursor) => {
+  const scanCursor = text.max(4096).refine((cursor) => {
     try {
       const value: unknown = JSON.parse(cursor);
-      return object({ PK: id, SK: id }, true).safeParse(value).success;
+      const parsed = object(
+        { PK: z.literal("SYSTEM#READMODEL_LEARNERS"), SK: id },
+        true,
+      ).safeParse(value);
+      if (!parsed.success) return false;
+      const decoded = decodeURIComponent(parsed.data.SK);
+      return decoded.length > 0 && encodeURIComponent(decoded) === parsed.data.SK;
     } catch {
       return false;
     }
@@ -69,12 +75,15 @@ function projectionSchemas(strict: boolean) {
       {
         schema: z.literal(1),
         cursor: scanCursor.nullable(),
-        pending: z.array(object({ id, profile }, strict)).max(100),
-        index: count,
+        pending: z
+          .array(object({ id, profile }, strict))
+          .max(100)
+          .refine((rows) => new Set(rows.map((row) => row.id)).size === rows.length),
+        index: count.max(101),
         passCompletedAt: count.nullable(),
       },
       strict,
-    ).refine((value) => value.index <= value.pending.length),
+    ).refine((value) => value.index <= value.pending.length + 1),
   };
 }
 

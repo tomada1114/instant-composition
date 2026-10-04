@@ -83,3 +83,16 @@ export {
 } from "./web-session";
 
 export { validateStoredRecords, type MaintenanceAnswer } from "./storage-maintenance";
+export {
+  READ_MODEL_WORKER_STEPS,
+  runReadModelWorker,
+  runReadModelBootstrap,
+  runStoredReadModelBootstrap,
+  readModelBootstrapValidity,
+} from "./read-model-runner";
+export { readReadModelEnv } from "./env";
+
+export {
+  createReadModelWorkerHandler,
+  type ReadModelWorkerRuntime,
+} from "./read-model-dispatch";

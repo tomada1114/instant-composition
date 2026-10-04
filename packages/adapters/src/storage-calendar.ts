@@ -16,7 +16,7 @@ function calendarSchemas(strict: boolean) {
   };
   const map = z.record(id, count);
   const ranked = object(
-    { id, scheduled: z.boolean(), recall: number.min(0).max(1), at: count },
+    { id, scheduled: z.boolean(), recall: number.min(0).max(1), at: number },
     strict,
   );
   const evidence = object({ seen: count, misses: count }, strict).refine(

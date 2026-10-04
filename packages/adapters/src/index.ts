@@ -37,3 +37,6 @@ export {
 export { executeStorageMaintenance } from "./storage-maintenance";
 export { createDynamoDbReadModelBootstrapStorage } from "./dynamodb-storage-bootstrap";
 export { decodeReadModelBootstrapState } from "./storage-bootstrap-schema";
+export { createDynamoDbReadModelMaintenance } from "./dynamodb-read-model-maintenance";
+
+export { backfillReadModelLearners } from "./read-model-backfill";

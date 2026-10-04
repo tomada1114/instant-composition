@@ -1,24 +1,16 @@
 import {
   calendarDots,
+  calendarWeeks,
   EMPTY_STATS,
   levelModeOf,
-  longestRun,
   ok,
   parseTitleKey,
-  pendingReach,
-  reachBySubtopic,
-  reachByTopic,
-  streakValue,
   suggestedLevel,
-  weaknesses,
-  type ItemProgress,
   type Result,
-  type SubtopicRef,
 } from "@instant-composition/domain";
 
 import {
   conceptName,
-  placeOf,
   snapshotOrEmpty,
   subtopicName,
   toeicOf,
@@ -28,7 +20,9 @@ import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, todayOf, type ApplicationDeps } from "./execute";
 import { reachViewOf } from "./present";
-import type { RecordsView, TitleGroup, WeakPoints } from "./query-views";
+import { compositionProjection } from "./composition-load";
+import { loadStreakStatus } from "./streak-maintenance";
+import type { RecordsView, TitleGroup } from "./query-views";
 
 function titleGroups(keys: readonly string[], snapshot: CatalogSnapshot): TitleGroup[] {
   const streak: number[] = [];
@@ -57,41 +51,6 @@ function titleGroups(keys: readonly string[], snapshot: CatalogSnapshot): TitleG
   return groups;
 }
 
-/** Where each mastered item belongs: its card, else its retired entry, else its last review. */
-function masteredPlaces(
-  items: readonly ItemProgress[],
-  snapshot: CatalogSnapshot,
-): Map<string, SubtopicRef> {
-  const place = placeOf(snapshot);
-  return new Map(
-    items
-      .filter((item) => item.mastered !== null)
-      .map((item) => {
-        const ref = place(item.item.id) ?? item.placement;
-        return [item.item.id, { topic: ref.topic, subtopic: ref.subtopic }];
-      }),
-  );
-}
-
-/** The weakest concepts and subtopics over the shown cards, named for the screen. */
-function weakPoints(
-  items: readonly ItemProgress[],
-  snapshot: CatalogSnapshot,
-): WeakPoints {
-  const weak = weaknesses({ items, shown: snapshot.shown });
-  return {
-    grammar: weak.grammar.map(({ concept }) => ({
-      id: concept,
-      name: conceptName(snapshot, concept),
-    })),
-    subtopics: weak.subtopics.map(({ topic, subtopic }) => ({
-      topic,
-      subtopic,
-      name: subtopicName(snapshot, { topic, subtopic }),
-    })),
-  };
-}
-
 /** Mastered cards by topic and subtopic, the run, the calendar and the totals. */
 export async function records(
   deps: ApplicationDeps,
@@ -102,20 +61,37 @@ export async function records(
     return bound;
   }
   const store = bound.value;
-  const [{ snapshot }, settings, stored, items] = await Promise.all([
-    snapshotOrEmpty(deps.catalog),
-    store.settings(),
-    store.stats(),
-    store.items(),
-  ]);
-  const stats = stored?.value ?? EMPTY_STATS;
   const today = todayOf(context);
-  const completed = new Set(stats.completedDays);
-  const progress = [...items.values()].map((item) => item.value);
-  const where = masteredPlaces(progress, snapshot);
-  const byTopic = reachByTopic(where.keys(), where);
+  const calendarStart = calendarWeeks(today, 12)[0]?.[0] ?? today;
+  const [{ snapshot }, settings, stored, portion, tallies, portions] =
+    await Promise.all([
+      snapshotOrEmpty(deps.catalog),
+      store.settings(),
+      store.stats(),
+      store.portion(today),
+      store.days([today]),
+      store.portionsPage({ from: calendarStart, to: today, limit: 100 }),
+    ]);
+  const stats = stored?.value ?? EMPTY_STATS;
+  const projected = await compositionProjection(
+    store,
+    snapshot,
+    today,
+    settings,
+    stored,
+    portion,
+    tallies.get(today),
+    context.now,
+  );
+  if (!projected.ok) return projected;
+  const model = projected.value;
+  const status = await loadStreakStatus(store, today, stats.streak?.longest ?? 0);
+  const completed = new Set(
+    portions.entries
+      .filter(({ value }) => value.completedAt !== null)
+      .map(({ value }) => value.day),
+  );
   const suggested = suggestedLevel(stats);
-  const bySubtopic = reachBySubtopic(where.keys(), where);
   const chosen = snapshot.topics.filter((topic) =>
     (settings?.value.topics ?? []).includes(topic.id),
   );
@@ -123,15 +99,11 @@ export async function records(
     reach: reachViewOf(
       chosen.map((topic) => ({
         topic: topic.id,
-        count: byTopic.get(topic.id) ?? 0,
+        count: model.reach[topic.id] ?? 0,
         added: 0,
       })),
       snapshot,
-      pendingReach(
-        progress,
-        new Set(chosen.map((topic) => topic.id)),
-        placeOf(snapshot),
-      ),
+      model.pending,
     ),
     breakdown: chosen.map((topic) => ({
       id: topic.id,
@@ -139,14 +111,27 @@ export async function records(
       subtopics: topic.subtopics.map((subtopic) => ({
         id: subtopic.id,
         name: subtopic.name,
-        count: bySubtopic.get(`${topic.id}/${subtopic.id}`) ?? 0,
+        count: model.breakdown[`${topic.id}/${subtopic.id}`] ?? 0,
       })),
     })),
-    weak: weakPoints(progress, snapshot),
+    weak: {
+      grammar: model.weak.grammar.map(({ concept }) => ({
+        id: concept,
+        name: conceptName(snapshot, concept),
+      })),
+      subtopics: model.weak.subtopics.map(({ topic, subtopic }) => ({
+        topic,
+        subtopic,
+        name: subtopicName(snapshot, { topic, subtopic }),
+      })),
+    },
     toeic: stats.level === null ? null : toeicOf(snapshot, stats.level.level),
     levelMode: levelModeOf(stats),
     suggestedToeic: suggested === null ? null : toeicOf(snapshot, suggested),
-    streak: { current: streakValue(completed, today), longest: longestRun(completed) },
+    streak: {
+      current: status.kind === "broken" ? 0 : status.current,
+      longest: stats.streak?.longest ?? 0,
+    },
     calendar: calendarDots(completed, today, stats.firstDay ?? undefined),
     said: stats.said,
     practicedDays: stats.practicedDays,

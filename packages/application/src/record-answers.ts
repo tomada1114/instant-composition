@@ -12,6 +12,7 @@ import { cardFacts } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
+import { COMPOSITION_SOURCE_ITEMS_PER_COMMIT } from "./composition-mutation";
 import { initializeRoundAnswers } from "./initialize-round-answers";
 import { itemValues, statsOf } from "./practice";
 import type { LearnerStore } from "./store";
@@ -25,7 +26,7 @@ export interface RecordAnswersCommand {
  * Answers per commit: each takes a review, at most an item, and the round,
  * portion, day and totals, which keeps a commit well inside the store's limit.
  */
-const ANSWERS_PER_COMMIT = 20;
+const ANSWERS_PER_COMMIT = COMPOSITION_SOURCE_ITEMS_PER_COMMIT;
 
 function recordChunk(
   store: LearnerStore,
@@ -34,7 +35,7 @@ function recordChunk(
   command: RecordAnswersCommand,
   chunk: readonly AnswerInput[],
 ): Promise<Result<undefined, ApplicationError>> {
-  return committed(store, async () => {
+  return committed<undefined>(store, async () => {
     const round = await store.round(command.roundId);
     if (round === undefined) {
       return err({ code: "ERR_ROUND_NOT_FOUND" });
@@ -57,6 +58,8 @@ function recordChunk(
       store.days([day]),
     ]);
     const tally = tallies.get(day);
+    if (stats !== undefined && stats.value.streak === undefined)
+      return err({ code: "ERR_READ_MODEL_NOT_READY" });
     const change = decideAnswers(
       {
         round: round.value,

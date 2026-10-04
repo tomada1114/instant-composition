@@ -15,6 +15,7 @@ import type { CommitConflict } from "./store";
  * own failures are `PracticeError`'s, and the vocabulary rules' `VocabError`'s.
  */
 export type ApplicationError =
+  | { readonly code: "ERR_READ_MODEL_NOT_READY" }
   | { readonly code: "ERR_FORBIDDEN" }
   | CommitConflict
   | CatalogUnreadable

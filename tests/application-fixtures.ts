@@ -1,4 +1,9 @@
-import type { Entry, Profile } from "@instant-composition/application";
+import type {
+  Entry,
+  Profile,
+  VocabCandidate,
+  VocabReadModel,
+} from "@instant-composition/application";
 import type {
   DayTally,
   FsrsState,
@@ -15,6 +20,12 @@ import type {
   VocabReview,
   VocabSession,
 } from "@instant-composition/domain";
+
+import {
+  makeCompositionBuild,
+  makeCompositionReadModel,
+  makeCompositionCandidate,
+} from "./composition-fixtures";
 
 // Factories for the packages/application suites. Nothing here asserts.
 
@@ -35,7 +46,7 @@ export function makeSettings(overrides: Partial<Settings> = {}): Settings {
 export function makeStats(overrides: Partial<LearnerStats> = {}): LearnerStats {
   return {
     points: 0,
-    completedDays: [],
+    streak: { schema: 1, longest: 0 },
     firstDay: null,
     said: 0,
     practicedDays: 0,
@@ -312,9 +323,78 @@ export function without<T extends object>(value: T, key: keyof T): T {
   return copy;
 }
 
+/** A compact ready vocabulary fixture, separate from its candidate rows. */
+export function makeVocabReadModel(
+  overrides: Partial<VocabReadModel> = {},
+): VocabReadModel {
+  return {
+    schema: 1,
+    day: "2026-09-22",
+    catalog: "fixture",
+    generation: "none",
+    sourceVersion: 1,
+    status: "ready",
+    phase: "personal",
+    offset: 0,
+    cursor: null,
+    counts: ["word", "idiom", "phrasal-verb", "phrase"].map((category) => ({
+      category:
+        category === "word"
+          ? "word"
+          : category === "idiom"
+            ? "idiom"
+            : category === "phrase"
+              ? "phrase"
+              : "phrasal-verb",
+      total: 0,
+      learning: 0,
+      due: 0,
+      fresh: 0,
+      weak: 0,
+      tomorrow: 0,
+      introduced: 0,
+      reviewed: 0,
+    })),
+    ...overrides,
+  };
+}
+export function makeVocabCandidate(
+  overrides: Partial<VocabCandidate> = {},
+): VocabCandidate {
+  return {
+    schema: 1,
+    day: "2026-09-22",
+    generation: "none",
+    mode: "due",
+    category: null,
+    level: null,
+    order: "00001",
+    cardId: "v1",
+    cardCategory: "word",
+    cardLevel: 1,
+    kind: "review",
+    ...overrides,
+  };
+}
+
 /** One entry of every type, so a suite over them covers the whole store. */
 export function oneOfEach(): Entry[] {
   return [
+    { type: "compositionCandidate", value: makeCompositionCandidate() },
+    { type: "compositionReadModel", value: makeCompositionReadModel() },
+    { type: "compositionBuild", value: makeCompositionBuild() },
+    { type: "streakRun", value: { schema: 1, start: "2026-09-22", end: "2026-09-22" } },
+    {
+      type: "streakMigration",
+      value: {
+        schema: 1,
+        statsVersion: 1,
+        legacyCursor: null,
+        cursor: null,
+        open: null,
+        longest: 0,
+      },
+    },
     { type: "profile", value: makeProfile() },
     { type: "settings", value: makeSettings() },
     { type: "stats", value: makeStats() },
@@ -347,5 +427,8 @@ export function oneOfEach(): Entry[] {
     { type: "vocabSession", value: makeVocabSession() },
     { type: "vocabReview", value: makeVocabReview() },
     { type: "card", value: makePersonalCard() },
+    { type: "vocabReadModel", value: makeVocabReadModel() },
+    { type: "vocabCandidate", value: makeVocabCandidate() },
+    { type: "vocabReadModelRequest", value: { schema: 1, day: "2026-09-22" } },
   ];
 }

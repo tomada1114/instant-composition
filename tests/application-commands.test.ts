@@ -1,3 +1,4 @@
+import { settleComposition } from "./composition-maintenance-harness";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -507,7 +508,8 @@ describe("finishRound", () => {
     expect(finished.value.portionCompleted).toBe(true);
     expect(finished.value.points).toStrictEqual({ earned: 20, total: 20 });
     const stats = await h.stores.forLearner(h.learner).stats();
-    expect(stats?.value.completedDays).toStrictEqual(["2026-09-22"]);
+    expect(stats?.value).not.toHaveProperty("completedDays");
+    expect(stats?.value.streak).toStrictEqual({ schema: 1, longest: 1 });
     expect(stats?.value.openRound).toBeNull();
   });
 
@@ -577,10 +579,11 @@ describe("updateSettings", () => {
     expect(saved.ok && saved.value.completedToday).toBe(true);
     const store = h.stores.forLearner(h.learner);
     expect((await store.round(round.id))?.value.finishedAt).toBe(tomorrow);
-    expect((await store.stats())?.value.completedDays).toStrictEqual([
-      "2026-09-22",
-      "2026-09-23",
-    ]);
+    expect((await store.stats())?.value).not.toHaveProperty("completedDays");
+    expect((await store.stats())?.value.streak).toStrictEqual({
+      schema: 1,
+      longest: 2,
+    });
   });
 
   it("cuts the open round's deck when a lower limit is not yet met", async () => {
@@ -646,6 +649,7 @@ describe("updateLevel", () => {
     });
 
     await updateSettings(h.deps, h.context(), { newPerDay: 10 });
+    await settleComposition(h.deps, h.context());
     const view = await home(h.deps, h.context());
     expect(view.ok && view.value.state.kind).toBe("ready");
     const round = await start(h, "today", "t1");

@@ -24,7 +24,12 @@ export const MAX_REQUEST_BODY_BYTES = 65_536;
 export function failure(code: ErrorCode): Response {
   return Response.json(
     { error: { code, message: MESSAGE_BY_CODE[code] } },
-    { status: STATUS_BY_CODE[code] },
+    {
+      status: STATUS_BY_CODE[code],
+      ...(code === "ERR_READ_MODEL_NOT_READY"
+        ? { headers: { "Retry-After": "2" } }
+        : {}),
+    },
   );
 }
 

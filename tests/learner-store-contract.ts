@@ -1,3 +1,4 @@
+import { makeCompositionCandidate } from "./composition-fixtures";
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { MAX_COMMIT_ITEMS, StorageSchemaError } from "@instant-composition/adapters";
@@ -24,6 +25,7 @@ import {
   makeTalk,
   makeTurn,
   makeVocabProgress,
+  makeVocabCandidate,
   makeVocabReview,
   makeVocabSession,
   oneOfEach,
@@ -74,22 +76,61 @@ type Read = (store: LearnerStore) => Promise<unknown>;
  * compile here until the isolation case below covers it.
  */
 const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
+  compositionCandidates: async (store) =>
+    (
+      await store.compositionCandidates({
+        day: "2026-09-22",
+        generation: "fixture",
+        mode: "due",
+        limit: 10,
+        cursor: null,
+      })
+    ).rows,
+  compositionCandidatesByKeys: (store) =>
+    store.compositionCandidatesByKeys([makeCompositionCandidate()]),
+  reviewsByIds: (store) => store.reviewsByIds("r1", ["a1"]),
+  reviewPage: (store) => store.reviewPage("r1", null),
+  readModelSource: (store) => store.readModelSource(),
+  vocabReadModel: (store) => store.vocabReadModel("2026-09-22"),
+  vocabReadModelRequest: (store) => store.vocabReadModelRequest("2026-09-22"),
+  vocabReadModelRequests: async (store) =>
+    (await store.vocabReadModelRequests(null)).rows,
+  vocabCandidates: async (store) =>
+    (
+      await store.vocabCandidates({
+        day: "2026-09-22",
+        generation: "none",
+        mode: "due",
+        category: null,
+        level: null,
+        limit: 10,
+        cursor: null,
+      })
+    ).rows,
+  vocabCandidatesByKeys: (store) => store.vocabCandidatesByKeys([makeVocabCandidate()]),
+  personalCardPage: async (store) => (await store.personalCardPage(null)).rows,
+  vocabItemsByIds: (store) => store.vocabItemsByIds(["v1"]),
+  itemsByIds: (store) => store.itemsByIds(["c1"]),
+  cardsByIds: (store) => store.cardsByIds(["p_card00000001"]),
+  vocabReviewsByIds: (store) => store.vocabReviewsByIds("s1", ["va1"]),
+  compositionSource: (store) => store.compositionSource(),
+  compositionReadModel: (store) => store.compositionReadModel("2026-09-22"),
+  compositionBuild: (store) => store.compositionBuild("2026-09-22"),
+  streakMigration: (store) => store.streakMigration(),
+  streakNeighbours: (store) => store.streakNeighbours("2026-09-22"),
+  portionsPage: (store) =>
+    store.portionsPage({ from: "2026-09-01", to: "2026-09-30", limit: 100 }),
+  compositionItemsPage: (store) => store.compositionItemsPage({ limit: 100 }),
   profile: (store) => store.profile(),
   settings: (store) => store.settings(),
   stats: (store) => store.stats(),
   round: (store) => store.round("r1"),
-  reviewsByIds: (store) => store.reviewsByIds("r1", ["a1"]),
-  reviewPage: (store) => store.reviewPage("r1", null).then((page) => page.entries),
   reviewsOf: (store) => store.reviewsOf("r1"),
   reviews: (store) => store.reviews(),
   portion: (store) => store.portion("2026-09-22"),
   days: (store) => store.days(["2026-09-22"]),
-  itemsByIds: (store) => store.itemsByIds(["c1"]),
   items: (store) => store.items(),
   talk: (store) => store.talk("t1"),
-  vocabItemsByIds: (store) => store.vocabItemsByIds(["v1"]),
-  vocabReviewsByIds: (store) => store.vocabReviewsByIds("s1", ["va1"]),
-  cardsByIds: (store) => store.cardsByIds(["p_card00000001"]),
   modelTask: (store) =>
     store.modelTask({
       talkId: "t1",
@@ -107,6 +148,13 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
 function isNothing(value: unknown): boolean {
   if (value === undefined) return true;
   if (Array.isArray(value)) return value.length === 0;
+  if (
+    typeof value === "object" &&
+    value !== null &&
+    "entries" in value &&
+    Array.isArray(value.entries)
+  )
+    return value.entries.length === 0;
   return value instanceof Map && value.size === 0;
 }
 
@@ -330,6 +378,40 @@ export function describeLearnerStoreContract(
         expect(await store.reviewsOf("r1")).toStrictEqual([]);
       },
     );
+
+    it("counts observed preimage wire values in the4MB transaction budget without applying any write", async () => {
+      const original = oneOfEach().find((entry) => entry.type === "modelTask");
+      if (original?.type !== "modelTask")
+        throw new Error("Missing model task fixture.");
+      const entries = Array.from({ length: 40 }, (_, at) => ({
+        type: "modelTask" as const,
+        value: {
+          ...original.value,
+          key: { ...original.value.key, talkId: `budget-${String(at)}` },
+          input: "x".repeat(60000),
+        },
+      }));
+      expect((await store.commit({ puts: entries, updates: [], expect: [] })).ok).toBe(
+        true,
+      );
+      await expect(
+        store.commit({
+          puts: [],
+          updates: entries.map((entry) => ({
+            entry,
+            version: 1,
+            modelClaim: entry.value.claimId,
+          })),
+          expect: [],
+        }),
+      ).rejects.toBeInstanceOf(RangeError);
+      expect(
+        (await store.modelTask(entries[0]?.value.key ?? original.value.key))?.version,
+      ).toBe(1);
+      expect(
+        (await store.modelTask(entries[39]?.value.key ?? original.value.key))?.version,
+      ).toBe(1);
+    });
 
     it("fences model finalization after TTL deletion and recreation restarted the numeric version", async () => {
       const claim = oneOfEach().find((entry) => entry.type === "modelTask");
@@ -1013,18 +1095,21 @@ export function describeLearnerStoreContract(
       expect(await store.days(["2026-01-01"])).toStrictEqual(new Map());
     });
 
-    it("accepts a commit of exactly the transaction limit", async () => {
-      const days: Entry[] = Array.from({ length: MAX_COMMIT_ITEMS }, (_, index) => ({
-        type: "day",
-        value: makeDay({
-          day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+    it("reserves one transaction action for the composition epoch", async () => {
+      const days: Entry[] = Array.from(
+        { length: MAX_COMMIT_ITEMS - 1 },
+        (_, index) => ({
+          type: "day",
+          value: makeDay({
+            day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+          }),
         }),
-      }));
+      );
 
       expect((await store.commit({ puts: days, updates: [], expect: [] })).ok).toBe(
         true,
       );
-      expect((await store.days(["2026-01-01", "2026-04-16"])).size).toBe(2);
+      expect((await store.days(["2026-01-01", "2026-04-15"])).size).toBe(2);
     });
 
     it("refuses a commit that names one key twice", async () => {
@@ -1044,12 +1129,15 @@ export function describeLearnerStoreContract(
     });
 
     it("counts deletes toward the transaction limit", async () => {
-      const days: Entry[] = Array.from({ length: MAX_COMMIT_ITEMS }, (_, index) => ({
-        type: "day",
-        value: makeDay({
-          day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+      const days: Entry[] = Array.from(
+        { length: MAX_COMMIT_ITEMS - 1 },
+        (_, index) => ({
+          type: "day",
+          value: makeDay({
+            day: `2026-${String(Math.floor(index / 28) + 1).padStart(2, "0")}-${String((index % 28) + 1).padStart(2, "0")}`,
+          }),
         }),
-      }));
+      );
 
       await expect(async () =>
         store.commit({

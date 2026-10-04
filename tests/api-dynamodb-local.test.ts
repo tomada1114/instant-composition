@@ -229,6 +229,8 @@ describe("the API on DynamoDB local", () => {
       authenticator: subjectAuthenticator("subject-b"),
       newLearnerId: () => learnerId("learner-b"),
     });
+    await a.call("GET", "/v1/me");
+    await a.prepareVocab();
     const session = vocabSessionSchema.parse(
       await (
         await a.call("POST", "/v1/vocab/sessions", { sessionId: "s1", kind: "today" })
