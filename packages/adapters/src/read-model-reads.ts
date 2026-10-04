@@ -15,6 +15,7 @@ import {
   pageCursor,
 } from "./read-model-keys";
 
+import { candidateCursorKey } from "./vocab-page-cursor";
 import type { ValueOf } from "./dynamodb-rows";
 import { compositionCandidateReads } from "./composition-candidate-reads";
 export type GetEntry = <T extends Entry["type"]>(
@@ -31,6 +32,10 @@ export type EntryPage = <T extends Entry["type"]>(
 }>;
 type ReadPorts = Pick<
   LearnerStore,
+  | "vocabPagedSession"
+  | "vocabDeckPage"
+  | "vocabPageProgress"
+  | "vocabSessionGuard"
   | "readModelSource"
   | "vocabReadModel"
   | "vocabReadModelRequest"
@@ -66,6 +71,12 @@ export function readModelReads(
     return new Map(found.flat());
   }
   return {
+    vocabPagedSession: (id) => get({ type: "vocabPagedSession", id }),
+    vocabSessionGuard: (id) => get({ type: "vocabSessionGuard", id }),
+    vocabDeckPage: (sessionId, generation, page) =>
+      get({ type: "vocabDeckPage", sessionId, generation, page }),
+    vocabPageProgress: (sessionId, generation, page) =>
+      get({ type: "vocabPageProgress", sessionId, generation, page }),
     ...compositionCandidateReads(get, page),
     readModelSource: () => get({ type: "readModelSource" }),
     vocabReadModelRequest: (day) => get({ type: "vocabReadModelRequest", day }),
@@ -107,7 +118,16 @@ export function readModelReads(
               }),
             )
           : request.cursor;
-      return page("vocabCandidate", prefix, request.limit, cursor);
+      if (cursor === null) return page("vocabCandidate", prefix, request.limit, cursor);
+      const key = candidateCursorKey(cursor, prefix, partition);
+      if (key === undefined)
+        throw new RangeError("A cursor belongs to one learner and candidate range.");
+      return page(
+        "vocabCandidate",
+        prefix,
+        request.limit,
+        pageCursor(partition, prefix, key.SK),
+      );
     },
     personalCardPage: (cursor) => page("card", "CARD#", READ_MODEL_PAGE_SIZE, cursor),
     vocabItemsByIds: (ids) => points(ids, (cardId) => ({ type: "vocabItem", cardId })),

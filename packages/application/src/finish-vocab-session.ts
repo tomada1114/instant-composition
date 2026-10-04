@@ -36,6 +36,9 @@ export async function finishVocabSession(
     if (session === undefined) {
       return err({ code: "ERR_SESSION_NOT_FOUND" });
     }
+    const guard = await store.vocabSessionGuard(command.sessionId);
+    if (guard !== undefined && guard.value.finishedAt !== session.value.finishedAt)
+      return err({ code: "ERR_CONFLICT" });
     return session.value.finishedAt === null
       ? undefined
       : ok(summaryOf(session.value, await store.vocabReviewsOf(command.sessionId)));
@@ -59,7 +62,12 @@ export async function finishVocabSession(
     if (session === undefined) {
       return err({ code: "ERR_SESSION_NOT_FOUND" });
     }
-    const reviews = await store.vocabReviewsOf(command.sessionId);
+    const [reviews, guard] = await Promise.all([
+      store.vocabReviewsOf(command.sessionId),
+      store.vocabSessionGuard(command.sessionId),
+    ]);
+    if (guard !== undefined && guard.value.finishedAt !== session.value.finishedAt)
+      return err({ code: "ERR_CONFLICT" });
     if (session.value.finishedAt !== null) {
       return ok({ value: summaryOf(session.value, reviews), writes: [] });
     }
@@ -117,7 +125,16 @@ export async function finishVocabSession(
     };
     return ok({
       value: summaryOf(finished, reviews),
-      writes: [[{ type: "vocabSession", value: finished }, session]],
+      writes: [
+        [{ type: "vocabSession", value: finished }, session],
+        [
+          {
+            type: "vocabSessionGuard",
+            value: { id: session.value.id, finishedAt: context.now },
+          },
+          guard,
+        ],
+      ],
       expect,
     });
   });

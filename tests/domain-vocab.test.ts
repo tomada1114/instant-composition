@@ -1,3 +1,4 @@
+import { vocabFreshPosition } from "@instant-composition/domain";
 import { describe, expect, it, vi } from "vitest";
 
 import {
@@ -594,4 +595,14 @@ describe("the vocabulary limits in the settings", () => {
       ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
     },
   );
+});
+
+describe("vocabulary page positions", () => {
+  it("keeps new-card interleaving in global queue order across64-card boundaries", () => {
+    expect(
+      Array.from({ length: 10 }, (_, index) => vocabFreshPosition(index, 193, 10)),
+    ).toStrictEqual([19, 39, 59, 80, 100, 120, 141, 161, 181, 202]);
+    expect(vocabFreshPosition(0, 0, 1)).toBe(0);
+    expect(vocabFreshPosition(0, 1, 1)).toBe(1);
+  });
 });

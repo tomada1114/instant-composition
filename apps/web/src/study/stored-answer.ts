@@ -35,7 +35,22 @@ export function readAnswer(value: unknown): AnswerInput | undefined {
     (entry.answeredAt !== undefined && !Number.isInteger(entry.answeredAt))
   )
     return undefined;
+  if (
+    (entry.vocabPage !== undefined &&
+      (!Number.isSafeInteger(entry.vocabPage) ||
+        typeof entry.vocabPage !== "number" ||
+        entry.vocabPage < 0)) ||
+    (entry.vocabGeneration !== undefined &&
+      (!Number.isSafeInteger(entry.vocabGeneration) ||
+        typeof entry.vocabGeneration !== "number" ||
+        entry.vocabGeneration < 1))
+  )
+    return undefined;
   return {
+    ...(typeof entry.vocabPage === "number" ? { vocabPage: entry.vocabPage } : {}),
+    ...(typeof entry.vocabGeneration === "number"
+      ? { vocabGeneration: entry.vocabGeneration }
+      : {}),
     id: entry.id,
     roundId: entry.roundId,
     cardId: entry.cardId,

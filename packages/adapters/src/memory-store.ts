@@ -37,8 +37,8 @@ function memoryStore(
   system: MemorySystemRows,
 ): LearnerStore {
   const read = <T extends Entry["type"]>(key: Key & { readonly type: T }) =>
-    readMemory<T>(slots, key);
-  const all = <T extends Entry["type"]>(type: T) => allMemory(slots, type);
+    readMemory<T>(slots, key, partition);
+  const all = <T extends Entry["type"]>(type: T) => allMemory(slots, type, partition);
   function reviews(sessionId?: string): readonly ReviewEntry[] {
     counted();
     return all("review")
@@ -52,7 +52,7 @@ function memoryStore(
       partition,
       read: (key) => read<typeof key.type>(key),
       range: (type, first, last, limit, after, forward) =>
-        rangeMemory(slots, type, first, last, limit, after, forward),
+        rangeMemory(slots, type, first, last, limit, after, forward, partition),
       counted,
     }),
     ...readModelReads(

@@ -65,10 +65,54 @@ export const handler = releaseHandler(fileURLToPath(new URL(".", import.meta.url
   );
 }
 
+/**
+ * The API function's bundle as the app template names it: every Lambda bundle
+ * carries the same release wrapper, so the directory contents cannot tell the
+ * API apart from a worker.
+ * @param {string} assembly @returns {string}
+ */
+function apiAsset(assembly) {
+  /** @param {string} name @returns {unknown} */
+  function read(name) {
+    try {
+      return parseJson(readFileSync(path.join(assembly, name), "utf8"));
+    } catch {
+      throw new ReleaseError("app stack template");
+    }
+  }
+  const app = readKey(readKey(read("manifest.json"), "artifacts"), "app");
+  const template = readString(readKey(app, "properties"), "templateFile");
+  if (
+    readString(app, "type") !== "aws:cloudformation:stack" ||
+    readString(readKey(app, "properties"), "stackName") !==
+      "instant-composition-dev-app" ||
+    template === undefined ||
+    !/^[A-Za-z0-9.-]+\.json$/.test(template)
+  )
+    throw new ReleaseError("app stack template");
+  const resources = readKey(read(template), "Resources");
+  if (typeof resources !== "object" || resources === null)
+    throw new ReleaseError("app stack resources");
+  const assets = Object.entries(resources)
+    .filter(
+      ([logicalId, resource]) =>
+        /^ApiFunction[A-F0-9]+$/.test(logicalId) &&
+        readString(resource, "Type") === "AWS::Lambda::Function",
+    )
+    .map(([, resource]) => readString(readKey(resource, "Metadata"), "aws:asset:path"));
+  if (
+    assets.length !== 1 ||
+    assets[0] === undefined ||
+    !/^asset\.[a-z0-9]+$/.test(assets[0])
+  )
+    throw new ReleaseError("API function asset");
+  return path.join(assembly, assets[0]);
+}
+
 /** @param {string} root @param {string} assembly @param {string} sha @returns {{sha: string, files: Record<string, string>, web: {sha: string, files: Record<string, string>}, api: {sha: string, files: Record<string, string>}}} */
 export function recordRelease(root, assembly, sha) {
   if (checkoutSha(root) !== sha) throw new ReleaseError("checkout SHA");
-  const candidates = readdirSync(assembly)
+  const bundles = readdirSync(assembly)
     .filter((name) => name.startsWith("asset."))
     .flatMap((name) => {
       const directory = path.join(assembly, name);
@@ -78,21 +122,26 @@ export function recordRelease(root, assembly, sha) {
         ? [directory]
         : [];
     });
-  if (candidates.length !== 1 || candidates[0] === undefined)
-    throw new ReleaseError("API bundle count");
-  const api = metadata(
-    parseJson(readFileSync(path.join(candidates[0], "release.json"), "utf8")),
-  );
+  const apiDir = apiAsset(assembly);
+  if (!bundles.includes(apiDir)) throw new ReleaseError("API bundle");
   const webDir = path.join(root, "apps/web/dist");
   if (
-    api.sha !== sha ||
     readString(
       parseJson(readFileSync(path.join(webDir, "release.json"), "utf8")),
       "sha",
     ) !== sha
   )
     throw new ReleaseError("build SHA");
-  verifyFiles(candidates[0], api);
+  for (const bundle of bundles) {
+    const packaged = metadata(
+      parseJson(readFileSync(path.join(bundle, "release.json"), "utf8")),
+    );
+    if (packaged.sha !== sha) throw new ReleaseError("build SHA");
+    verifyFiles(bundle, packaged);
+  }
+  const api = metadata(
+    parseJson(readFileSync(path.join(apiDir, "release.json"), "utf8")),
+  );
   const webAssets = readdirSync(assembly)
     .filter((name) => name.startsWith("asset."))
     .map((name) => path.join(assembly, name))

@@ -5,7 +5,7 @@ import type { GradeKeyTrio } from "../openapi";
 import { Button } from "../ui/button";
 import { Dialog } from "../ui/dialog";
 import { Kbd } from "../ui/kbd";
-/** Pause and navigation confirmation explain vocabulary's fresh-session reload behavior. */
+/** Pause and navigation confirmation explain vocabulary's saved continuation. */
 export function VocabDialog({
   leaving,
   gradeKeys,

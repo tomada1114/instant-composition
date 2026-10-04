@@ -99,6 +99,8 @@ export async function startVocabSession(
   return committed(store, async () => {
     const existing = await store.vocabSession(command.sessionId);
     if (existing !== undefined) {
+      if (existing.value.deck.length > 200)
+        return err({ code: "ERR_PAGED_SESSION_REQUIRED" });
       const loaded = await loadVocabSubset(
         store,
         deps.catalog,
@@ -129,7 +131,19 @@ export async function startVocabSession(
       model.value.sourceVersion !== (source?.version ?? 0)
     )
       return err({ code: "ERR_READ_MODEL_NOT_READY" });
+    const limits = withDefaults(settings?.value ?? DEFAULT_SETTINGS);
     const category = command.category ?? null;
+    if (command.kind === "today" && limits.vocabReviewsPerDay === null) {
+      const plan = await projectedVocabPlan(
+        store,
+        model.value,
+        snapshot.value,
+        limits,
+        stats?.value.level?.level ?? 1,
+      );
+      if (plan.hub.today.due + plan.hub.today.new > 200)
+        return err({ code: "ERR_PAGED_SESSION_REQUIRED" });
+    }
     const session: VocabSession = {
       id: command.sessionId,
       kind: command.kind,
@@ -140,7 +154,7 @@ export async function startVocabSession(
           store,
           model.value,
           snapshot.value,
-          withDefaults(settings?.value ?? DEFAULT_SETTINGS),
+          limits,
           stats?.value.level?.level ?? 1,
           command.kind,
           category,

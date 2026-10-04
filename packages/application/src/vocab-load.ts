@@ -46,7 +46,7 @@ export function vocabSnapshots(
   );
 }
 
-function cardViewOf(
+export function cardViewOf(
   item: ShownCard,
   progress: VocabProgress | undefined,
   day: DayKey,
@@ -126,7 +126,13 @@ export async function loadVocabSubset(
     store.cardsByIds(ids),
   ]);
   const limits = withDefaults(settings?.value ?? DEFAULT_SETTINGS);
-  const shown = shownCards(snapshot.value, personal);
+  const selected = new Map(
+    ids.flatMap((id) => {
+      const card = snapshot.value.vocab.get(id);
+      return card === undefined ? [] : [[id, card] as const];
+    }),
+  );
+  const shown = shownCards({ ...snapshot.value, vocab: selected }, personal);
   const cards = new Map(
     ids.flatMap((id) => {
       const card = shown.get(id);

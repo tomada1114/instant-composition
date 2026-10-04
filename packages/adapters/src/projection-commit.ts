@@ -11,9 +11,11 @@ import {
   compositionSourceMatches,
   withCompositionEpoch,
 } from "./composition-epoch";
-import { checkShape } from "./keys";
+import { checkShape, sortKeyOf } from "./keys";
+import { keyOf } from "@instant-composition/application";
+import { storageKeysMatch } from "./storage-key-binding";
 import { changesReadModelSource } from "./read-model-keys";
-import { encodeStorageValue } from "./storage-schema";
+import { encodeStorageValue, StorageSchemaError } from "./storage-schema";
 
 const VALIDATED = Symbol("validated-storage-commit");
 export interface ValidatedCommit extends Commit {
@@ -21,10 +23,17 @@ export interface ValidatedCommit extends Commit {
 }
 
 /** This private adapter boundary validates incoming values before any normalization. */
-export function validateProjectionCommit(supplied: Commit): ValidatedCommit {
+export function validateProjectionCommit(
+  supplied: Commit,
+  partition: string,
+): ValidatedCommit {
   checkShape(supplied);
-  const checked = (entry: Entry): Entry =>
-    ({ type: entry.type, value: encodeStorageValue(entry.type, entry.value) }) as Entry;
+  const checked = (entry: Entry): Entry => {
+    const value = encodeStorageValue(entry.type, entry.value);
+    if (!storageKeysMatch(entry.type, value, partition, sortKeyOf(keyOf(entry))))
+      throw new StorageSchemaError("ERR_STORAGE_SHAPE", "key");
+    return { type: entry.type, value } as Entry;
+  };
   return {
     ...supplied,
     puts: supplied.puts.map(checked),

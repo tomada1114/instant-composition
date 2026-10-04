@@ -169,3 +169,30 @@ export { studyReducer } from "./study/study-machine";
 export type { StudyEvent, StudyState } from "./study/study-state";
 export { useQueuedStudy } from "./study/answer-sync";
 export { useStudyClock, useStudyKeys } from "./study/use-study";
+
+export type { VocabPage, VocabPagedSummary } from "./openapi";
+export {
+  initPagedVocab,
+  pagedVocabReducer,
+  type VocabPagedState,
+  type VocabPagedEvent,
+} from "./vocab/paged-state";
+export {
+  readVocabCheckpoint,
+  saveVocabCheckpoint,
+  vocabSessionId,
+  clearVocabCheckpoint,
+} from "./vocab/paged-checkpoint";
+
+export {
+  createPagedOutbox,
+  type PagedOutbox,
+  type OutboxLock,
+} from "./vocab/paged-outbox";
+export { VOCAB_OUTBOX_PREFIX } from "./vocab/browser-outbox";
+
+export { clearLearnerStorage, learnerStorageRevision } from "./lib/learner-storage";
+export { useVocabDelete } from "./vocab/use-vocab-delete";
+export { createQueryClient } from "./lib/queries";
+export { QueryClientProvider } from "@tanstack/react-query";
+export { useVocabFinish } from "./vocab/use-vocab-finish";

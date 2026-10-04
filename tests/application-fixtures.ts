@@ -19,6 +19,7 @@ import type {
   VocabProgress,
   VocabReview,
   VocabSession,
+  VocabPagedSession,
 } from "@instant-composition/domain";
 
 import {
@@ -263,6 +264,41 @@ export function makeVocabSession(overrides: Partial<VocabSession> = {}): VocabSe
   };
 }
 
+/** A small ready paged descriptor, independent of immutable membership. */
+export function makeVocabPagedSession(
+  overrides: Partial<VocabPagedSession> = {},
+): VocabPagedSession {
+  return {
+    id: "s1",
+    kind: "today",
+    category: null,
+    day: "2026-09-22",
+    startedAt: 1000,
+    finishedAt: null,
+    tomorrow: null,
+    status: "ready",
+    generation: 1,
+    catalog: "fixture",
+    sourceVersion: 0,
+    modelVersion: 1,
+    settingsVersion: null,
+    statsVersion: null,
+    candidateGeneration: "none",
+    dueCount: 1,
+    fresh: [],
+    dueCursor: null,
+    dueRead: 1,
+    freshRead: 0,
+    pages: 1,
+    total: 1,
+    answered: 0,
+    introduced: 0,
+    againCount: 0,
+    again: [],
+    ...overrides,
+  };
+}
+
 /** The first answer of `v1` in session `s1`, graded good, which introduced it. */
 export function makeVocabReview(overrides: Partial<VocabReview> = {}): VocabReview {
   return {
@@ -425,6 +461,21 @@ export function oneOfEach(): Entry[] {
     },
     { type: "vocabItem", value: makeVocabProgress() },
     { type: "vocabSession", value: makeVocabSession() },
+    { type: "vocabSessionGuard", value: { id: "s1", finishedAt: null } },
+    { type: "vocabPagedSession", value: makeVocabPagedSession() },
+    {
+      type: "vocabDeckPage",
+      value: {
+        sessionId: "s1",
+        generation: 1,
+        page: 0,
+        cards: [{ id: "v1", isNew: false }],
+      },
+    },
+    {
+      type: "vocabPageProgress",
+      value: { sessionId: "s1", generation: 1, page: 0, answered: [] },
+    },
     { type: "vocabReview", value: makeVocabReview() },
     { type: "card", value: makePersonalCard() },
     { type: "vocabReadModel", value: makeVocabReadModel() },

@@ -9,6 +9,7 @@ import {
   signOut,
   type AnswerInput,
 } from "@instant-composition/web";
+import { outboxLocks } from "./paged-outbox-harness";
 
 function deferred<T>() {
   let resolve: (value: T) => void = () => undefined;
@@ -21,6 +22,7 @@ function unauthenticated(): Response {
   return Response.json({ error: { code: "ERR_UNAUTHENTICATED" } }, { status: 401 });
 }
 function setup(): void {
+  vi.stubGlobal("navigator", { locks: outboxLocks() });
   const values = new Map<string, string>();
   vi.stubGlobal("localStorage", {
     getItem: (key: string) => values.get(key) ?? null,

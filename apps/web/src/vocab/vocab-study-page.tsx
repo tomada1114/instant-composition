@@ -1,3 +1,5 @@
+import { browserVocabOutbox } from "./browser-outbox";
+import type { AnswerInput } from "../study/study-state";
 import { Navigate, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState, type ReactElement } from "react";
@@ -7,23 +9,34 @@ import { PageLoadFailed } from "../lib/page-shell";
 import { FocusStrip } from "../lib/frame";
 import { IconButton } from "../ui/icon-button";
 import { CloseGlyph } from "../ui/glyphs";
-import { requestVocabSession, type VocabSearch } from "./sessions";
+import type { VocabSearch } from "./sessions";
+import { requestPagedVocabSession } from "./paged-sessions";
+import { vocabSessionId, clearVocabCheckpoint } from "./paged-checkpoint";
 import { VocabStudy } from "./vocab-study";
-import type { VocabSession } from "../openapi";
+import type { VocabPage } from "../openapi";
 
 function StudyArrival({ search }: Readonly<{ search: VocabSearch }>): ReactElement {
   const home = useQuery(HOME_QUERY);
   const t = useTranslations("Nav");
-  const [sessionId, setSessionId] = useState(() => crypto.randomUUID());
+  const [sessionId, setSessionId] = useState(() => vocabSessionId(search));
   const [attempt, retry] = useState(0);
-  const [session, setSession] = useState<VocabSession>();
+  const [session, setSession] = useState<VocabPage>();
+  const [pending, setPending] = useState<readonly AnswerInput[]>([]);
   const [failed, setFailed] = useState(false);
   useEffect(() => {
     let active = true;
-    void requestVocabSession(search, sessionId).then((result) => {
-      if (!active) return;
-      if (result.ok) setSession(result.value);
-      else setFailed(true);
+    const isActive = (): boolean => active;
+    void requestPagedVocabSession(search, sessionId, isActive).then(async (result) => {
+      if (!isActive()) return;
+      if (result.ok) {
+        const tail = await browserVocabOutbox(
+          sessionId,
+          result.value.generation,
+        ).tail();
+        if (!isActive()) return;
+        setPending(tail);
+        setSession(result.value);
+      } else setFailed(true);
     });
     return () => {
       active = false;
@@ -35,11 +48,13 @@ function StudyArrival({ search }: Readonly<{ search: VocabSearch }>): ReactEleme
       <VocabStudy
         key={session.sessionId}
         session={session}
+        pending={pending}
         sound={home.data.sound}
         gradeKeys={home.data.gradeKeys}
         onRestart={() => {
           setSession(undefined);
-          setSessionId(crypto.randomUUID());
+          clearVocabCheckpoint(sessionId);
+          setSessionId(vocabSessionId(search));
         }}
       />
     );

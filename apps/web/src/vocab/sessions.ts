@@ -1,3 +1,5 @@
+import { recordPagedVocabAnswers } from "../lib/vocab-paged-endpoints";
+import { pagedAnswerOf } from "./paged-answer";
 import {
   finishVocabSession,
   recordVocabAnswers,
@@ -46,7 +48,11 @@ function answerOf(answer: AnswerInput): VocabAnswer {
 }
 /** Same stored representation as the drill, sent to the vocabulary session it belongs to. */
 export function sendVocabAnswer(answer: AnswerInput): Promise<SendOutcome> {
-  return recordVocabAnswers(answer.roundId, [answerOf(answer)]);
+  return answer.vocabGeneration === undefined
+    ? recordVocabAnswers(answer.roundId, [answerOf(answer)])
+    : recordPagedVocabAnswers(answer.roundId, answer.vocabGeneration, [
+        pagedAnswerOf(answer),
+      ]);
 }
 /** Pending answers of one vocabulary session, preserving their fixed ids. */
 export function sendVocabAnswers(

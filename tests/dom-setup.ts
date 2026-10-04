@@ -10,15 +10,18 @@ import "@testing-library/jest-dom/vitest";
 
 // jsdom omits Web Locks; the default fixture represents a supported browser.
 beforeEach(() => {
-  let tail = Promise.resolve();
+  const tails = new Map<string, Promise<void>>();
   vi.stubGlobal("navigator", {
     userAgent: navigator.userAgent,
     locks: {
-      request: <T>(_name: string, work: () => Promise<T>) => {
-        const result = tail.then(work);
-        tail = result.then(
-          () => undefined,
-          () => undefined,
+      request: <T>(name: string, work: () => Promise<T>) => {
+        const result = (tails.get(name) ?? Promise.resolve()).then(work);
+        tails.set(
+          name,
+          result.then(
+            () => undefined,
+            () => undefined,
+          ),
         );
         return result;
       },

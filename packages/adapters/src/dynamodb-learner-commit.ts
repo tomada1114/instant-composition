@@ -30,7 +30,7 @@ export async function dynamoLearnerCommit(
   read: (key: Key) => Promise<unknown>,
   supplied: Commit,
 ): Promise<Result<undefined, CommitConflict>> {
-  const validated = validateProjectionCommit(supplied);
+  const validated = validateProjectionCommit(supplied, partition);
   const observed = new Map<string, ObservedStorage | undefined>();
   const observe = async (key: Key): Promise<ObservedStorage | undefined> => {
     const sk = sortKeyOf(key);

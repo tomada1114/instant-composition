@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef, useState, type Dispatch } from "react";
-import type { AnswerQueue } from "../study/answer-queue";
+import type { PagedOutbox } from "./paged-outbox";
 import type { StudyEvent, StudyState } from "../study/study-state";
 import { deleteVocabCard } from "../lib/vocab-endpoints";
 
@@ -8,7 +8,7 @@ import { deleteVocabCard } from "../lib/vocab-endpoints";
 export function useVocabDelete(
   state: StudyState,
   dispatch: Dispatch<StudyEvent>,
-  queue: AnswerQueue,
+  queue: PagedOutbox,
   onClose: () => void,
 ): {
   readonly asking: boolean;
@@ -49,22 +49,27 @@ export function useVocabDelete(
       // A previously graded re-ask may still be sending. Its write must finish before DELETE.
       void queue
         .flush()
-        .then(() => deleteVocabCard(cardId))
-        .then((result) => {
-          if (result.ok) {
-            queue.removeCard(cardId);
+        .then((empty) => (empty ? deleteVocabCard(cardId) : undefined))
+        .then(async (result) => {
+          if (result?.ok === true) {
+            await queue.removeCard(cardId);
             void cache.invalidateQueries({ queryKey: ["vocab"] });
           }
           if (!live.current) return;
-          sending.current = false;
-          setPending(false);
-          if (!result.ok) {
+          if (result?.ok !== true) {
             setFailures((count) => count + 1);
             return;
           }
           setCardId(undefined);
           onClose();
           dispatch({ type: "remove", cardId });
+        })
+        .catch(() => {
+          if (live.current) setFailures((count) => count + 1);
+        })
+        .finally(() => {
+          sending.current = false;
+          if (live.current) setPending(false);
         });
     },
   };

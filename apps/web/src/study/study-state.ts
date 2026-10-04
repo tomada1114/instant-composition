@@ -58,6 +58,8 @@ export type StudyEvent =
 
 /** The durable queue entry; roundId is its legacy storage owner key for either activity. */
 export interface AnswerInput {
+  readonly vocabPage?: number;
+  readonly vocabGeneration?: number;
   readonly id: string;
   readonly roundId: string;
   readonly cardId: string;
@@ -84,6 +86,8 @@ export interface ReAsk {
 }
 
 export interface StudyState {
+  readonly hasMore?: boolean;
+  readonly total?: number;
   readonly sessionId: string;
   readonly retries: boolean;
   readonly isNew: Readonly<Record<string, boolean>>;
@@ -139,7 +143,7 @@ export function progress(state: StudyState): {
 } {
   return {
     position: state.firstShown,
-    total: state.firstShown + state.fresh.length,
+    total: state.total ?? state.firstShown + state.fresh.length,
     waiting: state.reAsks.length,
   };
 }

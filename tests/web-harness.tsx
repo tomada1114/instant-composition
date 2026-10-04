@@ -1,3 +1,4 @@
+import { outboxLocks } from "./paged-outbox-harness";
 import { act, cleanup, render, screen, within } from "@testing-library/react";
 import { vi } from "vitest";
 
@@ -33,7 +34,7 @@ export interface ApiCall {
  * serve, answered like the API's bare unmatched `404`.
  */
 export function fakeApi(
-  respond: (call: ApiCall) => Promise<Response> | Response | undefined,
+  respond: (call: ApiCall) => Promise<Response | undefined> | Response | undefined,
 ): ApiCall[] {
   const calls: ApiCall[] = [];
   vi.stubGlobal("fetch", async (url: string, init?: RequestInit) => {
@@ -65,6 +66,11 @@ export function fill(
 
 /** Timers the rendered suites fake: every clock the drill and the app read. */
 export function fakeTimers(): void {
+  Object.defineProperty(navigator, "locks", {
+    configurable: true,
+    value: outboxLocks(),
+  });
+  localStorage.clear();
   vi.useFakeTimers({
     toFake: [
       "setTimeout",

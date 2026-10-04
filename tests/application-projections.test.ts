@@ -7,6 +7,9 @@ import {
   updateSettings,
   vocabHub,
   startVocabSession,
+  startPagedVocabSession,
+  preparePagedVocabSession,
+  getPagedVocabPage,
   finishVocabSession,
   rebuildVocabReadModel,
   type LearnerStore,
@@ -530,9 +533,10 @@ describe("pure vocabulary projection parity", () => {
     "preserves every deal/category at review limit %s without rebuilding for settings",
     async (limit) => {
       const categories = ["word", "idiom", "phrasal-verb", "phrase"] as const;
-      const cards = Array.from({ length: 380 }, (_, index) =>
-        vocabItem(categories[index % 4] ?? "word", 1 + (index % 12), index),
-      );
+      const cards = Array.from({ length: 380 }, (_, index) => ({
+        ...vocabItem(categories[index % 4] ?? "word", 1 + (index % 12), index),
+        meaning: `意味${String(index)}`,
+      }));
       const personal = Array.from({ length: 16 }, (_, index) =>
         makePersonalCard({
           id: `p_parity${String(index).padStart(6, "0")}`,
@@ -615,14 +619,58 @@ describe("pure vocabulary projection parity", () => {
       });
       for (const kind of ["today", "extra", "weak"] as const)
         for (const category of [null, ...categories]) {
+          const expected = pure.deal(kind, category).map(({ cardId }) => cardId);
           const session = await startVocabSession(h.deps, h.context(), {
             sessionId: `parity-${kind}-${category ?? "all"}`,
             kind,
             ...(category === null ? {} : { category }),
           });
-          expect(session.ok && session.value.cards.map(({ id }) => id)).toStrictEqual(
-            pure.deal(kind, category).map(({ cardId }) => cardId),
-          );
+          if (
+            expected.length > 200 ||
+            (limit === null &&
+              kind === "today" &&
+              pure.figures.due + pure.figures.fresh > 200)
+          )
+            expect(session).toStrictEqual({
+              ok: false,
+              error: { code: "ERR_PAGED_SESSION_REQUIRED" },
+            });
+          else
+            expect(session.ok && session.value.cards.map(({ id }) => id)).toStrictEqual(
+              expected,
+            );
+          const sessionId = `paged-parity-${kind}-${category ?? "all"}`;
+          let preparation = await startPagedVocabSession(h.deps, h.context(), {
+            sessionId,
+            kind,
+            ...(category === null ? {} : { category }),
+          });
+          for (
+            let step = 0;
+            preparation.ok && preparation.value.status === "building" && step < 10;
+            step += 1
+          )
+            preparation = await preparePagedVocabSession(
+              h.deps,
+              h.context(),
+              sessionId,
+            );
+          expect(preparation.ok && preparation.value.status).toBe("ready");
+          const actual: string[] = [];
+          let cursor: string | null = null;
+          for (let step = 0; step < 10; step += 1) {
+            const page = await getPagedVocabPage(h.deps, h.context(), {
+              sessionId,
+              cursor,
+            });
+            if (!page.ok) throw new Error(page.error.code);
+            expect(page.value.cards.length).toBeLessThanOrEqual(64);
+            actual.push(...page.value.cards.map(({ id }) => id));
+            cursor = page.value.continuation;
+            if (cursor === null) break;
+          }
+          expect(cursor).toBeNull();
+          expect(actual).toStrictEqual(expected);
         }
     },
   );

@@ -1,19 +1,19 @@
-import { queuedFinish } from "../study/queued-finish";
-import { useQueryClient } from "@tanstack/react-query";
+import { restorePagedVocab } from "./paged-restore";
+import { VocabWaiting } from "./vocab-waiting";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { useQueuedStudy } from "../study/answer-sync";
-import { studyReducer } from "../study/study-machine";
-import { initVocab } from "./vocab-init";
+import { browserVocabOutbox } from "./browser-outbox";
+import { usePagedStudy } from "./use-paged-study";
+import { useVocabContinuation } from "./use-vocab-continuation";
+import { useVocabFinish } from "./use-vocab-finish";
 import { currentCard } from "../study/study-state";
 import { browserSound } from "../study/sound";
 import { Toast } from "../study/toast";
 import { useStudyClock, useStudyKeys, type StudyAction } from "../study/use-study";
 import { useLeaveGuard } from "../study/use-leave-guard";
-import type { GradeKeyTrio, VocabSession, VocabSummary } from "../openapi";
-import { Button } from "../ui/button";
-import { createVocabQueue, requestVocabFinish } from "./sessions";
+import type { AnswerInput } from "../study/study-state";
+import type { GradeKeyTrio, VocabPage } from "../openapi";
 import { VocabCard } from "./vocab-card";
 import { VocabDialog } from "./vocab-dialog";
 import { useVocabDelete } from "./use-vocab-delete";
@@ -28,54 +28,38 @@ export function VocabStudy({
   sound,
   gradeKeys,
   onRestart,
+  pending,
 }: Readonly<{
-  session: VocabSession;
+  session: VocabPage;
   sound: boolean;
   gradeKeys: GradeKeyTrio;
   onRestart: () => void;
+  pending: readonly AnswerInput[];
 }>): ReactElement {
   const t = useTranslations("Drill");
   const vocab = useTranslations("Vocab");
-  const cache = useQueryClient();
   const navigate = useNavigate();
-  const [queue] = useState(() => createVocabQueue(session.sessionId));
+  const [queue] = useState(() =>
+    browserVocabOutbox(session.sessionId, session.generation),
+  );
   const [failures, setFailures] = useState(0);
-  const [state, dispatch] = useQueuedStudy(
+  const [state, dispatch] = usePagedStudy(
     queue,
-    () => initVocab(session),
+    () => restorePagedVocab(session, pending),
     () => {
       setFailures((count) => count + 1);
     },
-    studyReducer,
   );
-  const [summary, setSummary] = useState<VocabSummary>();
-  const moreCount = useVocabAvailability(session, summary !== undefined);
-  const [failed, setFailed] = useState(false);
-  const [attempt, retry] = useState(0);
   const leave = useLeaveGuard(state, dispatch);
   const deletion = useVocabDelete(state, dispatch, queue, () => {
     leave.stay();
     dispatch({ type: "resume", at: performance.now() });
   });
   useStudyClock(state, dispatch);
-  const finishing = state.phase.kind === "finishing";
-  useEffect(() => {
-    if (!finishing) return undefined;
-    let active = true;
-    void queuedFinish(queue, (pending, notBefore) =>
-      requestVocabFinish(session.sessionId, pending, notBefore),
-    ).then((result) => {
-      if (!active) return;
-      if (result.ok) {
-        queue.clear();
-        setSummary(result.value);
-        void cache.invalidateQueries({ queryKey: ["vocab"] });
-      } else setFailed(true);
-    });
-    return () => {
-      active = false;
-    };
-  }, [finishing, session.sessionId, queue, cache, attempt]);
+  const continuation = useVocabContinuation(state, dispatch);
+  const finishing = state.phase.kind === "finishing" && !continuation.waiting;
+  const { summary, failed, retry } = useVocabFinish(session, queue, finishing);
+  const moreCount = useVocabAvailability(session, summary !== undefined);
   function act(action: StudyAction, key: boolean): void {
     if (deletion.asking) {
       if (action.type === "resume") deletion.keep();
@@ -106,7 +90,7 @@ export function VocabStudy({
       browserSound.play("ok");
   }, [sound, phase]);
   const shown = currentCard(state);
-  const card = session.cards.find((value) => value.id === shown?.cardId);
+  const card = shown === undefined ? undefined : state.cards[shown.cardId]?.card;
   if (summary !== undefined)
     return (
       <VocabDone
@@ -127,22 +111,20 @@ export function VocabStudy({
         }}
       />
     );
+  if (continuation.waiting)
+    return (
+      <VocabWaiting
+        failed={continuation.failed || failures > 0}
+        onRetry={continuation.retry}
+      />
+    );
   if (finishing)
-    return failed ? (
-      <div className="flex flex-col gap-4">
-        <p>{t("save.unsaved", { count: Math.max(1, queue.pending().length) })}</p>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            setFailed(false);
-            retry((value) => value + 1);
-          }}
-        >
-          {t("save.resend")}
-        </Button>
-      </div>
-    ) : (
-      <></>
+    return (
+      <VocabWaiting
+        failed={failed}
+        pending={Math.max(1, queue.count())}
+        onRetry={retry}
+      />
     );
   const stay = (): void => {
     act({ type: "resume" }, false);

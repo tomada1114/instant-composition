@@ -22,7 +22,7 @@ export async function deleteVocabCard(
   return committed<undefined>(store, async () => {
     const [card, items] = await Promise.all([
       store.card(command.cardId),
-      store.vocabItems(),
+      store.vocabItemsByIds([command.cardId]),
     ]);
     if (card === undefined) {
       const snapshot = await deps.catalog.snapshot();

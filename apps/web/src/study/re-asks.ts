@@ -63,6 +63,7 @@ export function nextCard(state: StudyState): StudyState | undefined {
       card: { cardId: first, pass: "first", ask: 0 },
     };
   }
+  if (due === undefined && state.hasMore === true) return undefined;
   const last = state.card?.cardId;
   const reAsk =
     due ??

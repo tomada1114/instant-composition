@@ -103,7 +103,10 @@ export function renewSession(url: string, observed: Observation): Promise<Renewa
  * Waits for renewal before the native logout navigation, holding the lock until
  * pagehide so another tab cannot rotate cookies while logout clears them.
  */
-export async function submitSignOut(form: HTMLFormElement): Promise<void> {
+export async function submitSignOut(
+  form: HTMLFormElement,
+  submit?: (nativeSubmit: () => void) => Promise<void>,
+): Promise<void> {
   if (leaving) return;
   leaving = true;
   try {
@@ -115,8 +118,12 @@ export async function submitSignOut(form: HTMLFormElement): Promise<void> {
       });
       window.addEventListener("pagehide", done, { once: true });
       try {
-        HTMLFormElement.prototype.submit.call(form);
-        changed();
+        const nativeSubmit = (): void => {
+          HTMLFormElement.prototype.submit.call(form);
+          changed();
+        };
+        if (submit === undefined) nativeSubmit();
+        else await submit(nativeSubmit);
         await hidden;
       } finally {
         window.removeEventListener("pagehide", done);

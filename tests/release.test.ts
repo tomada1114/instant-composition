@@ -323,7 +323,41 @@ describe("packaged release manifest", () => {
     writeFileSync(path.join(web, "index.html"), "<!doctype html>");
     writeFileSync(path.join(web, "release.json"), JSON.stringify({ sha: SHA }));
     cpSync(web, path.join(assembly, "asset.web"), { recursive: true });
-    return { root, assembly, bundle, web };
+    writeFileSync(
+      path.join(assembly, "manifest.json"),
+      JSON.stringify({
+        artifacts: {
+          app: {
+            type: "aws:cloudformation:stack",
+            properties: {
+              stackName: "instant-composition-dev-app",
+              templateFile: "app.template.json",
+            },
+          },
+        },
+      }),
+    );
+    const template = (resources: Record<string, unknown>) =>
+      writeFileSync(
+        path.join(assembly, "app.template.json"),
+        JSON.stringify({ Resources: resources }),
+      );
+    const lambda = (asset: string) => ({
+      Type: "AWS::Lambda::Function",
+      Metadata: { "aws:asset:path": asset },
+    });
+    template({ ApiFunctionABC123: lambda("asset.api") });
+    return { root, assembly, bundle, web, template, lambda };
+  }
+  function addWorker(assembly: string, bundle: string, root: string): string {
+    const worker = path.join(assembly, "asset.worker");
+    cpSync(bundle, worker, { recursive: true });
+    writeFileSync(
+      path.join(worker, "index.mjs"),
+      "export const handler = () => 'worker';",
+    );
+    bundleRelease(root, worker);
+    return worker;
   }
   it("records the exact checkout, assembled API and catalog hashes, and web build", () => {
     const { root, assembly, bundle } = assemblyFixture();
@@ -349,6 +383,71 @@ describe("packaged release manifest", () => {
     expect(second).toEqual(first);
     expect(release.files).not.toHaveProperty("release.json");
     verifyFiles(bundle, release);
+  });
+  it("records the API the app template names when a worker carries the same release wrapper", () => {
+    const { root, assembly, bundle, template, lambda } = assemblyFixture();
+    addWorker(assembly, bundle, root);
+    template({
+      ReadModelWorkerDEF456: lambda("asset.worker"),
+      ApiFunctionABC123: lambda("asset.api"),
+    });
+    const release = recordRelease(root, assembly, SHA);
+    expect(release.api.files["index.mjs"]).toBe(
+      digest("export const handler = () => null;"),
+    );
+    expect(release.files["asset.worker/index.mjs"]).toBe(
+      digest("export const handler = () => 'worker';"),
+    );
+    verifyFiles(assembly, release);
+  });
+  it.each([
+    ["no API function", {}],
+    [
+      "two API functions",
+      { ApiFunctionABC123: "asset.api", ApiFunctionDEF456: "asset.worker" },
+    ],
+    ["an API asset outside the assembly", { ApiFunctionABC123: "../asset.api" }],
+    ["an API asset without a release bundle", { ApiFunctionABC123: "asset.web" }],
+  ])("refuses a template naming %s", (_name, functions) => {
+    const { root, assembly, bundle, template, lambda } = assemblyFixture();
+    addWorker(assembly, bundle, root);
+    template(
+      Object.fromEntries(
+        Object.entries(functions).map(([logicalId, asset]) => [
+          logicalId,
+          lambda(asset),
+        ]),
+      ),
+    );
+    expect(() => recordRelease(root, assembly, SHA)).toThrow(ReleaseError);
+  });
+  it("refuses a worker bundle whose packaged bytes no longer match its release", () => {
+    const { root, assembly, bundle, template, lambda } = assemblyFixture();
+    const worker = addWorker(assembly, bundle, root);
+    template({
+      ApiFunctionABC123: lambda("asset.api"),
+      ReadModelWorkerDEF456: lambda("asset.worker"),
+    });
+    writeFileSync(path.join(worker, "index.mjs"), "tampered");
+    expect(() => recordRelease(root, assembly, SHA)).toThrow(ReleaseError);
+  });
+  it("refuses an assembly whose app stack is not the dev app", () => {
+    const { root, assembly } = assemblyFixture();
+    writeFileSync(
+      path.join(assembly, "manifest.json"),
+      JSON.stringify({
+        artifacts: {
+          app: {
+            type: "aws:cloudformation:stack",
+            properties: {
+              stackName: "instant-composition-prod-app",
+              templateFile: "app.template.json",
+            },
+          },
+        },
+      }),
+    );
+    expect(() => recordRelease(root, assembly, SHA)).toThrow(ReleaseError);
   });
   it("rejects web bytes which differ from the assembled upload", () => {
     const { root, assembly, web } = assemblyFixture();
@@ -450,7 +549,7 @@ describe("packaged release manifest", () => {
     );
     expect(() => recordRelease(root, assembly, SHA)).toThrow(ReleaseError);
   });
-  it("rejects an assembly without exactly one API release bundle", () => {
+  it("rejects an assembly without an app template naming its API bundle", () => {
     const root = fixture();
     expect(() => recordRelease(root, root, SHA)).toThrow(ReleaseError);
   });

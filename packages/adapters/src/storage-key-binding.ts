@@ -1,5 +1,7 @@
 import { keyOf, type Entry } from "@instant-composition/application";
 import { sortKeyOf } from "./keys";
+import { candidatePrefix } from "./read-model-keys";
+import { candidateCursorKey } from "./vocab-page-cursor";
 import type { StorageFamily } from "./storage-families";
 
 function canonicalPart(value: string): boolean {
@@ -39,6 +41,24 @@ export function storageKeysMatch(
         sort === encodeURIComponent(String(Reflect.get(value, "id")))
       );
     default: {
+      if (type === "vocabPagedSession") {
+        const session = value as Extract<Entry, { type: "vocabPagedSession" }>["value"];
+        if (
+          session.dueCursor !== null &&
+          candidateCursorKey(
+            session.dueCursor,
+            candidatePrefix({
+              day: session.day,
+              generation: session.candidateGeneration,
+              mode: "due",
+              category: null,
+              level: null,
+            }),
+            partition,
+          ) === undefined
+        )
+          return false;
+      }
       if (!partition.startsWith("LEARNER#") || !canonicalPart(partition.slice(8)))
         return false;
       // The owning decoder has validated the exhaustive Entry value before binding it.

@@ -695,6 +695,46 @@ describe("storage deployment admission", () => {
       ),
     ).toThrow(StorageTransitionError);
   });
+  it("accepts the read-model worker whose generated name CloudFormation shortened", () => {
+    const logicalId = "ReadModelWorker815A8EF5";
+    const physical = "instant-composition-dev-ap-ReadModelWorker815A8EF5-s6YIrionyg07";
+    const planned = [
+      {
+        logicalId,
+        capacity: 1,
+        timeout: 60,
+        release: {
+          sha: "a".repeat(40),
+          storage: { contract: "storage-v1", schemaFingerprint: "b".repeat(64) },
+          files: { "index.mjs": "c".repeat(64), "storage.mjs": "d".repeat(64) },
+        },
+      },
+    ];
+    const owned = (name: string) =>
+      ownedStorageWriters(
+        {
+          StackResourceSummaries: [
+            {
+              ResourceType: "AWS::Lambda::Function",
+              LogicalResourceId: logicalId,
+              PhysicalResourceId: name,
+            },
+          ],
+        },
+        "123456789012",
+        planned,
+      );
+    expect(owned(physical)[0]?.arn).toBe(
+      `arn:aws:lambda:ap-northeast-1:123456789012:function:${physical}`,
+    );
+    for (const name of [
+      "instant-composition-prod-app-ReadModelWorker815A8EF5-s6YIrionyg07",
+      "instant-composition-dev-x-ReadModelWorker815A8EF5-s6YIrionyg07",
+      "instant-composition-dev-ap-ApiFunctionCE271BD4-s6YIrionyg07",
+      `instant-composition-dev-ap-ReadModelWorker815A8EF5-${"a".repeat(14)}`,
+    ])
+      expect(() => owned(name)).toThrow(StorageTransitionError);
+  });
   it("certifies the exact fetched ZIP and all packaged guard bytes without invoking learner code", async () => {
     const output = mkdtempSync(path.join(tmpdir(), "storage-guard-"));
     folders.push(output);
