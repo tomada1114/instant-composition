@@ -118,6 +118,8 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   const authorized = new Set();
   let deployed = false;
   const checkpoint = path.join(root, "dist/storage-transition.json");
+  // Work stops with twenty minutes left: five for barriers, fifteen for drain.
+  const closingDeadline = (options.deadline ?? Date.now()) + 5 * 60000;
   mkdirSync(path.dirname(checkpoint), { recursive: true });
   /** @param {import('./storage-transition.mjs').Writer} writer @returns {import('./storage-transition.mjs').Writer} */
   function configuration(writer) {
@@ -207,6 +209,7 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   }
   /** @type {import("./storage-transition.mjs").TransitionPort} */
   const port = {
+    cleanupTimeAvailable: () => Date.now() < closingDeadline,
     async owned() {
       return Promise.resolve(
         ownedStorageWriters(

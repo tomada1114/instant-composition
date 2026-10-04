@@ -57,9 +57,11 @@ const api: Writer = {
 };
 function fixture() {
   let writers = [{ ...api }];
+  let cleanupChecks = 0;
   const calls: string[] = [],
     paused = new Set<string>();
   const port: TransitionPort = {
+    cleanupTimeAvailable: () => ++cleanupChecks <= 3,
     discover: () => Promise.resolve(writers.map((writer) => ({ ...writer }))),
     capacityMatches: (writer) => Promise.resolve(!paused.has(writer.arn)),
     extendAccess: (rows) => {
@@ -233,6 +235,73 @@ describe("storage deployment admission", () => {
     expect(calls).toBe(3);
     expect(paused.size).toBe(2);
   });
+  it("re-closes a writer whose cleanup pause was followed by reopened admission", async () => {
+    const { port, paused, calls } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    const pause = port.pause;
+    let pauses = 0;
+    port.pause = async (writer) => {
+      const receipt = await pause(writer);
+      if (++pauses === 2) paused.delete(writer.arn);
+      return receipt;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(pauses).toBe(4);
+    expect(paused.size).toBe(2);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(4);
+  });
+  it("retries a cleanup probe that still admits traffic before starting the drain", async () => {
+    const { port, calls, paused } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    let probes = 0;
+    port.probePaused = () => Promise.resolve(++probes !== 4);
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(4);
+    expect(calls.lastIndexOf("pause")).toBeLessThan(
+      calls.indexOf("wait:900000", calls.indexOf("deploy")),
+    );
+    expect(paused.size).toBe(2);
+  });
+  it("rechecks an earlier closed writer after closing the remaining writer", async () => {
+    const { port, paused } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    const pause = port.pause;
+    let pauses = 0;
+    port.pause = async (writer) => {
+      const receipt = await pause(writer);
+      if (++pauses === 3) paused.delete(api.arn);
+      return receipt;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(pauses).toBe(4);
+    expect(paused.size).toBe(2);
+  });
+  it("records an unconfirmed barrier at the closing deadline without claiming drain or recovery", async () => {
+    const { port, calls } = fixture();
+    const failure = new Error("original certification failure");
+    const records: unknown[] = [];
+    let cleanup = false;
+    port.verify = () => {
+      cleanup = true;
+      return Promise.reject(failure);
+    };
+    port.probePaused = () => Promise.resolve(!cleanup);
+    port.record = (state) => {
+      records.push(state);
+      return Promise.resolve();
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(records.at(-1)).toMatchObject({
+      phase: "paused-forward-fix",
+      cleanupVerified: false,
+      admissionClosed: false,
+    });
+    expect(calls.slice(calls.indexOf("deploy") + 1)).not.toContain("wait:900000");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+  });
   it("refuses an API revision change in worker preparation", async () => {
     const { port, paused, calls } = fixture();
     port.prepare = (writers) =>
@@ -292,6 +361,7 @@ describe("storage deployment admission", () => {
     expect(records.at(-1)).toMatchObject({
       phase: "recovered-certified-predecessor",
       failure: "deployment",
+      admissionClosed: false,
     });
   });
   it("uses cleanup and restore receipts when certifying an unchanged predecessor", async () => {
@@ -808,7 +878,8 @@ it("uses the existing job budget beyond three minutes and still closes worker ad
   const startedAt = 1000000;
   recordStorageJobBudget(root, 45, startedAt);
   const deadline = storageJobDeadline(root, startedAt + 1000);
-  expect(deadline).toBe(startedAt + 40 * 60000);
+  expect(deadline).toBe(startedAt + 25 * 60000);
+  expect(startedAt + 45 * 60000 - deadline).toBeGreaterThanOrEqual(20 * 60000);
   expect(() => storageJobDeadline(root, deadline)).toThrow(StorageTransitionError);
   const { port, paused } = fixture();
   const writer = {

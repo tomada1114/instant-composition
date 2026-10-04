@@ -213,10 +213,11 @@ a second design.
   forward fix; it never recovers the predecessor after preparation starts. The job
   summary records phase/counts/completion, omitting the private checkpoint. The existing
   45-minute job budget is recorded once the Node24 runtime is ready before install with
-  five minutes reserved for pause/drain cleanup; bootstrap checks that absolute deadline
-  before each bounded invocation. A stopped job leaves durable progress for the next
-  trusted run instead of restarting discovery. No direct table permission or
-  execution-role assumption is added.
+  twenty minutes reserved for cleanup: five for re-closing barriers and fifteen for the
+  maximum configured timeout drain. Bootstrap checks that absolute deadline before each
+  bounded invocation. A stopped job leaves durable progress for the next trusted run
+  instead of restarting discovery. No direct table permission or execution-role
+  assumption is added.
 - Capacity restoration intentionally differs from the paused template: API returns to
   unreserved and worker to its recorded one. The next transition explicitly sets zero
   again before deploying another paused assembly, so this drift is repeat-safe. Current

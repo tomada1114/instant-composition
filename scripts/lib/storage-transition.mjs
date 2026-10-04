@@ -2,7 +2,7 @@ import { StorageTransitionError } from "./storage-runtime.mjs";
 import { sameStorageWriter } from "./storage-configuration.mjs";
 
 /** @typedef {{logicalId:string,arn:string,capacity:number|null,timeout:number,revision:string,codeHash:string,configurationHash:string}} Writer */
-/** @typedef {{discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
+/** @typedef {{cleanupTimeAvailable:()=>boolean,discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
 /** Quiescence is never lost during code/config rollout. A failed partial rollout stays paused.
  * @param {TransitionPort} port @returns {Promise<void>}
  */
@@ -20,7 +20,7 @@ export async function transitionStorageWriters(port) {
     writer.logicalId.startsWith("ReadModelWorker"),
   );
   /** Cleanup attempts every known writer even when another writer's pause fails.
-   * @returns {Promise<{remaining:Writer[],verified:boolean}>}
+   * @returns {Promise<{remaining:Writer[],verified:boolean,admissionClosed:boolean}>}
    */
   async function closeAll() {
     const known = new Map(writers.map((writer) => [writer.arn, writer]));
@@ -43,25 +43,48 @@ export async function transitionStorageWriters(port) {
     } catch {
       verified = false;
     }
-    const remaining = [...known.values()];
-    const closed = [];
-    for (const writer of remaining) {
-      try {
-        const receipt = await port.pause(writer);
-        if (!(await port.isPaused(receipt)) || !(await port.probePaused(receipt)))
-          verified = false;
-        closed.push(receipt);
-      } catch {
-        verified = false;
-        closed.push(writer);
+    const pending = new Map(known);
+    const receipts = new Map(known);
+    let firstAttempt = true;
+    while (pending.size > 0 && (firstAttempt || port.cleanupTimeAvailable())) {
+      firstAttempt = false;
+      // Attempt all writers before retrying one, including failed observations.
+      for (const [arn, writer] of pending) {
+        let receipt = writer;
         try {
-          await port.isPaused(writer);
-          await port.probePaused(writer);
+          receipt = await port.pause(writer);
+          receipts.set(arn, receipt);
+          pending.set(arn, receipt);
         } catch {
-          /* No failed barrier may enable predecessor recovery. */
+          verified = false;
+        }
+        try {
+          if ((await port.isPaused(receipt)) && (await port.probePaused(receipt)))
+            pending.delete(arn);
+          else verified = false;
+        } catch {
+          verified = false;
         }
       }
+      if (pending.size === 0)
+        for (const [arn, receipt] of receipts) {
+          try {
+            if (!(await port.isPaused(receipt)) || !(await port.probePaused(receipt))) {
+              pending.set(arn, receipt);
+              verified = false;
+            }
+          } catch {
+            pending.set(arn, receipt);
+            verified = false;
+          }
+        }
+      if (pending.size > 0) await port.wait(1000);
     }
+    const closed = [...receipts.values()];
+    const admissionClosed = pending.size === 0;
+    if (!admissionClosed)
+      return { remaining: closed, verified: false, admissionClosed };
+
     try {
       await port.wait(
         Math.max(...closed.map((writer) => writer.timeout), verified ? 0 : 900) * 1000,
@@ -69,7 +92,7 @@ export async function transitionStorageWriters(port) {
     } catch {
       verified = false;
     }
-    return { remaining: closed, verified };
+    return { remaining: closed, verified, admissionClosed };
   }
   try {
     const initiallyPaused = [];
@@ -214,6 +237,7 @@ export async function transitionStorageWriters(port) {
       phase: recovered ? "recovered-certified-predecessor" : "paused-forward-fix",
       writers: cleanup.remaining,
       cleanupVerified: cleanup.verified,
+      admissionClosed: recovered ? false : cleanup.admissionClosed,
       failure:
         error instanceof StorageTransitionError ? error.part : "unexpected failure",
     });
