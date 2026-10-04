@@ -28,10 +28,12 @@ Adjust the checkout path if another environment places the repository elsewhere.
 helper must be present in the selected checkout; until this PR is merged, choose its
 branch when testing the helper or paste the helper's contents after the `cd`. The script
 installs dependencies with the frozen lockfile and retains the lifecycle/hook policy. It
-does not run the full suite, start services, log in, change credentials or deploy. The
-`/tmp` paths fix the observed unavailable home cache directories. Exports affect that
-script's process only: do not assume they persist into a later task shell. Reuse the
-same cache exports in that task when necessary, without editing shell profiles.
+clears `CI` only in its own process, explicitly installs hooks even for an up-to-date
+dependency tree, and verifies them; an installation or verification failure stops setup.
+It does not run the full suite, start services, log in, change credentials or deploy.
+The `/tmp` paths fix the observed unavailable home cache directories. Exports affect
+that script's process only: do not assume they persist into a later task shell. Reuse
+the same cache exports in that task when necessary, without editing shell profiles.
 
 ## Start skill: leave unset by default
 
