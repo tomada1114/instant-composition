@@ -86,6 +86,14 @@ export class DeployAccessStack extends Stack {
           resources: [...writers],
         }),
       );
+    // Read-only and account-level: Lambda has no resource to scope it to.
+    if (writers.length > 0)
+      role.addToPolicy(
+        new PolicyStatement({
+          actions: ["lambda:GetAccountSettings"],
+          resources: ["*"],
+        }),
+      );
     new CfnOutput(this, DEPLOY_ROLE_ARN_OUTPUT, { value: role.roleArn });
   }
 }
