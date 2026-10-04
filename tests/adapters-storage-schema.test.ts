@@ -12,6 +12,7 @@ import {
 } from "@instant-composition/adapters";
 import { validateStoredRecords } from "@instant-composition/api";
 import { parseJson, readKey, readString } from "../scripts/lib/json.mjs";
+import { makeItem } from "./application-fixtures";
 
 const data = parseJson(
   readFileSync(new URL("./fixtures/storage-v1.json", import.meta.url), "utf8"),
@@ -337,4 +338,151 @@ it("preserves every cap2 checkpoint and guarded-v1 row through the actual mainte
       readKey(fixture, "expected"),
     );
   }
+});
+
+const markSchemas = [
+  ["absent", {}],
+  ["zero", { schemaVersion: 0 }],
+  ["one", { schemaVersion: 1 }],
+  ["two", { schemaVersion: 2 }],
+] as const;
+function historicalMark(answeredAt: number) {
+  return { sessionId: "historical", result: "ok" as const, elapsedMs: 1, answeredAt };
+}
+function completeItemRow(value: unknown) {
+  return {
+    PK: "LEARNER#fixture-owner",
+    SK: "ITEM#composition#c1",
+    type: "item",
+    version: 1,
+    value,
+  };
+}
+describe.each(markSchemas)("historical mark times with schema %s", (_, schema) => {
+  it("accepts the complete otherwise-valid positive item", () => {
+    const value = makeItem();
+    expect(
+      decodeStorageRecord({ ...completeItemRow(value), ...schema }).value,
+    ).toStrictEqual(value);
+  });
+  describe.each(["last", "previous"] as const)("%s", (field) => {
+    it.each([-1, -0.5, 1e20])(
+      "retains finite historical timestamp %s without integer or sign conversion",
+      (answeredAt) => {
+        const value = makeItem({ [field]: historicalMark(answeredAt) });
+        expect(
+          decodeStorageRecord({ ...completeItemRow(value), ...schema }).value,
+        ).toStrictEqual(value);
+      },
+    );
+    it.each([NaN, Infinity, -Infinity])(
+      "refuses nonfinite mark time %s",
+      (answeredAt) => {
+        const value = makeItem({ [field]: historicalMark(answeredAt) });
+        expect(() =>
+          decodeStorageRecord({ ...completeItemRow(value), ...schema }),
+        ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+      },
+    );
+    it("refuses an unknown mark field instead of silently stripping it", () => {
+      const value = {
+        ...makeItem(),
+        [field]: { ...historicalMark(-1), futureField: "retain" },
+      };
+      expect(() =>
+        decodeStorageRecord({ ...completeItemRow(value), ...schema }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    });
+  });
+});
+describe.each(markSchemas.slice(0, 2))(
+  "retired marks with legacy schema %s",
+  (_, schema) => {
+    it.each([0, -1, -0.5, 1e20])(
+      "validates signed retired timestamp %s before removing the named field",
+      (answeredAt) => {
+        const value = makeItem();
+        const retired = {
+          ...value,
+          otherMode: { ...historicalMark(answeredAt), answerMode: "typed" },
+        };
+        expect(
+          decodeStorageRecord({ ...completeItemRow(retired), ...schema }).value,
+        ).toStrictEqual(value);
+      },
+    );
+    it.each([
+      { ...historicalMark(-1), futureField: "retain" },
+      { ...historicalMark(-1), answerMode: "future" },
+      historicalMark(NaN),
+      historicalMark(Infinity),
+      historicalMark(-Infinity),
+    ])("refuses a malformed retired mark %j before retirement", (otherMode) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow({ ...makeItem(), otherMode }),
+          ...schema,
+        }),
+      ).toThrow(
+        expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "retired" }),
+      );
+    });
+  },
+);
+describe("signed marks retain the surrounding storage fences", () => {
+  it.each([1, 2])(
+    "rejects retired fields outside legacy schema %s",
+    (schemaVersion) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow({
+            ...makeItem(),
+            otherMode: { ...historicalMark(-1), answerMode: "typed" },
+          }),
+          schemaVersion,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen elapsedMs for %s",
+    (elapsedMs) => {
+      const value = makeItem({ last: { ...historicalMark(-1), elapsedMs } });
+      expect(() => decodeStorageRecord(completeItemRow(value))).toThrow(
+        expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }),
+      );
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen optimistic version for %s",
+    (version) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow(makeItem({ last: historicalMark(-1) })),
+          version,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "row" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen TTL for %s",
+    (expiresAt) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow(makeItem({ last: historicalMark(-1) })),
+          expiresAt,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "row" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen item revision count for %s",
+    (revision) => {
+      expect(() =>
+        decodeStorageRecord(
+          completeItemRow(makeItem({ last: historicalMark(-1), revision })),
+        ),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    },
+  );
 });

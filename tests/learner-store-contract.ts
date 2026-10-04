@@ -281,6 +281,33 @@ export function describeLearnerStoreContract(
       expect(current.ok).toBe(true);
     });
 
+    it.each([-1, -0.5])(
+      "round-trips finite signed last and previous mark timestamps %s",
+      async (answeredAt) => {
+        const item = makeItem({
+          last: { sessionId: "r1", result: "ok", elapsedMs: 1, answeredAt },
+          previous: { sessionId: "r0", result: "ng", elapsedMs: 2, answeredAt },
+        });
+        expect(
+          (
+            await store.commit({
+              puts: [{ type: "item", value: item }],
+              updates: [],
+              expect: [],
+            })
+          ).ok,
+        ).toBe(true);
+        expect((await store.itemsByIds(["c1"])).get("c1")).toStrictEqual({
+          value: item,
+          version: 1,
+        });
+        expect((await store.items()).get("c1")).toStrictEqual({
+          value: item,
+          version: 1,
+        });
+      },
+    );
+
     it("keeps causal item revisions in the log and projection through an atomic commit", async () => {
       const review = makeReview({ revision: 1 });
       const item = makeItem({ revision: 1 });

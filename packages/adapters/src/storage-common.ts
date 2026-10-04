@@ -38,7 +38,7 @@ function makeCommonSchemas(strict: boolean) {
       strict,
     ),
     mark: object(
-      { sessionId: id, result, elapsedMs: count, answeredAt: count },
+      { sessionId: id, result, elapsedMs: count, answeredAt: number },
       strict,
     ),
   };
