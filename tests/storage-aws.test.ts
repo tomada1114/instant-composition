@@ -56,7 +56,8 @@ function fixture() {
     stackStatus = "UPDATE_COMPLETE",
     revision = "revision1",
     account = "123456789012",
-    revisionCounter = 1;
+    revisionCounter = 1,
+    accountLimit = 1000;
   let configExtras: Record<string, unknown> = {};
   let duringMutation: () => void = () => undefined;
   let duringDownload: () => void = () => undefined;
@@ -119,6 +120,13 @@ function fixture() {
                   Properties: { ReservedConcurrentExecutions: 0 },
                 },
               },
+            },
+          };
+        case "lambda get-account-settings":
+          return {
+            AccountLimit: {
+              ConcurrentExecutions: accountLimit,
+              UnreservedConcurrentExecutions: accountLimit - (reserved ?? 0),
             },
           };
         case "lambda get-function-configuration":
@@ -197,6 +205,12 @@ function fixture() {
     },
     onDownload: (action: () => void) => {
       duringDownload = action;
+    },
+    limit: (value: number) => {
+      accountLimit = value;
+    },
+    reserve: (value: number | undefined) => {
+      reserved = value;
     },
     extras: (values: Record<string, unknown>) => {
       configExtras = values;
@@ -293,6 +307,29 @@ describe("storage transition AWS command boundary", () => {
     await expect(port.pause(receipt)).rejects.toThrow("transition work deadline");
     await expect(port.drain(900000)).rejects.toThrow("cleanup drain deadline");
   });
+  it.each([
+    [1000, null, 0, true],
+    [1000, 1, 0, true],
+    [10, null, 0, true],
+    [10, 1, 0, false],
+    [101, 1, undefined, true],
+    [101, 2, undefined, false],
+  ])(
+    "with account limit %i, a planned reservation of %s over a current %s fits: %s",
+    async (limit, capacity, current, fits) => {
+      const { port, limit: setLimit, reserve, options } = fixture();
+      setLimit(limit);
+      reserve(current);
+      const owned = port();
+      const writers = await owned.discover();
+      expect(
+        await owned.capacityAvailable(
+          writers.map((writer) => ({ ...writer, capacity })),
+        ),
+      ).toBe(fits);
+      expect(options.planned).toHaveLength(1);
+    },
+  );
   it("completes the actual AWS adapter transition when its own concurrency calls change revisions", async () => {
     const test = fixture(),
       port = test.port();

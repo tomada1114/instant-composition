@@ -288,6 +288,39 @@ export function awsStorageTransition(options, commands = SYSTEM) {
         writer.capacity === null ? actual === undefined : actual === writer.capacity,
       );
     },
+    async capacityAvailable(writers) {
+      const limits = readKey(
+        aws(["lambda", "get-account-settings"], process.env),
+        "AccountLimit",
+      );
+      let released = 0;
+      for (const writer of writers) {
+        const current = readKey(
+          aws(
+            ["lambda", "get-function-concurrency", "--function-name", writer.arn],
+            process.env,
+          ),
+          "ReservedConcurrentExecutions",
+        );
+        if (current === undefined) continue;
+        if (
+          typeof current !== "number" ||
+          !Number.isSafeInteger(current) ||
+          current < 0
+        )
+          throw new StorageTransitionError("AWS numeric response");
+        released += current;
+      }
+      const requested = writers.reduce(
+        (sum, writer) => sum + (writer.capacity ?? 0),
+        0,
+      );
+      // Lambda keeps min(100, account limit) unreserved; a reservation below it is refused.
+      return Promise.resolve(
+        number(limits, "UnreservedConcurrentExecutions") + released - requested >=
+          Math.min(100, number(limits, "ConcurrentExecutions")),
+      );
+    },
     async discover() {
       const rows = ownedStorageWriters(
         aws(

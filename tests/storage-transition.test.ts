@@ -138,6 +138,7 @@ function fixture() {
     cleanupTimeAvailable: () => ++cleanupChecks <= 3,
     discover: () => Promise.resolve(writers.map((writer) => ({ ...writer }))),
     capacityMatches: (writer) => Promise.resolve(!paused.has(writer.arn)),
+    capacityAvailable: () => Promise.resolve(true),
     extendAccess: (rows) => {
       return Promise.resolve().then(() => {
         calls.push(`access:${String(rows.length)}`);
@@ -212,6 +213,18 @@ afterEach(() => {
 });
 
 describe("storage deployment admission", () => {
+  it("refuses a capacity the account cannot hold before changing any writer admission", async () => {
+    const { port, calls, paused } = fixture();
+    port.capacityAvailable = () => Promise.resolve(false);
+    const cleanup = vi.fn();
+    port.beginCleanup = cleanup;
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "account concurrency",
+    });
+    expect(calls).toStrictEqual(["access:1"]);
+    expect(paused.size).toBe(0);
+    expect(cleanup).not.toHaveBeenCalled();
+  });
   it("refuses a drain that cannot fit before changing any writer admission", async () => {
     const { port, calls, paused } = fixture();
     port.assertWorkTime = (required = 0) => {

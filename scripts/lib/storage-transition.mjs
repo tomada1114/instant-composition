@@ -2,7 +2,7 @@ import { StorageTransitionError } from "./storage-runtime.mjs";
 import { sameStorageWriter } from "./storage-configuration.mjs";
 
 /** @typedef {{logicalId:string,arn:string,capacity:number|null,timeout:number,revision:string,codeHash:string,configurationHash:string}} Writer */
-/** @typedef {{assertWorkTime:(requiredMilliseconds?:number)=>void,beginCleanup:()=>void,drain:(milliseconds:number)=>Promise<void>,cleanupTimeAvailable:()=>boolean,discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
+/** @typedef {{assertWorkTime:(requiredMilliseconds?:number)=>void,beginCleanup:()=>void,drain:(milliseconds:number)=>Promise<void>,cleanupTimeAvailable:()=>boolean,discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,capacityAvailable:(writers:Writer[])=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
 /** Quiescence is never lost during code/config rollout. A failed partial rollout stays paused.
  * @param {TransitionPort} port @returns {Promise<void>}
  */
@@ -16,6 +16,10 @@ export async function transitionStorageWriters(port) {
     throw new StorageTransitionError("owned writers");
   await port.extendAccess(writers);
   writers = await port.discover();
+  // Refused before any pause: a capacity the account cannot hold would otherwise
+  // be found only at restoration, after admission has closed.
+  if (!(await port.capacityAvailable(writers)))
+    throw new StorageTransitionError("account concurrency");
   const predecessors = writers.map((writer) => ({ ...writer }));
   port.assertWorkTime(Math.max(...writers.map((writer) => writer.timeout)) * 1000);
   let preparationStarted = writers.some((writer) =>
