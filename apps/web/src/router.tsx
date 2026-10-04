@@ -11,6 +11,7 @@ import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
 import { WelcomePage } from "./home/welcome-page";
 import { FocusLayout, ShellLayout } from "./lib/frame";
+import { LoginPage } from "./login/login-page";
 import { NotFound } from "./not-found";
 import type { RoundKind } from "./openapi";
 import { vocabSearch } from "./vocab/sessions";
@@ -53,8 +54,9 @@ function RouteLoadFailed(): ReactElement {
  * The route tree, written as code rather than generated from files:
  * each route names its parent and its screen, and nothing runs at build time
  * to produce it. Two pathless layout routes hold the screens: the shell (the
- * hub screens, with the navigation) and the focus layout (`/drill` and
- * `/recap`, without it). The welcome and a path with no screen use neither.
+ * hub screens, with the navigation, and the sign-in page, with the brand
+ * alone) and the focus layout (`/drill` and `/recap`, without it). The welcome
+ * and a path with no screen use neither.
  */
 const rootRoute = createRootRoute({
   component: (): ReactElement => <Outlet />,
@@ -119,6 +121,12 @@ const talkRoute = createRoute({
   component: TalkPage,
 });
 
+const loginRoute = createRoute({
+  getParentRoute: () => shellRoute,
+  path: "login",
+  component: LoginPage,
+});
+
 const welcomeRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "welcome",
@@ -149,6 +157,7 @@ const routeTree = rootRoute.addChildren([
     recordsRoute,
     settingsRoute,
     talkRoute,
+    loginRoute,
   ]),
   focusRoute.addChildren([drillRoute, recapRoute, vocabStudyRoute]),
   welcomeRoute,

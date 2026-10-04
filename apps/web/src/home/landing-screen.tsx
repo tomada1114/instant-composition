@@ -1,7 +1,7 @@
+import { Link } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { LOGIN_URL } from "../lib/endpoints";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
@@ -58,14 +58,14 @@ export function LandingScreen(): ReactElement {
             </li>
           ))}
         </ol>
-        {/* A full-page navigation to the managed login, so a link rather than a
-            button: it says where it goes and opens in a new tab on request. */}
+        {/* A link to the sign-in page rather than a button: it says where it
+            goes and opens in a new tab on request. */}
         <Button asChild className="w-full sm:w-80">
-          <a href={LOGIN_URL} data-primary>
+          <Link to="/login" data-primary>
             {t("signIn")}
             <ArrowGlyph className="size-4.5" />
             <Kbd>Space</Kbd>
-          </a>
+          </Link>
         </Button>
       </div>
       <SampleCard />

@@ -18,11 +18,13 @@ import { cn } from "./utils";
 /** What a screen tells the frame around it; each returns the matching release. */
 interface FrameControl {
   readonly showNav: () => () => void;
+  readonly showBrand: () => () => void;
   readonly holdStrip: () => () => void;
 }
 
 const NO_FRAME: FrameControl = {
   showNav: () => () => undefined,
+  showBrand: () => () => undefined,
   holdStrip: () => () => undefined,
 };
 
@@ -53,6 +55,16 @@ function useClaims(): readonly [number, () => () => void] {
 export function useShellNav(shown = true): void {
   const { showNav } = useContext(Control);
   useLayoutEffect(() => (shown ? showNav() : undefined), [showNav, shown]);
+}
+
+/**
+ * Shows the shell's frame — the sidebar or the top bar, with the brand and
+ * none of the sections — while the calling screen is mounted, before and
+ * without any read: the sign-in page, whose visitor can open no section yet.
+ */
+export function useShellBrand(): void {
+  const { showBrand } = useContext(Control);
+  useLayoutEffect(showBrand, [showBrand]);
 }
 
 /** Whether the shell's navigation is on screen, which the toast centres beside. */
@@ -121,15 +133,19 @@ const FOCUS_MAIN =
  */
 function Frame({ focus: always }: Readonly<{ focus: boolean }>): ReactElement {
   const [navs, showNav] = useClaims();
+  const [brands, showBrand] = useClaims();
   const [strips, holdStrip] = useClaims();
-  const control = useMemo(() => ({ showNav, holdStrip }), [showNav, holdStrip]);
+  const control = useMemo(
+    () => ({ showNav, showBrand, holdStrip }),
+    [showNav, showBrand, holdStrip],
+  );
   const focus = always || strips > 0;
-  const nav = !focus && navs > 0;
+  const nav = !focus && (navs > 0 || brands > 0);
   return (
     <Control.Provider value={control}>
       <NavShown.Provider value={nav}>
         {nav ? <SkipLink /> : null}
-        {nav ? <ShellNav /> : null}
+        {nav ? <ShellNav sections={navs > 0} /> : null}
         {always && strips === 0 ? <Strip /> : null}
         <main
           id="main"
@@ -143,7 +159,7 @@ function Frame({ focus: always }: Readonly<{ focus: boolean }>): ReactElement {
   );
 }
 
-/** The layout route of the hub screens: home, talk, records and settings. */
+/** The layout route of the hub screens — home, talk, records and settings — and the sign-in page. */
 export function ShellLayout(): ReactElement {
   return <Frame focus={false} />;
 }

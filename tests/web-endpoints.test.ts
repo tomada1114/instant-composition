@@ -694,7 +694,7 @@ describe("an unauthenticated answer", () => {
         "/api/v1/home",
       ]);
       expect(visited).toStrictEqual([LOGIN_URL]);
-      expect(LOGIN_URL).toBe("/api/v1/auth/login");
+      expect(LOGIN_URL).toBe("/login");
     },
   );
 

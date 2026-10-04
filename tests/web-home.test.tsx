@@ -835,7 +835,7 @@ describe("a visitor who is not signed in", () => {
     }
     expect(screen.getByRole("link", { name: ja.Landing.signIn })).toHaveAttribute(
       "href",
-      "/api/v1/auth/login",
+      "/login",
     );
     expect(screen.getAllByRole("link")).toHaveLength(1);
     expect(screen.queryByRole("navigation")).toBeNull();
@@ -898,7 +898,7 @@ describe("a session that runs out while the app is open", () => {
     fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
     await settle();
     await settle(TUNING.skeletonDelayMs);
-    expect(visited).toStrictEqual(["/api/v1/auth/login"]);
+    expect(visited).toStrictEqual(["/login"]);
     expect(where()).toBe("/records");
     expect(calls.filter((call) => call.url === "/api/v1/records")).toHaveLength(2);
     // Concurrent refused reads share one renewal, then probe their original route once.
