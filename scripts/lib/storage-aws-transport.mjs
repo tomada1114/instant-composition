@@ -99,12 +99,47 @@ export function runStorageCdk(args, root, deadline) {
     });
   });
 }
+/** Only closed diagnostic categories may leave this boundary.
+ * @param {unknown} error @returns {"TimeoutError" | "AbortError" | "TypeError" | "Error" | "unknown"}
+ */
+function downloadCategory(error) {
+  const name = readString(error, "name");
+  switch (name) {
+    case "TimeoutError":
+    case "AbortError":
+    case "TypeError":
+    case "Error":
+      return name;
+    default:
+      return "unknown";
+  }
+}
+/** @param {unknown} error @returns {boolean} */
+function transientDownload(error) {
+  const allowed = [
+    "EAI_AGAIN",
+    "ECONNRESET",
+    "ETIMEDOUT",
+    "UND_ERR_CONNECT_TIMEOUT",
+    "UND_ERR_SOCKET",
+  ];
+  return [readString(error, "code"), readString(readKey(error, "cause"), "code")].some(
+    (code) => code !== undefined && allowed.includes(code),
+  );
+}
 /** @param {unknown} result @param {number} [deadline] @returns {Promise<Buffer>} */
 export async function deployedStorageZip(result, deadline) {
+  const startedAt = Date.now();
   const timeout = commandTime(30000, deadline);
+  const expiresAt = Math.min(startedAt + timeout, deadline ?? Infinity);
   const locationText = readString(readKey(result, "Code"), "Location");
   if (locationText === undefined) throw new StorageTransitionError("AWS code location");
-  const location = new URL(locationText);
+  let location;
+  try {
+    location = new URL(locationText);
+  } catch (error) {
+    throw new StorageTransitionError(`AWS code location ${downloadCategory(error)}`);
+  }
   if (
     location.protocol !== "https:" ||
     !location.hostname.endsWith(".amazonaws.com") ||
@@ -112,15 +147,66 @@ export async function deployedStorageZip(result, deadline) {
     location.password !== ""
   )
     throw new StorageTransitionError("AWS code location");
-  const response = await globalThis.fetch(location, {
-    redirect: "error",
-    signal: AbortSignal.timeout(timeout),
+  const controller = new AbortController();
+  const expired = new StorageTransitionError("AWS code download TimeoutError");
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let timer;
+  /** @type {Promise<never>} */
+  const expiry = new Promise((_resolve, reject) => {
+    timer = setTimeout(
+      () => {
+        controller.abort(expired);
+        reject(expired);
+      },
+      Math.max(0, expiresAt - Date.now()),
+    );
   });
-  if (!response.ok || Number(response.headers.get("content-length")) > 64 * 1024 * 1024)
+  try {
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      if (Date.now() >= expiresAt) throw expired;
+      let part = "AWS code fetch";
+      try {
+        const response = await Promise.race([
+          globalThis.fetch(location, { redirect: "error", signal: controller.signal }),
+          expiry,
+        ]);
+        if (Date.now() >= expiresAt) throw expired;
+        if (
+          !response.ok ||
+          Number(response.headers.get("content-length")) > 64 * 1024 * 1024
+        )
+          throw new StorageTransitionError("AWS code download");
+        part = "AWS code body";
+        const zip = Buffer.from(await Promise.race([response.arrayBuffer(), expiry]));
+        if (Date.now() >= expiresAt) throw expired;
+        if (zip.length > 64 * 1024 * 1024)
+          throw new StorageTransitionError("AWS code size");
+        return zip;
+      } catch (error) {
+        if (error instanceof StorageTransitionError) throw error;
+        if (Date.now() >= expiresAt) throw expired;
+        if (attempt !== 0 || !transientDownload(error) || expiresAt - Date.now() <= 100)
+          throw new StorageTransitionError(`${part} ${downloadCategory(error)}`);
+        /** @type {ReturnType<typeof setTimeout> | undefined} */
+        let backoff;
+        try {
+          await Promise.race([
+            new Promise((resolve) => {
+              backoff = setTimeout(resolve, 100);
+            }),
+            expiry,
+          ]);
+        } finally {
+          clearTimeout(backoff);
+        }
+      }
+    }
     throw new StorageTransitionError("AWS code download");
-  const zip = Buffer.from(await response.arrayBuffer());
-  if (zip.length > 64 * 1024 * 1024) throw new StorageTransitionError("AWS code size");
-  return zip;
+  } finally {
+    clearTimeout(timer);
+    if (!controller.signal.aborted)
+      controller.abort(new StorageTransitionError("AWS code download"));
+  }
 }
 /** @param {string} arn @param {string} root @param {number} [deadline] @returns {Promise<boolean>} */
 export function probeStorageThrottle(arn, root, deadline) {

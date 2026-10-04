@@ -46,6 +46,77 @@ import {
   currentStorageMain,
 } from "../scripts/storage-transition.mjs";
 
+it("reports malformed deflate bytes as a safe storage refusal", () => {
+  const zip = storedZip({ "index.mjs": Buffer.from([255]) });
+  const central = zip.readUInt32LE(zip.length - 6);
+  zip.writeUInt16LE(8, 8);
+  zip.writeUInt16LE(8, central + 10);
+  expect(() => storageZipFiles(zip)).toThrow(StorageTransitionError);
+});
+it("reports malformed installed guard JSON without exposing its contents", () => {
+  const zip = storedZip({ "storage-release.json": Buffer.from("private-not-json") });
+  const hash = Buffer.from(storageDigest(zip), "hex").toString("base64");
+  const expected = {
+    sha: "a".repeat(40),
+    storage: { contract: "test", schemaFingerprint: "b".repeat(64) },
+    files: {},
+  };
+  expect(() => verifyStorageZip(zip, hash, expected)).toThrow(StorageTransitionError);
+});
+it("reports malformed outer release JSON after certifying the packaged files", () => {
+  const code = Buffer.from("fixture");
+  const expected = {
+    sha: "a".repeat(40),
+    storage: { contract: "test", schemaFingerprint: "b".repeat(64) },
+    files: { "index.mjs": storageDigest(code), "storage.mjs": storageDigest(code) },
+  };
+  const zip = storedZip({
+    "index.mjs": code,
+    "storage.mjs": code,
+    "storage-release.json": Buffer.from(JSON.stringify(expected)),
+    "release.json": Buffer.from("private-not-json"),
+  });
+  const hash = Buffer.from(storageDigest(zip), "hex").toString("base64");
+  expect(() => verifyStorageZip(zip, hash, expected)).toThrow(StorageTransitionError);
+});
+
+it("reports main identity transport failures without exposing the bearer or provider message", async () => {
+  vi.stubEnv("GITHUB_TOKEN", "private-bearer");
+  const request = vi
+    .fn<typeof fetch>()
+    .mockRejectedValue(new TypeError("private-bearer signed-url"));
+  const failure = await currentStorageMain(
+    "tomada1114/instant-composition",
+    "a".repeat(40),
+    request,
+  ).catch((error: unknown) => error);
+  expect(failure).toBeInstanceOf(StorageTransitionError);
+  expect(JSON.stringify(failure)).not.toContain("private-bearer");
+  expect(JSON.stringify(failure)).not.toContain("signed-url");
+  expect(failure).toMatchObject({
+    code: "ERR_STORAGE_TRANSITION",
+    part: "main identity request",
+  });
+});
+it("reports main identity JSON failure without exposing response content", async () => {
+  vi.stubEnv("GITHUB_TOKEN", "private-bearer");
+  const request = vi
+    .fn<typeof fetch>()
+    .mockResolvedValue(new Response("private-bearer signed-url"));
+  const failure = await currentStorageMain(
+    "tomada1114/instant-composition",
+    "a".repeat(40),
+    request,
+  ).catch((error: unknown) => error);
+  expect(failure).toBeInstanceOf(StorageTransitionError);
+  expect(JSON.stringify(failure)).not.toContain("private-bearer");
+  expect(JSON.stringify(failure)).not.toContain("signed-url");
+  expect(failure).toMatchObject({
+    code: "ERR_STORAGE_TRANSITION",
+    part: "main identity JSON",
+  });
+});
+
 const api: Writer = {
   logicalId: "ApiFunctionABC123",
   arn: "arn:aws:lambda:ap-northeast-1:123456789012:function:instant-composition-dev-app-ApiFunctionABC123-owned",
@@ -206,11 +277,26 @@ describe("storage deployment admission", () => {
     expect(paused.size).toBe(2);
   });
   it.each([
-    [new StorageTransitionError("installed file"), "installed file"],
-    [new Error("private-provider-response-with-signed-url"), "unexpected failure"],
+    [
+      new StorageTransitionError("installed file"),
+      "installed file",
+      "StorageTransitionError",
+    ],
+    [
+      new Error("private-provider-response-with-signed-url"),
+      "unexpected failure",
+      "unknown",
+    ],
+    [
+      Object.assign(new Error("private-provider-response-with-signed-url"), {
+        name: "private-provider-response-with-signed-url",
+      }),
+      "unexpected failure",
+      "unknown",
+    ],
   ])(
     "retains a safe failure stage without exposing dependency content: %s",
-    async (failure, stage) => {
+    async (failure, stage, kind) => {
       const { port, paused } = fixture();
       const records: unknown[] = [];
       port.verify = () => Promise.reject(failure);
@@ -222,6 +308,8 @@ describe("storage deployment admission", () => {
       expect(records.at(-1)).toMatchObject({
         phase: "paused-forward-fix",
         failure: stage,
+        failureStage: "installed ZIP certification",
+        failureKind: kind,
       });
       expect(JSON.stringify(records)).not.toContain(
         "private-provider-response-with-signed-url",
@@ -229,6 +317,25 @@ describe("storage deployment admission", () => {
       expect(paused.size).toBe(2);
     },
   );
+  it("retains the original operation when cleanup succeeds after a native failure", async () => {
+    const { port, paused } = fixture();
+    const records: unknown[] = [];
+    const failure = new TypeError("private signed download URL and token");
+    port.deploy = () => Promise.reject(failure);
+    port.record = (state) => {
+      records.push(state);
+      return Promise.resolve();
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(records.at(-1)).toMatchObject({
+      failureStage: "app deployment",
+      failureKind: "TypeError",
+      admissionClosed: true,
+      cleanupVerified: true,
+    });
+    expect(JSON.stringify(records)).not.toContain("private signed download");
+    expect(paused.has(api.arn)).toBe(true);
+  });
   it("accepts only the revision receipt from its own capacity restoration", async () => {
     const { port, paused } = fixture();
     const revisions = new Map<string, string>();

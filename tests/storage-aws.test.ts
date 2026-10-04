@@ -17,6 +17,13 @@ import { parseJson } from "../scripts/lib/json.mjs";
 import { storedZip } from "./storage-zip-fixture";
 import { transitionStorageWriters } from "../scripts/lib/storage-transition.mjs";
 import { storageConfigurationHash } from "../scripts/lib/storage-configuration.mjs";
+import { deployedStorageZip } from "../scripts/lib/storage-aws-transport.mjs";
+
+vi.mock("node:timers", () => ({
+  setTimeout: (callback: () => void, ms: number) => globalThis.setTimeout(callback, ms),
+  clearTimeout: (timer: ReturnType<typeof setTimeout>) =>
+    globalThis.clearTimeout(timer),
+}));
 
 const folders: string[] = [];
 afterEach(() => {
@@ -119,7 +126,9 @@ function fixture() {
         case "lambda get-function":
           return {
             Configuration: configuration(),
-            Code: { Location: "private-fixture-location" },
+            Code: {
+              Location: "https://owned.s3.ap-northeast-1.amazonaws.com/private-fixture",
+            },
           };
         case "lambda get-function-concurrency":
           return reserved === undefined
@@ -176,6 +185,8 @@ function fixture() {
     );
   return {
     port,
+    commands,
+    downloadBytes: () => Buffer.from(zip),
     options,
     calls,
     cdkCalls,
@@ -211,6 +222,54 @@ function fixture() {
 }
 
 describe("storage transition AWS command boundary", () => {
+  it.each([
+    ["unchanged", undefined],
+    ["changed", "download-race"],
+  ])(
+    "revalidates a %s writer across a real retried ZIP download",
+    async (_label, revision) => {
+      vi.useFakeTimers();
+      try {
+        const test = fixture();
+        const request = vi
+          .fn<typeof fetch>()
+          .mockRejectedValueOnce(
+            Object.assign(new TypeError("private-signed-url"), {
+              cause: { code: "ECONNRESET" },
+            }),
+          )
+          .mockImplementationOnce(() => {
+            test.mutate(revision === undefined ? {} : { revision });
+            return Promise.resolve(new Response(new Uint8Array(test.downloadBytes())));
+          });
+        vi.stubGlobal("fetch", request);
+        const port = awsStorageTransition(test.options, {
+          ...test.commands,
+          zip: deployedStorageZip,
+        });
+        await port.extendAccess(await port.discover());
+        const [writer] = await port.discover();
+        if (writer === undefined) throw new Error("Writer required.");
+        const result = port.verify(writer).catch((error: unknown) => error);
+        await vi.advanceTimersByTimeAsync(100);
+        expect(await result).toEqual(
+          revision === undefined
+            ? writer
+            : expect.objectContaining({
+                code: "ERR_STORAGE_TRANSITION",
+                part: "download revision race",
+              }),
+        );
+        expect(request).toHaveBeenCalledTimes(2);
+        expect(
+          test.calls.some((args) => args[1] === "delete-function-concurrency"),
+        ).toBe(false);
+        expect(vi.getTimerCount()).toBe(0);
+      } finally {
+        vi.useRealTimers();
+      }
+    },
+  );
   it("refuses an initial drain that cannot fit and keeps expired admission closed while cleanup can still pause", async () => {
     let now = 1000000;
     vi.spyOn(Date, "now").mockImplementation(() => now);
