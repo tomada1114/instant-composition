@@ -13,6 +13,8 @@ import type {
   VocabSession,
 } from "@instant-composition/domain";
 
+import { declaredModelTask } from "./declared-model-task";
+
 /**
  * Every field `T` declares, optional ones included. A field added to the type
  * fails to compile at its list below until it is named there, so a read never
@@ -174,6 +176,8 @@ export function declaredValue(entry: Entry): Entry["value"] {
         ...declared(entry.value, TALK),
         turns: entry.value.turns.map((turn) => declared(turn, TURN)),
       };
+    case "modelTask":
+      return declaredModelTask(entry.value);
     case "vocabItem":
       return declared(entry.value, VOCAB_ITEM);
     case "vocabSession":

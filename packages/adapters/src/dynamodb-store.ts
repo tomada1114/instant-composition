@@ -143,6 +143,7 @@ function dynamoDbStore(
       );
     },
     talk: (id) => get({ type: "talk", id }),
+    modelTask: (task) => get({ type: "modelTask", task }),
     async vocabItems() {
       const rows = await prefixed(itemsPrefix("vocab"));
       return new Map(

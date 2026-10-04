@@ -104,18 +104,8 @@ export async function executeStorageMaintenance(input: unknown): Promise<unknown
             version: decoded.version,
             schemaVersion: STORAGE_SCHEMA_VERSION,
             value,
-            ...([
-              "talk",
-              "vocabReadModel",
-              "vocabCandidate",
-              "compositionReadModel",
-              "compositionBuild",
-              "compositionCandidate",
-            ].includes(decoded.type) &&
-            typeof value === "object" &&
-            value !== null &&
-            "expiresAt" in value
-              ? { expiresAt: value.expiresAt }
+            ...(Object.hasOwn(operation.row, "expiresAt")
+              ? { expiresAt: operation.row["expiresAt"] }
               : {}),
           },
           ConditionExpression:

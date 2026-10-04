@@ -110,6 +110,8 @@ export const TALK_TUNING = {
   expiresAfterMs: 86_400_000,
   /** The bound on each model call. */
   modelTimeoutMs: 12_000,
+  /** Longer than the hosted request lifetime, fencing recovery after a lost invocation. */
+  modelLeaseMs: 30_000,
   /** The share of scenes about the learner themselves; the rest are an errand or a small trouble. */
   selfShare: 2 / 3,
   /** The most card candidates a talk's end offers: at most one per corrected turn. */

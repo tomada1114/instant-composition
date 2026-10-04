@@ -80,6 +80,12 @@ export {
   paceSecondsForWords,
 } from "./timer";
 export type { Paced } from "./timer";
+export {
+  decideModelTask,
+  type ModelTask,
+  type ModelTaskDecision,
+  type ModelTaskKey,
+} from "./model-task";
 export { TALK_TUNING, TUNING, VOCAB_TUNING, type MilestoneSeries } from "./tuning";
 export type { AnswerRecord, AnswerResult, CardContent, CardMeta } from "./types";
 export type { CardState, ConceptId, DailySize, DayKey } from "./types";

@@ -153,7 +153,7 @@ interface Turn {
   does not turn it into a kept record.
 - TTL deletes late, so the application reads a talk whose `expiresAt` has passed as
   absent; both stores then behave alike. The learner table gains `expiresAt` as its TTL
-  attribute, which no other entry sets.
+  attribute, also used by model task recovery records.
 - The store port gains `talk(id)`, an `Entry`/`Key` of type `talk`, and a `Fields` list
   in `packages/adapters/src/declared.ts`; the contract suite's `READS` gains it,
   isolation included. Nothing deletes a talk: the TTL does.
@@ -164,6 +164,17 @@ interface Turn {
   candidate, so it never meets a catalog id.
 - `model` records the provider, the model and each prompt's version, so a later look at
   the records can tell which prompt produced a turn.
+
+Paid calls claim learner-bound tasks before the provider. Teacher and partner claim
+together against the talk version. Changed input is `ERR_CONFLICT`; active work is
+`ERR_MODEL_UNAVAILABLE` (503). Neither commits fallback feedback.
+
+Observed claim tokens and versions fence expired-claim reclamation and stale executors
+after deletion/recreation; saved results recover a talk commit crash. Adoption checks
+the talk's start generation. A new endpoint invocation (`/reply` for a missing reply)
+retries a failed or expired claim. Unknown outcomes may bill twice, identified by
+per-attempt logs. `mapping-the-architecture` maps the keys and storage. Recovery expires
+after a day; kept talks retain adopted results.
 
 ## Reading and resuming
 
@@ -245,8 +256,9 @@ interface ModelFailure {
   `AbortSignal` it reads; any `AbortSignal` is one.
 - **Telemetry.** Every call writes one log line of its own, beside the request line:
   `kind: "model-call"`, `requestId`, `task`, `promptVersion`, `provider`, `modelId`,
-  `outcome`, `inputTokens`, `outputTokens`, `latencyMs`, `costUsd`. Never a prompt, a
-  learner's text or the model's output.
+  `outcome`, `attempt`, `duplicatePossible`, `providerOutcome`, `inputTokens`,
+  `outputTokens`, `latencyMs`, `costUsd`. Never a prompt, a learner's text or the
+  model's output.
 - **Learner text is data.** It reaches the model only inside the user messages, each
   part in its own delimiter (`<japanese>…</japanese>`), never in the system prompt; the
   system prompt says to treat what is inside as the learner's words, not instructions.

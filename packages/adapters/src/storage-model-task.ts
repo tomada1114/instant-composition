@@ -1,5 +1,57 @@
 import { z } from "zod";
+import type { ModelTaskKey } from "@instant-composition/domain";
 import { category, count, id, number, object, text } from "./storage-common";
+
+function taskKeySchema(strict: boolean) {
+  return object(
+    {
+      talkId: id,
+      task: z.enum(["talk-scene", "talk-teacher", "talk-partner", "talk-cards"]),
+      turn: count,
+      promptVersion: id,
+      generation: count.optional(),
+    },
+    strict,
+  );
+}
+
+/** Optional generation is a distinct key component even when it is zero. */
+export function modelTaskSortKey(task: ModelTaskKey): string {
+  return `MODEL_TASK#${encodeURIComponent(task.talkId)}#${encodeURIComponent(task.task)}#${String(task.turn)}#${encodeURIComponent(task.promptVersion)}${task.generation === undefined ? "" : `#${String(task.generation)}`}`;
+}
+
+/** Native value validation may omit transport keys; actual rows bind both keys. */
+export function modelTaskStorageKeyMatches(
+  value: unknown,
+  partition: string | undefined,
+  sort: string | undefined,
+): boolean {
+  if (partition === undefined && sort === undefined) return true;
+  if (
+    partition === undefined ||
+    sort === undefined ||
+    !partition.startsWith("LEARNER#")
+  )
+    return false;
+  if (typeof value !== "object" || value === null) return false;
+  const key = taskKeySchema(true).safeParse(Reflect.get(value, "key"));
+  if (!key.success) return false;
+  const { generation, ...base } = key.data;
+  try {
+    const learner = decodeURIComponent(partition.slice("LEARNER#".length));
+    return (
+      learner.length > 0 &&
+      partition === `LEARNER#${encodeURIComponent(learner)}` &&
+      sort ===
+        modelTaskSortKey({
+          ...base,
+          ...(generation === undefined ? {} : { generation }),
+        })
+    );
+  } catch {
+    return false;
+  }
+}
 
 function taskSchema(strict: boolean) {
   const scene = object(
@@ -22,18 +74,8 @@ function taskSchema(strict: boolean) {
     },
     strict,
   );
-  const key = object(
-    {
-      talkId: id,
-      task: z.enum(["talk-scene", "talk-teacher", "talk-partner", "talk-cards"]),
-      turn: count,
-      promptVersion: id,
-      generation: count.optional(),
-    },
-    strict,
-  );
   const identity = {
-    key,
+    key: taskKeySchema(strict),
     claimId: id,
     input: text,
     attempt: count.positive(),

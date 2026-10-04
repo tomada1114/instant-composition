@@ -50,6 +50,12 @@ export function loggedModel(served: ServedModel, request: ModelCallLog): Languag
       provider: call?.provider ?? served.provider,
       modelId: call?.modelId ?? served.modelId,
       outcome,
+      attempt: asked.execution?.attempt ?? 1,
+      duplicatePossible: asked.execution?.duplicatePossible ?? false,
+      providerOutcome:
+        outcome === "timeout" || outcome === "transport" || outcome === "failed"
+          ? "unknown"
+          : "known",
       inputTokens: call?.inputTokens ?? null,
       outputTokens: call?.outputTokens ?? null,
       latencyMs: call?.latencyMs ?? request.now() - started,

@@ -361,7 +361,14 @@ describe("sendTurn", () => {
       sendTurn(h.talkDeps, h.context(), { ...TURN, english: "I came here last week." }),
     ]);
 
-    expect(b).toStrictEqual(a);
+    expect(a.ok).toBe(true);
+    expect(b).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+    expect(await sendTurn(h.talkDeps, h.context(), TURN)).toStrictEqual(a);
+    expect(tasksOf(h.model)).toStrictEqual([
+      "talk-scene",
+      "talk-teacher",
+      "talk-partner",
+    ]);
     expect((await stored())?.value.turns).toHaveLength(1);
   });
 
@@ -549,7 +556,15 @@ describe("retryReply", () => {
       retryReply(h.talkDeps, h.context(), { talkId: "t1" }),
     ]);
 
-    expect(b).toStrictEqual(a);
+    expect(a.ok).toBe(true);
+    expect(b).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_MODEL_UNAVAILABLE", reason: "in-flight" },
+    });
+    expect(await retryReply(h.talkDeps, h.context(), { talkId: "t1" })).toStrictEqual(
+      a,
+    );
+    expect(tasksOf(h.model).filter((task) => task === "talk-partner")).toHaveLength(2);
     expect((await stored())?.version).toBe(3);
   });
 

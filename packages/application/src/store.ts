@@ -4,6 +4,8 @@ import type {
   ItemProgress,
   ItemRef,
   LearnerStats,
+  ModelTask,
+  ModelTaskKey,
   PersonalCard,
   Portion,
   Result,
@@ -29,6 +31,7 @@ export type Entry =
   | { readonly type: "day"; readonly value: DayTally }
   | { readonly type: "item"; readonly value: ItemProgress }
   | { readonly type: "talk"; readonly value: Talk }
+  | { readonly type: "modelTask"; readonly value: ModelTask }
   | { readonly type: "vocabItem"; readonly value: VocabProgress }
   | { readonly type: "vocabSession"; readonly value: VocabSession }
   | { readonly type: "vocabReview"; readonly value: VocabReview }
@@ -45,6 +48,7 @@ export type Key =
   | { readonly type: "day"; readonly day: DayKey }
   | { readonly type: "item"; readonly item: ItemRef }
   | { readonly type: "talk"; readonly id: string }
+  | { readonly type: "modelTask"; readonly task: ModelTaskKey }
   | { readonly type: "vocabItem"; readonly cardId: string }
   | { readonly type: "vocabSession"; readonly id: string }
   | { readonly type: "vocabReview"; readonly sessionId: string; readonly id: string }
@@ -65,6 +69,8 @@ export function keyOf(entry: Entry): Key {
       return { type: entry.type, day: entry.value.day };
     case "item":
       return { type: "item", item: entry.value.item };
+    case "modelTask":
+      return { type: "modelTask", task: entry.value.key };
     case "talk":
     case "vocabSession":
     case "card":
@@ -99,7 +105,12 @@ export interface Stored<T> {
  */
 export interface Commit {
   readonly puts: readonly Entry[];
-  readonly updates: readonly { readonly entry: Entry; readonly version: number }[];
+  readonly updates: readonly {
+    readonly entry: Entry;
+    readonly version: number;
+    /** For modelTask reclaim/finalization, fence the observed token after row recreation. */
+    readonly modelClaim?: string;
+  }[];
   readonly expect: readonly { readonly key: Key; readonly version: number | null }[];
   /** Absent for a commit that deletes nothing, which is nearly every one. */
   readonly deletes?: readonly { readonly key: Key; readonly version: number }[];
@@ -153,6 +164,8 @@ export interface LearnerStore {
    * the domain's `liveTalk`.
    */
   talk(id: string): Promise<Stored<Talk> | undefined>;
+  /** A semantic model job in this learner's partition; commits claim and finish by version. */
+  modelTask(key: ModelTaskKey): Promise<Stored<ModelTask> | undefined>;
   /** Every vocabulary card the learner has progress on, keyed by card id. */
   vocabItems(): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
   /** Only progress for the named vocabulary cards. */

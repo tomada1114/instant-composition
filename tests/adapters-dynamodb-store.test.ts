@@ -153,6 +153,55 @@ function storeOf(learner = "learner-a"): LearnerStore {
   }).forLearner(learnerId(learner));
 }
 
+function modelTaskResult() {
+  return {
+    key: {
+      talkId: "t#1",
+      task: "talk-scene" as const,
+      turn: 0,
+      promptVersion: "talk-scene@1",
+    },
+    claimId: "req-1:1",
+    input: "private request",
+    state: "result" as const,
+    attempt: 1,
+    duplicatePossible: false,
+    startedAt: 1_000,
+    expiresAt: 86_401,
+    result: {
+      value: {
+        scene: {
+          partner: "barista",
+          place: "cafe",
+          relation: "customer and barista",
+          description: "Order a coffee.",
+        },
+        opening: "What would you like?",
+      },
+      call: {
+        provider: "scripted",
+        modelId: "scripted@1",
+        inputTokens: 10,
+        outputTokens: 20,
+        latencyMs: 100,
+        costUsd: null,
+      },
+    },
+  };
+}
+
+function modelTaskRow(value: unknown, version: number) {
+  return {
+    PK: { S: "LEARNER#learner-a" },
+    SK: { S: "MODEL_TASK#t%231#talk-scene#0#talk-scene%401" },
+    type: { S: "modelTask" },
+    schemaVersion: { N: "3" },
+    version: { N: String(version) },
+    expiresAt: { N: "86401" },
+    value: wire(value),
+  };
+}
+
 describe("a commit", () => {
   it("is one TransactWriteItems in the learner's partition, a resent answer refused by attribute_not_exists", async () => {
     answers.push({
@@ -187,7 +236,7 @@ describe("a commit", () => {
       ),
     ).toStrictEqual([
       "attribute_not_exists(#pk)",
-      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1)",
+      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1 OR #schema = :storage2)",
       "attribute_not_exists(#pk)",
     ]);
     expect(items[0]?.["Put"]?.["Item"]).toMatchObject({
@@ -247,7 +296,7 @@ describe("a commit", () => {
       {
         Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
         ConditionExpression:
-          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1)",
+          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1 OR #schema = :storage2)",
         ExpressionAttributeValues: { ":version": { N: "2" } },
       },
       { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
@@ -289,6 +338,71 @@ describe("a commit", () => {
     });
     expect(items[1]?.["Put"]?.["Item"]?.["SK"]).toStrictEqual({ S: "TALK#t2" });
     expect(items[1]?.["Put"]?.["Item"]).not.toHaveProperty("expiresAt");
+  });
+
+  it("claims and finishes a model task under its escaped semantic key with an independent TTL", async () => {
+    const saved = modelTaskResult();
+    const { result, ...identity } = saved;
+    const { key } = identity;
+    const claim = { ...identity, state: "in-flight" as const, leaseUntil: 31_000 };
+    await storeOf().commit({
+      puts: [{ type: "modelTask", value: claim }],
+      updates: [],
+      expect: [],
+    });
+    const items = calls[0]?.body["TransactItems"] as Record<
+      string,
+      Record<string, unknown>
+    >[];
+    expect(items[0]?.["Put"]?.["Item"]).toStrictEqual(modelTaskRow(claim, 1));
+    expect(items[0]?.["Put"]?.["ConditionExpression"]).toBe(
+      "attribute_not_exists(#pk)",
+    );
+    answers.push({ status: 200, body: { Item: modelTaskRow(saved, 2) } });
+    expect(await storeOf().modelTask(key)).toStrictEqual({ value: saved, version: 2 });
+    expect(calls[1]?.body).toMatchObject({
+      Key: {
+        PK: { S: "LEARNER#learner-a" },
+        SK: { S: "MODEL_TASK#t%231#talk-scene#0#talk-scene%401" },
+      },
+      ConsistentRead: true,
+    });
+
+    answers.push({ status: 200, body: { Item: modelTaskRow(claim, 1) } });
+    await storeOf().commit({
+      puts: [],
+      updates: [
+        {
+          entry: {
+            type: "modelTask",
+            value: { ...identity, result },
+          },
+          version: 1,
+          modelClaim: claim.claimId,
+        },
+      ],
+      expect: [],
+    });
+    const finished = calls.at(-1)?.body["TransactItems"] as Record<
+      string,
+      Record<string, unknown>
+    >[];
+    expect(finished[0]?.["Put"]?.["Item"]).toStrictEqual(modelTaskRow(saved, 2));
+    expect(calls.map((call) => call.operation)).toStrictEqual([
+      "TransactWriteItems",
+      "GetItem",
+      "GetItem",
+      "TransactWriteItems",
+    ]);
+    expect(finished[0]?.["Put"]).toMatchObject({
+      ConditionExpression:
+        "#version = :version AND (#schema = :schema) AND #value.#claim = :claim",
+      ExpressionAttributeValues: {
+        ":version": { N: "1" },
+        ":schema": { N: "3" },
+        ":claim": { S: "req-1:1" },
+      },
+    });
   });
 
   it("sends nothing when it names nothing", async () => {
@@ -343,6 +457,18 @@ describe("a commit", () => {
 });
 
 describe("a read", () => {
+  it("refuses an unexpected model task field without issuing a follow-up write", async () => {
+    const saved = modelTaskResult();
+    answers.push({
+      status: 200,
+      body: { Item: modelTaskRow({ ...saved, retired: "unknown field" }, 2) },
+    });
+    const reading = storeOf().modelTask(saved.key);
+    await expect(reading).rejects.toBeInstanceOf(StorageSchemaError);
+    await expect(reading).rejects.toMatchObject({ code: "ERR_STORAGE_SHAPE" });
+    expect(calls.map((call) => call.operation)).toStrictEqual(["GetItem"]);
+  });
+
   it("asks for a consistent read of the one key", async () => {
     answers.push({ status: 200, body: {} });
 

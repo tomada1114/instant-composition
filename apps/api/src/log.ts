@@ -62,6 +62,10 @@ export interface ModelCallLine {
   readonly provider: string;
   readonly modelId: string;
   readonly outcome: ModelCallOutcome;
+  readonly attempt: number;
+  readonly duplicatePossible: boolean;
+  /** Whether this attempt may have reached the provider without a usable result. */
+  readonly providerOutcome: "known" | "unknown";
   readonly inputTokens: number | null;
   readonly outputTokens: number | null;
   readonly latencyMs: number;

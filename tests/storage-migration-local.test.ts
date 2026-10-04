@@ -13,8 +13,14 @@ import {
 } from "@instant-composition/adapters";
 import { learnerId, keyOf, type Entry } from "@instant-composition/application";
 import { main } from "../scripts/storage-migrate.mjs";
-import { makeItem, makeRound, makeSettings, makeStats } from "./application-fixtures";
-import { readKey } from "../scripts/lib/json.mjs";
+import {
+  makeItem,
+  makeRound,
+  makeSettings,
+  makeStats,
+  makeTalk,
+} from "./application-fixtures";
+import { parseJson, readKey } from "../scripts/lib/json.mjs";
 
 const endpoint = "http://127.0.0.1:8000";
 function wire(value: unknown): unknown {
@@ -80,9 +86,27 @@ describe("guarded storage on DynamoDB local", () => {
         const get = () =>
           dynamo("GetItem", { TableName: table, Key: readKey(wire(key), "M") });
         const before = await get();
+        const sibling = {
+          PK: "LEARNER#valid-sibling",
+          SK: "SETTINGS",
+          type: "settings",
+          version: 1,
+          schemaVersion: 2,
+          value: makeSettings(),
+        };
+        await dynamo("PutItem", {
+          TableName: table,
+          Item: readKey(wire(sibling), "M"),
+        });
+        const getSibling = () =>
+          dynamo("GetItem", {
+            TableName: table,
+            Key: readKey(wire({ PK: sibling.PK, SK: sibling.SK }), "M"),
+          });
+        const siblingBefore = await getSibling();
         const args = [
           "--plan",
-          "expand-to-storage-v2",
+          "expand-to-storage-v3",
           "--table",
           table,
           "--endpoint",
@@ -116,6 +140,7 @@ describe("guarded storage on DynamoDB local", () => {
           }),
         ).rejects.toBeInstanceOf(StorageSchemaError);
         expect(await get()).toStrictEqual(before);
+        expect(await getSibling()).toStrictEqual(siblingBefore);
       } finally {
         await deleteLearnerTable(client, table);
         client.destroy();
@@ -162,7 +187,7 @@ describe("guarded storage on DynamoDB local", () => {
       });
       const args = [
         "--plan",
-        "expand-to-storage-v2",
+        "expand-to-storage-v3",
         "--table",
         table,
         "--endpoint",
@@ -199,6 +224,170 @@ describe("guarded storage on DynamoDB local", () => {
         new Map(),
       );
       expect(readFileSync(checkpoint, "utf8")).not.toContain("gradeKeys");
+    } finally {
+      await deleteLearnerTable(client, table);
+      client.destroy();
+      rmSync(folder, { recursive: true, force: true });
+    }
+  });
+  it("resumes the v3 expansion preserving signed marks, answer state and exact TTL presence", async () => {
+    const table = `storage436-${randomUUID()}`,
+      client = localDynamoDbClient(endpoint);
+    const folder = mkdtempSync(path.join(tmpdir(), "storage436-v3-"));
+    const checkpoint = path.join(folder, "checkpoint.json");
+    const fixture = parseJson(
+      readFileSync(new URL("./fixtures/storage-v3.json", import.meta.url), "utf8"),
+    );
+    const fixtures = readKey(fixture, "fixtures");
+    if (!Array.isArray(fixtures)) throw new TypeError("Fixture inventory required.");
+    const task = readKey(
+      fixtures.find(
+        (entry) =>
+          readKey(entry, "name") === "model-task-result-scene-generation-absent",
+      ),
+      "row",
+    );
+    if (typeof task !== "object" || task === null)
+      throw new TypeError("Complete task required.");
+    const rows: Record<string, unknown>[] = [];
+    for (const schema of [0, 1, 2]) {
+      rows.push({
+        PK: `LEARNER#round-${String(schema)}`,
+        SK: "ROUND#r1",
+        type: "round",
+        version: 7,
+        ...(schema === 0 ? {} : { schemaVersion: schema }),
+        value: makeRound(
+          schema === 2
+            ? {
+                firstPass: 1,
+                answerState: {
+                  firstCards: ["c1"],
+                  cursor: "answer-1",
+                  complete: false,
+                },
+              }
+            : {},
+        ),
+      });
+      const original = makeItem().last;
+      if (original === null) throw new TypeError("Signed mark fixture required.");
+      const last = { ...original, answeredAt: -1 };
+      rows.push({
+        PK: `LEARNER#item-${String(schema)}`,
+        SK: "ITEM#composition#c1",
+        type: "item",
+        version: 4,
+        ...(schema === 0 ? {} : { schemaVersion: schema }),
+        value: makeItem({ last, previous: { ...last, answeredAt: -0.5 } }),
+      });
+      for (const mirror of [false, true])
+        rows.push({
+          PK: `LEARNER#talk-${String(schema)}-${String(mirror)}`,
+          SK: "TALK#t1",
+          type: "talk",
+          version: 3,
+          ...(schema === 0 ? {} : { schemaVersion: schema }),
+          value: makeTalk(),
+          ...(mirror ? { expiresAt: makeTalk().expiresAt } : {}),
+        });
+    }
+    for (const mirror of [false, true]) {
+      const row: Record<string, unknown> = {
+        ...task,
+        PK: `LEARNER#task-${String(mirror)}`,
+      };
+      if (!mirror) delete row["expiresAt"];
+      rows.push(row);
+    }
+    // Force a bounded first page so resume must process a later source page.
+    for (let index = rows.length; index < 101; index += 1)
+      rows.push({
+        PK: `LEARNER#padding-${String(index)}`,
+        SK: "SETTINGS",
+        type: "settings",
+        version: 1,
+        schemaVersion: index % 3,
+        value: makeSettings(),
+      });
+    await createLearnerTable(client, table);
+    try {
+      const get = (row: Record<string, unknown>) =>
+        dynamo("GetItem", {
+          TableName: table,
+          Key: readKey(wire({ PK: row["PK"], SK: row["SK"] }), "M"),
+        });
+      for (const row of rows)
+        await dynamo("PutItem", { TableName: table, Item: readKey(wire(row), "M") });
+      const before = await Promise.all(rows.map(get));
+      const args = [
+        "--plan",
+        "expand-to-storage-v3",
+        "--table",
+        table,
+        "--endpoint",
+        endpoint,
+        "--checkpoint",
+        checkpoint,
+      ];
+      expect(await main([...args, "--dry-run"])).toMatchObject({
+        complete: true,
+        seen: 101,
+        migrated: 99,
+        unchanged: 2,
+      });
+      expect(await Promise.all(rows.map(get))).toStrictEqual(before);
+      expect(existsSync(checkpoint)).toBe(false);
+      const partial = await main([
+        ...args,
+        "--apply",
+        "--writers-stopped",
+        "--max-pages",
+        "1",
+      ]);
+      expect(partial.complete).toBe(false);
+      expect(partial.seen).toBe(100);
+      const complete = await main([
+        ...args,
+        "--apply",
+        "--writers-stopped",
+        "--resume",
+      ]);
+      expect(complete).toMatchObject({
+        complete: true,
+        seen: 101,
+        migrated: 99,
+        unchanged: 2,
+        migration: "expand-to-storage-v3",
+        targetSchema: 3,
+      });
+      expect(
+        await main([...args, "--apply", "--writers-stopped", "--resume"]),
+      ).toStrictEqual(complete);
+      for (const [index, row] of rows.entries()) {
+        const after = await get(row);
+        if (row["schemaVersion"] === 3) expect(after).toStrictEqual(before[index]);
+        else
+          expect(readKey(after, "Item")).toStrictEqual(
+            readKey(
+              wire({
+                ...row,
+                schemaVersion: 3,
+                version: Number(row["version"]) + 1,
+              }),
+              "M",
+            ),
+          );
+      }
+      const wrong = { ...complete, migration: "expand-to-storage-v2", targetSchema: 2 };
+      const { saveCheckpoint } = await import("../scripts/lib/storage-checkpoint.mjs");
+      saveCheckpoint(checkpoint, wrong);
+      const stable = await Promise.all(rows.map(get));
+      await expect(
+        main([...args, "--apply", "--writers-stopped", "--resume"]),
+      ).rejects.toThrow("ERR_STORAGE_MIGRATION_FORMAT");
+      expect(await Promise.all(rows.map(get))).toStrictEqual(stable);
+      expect(existsSync(`${checkpoint}.lock`)).toBe(false);
     } finally {
       await deleteLearnerTable(client, table);
       client.destroy();

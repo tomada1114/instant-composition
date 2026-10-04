@@ -25,13 +25,174 @@ const fixtures = cases.map((fixture) => ({
   expected: readKey(fixture, "expected"),
 }));
 
+function record(value: unknown): Record<string, unknown> {
+  if (typeof value !== "object" || value === null || Array.isArray(value))
+    throw new TypeError("Object fixture required.");
+  return value as Record<string, unknown>;
+}
+
+const cap3Rows = readKey(
+  parseJson(
+    readFileSync(new URL("./fixtures/storage-v3.json", import.meta.url), "utf8"),
+  ),
+  "fixtures",
+);
+if (!Array.isArray(cap3Rows)) throw new TypeError("Cap3 fixtures required.");
+const cap3: readonly unknown[] = cap3Rows;
+const taskFixtures = cap3.filter(
+  (fixture) => readKey(readKey(fixture, "row"), "type") === "modelTask",
+);
+function taskFixture(state: string) {
+  const fixture = taskFixtures.find(
+    (entry) => readKey(readKey(readKey(entry, "row"), "value"), "state") === state,
+  );
+  if (fixture === undefined) throw new TypeError("Task fixture required.");
+  return record(readKey(fixture, "row"));
+}
+
+describe("schema3 model task history", () => {
+  it("covers all active families and keeps all cap2 values plus complete task outcomes through the maintenance next write", () => {
+    expect(
+      new Set(cap3.map((fixture) => readKey(readKey(fixture, "row"), "type"))),
+    ).toStrictEqual(new Set(STORAGE_FAMILIES));
+    expect(cap3).toHaveLength(30);
+    expect(taskFixtures).toHaveLength(8);
+    for (const fixture of cap3) {
+      const row = readKey(fixture, "row");
+      const original = JSON.stringify(row);
+      const result = validateStoredRecords([row]);
+      expect(result.ok).toBe(true);
+      if (!result.ok) throw new TypeError("Supported fixture refused.");
+      expect(readKey(result.rows[0], "targetSchema")).toBe(3);
+      expect(readKey(result.rows[0], "targetValue")).toStrictEqual(
+        readKey(fixture, "expected"),
+      );
+      expect(JSON.stringify(row)).toBe(original);
+    }
+  });
+
+  it.each([undefined, 0, 1, 2, 4, 5])(
+    "refuses tasks outside their birth/current schema %s",
+    (schemaVersion) => {
+      const { schemaVersion: ignored, ...row } = taskFixture("in-flight");
+      expect(ignored).toBe(3);
+      expect(() =>
+        decodeStorageRecord({
+          ...row,
+          ...(schemaVersion === undefined ? {} : { schemaVersion }),
+        }),
+      ).toThrow(StorageSchemaError);
+      expect(
+        validateStoredRecords([
+          { ...row, ...(schemaVersion === undefined ? {} : { schemaVersion }) },
+        ]),
+      ).toMatchObject({ ok: false, code: "ERR_STORAGE_SCHEMA_UNKNOWN" });
+    },
+  );
+
+  it("retains zero leases, absent generation, explicit zero generation, and expired tasks without rewriting them", () => {
+    const absent = taskFixture("in-flight");
+    const value = record(absent["value"]);
+    const key = record(value["key"]);
+    expect(value["leaseUntil"]).toBe(0);
+    expect(key).not.toHaveProperty("generation");
+    expect(decodeStorageRecord(absent).value).toStrictEqual(value);
+    const sortKey = readString(absent, "SK");
+    if (sortKey === undefined) throw new TypeError("Task sort key required.");
+    const zero = {
+      ...absent,
+      SK: `${sortKey}#0`,
+      value: { ...value, key: { ...key, generation: 0 } },
+    };
+    expect(decodeStorageRecord(zero).value).toStrictEqual(zero.value);
+    expect(() => decodeStorageRecord({ ...zero, SK: absent["SK"] })).toThrow(
+      StorageSchemaError,
+    );
+    expect(() => decodeStorageRecord({ ...absent, SK: zero.SK })).toThrow(
+      StorageSchemaError,
+    );
+  });
+
+  it.each(["result", "failed"])(
+    "refuses a retained lease on %s rather than silently stripping it",
+    (state) => {
+      const row = taskFixture(state);
+      const value = { ...record(row["value"]), leaseUntil: 0 };
+      expect(() => decodeStorageRecord({ ...row, value })).toThrow(StorageSchemaError);
+      expect(() => encodeStorageValue("modelTask", value)).toThrow(StorageSchemaError);
+      expect(value.leaseUntil).toBe(0);
+    },
+  );
+
+  it.each([undefined, -1, 0.5, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "refuses missing/invalid in-flight lease %s",
+    (leaseUntil) => {
+      const row = taskFixture("in-flight");
+      const { leaseUntil: ignored, ...identity } = record(row["value"]);
+      expect(ignored).toBe(0);
+      expect(() =>
+        decodeStorageRecord({
+          ...row,
+          value: { ...identity, ...(leaseUntil === undefined ? {} : { leaseUntil }) },
+        }),
+      ).toThrow(StorageSchemaError);
+    },
+  );
+
+  it.each(taskFixtures)("rejects undeclared task fields in $name", (fixture) => {
+    const row = record(readKey(fixture, "row"));
+    const value = record(row["value"]);
+    expect(() =>
+      decodeStorageRecord({ ...row, value: { ...value, future: true } }),
+    ).toThrow(StorageSchemaError);
+  });
+
+  it.each(
+    taskFixtures.filter(
+      (fixture) =>
+        readKey(readKey(readKey(fixture, "row"), "value"), "state") === "result",
+    ),
+  )("rejects incomplete or wrong-kind normalized replies in $name", (fixture) => {
+    const row = record(readKey(fixture, "row"));
+    const value = record(row["value"]);
+    const reply = record(value["result"]);
+    for (const result of [
+      { value: reply["value"] },
+      { ...reply, value: { saved: "answer" } },
+      { ...reply, call: { ...record(reply["call"]), future: true } },
+    ])
+      expect(() =>
+        decodeStorageRecord({ ...row, value: { ...value, result } }),
+      ).toThrow(StorageSchemaError);
+  });
+
+  it.each([
+    { PK: "SYSTEM#READMODEL" },
+    { PK: "LEARNER#" },
+    { PK: "LEARNER#bad%escape" },
+    { PK: "LEARNER#not%2fcanonical" },
+    { SK: "MODEL_TASK#wrong" },
+    { SK: undefined },
+    { expiresAt: 1 },
+  ])("refuses noncanonical task keys and mismatched TTL %j", (change) => {
+    expect(() =>
+      decodeStorageRecord({ ...taskFixture("in-flight"), ...change }),
+    ).toThrow(StorageSchemaError);
+  });
+
+  it("refuses TTL metadata on durable families", () => {
+    const row = record(readKey(cap3[0], "row"));
+    expect(() => decodeStorageRecord({ ...row, expiresAt: 0 })).toThrow(
+      StorageSchemaError,
+    );
+  });
+});
+
 describe("storage decoders and subsequent writes", () => {
   it("covers every persistent family, including identity", () => {
     expect(
-      fixtures
-        .slice(0, STORAGE_FAMILIES.length)
-        .map((fixture) => readKey(fixture.row, "type")),
-    ).toStrictEqual([...STORAGE_FAMILIES]);
+      fixtures.slice(0, 14).map((fixture) => readKey(fixture.row, "type")),
+    ).toStrictEqual(STORAGE_FAMILIES.filter((type) => type !== "modelTask"));
   });
   it.each(fixtures)(
     "keeps supported values from legacy $name through the next guarded write",

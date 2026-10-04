@@ -343,6 +343,19 @@ describe("a model that gives no answer", () => {
       404,
       "ERR_TALK_NOT_FOUND",
     ]);
+    await started(api);
+    await started(api);
+    expect(api.model.requests).toHaveLength(2);
+    expect(
+      api.modelCalls.map(({ attempt, duplicatePossible, providerOutcome }) => ({
+        attempt,
+        duplicatePossible,
+        providerOutcome,
+      })),
+    ).toStrictEqual([
+      { attempt: 1, duplicatePossible: false, providerOutcome: "unknown" },
+      { attempt: 2, duplicatePossible: true, providerOutcome: "known" },
+    ]);
   });
 
   it("keeps a turn whose calls failed, and answers a partner retry that fails again with 503", async () => {
@@ -543,6 +556,9 @@ describe("the model-call line", () => {
         provider: "stand-in",
         modelId: "stand-in",
         outcome: "ok",
+        attempt: 1,
+        duplicatePossible: false,
+        providerOutcome: "known",
         inputTokens: 0,
         outputTokens: 0,
         latencyMs: 0,

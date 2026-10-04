@@ -23,14 +23,19 @@ const ABSENT = {
 } as const;
 
 /** An entry must still be at the version it was read at. */
-function atVersion(version: number) {
-  const fence = storageSchemaFence();
+function atVersion(version: number, type: Key["type"], modelClaim?: string) {
+  const fence = storageSchemaFence(type);
   return {
-    ConditionExpression: `#version = :version AND ${fence.condition}`,
-    ExpressionAttributeNames: { "#version": "version", "#schema": "schemaVersion" },
+    ConditionExpression: `#version = :version AND ${fence.condition}${modelClaim === undefined ? "" : " AND #value.#claim = :claim"}`,
+    ExpressionAttributeNames: {
+      "#version": "version",
+      "#schema": "schemaVersion",
+      ...(modelClaim === undefined ? {} : { "#value": "value", "#claim": "claimId" }),
+    },
     ExpressionAttributeValues: {
       ":version": version,
       ...fence.values,
+      ...(modelClaim === undefined ? {} : { ":claim": modelClaim }),
     },
   };
 }
@@ -41,7 +46,8 @@ function atVersion(version: number) {
  * one drops it, since every write replaces the whole item.
  */
 function expiryOf(entry: Entry): { readonly expiresAt?: number } {
-  return entry.type === "talk" && entry.value.expiresAt !== undefined
+  return (entry.type === "talk" || entry.type === "modelTask") &&
+    entry.value.expiresAt !== undefined
     ? { expiresAt: entry.value.expiresAt }
     : {};
 }
@@ -73,18 +79,22 @@ export function transactItemsOf(
     ...commit.puts.map((entry) => ({
       Put: { TableName: table, Item: item(entry, 1), ...ABSENT },
     })),
-    ...commit.updates.map(({ entry, version }) => ({
-      Put: { TableName: table, Item: item(entry, version + 1), ...atVersion(version) },
+    ...commit.updates.map(({ entry, version, modelClaim }) => ({
+      Put: {
+        TableName: table,
+        Item: item(entry, version + 1),
+        ...atVersion(version, entry.type, modelClaim),
+      },
     })),
     ...commit.expect.map(({ key, version }) => ({
       ConditionCheck: {
         TableName: table,
         Key: keyFor(key),
-        ...(version === null ? ABSENT : atVersion(version)),
+        ...(version === null ? ABSENT : atVersion(version, key.type)),
       },
     })),
     ...(commit.deletes ?? []).map(({ key, version }) => ({
-      Delete: { TableName: table, Key: keyFor(key), ...atVersion(version) },
+      Delete: { TableName: table, Key: keyFor(key), ...atVersion(version, key.type) },
     })),
   ];
 }
