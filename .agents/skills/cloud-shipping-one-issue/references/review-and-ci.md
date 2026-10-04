@@ -39,7 +39,8 @@ Replace both parameters with the recorded actual values. Record the new comment 
 creation time and full head/base at submission. The task's request to carry its issue
 through Codex review authorizes this targeted comment. Do not post it for a read-only
 task. Never duplicate an active request, post `@codex fix`, change review
-settings/Smartdetect, or increase credits. Keep the PR in draft.
+settings/Smartdetect, or increase credits. Honor the caller's draft/no-merge boundary;
+merge-mode readiness follows the validated publication step in the main skill.
 
 The [official GitHub review guide](https://learn.chatgpt.com/docs/third-party/github)
 describes the review trigger and the bot's acknowledgement. Acknowledgement is the start
@@ -94,13 +95,42 @@ deployment or merge to obtain missing checks.
 Use bounded individual waits with progress updates. A tool timeout is an invitation to
 refresh state, not a total deadline. Do not invent a total wait budget or a maximum fix
 count. Stop on user cancellation, an explicit deadline, an unresolved product decision,
-or a quota/permission failure that cannot be safely resolved. Preserve the draft and
-report the exact missing review/CI/acceptance evidence.
+or a quota/permission failure that cannot be safely resolved. Preserve the PR and report
+the exact missing review/CI/acceptance evidence.
 
 ## Completion condition
 
 Refresh head/base one last time. Hand back only when acceptance is met, every accepted
 finding is fixed, a trusted terminal Codex review is clear for the current diff, and
-current-head CI plus the observable required checks are successful. Keep the PR draft.
-Otherwise describe it as incomplete and name the missing evidence. A green gate and a
-completed review are independent facts and must be reported independently.
+current-head CI plus all required checks are successful. An inaccessible required check
+set is a blocker to automatic merge. A green gate and a completed review are independent
+facts and must be reported independently. Otherwise report incomplete and missing
+evidence.
+
+## Merge or honor the caller's stop point
+
+Explicit skill invocation for issue implementation defaults to merge; a caller's "PR
+only", "keep draft", or "do not merge" instruction takes precedence. Analysis or
+automatic skill discovery supplies no authority for writes or merge. In stop-at-PR mode,
+hand back the reviewed PR in the requested state without closing the issue separately.
+
+In merge mode, refresh the full head, base/diff, review verdict, required checks,
+repository merge policy and mergeability immediately before merging. If a changed base
+alters the diff or checks, update the branch safely, preserve others' work, rerun the
+owed checks and obtain fresh Codex review. Product-conflict decisions still need the
+owner. Mark a validated draft ready if necessary, then use the repository's allowed
+merge method with an expected-head SHA guard. A head mismatch or blocked merge is not
+success: refresh evidence and diagnose it without force-pushing, bypassing rules or
+weakening gates.
+
+Verify that GitHub reports merged, record the merge SHA, and verify the selected issue's
+closure; report an unexpectedly open issue rather than closing unrelated issues. Move
+only this task's clean checkout back to the default branch and update it with ff-only.
+Never discard another person's changes or delete unrelated branches/worktrees.
+
+Read post-merge push CI and existing deployment runs for the merge SHA, including events
+omitted by a PR-only wrapper. Observe their results and report success, failure,
+pending, skipped or not started accurately. Existing automatic dev deployment is a
+consequence of the authorized merge; do not dispatch jobs, configure deployment, log in
+to AWS or perform manual resource operations. A deployment requiring unavailable access
+is a reported blocker, not permission to change credentials. Do not start another issue.

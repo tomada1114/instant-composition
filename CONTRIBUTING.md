@@ -83,9 +83,10 @@ Stop only a container this task started. If a dev server is needed, use
 saved key. Installation/startup should not select issues or run the full test suite.
 
 To implement one issue in Cloud, ask `$cloud-shipping-one-issue` to select one eligible
-open issue and return a reviewed draft PR with current-head CI. The
+open issue, implement it, obtain completed Codex review and current-head required CI,
+and merge it. Add "stop at the PR" or "do not merge" to keep a reviewed PR instead. The
 [repository skill](.agents/skills/cloud-shipping-one-issue/SKILL.md) owns selection,
-review evidence and the no-merge boundary; its
+review evidence and the caller's merge/stop boundary; its
 [environment reference](.agents/skills/cloud-shipping-one-issue/references/environment.md)
 includes the complete Install script launcher and on-demand service guidance.
 

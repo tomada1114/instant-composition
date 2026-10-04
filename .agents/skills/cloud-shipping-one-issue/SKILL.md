@@ -2,16 +2,17 @@
 name: cloud-shipping-one-issue
 description: >
   Use for selecting and implementing one open GitHub issue in Codex Cloud when the task
-  needs Cloud-verifiable acceptance, local pnpm checks, a draft PR, evidence of
-  completed Codex review, and CI for the current head. Also use when Cloud issue work is
-  blocked by dependencies, duplicate PRs, missing review evidence, or AWS/browser
-  acceptance requirements. Runs in the main session without personal skills.
+  needs Cloud-verifiable acceptance, local pnpm checks, a PR, completed Codex review,
+  current-head CI, and merge unless explicitly asked to stop at the PR. Also use when
+  Cloud issue work is blocked by dependencies, duplicate PRs, missing review evidence,
+  or AWS/browser acceptance requirements. Runs in the main session without personal
+  skills.
 ---
 
 # Ship One Issue in Codex Cloud
 
 **Owns:** selecting one Cloud-verifiable issue and carrying it through implementation,
-draft PR, completed Codex review, and CI for the final diff.
+PR, completed Codex review, CI for the final diff, and an authorized merge.
 
 **Does not own:** the separate Claude-oriented backlog-and-merge procedure
 (**BACKGROUND:** shipping-issues); implementation conventions remain with this
@@ -23,11 +24,16 @@ Read AGENTS.md first. Work in the main session; do not spawn sub-agents by defau
 workflow uses only checked-in guidance and currently available tools. It does not load
 personal skills or invoke the separate backlog-and-merge workflow.
 
-Select exactly one issue. Stop with a reviewed draft PR; never merge, deploy, close the
-issue, retier labels, or start a second issue. Keep the accepted issue scope throughout
-review fixes. A request to implement an issue through draft PR and Codex review supplies
-authorization for that branch's commit, push, PR, and narrowly targeted review request.
-Merely discovering this skill or asking for analysis does not supply that authorization.
+Select exactly one issue. Explicitly invoking this skill to implement an issue supplies
+the owner's authorization for that branch's commit, push, PR, targeted Codex review, and
+merge after the completion gates below. Default to finishing the merge in the same run
+without another confirmation. A call saying "stop at the PR", "do not merge", or
+equivalent overrides that default; keep a draft when requested. Merely discovering this
+skill or asking for analysis supplies no implementation or merge authorization. Do not
+deploy manually, retier labels, close an issue separately, or start a second issue. The
+merge may close the selected issue through `Closes #N` and trigger existing main
+CI/deployment automation. Observe it without changing settings or dispatching jobs. Keep
+the accepted issue scope throughout review fixes.
 
 ## 1. Establish the available environment
 
@@ -81,13 +87,16 @@ environment configuration. AWS login, resource operations and real model calls a
 outside this workflow. A missing tool is a concrete setup blocker, not permission to
 relax a gate.
 
-## 4. Publish one draft PR
+## 4. Publish one PR
 
 Review your own diff against the acceptance mapping; this is not external Codex review.
-Commit with hooks enabled and push only this branch. Open a draft PR against the default
+Commit with hooks enabled and push only this branch. Open a PR against the default
 branch, with a Conventional Commit title, accepted scope, test evidence and limitations.
-Use `Closes #N` only for the one issue actually implemented. Never convert the PR to
-ready solely to trigger automatic review. Re-read the PR head and base after creation.
+Use `Closes #N` only for the one issue actually implemented. Start as a draft while
+validation is incomplete. In merge mode, mark it ready after implementation and local
+validation, as repository policy requires; this can start automatic Codex review. Honor
+a requested draft/no-merge boundary. Never change review settings or readiness to bypass
+review. Re-read the PR head and base after creation or readiness changes.
 
 ## 5. Observe review and CI separately
 
@@ -119,15 +128,21 @@ are resolved, Codex review is clear for the current diff, and current-head CI is
 successful. No fixed total waiting budget or repair-count ceiling is imposed here. A
 single tool wait timeout only means observe again, not success or overall failure.
 
-## 6. Hand back the draft
+## 6. Finish this one issue
 
-Refresh PR head/base and evidence once more before reporting. Keep the draft open and
-the issue unmodified. Report the issue, PR URL, full final head SHA, acceptance
-evidence, local checks, external review identity and completion links, findings and
-resolutions, and CI links with success/failure/pending/skipped/cancelled distinguished.
+Follow the merge/stop procedure in
+[Review and CI evidence](references/review-and-ci.md). Refresh PR head/base and evidence
+once more. With clear current-diff Codex review and successful required CI, merge using
+an expected-head guard unless the caller requested stopping at the PR. Never merge while
+evidence is missing or silently narrow acceptance. Report the issue, PR URL, full final
+head and merge SHA, acceptance evidence, local checks, external review identity and
+completion links, findings and resolutions, issue closure, and CI links with
+success/failure/pending/skipped/cancelled distinguished. Observe existing post-merge
+CI/deploy results and name pending or blocked runs; do not perform manual AWS
+operations. Stop after this issue, even if others qualify.
 
 Stop on a user cancellation, an explicit deadline, an unresolved product decision, or a
 permission/quota blocker that cannot be resolved within authorized scope. Preserve the
-branch and draft and name the missing evidence. Never label incomplete external review
-or unavailable acceptance as complete. Restore only this task's temporary probe edits
-and stop only its own services; do not delete other branches or worktrees.
+branch and PR and name the missing evidence. Never label incomplete external review or
+unavailable acceptance as complete. Restore only this task's temporary probe edits and
+stop only its own services; do not delete other branches or worktrees.
