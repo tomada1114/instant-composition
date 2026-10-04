@@ -315,19 +315,27 @@ describe("storage transition AWS command boundary", () => {
     [101, 1, undefined, true],
     [101, 2, undefined, false],
   ])(
-    "with account limit %i, a planned reservation of %s over a current %s fits: %s",
+    "with account limit %i, a planned worker reservation of %s over the API's current %s fits: %s",
     async (limit, capacity, current, fits) => {
-      const { port, limit: setLimit, reserve, options } = fixture();
+      const { commands, limit: setLimit, reserve, options } = fixture();
       setLimit(limit);
       reserve(current);
-      const owned = port();
+      const [plan] = options.planned;
+      if (plan === undefined) throw new TypeError("Planned API required.");
+      // The worker is planned but not yet in the stack, as on its first deploy.
+      const owned = awsStorageTransition(
+        {
+          ...options,
+          planned: [
+            plan,
+            { ...plan, logicalId: "ReadModelWorkerDEF456", capacity, timeout: 60 },
+          ],
+        },
+        commands,
+      );
       const writers = await owned.discover();
-      expect(
-        await owned.capacityAvailable(
-          writers.map((writer) => ({ ...writer, capacity })),
-        ),
-      ).toBe(fits);
-      expect(options.planned).toHaveLength(1);
+      expect(writers.map((writer) => writer.logicalId)).toStrictEqual([plan.logicalId]);
+      expect(await owned.capacityAvailable(writers)).toBe(fits);
     },
   );
   it("completes the actual AWS adapter transition when its own concurrency calls change revisions", async () => {

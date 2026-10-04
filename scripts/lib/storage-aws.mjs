@@ -311,7 +311,9 @@ export function awsStorageTransition(options, commands = SYSTEM) {
           throw new StorageTransitionError("AWS numeric response");
         released += current;
       }
-      const requested = writers.reduce(
+      // The assembly's plan, not the discovered writers: a writer this deploy
+      // creates is not in the stack yet but still needs its reservation.
+      const requested = planned.reduce(
         (sum, writer) => sum + (writer.capacity ?? 0),
         0,
       );
