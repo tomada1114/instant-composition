@@ -8,10 +8,13 @@ export class StorageTransitionError extends Error {
   /** @param {string} part */
   constructor(part) {
     super(
-      `ERR_STORAGE_TRANSITION: Admission refused at ${part}. Expected: paused owned writers running identical certified bytes. Next: keep writers paused and deploy a compatible forward fix.`,
+      `ERR_STORAGE_TRANSITION: Admission refused at ${part}. Expected: paused owned writers running identical certified bytes. Next: inspect the recovery checkpoint; writers may remain paused. Deploy a compatible forward fix.`,
     );
     this.name = "StorageTransitionError";
+    this.part = part;
   }
+  /** The fixed check name; never AWS response text or a signed URL. @readonly @type {string} */
+  part;
 }
 /** @param {string | Uint8Array} bytes @returns {string} */
 export function storageDigest(bytes) {

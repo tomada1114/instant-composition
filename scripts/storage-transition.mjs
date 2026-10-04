@@ -103,9 +103,9 @@ export async function main(
 if (import.meta.main) {
   try {
     await main(process.argv.slice(2));
-  } catch {
+  } catch (error) {
     process.stderr.write(
-      "ERR_STORAGE_TRANSITION: Writers may remain paused; inspect dist/storage-transition.json and deploy a compatible forward fix.\n",
+      `${error instanceof StorageTransitionError ? error.message : "ERR_STORAGE_TRANSITION: Unexpected failure; inspect dist/storage-transition.json and deploy a compatible forward fix."}\n`,
     );
     process.exitCode = 1;
   }
