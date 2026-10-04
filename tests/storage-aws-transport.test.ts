@@ -11,6 +11,7 @@ import {
 } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import process from "node:process";
 import { execFileSync, spawn, type ChildProcess } from "node:child_process";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
@@ -22,10 +23,72 @@ import {
 } from "../scripts/lib/storage-aws-transport.mjs";
 import { StorageTransitionError } from "../scripts/lib/storage-runtime.mjs";
 vi.mock("node:child_process", () => ({ execFileSync: vi.fn(), spawn: vi.fn() }));
+vi.mock("node:timers", () => ({
+  setTimeout: (callback: () => void, ms: number) => globalThis.setTimeout(callback, ms),
+  clearTimeout: (timer: ReturnType<typeof setTimeout>) =>
+    globalThis.clearTimeout(timer),
+}));
 afterEach(() => {
   vi.resetAllMocks();
 });
 describe("storage transition transport", () => {
+  it("refuses expired commands before a subprocess or download starts", async () => {
+    const deadline = Date.now() - 1;
+    const request = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", request);
+    expect(() => awsJson(["sts", "get-caller-identity"], {}, deadline)).toThrow(
+      StorageTransitionError,
+    );
+    expect(() => runStorageCdk(["deploy", "app"], "/fixture", deadline)).toThrow(
+      StorageTransitionError,
+    );
+    expect(() => probeStorageThrottle("arn", "/fixture", deadline)).toThrow(
+      StorageTransitionError,
+    );
+    await expect(deployedStorageZip({}, deadline)).rejects.toThrow(
+      StorageTransitionError,
+    );
+    await expect(
+      invokeStorageBootstrap("arn", "/fixture", null, deadline),
+    ).rejects.toThrow(StorageTransitionError);
+    expect(execFileSync).not.toHaveBeenCalled();
+    expect(spawn).not.toHaveBeenCalled();
+    expect(request).not.toHaveBeenCalled();
+  });
+  it("limits synchronous AWS calls to the remaining time and kills the process on timeout", () => {
+    vi.spyOn(Date, "now").mockReturnValue(1000000);
+    vi.mocked(execFileSync).mockReturnValue("{}");
+    awsJson(["lambda", "get-function"], {}, 1000123);
+    expect(execFileSync).toHaveBeenCalledWith(
+      "aws",
+      expect.any(Array),
+      expect.objectContaining({ timeout: 123, killSignal: "SIGKILL" }),
+    );
+  });
+  it("kills the entire CDK group at the deadline and waits for process closure before cleanup can start", async () => {
+    vi.useFakeTimers();
+    try {
+      const child = Object.assign(new EventEmitter(), { pid: 4242, kill: vi.fn() });
+      const kill = vi.spyOn(process, "kill").mockReturnValue(true);
+      vi.mocked(spawn).mockReturnValue(child as unknown as ChildProcess);
+      const result = runStorageCdk(["deploy", "app"], "/fixture", Date.now() + 1000);
+      const settled = vi.fn();
+      const outcome = result.then(settled, settled);
+      await vi.advanceTimersByTimeAsync(1000);
+      expect(kill).toHaveBeenCalledExactlyOnceWith(-4242, "SIGKILL");
+      expect(settled).not.toHaveBeenCalled();
+      child.emit("close", null, "SIGKILL");
+      await outcome;
+      await expect(result).rejects.toMatchObject({ part: "transition work deadline" });
+      expect(spawn).toHaveBeenCalledWith(
+        "pnpm",
+        ["cdk", "deploy", "app"],
+        expect.objectContaining({ detached: true }),
+      );
+    } finally {
+      vi.useRealTimers();
+    }
+  });
   it("reports only a known AWS operation and error code, retaining no provider response", () => {
     vi.mocked(execFileSync).mockImplementation(() => {
       throw Object.assign(new Error("private details"), {
@@ -70,7 +133,7 @@ describe("storage transition transport", () => {
       vi.mocked(spawn).mockReturnValue(child as ChildProcess);
       const result = runStorageCdk(["deploy", "app"], "/owned/fixture");
       if (outcome === "error") child.emit("error", new Error("fixture launch failure"));
-      else child.emit("exit", outcome);
+      else child.emit("close", outcome);
       if (outcome === 0) await expect(result).resolves.toBeUndefined();
       else await expect(result).rejects.toBeInstanceOf(StorageTransitionError);
     },
@@ -158,7 +221,7 @@ describe("storage transition transport", () => {
                 ...(outcome === "function-error" ? { FunctionError: "Unhandled" } : {}),
               }),
             );
-            child.emit("exit", 0);
+            child.emit("close", 0);
           }
         });
         return child as unknown as ChildProcess;

@@ -15,6 +15,7 @@ import {
 import { parseJson, readKey, readString } from "./lib/json.mjs";
 import { storageHashes, StorageTransitionError } from "./lib/storage-runtime.mjs";
 import { storageDeployJobStart } from "./lib/storage-job-budget.mjs";
+import { runStorageCdk } from "./lib/storage-aws-transport.mjs";
 
 /** @param {string} root @param {string} assembly @param {string} sha @returns {void} */
 export function verifyTransitionAssembly(root, assembly, sha) {
@@ -27,8 +28,13 @@ export function verifyTransitionAssembly(root, assembly, sha) {
   )
     throw new StorageTransitionError("immutable assembly identity");
 }
-/** @param {string} repository @param {string} sha @param {typeof fetch} [request] @returns {Promise<boolean>} */
-export async function currentStorageMain(repository, sha, request = globalThis.fetch) {
+/** @param {string} repository @param {string} sha @param {typeof fetch} [request] @param {number} [deadline] @returns {Promise<boolean>} */
+export async function currentStorageMain(
+  repository,
+  sha,
+  request = globalThis.fetch,
+  deadline,
+) {
   const token = process.env["GITHUB_TOKEN"];
   if (
     repository !== "tomada1114/instant-composition" ||
@@ -36,6 +42,9 @@ export async function currentStorageMain(repository, sha, request = globalThis.f
     token === ""
   )
     throw new StorageTransitionError("main identity configuration");
+  const timeout =
+    deadline === undefined ? 30000 : Math.min(30000, deadline - Date.now());
+  if (timeout <= 0) throw new StorageTransitionError("transition work deadline");
   const response = await request(
     `https://api.github.com/repos/${repository}/git/ref/heads/main`,
     {
@@ -45,11 +54,13 @@ export async function currentStorageMain(repository, sha, request = globalThis.f
         "x-github-api-version": "2022-11-28",
       },
       redirect: "error",
-      signal: AbortSignal.timeout(30000),
+      signal: AbortSignal.timeout(timeout),
     },
   );
   if (response.status !== 200) throw new StorageTransitionError("main identity lookup");
   /** @type {unknown} */ const data = await response.json();
+  if (deadline !== undefined && Date.now() >= deadline)
+    throw new StorageTransitionError("transition work deadline");
   return readString(readKey(data, "object"), "sha") === sha;
 }
 /** @param {string[]} args @param {string} [root] @returns {Promise<void>} */
@@ -72,6 +83,32 @@ export async function main(
     if (evidence !== null) process.stdout.write(`${JSON.stringify(evidence)}\n`);
     return;
   }
+  if (
+    args.length === 4 &&
+    args[0] === "stack" &&
+    (args[3] === "foundation" || args[3] === "edge")
+  ) {
+    const deadline = storageJobDeadline(root);
+    const assembly = args[1],
+      sha = args[2];
+    if (assembly === undefined || sha === undefined)
+      throw new StorageTransitionError("deployment arguments");
+    verifyTransitionAssembly(root, assembly, sha);
+    await runStorageCdk(
+      [
+        "deploy",
+        "--app",
+        assembly,
+        args[3],
+        "--exclusively",
+        "--require-approval",
+        "never",
+      ],
+      root,
+      deadline,
+    );
+    return;
+  }
   const [mode, assembly, sha, roleArn, repository] = args;
   if (
     (mode !== "verify" && mode !== "deploy") ||
@@ -80,20 +117,22 @@ export async function main(
     (mode === "verify" ? args.length !== 3 : args.length !== 5)
   )
     throw new StorageTransitionError("arguments");
+  const deadline = mode === "deploy" ? storageJobDeadline(root) : undefined;
   const policy = preflightStorageRelease(root);
   verifyTransitionAssembly(root, assembly, sha);
   const planned = storageAssembly(assembly, sha, policy);
-  await certifyRelease([policy.current], root);
+  await certifyRelease([policy.current], root, deadline);
   if (mode === "verify") return;
   if (roleArn === undefined || repository === undefined)
     throw new StorageTransitionError("deployment arguments");
-  const current = async () => currentStorageMain(repository, sha);
+  const current = async () =>
+    currentStorageMain(repository, sha, globalThis.fetch, deadline);
   if (!(await current())) throw new StorageTransitionError("current main");
   const port = awsStorageTransition({
     root,
     assembly,
     sha,
-    deadline: storageJobDeadline(root),
+    ...(deadline === undefined ? {} : { deadline }),
     roleArn,
     policy,
     planned,

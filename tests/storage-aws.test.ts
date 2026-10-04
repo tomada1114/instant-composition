@@ -1,7 +1,7 @@
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { bundleStorageGuard } from "../scripts/storage-bundle.mjs";
 import {
   awsStorageTransition,
@@ -95,7 +95,25 @@ function fixture() {
             ],
           };
         case "cloudformation describe-stacks":
-          return { Stacks: [{ StackStatus: stackStatus }] };
+          return {
+            Stacks: [
+              {
+                StackStatus: stackStatus,
+                StackId: `arn:aws:cloudformation:ap-northeast-1:${account}:stack/instant-composition-dev-app/fixture`,
+              },
+            ],
+          };
+        case "cloudformation get-template":
+          return {
+            TemplateBody: {
+              Resources: {
+                [logicalId]: {
+                  Type: "AWS::Lambda::Function",
+                  Properties: { ReservedConcurrentExecutions: 0 },
+                },
+              },
+            },
+          };
         case "lambda get-function-configuration":
           return configuration();
         case "lambda get-function":
@@ -151,7 +169,11 @@ function fixture() {
     planned: [{ logicalId, capacity: null, timeout: 25, release }],
     current: () => Promise.resolve(true),
   };
-  const port = () => awsStorageTransition(options, commands);
+  const port = (deadline?: number) =>
+    awsStorageTransition(
+      { ...options, ...(deadline === undefined ? {} : { deadline }) },
+      commands,
+    );
   return {
     port,
     options,
@@ -189,6 +211,29 @@ function fixture() {
 }
 
 describe("storage transition AWS command boundary", () => {
+  it("refuses an initial drain that cannot fit and keeps expired admission closed while cleanup can still pause", async () => {
+    let now = 1000000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const test = fixture(),
+      port = test.port(now + 1000);
+    expect(() => port.assertWorkTime(900000)).toThrow("transition work deadline");
+    await port.extendAccess(await port.discover());
+    const writer = (await port.discover())[0];
+    if (!writer) throw new Error("Writer required.");
+    now += 1000;
+    await expect(port.restore(writer)).rejects.toThrow("transition work deadline");
+    await expect(port.deploy()).rejects.toThrow("transition work deadline");
+    expect(test.calls.some((args) => args[1] === "delete-function-concurrency")).toBe(
+      false,
+    );
+    port.beginCleanup();
+    const receipt = await port.pause(writer);
+    expect(await port.isPaused(receipt)).toBe(true);
+    await expect(port.restore(receipt)).rejects.toThrow("transition work deadline");
+    now += 6 * 60000;
+    await expect(port.pause(receipt)).rejects.toThrow("transition work deadline");
+    await expect(port.drain(900000)).rejects.toThrow("cleanup drain deadline");
+  });
   it("completes the actual AWS adapter transition when its own concurrency calls change revisions", async () => {
     const test = fixture(),
       port = test.port();

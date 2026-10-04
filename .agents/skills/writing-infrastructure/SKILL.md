@@ -216,10 +216,18 @@ a second design.
   including checkout and runtime setup. The job grants Actions read access only for this
   timestamp; an ambiguous or unavailable lookup refuses before AWS access. It reserves
   21 minutes: five for re-closing barriers, fifteen for the maximum timeout drain, and
-  one for final evidence and execution overhead. Bootstrap checks the absolute work
-  deadline before each bounded invocation. A stopped job leaves durable progress for the
-  next trusted run instead of restarting discovery. No direct table permission or
-  execution-role assumption is added.
+  one for final evidence and execution overhead. Foundation, edge, admission, initial
+  drain, app deployment, ZIP certification and bootstrap all use the absolute work
+  deadline. Expired work refuses before launch; CLI timeouts kill and reap the local
+  process group before cleanup. Cleanup closes already authorized writers before
+  discovery or permission refresh, bounds each request within the closing window, and
+  starts only a full drain that fits the drain deadline. Admission never reopens after
+  the work deadline. Before app deployment, the exact previous stack template must also
+  keep every owned storage writer at literal zero capacity, so a continuing
+  CloudFormation update or rollback cannot restore admission. Only its digest is
+  recorded; unstable or unreadable stack status cannot certify recovery. A stopped job
+  leaves durable progress for the next trusted run instead of restarting discovery. No
+  direct table permission or execution-role assumption is added.
 - Capacity restoration intentionally differs from the paused template: API returns to
   unreserved and worker to its recorded one. The next transition explicitly sets zero
   again before deploying another paused assembly, so this drift is repeat-safe. Current

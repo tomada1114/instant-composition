@@ -2,11 +2,12 @@ import { StorageTransitionError } from "./storage-runtime.mjs";
 import { sameStorageWriter } from "./storage-configuration.mjs";
 
 /** @typedef {{logicalId:string,arn:string,capacity:number|null,timeout:number,revision:string,codeHash:string,configurationHash:string}} Writer */
-/** @typedef {{cleanupTimeAvailable:()=>boolean,discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
+/** @typedef {{assertWorkTime:(requiredMilliseconds?:number)=>void,beginCleanup:()=>void,drain:(milliseconds:number)=>Promise<void>,cleanupTimeAvailable:()=>boolean,discover:()=>Promise<Writer[]>,owned?:()=>Promise<Writer[]>,capacityMatches:(writer:Writer)=>Promise<boolean>,extendAccess:(writers:Writer[])=>Promise<void>,pause:(writer:Writer)=>Promise<Writer>,isPaused:(writer:Writer)=>Promise<boolean>,probePaused:(writer:Writer)=>Promise<boolean>,wait:(milliseconds:number)=>Promise<void>,deploy:()=>Promise<void>,verify:(writer:Writer)=>Promise<Writer>,current:()=>Promise<boolean>,restore:(writer:Writer)=>Promise<Writer>,certifyPredecessor:(writer:Writer)=>Promise<Writer|undefined>,stable:()=>Promise<boolean>,prepare:(writers:Writer[])=>Promise<Writer[]>,record:(state:unknown)=>Promise<void>}} TransitionPort */
 /** Quiescence is never lost during code/config rollout. A failed partial rollout stays paused.
  * @param {TransitionPort} port @returns {Promise<void>}
  */
 export async function transitionStorageWriters(port) {
+  port.assertWorkTime();
   let writers = await port.discover();
   if (
     writers.length === 0 ||
@@ -16,15 +17,25 @@ export async function transitionStorageWriters(port) {
   await port.extendAccess(writers);
   writers = await port.discover();
   const predecessors = writers.map((writer) => ({ ...writer }));
+  port.assertWorkTime(Math.max(...writers.map((writer) => writer.timeout)) * 1000);
   let preparationStarted = writers.some((writer) =>
     writer.logicalId.startsWith("ReadModelWorker"),
   );
   /** Cleanup attempts every known writer even when another writer's pause fails.
-   * @returns {Promise<{remaining:Writer[],verified:boolean,admissionClosed:boolean}>}
+   * @returns {Promise<{remaining:Writer[],verified:boolean,admissionClosed:boolean,deploymentStable:boolean|null}>}
    */
   async function closeAll() {
     const known = new Map(writers.map((writer) => [writer.arn, writer]));
+    const receipts = new Map(known);
     let verified = true;
+    // Already authorized writers close before discovery or permission refresh can stall.
+    for (const [arn, writer] of known) {
+      try {
+        receipts.set(arn, await port.pause(writer));
+      } catch {
+        verified = false;
+      }
+    }
     try {
       if (port.owned !== undefined)
         for (const writer of await port.owned())
@@ -44,7 +55,8 @@ export async function transitionStorageWriters(port) {
       verified = false;
     }
     const pending = new Map(known);
-    const receipts = new Map(known);
+    for (const [arn, writer] of known)
+      if (!receipts.has(arn)) receipts.set(arn, writer);
     let firstAttempt = true;
     while (pending.size > 0 && (firstAttempt || port.cleanupTimeAvailable())) {
       firstAttempt = false;
@@ -78,25 +90,40 @@ export async function transitionStorageWriters(port) {
             verified = false;
           }
         }
-      if (pending.size > 0) await port.wait(1000);
+      if (pending.size > 0) {
+        try {
+          await port.wait(1000);
+        } catch {
+          break;
+        }
+      }
     }
     const closed = [...receipts.values()];
     const admissionClosed = pending.size === 0;
+    let deploymentStable = null;
+    try {
+      deploymentStable = await port.stable();
+    } catch {
+      verified = false;
+    }
+    if (deploymentStable !== true) verified = false;
     if (!admissionClosed)
-      return { remaining: closed, verified: false, admissionClosed };
+      return { remaining: closed, verified: false, admissionClosed, deploymentStable };
 
     try {
-      await port.wait(
+      await port.drain(
         Math.max(...closed.map((writer) => writer.timeout), verified ? 0 : 900) * 1000,
       );
     } catch {
       verified = false;
     }
-    return { remaining: closed, verified, admissionClosed };
+    return { remaining: closed, verified, admissionClosed, deploymentStable };
   }
   try {
+    port.assertWorkTime();
     const initiallyPaused = [];
     for (const writer of writers) {
+      port.assertWorkTime();
       const receipt = await port.pause(writer);
       if (!(await port.isPaused(receipt)) || !(await port.probePaused(receipt)))
         throw new StorageTransitionError("admission barrier");
@@ -106,7 +133,9 @@ export async function transitionStorageWriters(port) {
     await port.record({ phase: "paused", writers });
     await port.wait(Math.max(...writers.map((writer) => writer.timeout)) * 1000);
     if (!(await port.current())) throw new StorageTransitionError("current main");
+    port.assertWorkTime();
     await port.deploy();
+    port.assertWorkTime();
     if (!(await port.stable()))
       throw new StorageTransitionError("CloudFormation status");
     writers = await port.discover();
@@ -114,6 +143,7 @@ export async function transitionStorageWriters(port) {
     writers = await port.discover();
     const verified = [];
     for (const writer of writers) {
+      port.assertWorkTime();
       if (!(await port.isPaused(writer)) || !(await port.probePaused(writer)))
         throw new StorageTransitionError("deployment quiescence");
       const checked = await port.verify(writer);
@@ -125,7 +155,9 @@ export async function transitionStorageWriters(port) {
     preparationStarted = verified.some((writer) =>
       writer.logicalId.startsWith("ReadModelWorker"),
     );
+    port.assertWorkTime();
     const prepared = await port.prepare(verified);
+    port.assertWorkTime();
     if (
       prepared.length !== verified.length ||
       new Set(prepared.map((writer) => writer.arn)).size !== prepared.length
@@ -148,6 +180,7 @@ export async function transitionStorageWriters(port) {
     if (!(await port.current())) throw new StorageTransitionError("current main");
     const resumed = [];
     for (const writer of prepared) {
+      port.assertWorkTime();
       if (!sameStorageWriter(writer, await port.verify(writer)))
         throw new StorageTransitionError("code revision race");
       const receipt = await port.restore(writer);
@@ -175,13 +208,17 @@ export async function transitionStorageWriters(port) {
       )
         throw new StorageTransitionError("code revision race");
     }
+    port.assertWorkTime();
     await port.record({ phase: "resumed", writers: resumed });
   } catch (error) {
+    port.beginCleanup();
     let cleanup = await closeAll();
     let recovered = false;
     let stable = false;
     try {
+      port.assertWorkTime();
       stable = await port.stable();
+      port.assertWorkTime();
     } catch {
       /* Recovery remains disabled. */
     }
@@ -196,7 +233,9 @@ export async function transitionStorageWriters(port) {
         const previous = predecessors.find((entry) => entry.arn === writer.arn);
         let certificate;
         try {
+          port.assertWorkTime();
           certificate = await port.certifyPredecessor(writer);
+          port.assertWorkTime();
         } catch {
           /* No certificate means no admission. */
         }
@@ -238,6 +277,7 @@ export async function transitionStorageWriters(port) {
       writers: cleanup.remaining,
       cleanupVerified: cleanup.verified,
       admissionClosed: recovered ? false : cleanup.admissionClosed,
+      cloudFormationStable: cleanup.deploymentStable,
       failure:
         error instanceof StorageTransitionError ? error.part : "unexpected failure",
     });

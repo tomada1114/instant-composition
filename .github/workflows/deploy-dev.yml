@@ -115,14 +115,14 @@ jobs:
       # time.
       - name: Deploy the foundation stack
         if: steps.current.outputs.deploy == 'true'
-        run: pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation --exclusively --require-approval never
+        run: node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation
 
       # `edge` is the one stack in us-east-1, where a CLOUDFRONT-scope web ACL
       # has to live; the CLI deploys it there through us-east-1's bootstrap
       # roles, whatever aws-region above says.
       - name: Deploy the edge stack
         if: steps.current.outputs.deploy == 'true'
-        run: pnpm cdk deploy --app "$RELEASE_ASSEMBLY" edge --exclusively --require-approval never
+        run: node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" edge
 
       # `app` reads foundation's parameters and edge's web ACL output as it
       # deploys, so it goes last.

@@ -61,6 +61,9 @@ function fixture() {
   const calls: string[] = [],
     paused = new Set<string>();
   const port: TransitionPort = {
+    assertWorkTime: () => undefined,
+    beginCleanup: () => undefined,
+    drain: (ms) => port.wait(ms),
     cleanupTimeAvailable: () => ++cleanupChecks <= 3,
     discover: () => Promise.resolve(writers.map((writer) => ({ ...writer }))),
     capacityMatches: (writer) => Promise.resolve(!paused.has(writer.arn)),
@@ -138,6 +141,70 @@ afterEach(() => {
 });
 
 describe("storage deployment admission", () => {
+  it("refuses a drain that cannot fit before changing any writer admission", async () => {
+    const { port, calls, paused } = fixture();
+    port.assertWorkTime = (required = 0) => {
+      if (required > 60000)
+        throw new StorageTransitionError("transition work deadline");
+    };
+    const cleanup = vi.fn();
+    port.beginCleanup = cleanup;
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("pause");
+    expect(calls).not.toContain("deploy");
+    expect(paused.size).toBe(0);
+    expect(cleanup).not.toHaveBeenCalled();
+  });
+  it("refuses deployment when the initial drain exhausts work, then closes and drains without reopening", async () => {
+    const { port, calls, paused } = fixture();
+    let expired = false;
+    port.assertWorkTime = () => {
+      if (expired) throw new StorageTransitionError("transition work deadline");
+    };
+    const wait = port.wait;
+    port.wait = async (ms) => {
+      await wait(ms);
+      expired = true;
+    };
+    const drain = vi.fn(async (ms: number) => {
+      await wait(ms);
+    });
+    port.drain = drain;
+    const cleanup = vi.fn();
+    port.beginCleanup = cleanup;
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("deploy");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+    expect(cleanup).toHaveBeenCalledOnce();
+    expect(drain).toHaveBeenCalledExactlyOnceWith(900000);
+    expect(paused.has(api.arn)).toBe(true);
+    expect(JSON.parse(calls.at(-1) ?? "{}")).toMatchObject({
+      phase: "paused-forward-fix",
+      admissionClosed: true,
+    });
+  });
+  it("does not begin certification or resume after deployment reaches the work deadline", async () => {
+    const { port, calls, paused } = fixture();
+    let expired = false;
+    port.assertWorkTime = () => {
+      if (expired) throw new StorageTransitionError("transition work deadline");
+    };
+    const deploy = port.deploy;
+    port.deploy = async () => {
+      await deploy();
+      expired = true;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("verify");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+    expect(paused.size).toBe(2);
+  });
   it.each([
     [new StorageTransitionError("installed file"), "installed file"],
     [new Error("private-provider-response-with-signed-url"), "unexpected failure"],
@@ -232,7 +299,7 @@ describe("storage deployment admission", () => {
       return receipt;
     };
     await expect(transitionStorageWriters(port)).rejects.toBe(failure);
-    expect(calls).toBe(3);
+    expect(calls).toBe(5);
     expect(paused.size).toBe(2);
   });
   it("re-closes a writer whose cleanup pause was followed by reopened admission", async () => {
@@ -247,9 +314,9 @@ describe("storage deployment admission", () => {
       return receipt;
     };
     await expect(transitionStorageWriters(port)).rejects.toBe(failure);
-    expect(pauses).toBe(4);
+    expect(pauses).toBe(5);
     expect(paused.size).toBe(2);
-    expect(calls.filter((call) => call === "pause")).toHaveLength(4);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(5);
   });
   it("retries a cleanup probe that still admits traffic before starting the drain", async () => {
     const { port, calls, paused } = fixture();
@@ -258,7 +325,7 @@ describe("storage deployment admission", () => {
     let probes = 0;
     port.probePaused = () => Promise.resolve(++probes !== 4);
     await expect(transitionStorageWriters(port)).rejects.toBe(failure);
-    expect(calls.filter((call) => call === "pause")).toHaveLength(4);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(6);
     expect(calls.lastIndexOf("pause")).toBeLessThan(
       calls.indexOf("wait:900000", calls.indexOf("deploy")),
     );
@@ -276,7 +343,7 @@ describe("storage deployment admission", () => {
       return receipt;
     };
     await expect(transitionStorageWriters(port)).rejects.toBe(failure);
-    expect(pauses).toBe(4);
+    expect(pauses).toBe(5);
     expect(paused.size).toBe(2);
   });
   it("records an unconfirmed barrier at the closing deadline without claiming drain or recovery", async () => {

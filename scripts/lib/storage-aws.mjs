@@ -11,6 +11,7 @@ import {
   storageConfigurationHash,
   sameStorageWriter,
 } from "./storage-configuration.mjs";
+import { assertPausedStorageTemplate } from "./storage-paused-template.mjs";
 import {
   awsJson,
   runStorageCdk,
@@ -88,9 +89,44 @@ export function ownedStorageWriters(value, account, planned) {
 }
 /** @param {{root:string,assembly:string,sha:string,roleArn:string,policy:import('./storage-compatibility.mjs').StoragePolicy,planned:import('./storage-assembly.mjs').PlannedWriter[],current:()=>Promise<boolean>,deadline?:number}} options @param {StorageCommands} [commands] @returns {import('./storage-transition.mjs').TransitionPort} */
 export function awsStorageTransition(options, commands = SYSTEM) {
-  const aws = commands.aws,
-    cdk = commands.cdk,
-    deployedZip = commands.zip;
+  const workDeadline = options.deadline ?? Date.now() + 24 * 60000;
+  const closingDeadline = workDeadline + 5 * 60000;
+  const drainDeadline = workDeadline + 20 * 60000;
+  let cleaning = false;
+  const commandDeadline = () => (cleaning ? closingDeadline : workDeadline);
+  /** @param {number} deadline @param {number} [required] */
+  function assertDeadline(deadline, required = 0) {
+    if (Date.now() + required >= deadline)
+      throw new StorageTransitionError("transition work deadline");
+  }
+  /** @param {string[]} args @param {NodeJS.ProcessEnv} env */
+  const aws = (args, env) => {
+    assertDeadline(commandDeadline());
+    const result = commands.aws(
+      args,
+      env,
+      cleaning ? Math.min(commandDeadline(), Date.now() + 10000) : commandDeadline(),
+    );
+    assertDeadline(commandDeadline());
+    return result;
+  };
+  /** @param {string[]} args @param {string} directory */
+  const cdk = async (args, directory) => {
+    assertDeadline(commandDeadline());
+    await commands.cdk(
+      args,
+      directory,
+      cleaning ? Math.min(commandDeadline(), Date.now() + 60000) : commandDeadline(),
+    );
+    assertDeadline(commandDeadline());
+  };
+  /** @param {unknown} result */
+  const deployedZip = async (result) => {
+    assertDeadline(commandDeadline());
+    const zip = await commands.zip(result, commandDeadline());
+    assertDeadline(commandDeadline());
+    return zip;
+  };
   const { root, assembly, roleArn, policy, planned, current } = options,
     { account } = storageDeployIdentity(roleArn);
   if (string(aws(["sts", "get-caller-identity"], process.env), "Account") !== account)
@@ -119,7 +155,6 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   let deployed = false;
   const checkpoint = path.join(root, "dist/storage-transition.json");
   // Work stops with 21 minutes left: five for barriers, fifteen for drain, one for final overhead.
-  const closingDeadline = (options.deadline ?? Date.now()) + 5 * 60000;
   mkdirSync(path.dirname(checkpoint), { recursive: true });
   /** @param {import('./storage-transition.mjs').Writer} writer @returns {import('./storage-transition.mjs').Writer} */
   function configuration(writer) {
@@ -209,6 +244,17 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   }
   /** @type {import("./storage-transition.mjs").TransitionPort} */
   const port = {
+    assertWorkTime(required = 0) {
+      assertDeadline(workDeadline, required);
+    },
+    beginCleanup() {
+      cleaning = true;
+    },
+    async drain(milliseconds) {
+      if (Date.now() + milliseconds > drainDeadline)
+        throw new StorageTransitionError("cleanup drain deadline");
+      await setTimeout(milliseconds);
+    },
     cleanupTimeAvailable: () => Date.now() < closingDeadline,
     async owned() {
       return Promise.resolve(
@@ -311,12 +357,71 @@ export function awsStorageTransition(options, commands = SYSTEM) {
       );
     },
     async probePaused(writer) {
-      return commands.probe(writer.arn, root);
+      assertDeadline(commandDeadline());
+      const closed = await commands.probe(writer.arn, root, commandDeadline());
+      assertDeadline(commandDeadline());
+      return closed;
     },
     async wait(milliseconds) {
+      if (Date.now() + milliseconds >= commandDeadline())
+        throw new StorageTransitionError("transition work deadline");
       await setTimeout(milliseconds);
+      assertDeadline(commandDeadline());
     },
     async deploy() {
+      const stack = () =>
+        readKey(
+          readKey(
+            aws(
+              [
+                "cloudformation",
+                "describe-stacks",
+                "--stack-name",
+                "instant-composition-dev-app",
+              ],
+              bootstrap,
+            ),
+            "Stacks",
+          ),
+          "0",
+        );
+      const before = stack();
+      const stackId = string(before, "StackId");
+      if (
+        !stackId.startsWith(
+          `arn:aws:cloudformation:ap-northeast-1:${account}:stack/instant-composition-dev-app/`,
+        )
+      )
+        throw new StorageTransitionError("rollback template stack identity");
+      if (
+        !["CREATE_COMPLETE", "UPDATE_COMPLETE", "UPDATE_ROLLBACK_COMPLETE"].includes(
+          string(before, "StackStatus"),
+        )
+      )
+        throw new StorageTransitionError("rollback template stack status");
+      const actual = (await port.owned?.()) ?? [];
+      const templateDigest = assertPausedStorageTemplate(
+        aws(
+          [
+            "cloudformation",
+            "get-template",
+            "--stack-name",
+            stackId,
+            "--template-stage",
+            "Original",
+          ],
+          bootstrap,
+        ),
+        actual.map((writer) => writer.logicalId),
+      );
+      if (storageConfigurationHash(before) !== storageConfigurationHash(stack()))
+        throw new StorageTransitionError("rollback template stack race");
+      await port.record({
+        phase: "paused-rollback-template",
+        templateDigest,
+        writerLogicalIds: actual.map((writer) => writer.logicalId),
+      });
+      port.assertWorkTime();
       await cdk(
         [
           "deploy",
@@ -372,7 +477,16 @@ export function awsStorageTransition(options, commands = SYSTEM) {
     },
     current,
     async restore(writer) {
-      return Promise.resolve(concurrencyReceipt(writer, writer.capacity));
+      port.assertWorkTime();
+      const wasCleaning = cleaning;
+      cleaning = false;
+      try {
+        const receipt = concurrencyReceipt(writer, writer.capacity);
+        port.assertWorkTime();
+        return await Promise.resolve(receipt);
+      } finally {
+        cleaning = wasCleaning;
+      }
     },
     async certifyPredecessor(writer) {
       try {
@@ -403,7 +517,8 @@ export function awsStorageTransition(options, commands = SYSTEM) {
         writer: worker,
         port,
         ...(options.deadline === undefined ? {} : { deadline: options.deadline }),
-        invoke: async (checkpoint) => commands.invoke(worker.arn, root, checkpoint),
+        invoke: async (checkpoint) =>
+          commands.invoke(worker.arn, root, checkpoint, workDeadline),
       });
       return writers.map((writer) => (writer.arn === worker.arn ? prepared : writer));
     },
