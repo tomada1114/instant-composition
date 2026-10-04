@@ -187,13 +187,14 @@ describe("the foundation stack's web sign-in", () => {
     ).not.toThrow();
   });
 
-  it("rotates refresh tokens and allows no direct sign-in flow in dev", () => {
+  it("rotates refresh tokens and allows the password flow alone in dev", () => {
     expect(() =>
       foundationTemplate("dev").hasResourceProperties("AWS::Cognito::UserPoolClient", {
-        RefreshTokenRotation: { Feature: "ENABLED" },
-        // Empty rather than absent: an absent list gets Cognito's default,
-        // which includes ALLOW_REFRESH_TOKEN_AUTH.
-        ExplicitAuthFlows: Match.exact([]),
+        RefreshTokenRotation: { Feature: "ENABLED", RetryGracePeriodSeconds: 10 },
+        // Exactly the password flow the API's own sign-in page uses: an absent
+        // list gets Cognito's default, which includes ALLOW_REFRESH_TOKEN_AUTH,
+        // and rotation cannot run with that.
+        ExplicitAuthFlows: Match.exact(["ALLOW_USER_PASSWORD_AUTH"]),
       }),
     ).not.toThrow();
   });

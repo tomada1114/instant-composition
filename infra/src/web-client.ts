@@ -25,13 +25,17 @@ export interface WebClientUrls {
 export function webClientOptions(urls: WebClientUrls): UserPoolClientOptions {
   return {
     generateSecret: true,
-    // Every direct flow named false, so the list is empty rather than
-    // absent: an absent one gets Cognito's default, ALLOW_REFRESH_TOKEN_AUTH
-    // included, which refresh-token rotation cannot run with. The browser signs in through managed login alone.
+    // Every flow named, so the list is exactly ALLOW_USER_PASSWORD_AUTH
+    // rather than absent: an absent one gets Cognito's default,
+    // ALLOW_REFRESH_TOKEN_AUTH included, which refresh-token rotation cannot
+    // run with. The API signs the web client's own sign-in page in through
+    // InitiateAuth's USER_PASSWORD_AUTH with a SECRET_HASH. The code grant
+    // below stays as it was: the domain's token and revoke endpoints still
+    // renew and end every session.
     authFlows: {
       user: false,
       userSrp: false,
-      userPassword: false,
+      userPassword: true,
       adminUserPassword: false,
       custom: false,
     },
