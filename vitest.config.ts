@@ -84,6 +84,7 @@ const smokeTests = ["tests/stack-smoke.test.ts"];
 // The adapter's own logic is covered in-process by the `unit` suite against a
 // fake HTTP handler, so the coverage floors do not depend on this project.
 const dynamodbTests = [
+  "tests/api-critical-flows-dynamodb.test.ts",
   "tests/adapters-dynamodb-local.test.ts",
   "tests/api-dynamodb-local.test.ts",
 ];
