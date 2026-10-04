@@ -49,16 +49,18 @@ registered learner is discoverable immediately. The worker re-reads the bound pr
 before using its day. Legacy discovery is a separate explicit paged backfill, never a
 normal worker Scan.
 
-In AWS, EventBridge invokes the separate read-model Lambda every minute. One concurrent
-invocation runs at most 100 checkpoint steps, with two retries and five-minute event
-age. Locally, `pnpm api` first discovers existing profiles in fixed 100-row Scan pages
-before serving requests, then advances the same worker independently every second.
-Neither driver runs in an HTTP handler. The worker prepares the current practice day and
-the next day using the learner's stored time zone and boundary. A late scheduler resumes
-its checkpoint against the current day; failures preserve completed pages and retry
-without double counts. Source changes during a build cause a guarded restart. Sustained
-writes can delay an incomplete build; the ready current day remains incrementally
-maintained.
+In AWS, EventBridge invokes the separate read-model Lambda every minute. An invocation
+runs at most 100 checkpoint steps, with two retries and five-minute event age. The
+worker reserves no concurrency, which an account at Lambda's default quota of ten could
+not hold; overlapping invocations serialize through the checkpoint CAS, and one that
+loses it ends without failing. Locally, `pnpm api` first discovers existing profiles in
+fixed 100-row Scan pages before serving requests, then advances the same worker
+independently every second. Neither driver runs in an HTTP handler. The worker prepares
+the current practice day and the next day using the learner's stored time zone and
+boundary. A late scheduler resumes its checkpoint against the current day; failures
+preserve completed pages and retry without double counts. Source changes during a build
+cause a guarded restart. Sustained writes can delay an incomplete build; the ready
+current day remains incrementally maintained.
 
 ## Missing generations and old offline sessions
 
@@ -108,7 +110,7 @@ before deploying this cutover; this source slice does not certify a legacy write
 rollback or activation by itself.
 
 The storage transition keeps API concurrency zero, certifies every installed writer ZIP,
-temporarily enables only that certified worker at one, and invokes these bounded
+temporarily enables only that certified worker, unreserved, and invokes these bounded
 bootstrap steps. The deploy role uses Lambda invocation; it receives no learner-table
 credentials. EventBridge work can interleave through the same source/checkpoint CAS.
 Completion or failure pauses the worker again before the transition rechecks guards and

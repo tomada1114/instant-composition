@@ -665,16 +665,26 @@ describe("the dev app stack's outputs", () => {
 });
 
 describe("independent read-model maintenance", () => {
-  it("schedules a separate bounded worker every minute with one concurrent invocation", () => {
+  it("schedules a separate bounded worker every minute without reserving concurrency", () => {
     expect(Object.keys(TEMPLATE.findResources("AWS::Events::Rule"))).toHaveLength(1);
     TEMPLATE.hasResourceProperties("AWS::Lambda::Function", {
       Runtime: "nodejs24.x",
       Timeout: 60,
-      ReservedConcurrentExecutions: 1,
       Environment: {
         Variables: Match.objectLike({ API_CATALOG_PATH: LAMBDA_CATALOG_PATH }),
       },
     });
+    const workers = Object.entries(TEMPLATE.findResources("AWS::Lambda::Function"))
+      .filter(([id]) => id.startsWith("ReadModelWorker"))
+      .map(([, resource]) => resource);
+    expect(workers).toHaveLength(1);
+    // An account at Lambda's default quota of ten can reserve no concurrency.
+    expect(workers[0]).toMatchObject({
+      Metadata: { "instant-composition:storage-capacity": "unreserved" },
+    });
+    expect(workers[0]?.["Properties"]).not.toHaveProperty(
+      "ReservedConcurrentExecutions",
+    );
     TEMPLATE.hasResourceProperties("AWS::Events::Rule", {
       ScheduleExpression: "rate(1 minute)",
       State: "ENABLED",

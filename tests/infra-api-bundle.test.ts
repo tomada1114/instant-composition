@@ -73,7 +73,7 @@ describe("the dev app stack's function bundle", () => {
     ).toMatchObject({ capacity: null, timeout: 25 });
     expect(
       writers.find((writer) => writer.logicalId.startsWith("ReadModelWorker")),
-    ).toMatchObject({ capacity: 1, timeout: 60 });
+    ).toMatchObject({ capacity: null, timeout: 60 });
     expect(writers.map((writer) => writer.release.sha)).toStrictEqual([
       release.sha,
       release.sha,

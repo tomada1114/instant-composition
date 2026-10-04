@@ -3,7 +3,10 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { parseJson, readKey, readString } from "./lib/json.mjs";
-import { preflightStorageRelease } from "./lib/storage-compatibility.mjs";
+import {
+  preflightStorageRelease,
+  StorageCompatibilityError,
+} from "./lib/storage-compatibility.mjs";
 import { readCheckpoint, saveCheckpoint } from "./lib/storage-checkpoint.mjs";
 import { migrateStorage, StorageMigrationError } from "./lib/storage-migration.mjs";
 import { createStorageValidator } from "./lib/storage-validator.mjs";
@@ -122,7 +125,14 @@ export async function main(args) {
           : options.plan === "expand-to-storage-v4"
             ? 4
             : 5;
-  preflightStorageRelease(root, `storage-v${String(targetSchema)}`);
+  // The current certified writer must emit the plan's schema; a later release on
+  // the same schema (a code fix) carries its own contract id.
+  const policy = preflightStorageRelease(root);
+  if (
+    policy.releases.find((release) => release.id === policy.current)?.writes !==
+    targetSchema
+  )
+    throw new StorageCompatibilityError("candidate");
   const file = path.resolve(options.checkpoint),
     lock = `${file}.lock`;
   if (!options.resume && existsSync(file))

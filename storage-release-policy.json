@@ -1,7 +1,17 @@
 {
-  "current": "storage-v5",
+  "current": "storage-v5-1",
   "emittedSchemas": [0, 1, 2, 3, 4, 5],
   "releases": [
+    {
+      "id": "storage-v5-1",
+      "guarded": true,
+      "reads": [0, 1, 2, 3, 4, 5],
+      "preserves": [0, 1, 2, 3, 4, 5],
+      "fixture": "tests/fixtures/storage-v5-1.json",
+      "sha256": "e0f1c658b31fade3bb768d401636547db21e552422f0b63e9bb65e79c0ff724d",
+      "schemaFingerprint": "f9995e28345fdc44769345dc49a33d3b37cffe4ff5872f5ef2c054ebf547869c",
+      "writes": 5
+    },
     {
       "id": "storage-v5",
       "guarded": true,

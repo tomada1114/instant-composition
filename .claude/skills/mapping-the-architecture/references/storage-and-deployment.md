@@ -66,20 +66,24 @@ certified artifacts. The dev pipeline still deploys only current trusted main: p
 an operational rollback with a new main revert commit carrying that certified writer,
 then run the same paused transition. It does not dispatch an arbitrary historical SHA. A
 changed writer requires new lossless next-write fixtures and explicit ledger
-certification. Deployment selects the ledger's current contract and its declared
-`writes` schema; fixtures must agree with that contract/schema and the runtime validator
-must actually emit it. Every later shape release raises the adapter cap, expands the
-admitted inventory, preserves historical emitted schema bounds, and updates the exact
-source inventory and fixture certificate before deployment. The released legacy-to-v1
-migration stays explicitly fixed to that tested plan. The operator must select
-`--plan expand-to-storage-v2` for the reviewed legacy/v1-to-checkpoint-schema expansion;
-its distinct checkpoint identity prevents resuming a v1 plan against a different target.
-The reviewed `--plan expand-to-storage-v3` explicitly admits schema 0, 1 and 2 rows and
-targets storage-v3/schema 3 with its own checkpoint identity. It validates already-v3
-rows without rewriting them and preserves top-level TTL presence on expanded rows
-without renewing expiry. The explicit `--plan expand-to-storage-v4` targets schema 4
-under its own checkpoint identity and retains valid historical TTL presence. The v1, v2
-and v3 plans stay fixed; a newer trusted writer refuses them before opening a child or
+certification. A writer change that keeps the schema gets its own release id on the same
+`writes` (`storage-v5-1` after `storage-v5`), with a fixture copy naming that contract,
+so the deployed predecessor's certificate stays intact; a migration plan admits
+whichever current release writes its target schema. Deployment selects the ledger's
+current contract and its declared `writes` schema; fixtures must agree with that
+contract/schema and the runtime validator must actually emit it. Every later shape
+release raises the adapter cap, expands the admitted inventory, preserves historical
+emitted schema bounds, and updates the exact source inventory and fixture certificate
+before deployment. The released legacy-to-v1 migration stays explicitly fixed to that
+tested plan. The operator must select `--plan expand-to-storage-v2` for the reviewed
+legacy/v1-to-checkpoint-schema expansion; its distinct checkpoint identity prevents
+resuming a v1 plan against a different target. The reviewed
+`--plan expand-to-storage-v3` explicitly admits schema 0, 1 and 2 rows and targets
+storage-v3/schema 3 with its own checkpoint identity. It validates already-v3 rows
+without rewriting them and preserves top-level TTL presence on expanded rows without
+renewing expiry. The explicit `--plan expand-to-storage-v4` targets schema 4 under its
+own checkpoint identity and retains valid historical TTL presence. The v1, v2 and v3
+plans stay fixed; a newer trusted writer refuses them before opening a child or
 checkpoint. Later noncompatible plans require their own transformation/decoder rather
 than retargeting a plan automatically; a reader-only fixture is insufficient.
 

@@ -133,9 +133,11 @@ a second design.
   shortening and still require the logical id whole. The role also reads
   `lambda:GetAccountSettings`, account-level and read-only, so the transition refuses
   with `account concurrency` before any pause when the account's unreserved concurrency
-  cannot keep Lambda's minimum (`min(100, limit)`) after the recorded reservations — a
-  10-execution account cannot hold the worker's one (#471). Wildcard function resources,
-  aliases and other stacks are rejected before the deploy-access update.
+  cannot keep Lambda's minimum (`min(100, limit)`) after the recorded reservations
+  (#471). An account at Lambda's default quota of ten can reserve nothing, so every
+  writer is recorded unreserved and only pausing (zero) is ever applied. Wildcard
+  function resources, aliases and other stacks are rejected before the deploy-access
+  update.
 - The role's ARN reaches the workflow as the repository **variable**
   `AWS_DEPLOY_ROLE_ARN`, never as a secret and never in the tree. No long-lived AWS
   access key exists anywhere, for a person or for CI.
@@ -203,7 +205,7 @@ a second design.
   never permit recovery. Repeated runs rediscover actual configuration; preguard API
   recovery requires a compatible forward fix.
 - An assembly declaring a read-model worker requires bootstrap before API admission. API
-  stays at zero while only the certified worker temporarily runs at one. Private
+  stays at zero while only the certified worker temporarily runs unreserved. Private
   RequestResponse payload files carry exactly `{storageBootstrap:true,checkpoint}`;
   bounded discovery/preparation/verification replies save a release/code-bound resume
   checkpoint. A durable system bootstrap row introduced with the worker owns resume
@@ -214,41 +216,44 @@ a second design.
   source/model/profile identities. A completed cache restarts verification rather than
   returning cached completion. Completion requires verified current/next-day projections
   and drained requested-day work through the worker's owning coordinator. EventBridge
-  ticks share reserved one and store CAS, so every tick remains bounded. The operator
-  pauses the worker again, confirms synchronous throttle and drains its configured
-  timeout even after an unknown invoke outcome. Failed readiness remains paused for a
-  forward fix; it never recovers the predecessor after preparation starts. The job
-  summary records phase/counts/completion, omitting the private checkpoint. The existing
-  45-minute budget uses this exact run attempt's actual job start from GitHub Actions,
-  including checkout and runtime setup. The job grants Actions read access only for this
-  timestamp; an ambiguous or unavailable lookup refuses before AWS access. It reserves
-  21 minutes: five for re-closing barriers, fifteen for the maximum timeout drain, and
-  one for final evidence and execution overhead. Foundation, edge, admission, initial
-  drain, app deployment, ZIP certification and bootstrap all use the absolute work
-  deadline. Expired work refuses before launch; CLI timeouts kill and reap the local
-  process group before cleanup. Cleanup closes already authorized writers before
-  discovery or permission refresh, bounds each request within the closing window, and
-  starts only a full drain that fits the drain deadline. Admission never reopens after
-  the work deadline. Before app deployment, the exact previous stack template must also
-  keep every owned storage writer at literal zero capacity, so a continuing
-  CloudFormation update or rollback cannot restore admission. Only its digest is
-  recorded; unstable or unreadable stack status cannot certify recovery. A stopped job
-  leaves durable progress for the next trusted run instead of restarting discovery. No
-  direct table permission or execution-role assumption is added.
+  ticks may overlap a bootstrap step or each other: they serialize through the store
+  CAS, and the invocation that loses the shared checkpoint ends without failing, so
+  every tick remains bounded. The operator pauses the worker again, confirms synchronous
+  throttle and drains its configured timeout even after an unknown invoke outcome.
+  Failed readiness remains paused for a forward fix; it never recovers the predecessor
+  after preparation starts. The job summary records phase/counts/completion, omitting
+  the private checkpoint. The existing 45-minute budget uses this exact run attempt's
+  actual job start from GitHub Actions, including checkout and runtime setup. The job
+  grants Actions read access only for this timestamp; an ambiguous or unavailable lookup
+  refuses before AWS access. It reserves 21 minutes: five for re-closing barriers,
+  fifteen for the maximum timeout drain, and one for final evidence and execution
+  overhead. Foundation, edge, admission, initial drain, app deployment, ZIP
+  certification and bootstrap all use the absolute work deadline. Expired work refuses
+  before launch; CLI timeouts kill and reap the local process group before cleanup.
+  Cleanup closes already authorized writers before discovery or permission refresh,
+  bounds each request within the closing window, and starts only a full drain that fits
+  the drain deadline. Admission never reopens after the work deadline. Before app
+  deployment, the exact previous stack template must also keep every owned storage
+  writer at literal zero capacity, so a continuing CloudFormation update or rollback
+  cannot restore admission. Only its digest is recorded; unstable or unreadable stack
+  status cannot certify recovery. A stopped job leaves durable progress for the next
+  trusted run instead of restarting discovery. No direct table permission or
+  execution-role assumption is added.
 - Capacity restoration intentionally differs from the paused template: API returns to
-  unreserved and worker to its recorded one. The next transition explicitly sets zero
-  again before deploying another paused assembly, so this drift is repeat-safe. Current
-  main, code, configuration and capacity are checked around restoration. Each controlled
-  concurrency mutation returns a freshly observed revision receipt; subsequent checks
-  require that exact revision. The complete configuration digest excludes only top-level
-  RevisionId and LastModified, retaining every nested field without persisting secrets.
-  The shared deploy concurrency group is required because concurrency changes have no
-  code-revision compare-and-swap. Cleanup attempts every owned writer, drains them, and
-  refuses recovery if any barrier failed. Transition phase evidence is persisted in the
-  job summary. Publisher-generated assembly `.cache` files are derived outputs;
-  postdeploy certification uses fetched ZIP contents rather than cache file names. The
-  immutable web/API/catalog release checks and read-only CloudFront smoke are described
-  in [the deployment release checks](references/releases.md).
+  unreserved and worker to its recorded capacity, also unreserved. The next transition
+  explicitly sets zero again before deploying another paused assembly, so this drift is
+  repeat-safe. Current main, code, configuration and capacity are checked around
+  restoration. Each controlled concurrency mutation returns a freshly observed revision
+  receipt; subsequent checks require that exact revision. The complete configuration
+  digest excludes only top-level RevisionId and LastModified, retaining every nested
+  field without persisting secrets. The shared deploy concurrency group is required
+  because concurrency changes have no code-revision compare-and-swap. Cleanup attempts
+  every owned writer, drains them, and refuses recovery if any barrier failed.
+  Transition phase evidence is persisted in the job summary. Publisher-generated
+  assembly `.cache` files are derived outputs; postdeploy certification uses fetched ZIP
+  contents rather than cache file names. The immutable web/API/catalog release checks
+  and read-only CloudFront smoke are described in
+  [the deployment release checks](references/releases.md).
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
   by the bootstrap roles, so uploads need no direct S3 or CloudFront permissions on the
