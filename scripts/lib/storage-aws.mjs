@@ -8,6 +8,11 @@ import { assertStorageArtifact } from "./storage-compatibility.mjs";
 import { prepareStorageReadModels } from "./storage-bootstrap.mjs";
 import { storageZipFiles, verifyStorageZip } from "./storage-zip.mjs";
 import {
+  storageConfigurationHash,
+  sameStorageWriter,
+} from "./storage-configuration.mjs";
+import { assertPausedStorageTemplate } from "./storage-paused-template.mjs";
+import {
   awsJson,
   runStorageCdk,
   deployedStorageZip,
@@ -77,15 +82,51 @@ export function ownedStorageWriters(value, account, planned) {
         timeout: plan.timeout,
         revision: "",
         codeHash: "",
+        configurationHash: "",
       },
     ];
   });
 }
 /** @param {{root:string,assembly:string,sha:string,roleArn:string,policy:import('./storage-compatibility.mjs').StoragePolicy,planned:import('./storage-assembly.mjs').PlannedWriter[],current:()=>Promise<boolean>,deadline?:number}} options @param {StorageCommands} [commands] @returns {import('./storage-transition.mjs').TransitionPort} */
 export function awsStorageTransition(options, commands = SYSTEM) {
-  const aws = commands.aws,
-    cdk = commands.cdk,
-    deployedZip = commands.zip;
+  const workDeadline = options.deadline ?? Date.now() + 24 * 60000;
+  const closingDeadline = workDeadline + 5 * 60000;
+  const drainDeadline = workDeadline + 20 * 60000;
+  let cleaning = false;
+  const commandDeadline = () => (cleaning ? closingDeadline : workDeadline);
+  /** @param {number} deadline @param {number} [required] */
+  function assertDeadline(deadline, required = 0) {
+    if (Date.now() + required >= deadline)
+      throw new StorageTransitionError("transition work deadline");
+  }
+  /** @param {string[]} args @param {NodeJS.ProcessEnv} env */
+  const aws = (args, env) => {
+    assertDeadline(commandDeadline());
+    const result = commands.aws(
+      args,
+      env,
+      cleaning ? Math.min(commandDeadline(), Date.now() + 10000) : commandDeadline(),
+    );
+    assertDeadline(commandDeadline());
+    return result;
+  };
+  /** @param {string[]} args @param {string} directory */
+  const cdk = async (args, directory) => {
+    assertDeadline(commandDeadline());
+    await commands.cdk(
+      args,
+      directory,
+      cleaning ? Math.min(commandDeadline(), Date.now() + 60000) : commandDeadline(),
+    );
+    assertDeadline(commandDeadline());
+  };
+  /** @param {unknown} result */
+  const deployedZip = async (result) => {
+    assertDeadline(commandDeadline());
+    const zip = await commands.zip(result, commandDeadline());
+    assertDeadline(commandDeadline());
+    return zip;
+  };
   const { root, assembly, roleArn, policy, planned, current } = options,
     { account } = storageDeployIdentity(roleArn);
   if (string(aws(["sts", "get-caller-identity"], process.env), "Account") !== account)
@@ -113,6 +154,7 @@ export function awsStorageTransition(options, commands = SYSTEM) {
   const authorized = new Set();
   let deployed = false;
   const checkpoint = path.join(root, "dist/storage-transition.json");
+  // Work stops with 21 minutes left: five for barriers, fifteen for drain, one for final overhead.
   mkdirSync(path.dirname(checkpoint), { recursive: true });
   /** @param {import('./storage-transition.mjs').Writer} writer @returns {import('./storage-transition.mjs').Writer} */
   function configuration(writer) {
@@ -123,7 +165,8 @@ export function awsStorageTransition(options, commands = SYSTEM) {
     if (
       string(response, "FunctionArn") !== writer.arn ||
       string(response, "State") !== "Active" ||
-      string(response, "LastUpdateStatus") !== "Successful"
+      string(response, "LastUpdateStatus") !== "Successful" ||
+      readKey(readKey(response, "Environment"), "Error") !== undefined
     )
       throw new StorageTransitionError("writer update status");
     return {
@@ -131,10 +174,117 @@ export function awsStorageTransition(options, commands = SYSTEM) {
       timeout: number(response, "Timeout"),
       revision: string(response, "RevisionId"),
       codeHash: string(response, "CodeSha256"),
+      configurationHash: storageConfigurationHash(response),
     };
+  }
+  /** GetFunction, separate configuration and ZIP download share one exact identity.
+   * @param {import('./storage-transition.mjs').Writer} writer
+   */
+  async function fetchedWriter(writer) {
+    const response = aws(
+      ["lambda", "get-function", "--function-name", writer.arn],
+      process.env,
+    );
+    const actual = configuration(writer);
+    const config = readKey(response, "Configuration");
+    if (
+      string(config, "RevisionId") !== actual.revision ||
+      string(config, "CodeSha256") !== actual.codeHash ||
+      storageConfigurationHash(config) !== actual.configurationHash
+    )
+      throw new StorageTransitionError("download revision race");
+    const zip = await deployedZip(response);
+    if (!sameStorageWriter(actual, configuration(actual)))
+      throw new StorageTransitionError("download revision race");
+    return { actual, config, zip };
+  }
+  /** Closing admission still runs when an identity precheck detects drift.
+   * @param {import('./storage-transition.mjs').Writer} writer
+   * @param {number|null} capacity @returns {import('./storage-transition.mjs').Writer}
+   */
+  function concurrencyReceipt(writer, capacity) {
+    let before;
+    try {
+      before = configuration(writer);
+    } catch {
+      /* Pause must still be attempted. */
+    }
+    const exact = before !== undefined && sameStorageWriter(writer, before);
+    if (capacity !== 0 && !exact)
+      throw new StorageTransitionError("capacity admission identity");
+    aws(
+      capacity === null
+        ? ["lambda", "delete-function-concurrency", "--function-name", writer.arn]
+        : [
+            "lambda",
+            "put-function-concurrency",
+            "--function-name",
+            writer.arn,
+            "--reserved-concurrent-executions",
+            String(capacity),
+          ],
+      process.env,
+    );
+    const actual = readKey(
+      aws(
+        ["lambda", "get-function-concurrency", "--function-name", writer.arn],
+        process.env,
+      ),
+      "ReservedConcurrentExecutions",
+    );
+    if (
+      (capacity === null && actual !== undefined) ||
+      (capacity !== null && actual !== capacity)
+    )
+      throw new StorageTransitionError("restored capacity");
+    const after = configuration(writer);
+    if (!exact || before === undefined || !sameStorageWriter(before, after, false))
+      throw new StorageTransitionError("capacity configuration race");
+    return after;
   }
   /** @type {import("./storage-transition.mjs").TransitionPort} */
   const port = {
+    assertWorkTime(required = 0) {
+      assertDeadline(workDeadline, required);
+    },
+    beginCleanup() {
+      cleaning = true;
+    },
+    async drain(milliseconds) {
+      if (Date.now() + milliseconds > drainDeadline)
+        throw new StorageTransitionError("cleanup drain deadline");
+      await setTimeout(milliseconds);
+    },
+    cleanupTimeAvailable: () => Date.now() < closingDeadline,
+    async owned() {
+      return Promise.resolve(
+        ownedStorageWriters(
+          aws(
+            [
+              "cloudformation",
+              "list-stack-resources",
+              "--stack-name",
+              "instant-composition-dev-app",
+            ],
+            bootstrap,
+          ),
+          account,
+          planned,
+        ),
+      );
+    },
+    async capacityMatches(writer) {
+      const actual = readKey(
+        aws(
+          ["lambda", "get-function-concurrency", "--function-name", writer.arn],
+          process.env,
+        ),
+        "ReservedConcurrentExecutions",
+      );
+      return Promise.resolve(
+        writer.capacity === null ? actual === undefined : actual === writer.capacity,
+      );
+    },
     async discover() {
       const rows = ownedStorageWriters(
         aws(
@@ -193,18 +343,7 @@ export function awsStorageTransition(options, commands = SYSTEM) {
       for (const arn of arns) authorized.add(arn);
     },
     async pause(writer) {
-      aws(
-        [
-          "lambda",
-          "put-function-concurrency",
-          "--function-name",
-          writer.arn,
-          "--reserved-concurrent-executions",
-          "0",
-        ],
-        process.env,
-      );
-      return Promise.resolve();
+      return Promise.resolve(concurrencyReceipt(writer, 0));
     },
     async isPaused(writer) {
       return Promise.resolve(
@@ -218,12 +357,71 @@ export function awsStorageTransition(options, commands = SYSTEM) {
       );
     },
     async probePaused(writer) {
-      return commands.probe(writer.arn, root);
+      assertDeadline(commandDeadline());
+      const closed = await commands.probe(writer.arn, root, commandDeadline());
+      assertDeadline(commandDeadline());
+      return closed;
     },
     async wait(milliseconds) {
+      if (Date.now() + milliseconds >= commandDeadline())
+        throw new StorageTransitionError("transition work deadline");
       await setTimeout(milliseconds);
+      assertDeadline(commandDeadline());
     },
     async deploy() {
+      const stack = () =>
+        readKey(
+          readKey(
+            aws(
+              [
+                "cloudformation",
+                "describe-stacks",
+                "--stack-name",
+                "instant-composition-dev-app",
+              ],
+              bootstrap,
+            ),
+            "Stacks",
+          ),
+          "0",
+        );
+      const before = stack();
+      const stackId = string(before, "StackId");
+      if (
+        !stackId.startsWith(
+          `arn:aws:cloudformation:ap-northeast-1:${account}:stack/instant-composition-dev-app/`,
+        )
+      )
+        throw new StorageTransitionError("rollback template stack identity");
+      if (
+        !["CREATE_COMPLETE", "UPDATE_COMPLETE", "UPDATE_ROLLBACK_COMPLETE"].includes(
+          string(before, "StackStatus"),
+        )
+      )
+        throw new StorageTransitionError("rollback template stack status");
+      const actual = (await port.owned?.()) ?? [];
+      const templateDigest = assertPausedStorageTemplate(
+        aws(
+          [
+            "cloudformation",
+            "get-template",
+            "--stack-name",
+            stackId,
+            "--template-stage",
+            "Original",
+          ],
+          bootstrap,
+        ),
+        actual.map((writer) => writer.logicalId),
+      );
+      if (storageConfigurationHash(before) !== storageConfigurationHash(stack()))
+        throw new StorageTransitionError("rollback template stack race");
+      await port.record({
+        phase: "paused-rollback-template",
+        templateDigest,
+        writerLogicalIds: actual.map((writer) => writer.logicalId),
+      });
+      port.assertWorkTime();
       await cdk(
         [
           "deploy",
@@ -268,90 +466,61 @@ export function awsStorageTransition(options, commands = SYSTEM) {
     async verify(writer) {
       const plan = planned.find((entry) => entry.logicalId === writer.logicalId);
       if (plan === undefined) throw new StorageTransitionError("writer plan");
-      const response = aws(
-          ["lambda", "get-function", "--function-name", writer.arn],
-          process.env,
-        ),
-        actual = configuration(writer);
+      const { actual, config, zip } = await fetchedWriter(writer);
       if (
-        string(readKey(response, "Configuration"), "RevisionId") !== actual.revision ||
-        string(readKey(response, "Configuration"), "CodeSha256") !== actual.codeHash
-      )
-        throw new StorageTransitionError("download revision race");
-      if (
-        readString(readKey(response, "Configuration"), "Handler") !==
-          "storage.handler" ||
+        readString(config, "Handler") !== "storage.handler" ||
         actual.timeout !== plan.timeout
       )
         throw new StorageTransitionError("installed guard configuration");
-      verifyStorageZip(await deployedZip(response), actual.codeHash, plan.release);
+      verifyStorageZip(zip, actual.codeHash, plan.release);
       return actual;
     },
     current,
     async restore(writer) {
-      aws(
-        writer.capacity === null
-          ? ["lambda", "delete-function-concurrency", "--function-name", writer.arn]
-          : [
-              "lambda",
-              "put-function-concurrency",
-              "--function-name",
-              writer.arn,
-              "--reserved-concurrent-executions",
-              String(writer.capacity),
-            ],
-        process.env,
-      );
-      const actual = readKey(
-        aws(
-          ["lambda", "get-function-concurrency", "--function-name", writer.arn],
-          process.env,
-        ),
-        "ReservedConcurrentExecutions",
-      );
-      if (
-        (writer.capacity === null && actual !== undefined) ||
-        (writer.capacity !== null && actual !== writer.capacity)
-      )
-        throw new StorageTransitionError("restored capacity");
-      return Promise.resolve();
+      port.assertWorkTime();
+      const wasCleaning = cleaning;
+      cleaning = false;
+      try {
+        const receipt = concurrencyReceipt(writer, writer.capacity);
+        port.assertWorkTime();
+        return await Promise.resolve(receipt);
+      } finally {
+        cleaning = wasCleaning;
+      }
     },
     async certifyPredecessor(writer) {
       try {
-        const response = aws(
-            ["lambda", "get-function", "--function-name", writer.arn],
-            process.env,
-          ),
-          zip = await deployedZip(response),
-          bytes = storageZipFiles(zip).get("storage-release.json");
-        if (bytes === undefined) return false;
+        const { actual, config, zip } = await fetchedWriter(writer);
+        const bytes = storageZipFiles(zip).get("storage-release.json");
         if (
-          readString(readKey(response, "Configuration"), "Handler") !==
-            "storage.handler" ||
-          configuration(writer).codeHash !== writer.codeHash
+          bytes === undefined ||
+          readString(config, "Handler") !== "storage.handler" ||
+          !sameStorageWriter(writer, actual)
         )
-          return false;
+          return undefined;
         const release = guardMetadata(parseJson(bytes.toString("utf8")));
         assertStorageArtifact(policy, release);
-        verifyStorageZip(zip, writer.codeHash, release);
-        return true;
+        verifyStorageZip(zip, actual.codeHash, release);
+        return actual;
       } catch {
-        return false;
+        return undefined;
       }
     },
     async prepare(writers) {
       const worker = writers.find((writer) =>
         writer.logicalId.startsWith("ReadModelWorker"),
       );
-      if (worker !== undefined)
-        await prepareStorageReadModels({
-          root,
-          sha: options.sha,
-          writer: worker,
-          port,
-          ...(options.deadline === undefined ? {} : { deadline: options.deadline }),
-          invoke: async (checkpoint) => commands.invoke(worker.arn, root, checkpoint),
-        });
+      if (worker === undefined) return writers;
+      const prepared = await prepareStorageReadModels({
+        root,
+        sha: options.sha,
+        writer: worker,
+        port,
+        ...(options.deadline === undefined ? {} : { deadline: options.deadline }),
+        invoke: async (checkpoint) =>
+          commands.invoke(worker.arn, root, checkpoint, workDeadline),
+      });
+      return writers.map((writer) => (writer.arn === worker.arn ? prepared : writer));
     },
     async record(state) {
       writeFileSync(`${checkpoint}.next`, JSON.stringify(state), { mode: 0o600 });

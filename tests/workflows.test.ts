@@ -2949,7 +2949,9 @@ describe("the workflows in .github/workflows", () => {
       'pnpm release trust "$GITHUB_EVENT_PATH" "$RELEASE_SHA" "$RELEASE_REPOSITORY"',
     );
     expect(source).toContain("role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}");
-    expect(source).toContain('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation');
+    expect(source).toContain(
+      'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation',
+    );
   });
 
   it("installs dependencies before invoking trust verification and checks identity before building or obtaining AWS credentials", () => {
@@ -2971,10 +2973,18 @@ describe("the workflows in .github/workflows", () => {
       .join("\n");
     expect(
       commands.indexOf('pnpm release record "$RELEASE_ASSEMBLY" "$RELEASE_SHA"'),
-    ).toBeLessThan(commands.indexOf("pnpm cdk deploy"));
+    ).toBeLessThan(
+      commands.indexOf(
+        'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation',
+      ),
+    );
     expect(
       commands.indexOf('pnpm release current "$RELEASE_REPOSITORY" "$RELEASE_SHA"'),
-    ).toBeLessThan(commands.indexOf("pnpm cdk deploy"));
+    ).toBeLessThan(
+      commands.indexOf(
+        'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation',
+      ),
+    );
     expect(source.match(/if: steps.current.outputs.deploy == 'true'/g)).toHaveLength(5);
     expect(source).not.toContain("continue-on-error");
     expect(commands.indexOf("pnpm release smoke")).toBeGreaterThan(
@@ -2996,11 +3006,13 @@ describe("the workflows in .github/workflows", () => {
     const build = commands.findIndex((command) => command.includes("pnpm web:build"));
     const foundation = commands.findIndex((command) =>
       command.includes(
-        'pnpm cdk deploy --app "$RELEASE_ASSEMBLY" foundation --exclusively',
+        'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" foundation',
       ),
     );
     const edge = commands.findIndex((command) =>
-      command.includes('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" edge --exclusively'),
+      command.includes(
+        'node scripts/storage-transition.mjs stack "$RELEASE_ASSEMBLY" "$RELEASE_SHA" edge',
+      ),
     );
     const app = commands.findIndex((command) =>
       command.includes(

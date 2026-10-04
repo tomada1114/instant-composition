@@ -212,21 +212,36 @@ a second design.
   timeout even after an unknown invoke outcome. Failed readiness remains paused for a
   forward fix; it never recovers the predecessor after preparation starts. The job
   summary records phase/counts/completion, omitting the private checkpoint. The existing
-  45-minute job budget is recorded once the Node24 runtime is ready before install with
-  five minutes reserved for pause/drain cleanup; bootstrap checks that absolute deadline
-  before each bounded invocation. A stopped job leaves durable progress for the next
-  trusted run instead of restarting discovery. No direct table permission or
-  execution-role assumption is added.
+  45-minute budget uses this exact run attempt's actual job start from GitHub Actions,
+  including checkout and runtime setup. The job grants Actions read access only for this
+  timestamp; an ambiguous or unavailable lookup refuses before AWS access. It reserves
+  21 minutes: five for re-closing barriers, fifteen for the maximum timeout drain, and
+  one for final evidence and execution overhead. Foundation, edge, admission, initial
+  drain, app deployment, ZIP certification and bootstrap all use the absolute work
+  deadline. Expired work refuses before launch; CLI timeouts kill and reap the local
+  process group before cleanup. Cleanup closes already authorized writers before
+  discovery or permission refresh, bounds each request within the closing window, and
+  starts only a full drain that fits the drain deadline. Admission never reopens after
+  the work deadline. Before app deployment, the exact previous stack template must also
+  keep every owned storage writer at literal zero capacity, so a continuing
+  CloudFormation update or rollback cannot restore admission. Only its digest is
+  recorded; unstable or unreadable stack status cannot certify recovery. A stopped job
+  leaves durable progress for the next trusted run instead of restarting discovery. No
+  direct table permission or execution-role assumption is added.
 - Capacity restoration intentionally differs from the paused template: API returns to
   unreserved and worker to its recorded one. The next transition explicitly sets zero
   again before deploying another paused assembly, so this drift is repeat-safe. Current
-  main and code revisions are checked immediately before/after restoration; the shared
-  deploy concurrency group is required because Lambda concurrency changes have no
-  code-revision compare-and-swap. Transition phase evidence is persisted in the job
-  summary. Publisher-generated assembly `.cache` files are derived outputs; postdeploy
-  certification uses fetched ZIP contents rather than cache file names. The immutable
-  web/API/catalog release checks and read-only CloudFront smoke are described in
-  [the deployment release checks](references/releases.md).
+  main, code, configuration and capacity are checked around restoration. Each controlled
+  concurrency mutation returns a freshly observed revision receipt; subsequent checks
+  require that exact revision. The complete configuration digest excludes only top-level
+  RevisionId and LastModified, retaining every nested field without persisting secrets.
+  The shared deploy concurrency group is required because concurrency changes have no
+  code-revision compare-and-swap. Cleanup attempts every owned writer, drains them, and
+  refuses recovery if any barrier failed. Transition phase evidence is persisted in the
+  job summary. Publisher-generated assembly `.cache` files are derived outputs;
+  postdeploy certification uses fetched ZIP contents rather than cache file names. The
+  immutable web/API/catalog release checks and read-only CloudFront smoke are described
+  in [the deployment release checks](references/releases.md).
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
   by the bootstrap roles, so uploads need no direct S3 or CloudFront permissions on the

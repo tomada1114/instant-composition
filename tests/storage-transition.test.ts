@@ -53,13 +53,20 @@ const api: Writer = {
   timeout: 900,
   revision: "old",
   codeHash: "old",
+  configurationHash: "configuration",
 };
 function fixture() {
   let writers = [{ ...api }];
+  let cleanupChecks = 0;
   const calls: string[] = [],
     paused = new Set<string>();
   const port: TransitionPort = {
+    assertWorkTime: () => undefined,
+    beginCleanup: () => undefined,
+    drain: (ms) => port.wait(ms),
+    cleanupTimeAvailable: () => ++cleanupChecks <= 3,
     discover: () => Promise.resolve(writers.map((writer) => ({ ...writer }))),
+    capacityMatches: (writer) => Promise.resolve(!paused.has(writer.arn)),
     extendAccess: (rows) => {
       return Promise.resolve().then(() => {
         calls.push(`access:${String(rows.length)}`);
@@ -69,6 +76,7 @@ function fixture() {
       return Promise.resolve().then(() => {
         calls.push("pause");
         paused.add(writer.arn);
+        return { ...writer };
       });
     },
     isPaused: (writer) => Promise.resolve(paused.has(writer.arn)),
@@ -107,13 +115,15 @@ function fixture() {
       return Promise.resolve().then(() => {
         calls.push(`resume:${String(writer.capacity)}`);
         paused.delete(writer.arn);
+        return { ...writer };
       });
     },
-    certifyPredecessor: () => Promise.resolve(false),
+    certifyPredecessor: () => Promise.resolve(undefined),
     stable: () => Promise.resolve(true),
-    prepare: () => {
+    prepare: (rows) => {
       return Promise.resolve().then(() => {
         calls.push("prerequisite");
+        return rows;
       });
     },
     record: (state) => {
@@ -131,6 +141,70 @@ afterEach(() => {
 });
 
 describe("storage deployment admission", () => {
+  it("refuses a drain that cannot fit before changing any writer admission", async () => {
+    const { port, calls, paused } = fixture();
+    port.assertWorkTime = (required = 0) => {
+      if (required > 60000)
+        throw new StorageTransitionError("transition work deadline");
+    };
+    const cleanup = vi.fn();
+    port.beginCleanup = cleanup;
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("pause");
+    expect(calls).not.toContain("deploy");
+    expect(paused.size).toBe(0);
+    expect(cleanup).not.toHaveBeenCalled();
+  });
+  it("refuses deployment when the initial drain exhausts work, then closes and drains without reopening", async () => {
+    const { port, calls, paused } = fixture();
+    let expired = false;
+    port.assertWorkTime = () => {
+      if (expired) throw new StorageTransitionError("transition work deadline");
+    };
+    const wait = port.wait;
+    port.wait = async (ms) => {
+      await wait(ms);
+      expired = true;
+    };
+    const drain = vi.fn(async (ms: number) => {
+      await wait(ms);
+    });
+    port.drain = drain;
+    const cleanup = vi.fn();
+    port.beginCleanup = cleanup;
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("deploy");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+    expect(cleanup).toHaveBeenCalledOnce();
+    expect(drain).toHaveBeenCalledExactlyOnceWith(900000);
+    expect(paused.has(api.arn)).toBe(true);
+    expect(JSON.parse(calls.at(-1) ?? "{}")).toMatchObject({
+      phase: "paused-forward-fix",
+      admissionClosed: true,
+    });
+  });
+  it("does not begin certification or resume after deployment reaches the work deadline", async () => {
+    const { port, calls, paused } = fixture();
+    let expired = false;
+    port.assertWorkTime = () => {
+      if (expired) throw new StorageTransitionError("transition work deadline");
+    };
+    const deploy = port.deploy;
+    port.deploy = async () => {
+      await deploy();
+      expired = true;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toMatchObject({
+      part: "transition work deadline",
+    });
+    expect(calls).not.toContain("verify");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+    expect(paused.size).toBe(2);
+  });
   it.each([
     [new StorageTransitionError("installed file"), "installed file"],
     [new Error("private-provider-response-with-signed-url"), "unexpected failure"],
@@ -155,6 +229,161 @@ describe("storage deployment admission", () => {
       expect(paused.size).toBe(2);
     },
   );
+  it("accepts only the revision receipt from its own capacity restoration", async () => {
+    const { port, paused } = fixture();
+    const revisions = new Map<string, string>();
+    const restore = port.restore;
+    const discover = port.discover;
+    port.discover = async () =>
+      (await discover()).map((writer) => ({
+        ...writer,
+        revision: revisions.get(writer.arn) ?? writer.revision,
+      }));
+    port.restore = async (writer) => {
+      await restore(writer);
+      const revision = `${writer.revision}-capacity`;
+      revisions.set(writer.arn, revision);
+      return { ...writer, revision };
+    };
+    port.verify = (writer) =>
+      Promise.resolve({
+        ...writer,
+        revision: revisions.get(writer.arn) ?? writer.revision,
+      });
+    await expect(transitionStorageWriters(port)).resolves.toBeUndefined();
+    expect(paused.size).toBe(0);
+  });
+  it("repauses every writer when a revision changes after its restoration receipt", async () => {
+    const { port, paused } = fixture();
+    const restored = new Set<string>();
+    const restore = port.restore;
+    port.restore = async (writer) => {
+      const receipt = await restore(writer);
+      restored.add(writer.arn);
+      return receipt;
+    };
+    port.verify = (writer) =>
+      Promise.resolve({
+        ...writer,
+        revision: restored.has(writer.arn) ? "external-race" : writer.revision,
+      });
+    await expect(transitionStorageWriters(port)).rejects.toThrow("code revision race");
+    expect(paused.size).toBe(2);
+  });
+  it("does not lose an earlier resumed writer's race when restoring the next writer", async () => {
+    const { port, paused } = fixture();
+    let restores = 0;
+    const restore = port.restore;
+    port.restore = async (writer) => {
+      restores++;
+      return restore(writer);
+    };
+    port.verify = (writer) =>
+      Promise.resolve({
+        ...writer,
+        revision:
+          restores === 2 && writer.arn === api.arn ? "later-race" : writer.revision,
+      });
+    await expect(transitionStorageWriters(port)).rejects.toThrow("code revision race");
+    expect(paused.size).toBe(2);
+  });
+  it("attempts remaining writers after a cleanup pause fails and preserves the original error", async () => {
+    const { port, paused } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    const pause = port.pause;
+    let calls = 0;
+    port.pause = async (writer) => {
+      const receipt = await pause(writer);
+      if (++calls === 2) throw new Error("first cleanup pause failed");
+      return receipt;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(calls).toBe(5);
+    expect(paused.size).toBe(2);
+  });
+  it("re-closes a writer whose cleanup pause was followed by reopened admission", async () => {
+    const { port, paused, calls } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    const pause = port.pause;
+    let pauses = 0;
+    port.pause = async (writer) => {
+      const receipt = await pause(writer);
+      if (++pauses === 2) paused.delete(writer.arn);
+      return receipt;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(pauses).toBe(5);
+    expect(paused.size).toBe(2);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(5);
+  });
+  it("retries a cleanup probe that still admits traffic before starting the drain", async () => {
+    const { port, calls, paused } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    let probes = 0;
+    port.probePaused = () => Promise.resolve(++probes !== 4);
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(calls.filter((call) => call === "pause")).toHaveLength(6);
+    expect(calls.lastIndexOf("pause")).toBeLessThan(
+      calls.indexOf("wait:900000", calls.indexOf("deploy")),
+    );
+    expect(paused.size).toBe(2);
+  });
+  it("rechecks an earlier closed writer after closing the remaining writer", async () => {
+    const { port, paused } = fixture();
+    const failure = new Error("original certification failure");
+    port.verify = () => Promise.reject(failure);
+    const pause = port.pause;
+    let pauses = 0;
+    port.pause = async (writer) => {
+      const receipt = await pause(writer);
+      if (++pauses === 3) paused.delete(api.arn);
+      return receipt;
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(pauses).toBe(5);
+    expect(paused.size).toBe(2);
+  });
+  it("records an unconfirmed barrier at the closing deadline without claiming drain or recovery", async () => {
+    const { port, calls } = fixture();
+    const failure = new Error("original certification failure");
+    const records: unknown[] = [];
+    let cleanup = false;
+    port.verify = () => {
+      cleanup = true;
+      return Promise.reject(failure);
+    };
+    port.probePaused = () => Promise.resolve(!cleanup);
+    port.record = (state) => {
+      records.push(state);
+      return Promise.resolve();
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(records.at(-1)).toMatchObject({
+      phase: "paused-forward-fix",
+      cleanupVerified: false,
+      admissionClosed: false,
+    });
+    expect(calls.slice(calls.indexOf("deploy") + 1)).not.toContain("wait:900000");
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+  });
+  it("refuses an API revision change in worker preparation", async () => {
+    const { port, paused, calls } = fixture();
+    port.prepare = (writers) =>
+      Promise.resolve(
+        writers.map((writer) => ({
+          ...writer,
+          revision: writer.arn === api.arn ? "unrelated-api-change" : "worker-receipt",
+        })),
+      );
+    await expect(transitionStorageWriters(port)).rejects.toThrow(
+      "prepared writer identity",
+    );
+    expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
+    expect(paused.size).toBe(2);
+  });
   it("keeps the API paused through code update and creates its worker paused before certifying both", async () => {
     const { port, calls, paused } = fixture();
     await transitionStorageWriters(port);
@@ -189,7 +418,7 @@ describe("storage deployment admission", () => {
     const failure = new StorageTransitionError("deployment");
     const records: unknown[] = [];
     port.deploy = () => Promise.reject(failure);
-    port.certifyPredecessor = () => Promise.resolve(true);
+    port.certifyPredecessor = (writer) => Promise.resolve({ ...writer });
     port.record = (state) => {
       records.push(state);
       return Promise.resolve();
@@ -199,7 +428,74 @@ describe("storage deployment admission", () => {
     expect(records.at(-1)).toMatchObject({
       phase: "recovered-certified-predecessor",
       failure: "deployment",
+      admissionClosed: false,
     });
+  });
+  it("uses cleanup and restore receipts when certifying an unchanged predecessor", async () => {
+    const { port, paused } = fixture();
+    let currentWriter = { ...api };
+    let revision = 0;
+    const failure = new StorageTransitionError("deployment");
+    const records: unknown[] = [];
+    port.discover = () => Promise.resolve([{ ...currentWriter }]);
+    port.deploy = () => Promise.reject(failure);
+    const pause = port.pause,
+      restore = port.restore;
+    port.pause = async (writer) => {
+      await pause(writer);
+      currentWriter = { ...writer, revision: `paused-${String(++revision)}` };
+      return { ...currentWriter };
+    };
+    port.restore = async (writer) => {
+      expect(writer).toEqual(currentWriter);
+      await restore(writer);
+      currentWriter = { ...writer, revision: "recovery-restored" };
+      return { ...currentWriter };
+    };
+    port.certifyPredecessor = () => Promise.resolve({ ...currentWriter });
+    port.record = (state) => {
+      records.push(state);
+      return Promise.resolve();
+    };
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(paused.size).toBe(0);
+    expect(records.at(-1)).toMatchObject({
+      phase: "recovered-certified-predecessor",
+      writers: [{ revision: "recovery-restored" }],
+    });
+  });
+  it("repauses a recovered predecessor if its post-restore certificate raced", async () => {
+    const { port, paused } = fixture();
+    const failure = new StorageTransitionError("deployment");
+    let restored = false;
+    port.deploy = () => Promise.reject(failure);
+    const restore = port.restore;
+    port.restore = async (writer) => {
+      restored = true;
+      return restore(writer);
+    };
+    port.certifyPredecessor = (writer) =>
+      Promise.resolve({
+        ...writer,
+        revision: restored ? "recovery-race" : writer.revision,
+      });
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(paused.has(api.arn)).toBe(true);
+  });
+  it("includes newly owned writers in cleanup even when configuration discovery fails", async () => {
+    const { port, paused } = fixture();
+    const failure = new StorageTransitionError("writer update status");
+    let deployed = false;
+    const discover = port.discover,
+      deploy = port.deploy;
+    port.deploy = async () => {
+      await deploy();
+      deployed = true;
+    };
+    port.owned = () => discover();
+    port.discover = () => (deployed ? Promise.reject(failure) : discover());
+    await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+    expect(paused.size).toBe(2);
   });
   it("leaves both writers paused after a partial rollout even when the old API was certified", async () => {
     const { port, paused } = fixture();
@@ -208,7 +504,7 @@ describe("storage deployment admission", () => {
         throw new Error("code mismatch");
       });
     };
-    port.certifyPredecessor = () => Promise.resolve(true);
+    port.certifyPredecessor = (writer) => Promise.resolve({ ...writer });
     await expect(transitionStorageWriters(port)).rejects.toThrow("code mismatch");
     expect(paused.size).toBe(2);
   });
@@ -643,13 +939,38 @@ it("persists a bounded bootstrap checkpoint and resumes after a stopped or unkno
     },
   });
 });
+it("subtracts setup time from work while reserving closing, maximum drain and final evidence", () => {
+  const root = mkdtempSync(path.join(tmpdir(), "storage-job-setup-"));
+  folders.push(root);
+  const startedAt = 1000000;
+  const afterSetup = startedAt + 8 * 60000;
+  recordStorageJobBudget(root, 45, afterSetup, startedAt);
+  const deadline = storageJobDeadline(root, afterSetup);
+  expect(deadline - afterSetup).toBe(16 * 60000);
+  expect(deadline + (5 + 15 + 1) * 60000).toBe(startedAt + 45 * 60000);
+  expect(
+    JSON.parse(readFileSync(path.join(root, "dist/storage-job.json"), "utf8")),
+  ).toEqual({ startedAt, deadline });
+});
+
+it.each([24, 30, 45])("refuses exhausted work after %i minutes of setup", (setup) => {
+  const root = mkdtempSync(path.join(tmpdir(), "storage-job-expired-"));
+  folders.push(root);
+  const startedAt = 1000000;
+  expect(() =>
+    recordStorageJobBudget(root, 45, startedAt + setup * 60000, startedAt),
+  ).toThrow(StorageTransitionError);
+  expect(() => readFileSync(path.join(root, "dist/storage-job.json"))).toThrow();
+});
+
 it("uses the existing job budget beyond three minutes and still closes worker admission at its deadline", async () => {
   const root = mkdtempSync(path.join(tmpdir(), "storage-job-budget-"));
   folders.push(root);
   const startedAt = 1000000;
   recordStorageJobBudget(root, 45, startedAt);
   const deadline = storageJobDeadline(root, startedAt + 1000);
-  expect(deadline).toBe(startedAt + 40 * 60000);
+  expect(deadline).toBe(startedAt + 24 * 60000);
+  expect(startedAt + 45 * 60000 - deadline).toBeGreaterThanOrEqual(21 * 60000);
   expect(() => storageJobDeadline(root, deadline)).toThrow(StorageTransitionError);
   const { port, paused } = fixture();
   const writer = {
@@ -705,6 +1026,59 @@ it("uses the existing job budget beyond three minutes and still closes worker ad
   expect(paused.has("worker")).toBe(true);
 });
 
+it.each([false, true])(
+  "returns the exact paused bootstrap receipt and closes admission after unknown invocation outcomes (%s)",
+  async (failed) => {
+    const root = mkdtempSync(path.join(tmpdir(), "storage-bootstrap-receipt-"));
+    folders.push(root);
+    mkdirSync(path.join(root, "dist"));
+    const { port, paused, calls } = fixture();
+    const worker = {
+      ...api,
+      logicalId: "ReadModelWorkerDEF456",
+      arn: "worker",
+      capacity: 1,
+      timeout: 60,
+    };
+    let actual: Writer = { ...worker };
+    const restore = port.restore,
+      pause = port.pause;
+    port.verify = () => Promise.resolve({ ...actual });
+    port.restore = async (writer) => {
+      await restore(writer);
+      actual = { ...writer, revision: "worker-admitted" };
+      return { ...actual };
+    };
+    port.pause = async (writer) => {
+      expect(writer.revision).toBe("worker-admitted");
+      await pause(writer);
+      actual = { ...writer, revision: "worker-drained" };
+      return { ...actual };
+    };
+    const failure = new Error("unknown invoke outcome");
+    const result = prepareStorageReadModels({
+      root,
+      sha: "a".repeat(40),
+      writer: worker,
+      port,
+      invoke: () =>
+        failed
+          ? Promise.reject(failure)
+          : Promise.resolve({
+              complete: true,
+              phase: "verification",
+              checkpoint: null,
+              rows: 0,
+              learners: 0,
+            }),
+    });
+    if (failed) await expect(result).rejects.toBe(failure);
+    else expect(await result).toEqual({ ...worker, revision: "worker-drained" });
+    expect(paused.has("worker")).toBe(true);
+    expect(calls).toContain("wait:60000");
+  },
+);
+
 it("rejects unverified completion and prevents automatic predecessor recovery after preparation starts", async () => {
   expect(() =>
     storageBootstrapAnswer({
@@ -730,7 +1104,7 @@ it("rejects unverified completion and prevents automatic predecessor recovery af
       throw new Error("read models not ready");
     });
   };
-  port.certifyPredecessor = () => Promise.resolve(true);
+  port.certifyPredecessor = (writer) => Promise.resolve({ ...writer });
   await expect(transitionStorageWriters(port)).rejects.toThrow("read models not ready");
   expect(paused.size).toBe(2);
   expect(calls.some((call) => call.startsWith("resume:"))).toBe(false);
@@ -746,7 +1120,7 @@ it("cannot recover an already guarded worker left paused by an earlier failed bo
   };
   port.discover = () => Promise.resolve([{ ...api }, worker]);
   port.current = () => Promise.resolve(false);
-  port.certifyPredecessor = () => Promise.resolve(true);
+  port.certifyPredecessor = (writer) => Promise.resolve({ ...writer });
   await expect(transitionStorageWriters(port)).rejects.toBeInstanceOf(
     StorageTransitionError,
   );
