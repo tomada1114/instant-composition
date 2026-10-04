@@ -195,3 +195,4 @@ export { clearLearnerStorage, learnerStorageRevision } from "./lib/learner-stora
 export { useVocabDelete } from "./vocab/use-vocab-delete";
 export { createQueryClient } from "./lib/queries";
 export { QueryClientProvider } from "@tanstack/react-query";
+export { useVocabFinish } from "./vocab/use-vocab-finish";

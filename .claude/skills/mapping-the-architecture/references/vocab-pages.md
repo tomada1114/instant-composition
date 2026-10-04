@@ -65,28 +65,39 @@ The browser persists unsent answers in localStorage `vocab-outbox:<sessionId>` u
 scalar head/tail/count/offset counters and deterministic `:page:<n>` records of at most
 20 answers. Only the head, append page and a bounded recent acknowledgement receipt are
 loaded; there is no growing answer/key/index array or offline backlog cap. A shared
-origin Web Lock serializes every durable mutation across independent documents.
-Unsupported Web Locks or storage refusal fails closed on new writes and preserves
-existing bytes. Page bytes are saved before metadata; recovery checks only the head and
-current/next tail pages. Head/offset comparison makes repeated acknowledgements safe.
-Retry deadlines and conflicts retain the pending head, and all network bodies contain at
-most 20 answers.
+origin Web Lock serializes every durable mutation across independent documents. A small
+`:owner` UUID is adopted under that lock after validating an old six-field metadata/page
+record; adoption preserves original pending/recent answer identities. Unknown owners and
+unreadable records are held. Every instance captures that owner, including an idle
+instance created before another document finishes. Unsupported Web Locks or storage
+refusal fails closed on new writes and preserves existing bytes. Page bytes are saved
+before metadata; recovery checks only the head and current/next tail pages. Head/offset
+comparison makes repeated acknowledgements safe. Retry deadlines and conflicts retain
+the pending head, and all network bodies contain at most 20 answers.
 
 A grade is durably appended before the compact checkpoint and visible feedback advance.
 A failed metadata/checkpoint write keeps the original grade for the next save attempt;
 only one grade and one deferred control event are retained. The most recent bounded
 acknowledgement receipt repairs a crash after acknowledgement but before checkpoint.
 Stop or failed continuation preserves both. Finish waits for all durable answers before
-closing with an empty batch, then removes the active/checkpoint pointers; acknowledged
+closing with an empty batch. After successful close acknowledgement, cleanup reacquires
+the storage lock, verifies the owner and an empty queue, validates known session record
+suffixes, and removes its metadata, recent receipt, pages, removal markers and
+active/checkpoint pointers. The owner is removed last so older instances cannot recreate
+the queue. Concurrent pending appends or unknown/corrupt records prevent cleanup and
+remain available for retry. Prefix matching preserves other session ids. Acknowledged
 pages are removed as they drain. Existing finite queues/endpoints remain replayable.
 
 Only a submitted native logout navigation or a confirmed terminal authentication refusal
-clears `vocab-outbox:` pages, receipts and removal markers and sessionStorage
-`vocab-active:`/`vocab-checkpoint:` pointers. Ordinary visits, reloads and temporary
-network/renewal failures preserve them. The storage lock is acquired before native
-submission, and successful submission plus synchronous invalidation run in the same
-turn. An origin storage revision invalidates stale outbox instances and other documents'
-private checkpoints, preventing late sends or cached state from recreating learner data.
+clears all sessions' `vocab-outbox:` pages, receipts and removal markers and
+sessionStorage `vocab-active:`/`vocab-checkpoint:` pointers. Ordinary visits, reloads
+and temporary network/renewal failures preserve them. The storage lock is acquired
+before native submission, and successful submission plus synchronous invalidation run in
+the same turn. An origin storage revision invalidates stale outbox instances and other
+documents' private checkpoints, preventing late sends or cached state from recreating
+learner data. The epoch is initialized persistently before sharing; unavailable
+persistence never produces a reusable default epoch. Failed replacement falls back to
+epoch removal, and private cleanup is attempted independently of epoch persistence.
 Unrelated browser settings and the authentication cookie-renewal hint are retained.
 
 Compatibility remains available indefinitely: original `/v1/vocab/sessions` delivers

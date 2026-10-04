@@ -34,6 +34,84 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 describe("paged vocabulary session invalidation", () => {
+  it("removes private bytes and invalidates both documents when a logout epoch write hits quota", async () => {
+    const local = storage(),
+      session = storage(),
+      locks = outboxLocks();
+    let full = false;
+    const durable = {
+      ...local,
+      get length() {
+        return local.length;
+      },
+      setItem(key: string, value: string) {
+        if (full && key === "instant-composition-learner-storage:revision")
+          throw new Error("fixture quota");
+        local.setItem(key, value);
+      },
+    };
+    vi.stubGlobal("window", { localStorage: durable, sessionStorage: session });
+    vi.stubGlobal("navigator", { locks });
+    const firstRevision = learnerStorageRevision(),
+      secondRevision = learnerStorageRevision();
+    const first = createPagedOutbox({
+      key: "vocab-outbox:first",
+      storage: durable,
+      locks,
+      valid: () => learnerStorageRevision() === firstRevision,
+      send: () => Promise.resolve("failed" as const),
+    });
+    const second = createPagedOutbox({
+      key: "vocab-outbox:second",
+      storage: durable,
+      locks,
+      valid: () => learnerStorageRevision() === secondRevision,
+      send: () => Promise.resolve("failed" as const),
+    });
+    expect(await first.append(outboxAnswer(0))).toBe(true);
+    expect(await second.append(outboxAnswer(1))).toBe(true);
+    session.setItem("vocab-checkpoint:first", "private");
+    full = true;
+    await clearLearnerStorage();
+    expect(
+      [...local.values.keys()].filter((key) => key.startsWith("vocab-outbox:")),
+    ).toStrictEqual([]);
+    expect([...session.values]).toStrictEqual([]);
+    expect(learnerStorageRevision()).not.toBe(firstRevision);
+    expect(await first.append(outboxAnswer(2))).toBe(false);
+    expect(await second.append(outboxAnswer(3))).toBe(false);
+    expect(
+      [...local.values.keys()].filter((key) => key.startsWith("vocab-outbox:")),
+    ).toStrictEqual([]);
+  });
+  it("fails closed across observations when an initially absent origin epoch cannot be persisted", async () => {
+    const local = storage(),
+      locks = outboxLocks();
+    const durable = {
+      ...local,
+      get length() {
+        return local.length;
+      },
+      setItem(key: string, value: string) {
+        if (key === "instant-composition-learner-storage:revision")
+          throw new Error("fixture quota");
+        local.setItem(key, value);
+      },
+    };
+    vi.stubGlobal("window", { localStorage: durable, sessionStorage: storage() });
+    vi.stubGlobal("navigator", { locks });
+    const revision = learnerStorageRevision();
+    expect(learnerStorageRevision()).not.toBe(revision);
+    const queue = createPagedOutbox({
+      key: "vocab-outbox:initial",
+      storage: durable,
+      locks,
+      valid: () => learnerStorageRevision() === revision,
+      send: () => Promise.resolve("sent" as const),
+    });
+    expect(await queue.append(outboxAnswer(0))).toBe(false);
+    expect([...local.values]).toStrictEqual([]);
+  });
   it("clears every outbox page/receipt/removal marker and private checkpoint while retaining unrelated settings", async () => {
     const local = storage();
     const session = storage();

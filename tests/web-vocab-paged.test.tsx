@@ -241,9 +241,9 @@ describe("continuous vocabulary pages in the DOM", () => {
     front(66);
     await grade();
     expect(screen.getByRole("heading", { name: ja.Vocab.done })).toBeInTheDocument();
-    expect(
-      JSON.parse(localStorage.getItem(`vocab-outbox:${api.id()}`) ?? "{}"),
-    ).toMatchObject({ count: 0 });
+    expect(localStorage.getItem(`vocab-outbox:${api.id()}`)).toBeNull();
+    expect(localStorage.getItem(`vocab-outbox:${api.id()}:owner`)).toBeNull();
+    expect(localStorage.getItem(`vocab-outbox:${api.id()}:recent`)).toBeNull();
     expect(sessionStorage.getItem(`vocab-checkpoint:${api.id()}`)).toBeNull();
     const originals = JSON.parse(pending) as { id: string }[];
     const transmitted = api.calls

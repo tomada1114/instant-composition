@@ -33,12 +33,18 @@ export function useVocabFinish(
       );
       if (!result.ok && result.error.retryAt !== undefined)
         await queue.deferUntil(result.error.retryAt);
+      if (
+        result.ok &&
+        !(await queue.complete(() => {
+          clearVocabCheckpoint(session.sessionId);
+        }))
+      )
+        return err({ code: "ERR_NETWORK" as const });
       return result;
     };
     void finish().then((result) => {
       if (!active) return;
       if (result.ok) {
-        clearVocabCheckpoint(session.sessionId);
         setSummary(result.value);
         void cache.invalidateQueries({ queryKey: ["vocab"] });
       } else setFailed(true);

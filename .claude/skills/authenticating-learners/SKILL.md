@@ -107,8 +107,11 @@ vocabulary storage lock: successful submission immediately invalidates the learn
 storage revision and removes private outboxes and checkpoints in that same turn, before
 pagehide. The storage lock is released before waiting for pagehide; a failed native
 submit retains every learner byte and permits another attempt. Late old outbox drains
-cannot recreate data under the new revision. **REQUIRED:** `building-web-screens` before
-changing either.
+cannot recreate data under the new revision. The origin epoch is initialized before
+queues can share it; if initialization cannot persist, observations fail closed. A quota
+failure while replacing the epoch falls back to deleting it, and private-data cleanup
+runs independently of that write. **REQUIRED:** `building-web-screens` before changing
+either.
 
 ## Which authenticator runs where
 

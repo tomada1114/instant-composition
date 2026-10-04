@@ -430,9 +430,8 @@ describe("an untimed vocabulary session", () => {
       generation: 1,
       answers: [],
     });
-    expect(
-      JSON.parse(localStorage.getItem("vocab-outbox:session-1") ?? "{}"),
-    ).toMatchObject({ count: 0 });
+    expect(localStorage.getItem("vocab-outbox:session-1")).toBeNull();
+    expect(localStorage.getItem("vocab-outbox:session-1:recent")).toBeNull();
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
   });
   it("resends abandoned sessions before starting a fresh session on reload", async () => {
@@ -465,7 +464,7 @@ describe("an untimed vocabulary session", () => {
   });
   it("keeps a failed earlier answer and retries it before dealing a fresh queue", async () => {
     const arrival = "11111111-1111-4111-8111-111111111111";
-    const ids = vi.spyOn(crypto, "randomUUID").mockReturnValue(arrival);
+    vi.spyOn(crypto, "randomUUID").mockReturnValue(arrival);
     const pending = JSON.stringify([
       {
         id: "old:f:v_old",
@@ -512,7 +511,9 @@ describe("an untimed vocabulary session", () => {
     expect(
       calls.find((call) => call.url === "/api/v1/vocab/paged-sessions")?.body,
     ).toStrictEqual({ sessionId: arrival, kind: "today" });
-    expect(ids).toHaveBeenCalledTimes(1);
+    expect(
+      calls.filter((call) => call.url === "/api/v1/vocab/paged-sessions"),
+    ).toHaveLength(1);
     expect(
       screen.getByText(vocabCard().definition, { selector: "p" }),
     ).toBeInTheDocument();
@@ -671,6 +672,11 @@ describe("vocabulary recovery and scoped continuation", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
     await settle();
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
+    expect(
+      [...Array(localStorage.length).keys()]
+        .map((index) => localStorage.key(index))
+        .filter((key) => key?.startsWith("vocab-outbox:session-1") === true),
+    ).toStrictEqual([]);
     expect(
       calls.filter((call) => call.url.endsWith("/finish")).map((call) => call.body),
     ).toStrictEqual([
@@ -951,9 +957,9 @@ describe("deleting a vocabulary card from a talk", () => {
     });
     expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
-    expect(
-      JSON.parse(localStorage.getItem("vocab-outbox:session-1") ?? "{}"),
-    ).toMatchObject({ count: 0 });
+    expect(localStorage.getItem("vocab-outbox:session-1")).toBeNull();
+    expect(localStorage.getItem("vocab-outbox:session-1:recent")).toBeNull();
+    expect(localStorage.getItem("vocab-outbox:session-1:removed:v_own")).toBeNull();
   });
   it("waits for an in-flight answer before deleting its re-ask and does not resend it afterwards", async () => {
     let resolve!: (response: Response) => void;
@@ -995,4 +1001,60 @@ describe("deleting a vocabulary card from a talk", () => {
       answers: [],
     });
   });
+});
+
+it("purges completed empty sessions across continuation and reload without historical outbox keys", async () => {
+  const completed: string[] = [];
+  const calls = fakeApi((call) => {
+    if (call.url === "/api/v1/home")
+      return Response.json(homeView({ kind: "ready", streak: COUNT }));
+    if (call.url === "/api/v1/vocab") return Response.json(vocabHub({ weak: 20 }));
+    if (call.url === "/api/v1/vocab/paged-sessions") {
+      const request = call.body as { sessionId: string };
+      return Response.json(
+        vocabSession({ sessionId: request.sessionId, cards: [], kind: "weak" }),
+      );
+    }
+    if (call.url.endsWith("/finish")) {
+      const id = call.url.split("/").at(-2) ?? "";
+      completed.push(id);
+      return Response.json(vocabSummary({ sessionId: id, kind: "weak", answered: 0 }));
+    }
+    return undefined;
+  });
+  localStorage.setItem("key-mode", "retained");
+  await renderApp("/vocab/study?kind=weak");
+  for (let index = 0; index < 2; index += 1) {
+    await settle();
+    expect(screen.getByText(ja.Vocab.weakDone)).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByRole("button", { name: fill(ja.Vocab.extra, { count: 20 }) }),
+    );
+    await settle(16);
+    await settle();
+  }
+  expect(completed).toHaveLength(3);
+  cleanup();
+  await renderApp("/vocab/study?kind=weak");
+  expect(screen.getByText(ja.Vocab.weakDone)).toBeInTheDocument();
+  expect(completed).toHaveLength(4);
+  expect(new Set(completed).size).toBe(4);
+  expect(
+    [...Array(localStorage.length).keys()]
+      .map((index) => localStorage.key(index))
+      .filter((key) => key?.startsWith("vocab-outbox:") === true),
+  ).toStrictEqual([]);
+  expect(
+    [...Array(sessionStorage.length).keys()]
+      .map((index) => sessionStorage.key(index))
+      .filter(
+        (key) =>
+          key?.startsWith("vocab-checkpoint:") === true ||
+          key?.startsWith("vocab-active:") === true,
+      ),
+  ).toStrictEqual([]);
+  expect(localStorage.getItem("key-mode")).toBe("retained");
+  expect(
+    calls.filter((call) => call.url === "/api/v1/vocab/paged-sessions"),
+  ).toHaveLength(4);
 });

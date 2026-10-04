@@ -1,4 +1,4 @@
-import { VOCAB_STORAGE_LOCK } from "../lib/learner-storage";
+import { outboxAccess } from "./outbox-access";
 import type { QueueStorage } from "../study/answer-queue";
 import type { AnswerInput } from "../study/study-state";
 import type { SendOutcome } from "../lib/api-call";
@@ -25,8 +25,9 @@ export interface PagedOutbox {
   append(answer: AnswerInput): Promise<boolean>;
   flush(): Promise<boolean>;
   removeCard(cardId: string): Promise<boolean>;
+  complete(clear: () => void): Promise<boolean>;
 }
-/** No key listing or whole pending array. Cross-document writes use actual Web Locks in the browser. */
+/** Appends/drains read fixed pages; acknowledged finish validates and purges the empty session under Web Locks. */
 export function createPagedOutbox(options: {
   readonly key: string;
   readonly storage: QueueStorage | undefined;
@@ -34,18 +35,12 @@ export function createPagedOutbox(options: {
   readonly send: (answers: readonly AnswerInput[]) => Promise<SendOutcome>;
   readonly valid?: () => boolean;
 }): PagedOutbox {
-  const { key, storage, locks, send } = options;
+  const { key, storage, send } = options;
   let count = 0;
   let chain = Promise.resolve(true);
+  const access = outboxAccess(options);
   function locked<T>(work: (held: QueueStorage) => T | Promise<T>): Promise<T> {
-    if (storage === undefined || locks === undefined)
-      return Promise.reject(
-        new Error("Durable outbox requires storage and Web Locks."),
-      );
-    return locks.request(VOCAB_STORAGE_LOCK, async () => {
-      if (options.valid?.() === false)
-        throw new Error("Outbox belongs to an invalidated session.");
-      recoverOutbox(storage, key);
+    return access.locked(async (storage) => {
       const result = await work(storage);
       count = outboxMeta(storage, key).count;
       return result;
@@ -79,7 +74,7 @@ export function createPagedOutbox(options: {
   }
   return {
     count() {
-      if (options.valid?.() === false) return 0;
+      if (!access.current()) return 0;
       try {
         if (storage !== undefined) count = outboxMeta(storage, key).count;
       } catch {
@@ -133,6 +128,9 @@ export function createPagedOutbox(options: {
     flush() {
       chain = chain.then(drain);
       return chain;
+    },
+    complete(clear) {
+      return access.complete(clear);
     },
     async removeCard(cardId) {
       try {

@@ -42,6 +42,7 @@ export async function flushEarlierVocabOutboxes(current: string): Promise<boolea
         key.includes(":page:") ||
         key.includes(":removed:") ||
         key.endsWith(":recent") ||
+        key.endsWith(":owner") ||
         key === `${VOCAB_OUTBOX_PREFIX}${current}`
       ) {
         index += 1;

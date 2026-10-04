@@ -3,9 +3,15 @@ const REVISION = "instant-composition-learner-storage:revision";
 /** An origin-wide epoch prevents in-flight old outboxes from recreating another learner's bytes. */
 export function learnerStorageRevision(): string {
   try {
-    return window.localStorage.getItem(REVISION) ?? "0";
+    const storage = window.localStorage;
+    const kept = storage.getItem(REVISION);
+    if (kept !== null) return kept;
+    const revision = crypto.randomUUID();
+    storage.setItem(REVISION, revision);
+    return revision;
   } catch {
-    return "unavailable";
+    // A non-persisted observation never authorizes another observation's writes.
+    return crypto.randomUUID();
   }
 }
 function removePrefixes(storage: Storage, prefixes: readonly string[]): void {
@@ -25,9 +31,18 @@ export async function clearLearnerStorage(navigate?: () => void): Promise<void> 
     navigate?.();
     try {
       window.localStorage.setItem(REVISION, crypto.randomUUID());
+    } catch {
+      try {
+        // Quota prevents growth, but deletion can still invalidate every document.
+        window.localStorage.removeItem(REVISION);
+      } catch {
+        /* Blocked storage remains untouched. */
+      }
+    }
+    try {
       removePrefixes(window.localStorage, ["vocab-outbox:"]);
     } catch {
-      /* Storage refusal cannot expose values or erase unrelated settings. */
+      /* Cleanup is independent of epoch persistence and unrelated settings. */
     }
     try {
       removePrefixes(window.sessionStorage, ["vocab-active:", "vocab-checkpoint:"]);
