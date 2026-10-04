@@ -2978,7 +2978,9 @@ describe("the workflows in .github/workflows", () => {
     expect(source.match(/if: steps.current.outputs.deploy == 'true'/g)).toHaveLength(5);
     expect(source).not.toContain("continue-on-error");
     expect(commands.indexOf("pnpm release smoke")).toBeGreaterThan(
-      commands.indexOf('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app'),
+      commands.indexOf(
+        'node scripts/storage-transition.mjs deploy "$RELEASE_ASSEMBLY"',
+      ),
     );
     expect(source).toContain("cancel-in-progress: false");
     expect(source).not.toContain("download-artifact");
@@ -3001,7 +3003,9 @@ describe("the workflows in .github/workflows", () => {
       command.includes('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" edge --exclusively'),
     );
     const app = commands.findIndex((command) =>
-      command.includes('pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app --exclusively'),
+      command.includes(
+        'node scripts/storage-transition.mjs deploy "$RELEASE_ASSEMBLY"',
+      ),
     );
     expect(build).toBeGreaterThanOrEqual(0);
     expect(foundation).toBeGreaterThan(build);
@@ -3009,6 +3013,39 @@ describe("the workflows in .github/workflows", () => {
     expect(app).toBeGreaterThan(edge);
     expect(commands.join("\n")).toContain(
       '-c "web-dist=$GITHUB_WORKSPACE/apps/web/dist"',
+    );
+    const transition = readFileSync(
+      path.join(repoRoot, "scripts", "lib", "storage-aws.mjs"),
+      "utf8",
+    );
+    expect(transition).toMatch(
+      /"deploy",\s*"--app",\s*assembly,\s*"app",\s*"--exclusively"/,
+    );
+    expect(transition).toContain('"--require-approval",');
+  });
+
+  it("checks storage before credentials and installs only paused certified writers", () => {
+    const source = workflowSource("deploy-dev.yml");
+    const setup = source.indexOf("actions/setup-node@");
+    const budget = source.indexOf("run: node scripts/storage-transition.mjs budget 45");
+    const install = source.indexOf("run: pnpm install --frozen-lockfile");
+    const storage = source.indexOf("run: node scripts/storage-release.mjs current");
+    const verify = source.indexOf(
+      'node scripts/storage-transition.mjs verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"',
+    );
+    const current = source.indexOf("run: pnpm release current");
+    const credentials = source.indexOf("aws-actions/configure-aws-credentials@");
+    expect(setup).toBeGreaterThanOrEqual(0);
+    expect(budget).toBeGreaterThan(setup);
+    expect(install).toBeGreaterThan(budget);
+    expect(storage).toBeGreaterThan(install);
+    expect(verify).toBeGreaterThan(storage);
+    expect(current).toBeGreaterThan(verify);
+    expect(credentials).toBeGreaterThan(current);
+    expect(source).toContain("-c storage-writers-paused=true");
+    expect(source).toContain("checks: read");
+    expect(source).toContain(
+      'node scripts/storage-transition.mjs evidence >> "$GITHUB_STEP_SUMMARY"',
     );
   });
 

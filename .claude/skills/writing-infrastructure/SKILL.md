@@ -107,8 +107,9 @@ a second design.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role
-  before it can deploy anything. A change to it is deployed by hand again, and the PR
-  says so.
+  before it can deploy anything. Storage admission transitions now update this owned
+  stack through the existing CDK bootstrap roles in the dev workflow; the OIDC subject
+  stays unchanged.
 
 ## The deploy role's scope
 
@@ -120,10 +121,14 @@ a second design.
   (`gh api repos/tomada1114/instant-composition/actions/oidc/customization/sub`). A
   name-based subject never matches (#116). Never add a `StringLike` or a wildcard
   subject.
-- **Permission:** only `sts:AssumeRole` on this account's `cdk-*` bootstrap roles, which
+- **Permission:** `sts:AssumeRole` on this account's `cdk-*` bootstrap roles, which
   carry the deploy permissions themselves. The owner chose this scope over administrator
   access. A new resource type needs no change to the role, and neither does a new
   Region: a bootstrap role's name carries its Region, so `cdk-*` matches every one.
+  Storage transitions additionally grant configuration/code inspection, concurrency
+  changes and synchronous probes only on the exact API/worker ARNs discovered from the
+  owned dev app stack. Wildcard function resources, aliases and other stacks are
+  rejected before the deploy-access update.
 - The role's ARN reaches the workflow as the repository **variable**
   `AWS_DEPLOY_ROLE_ARN`, never as a secret and never in the tree. No long-lived AWS
   access key exists anywhere, for a person or for CI.
@@ -154,20 +159,82 @@ a second design.
 
 ## Deploying
 
-- `.github/workflows/deploy-dev.yml` starts after trusted `main` push CI succeeds,
-  checks out that exact SHA and skips it if `main` has advanced before deployment. It
-  fixes one CDK assembly before assuming the OIDC role and deploys `foundation`, `edge`,
-  then `app` from it, without approval; `deploy-access` stays manual. Running
-  deployments are never cancelled; GitHub concurrency does not promise FIFO. Release
-  verification and the read-only CloudFront smoke are described in
+- Storage compatibility is checked before AWS credentials or any deployment by
+  `node scripts/storage-release.mjs current`. The trusted current storage ledger names
+  certified writer contracts and fixture/implementation evidence; a rollback artifact
+  must also supply the recorded storage contract/fingerprint in its immutable release
+  manifest. An unguarded older API is never implicitly allowed. Keep this guard before
+  OIDC when changing the deployment pipeline. The expand/contract and migration recovery
+  procedure is `mapping-the-architecture`'s persistence contract.
+
+- `.github/workflows/deploy-dev.yml` consumes successful trusted main CI. It builds and
+  records one assembly with `storage-writers-paused=true` before OIDC, verifies its
+  exact inventory and storage fixtures, then checks current main. Foundation and edge
+  use the recorded assembly. The storage transition updates deploy-access first for the
+  discovered API, drains it, deploys the paused app assembly, extends access to a newly
+  created worker, certifies all installed writer ZIPs and restores their recorded
+  capacity after any declared readiness prerequisite. Initial guard-only deployment
+  declares only the API, so it does not require an absent worker. Deploys serialize and
+  are never cancelled.
+- Bundle composition is catalog -> release bundle -> storage guard -> release bundle
+  refresh, with `storage.handler` wrapping `release.handler` and the original index.
+  Storage inventory excludes only its own `storage-release.json` and the separately
+  verified outer `release.json`; the outer inventory covers every other file, including
+  the storage manifest. Both SHA and the full reconstructed inventory are checked. Added
+  files, symlinks, different guard bytes and outer drift fail certification.
+- Every writer uses `storage.handler`. Its bundle records release SHA, certified writer
+  fingerprint and every packaged file hash. A separate read-only probe works for API and
+  scheduler events. The transition verifies AWS CodeSha256 and all ZIP entries without
+  executing a learner request while capacity is zero.
+- Reserved concurrency is declared zero through the whole CloudFormation code and
+  configuration update. A confirmed synchronous throttle establishes the admission
+  barrier, then the transition waits the maximum configured Lambda timeout, including a
+  possible 900 seconds. Upstream retries admitted after restoration run certified code.
+  Failed/partial rollouts remain paused. Automatic recovery is limited to API-only
+  predecessors whose unchanged bytes and stable CloudFormation are certified; an
+  existing worker may be left by an earlier failed bootstrap, so guarded bytes alone
+  never permit recovery. Repeated runs rediscover actual configuration; preguard API
+  recovery requires a compatible forward fix.
+- An assembly declaring a read-model worker requires bootstrap before API admission. API
+  stays at zero while only the certified worker temporarily runs at one. Private
+  RequestResponse payload files carry exactly `{storageBootstrap:true,checkpoint}`;
+  bounded discovery/preparation/verification replies save a release/code-bound resume
+  checkpoint. A durable system bootstrap row introduced with the worker owns resume
+  across fresh CI jobs; a local mode600 checkpoint is only a job cache. Trusted SHA,
+  contract and writer fingerprint come from the immutable guard's second handler
+  context, forwarded unchanged by the release wrapper. Catalog and practice-day validity
+  bind progress, while every verification page rechecks current learner
+  source/model/profile identities. A completed cache restarts verification rather than
+  returning cached completion. Completion requires verified current/next-day projections
+  and drained requested-day work through the worker's owning coordinator. EventBridge
+  ticks share reserved one and store CAS, so every tick remains bounded. The operator
+  pauses the worker again, confirms synchronous throttle and drains its configured
+  timeout even after an unknown invoke outcome. Failed readiness remains paused for a
+  forward fix; it never recovers the predecessor after preparation starts. The job
+  summary records phase/counts/completion, omitting the private checkpoint. The existing
+  45-minute job budget is recorded once the Node24 runtime is ready before install with
+  five minutes reserved for pause/drain cleanup; bootstrap checks that absolute deadline
+  before each bounded invocation. A stopped job leaves durable progress for the next
+  trusted run instead of restarting discovery. No direct table permission or
+  execution-role assumption is added.
+- Capacity restoration intentionally differs from the paused template: API returns to
+  unreserved and worker to its recorded one. The next transition explicitly sets zero
+  again before deploying another paused assembly, so this drift is repeat-safe. Current
+  main and code revisions are checked immediately before/after restoration; the shared
+  deploy concurrency group is required because Lambda concurrency changes have no
+  code-revision compare-and-swap. Transition phase evidence is persisted in the job
+  summary. Publisher-generated assembly `.cache` files are derived outputs; postdeploy
+  certification uses fetched ZIP contents rather than cache file names. The immutable
+  web/API/catalog release checks and read-only CloudFront smoke are described in
   [the deployment release checks](references/releases.md).
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
-  by the bootstrap roles, so the deploy role keeps its one permission. Fingerprinted
-  `assets/*` are cached for a year and never pruned; everything else is `no-cache`,
-  pruned, and its upload invalidates `/*`. Without `web-dist` nothing is uploaded, so
-  synthesis, the tests and a hand deploy of `foundation` need no build, and a hand
-  deploy of `app` without it removes the uploads but keeps the files.
+  by the bootstrap roles, so uploads need no direct S3 or CloudFront permissions on the
+  deploy role. Fingerprinted `assets/*` are cached for a year and never pruned;
+  everything else is `no-cache`, pruned, and its upload invalidates `/*`. Without
+  `web-dist` nothing is uploaded, so synthesis, the tests and a hand deploy of
+  `foundation` need no build, and a hand deploy of `app` without it removes the uploads
+  but keeps the files.
 - The entry upload also waits on the API function's update: a new bundle may require
   additive response fields that the previous API does not yet serve. The old bundle
   keeps working against the new API while the assets and entry are uploaded.

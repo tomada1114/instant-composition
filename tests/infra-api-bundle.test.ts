@@ -64,6 +64,7 @@ describe("the dev app stack's function bundle", () => {
     expect(release.files).toHaveProperty("index.mjs");
     expect(release.files).toHaveProperty("catalog/en/ja.json");
     verifyFiles(bundle, release);
+    expect(existsSync(path.join(bundle, "storage.mjs"))).toBe(true);
     const catalog = path.join(bundle, path.relative("/var/task", LAMBDA_CATALOG_PATH));
     expect(JSON.parse(readFileSync(catalog, "utf8"))).toMatchObject({
       target: "en",
@@ -79,7 +80,7 @@ describe("the dev app stack's function bundle", () => {
       [
         "--input-type=module",
         "-e",
-        `const { handler } = await import(${JSON.stringify(path.join(bundle, "release.mjs"))});
+        `const { handler } = await import(${JSON.stringify(path.join(bundle, "storage.mjs"))});
 const answer = await handler({
   version: "2.0", routeKey: "$default", rawPath: "/api/v1/nowhere", rawQueryString: "",
   headers: { host: "example.cloudfront.net" }, isBase64Encoded: false,
@@ -122,7 +123,7 @@ process.stderr.write(JSON.stringify({ status: answer.statusCode }));`,
       [
         "--input-type=module",
         "-e",
-        `await import(${JSON.stringify(path.join(bundle, "release.mjs"))});`,
+        `await import(${JSON.stringify(path.join(bundle, "storage.mjs"))});`,
       ],
       { cwd: bundle, encoding: "utf8", env: { PATH: process.env["PATH"] ?? "" } },
     );

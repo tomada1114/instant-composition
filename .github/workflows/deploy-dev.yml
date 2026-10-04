@@ -2,8 +2,9 @@ name: Deploy dev
 
 # `dev` deploys after successful CI for a trusted main push, with no approval. The job
 # assumes the deploy role from infra/'s `deploy-access` stack through GitHub's
-# OIDC token, so no AWS access key exists anywhere; that role may only assume
-# the CDK bootstrap roles, which do the deploying. Its ARN is the repository
+# OIDC token, so no AWS access key exists anywhere. It assumes the CDK bootstrap
+# roles for deployment and receives exact owned writer admission permissions.
+# Its ARN is the repository
 # variable AWS_DEPLOY_ROLE_ARN, set from the stack's `DeployRoleArn` output.
 # The web build reaches the SPA bucket through the `app` stack itself, so the
 # role needs no S3 or CloudFront permission of its own.
@@ -57,8 +58,14 @@ jobs:
         with:
           node-version-file: .node-version
 
+      - name: Record the deployment job time budget
+        run: node scripts/storage-transition.mjs budget 45
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Verify storage read/write and rollback compatibility
+        run: node scripts/storage-release.mjs current
 
       - name: Verify trusted CI and checkout identity
         run: pnpm release trust "$GITHUB_EVENT_PATH" "$RELEASE_SHA" "$RELEASE_REPOSITORY"
@@ -76,7 +83,7 @@ jobs:
           ALARM_EMAIL: ${{ secrets.ALARM_EMAIL }}
         run: |
           set -euo pipefail
-          context=(-c stage=dev -c "web-dist=$GITHUB_WORKSPACE/apps/web/dist")
+          context=(-c stage=dev -c storage-writers-paused=true -c "web-dist=$GITHUB_WORKSPACE/apps/web/dist")
           if [ -n "$ALARM_EMAIL" ]; then
             context+=(-c "alarm-email=$ALARM_EMAIL")
           else
@@ -85,6 +92,7 @@ jobs:
           pnpm cdk synth "${context[@]}" --output "$RELEASE_ASSEMBLY"
           pnpm release record "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
           pnpm release verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
+          node scripts/storage-transition.mjs verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
 
       - name: Skip a superseded main release
         id: current
@@ -117,12 +125,12 @@ jobs:
       # ALARM_EMAIL is a secret so the address stays masked in the run's log;
       # a deploy without it removes the alarm topic's subscription, so its
       # absence is reported rather than silent.
-      - name: Deploy the app stack
+      - name: Drain, certify and resume the storage writers
         if: steps.current.outputs.deploy == 'true'
-        run: |
-          set -euo pipefail
-          pnpm release verify "$RELEASE_ASSEMBLY" "$RELEASE_SHA"
-          pnpm cdk deploy --app "$RELEASE_ASSEMBLY" app --exclusively --require-approval never --outputs-file "$GITHUB_WORKSPACE/dist/deploy-outputs.json"
+        env:
+          STORAGE_DEPLOY_ROLE_ARN: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/storage-transition.mjs deploy "$RELEASE_ASSEMBLY" "$RELEASE_SHA" "$STORAGE_DEPLOY_ROLE_ARN" "$RELEASE_REPOSITORY"
 
       - name: Smoke the deployed CloudFront release
         if: steps.current.outputs.deploy == 'true'
@@ -132,6 +140,10 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+          if [ -f dist/storage-transition.json ]; then
+            cat dist/storage-transition.json >> "$GITHUB_STEP_SUMMARY"
+          fi
+          node scripts/storage-transition.mjs evidence >> "$GITHUB_STEP_SUMMARY"
           if [ -f dist/release.json ]; then
             cat dist/release.json >> "$GITHUB_STEP_SUMMARY"
           fi

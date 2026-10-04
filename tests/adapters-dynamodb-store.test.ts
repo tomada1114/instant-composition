@@ -9,6 +9,8 @@ import {
   createLearnerTable,
   deleteLearnerTable,
   localDynamoDbClient,
+  StorageSchemaError,
+  executeStorageMaintenance,
 } from "@instant-composition/adapters";
 import {
   DEFAULT_PROFILE,
@@ -17,7 +19,15 @@ import {
   type LearnerStore,
 } from "@instant-composition/application";
 
-import { makeReview, makeStats, makeTalk, without } from "./application-fixtures";
+import {
+  makeItem,
+  makeReview,
+  makeStats,
+  makeTalk,
+  makePersonalCard,
+  makeVocabProgress,
+  without,
+} from "./application-fixtures";
 
 // The DynamoDB store's side of the wire, against a fake DynamoDB on a loopback
 // port: what each call asks for, and how each answer is read. The contract
@@ -33,6 +43,20 @@ interface Call {
 interface Answer {
   readonly status: number;
   readonly body: unknown;
+}
+
+/** The real AWS wire shape, built from complete independently defined fixtures. */
+function wire(value: unknown): unknown {
+  if (value === null) return { NULL: true };
+  if (typeof value === "string") return { S: value };
+  if (typeof value === "number") return { N: String(value) };
+  if (typeof value === "boolean") return { BOOL: value };
+  if (Array.isArray(value)) return { L: value.map(wire) };
+  return {
+    M: Object.fromEntries(
+      Object.entries(value as object).map(([key, part]) => [key, wire(part)]),
+    ),
+  };
 }
 
 const JSON_1_0 = "application/x-amz-json-1.0";
@@ -96,14 +120,27 @@ function storeOf(learner = "learner-a"): LearnerStore {
 
 describe("a commit", () => {
   it("is one TransactWriteItems in the learner's partition, a resent answer refused by attribute_not_exists", async () => {
+    answers.push({
+      status: 200,
+      body: {
+        Item: { type: { S: "stats" }, version: { N: "3" }, value: wire(makeStats()) },
+      },
+    });
     await storeOf().commit({
       puts: [{ type: "review", value: makeReview() }],
       updates: [{ entry: { type: "stats", value: makeStats() }, version: 3 }],
       expect: [{ key: { type: "round", id: "r1" }, version: null }],
     });
 
-    expect(calls.map((call) => call.operation)).toStrictEqual(["TransactWriteItems"]);
-    const items = calls[0]?.body["TransactItems"] as Record<
+    expect(calls.map((call) => call.operation)).toStrictEqual([
+      "GetItem",
+      "TransactWriteItems",
+    ]);
+    expect(calls[0]?.body).toMatchObject({
+      ConsistentRead: true,
+      Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "STATS" } },
+    });
+    const items = calls.at(-1)?.body["TransactItems"] as Record<
       string,
       Record<string, unknown>
     >[];
@@ -115,7 +152,7 @@ describe("a commit", () => {
       ),
     ).toStrictEqual([
       "attribute_not_exists(#pk)",
-      "#version = :version",
+      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema)",
       "attribute_not_exists(#pk)",
     ]);
     expect(items[0]?.["Put"]?.["Item"]).toMatchObject({
@@ -135,6 +172,28 @@ describe("a commit", () => {
   });
 
   it("deletes a personal card under CARD# at the version read, in the same transaction", async () => {
+    answers.push(
+      {
+        status: 200,
+        body: {
+          Item: {
+            type: { S: "card" },
+            version: { N: "2" },
+            value: wire(makePersonalCard({ id: "p_a#b" })),
+          },
+        },
+      },
+      {
+        status: 200,
+        body: {
+          Item: {
+            type: { S: "vocabItem" },
+            version: { N: "1" },
+            value: wire(makeVocabProgress({ cardId: "p_a#b" })),
+          },
+        },
+      },
+    );
     await storeOf().commit({
       puts: [],
       updates: [],
@@ -145,14 +204,15 @@ describe("a commit", () => {
       ],
     });
 
-    const items = calls[0]?.body["TransactItems"] as Record<
+    const items = calls.at(-1)?.body["TransactItems"] as Record<
       string,
       Record<string, unknown>
     >[];
     expect(items.map((item) => item["Delete"])).toMatchObject([
       {
         Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
-        ConditionExpression: "#version = :version",
+        ConditionExpression:
+          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema)",
         ExpressionAttributeValues: { ":version": { N: "2" } },
       },
       { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
@@ -160,6 +220,16 @@ describe("a commit", () => {
   });
 
   it("writes an open talk's expiry beside its value as the TTL attribute, and a kept talk without one", async () => {
+    answers.push({
+      status: 200,
+      body: {
+        Item: {
+          type: { S: "talk" },
+          version: { N: "1" },
+          value: wire(makeTalk({ id: "t2" })),
+        },
+      },
+    });
     await storeOf().commit({
       puts: [
         { type: "talk", value: makeTalk({ id: "t#1", expiresAt: 1_790_000_000 }) },
@@ -173,7 +243,7 @@ describe("a commit", () => {
       expect: [],
     });
 
-    const items = calls[0]?.body["TransactItems"] as Record<
+    const items = calls.at(-1)?.body["TransactItems"] as Record<
       string,
       Record<string, Record<string, unknown>>
     >[];
@@ -252,14 +322,7 @@ describe("a read", () => {
     const row = (id: string) => ({
       type: { S: "review" },
       version: { N: "1" },
-      value: {
-        M: {
-          id: { S: id },
-          sessionId: { S: "r1" },
-          answeredAt: { N: id === "a" ? "2" : "1" },
-          detail: { M: {} },
-        },
-      },
+      value: wire(makeReview({ id, answeredAt: id === "a" ? 2 : 1 })),
     });
     answers.push(
       {
@@ -298,9 +361,7 @@ describe("a read", () => {
           {
             type: { S: "review" },
             version: { N: "1" },
-            value: {
-              M: { id: { S: "a1" }, answeredAt: { N: "5" }, detail: { M: {} } },
-            },
+            value: wire(makeReview({ id: "a1", answeredAt: 5 })),
           },
         ],
       },
@@ -322,13 +383,7 @@ describe("a read", () => {
           {
             type: { S: "item" },
             version: { N: "7" },
-            value: {
-              M: {
-                item: { M: { kind: { S: "composition" }, id: { S: "c9" } } },
-                last: { NULL: true },
-                previous: { NULL: true },
-              },
-            },
+            value: wire(makeItem({ item: { kind: "composition", id: "c9" } })),
           },
         ],
       },
@@ -363,7 +418,7 @@ describe("a read", () => {
   it("refuses a row with no version rather than guessing one", async () => {
     answers.push({ status: 200, body: { Item: { value: { M: {} } } } });
 
-    await expect(storeOf().settings()).rejects.toThrow(TypeError);
+    await expect(storeOf().settings()).rejects.toThrow(StorageSchemaError);
   });
 });
 
@@ -396,6 +451,7 @@ describe("the learner directory", () => {
       PK: { S: "IDENTITY#sub%231" },
       SK: { S: "LEARNER" },
       type: { S: "identity" },
+      schemaVersion: { N: "1" },
       version: { N: "1" },
       value: { M: { learnerId: { S: "learner-a" } } },
     });
@@ -439,12 +495,20 @@ describe("the learner directory", () => {
     answers.push(
       {
         status: 200,
-        body: { Item: { value: { M: { learnerId: { S: "learner-a" } } } } },
+        body: {
+          Item: {
+            type: { S: "identity" },
+            version: { N: "1" },
+            value: { M: { learnerId: { S: "learner-a" } } },
+          },
+        },
       },
       {
         status: 200,
         body: {
           Item: {
+            type: { S: "profile" },
+            version: { N: "1" },
             value: {
               M: {
                 timeZone: { S: "Asia/Tokyo" },
@@ -482,7 +546,13 @@ describe("the learner directory", () => {
   it("refuses a mapping whose learner has no profile rather than inventing one", async () => {
     answers.push({
       status: 200,
-      body: { Item: { value: { M: { learnerId: { S: "learner-a" } } } } },
+      body: {
+        Item: {
+          type: { S: "identity" },
+          version: { N: "1" },
+          value: { M: { learnerId: { S: "learner-a" } } },
+        },
+      },
     });
 
     await expect(directoryOf().learnerOf("sub-1")).rejects.toThrow(TypeError);
@@ -491,7 +561,7 @@ describe("the learner directory", () => {
   it("refuses a row with no value", async () => {
     answers.push({ status: 200, body: { Item: { version: { N: "1" } } } });
 
-    await expect(directoryOf().learnerOf("sub-1")).rejects.toThrow(TypeError);
+    await expect(directoryOf().learnerOf("sub-1")).rejects.toThrow(StorageSchemaError);
   });
 });
 
@@ -523,5 +593,189 @@ describe("DynamoDB local", () => {
         { AttributeName: "SK", KeyType: "RANGE" },
       ],
     });
+  });
+});
+
+describe("the explicit storage maintenance adapter", () => {
+  const settings = { topics: ["daily"], focus: [], dailySize: 5, sound: true };
+  const key = { PK: "LEARNER#learner-a", SK: "SETTINGS" };
+  const options = () => ({ table: "learners", region: "ap-northeast-1", endpoint });
+  const wireRow = (row: Record<string, unknown>) =>
+    Object.fromEntries(Object.entries(row).map(([name, value]) => [name, wire(value)]));
+  it("pages a bounded consistent raw inventory without rewriting reads", async () => {
+    const row = { ...key, type: "settings", version: 1, value: settings };
+    answers.push({
+      status: 200,
+      body: { Items: [wireRow(row)], LastEvaluatedKey: wireRow(key) },
+    });
+    expect(
+      await executeStorageMaintenance({ ...options(), command: "page", cursor: null }),
+    ).toStrictEqual({ rows: [row], cursor: key });
+    expect(calls[0]?.body).toMatchObject({ Limit: 100, ConsistentRead: true });
+    answers.push({ status: 200, body: {} });
+    expect(
+      await executeStorageMaintenance({ ...options(), command: "page", cursor: key }),
+    ).toStrictEqual({ rows: [], cursor: null });
+    expect(calls[1]?.body).toHaveProperty("ExclusiveStartKey", wireRow(key));
+  });
+  it("gets one row consistently and distinguishes an absent key", async () => {
+    const row = { ...key, type: "settings", version: 1, value: settings };
+    answers.push({ status: 200, body: { Item: wireRow(row) } });
+    expect(
+      await executeStorageMaintenance({ ...options(), command: "get", key }),
+    ).toStrictEqual(row);
+    expect(calls[0]?.body).toHaveProperty("ConsistentRead", true);
+    expect(
+      await executeStorageMaintenance({ ...options(), command: "get", key }),
+    ).toBeNull();
+  });
+  it.each([0, 1])(
+    "replaces only the expected row/schema revision %s",
+    async (schema) => {
+      const row = {
+        ...key,
+        type: "settings",
+        version: 2,
+        schemaVersion: 1,
+        value: settings,
+      };
+      const source = {
+        ...key,
+        type: "settings",
+        version: 1,
+        schemaVersion: schema,
+        value: settings,
+      };
+      answers.push({ status: 200, body: { Item: wireRow(source) } });
+      expect(
+        await executeStorageMaintenance({
+          ...options(),
+          command: "replace",
+          key,
+          row,
+          version: 1,
+          schema,
+        }),
+      ).toBe(true);
+      expect(calls.at(-1)?.body).toMatchObject({
+        ConditionExpression:
+          schema === 0
+            ? "#version = :version AND (attribute_not_exists(#schema) OR #schema = :schema)"
+            : "#version = :version AND #schema = :schema",
+        ExpressionAttributeValues: {
+          ":version": { N: "1" },
+          ":schema": { N: String(schema) },
+        },
+      });
+      answers.push(
+        { status: 200, body: { Item: wireRow(source) } },
+        failure("ConditionalCheckFailedException"),
+      );
+      expect(
+        await executeStorageMaintenance({
+          ...options(),
+          command: "replace",
+          key,
+          row,
+          version: 1,
+          schema,
+        }),
+      ).toBe(false);
+    },
+  );
+  it("refuses an unknown legacy source shape before replacing it", async () => {
+    const source = {
+      ...key,
+      type: "settings",
+      version: 1,
+      value: { ...settings, futurePersistedField: "retain" },
+    };
+    answers.push({ status: 200, body: { Item: wireRow(source) } });
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row: {
+          ...key,
+          type: "settings",
+          version: 2,
+          schemaVersion: 1,
+          value: settings,
+        },
+        version: 1,
+        schema: 0,
+      }),
+    ).rejects.toBeInstanceOf(StorageSchemaError);
+    expect(calls.map((call) => call.operation)).toStrictEqual(["GetItem"]);
+  });
+  it("refuses invalid replacements before sending a destructive write", async () => {
+    const row = {
+      ...key,
+      type: "settings",
+      version: 2,
+      schemaVersion: 2,
+      value: settings,
+    };
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row,
+        version: 1,
+        schema: 0,
+      }),
+    ).rejects.toBeInstanceOf(StorageSchemaError);
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row: { ...row, schemaVersion: 1, version: 3 },
+        version: 1,
+        schema: 0,
+      }),
+    ).rejects.toThrow("Invalid migration replacement");
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row: { ...row, schemaVersion: 1, SK: "OTHER" },
+        version: 1,
+        schema: 0,
+      }),
+    ).rejects.toThrow("Invalid migration replacement");
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row: { ...row, schemaVersion: 1 },
+        version: 1,
+        schema: 2,
+      }),
+    ).rejects.toBeInstanceOf(StorageSchemaError);
+    expect(calls).toHaveLength(0);
+  });
+  it("propagates provider failures without pretending a write succeeded", async () => {
+    answers.push(failure("AccessDeniedException"));
+    await expect(
+      executeStorageMaintenance({
+        ...options(),
+        command: "replace",
+        key,
+        row: {
+          ...key,
+          type: "settings",
+          version: 2,
+          schemaVersion: 1,
+          value: settings,
+        },
+        version: 1,
+        schema: 0,
+      }),
+    ).rejects.toThrow("AccessDeniedException");
   });
 });

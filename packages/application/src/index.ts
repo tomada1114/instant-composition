@@ -1,4 +1,9 @@
 // Commands, queries and the ports they need, written over `@instant-composition/domain`.
+export type {
+  StorageBootstrapRelease,
+  ReadModelBootstrapState,
+  ReadModelBootstrapStorage,
+} from "./storage-bootstrap";
 export {
   learnerId,
   requestContext,

@@ -1,0 +1,1776 @@
+{
+  "contract": "storage-v1",
+  "fixtures": [
+    {
+      "name": "identity",
+      "row": {
+        "PK": "IDENTITY#fixture-sub",
+        "SK": "LEARNER",
+        "type": "identity",
+        "version": 9,
+        "value": {
+          "learnerId": "fixture-owner"
+        }
+      },
+      "expected": {
+        "learnerId": "fixture-owner"
+      }
+    },
+    {
+      "name": "profile",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "PROFILE",
+        "type": "profile",
+        "version": 9,
+        "value": {
+          "timeZone": "Europe/London",
+          "l1": "ja",
+          "target": "en",
+          "uiLocale": "ja"
+        }
+      },
+      "expected": {
+        "timeZone": "Europe/London",
+        "l1": "ja",
+        "target": "en",
+        "uiLocale": "ja"
+      }
+    },
+    {
+      "name": "settings",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "SETTINGS",
+        "type": "settings",
+        "version": 9,
+        "value": {
+          "topics": [
+            "work"
+          ],
+          "focus": [],
+          "dailySize": 10,
+          "sound": true,
+          "gradeKeys": {
+            "ok": "KeyJ",
+            "ng": "KeyF",
+            "hard": "KeyK"
+          },
+          "newPerDay": 5,
+          "reviewsPerDay": null,
+          "vocabNewPerDay": 10,
+          "vocabReviewsPerDay": 100
+        }
+      },
+      "expected": {
+        "topics": [
+          "work"
+        ],
+        "focus": [],
+        "dailySize": 10,
+        "sound": true,
+        "gradeKeys": {
+          "ok": "KeyJ",
+          "ng": "KeyF",
+          "hard": "KeyK"
+        },
+        "newPerDay": 5,
+        "reviewsPerDay": null,
+        "vocabNewPerDay": 10,
+        "vocabReviewsPerDay": 100
+      }
+    },
+    {
+      "name": "stats",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "STATS",
+        "type": "stats",
+        "version": 9,
+        "value": {
+          "points": 0,
+          "completedDays": [],
+          "firstDay": null,
+          "said": 0,
+          "practicedDays": 0,
+          "level": null,
+          "levelWindow": [],
+          "openRound": null,
+          "titles": [],
+          "levelMode": "manual"
+        }
+      },
+      "expected": {
+        "points": 0,
+        "completedDays": [],
+        "firstDay": null,
+        "said": 0,
+        "practicedDays": 0,
+        "level": null,
+        "levelWindow": [],
+        "openRound": null,
+        "titles": [],
+        "levelMode": "manual"
+      }
+    },
+    {
+      "name": "round",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1",
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null
+        }
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null
+      }
+    },
+    {
+      "name": "review",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1#ANSWER#a1",
+        "type": "review",
+        "version": 9,
+        "value": {
+          "id": "a1",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "outcome": "good",
+          "before": null,
+          "after": null,
+          "fsrs": {
+            "before": null,
+            "after": {
+              "stability": 2.3065,
+              "difficulty": 2.118,
+              "reps": 1,
+              "lapses": 0,
+              "lastDay": "2026-09-22",
+              "dueDay": "2026-09-25"
+            }
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "grade": "good",
+            "timedOut": false,
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000
+          },
+          "revision": 7
+        }
+      },
+      "expected": {
+        "id": "a1",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "outcome": "good",
+        "before": null,
+        "after": null,
+        "fsrs": {
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          }
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "grade": "good",
+          "timedOut": false,
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        },
+        "revision": 7
+      }
+    },
+    {
+      "name": "portion",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "PORTION#2026-09-22",
+        "type": "portion",
+        "version": 9,
+        "value": {
+          "day": "2026-09-22",
+          "target": 10,
+          "progress": 0,
+          "completedAt": null,
+          "completedRound": null
+        }
+      },
+      "expected": {
+        "day": "2026-09-22",
+        "target": 10,
+        "progress": 0,
+        "completedAt": null,
+        "completedRound": null
+      }
+    },
+    {
+      "name": "day",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "DAY#2026-09-22",
+        "type": "day",
+        "version": 9,
+        "value": {
+          "day": "2026-09-22",
+          "answers": 0,
+          "firstPass": 0,
+          "roundsStarted": 1,
+          "roundsFinished": 0,
+          "lastFinishedRound": null
+        }
+      },
+      "expected": {
+        "day": "2026-09-22",
+        "answers": 0,
+        "firstPass": 0,
+        "roundsStarted": 1,
+        "roundsFinished": 0,
+        "lastFinishedRound": null
+      }
+    },
+    {
+      "name": "item",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ITEM#composition#c1",
+        "type": "item",
+        "version": 9,
+        "value": {
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "fsrs": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "okDays": [
+            "2026-09-22"
+          ],
+          "mastered": null,
+          "placement": {
+            "topic": "work",
+            "subtopic": "meetings"
+          },
+          "last": {
+            "sessionId": "r1",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "answeredAt": 2000
+          },
+          "previous": null,
+          "revision": 7
+        }
+      },
+      "expected": {
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "fsrs": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "okDays": [
+          "2026-09-22"
+        ],
+        "mastered": null,
+        "placement": {
+          "topic": "work",
+          "subtopic": "meetings"
+        },
+        "last": {
+          "sessionId": "r1",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "answeredAt": 2000
+        },
+        "previous": null,
+        "revision": 7
+      }
+    },
+    {
+      "name": "talk",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "TALK#t1",
+        "type": "talk",
+        "version": 9,
+        "value": {
+          "id": "t1",
+          "status": "open",
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "scene": {
+            "partner": "近所の人",
+            "place": "マンションのエレベーター",
+            "relation": "初対面の隣人",
+            "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+          },
+          "opening": "Hi! Are you new around here?",
+          "turns": [
+            {
+              "n": 1,
+              "partnerLine": "Hi! Are you new around here?",
+              "japanese": "先週引っ越してきました。",
+              "english": "I moved here last week.",
+              "judgment": {
+                "verdict": "corrected",
+                "modelAnswer": "I just moved here last week.",
+                "point": "「引っ越してきた」→ just moved here"
+              },
+              "reply": "Oh, welcome! How do you like it so far?",
+              "revealCount": 2
+            }
+          ],
+          "model": {
+            "provider": "stand-in",
+            "modelId": "stand-in",
+            "prompts": {
+              "talk-scene": "talk-scene@1",
+              "talk-teacher": "talk-teacher@1",
+              "talk-partner": "talk-partner@1"
+            }
+          }
+        }
+      },
+      "expected": {
+        "id": "t1",
+        "status": "open",
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "scene": {
+          "partner": "近所の人",
+          "place": "マンションのエレベーター",
+          "relation": "初対面の隣人",
+          "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+        },
+        "opening": "Hi! Are you new around here?",
+        "turns": [
+          {
+            "n": 1,
+            "partnerLine": "Hi! Are you new around here?",
+            "japanese": "先週引っ越してきました。",
+            "english": "I moved here last week.",
+            "judgment": {
+              "verdict": "corrected",
+              "modelAnswer": "I just moved here last week.",
+              "point": "「引っ越してきた」→ just moved here"
+            },
+            "reply": "Oh, welcome! How do you like it so far?",
+            "revealCount": 2
+          }
+        ],
+        "model": {
+          "provider": "stand-in",
+          "modelId": "stand-in",
+          "prompts": {
+            "talk-scene": "talk-scene@1",
+            "talk-teacher": "talk-teacher@1",
+            "talk-partner": "talk-partner@1"
+          }
+        }
+      }
+    },
+    {
+      "name": "vocabItem",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ITEM#vocab#v1",
+        "type": "vocabItem",
+        "version": 9,
+        "value": {
+          "cardId": "v1",
+          "source": {
+            "kind": "catalog"
+          },
+          "state": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "firstDay": "2026-09-22"
+        }
+      },
+      "expected": {
+        "cardId": "v1",
+        "source": {
+          "kind": "catalog"
+        },
+        "state": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "firstDay": "2026-09-22"
+      }
+    },
+    {
+      "name": "vocabSession",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#s1",
+        "type": "vocabSession",
+        "version": 9,
+        "value": {
+          "id": "s1",
+          "kind": "today",
+          "category": null,
+          "day": "2026-09-22",
+          "deck": [
+            "v1",
+            "v2"
+          ],
+          "startedAt": 1000,
+          "finishedAt": null,
+          "tomorrow": null
+        }
+      },
+      "expected": {
+        "id": "s1",
+        "kind": "today",
+        "category": null,
+        "day": "2026-09-22",
+        "deck": [
+          "v1",
+          "v2"
+        ],
+        "startedAt": 1000,
+        "finishedAt": null,
+        "tomorrow": null
+      }
+    },
+    {
+      "name": "vocabReview",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#s1#ANSWER#va1",
+        "type": "vocabReview",
+        "version": 9,
+        "value": {
+          "id": "va1",
+          "sessionId": "s1",
+          "cardId": "v1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "pass": "first",
+          "grade": "good",
+          "elapsedMs": 4000,
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "snapshot": {
+            "headword": "give up",
+            "meaning": "あきらめる",
+            "category": "phrasal-verb",
+            "level": 4
+          }
+        }
+      },
+      "expected": {
+        "id": "va1",
+        "sessionId": "s1",
+        "cardId": "v1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "pass": "first",
+        "grade": "good",
+        "elapsedMs": 4000,
+        "before": null,
+        "after": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "snapshot": {
+          "headword": "give up",
+          "meaning": "あきらめる",
+          "category": "phrasal-verb",
+          "level": 4
+        }
+      }
+    },
+    {
+      "name": "card",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "CARD#p_card00000001",
+        "type": "card",
+        "version": 9,
+        "value": {
+          "id": "p_card00000001",
+          "target": "en",
+          "l1": "ja",
+          "category": "idiom",
+          "level": 4,
+          "headword": "catch up",
+          "definition": "To talk about what has happened since you last met.",
+          "example": "Let's {{catch}} {{up}} over coffee soon.",
+          "example2": "We caught up at the station.",
+          "meaning": "近況を話す",
+          "source": {
+            "kind": "talk",
+            "talkId": "t1",
+            "turn": 2
+          },
+          "createdAt": 5000
+        }
+      },
+      "expected": {
+        "id": "p_card00000001",
+        "target": "en",
+        "l1": "ja",
+        "category": "idiom",
+        "level": 4,
+        "headword": "catch up",
+        "definition": "To talk about what has happened since you last met.",
+        "example": "Let's {{catch}} {{up}} over coffee soon.",
+        "example2": "We caught up at the station.",
+        "meaning": "近況を話す",
+        "source": {
+          "kind": "talk",
+          "talkId": "t1",
+          "turn": 2
+        },
+        "createdAt": 5000
+      }
+    },
+    {
+      "name": "pre-fsrs",
+      "row": {
+        "type": "review",
+        "version": 5,
+        "value": {
+          "id": "a0",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r0",
+          "answeredAt": 1000,
+          "day": "2026-09-20",
+          "outcome": "good",
+          "before": null,
+          "after": {
+            "box": 1,
+            "dueDay": "2026-09-22",
+            "lastDay": "2026-09-20",
+            "seenCount": 1
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000
+          }
+        }
+      },
+      "expected": {
+        "id": "a0",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r0",
+        "answeredAt": 1000,
+        "day": "2026-09-20",
+        "outcome": "good",
+        "before": null,
+        "after": {
+          "box": 1,
+          "dueDay": "2026-09-22",
+          "lastDay": "2026-09-20",
+          "seenCount": 1
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        }
+      }
+    },
+    {
+      "name": "leitner-item",
+      "row": {
+        "type": "item",
+        "version": 3,
+        "value": {
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "okDays": [
+            "2026-09-22"
+          ],
+          "mastered": null,
+          "placement": {
+            "topic": "work",
+            "subtopic": "meetings"
+          },
+          "last": {
+            "sessionId": "r1",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "answeredAt": 2000
+          },
+          "previous": null,
+          "memory": {
+            "box": 1,
+            "dueDay": "2026-09-22",
+            "lastDay": "2026-09-20",
+            "seenCount": 1
+          }
+        }
+      },
+      "expected": {
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "okDays": [
+          "2026-09-22"
+        ],
+        "mastered": null,
+        "placement": {
+          "topic": "work",
+          "subtopic": "meetings"
+        },
+        "last": {
+          "sessionId": "r1",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "answeredAt": 2000
+        },
+        "previous": null,
+        "memory": {
+          "box": 1,
+          "dueDay": "2026-09-22",
+          "lastDay": "2026-09-20",
+          "seenCount": 1
+        }
+      }
+    },
+    {
+      "name": "old-settings",
+      "row": {
+        "type": "settings",
+        "version": 2,
+        "value": {
+          "topics": [
+            "work"
+          ],
+          "focus": [],
+          "dailySize": 10,
+          "sound": true,
+          "answerMode": "typed"
+        }
+      },
+      "expected": {
+        "topics": [
+          "work"
+        ],
+        "focus": [],
+        "dailySize": 10,
+        "sound": true
+      }
+    },
+    {
+      "name": "typed-round",
+      "row": {
+        "type": "round",
+        "version": 4,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null,
+          "answerMode": "typed"
+        }
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null
+      }
+    },
+    {
+      "name": "typed-review",
+      "row": {
+        "type": "review",
+        "version": 6,
+        "value": {
+          "id": "a1",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "outcome": "good",
+          "before": null,
+          "after": null,
+          "fsrs": {
+            "before": null,
+            "after": {
+              "stability": 2.3065,
+              "difficulty": 2.118,
+              "reps": 1,
+              "lapses": 0,
+              "lastDay": "2026-09-22",
+              "dueDay": "2026-09-25"
+            }
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "grade": "good",
+            "timedOut": false,
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000,
+            "answerMode": "typed",
+            "text": "retired answer"
+          }
+        }
+      },
+      "expected": {
+        "id": "a1",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "outcome": "good",
+        "before": null,
+        "after": null,
+        "fsrs": {
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          }
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "grade": "good",
+          "timedOut": false,
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        }
+      }
+    }
+  ],
+  "reservedFutureFixtures": [
+    {
+      "name": "modelTask",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODELTASK#fixture",
+        "type": "modelTask",
+        "version": 9,
+        "value": {
+          "key": {
+            "talkId": "t1",
+            "task": "talk-partner",
+            "turn": 1,
+            "promptVersion": "talk-partner@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "fixture semantic input",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": "Welcome!",
+            "call": {
+              "provider": "stand-in",
+              "modelId": "stand-in",
+              "inputTokens": 11,
+              "outputTokens": 3,
+              "latencyMs": 20,
+              "costUsd": null
+            }
+          }
+        },
+        "schemaVersion": 3
+      },
+      "expected": {
+        "key": {
+          "talkId": "t1",
+          "task": "talk-partner",
+          "turn": 1,
+          "promptVersion": "talk-partner@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "fixture semantic input",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": "Welcome!",
+          "call": {
+            "provider": "stand-in",
+            "modelId": "stand-in",
+            "inputTokens": 11,
+            "outputTokens": 3,
+            "latencyMs": 20,
+            "costUsd": null
+          }
+        }
+      }
+    },
+    {
+      "name": "readModelSource",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#SOURCE",
+        "type": "readModelSource",
+        "version": 9,
+        "value": {
+          "schema": 1
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1
+      }
+    },
+    {
+      "name": "vocabReadModel",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#2026-09-22#STATE",
+        "type": "vocabReadModel",
+        "version": 9,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "catalog": "fixture-catalog",
+          "generation": "fixture-generation",
+          "sourceVersion": 3,
+          "status": "ready",
+          "phase": "personal",
+          "offset": 20,
+          "cursor": null,
+          "counts": [
+            {
+              "category": "word",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "idiom",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrasal-verb",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrase",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            }
+          ]
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "catalog": "fixture-catalog",
+        "generation": "fixture-generation",
+        "sourceVersion": 3,
+        "status": "ready",
+        "phase": "personal",
+        "offset": 20,
+        "cursor": null,
+        "counts": [
+          {
+            "category": "word",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "idiom",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrasal-verb",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrase",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "vocabCandidate",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#fixture-candidate",
+        "type": "vocabCandidate",
+        "version": 9,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "fixture-generation",
+          "mode": "due",
+          "category": null,
+          "level": null,
+          "order": "0000000000000001",
+          "cardId": "v1",
+          "cardCategory": "word",
+          "kind": "review",
+          "cardLevel": 2
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "fixture-generation",
+        "mode": "due",
+        "category": null,
+        "level": null,
+        "order": "0000000000000001",
+        "cardId": "v1",
+        "cardCategory": "word",
+        "kind": "review",
+        "cardLevel": 2
+      }
+    },
+    {
+      "name": "readModelMaintenance",
+      "row": {
+        "PK": "SYSTEM#READMODEL",
+        "SK": "CHECKPOINT",
+        "type": "readModelMaintenance",
+        "version": 9,
+        "value": {
+          "schema": 1,
+          "cursor": "{\"PK\":\"LEARNER#fixture-owner\",\"SK\":\"PROFILE\"}",
+          "pending": [
+            {
+              "id": "fixture-owner",
+              "profile": {
+                "timeZone": "Europe/London",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            }
+          ],
+          "index": 0,
+          "passCompletedAt": null
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "cursor": "{\"PK\":\"LEARNER#fixture-owner\",\"SK\":\"PROFILE\"}",
+        "pending": [
+          {
+            "id": "fixture-owner",
+            "profile": {
+              "timeZone": "Europe/London",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          }
+        ],
+        "index": 0,
+        "passCompletedAt": null
+      }
+    },
+    {
+      "name": "vocabReadModelRequest",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "vocabReadModelRequest",
+        "type": "vocabReadModelRequest",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "day": "2026-10-03"
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-10-03"
+      }
+    },
+    {
+      "name": "compositionSource",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "compositionSource",
+        "type": "compositionSource",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "epoch": 1
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "epoch": 1
+      }
+    },
+    {
+      "name": "compositionReadModel",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "compositionReadModel",
+        "type": "compositionReadModel",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "day": "2026-10-03",
+          "epoch": 1,
+          "catalogVersion": "catalog-v1",
+          "settingsVersion": 1,
+          "statsVersion": 2,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "available": 10,
+          "preview": {
+            "size": 5,
+            "setting": 5,
+            "shortage": false,
+            "reviewCount": 2,
+            "newCount": 3,
+            "focusNames": [
+              "daily"
+            ],
+            "weakNames": [
+              "tense"
+            ],
+            "minutes": 2
+          },
+          "reach": {
+            "daily": 1
+          },
+          "breakdown": {
+            "daily/greetings": 1
+          },
+          "pending": 2,
+          "weak": {
+            "grammar": [
+              {
+                "concept": "en:grammar/tense",
+                "seen": 5,
+                "misses": 3,
+                "rate": 0.6
+              }
+            ],
+            "subtopics": [
+              {
+                "topic": "daily",
+                "subtopic": "greetings",
+                "seen": 5,
+                "misses": 3,
+                "rate": 0.6
+              }
+            ]
+          },
+          "generation": "fixture-generation",
+          "expiresAt": 1790100000
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-10-03",
+        "epoch": 1,
+        "catalogVersion": "catalog-v1",
+        "settingsVersion": 1,
+        "statsVersion": 2,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "available": 10,
+        "preview": {
+          "size": 5,
+          "setting": 5,
+          "shortage": false,
+          "reviewCount": 2,
+          "newCount": 3,
+          "focusNames": [
+            "daily"
+          ],
+          "weakNames": [
+            "tense"
+          ],
+          "minutes": 2
+        },
+        "reach": {
+          "daily": 1
+        },
+        "breakdown": {
+          "daily/greetings": 1
+        },
+        "pending": 2,
+        "weak": {
+          "grammar": [
+            {
+              "concept": "en:grammar/tense",
+              "seen": 5,
+              "misses": 3,
+              "rate": 0.6
+            }
+          ],
+          "subtopics": [
+            {
+              "topic": "daily",
+              "subtopic": "greetings",
+              "seen": 5,
+              "misses": 3,
+              "rate": 0.6
+            }
+          ]
+        },
+        "generation": "fixture-generation",
+        "expiresAt": 1790100000
+      }
+    },
+    {
+      "name": "compositionBuild",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "compositionBuild",
+        "type": "compositionBuild",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "day": "2026-10-03",
+          "epoch": 1,
+          "catalogVersion": "catalog-v1",
+          "settingsVersion": 1,
+          "statsVersion": 2,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "phase": "items",
+          "cursor": null,
+          "known": "0101",
+          "answered": 1,
+          "newAnswered": 0,
+          "due": 1,
+          "notDue": 2,
+          "notDueTop": [
+            {
+              "id": "card-a",
+              "scheduled": true,
+              "recall": 0.6,
+              "at": 3
+            }
+          ],
+          "conceptFirst": {
+            "en:grammar/tense": {
+              "id": "card-a",
+              "scheduled": true,
+              "recall": 0.6,
+              "at": 3
+            }
+          },
+          "conceptRanks": {
+            "en:grammar/tense": 1
+          },
+          "concepts": {
+            "en:grammar/tense": {
+              "seen": 5,
+              "misses": 3
+            }
+          },
+          "subtopics": {
+            "daily/greetings": {
+              "seen": 5,
+              "misses": 3
+            }
+          },
+          "reach": {
+            "daily": 1
+          },
+          "breakdown": {
+            "daily/greetings": 1
+          },
+          "pending": 1,
+          "notDueConceptFirst": {},
+          "notDueConceptRanks": {},
+          "generation": "fixture-generation",
+          "expiresAt": 1790100000
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-10-03",
+        "epoch": 1,
+        "catalogVersion": "catalog-v1",
+        "settingsVersion": 1,
+        "statsVersion": 2,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "phase": "items",
+        "cursor": null,
+        "known": "0101",
+        "answered": 1,
+        "newAnswered": 0,
+        "due": 1,
+        "notDue": 2,
+        "notDueTop": [
+          {
+            "id": "card-a",
+            "scheduled": true,
+            "recall": 0.6,
+            "at": 3
+          }
+        ],
+        "conceptFirst": {
+          "en:grammar/tense": {
+            "id": "card-a",
+            "scheduled": true,
+            "recall": 0.6,
+            "at": 3
+          }
+        },
+        "conceptRanks": {
+          "en:grammar/tense": 1
+        },
+        "concepts": {
+          "en:grammar/tense": {
+            "seen": 5,
+            "misses": 3
+          }
+        },
+        "subtopics": {
+          "daily/greetings": {
+            "seen": 5,
+            "misses": 3
+          }
+        },
+        "reach": {
+          "daily": 1
+        },
+        "breakdown": {
+          "daily/greetings": 1
+        },
+        "pending": 1,
+        "notDueConceptFirst": {},
+        "notDueConceptRanks": {},
+        "generation": "fixture-generation",
+        "expiresAt": 1790100000
+      }
+    },
+    {
+      "name": "streakRun",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "streakRun",
+        "type": "streakRun",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "start": "2026-10-01",
+          "end": "2026-10-03"
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "start": "2026-10-01",
+        "end": "2026-10-03"
+      }
+    },
+    {
+      "name": "streakMigration",
+      "row": {
+        "PK": "LEARNER#fixture",
+        "SK": "streakMigration",
+        "type": "streakMigration",
+        "version": 1,
+        "value": {
+          "schema": 1,
+          "statsVersion": 3,
+          "cursor": null,
+          "open": {
+            "schema": 1,
+            "start": "2026-10-01",
+            "end": "2026-10-03"
+          },
+          "longest": 3,
+          "legacyCursor": null
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "statsVersion": 3,
+        "cursor": null,
+        "open": {
+          "schema": 1,
+          "start": "2026-10-01",
+          "end": "2026-10-03"
+        },
+        "longest": 3,
+        "legacyCursor": null
+      }
+    },
+    {
+      "name": "readModelLearner",
+      "row": {
+        "PK": "SYSTEM#READMODEL_LEARNERS",
+        "SK": "learner-fixture",
+        "type": "readModelLearner",
+        "version": 2,
+        "value": {
+          "schema": 1,
+          "id": "learner-fixture",
+          "profile": {
+            "timeZone": "Asia/Tokyo",
+            "l1": "ja",
+            "target": "en",
+            "uiLocale": "ja"
+          }
+        },
+        "schemaVersion": 4
+      },
+      "expected": {
+        "schema": 1,
+        "id": "learner-fixture",
+        "profile": {
+          "timeZone": "Asia/Tokyo",
+          "l1": "ja",
+          "target": "en",
+          "uiLocale": "ja"
+        }
+      }
+    },
+    {
+      "name": "round-answer-checkpoint",
+      "row": {
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null,
+          "answerState": {
+            "firstCards": [
+              "c1"
+            ],
+            "cursor": "fixture-opaque-page",
+            "complete": false
+          }
+        },
+        "schemaVersion": 2
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null,
+        "answerState": {
+          "firstCards": [
+            "c1"
+          ],
+          "cursor": "fixture-opaque-page",
+          "complete": false
+        }
+      }
+    },
+    {
+      "name": "model-in-flight",
+      "row": {
+        "type": "modelTask",
+        "version": 9,
+        "value": {
+          "key": {
+            "talkId": "t1",
+            "task": "talk-partner",
+            "turn": 1,
+            "promptVersion": "talk-partner@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "fixture semantic input",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "in-flight",
+          "leaseUntil": 30000
+        },
+        "schemaVersion": 3
+      },
+      "expected": {
+        "key": {
+          "talkId": "t1",
+          "task": "talk-partner",
+          "turn": 1,
+          "promptVersion": "talk-partner@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "fixture semantic input",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "in-flight",
+        "leaseUntil": 30000
+      }
+    },
+    {
+      "name": "model-failed",
+      "row": {
+        "type": "modelTask",
+        "version": 9,
+        "value": {
+          "key": {
+            "talkId": "t1",
+            "task": "talk-partner",
+            "turn": 1,
+            "promptVersion": "talk-partner@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "fixture semantic input",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "failed",
+          "outcome": "unknown",
+          "reason": "transport"
+        },
+        "schemaVersion": 3
+      },
+      "expected": {
+        "key": {
+          "talkId": "t1",
+          "task": "talk-partner",
+          "turn": 1,
+          "promptVersion": "talk-partner@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "fixture semantic input",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "failed",
+        "outcome": "unknown",
+        "reason": "transport"
+      }
+    },
+    {
+      "name": "compact stats introduced after guard",
+      "row": {
+        "type": "stats",
+        "version": 3,
+        "schemaVersion": 4,
+        "value": {
+          "points": 0,
+          "completedDays": [],
+          "firstDay": null,
+          "said": 0,
+          "practicedDays": 0,
+          "level": null,
+          "levelWindow": [],
+          "openRound": null,
+          "titles": [],
+          "levelMode": "manual",
+          "streak": {
+            "schema": 1,
+            "longest": 3
+          }
+        }
+      },
+      "expected": "ERR_STORAGE_SCHEMA_UNKNOWN"
+    },
+    {
+      "name": "reserved-composition-candidate",
+      "row": {
+        "type": "compositionCandidate",
+        "version": 1,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "fixture-generation",
+          "mode": "due",
+          "order": "fixture-order",
+          "id": "c1",
+          "scheduled": true,
+          "recall": 0.2,
+          "at": 1,
+          "expiresAt": 1790100000
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "fixture-generation",
+        "mode": "due",
+        "order": "fixture-order",
+        "id": "c1",
+        "scheduled": true,
+        "recall": 0.2,
+        "at": 1,
+        "expiresAt": 1790100000
+      }
+    }
+  ],
+  "schemaVersion": 1
+}

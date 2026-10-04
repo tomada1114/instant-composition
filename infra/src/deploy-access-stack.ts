@@ -8,6 +8,7 @@ import {
 import { type Construct } from "constructs";
 
 import { type Stage } from "./stage";
+import { storageWriterArns } from "./storage-writers";
 
 const GITHUB_OIDC_URL = "https://token.actions.githubusercontent.com";
 
@@ -35,12 +36,13 @@ export interface DeployAccessStackProps extends StackProps {
  * one deploy role, so no long-lived access key exists.
  *
  * @remarks
- * The role may do one thing, assume the CDK bootstrap roles (`cdk-*`), which
+ * The role assumes the CDK bootstrap roles (`cdk-*`), which
  * carry the deploy permissions themselves; the owner chose that scope over
  * administrator access. A bootstrap role's name carries its Region, so
  * `cdk-*` covers us-east-1's, which the `edge` stack deploys with, as well as
- * Tokyo's. Deployed by hand once, since the workflow needs it before it can
- * deploy anything.
+ * Tokyo's. It also controls admission and verifies code only for exact owned
+ * API/worker ARNs. Deployed by hand once; later storage transitions update it
+ * through the existing bootstrap roles without changing OIDC trust.
  */
 export class DeployAccessStack extends Stack {
   constructor(
@@ -69,6 +71,21 @@ export class DeployAccessStack extends Stack {
         resources: [`arn:${Aws.PARTITION}:iam::${Aws.ACCOUNT_ID}:role/cdk-*`],
       }),
     );
+    const writers = storageWriterArns(this);
+    if (writers.length > 0)
+      role.addToPolicy(
+        new PolicyStatement({
+          actions: [
+            "lambda:GetFunction",
+            "lambda:GetFunctionConfiguration",
+            "lambda:GetFunctionConcurrency",
+            "lambda:PutFunctionConcurrency",
+            "lambda:DeleteFunctionConcurrency",
+            "lambda:InvokeFunction",
+          ],
+          resources: [...writers],
+        }),
+      );
     new CfnOutput(this, DEPLOY_ROLE_ARN_OUTPUT, { value: role.roleArn });
   }
 }

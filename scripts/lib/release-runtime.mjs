@@ -32,8 +32,8 @@ export function metadata(value) {
   ) {
     throw new ReleaseError("metadata");
   }
-  /** @type {Record<string, string>} */
-  const checked = {};
+  /** @type {Map<string, string>} */
+  const checked = new Map();
   for (const [name, hash] of Object.entries(files)) {
     if (
       !/^[a-zA-Z0-9_./-]+$/.test(name) ||
@@ -44,10 +44,10 @@ export function metadata(value) {
     ) {
       throw new ReleaseError("file metadata");
     }
-    checked[name] = hash;
+    checked.set(name, hash);
   }
-  if (Object.keys(checked).length === 0) throw new ReleaseError("empty files");
-  return { sha, files: checked };
+  if (checked.size === 0) throw new ReleaseError("empty files");
+  return { sha, files: Object.fromEntries(checked) };
 }
 
 /** @param {string} directory @param {{sha: string, files: Record<string, string>}} release @returns {void} */
@@ -61,15 +61,15 @@ export function verifyFiles(directory, release) {
 /**
  * Read-only deployment health: validate packaged bytes before serving any request.
  * @param {string} directory
- * @param {(event: {rawPath: string, requestContext: {http: {method: string}}}) => Promise<unknown>} next
- * @returns {(event: {rawPath: string, requestContext: {http: {method: string}}}) => Promise<unknown>}
+ * @param {(event: {rawPath: string, requestContext: {http: {method: string}}}, context?: unknown) => Promise<unknown>} next
+ * @returns {(event: {rawPath: string, requestContext: {http: {method: string}}}, context?: unknown) => Promise<unknown>}
  */
 export function releaseHandler(directory, next) {
   const release = metadata(
     parseJson(readFileSync(path.join(directory, "release.json"), "utf8")),
   );
   verifyFiles(directory, release);
-  return async (event) => {
+  return async (event, context) => {
     if (
       event.rawPath === "/api/release" &&
       event.requestContext.http.method === "GET"
@@ -80,6 +80,6 @@ export function releaseHandler(directory, next) {
         body: JSON.stringify(release),
       };
     }
-    return next(event);
+    return context === undefined ? next(event) : next(event, context);
   };
 }

@@ -211,7 +211,7 @@ describe("release health routing through the deployed origin", () => {
         RouteKey: "ANY /{proxy+}",
       });
       TEMPLATE.hasResourceProperties("AWS::Lambda::Function", {
-        Handler: "release.handler",
+        Handler: "storage.handler",
       });
     }).not.toThrow();
   });

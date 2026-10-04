@@ -1,4 +1,13 @@
 export {
+  declareStorageWriter,
+  storageWritersPaused,
+  storageWriterArns,
+  StorageWriterConfigurationError,
+  STORAGE_CAPACITY_METADATA,
+  STORAGE_WRITER_ARNS_CONTEXT,
+  STORAGE_WRITERS_PAUSED_CONTEXT,
+} from "./storage-writers";
+export {
   buildApp,
   EDGE_REGION,
   MissingRepositoryRootError,

@@ -11,6 +11,12 @@ import {
 import { err, ok } from "@instant-composition/domain";
 
 import { isConflict } from "./dynamodb-commit";
+import {
+  decodeStorageRow,
+  encodeStorageValue,
+  STORAGE_SCHEMA_VERSION,
+  type StorageFamily,
+} from "./storage-schema";
 import type { DynamoDbStoresOptions } from "./dynamodb-store";
 import {
   IDENTITY_SORT_KEY,
@@ -25,15 +31,6 @@ const ABSENT = {
   ExpressionAttributeNames: { "#pk": LEARNER_TABLE_KEY.partition },
 } as const;
 
-/** The `value` of a row this adapter wrote. Only it writes these rows, so the shape is trusted. */
-function valueOf(row: Readonly<Record<string, unknown>> | undefined): unknown {
-  const value = row?.["value"];
-  if (row !== undefined && (typeof value !== "object" || value === null)) {
-    throw new TypeError("An identity item has no value.");
-  }
-  return value;
-}
-
 /**
  * The identity context's records on the learner table: `IDENTITY#<sub> / LEARNER` maps a subject to its LearnerId, and
  * `LEARNER#<id> / PROFILE` holds the profile inside the learner's own
@@ -47,7 +44,11 @@ export function createDynamoDbDirectory(
   });
   const table = options.tableName;
 
-  async function get(partition: string, sort: string): Promise<unknown> {
+  async function get(
+    partition: string,
+    sort: string,
+    type: StorageFamily,
+  ): Promise<unknown> {
     const { Item } = await documents.send(
       new GetCommand({
         TableName: table,
@@ -58,26 +59,37 @@ export function createDynamoDbDirectory(
         ConsistentRead: true,
       }),
     );
-    return valueOf(Item);
+    return Item === undefined ? undefined : decodeStorageRow(type, Item).value;
   }
 
   return {
     async learnerOf(subject) {
-      const mapping = (await get(identityKeyOf(subject), IDENTITY_SORT_KEY.mapping)) as
-        { readonly learnerId: string } | undefined;
+      const mapping = (await get(
+        identityKeyOf(subject),
+        IDENTITY_SORT_KEY.mapping,
+        "identity",
+      )) as { readonly learnerId: string } | undefined;
       if (mapping === undefined) {
         return undefined;
       }
       const id = learnerId(mapping.learnerId);
-      const profile = (await get(partitionKeyOf(id), IDENTITY_SORT_KEY.profile)) as
-        Profile | undefined;
+      const profile = (await get(
+        partitionKeyOf(id),
+        IDENTITY_SORT_KEY.profile,
+        "profile",
+      )) as Profile | undefined;
       if (profile === undefined) {
         throw new TypeError("A mapped learner has no profile.");
       }
       return { learnerId: id, profile };
     },
     async register(subject, registration) {
-      const put = (partition: string, sort: string, type: string, value: object) => ({
+      const put = (
+        partition: string,
+        sort: string,
+        type: StorageFamily,
+        value: object,
+      ) => ({
         Put: {
           TableName: table,
           Item: {
@@ -85,7 +97,8 @@ export function createDynamoDbDirectory(
             [LEARNER_TABLE_KEY.sort]: sort,
             type,
             version: 1,
-            value,
+            schemaVersion: STORAGE_SCHEMA_VERSION,
+            value: encodeStorageValue(type, value),
           },
           ...ABSENT,
         },
