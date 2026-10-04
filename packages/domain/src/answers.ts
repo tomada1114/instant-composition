@@ -139,7 +139,11 @@ export function decideAnswers(
   return {
     entries,
     items: [...moved].flatMap((id) => items.get(id) ?? []),
-    round: { ...round, firstPass: round.firstPass + firsts.length },
+    round: {
+      ...round,
+      firstPass: round.firstPass + firsts.length,
+      answerState: { firstCards: [...firstCards], cursor: null, complete: true },
+    },
     portion:
       state.portion === undefined
         ? undefined

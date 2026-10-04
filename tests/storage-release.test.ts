@@ -12,7 +12,11 @@ import path from "node:path";
 import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
 import { afterEach, describe, expect, it } from "vitest";
-import { decodeStorageRecord, encodeStorageValue } from "@instant-composition/adapters";
+import {
+  decodeStorageRecord,
+  encodeStorageValue,
+  STORAGE_SCHEMA_VERSION,
+} from "@instant-composition/adapters";
 import {
   assertStorageCompatibility,
   assertStorageArtifact,
@@ -38,9 +42,9 @@ afterEach(() => {
 
 describe("storage release and rollback preflight", () => {
   it("certifies the guarded writer's fixtures and runtime implementation before deployment", () => {
-    expect(preflightStorageRelease(root, "storage-v1").current).toBe("storage-v1");
+    expect(preflightStorageRelease(root).current).toBe(policy().current);
     const metadata = storageReleaseMetadata(root);
-    expect(metadata.contract).toBe("storage-v1");
+    expect(metadata.contract).toBe(policy().current);
     expect(() =>
       assertStorageArtifact(policy(), { sha: "fixture-assembly", storage: metadata }),
     ).not.toThrow();
@@ -65,7 +69,7 @@ describe("storage release and rollback preflight", () => {
       }),
     ).not.toThrow();
   });
-  it.each(["preguard-45892b3", "unknown-old-api", "storage-v2"])(
+  it.each(["preguard-45892b3", "unknown-old-api", "unreviewed-future-writer"])(
     "refuses %s before data writes or AWS credentials",
     async (candidate) => {
       await expect(main([candidate], root)).rejects.toBeInstanceOf(
@@ -79,10 +83,10 @@ describe("storage release and rollback preflight", () => {
     if (release === undefined) throw new TypeError("Release required.");
     const unsafe = {
       ...current,
-      emittedSchemas: [0, 1, 2],
-      releases: [{ ...release, reads: [0, 1, 2], preserves: [0, 1] }],
+      emittedSchemas: [...current.emittedSchemas, STORAGE_SCHEMA_VERSION + 1],
+      releases: [{ ...release, reads: [...release.reads, STORAGE_SCHEMA_VERSION + 1] }],
     };
-    expect(() => assertStorageCompatibility(unsafe, "storage-v1")).toThrow(
+    expect(() => assertStorageCompatibility(unsafe, current.current)).toThrow(
       StorageCompatibilityError,
     );
   });
@@ -116,7 +120,7 @@ describe("storage release and rollback preflight", () => {
     ).rejects.toBeInstanceOf(StorageCompatibilityError);
   });
   it("rejects an observed future schema even if the candidate is named in the ledger", () => {
-    expect(() => assertStorageCompatibility(policy(), "storage-v1", [9])).toThrow(
+    expect(() => assertStorageCompatibility(policy(), policy().current, [9])).toThrow(
       StorageCompatibilityError,
     );
   });
@@ -150,15 +154,17 @@ describe("storage release and rollback preflight", () => {
     const old = parseJson(readFileSync(path.join(root, release.fixture), "utf8"));
     if (typeof old !== "object" || old === null)
       throw new TypeError("Fixtures required.");
-    const bytes = JSON.stringify({ ...old, contract: "storage-v2", schemaVersion: 2 });
-    current.current = "storage-v2";
-    current.emittedSchemas = [0, 1, 2];
+    const future = STORAGE_SCHEMA_VERSION + 1;
+    const contract = "storage-unreviewed-future";
+    const bytes = JSON.stringify({ ...old, contract, schemaVersion: future });
+    current.current = contract;
+    current.emittedSchemas = [...current.emittedSchemas, future];
     Object.assign(release, {
-      id: "storage-v2",
-      writes: 2,
-      reads: [0, 1, 2],
-      preserves: [0, 1, 2],
-      fixture: "tests/fixtures/storage-v2.json",
+      id: contract,
+      writes: future,
+      reads: [...release.reads, future],
+      preserves: [...release.preserves, future],
+      fixture: "tests/fixtures/storage-unreviewed-future.json",
       sha256: createHash("sha256").update(bytes).digest("hex"),
     });
     mkdirSync(path.join(folder, "tests/fixtures"), { recursive: true });
@@ -189,12 +195,10 @@ describe("storage release and rollback preflight", () => {
     );
     mkdirSync(path.join(folder, "tests/fixtures"), { recursive: true });
     writeFileSync(
-      path.join(folder, "tests/fixtures/storage-v1.json"),
+      path.join(folder, current.releases[0]?.fixture ?? "missing"),
       "tampered fixture",
     );
-    expect(() => preflightStorageRelease(folder, "storage-v1")).toThrow(
-      StorageCompatibilityError,
-    );
+    expect(() => preflightStorageRelease(folder)).toThrow(StorageCompatibilityError);
   });
   it.each([
     "unlisted source",
@@ -206,7 +210,10 @@ describe("storage release and rollback preflight", () => {
     const folder = mkdtempSync(path.join(tmpdir(), "storage-runtime-inventory-"));
     temporary.push(folder);
     const current = policy();
-    for (const file of [...current.runtimeFiles, "tests/fixtures/storage-v1.json"]) {
+    for (const file of [
+      ...current.runtimeFiles,
+      current.releases[0]?.fixture ?? "missing",
+    ]) {
       mkdirSync(path.dirname(path.join(folder, file)), { recursive: true });
       copyFileSync(path.join(root, file), path.join(folder, file));
     }
@@ -248,9 +255,7 @@ describe("storage release and rollback preflight", () => {
       path.join(folder, "storage-release-policy.json"),
       JSON.stringify(current),
     );
-    expect(() => preflightStorageRelease(folder, "storage-v1")).toThrow(
-      StorageCompatibilityError,
-    );
+    expect(() => preflightStorageRelease(folder)).toThrow(StorageCompatibilityError);
   });
   it("CLI rejects an unguarded release without loading an API or an AWS credential", () => {
     const result = spawnSync(
@@ -283,4 +288,20 @@ describe("storage release and rollback preflight", () => {
       expect(workflow.indexOf(command)).toBeGreaterThan(guard);
     }
   });
+});
+
+it("refuses the archived v1 binary before it can discard cap2 round adoption state", async () => {
+  const current = policy();
+  const previous = current.releases.find((release) => release.id === "storage-v1");
+  if (previous === undefined) throw new TypeError("Archived v1 certificate required.");
+  expect(previous.reads).toStrictEqual([0, 1]);
+  expect(previous.preserves).toStrictEqual([0, 1]);
+  expect(() =>
+    assertStorageArtifact(current, {
+      storage: { contract: previous.id, schemaFingerprint: previous.schemaFingerprint },
+    }),
+  ).toThrow(StorageCompatibilityError);
+  await expect(main([previous.id], root)).rejects.toBeInstanceOf(
+    StorageCompatibilityError,
+  );
 });

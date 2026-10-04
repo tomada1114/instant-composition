@@ -13,7 +13,12 @@ import type {
   VocabSessionKind,
   VocabSummary,
 } from "../openapi";
-import { flushEarlierRounds, sessionStore } from "../study/answer-queue";
+import {
+  createAnswerQueue,
+  flushEarlierRounds,
+  sessionStore,
+  type AnswerQueue,
+} from "../study/answer-queue";
 import type { AnswerInput } from "../study/study-state";
 
 export const VOCAB_QUEUE_PREFIX = "vocab-answers:";
@@ -43,6 +48,24 @@ function answerOf(answer: AnswerInput): VocabAnswer {
 export function sendVocabAnswer(answer: AnswerInput): Promise<SendOutcome> {
   return recordVocabAnswers(answer.roundId, [answerOf(answer)]);
 }
+/** Pending answers of one vocabulary session, preserving their fixed ids. */
+export function sendVocabAnswers(
+  answers: readonly AnswerInput[],
+): Promise<SendOutcome> {
+  const first = answers[0];
+  return first === undefined
+    ? Promise.resolve("sent")
+    : recordVocabAnswers(first.roundId, answers.map(answerOf));
+}
+/** The vocabulary activity binds the durable queue to its batch sender. */
+export function createVocabQueue(sessionId: string): AnswerQueue {
+  return createAnswerQueue({
+    key: `${VOCAB_QUEUE_PREFIX}${sessionId}`,
+    send: sendVocabAnswer,
+    sendBatch: sendVocabAnswers,
+    storage: sessionStore(),
+  });
+}
 /** Resend old sessions before reading today's remaining queue; failed answers stay stored. */
 export async function requestVocabSession(
   search: VocabSearch,
@@ -52,6 +75,7 @@ export async function requestVocabSession(
     currentId: sessionId,
     prefix: VOCAB_QUEUE_PREFIX,
     send: sendVocabAnswer,
+    sendBatch: sendVocabAnswers,
     storage: sessionStore(),
   });
   return empty

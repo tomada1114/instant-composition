@@ -150,6 +150,12 @@ export interface Round {
   readonly abandonedAt: number | null;
   /** First-pass answers taken so far. */
   readonly firstPass: number;
+  /** Bounded adoption projection; an incomplete legacy load keeps its next log key. */
+  readonly answerState?: {
+    readonly firstCards: readonly string[];
+    readonly cursor: string | null;
+    readonly complete: boolean;
+  };
   readonly outcome: RoundOutcome | null;
 }
 

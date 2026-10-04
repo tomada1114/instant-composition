@@ -250,11 +250,11 @@ describe("useQueuedDrill", () => {
     await act(async () => {
       await vi.runAllTimersAsync();
     });
-    expect(
-      delivered.map((body) =>
-        (JSON.parse(body) as { answers: AnswerInput[] }).answers.map((a) => a.id),
-      ),
-    ).toStrictEqual([["r:f:c1"], ["r:f:c2"]]);
+    const deliveredBatches = delivered.map((body) =>
+      (JSON.parse(body) as { answers: AnswerInput[] }).answers.map((a) => a.id),
+    );
+    expect(deliveredBatches).toStrictEqual([["r:f:c1", "r:f:c2"]]);
+    expect(new Set(deliveredBatches.flat()).size).toBe(2);
     expect(result.current[0].answers.map((a) => a.id)).toStrictEqual([
       "r:f:c1",
       "r:f:c2",

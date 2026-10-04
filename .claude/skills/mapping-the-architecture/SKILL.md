@@ -171,21 +171,25 @@ How a context exposes its surface: **REQUIRED:** `designing-application-core`.
 Every table row has a `schemaVersion` independent of optimistic `version`. The adapter's
 `storage-schema.ts` owns runtime decoders and the supported family inventory; identity
 mappings follow the same contract. The initial guarded release admits the fourteen
-baseline families only, reads legacy version 0 and guarded version 1, and emits version
+baseline families only, reads legacy version 0 and guarded version 1, and emits
+version 1. Projection/claim/compact-session families are reserved until their own
+release adds them and raises the global envelope cap. Missing `schemaVersion` means
+legacy storage. Legacy reads retain Leitner history, optional FSRS, old settings
+defaults and supported talk/session values. Only explicitly named retired typed-answer
+paths are removed after validating their historical shape. Every other unknown legacy
+field, nested field or envelope key fails closed; reads never rewrite the table.
+Optional transport keys are PK/SK and a valid matching expiry. Guarded rows validate
+nested values strictly; an unknown schema or undeclared field fails closed. Writes
+validate the current value, strip only named retired paths, and condition updates,
+expectations and deletions on both the optimistic version and a supported storage
+schema. Whole-row changes first strongly read and decode their source, so direct commits
+cannot erase an unknown unversioned field by skipping a prior application read. Domain
+types retain their pure data shape and import no schema library.
 
-1. Projection/claim/compact-session families are reserved until their own release adds
-   them and raises the global envelope cap. Missing `schemaVersion` means legacy
-   storage. Legacy reads retain Leitner history, optional FSRS, old settings defaults
-   and supported talk/session values. Only explicitly named retired typed-answer paths
-   are removed after validating their historical shape. Every other unknown legacy
-   field, nested field or envelope key fails closed; reads never rewrite the table.
-   Optional transport keys are PK/SK and a valid matching expiry. Guarded rows validate
-   nested values strictly; an unknown schema or undeclared field fails closed. Writes
-   validate the current value, strip only named retired paths, and condition updates,
-   expectations and deletions on both the optimistic version and a supported storage
-   schema. Whole-row changes first strongly read and decode their source, so direct
-   commits cannot erase an unknown unversioned field by skipping a prior application
-   read. Domain types retain their pure data shape and import no schema library.
+The active contract also admits the round adoption checkpoint. Its first-card ids, log
+cursor and completion flag survive legacy initialization and later writes. The current
+checkpoint fixtures retain the archived initial-guard fixture unchanged, and the old
+writer certificate cannot authorize a rollback after the checkpoint schema is emitted.
 
 `storage-release-policy.json` is the reviewed expand/contract ledger. Its emitted schema
 inventory only grows: reverting code does not revert data. Fixture and implementation
@@ -210,9 +214,11 @@ certification. Deployment selects the ledger's current contract and its declared
 must actually emit it. Every later shape release raises the adapter cap, expands the
 admitted inventory, preserves historical emitted schema bounds, and updates the exact
 source inventory and fixture certificate before deployment. The released legacy-to-v1
-migration stays explicitly fixed to that tested plan; later noncompatible plans require
-their own transformation/decoder rather than retargeting that plan automatically; a
-reader-only fixture is insufficient.
+migration stays explicitly fixed to that tested plan. The operator must select
+`--plan expand-to-storage-v2` for the reviewed legacy/v1-to-checkpoint-schema expansion;
+its distinct checkpoint identity prevents resuming a v1 plan against a different target.
+Later noncompatible plans require their own transformation/decoder rather than
+retargeting a plan automatically; a reader-only fixture is insufficient.
 
 The first guarded transition drains the unguarded API before any expanded writes. The
 dev workflow synthesizes a paused assembly, updates exact owned ARN permissions in two
@@ -298,16 +304,22 @@ IDENTITY#<sub> LEARNER                              the identity mapping
 - Each command commits as one `TransactWriteItems`, puts conditioned on absence and
   updates and deletes on the version read — deleting a personal card with its progress
   is the one delete, and no commit updates or deletes a log entry; projections change in
-  the same commit that appends to the log, so reads are point lookups. A vocabulary
-  answer checks each personal card's version in that transaction and reloads its
-  snapshot on conflict; deletion checks progress's version or continued absence. Deleted
-  personal cards are skipped on a fresh answer load, while existing answer logs remain.
-  Vocabulary answers use chunks of 32 so even a personal-card check per answer stays
-  under the transaction limit. Answers commit per batch rather than all at `finish`,
-  because one transaction holds at most `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a
-  long round with resends would not fit. The in-memory store and DynamoDB local run the
-  same contract suite. **REQUIRED:** `designing-application-core` for the commit shape.
-- Nothing migrates stored items. A field a record gains is optional and read with its
+  the same commit that appends to the log. Answer writes point-read only requested
+  answer ids, progress and personal cards, version-checking unchanged progress too.
+  First-answer adoption is a bounded `round.answerState` projection guarded by the round
+  version. Old open rounds initialize it separately, reading at most 32 reviews per page
+  and committing each cursor and card set before continuing; failures resume the
+  checkpoint without recording new answers. That one-time cost follows the legacy log
+  size; subsequent answer reads follow only requested keys. A vocabulary answer checks
+  each personal card's version in that transaction and reloads its snapshot on conflict;
+  deletion checks progress's version or continued absence. Deleted personal cards are
+  skipped on a fresh answer load, while existing answer logs remain. Vocabulary answers
+  use chunks of 32 so even a personal-card check per answer stays under the transaction
+  limit. Answers commit per batch rather than all at `finish`, because one transaction
+  holds at most `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a long round with resends
+  would not fit. The in-memory store and DynamoDB local run the same contract suite.
+  **REQUIRED:** `designing-application-core` for the commit shape.
+- Existing records remain readable. A field a record gains is optional and read with its
   default when absent; a field a type drops stays in old items, and both stores read
   settings, rounds, review details, item progress, talks and personal cards through the
   fields their types declare (`packages/adapters/src/declared.ts`), so it is neither
@@ -334,19 +346,20 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   stored and answered again; a candidate added twice is added once.
 - A drill round adopts one first answer per card: a valid duplicate with another id
   succeeds without replacing the first committed grade or moving counters and FSRS
-  again. The round version guards adoption and updates together; existing review logs
-  supply the adopted cards, and remain unchanged. Retry answers retain separate ids and
-  entries. The HTTP acknowledgement remains empty `204`, and reload/summary returns the
-  adopted result. A finished round still rejects unrecorded ids.
-- Answers travel in batches, so a live answer and a resent one take the same call; the
-  web keeps unsent ones in the tab's `sessionStorage`. Only a contract status/code
-  refusal drops an unsent answer: temporary and unknown responses stay pending. A
-  `Retry-After` deadline is stored beside deferred answers, with old answer arrays still
-  readable; no resend is made before it, and a failed attempt stops the drain. A finish
-  also obeys that deadline and retains retry hints from its own response, and stops if
-  any earlier batch was not acknowledged. A client `answeredAt` is clamped between the
-  round's start and the server's time, a late answer counts for its round's day and
-  never rewinds an item's schedule, and rounds never expire.
+  again. The round version guards adoption and updates together; its bounded adoption
+  projection supplies the adopted cards, and existing review logs remain unchanged.
+  Retry answers retain separate ids and entries. The HTTP acknowledgement remains empty
+  `204`, and reload/summary returns the adopted result. A finished round still rejects
+  unrecorded ids.
+- The queue sends at most 20 pending answers per call, so live and resent answers share
+  the same batch; the web keeps unsent ones in the tab's `sessionStorage`. Only a
+  contract status/code refusal drops an unsent answer: temporary and unknown responses
+  stay pending. A `Retry-After` deadline is stored beside deferred answers, with old
+  answer arrays still readable; no resend is made before it, and a failed attempt stops
+  the drain. A finish also obeys that deadline and retains retry hints from its own
+  response, and stops if any earlier batch was not acknowledged. A client `answeredAt`
+  is clamped between the round's start and the server's time, a late answer counts for
+  its round's day and never rewinds an item's schedule, and rounds never expire.
 
 ## The web client
 

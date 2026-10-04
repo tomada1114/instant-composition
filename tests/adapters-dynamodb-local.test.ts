@@ -13,6 +13,7 @@ import { answersFor, fixedCatalog, makeHarness, NOON } from "./application-harne
 import { localTables } from "./dynamodb-local";
 import { describeLearnerDirectoryContract } from "./learner-directory-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
+import { describeBoundedAnswerContract } from "./bounded-answer-contract";
 import { describeFirstAnswerContract } from "./first-answer-contract";
 import { describeVocabCardDeletionContract } from "./vocab-card-deletion-contract";
 
@@ -32,6 +33,7 @@ afterAll(async () => {
 });
 
 describeLearnerStoreContract("the DynamoDB store", () => tables.fresh());
+describeBoundedAnswerContract("adapters-dynamodb-local.test.ts", () => tables.fresh());
 describeFirstAnswerContract("first answers with DynamoDB", () => tables.fresh());
 describeVocabCardDeletionContract("personal card deletion with DynamoDB", () =>
   tables.fresh(),

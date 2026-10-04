@@ -4,6 +4,7 @@ import {
   decodeStorageRecord,
   encodeStorageValue,
   STORAGE_FAMILIES,
+  STORAGE_SCHEMA_VERSION,
   StorageSchemaError,
   decodeReadModelBootstrapState,
   createDynamoDbReadModelBootstrapStorage,
@@ -11,6 +12,7 @@ import {
 } from "@instant-composition/adapters";
 import { validateStoredRecords } from "@instant-composition/api";
 import { parseJson, readKey, readString } from "../scripts/lib/json.mjs";
+import { makeItem } from "./application-fixtures";
 
 const data = parseJson(
   readFileSync(new URL("./fixtures/storage-v1.json", import.meta.url), "utf8"),
@@ -42,12 +44,38 @@ describe("storage decoders and subsequent writes", () => {
       const current = decodeStorageRecord({
         type: decoded.type,
         version: decoded.version + 1,
-        schemaVersion: 1,
+        schemaVersion: STORAGE_SCHEMA_VERSION,
         value: written,
       });
       expect(current.value).toStrictEqual(expected);
       expect(JSON.stringify(current.value)).not.toContain("answerMode");
       expect(JSON.stringify(current.value)).not.toContain("retired answer");
+    },
+  );
+  it.each([undefined, 0, 1])(
+    "rejects cap2 round checkpoints in a row declaring schema %s",
+    (schemaVersion) => {
+      const fixture = fixtures.find((item) => readKey(item.row, "type") === "round");
+      if (!fixture) throw new TypeError("Round fixture required.");
+      const expected = fixture.expected;
+      if (typeof expected !== "object" || expected === null || Array.isArray(expected))
+        throw new TypeError("Round value required.");
+      const row = {
+        type: "round",
+        version: 1,
+        ...(schemaVersion === undefined ? {} : { schemaVersion }),
+        value: {
+          ...expected,
+          answerState: { firstCards: [], cursor: null, complete: true },
+        },
+      };
+      const original = JSON.stringify(row);
+      expect(() => decodeStorageRecord(row)).toThrow(StorageSchemaError);
+      expect(validateStoredRecords([row])).toMatchObject({
+        ok: false,
+        code: "ERR_STORAGE_SHAPE",
+      });
+      expect(JSON.stringify(row)).toBe(original);
     },
   );
   it.each([
@@ -62,7 +90,7 @@ describe("storage decoders and subsequent writes", () => {
   ])("rejects malformed stored shape %j", (row) => {
     expect(() => decodeStorageRecord(row)).toThrow(StorageSchemaError);
   });
-  it.each([2, -1, 0.5, Number.MAX_SAFE_INTEGER])(
+  it.each([STORAGE_SCHEMA_VERSION + 1, -1, 0.5, Number.MAX_SAFE_INTEGER])(
     "fails closed on schema %s",
     (schemaVersion) => {
       const fixture = fixtures[2];
@@ -76,7 +104,7 @@ describe("storage decoders and subsequent writes", () => {
     const row = fixture?.row as Record<string, unknown>;
     const next = {
       ...row,
-      schemaVersion: 1,
+      schemaVersion: STORAGE_SCHEMA_VERSION,
       value: { ...(fixture?.expected as object), futureRequired: "must survive" },
     };
     expect(() => decodeStorageRecord(next)).toThrow(StorageSchemaError);
@@ -188,7 +216,7 @@ describe("storage decoders and subsequent writes", () => {
       {
         type: "talk",
         version: 1,
-        schemaVersion: 2,
+        schemaVersion: STORAGE_SCHEMA_VERSION + 1,
         value: { english: "private fixture text" },
       },
     ]);
@@ -202,15 +230,18 @@ describe("storage decoders and subsequent writes", () => {
 
 const reserved = readKey(data, "reservedFutureFixtures");
 if (!Array.isArray(reserved)) throw new TypeError("Future fixtures required.");
-it.each(reserved)(
-  "initial guard refuses future expansion $name before any next write",
-  (fixture) => {
-    expect(() => decodeStorageRecord(readKey(fixture, "row"))).toThrow(
-      StorageSchemaError,
-    );
-  },
-);
-it.each([2, 3, 4, 5])(
+it.each(
+  reserved.filter(
+    (fixture) =>
+      Number(readKey(readKey(fixture, "row"), "schemaVersion")) >
+      STORAGE_SCHEMA_VERSION,
+  ),
+)("initial guard refuses future expansion $name before any next write", (fixture) => {
+  expect(() => decodeStorageRecord(readKey(fixture, "row"))).toThrow(
+    StorageSchemaError,
+  );
+});
+it.each([STORAGE_SCHEMA_VERSION + 1, STORAGE_SCHEMA_VERSION + 2])(
   "initial guard refuses storage generation %s even for a known family",
   (schemaVersion) => {
     expect(() =>
@@ -218,13 +249,12 @@ it.each([2, 3, 4, 5])(
     ).toThrow(StorageSchemaError);
   },
 );
-it("initial guard cannot accept future round checkpoints or compact stats on version one", () => {
-  expect(() =>
-    encodeStorageValue("round", {
-      ...(fixtures[4]?.expected as object),
-      answerState: { firstCards: [], cursor: null, complete: true },
-    }),
-  ).toThrow(StorageSchemaError);
+it("admits the reviewed round checkpoint expansion and keeps compact stats inactive", () => {
+  const round = {
+    ...(fixtures[4]?.expected as object),
+    answerState: { firstCards: [], cursor: null, complete: true },
+  };
+  expect(encodeStorageValue("round", round)).toStrictEqual(round);
   expect(() =>
     encodeStorageValue("stats", {
       ...(fixtures[3]?.expected as object),
@@ -291,4 +321,168 @@ it("prepares a strictly bound future durable checkpoint without admitting the fa
   } finally {
     client.destroy();
   }
+});
+
+it("preserves every cap2 checkpoint and guarded-v1 row through the actual maintenance next write", () => {
+  const document = parseJson(
+    readFileSync(new URL("./fixtures/storage-v2.json", import.meta.url), "utf8"),
+  );
+  const rows = readKey(document, "fixtures");
+  if (!Array.isArray(rows)) throw new TypeError("Cap2 fixtures required.");
+  for (const fixture of rows) {
+    const result = validateStoredRecords([readKey(fixture, "row")]);
+    expect(result.ok).toBe(true);
+    if (!result.ok) throw new TypeError("Supported fixture refused.");
+    expect(readKey(result.rows[0], "targetSchema")).toBe(STORAGE_SCHEMA_VERSION);
+    expect(readKey(result.rows[0], "targetValue")).toStrictEqual(
+      readKey(fixture, "expected"),
+    );
+  }
+});
+
+const markSchemas = [
+  ["absent", {}],
+  ["zero", { schemaVersion: 0 }],
+  ["one", { schemaVersion: 1 }],
+  ["two", { schemaVersion: 2 }],
+] as const;
+function historicalMark(answeredAt: number) {
+  return { sessionId: "historical", result: "ok" as const, elapsedMs: 1, answeredAt };
+}
+function completeItemRow(value: unknown) {
+  return {
+    PK: "LEARNER#fixture-owner",
+    SK: "ITEM#composition#c1",
+    type: "item",
+    version: 1,
+    value,
+  };
+}
+describe.each(markSchemas)("historical mark times with schema %s", (_, schema) => {
+  it("accepts the complete otherwise-valid positive item", () => {
+    const value = makeItem();
+    expect(
+      decodeStorageRecord({ ...completeItemRow(value), ...schema }).value,
+    ).toStrictEqual(value);
+  });
+  describe.each(["last", "previous"] as const)("%s", (field) => {
+    it.each([-1, -0.5, 1e20])(
+      "retains finite historical timestamp %s without integer or sign conversion",
+      (answeredAt) => {
+        const value = makeItem({ [field]: historicalMark(answeredAt) });
+        expect(
+          decodeStorageRecord({ ...completeItemRow(value), ...schema }).value,
+        ).toStrictEqual(value);
+      },
+    );
+    it.each([NaN, Infinity, -Infinity])(
+      "refuses nonfinite mark time %s",
+      (answeredAt) => {
+        const value = makeItem({ [field]: historicalMark(answeredAt) });
+        expect(() =>
+          decodeStorageRecord({ ...completeItemRow(value), ...schema }),
+        ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+      },
+    );
+    it("refuses an unknown mark field instead of silently stripping it", () => {
+      const value = {
+        ...makeItem(),
+        [field]: { ...historicalMark(-1), futureField: "retain" },
+      };
+      expect(() =>
+        decodeStorageRecord({ ...completeItemRow(value), ...schema }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    });
+  });
+});
+describe.each(markSchemas.slice(0, 2))(
+  "retired marks with legacy schema %s",
+  (_, schema) => {
+    it.each([0, -1, -0.5, 1e20])(
+      "validates signed retired timestamp %s before removing the named field",
+      (answeredAt) => {
+        const value = makeItem();
+        const retired = {
+          ...value,
+          otherMode: { ...historicalMark(answeredAt), answerMode: "typed" },
+        };
+        expect(
+          decodeStorageRecord({ ...completeItemRow(retired), ...schema }).value,
+        ).toStrictEqual(value);
+      },
+    );
+    it.each([
+      { ...historicalMark(-1), futureField: "retain" },
+      { ...historicalMark(-1), answerMode: "future" },
+      historicalMark(NaN),
+      historicalMark(Infinity),
+      historicalMark(-Infinity),
+    ])("refuses a malformed retired mark %j before retirement", (otherMode) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow({ ...makeItem(), otherMode }),
+          ...schema,
+        }),
+      ).toThrow(
+        expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "retired" }),
+      );
+    });
+  },
+);
+describe("signed marks retain the surrounding storage fences", () => {
+  it.each([1, 2])(
+    "rejects retired fields outside legacy schema %s",
+    (schemaVersion) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow({
+            ...makeItem(),
+            otherMode: { ...historicalMark(-1), answerMode: "typed" },
+          }),
+          schemaVersion,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen elapsedMs for %s",
+    (elapsedMs) => {
+      const value = makeItem({ last: { ...historicalMark(-1), elapsedMs } });
+      expect(() => decodeStorageRecord(completeItemRow(value))).toThrow(
+        expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }),
+      );
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen optimistic version for %s",
+    (version) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow(makeItem({ last: historicalMark(-1) })),
+          version,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "row" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen TTL for %s",
+    (expiresAt) => {
+      expect(() =>
+        decodeStorageRecord({
+          ...completeItemRow(makeItem({ last: historicalMark(-1) })),
+          expiresAt,
+        }),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE", path: "row" }));
+    },
+  );
+  it.each([-1, 0.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "does not widen item revision count for %s",
+    (revision) => {
+      expect(() =>
+        decodeStorageRecord(
+          completeItemRow(makeItem({ last: historicalMark(-1), revision })),
+        ),
+      ).toThrow(expect.objectContaining({ code: "ERR_STORAGE_SHAPE" }));
+    },
+  );
 });

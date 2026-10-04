@@ -1,12 +1,13 @@
 import type { Entry, Stored } from "@instant-composition/application";
 import { decodeStorageRow } from "./storage-schema";
+import type { ValueOf } from "./storage-values";
 
 export interface Slot {
   readonly entry: Entry;
   readonly version: number;
   readonly schemaVersion: number;
 }
-export type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
+export type { ValueOf } from "./storage-values";
 
 /** Copies only a value already validated by the write decoder. */
 export function copyEntry(entry: {

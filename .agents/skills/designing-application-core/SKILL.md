@@ -86,8 +86,10 @@ written under.
   first answer for each card; later valid first answers under different ids succeed
   without changing that answer, counters or FSRS. A transaction chunk chooses in clamped
   answer-time/id order, and earlier committed chunks prevail. Multiple retries still get
-  separate log entries. Adoption is loaded from the existing append-only log and guarded
-  by the round version in the same transaction, with no new stored shape. The answers
+  separate log entries. Adoption is loaded from the round's bounded `answerState`
+  projection and guarded by its version in the same transaction. A legacy round
+  initializes that projection in separately checkpointed log pages before recording;
+  answer ids, progress and personal cards otherwise use keyed reads alone. The answers
   endpoint keeps its empty 204 response; reload and summary return the adopted result.
   After finish, only recorded-id resends are accepted, preserving the closed-round
   validation. Finishing a finished round answers with the summary it kept

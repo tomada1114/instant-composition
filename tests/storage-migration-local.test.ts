@@ -9,6 +9,7 @@ import {
   localDynamoDbClient,
   createDynamoDbStores,
   StorageSchemaError,
+  STORAGE_SCHEMA_VERSION,
 } from "@instant-composition/adapters";
 import { learnerId, keyOf, type Entry } from "@instant-composition/application";
 import { main } from "../scripts/storage-migrate.mjs";
@@ -80,6 +81,8 @@ describe("guarded storage on DynamoDB local", () => {
           dynamo("GetItem", { TableName: table, Key: readKey(wire(key), "M") });
         const before = await get();
         const args = [
+          "--plan",
+          "expand-to-storage-v2",
           "--table",
           table,
           "--endpoint",
@@ -120,7 +123,7 @@ describe("guarded storage on DynamoDB local", () => {
       }
     },
   );
-  it("migrates legacy rows once, preserves supported fields and retires typed data", async () => {
+  it("explicitly expands legacy and guarded-v1 rows once, preserving fields and retiring typed data", async () => {
     const table = `storage437-${randomUUID()}`,
       client = localDynamoDbClient(endpoint);
     const folder = mkdtempSync(path.join(tmpdir(), "storage437-migrate-")),
@@ -151,12 +154,15 @@ describe("guarded storage on DynamoDB local", () => {
             SK: "ITEM#composition#c1",
             type: "item",
             version: 3,
+            schemaVersion: 1,
             value: makeItem({ revision: 7 }),
           }),
           "M",
         ),
       });
       const args = [
+        "--plan",
+        "expand-to-storage-v2",
         "--table",
         table,
         "--endpoint",
@@ -213,7 +219,7 @@ describe("guarded storage on DynamoDB local", () => {
             SK: "SETTINGS",
             type: "settings",
             version: 5,
-            schemaVersion: 2,
+            schemaVersion: STORAGE_SCHEMA_VERSION + 1,
             value,
           }),
           "M",
@@ -251,7 +257,7 @@ describe("guarded storage on DynamoDB local", () => {
       client.destroy();
     }
   });
-  it("preserves new round checkpoints and compact streaks when an older guarded writer tries to replace or delete them", async () => {
+  it("preserves future-schema checkpoints and compact streaks before a supported writer can replace or delete them", async () => {
     const table = `storage437-${randomUUID()}`,
       client = localDynamoDbClient(endpoint);
     await createLearnerTable(client, table);
@@ -260,7 +266,7 @@ describe("guarded storage on DynamoDB local", () => {
         {
           SK: "ROUND#r1",
           type: "round",
-          schemaVersion: 2,
+          schemaVersion: STORAGE_SCHEMA_VERSION + 1,
           value: {
             ...makeRound(),
             answerState: { firstCards: ["c1"], cursor: "a1", complete: false },

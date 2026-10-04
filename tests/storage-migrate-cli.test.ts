@@ -2,6 +2,7 @@ import { mkdtempSync, readFileSync, existsSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
+import { StorageCompatibilityError } from "../scripts/lib/storage-compatibility.mjs";
 import { main } from "../scripts/storage-migrate.mjs";
 import {
   checkpointOf,
@@ -60,6 +61,37 @@ describe("storage maintenance operator", () => {
       await expect(main(args)).rejects.toBeInstanceOf(StorageMigrationError);
     },
   );
+  it("never retargets the archived v1 default plan to a newer writer", async () => {
+    const checkpoint = path.join(folder(), "legacy.json");
+    await expect(
+      main([
+        "--table",
+        "fixture",
+        "--endpoint",
+        "http://127.0.0.1:1",
+        "--checkpoint",
+        checkpoint,
+      ]),
+    ).rejects.toBeInstanceOf(StorageCompatibilityError);
+    expect(existsSync(checkpoint)).toBe(false);
+    expect(existsSync(`${checkpoint}.lock`)).toBe(false);
+  });
+  it("refuses an unreviewed plan before opening a checkpoint or making a request", async () => {
+    const checkpoint = path.join(folder(), "future.json");
+    await expect(
+      main([
+        "--plan",
+        "automatic-current-schema",
+        "--table",
+        "fixture",
+        "--endpoint",
+        "http://127.0.0.1:1",
+        "--checkpoint",
+        checkpoint,
+      ]),
+    ).rejects.toBeInstanceOf(StorageMigrationError);
+    expect(existsSync(checkpoint)).toBe(false);
+  });
   it("atomically records only keys, digests and counters, and reloads the checkpoint", () => {
     const file = path.join(folder(), "checkpoint.json");
     const checkpoint = {

@@ -10,6 +10,7 @@ import {
 } from "@instant-composition/application";
 import { replayItems } from "@instant-composition/domain";
 import { makeRound } from "./application-fixtures";
+import { describeBoundedAnswerContract } from "./bounded-answer-contract";
 import { describeFirstAnswerContract } from "./first-answer-contract";
 
 import {
@@ -20,6 +21,10 @@ import {
   type Harness,
 } from "./application-harness";
 
+describeBoundedAnswerContract(
+  "application-projections.test.ts",
+  () => makeHarness().stores,
+);
 describeFirstAnswerContract("first answers with memory", () => makeHarness().stores);
 
 /** A placement, then five days of rounds with misses, retries and fast answers. */

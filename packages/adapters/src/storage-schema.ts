@@ -9,7 +9,7 @@ import { talkSchema, vocabularySchemas } from "./storage-vocabulary";
 import { readModelBootstrapSchema } from "./storage-bootstrap-schema";
 
 /** Optimistic `version` counts writes; this identifies the storage contract. */
-export const STORAGE_SCHEMA_VERSION = 1;
+export const STORAGE_SCHEMA_VERSION = 2;
 export type StorageFamily = Entry["type"] | "identity" | "readModelBootstrap";
 export const STORAGE_FAMILIES = [
   "identity",
@@ -63,16 +63,19 @@ type FamilyValue<K extends StorageFamily> = K extends "identity"
 type StorageSchemas = {
   readonly [K in StorageFamily]: z.ZodType<WireCompatible<FamilyValue<K>>>;
 };
-const schemas = (strict: boolean) => ({
+const schemas = (strict: boolean, schemaVersion: number) => ({
   readModelBootstrap: readModelBootstrapSchema(),
-  ...compositionSchemas(strict, STORAGE_SCHEMA_VERSION),
+  ...compositionSchemas(strict, schemaVersion),
   ...vocabularySchemas(strict),
   talk: talkSchema(strict),
   modelTask: modelTaskSchema(strict),
   ...readModelSchemas(strict),
   ...compositionReadModelSchemas(strict),
 });
-const CURRENT = schemas(true) satisfies StorageSchemas;
+const CURRENT = schemas(true, STORAGE_SCHEMA_VERSION) satisfies StorageSchemas;
+const DECLARED = Array.from({ length: STORAGE_SCHEMA_VERSION + 1 }, (_, version) =>
+  version === STORAGE_SCHEMA_VERSION ? CURRENT : schemas(true, version),
+);
 const envelope = z.strictObject({
   type: z.string(),
   version: z.number().int().positive().max(Number.MAX_SAFE_INTEGER),
@@ -102,7 +105,10 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
   if (schemaVersion > STORAGE_SCHEMA_VERSION) {
     throw new StorageSchemaError("ERR_STORAGE_SCHEMA_UNKNOWN", "schemaVersion");
   }
-  const decoded = CURRENT[type].safeParse(
+  const declared = DECLARED[schemaVersion];
+  if (!declared)
+    throw new StorageSchemaError("ERR_STORAGE_SCHEMA_UNKNOWN", "schemaVersion");
+  const decoded = declared[type].safeParse(
     schemaVersion === 0 ? retireKnownFields(type, value) : value,
   );
   if (!decoded.success) {

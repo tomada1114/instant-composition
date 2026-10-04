@@ -44,6 +44,7 @@ const ROUND = {
   finishedAt: true,
   abandonedAt: true,
   firstPass: true,
+  answerState: true,
   outcome: true,
 } as const satisfies Fields<Round>;
 

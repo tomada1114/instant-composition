@@ -2,12 +2,13 @@ import type { Entry, Stored } from "@instant-composition/application";
 import type { ReviewEntry } from "@instant-composition/domain";
 
 import { decodeStorageRow } from "./storage-schema";
+import type { ValueOf } from "./storage-values";
 
 // How the DynamoDB store reads a learner table item back: the value an entry
 // was written with, and the version beside it.
 
 export type Row = Readonly<Record<string, unknown>>;
-export type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
+export type { ValueOf } from "./storage-values";
 
 /**
  * A versioned row validated at the adapter boundary before the port sees it.

@@ -51,12 +51,18 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   settings: (store) => store.settings(),
   stats: (store) => store.stats(),
   round: (store) => store.round("r1"),
+  reviewsByIds: (store) => store.reviewsByIds("r1", ["a1"]),
+  reviewPage: (store) => store.reviewPage("r1", null).then((page) => page.entries),
   reviewsOf: (store) => store.reviewsOf("r1"),
   reviews: (store) => store.reviews(),
   portion: (store) => store.portion("2026-09-22"),
   days: (store) => store.days(["2026-09-22"]),
+  itemsByIds: (store) => store.itemsByIds(["c1"]),
   items: (store) => store.items(),
   talk: (store) => store.talk("t1"),
+  vocabItemsByIds: (store) => store.vocabItemsByIds(["v1"]),
+  vocabReviewsByIds: (store) => store.vocabReviewsByIds("s1", ["va1"]),
+  cardsByIds: (store) => store.cardsByIds(["p_card00000001"]),
   vocabItems: (store) => store.vocabItems(),
   vocabSession: (store) => store.vocabSession("s1"),
   vocabReviewsOf: (store) => store.vocabReviewsOf("s1"),
@@ -274,6 +280,33 @@ export function describeLearnerStoreContract(
       expect(stale.ok).toBe(false);
       expect(current.ok).toBe(true);
     });
+
+    it.each([-1, -0.5])(
+      "round-trips finite signed last and previous mark timestamps %s",
+      async (answeredAt) => {
+        const item = makeItem({
+          last: { sessionId: "r1", result: "ok", elapsedMs: 1, answeredAt },
+          previous: { sessionId: "r0", result: "ng", elapsedMs: 2, answeredAt },
+        });
+        expect(
+          (
+            await store.commit({
+              puts: [{ type: "item", value: item }],
+              updates: [],
+              expect: [],
+            })
+          ).ok,
+        ).toBe(true);
+        expect((await store.itemsByIds(["c1"])).get("c1")).toStrictEqual({
+          value: item,
+          version: 1,
+        });
+        expect((await store.items()).get("c1")).toStrictEqual({
+          value: item,
+          version: 1,
+        });
+      },
+    );
 
     it("keeps causal item revisions in the log and projection through an atomic commit", async () => {
       const review = makeReview({ revision: 1 });
