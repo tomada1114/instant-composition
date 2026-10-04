@@ -73,7 +73,7 @@ describe("Cloud dependency installation", () => {
       const result = runInstall(packageManager);
       expect(result.status).toBe(0);
       expect(result.stdout.trim().split("\n")).toEqual([
-        "CI=unset",
+        "CI=true",
         "/tmp/instant-composition-corepack",
         "/tmp/instant-composition-pnpm",
         "/tmp/instant-composition-xdg/data",

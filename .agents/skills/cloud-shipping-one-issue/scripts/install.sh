@@ -11,7 +11,8 @@ export XDG_CACHE_HOME=/tmp/instant-composition-xdg/cache
 export XDG_STATE_HOME=/tmp/instant-composition-xdg/state
 
 pnpm_spec=$(node -p 'require("./package.json").packageManager')
-corepack "$pnpm_spec" install --frozen-lockfile
-# Also repair an already-installed tree whose earlier CI install skipped hooks.
+# Cached dependency lifecycle output can omit checkout-specific hooks. Install
+# dependencies in CI mode, then enforce authoring hooks explicitly below.
+CI=true corepack "$pnpm_spec" install --frozen-lockfile
 corepack "$pnpm_spec" run hooks:install
 node scripts/verify-hooks.mjs
