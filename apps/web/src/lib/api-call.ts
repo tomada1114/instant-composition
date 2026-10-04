@@ -110,7 +110,7 @@ export function beginVisit(): void {
 export function signOut(form: HTMLFormElement): Promise<void> {
   visit += 1;
   signedIn = false;
-  return submitSignOut(form);
+  return submitSignOut(form, clearLearnerStorage);
 }
 
 /**

@@ -625,7 +625,12 @@ describe("pure vocabulary projection parity", () => {
             kind,
             ...(category === null ? {} : { category }),
           });
-          if (expected.length > 200)
+          if (
+            expected.length > 200 ||
+            (limit === null &&
+              kind === "today" &&
+              pure.figures.due + pure.figures.fresh > 200)
+          )
             expect(session).toStrictEqual({
               ok: false,
               error: { code: "ERR_PAGED_SESSION_REQUIRED" },

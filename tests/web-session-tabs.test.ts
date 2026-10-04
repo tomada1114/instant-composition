@@ -19,17 +19,20 @@ async function newTab() {
 }
 
 function originLocks() {
-  let tail = Promise.resolve(undefined);
+  const tails = new Map<string, Promise<undefined>>();
   const requested: string[] = [];
   const waiting = new Map<number, ReturnType<typeof deferred<undefined>>>();
   return {
     request: <T>(name: string, work: () => Promise<T>) => {
       requested.push(name);
       waiting.get(requested.length)?.resolve(undefined);
-      const result = tail.then(work);
-      tail = result.then(
-        () => undefined,
-        () => undefined,
+      const result = (tails.get(name) ?? Promise.resolve(undefined)).then(work);
+      tails.set(
+        name,
+        result.then(
+          () => undefined,
+          () => undefined,
+        ),
       );
       return result;
     },

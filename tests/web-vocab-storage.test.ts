@@ -5,6 +5,7 @@ import {
   createPagedOutbox,
   beginVisit,
   getHome,
+  signOut,
   type ListedStorage,
 } from "@instant-composition/web";
 import { outboxLocks, outboxAnswer } from "./paged-outbox-harness";
@@ -145,5 +146,150 @@ describe("paged vocabulary session invalidation", () => {
     });
     expect(submitted).toBe(true);
     expect(local.getItem("vocab-outbox:old")).toBeNull();
+  });
+  it("clears through exported signOut before pagehide under both locks and fences an old in-flight drain", async () => {
+    const local = storage(),
+      session = storage(),
+      base = outboxLocks();
+    const held: string[] = [];
+    const locks = {
+      request<T>(name: string, work: () => T | Promise<T>): Promise<T> {
+        return base.request(name, async () => {
+          held.push(name);
+          try {
+            return await work();
+          } finally {
+            held.splice(held.indexOf(name), 1);
+          }
+        });
+      },
+    };
+    const hidden = Object.assign(new EventTarget(), {
+      localStorage: local,
+      sessionStorage: session,
+    });
+    vi.stubGlobal("window", hidden);
+    vi.stubGlobal("localStorage", local);
+    vi.stubGlobal("navigator", { locks });
+    beginVisit();
+    const revision = learnerStorageRevision();
+    let finish: (outcome: "sent") => void = () => undefined;
+    let entered: () => void = () => undefined;
+    const sending = new Promise<void>((done) => {
+      entered = done;
+    });
+    const queue = createPagedOutbox({
+      key: "vocab-outbox:old",
+      storage: local,
+      locks,
+      valid: () => learnerStorageRevision() === revision,
+      send: () =>
+        new Promise((done) => {
+          finish = done;
+          entered();
+        }),
+    });
+    expect(await queue.append(outboxAnswer(0))).toBe(true);
+    session.setItem("vocab-active:today:all", "private");
+    session.setItem("vocab-checkpoint:old", "private");
+    local.setItem("key-mode", "retained");
+    const draining = queue.flush();
+    await sending;
+    let submitted: () => void = () => undefined;
+    const submittedPromise = new Promise<void>((done) => {
+      submitted = done;
+    });
+    const submissionLocks: string[][] = [];
+    const submit = vi.fn(() => {
+      submissionLocks.push([...held]);
+      expect(local.getItem("vocab-outbox:old:page:0")).not.toBeNull();
+      submitted();
+    });
+    vi.stubGlobal(
+      "HTMLFormElement",
+      class {
+        submit = submit;
+      },
+    );
+    Object.defineProperty(HTMLFormElement.prototype, "submit", { value: submit });
+    const leaving = signOut(new HTMLFormElement());
+    try {
+      await submittedPromise;
+      expect(submissionLocks).toStrictEqual([
+        ["instant-composition-session", "instant-composition-vocab-storage"],
+      ]);
+      expect(learnerStorageRevision()).not.toBe(revision);
+      expect(
+        [...local.values.keys()].filter((key) => key.startsWith("vocab-outbox:")),
+      ).toStrictEqual([]);
+      expect([...session.values]).toStrictEqual([]);
+      expect(local.getItem("key-mode")).toBe("retained");
+      let renewed = false;
+      const renewal = locks.request("instant-composition-session", () => {
+        renewed = true;
+      });
+      finish("sent");
+      expect(await draining).toBe(false);
+      expect(await queue.append(outboxAnswer(1))).toBe(false);
+      expect(renewed).toBe(false);
+      hidden.dispatchEvent(new Event("pagehide"));
+      await leaving;
+      await renewal;
+      expect(renewed).toBe(true);
+      expect(
+        [...local.values.keys()].filter((key) => key.startsWith("vocab-outbox:")),
+      ).toStrictEqual([]);
+    } finally {
+      finish("sent");
+      hidden.dispatchEvent(new Event("pagehide"));
+      await leaving;
+    }
+  });
+  it("retains exact learner bytes when exported signOut native submit throws, then clears on an explicit retry", async () => {
+    const local = storage(),
+      session = storage();
+    const hidden = Object.assign(new EventTarget(), {
+      localStorage: local,
+      sessionStorage: session,
+    });
+    vi.stubGlobal("window", hidden);
+    vi.stubGlobal("localStorage", local);
+    vi.stubGlobal("navigator", { locks: outboxLocks() });
+    beginVisit();
+    local.setItem("vocab-outbox:old:page:0", "private answers");
+    session.setItem("vocab-checkpoint:old", "private state");
+    const before = [...local.values],
+      beforeSession = [...session.values];
+    let submitted: () => void = () => undefined;
+    const submittedPromise = new Promise<void>((done) => {
+      submitted = done;
+    });
+    const submit = vi
+      .fn()
+      .mockImplementationOnce(() => {
+        throw new Error("fixture submit refused");
+      })
+      .mockImplementation(submitted);
+    vi.stubGlobal(
+      "HTMLFormElement",
+      class {
+        submit = submit;
+      },
+    );
+    Object.defineProperty(HTMLFormElement.prototype, "submit", { value: submit });
+    const form = new HTMLFormElement();
+    await signOut(form);
+    expect([...local.values]).toStrictEqual(before);
+    expect([...session.values]).toStrictEqual(beforeSession);
+    const leaving = signOut(form);
+    try {
+      await submittedPromise;
+      expect(local.getItem("vocab-outbox:old:page:0")).toBeNull();
+      expect(session.getItem("vocab-checkpoint:old")).toBeNull();
+      expect(submit).toHaveBeenCalledTimes(2);
+    } finally {
+      hidden.dispatchEvent(new Event("pagehide"));
+      await leaving;
+    }
   });
 });

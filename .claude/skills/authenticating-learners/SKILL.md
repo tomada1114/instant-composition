@@ -102,8 +102,13 @@ clients may still overlap, but refused renewals never delete cookies.
 
 Sign-out waits for renewal, then submits its top-level form under that same lock until
 pagehide; the redirect goes to another origin. Earlier calls cannot sign the visit back
-in or replay after sign-out begins, and a failed native submit permits another attempt.
-**REQUIRED:** `building-web-screens` before changing either.
+in or replay after sign-out begins. Inside the auth lock, native submission takes the
+vocabulary storage lock: successful submission immediately invalidates the learner
+storage revision and removes private outboxes and checkpoints in that same turn, before
+pagehide. The storage lock is released before waiting for pagehide; a failed native
+submit retains every learner byte and permits another attempt. Late old outbox drains
+cannot recreate data under the new revision. **REQUIRED:** `building-web-screens` before
+changing either.
 
 ## Which authenticator runs where
 

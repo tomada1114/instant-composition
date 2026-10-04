@@ -192,3 +192,6 @@ export {
 export { VOCAB_OUTBOX_PREFIX } from "./vocab/browser-outbox";
 
 export { clearLearnerStorage, learnerStorageRevision } from "./lib/learner-storage";
+export { useVocabDelete } from "./vocab/use-vocab-delete";
+export { createQueryClient } from "./lib/queries";
+export { QueryClientProvider } from "@tanstack/react-query";

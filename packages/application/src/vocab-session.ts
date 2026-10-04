@@ -141,11 +141,7 @@ export async function startVocabSession(
         limits,
         stats?.value.level?.level ?? 1,
       );
-      const figures =
-        category === null
-          ? plan.hub.today
-          : plan.hub.categories.find((row) => row.category === category);
-      if (figures !== undefined && figures.due + figures.new > 200)
+      if (plan.hub.today.due + plan.hub.today.new > 200)
         return err({ code: "ERR_PAGED_SESSION_REQUIRED" });
     }
     const session: VocabSession = {

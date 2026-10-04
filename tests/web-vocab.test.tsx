@@ -849,8 +849,9 @@ describe("deleting a vocabulary card from a talk", () => {
       screen.getByText(vocabCard("v_next").definition, { selector: "p" }),
     ).toBeInTheDocument();
   });
-  it("preserves the answer retry deadline after deleting the last re-ask", async () => {
+  it("blocks deletion before the answer retry deadline and acknowledges the grade before deleting the last re-ask", async () => {
     let now = 10_000;
+    let deferred = true;
     vi.spyOn(Date, "now").mockImplementation(() => now);
     const calls = fakeApi((call) => {
       if (call.url === "/api/v1/home")
@@ -861,7 +862,9 @@ describe("deleting a vocabulary card from a talk", () => {
           vocabSession({ cards: [vocabCard("v_own", { personal: true })] }),
         );
       if (call.url.endsWith("/answers"))
-        return new Response("down", { status: 429, headers: { "Retry-After": "10" } });
+        return deferred
+          ? new Response("down", { status: 429, headers: { "Retry-After": "10" } })
+          : new Response(null, { status: 204 });
       if (call.method === "DELETE") return new Response(null, { status: 204 });
       if (call.url.endsWith("/finish")) return Response.json(vocabSummary());
       return undefined;
@@ -871,17 +874,29 @@ describe("deleting a vocabulary card from a talk", () => {
     await settle(16);
     press(" ");
     openDelete();
+    const held = localStorage.getItem("vocab-outbox:session-1:page:0");
     confirmDelete();
     await settle();
-    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(0);
+    expect(localStorage.getItem("vocab-outbox:session-1:page:0")).toBe(held);
+    expect(localStorage.getItem("vocab-outbox:session-1:removed:v_own")).toBeNull();
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: ja.Vocab.delete.confirm }),
+    ).not.toHaveAttribute("aria-disabled", "true");
     expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    confirmDelete();
     await settle();
     expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
     now = 20_000;
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    deferred = false;
+    confirmDelete();
     await settle();
-    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(1);
+    expect(calls.filter((call) => call.url.endsWith("/answers"))).toHaveLength(2);
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
+    expect(calls.findIndex((call) => call.method === "DELETE")).toBeGreaterThan(
+      calls.findLastIndex((call) => call.url.endsWith("/answers")),
+    );
     expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
       generation: 1,
       answers: [],
@@ -917,9 +932,10 @@ describe("deleting a vocabulary card from a talk", () => {
     confirmDelete();
     await settle();
     expect(calls.filter((call) => call.url.endsWith("/finish"))).toHaveLength(0);
-    expect(localStorage.getItem("vocab-outbox:session-1:removed:v_own")).toBe("1");
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(0);
+    expect(localStorage.getItem("vocab-outbox:session-1:removed:v_own")).toBeNull();
     options.offline = false;
-    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    confirmDelete();
     await settle();
     expect(calls.find((call) => call.url.endsWith("/finish"))?.body).toStrictEqual({
       generation: 1,
@@ -927,7 +943,13 @@ describe("deleting a vocabulary card from a talk", () => {
     });
     expect(
       calls.filter((call) => call.url.endsWith("/answers")).at(-1)?.body,
-    ).toMatchObject({ answers: [{ cardId: "v_next", grade: "good" }] });
+    ).toMatchObject({
+      answers: [
+        { cardId: "v_own", grade: "again" },
+        { cardId: "v_next", grade: "good" },
+      ],
+    });
+    expect(calls.filter((call) => call.method === "DELETE")).toHaveLength(1);
     expect(screen.getByText(ja.Vocab.done)).toBeInTheDocument();
     expect(
       JSON.parse(localStorage.getItem("vocab-outbox:session-1") ?? "{}"),

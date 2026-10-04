@@ -49,22 +49,27 @@ export function useVocabDelete(
       // A previously graded re-ask may still be sending. Its write must finish before DELETE.
       void queue
         .flush()
-        .then(() => deleteVocabCard(cardId))
+        .then((empty) => (empty ? deleteVocabCard(cardId) : undefined))
         .then(async (result) => {
-          if (result.ok) {
+          if (result?.ok === true) {
             await queue.removeCard(cardId);
             void cache.invalidateQueries({ queryKey: ["vocab"] });
           }
           if (!live.current) return;
-          sending.current = false;
-          setPending(false);
-          if (!result.ok) {
+          if (result?.ok !== true) {
             setFailures((count) => count + 1);
             return;
           }
           setCardId(undefined);
           onClose();
           dispatch({ type: "remove", cardId });
+        })
+        .catch(() => {
+          if (live.current) setFailures((count) => count + 1);
+        })
+        .finally(() => {
+          sending.current = false;
+          if (live.current) setPending(false);
         });
     },
   };
