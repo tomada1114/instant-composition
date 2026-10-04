@@ -69,8 +69,10 @@ a second design.
   strands every learner's data. Its sign-in settings (email as the username,
   case-insensitive) cannot change without replacing it. In `dev` the pool also has the
   local checkout's confidential web app client (`webClientOptions`: code grant,
-  `openid`, refresh-token rotation, an empty `ExplicitAuthFlows` so
-  `ALLOW_REFRESH_TOKEN_AUTH` stays off), a prefix domain for managed login whose prefix
+  `openid`, refresh-token rotation, and `ExplicitAuthFlows` exactly
+  `ALLOW_USER_PASSWORD_AUTH`, for the API's `InitiateAuth` behind the web client's own
+  sign-in page, so `ALLOW_REFRESH_TOKEN_AUTH`, which rotation cannot run with, stays
+  off; self sign-up stays off too), a prefix domain for managed login whose prefix
   carries the stack id's first group so it is unique in the region, and the client's
   Cognito-provided managed login style, without which managed login shows no page. Keep
   a logical id stable once deployed, because a changed id replaces the resource. Let

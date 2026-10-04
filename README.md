@@ -40,11 +40,12 @@ The API reads the snapshot once per start, so after `content/` changes, restart
 `.env.example`; every one has a default or is optional. Set them in the shell, or in a
 gitignored `.env.local`, which `pnpm api` and `pnpm dev`'s API process load and nothing
 else does. Without `API_COGNITO_*`, every request is one local learner, with no sign-in;
-with all four set, <http://127.0.0.1:5173/api/v1/auth/login> signs a browser in through
-the user pool's managed login. Without `API_OPENROUTER_API_KEY`, a talk is answered by a
-scripted stand-in model and nothing is called; with it, by OpenRouter. For example,
-`API_CATALOG_PATH` points the API at another snapshot, and `API_TABLE_NAME` at a fresh
-table, without touching your own progress:
+with all four set, <http://127.0.0.1:5173/login> signs a browser in with an account's
+email and password, which the API checks against the user pool. Without
+`API_OPENROUTER_API_KEY`, a talk is answered by a scripted stand-in model and nothing is
+called; with it, by OpenRouter. For example, `API_CATALOG_PATH` points the API at
+another snapshot, and `API_TABLE_NAME` at a fresh table, without touching your own
+progress:
 
 ```sh
 API_TABLE_NAME=scratch pnpm dev

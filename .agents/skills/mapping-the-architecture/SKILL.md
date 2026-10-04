@@ -65,13 +65,17 @@ The packages, domain contexts, and practice/vocabulary interactions are mapped i
 
 - Amazon Cognito authenticates. The API verifies the access token itself, not API
   Gateway, so the Bearer header and the web session cookie share one verification path.
-- The web runs a backend-for-frontend inside the API: `/api/v1/auth/*` runs the code
-  flow with PKCE against a confidential client and keeps tokens in HttpOnly cookies, so
-  no token is readable by page scripts. Cookie renewal is shared per tab and serialized
-  with logout across tabs through Web Locks; a browser without locks cannot renew
-  automatically. A refused renewal preserves cookies and probes the current credential;
-  unavailable renewal keeps answers queued. **REQUIRED:** `authenticating-learners` for
-  the endpoints, cookies, the local stand-in and its conditions.
+- The web runs a backend-for-frontend inside the API: the web client's own `/login`
+  page, inside the app's frame, posts an email and password to `/api/v1/auth/login`,
+  which signs them in through Cognito's `InitiateAuth` (`USER_PASSWORD_AUTH`) with a
+  `SECRET_HASH` from the confidential client's secret, and keeps tokens in HttpOnly
+  cookies, so neither the secret nor a token is readable by page scripts. Refresh and
+  revoke run at the pool domain's token endpoints; no page redirects to Cognito's
+  managed login. Cookie renewal is shared per tab and serialized with logout across tabs
+  through Web Locks; a browser without locks cannot renew automatically. A refused
+  renewal preserves cookies and probes the current credential; unavailable renewal keeps
+  answers queued. **REQUIRED:** `authenticating-learners` for the endpoints, cookies,
+  the local stand-in and its conditions.
 - Cognito's `sub` maps to an internal `LearnerId`, registered with a default profile on
   first sign-in. Data keys carry the `LearnerId`, so a new identity provider never
   rewrites them. The profile is the application's own record, not Cognito attributes.

@@ -67,6 +67,7 @@ of the states listed; a part with no hover below is not interactive.
 | `skeleton`                | —                                                          | when home's read takes over 300 ms                                    |
 | `empty-state`             | —                                                          | not enough cards; cards could not be loaded; no such page             |
 | `landing`                 | — (the signed-out `/`)                                     | —                                                                     |
+| `sign-in-form`            | — (`/login`)                                               | ready, sending, refused, needs an administrator, no answer            |
 | `confetti`                | — (a streak that grew, a milestone)                        | bursting, gone; absent under reduced motion                           |
 
 There is no status chip. "Timed out", "again", "from a talk" and "fast" are text with a
@@ -124,7 +125,9 @@ One layout route renders these once, before `main`; a screen renders its content
 They appear once a read has said who is signed in, on home, the vocabulary hub, talk
 start, records and settings — never on the landing, the welcome, a path with no screen,
 a focus screen, or a loading state before anyone is known (home's skeleton, `/drill`'s
-wait).
+wait). The sign-in page is the one exception that needs no read: it shows the same bar —
+the sidebar from `pc`, the top bar below — with the brand alone and no sections, from
+its first frame, since its visitor can open none of them yet.
 
 - **`sidebar`** (from `pc`): 240 wide, fixed to the left at full height, `bg-card` with
   a 2px `border-border` on its right, padding 24 / 16. The brand at the top in
@@ -142,7 +145,8 @@ wait).
   pills 44 tall, glyph and name from 768, the glyph alone below it with the name as its
   `aria-label`. Nothing scrolls sideways at 390, 640 or 768.
 - Both are one `nav` named "menu", the page's only navigation landmark. Esc on the
-  vocabulary hub, records and settings still goes home.
+  vocabulary hub, records and settings still goes home. Brand alone (the sign-in page),
+  the same bar is a `header` instead: it links nowhere, so it is no navigation.
 - **`skip-link`**: the first focusable element of every shell page, "skip to content",
   pointing at `main` (`id="main"`, `tabIndex={-1}`). Visually hidden until it takes
   focus, then a `secondary` button at 16, 16 over everything.
@@ -506,10 +510,31 @@ one column with the sample card under the steps.
   drill's three moves — a Japanese prompt, said in English before the timer runs out,
   flipped and graded ○ / × — as numbered steps ("1" in `figure-sm font-display`, the
   move in `body`), then "sign in" as the one `primary`, a link (`Button asChild`) to the
-  API's sign-in redirect, led on by → with its Space hint.
+  sign-in page, `/login`, led on by → with its Space hint.
 - Right: a static sample `drill-card` front — topic line, a prompt, a timer bar part run
   — `aria-hidden`: the product's own face is the hero. No illustration, no feature
   paragraphs, no second action.
+
+## Sign-in form
+
+`/login`, in the shell's frame with the brand alone (above), and nothing else around it:
+no sign-up, password reset, email change, other provider or help link, and no dialog.
+The content is the reading width, max 720, at the shell's own padding.
+
+- The `heading` "sign in", 32 above a native `form`: "email" and "password", each a
+  `label` in `text-label` 8 above its field, 24 apart, then "sign in" as the one
+  `primary` (`type="submit"`, full width), led on by → with no key hint — Enter in
+  either field submits, as a form does, and Space types.
+- A field is the `answer-field`'s face as an `input`: `bg-card`, a 2px `border-input`,
+  `rounded-control`, padding 12 / 16, at least 44 tall, `text-body`; hover `bg-raised`;
+  focus the global outline. Email is `type="email"` (`autocomplete="username"`),
+  password `type="password"` (`autocomplete="current-password"`); the password is sent
+  exactly as typed.
+- Sending: the button reads "signing in", disabled; the fields read-only. A refusal
+  ("email or password is wrong"), an account an administrator must act on first, or no
+  answer ("try again") is one `body` line under the fields with `role="alert"` — never
+  red — and the form is ready to send again at once. Success goes to `/` by a full page
+  load.
 
 ## Confetti layer
 

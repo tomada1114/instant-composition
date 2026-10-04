@@ -90,7 +90,7 @@ line (`null` where it does not apply):
 | `reason`     | `missing`, `unreadable` or `malformed` on `ERR_CONTENT_UNREADABLE`, else `null` |
 
 Never add a field carrying a request body, a path, a query string, a card's text, a
-learner's answers, a header, a cookie, a token, an authorization code or an error
+learner's answers, a header, a cookie, a token, an email, a password or an error
 message: a message can quote what the caller or a dependency sent.
 `tests/api-log.test.ts` holds the shape and that absence.
 

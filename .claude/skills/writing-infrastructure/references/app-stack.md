@@ -12,10 +12,10 @@ only the reasons an edit would otherwise undo.
   `/api/*` goes to the HTTP API's own `execute-api` domain, over HTTPS, uncached
   (`CachingDisabled`), with every method allowed.
 - **`AllViewerExceptHostHeader` on `/api/*`.** The API needs what the viewer sent: the
-  cookie path's `Origin` check, the session cookie, `Authorization`, and the sign-in
-  callback's query string. `Host` alone is dropped, because API Gateway must see its own
-  host name. The path goes through unchanged, so the app sees `/api/v1/...`, as it does
-  behind the local Vite proxy.
+  cookie path's `Origin` check, the session cookie, `Authorization`, and a sign-in's
+  JSON body. `Host` alone is dropped, because API Gateway must see its own host name.
+  The path goes through unchanged, so the app sees `/api/v1/...`, as it does behind the
+  local Vite proxy.
 - **The SPA fallback is a CloudFront Function**, on viewer request: a path whose last
   segment has no `.` is a client route and becomes `/index.html`. Never a
   distribution-wide error response instead — it would also rewrite the API's own `403`
