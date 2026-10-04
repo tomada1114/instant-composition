@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { MAX_COMMIT_ITEMS } from "@instant-composition/adapters";
+import { MAX_COMMIT_ITEMS, StorageSchemaError } from "@instant-composition/adapters";
+import type { ModelTask } from "@instant-composition/domain";
 import {
   keyOf,
   learnerId,
@@ -39,6 +40,32 @@ const B = learnerId("learner-b");
 
 const CONFLICT = { ok: false, error: { code: "ERR_CONFLICT" } };
 
+function sceneResult(claim: ModelTask, opening: string): ModelTask {
+  const { key, claimId, input, attempt, duplicatePossible, startedAt, expiresAt } =
+    claim;
+  return {
+    key,
+    claimId,
+    input,
+    attempt,
+    duplicatePossible,
+    startedAt,
+    expiresAt,
+    state: "result",
+    result: {
+      value: { scene: makeTalk().scene, opening },
+      call: {
+        provider: "scripted",
+        modelId: "scripted@1",
+        inputTokens: 1,
+        outputTokens: 1,
+        latencyMs: 1,
+        costUsd: null,
+      },
+    },
+  };
+}
+
 type Read = (store: LearnerStore) => Promise<unknown>;
 
 /**
@@ -63,6 +90,13 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   vocabItemsByIds: (store) => store.vocabItemsByIds(["v1"]),
   vocabReviewsByIds: (store) => store.vocabReviewsByIds("s1", ["va1"]),
   cardsByIds: (store) => store.cardsByIds(["p_card00000001"]),
+  modelTask: (store) =>
+    store.modelTask({
+      talkId: "t1",
+      task: "talk-scene",
+      turn: 0,
+      promptVersion: "talk-scene@1",
+    }),
   vocabItems: (store) => store.vocabItems(),
   vocabSession: (store) => store.vocabSession("s1"),
   vocabReviewsOf: (store) => store.vocabReviewsOf("s1"),
@@ -222,6 +256,143 @@ export function describeLearnerStoreContract(
       expect(current.ok).toBe(true);
       expect(stale).toStrictEqual(CONFLICT);
       expect(await store.profile()).toStrictEqual({ value: paris, version: 2 });
+    });
+
+    it("finishes a model claim atomically at its version without retaining the prior lease", async () => {
+      const claim = oneOfEach().find((entry) => entry.type === "modelTask");
+      if (claim?.type !== "modelTask") throw new Error("Missing model task fixture.");
+      await store.commit({
+        puts: [claim, { type: "stats", value: makeStats() }],
+        updates: [],
+        expect: [],
+      });
+      const result = sceneResult(claim.value, "answer");
+      expect(
+        await store.commit({
+          puts: [],
+          updates: [
+            { entry: { type: "modelTask", value: result }, version: 1 },
+            { entry: { type: "stats", value: makeStats({ points: 8 }) }, version: 2 },
+          ],
+          expect: [],
+        }),
+      ).toStrictEqual(CONFLICT);
+      expect((await store.modelTask(claim.value.key))?.value.state).toBe("in-flight");
+      expect((await store.stats())?.value.points).toBe(0);
+      expect(
+        (
+          await store.commit({
+            puts: [],
+            updates: [{ entry: { type: "modelTask", value: result }, version: 1 }],
+            expect: [],
+          })
+        ).ok,
+      ).toBe(true);
+      expect((await store.modelTask(claim.value.key))?.value).toMatchObject({
+        state: "result",
+        result: { value: { opening: "answer" } },
+      });
+      expect((await store.modelTask(claim.value.key))?.value).not.toHaveProperty(
+        "leaseUntil",
+      );
+      expect(
+        await store.commit({
+          puts: [],
+          updates: [{ entry: claim, version: 1 }],
+          expect: [],
+        }),
+      ).toStrictEqual(CONFLICT);
+      expect((await store.modelTask(claim.value.key))?.version).toBe(2);
+    });
+
+    it.each(["result", "failed"] as const)(
+      "refuses a %s task retaining the lease and applies no sibling write",
+      async (state) => {
+        const claim = oneOfEach().find((entry) => entry.type === "modelTask");
+        if (claim?.type !== "modelTask") throw new Error("Missing model task fixture.");
+        await store.commit({ puts: [claim], updates: [], expect: [] });
+        const value: ModelTask =
+          state === "result"
+            ? { ...claim.value, ...sceneResult(claim.value, "answer") }
+            : { ...claim.value, state: "failed", outcome: "known", reason: "denied" };
+        const rejected = async () =>
+          store.commit({
+            puts: [{ type: "review", value: makeReview() }],
+            updates: [{ entry: { type: "modelTask", value }, version: 1 }],
+            expect: [],
+          });
+        await expect(rejected()).rejects.toBeInstanceOf(StorageSchemaError);
+        await expect(rejected()).rejects.toMatchObject({ code: "ERR_STORAGE_SHAPE" });
+        expect(await store.modelTask(claim.value.key)).toStrictEqual({
+          value: claim.value,
+          version: 1,
+        });
+        expect(await store.reviewsOf("r1")).toStrictEqual([]);
+      },
+    );
+
+    it("fences model finalization after TTL deletion and recreation restarted the numeric version", async () => {
+      const claim = oneOfEach().find((entry) => entry.type === "modelTask");
+      if (claim?.type !== "modelTask") throw new Error("Missing model task fixture.");
+      await store.commit({ puts: [claim], updates: [], expect: [] });
+      expect(
+        (
+          await store.commit({
+            puts: [],
+            updates: [],
+            expect: [],
+            deletes: [{ key: keyOf(claim), version: 1 }],
+          })
+        ).ok,
+      ).toBe(true);
+      const recovered = { ...claim.value, claimId: "new-request:1" };
+      expect(
+        (
+          await store.commit({
+            puts: [{ type: "modelTask", value: recovered }],
+            updates: [],
+            expect: [],
+          })
+        ).ok,
+      ).toBe(true);
+      const saved = sceneResult(claim.value, "stale answer");
+      expect(
+        await store.commit({
+          puts: [],
+          updates: [
+            {
+              entry: { type: "modelTask", value: saved },
+              version: 1,
+              modelClaim: claim.value.claimId,
+            },
+          ],
+          expect: [],
+        }),
+      ).toStrictEqual(CONFLICT);
+      expect(await store.modelTask(claim.value.key)).toStrictEqual({
+        value: recovered,
+        version: 1,
+      });
+      const current = sceneResult(recovered, "current answer");
+      expect(
+        (
+          await store.commit({
+            puts: [],
+            updates: [
+              {
+                entry: { type: "modelTask", value: current },
+                version: 1,
+                modelClaim: recovered.claimId,
+              },
+            ],
+            expect: [],
+          })
+        ).ok,
+      ).toBe(true);
+      expect((await store.modelTask(claim.value.key))?.value).toMatchObject({
+        state: "result",
+        result: { value: { opening: "current answer" } },
+      });
     });
 
     it("refuses a put over an entry that exists", async () => {
@@ -807,6 +978,22 @@ export function describeLearnerStoreContract(
 
     beforeEach(async () => {
       store = (await makeStores()).forLearner(A);
+    });
+
+    it("refuses a model claim condition on any other entry", async () => {
+      await expect(async () =>
+        store.commit({
+          puts: [],
+          updates: [
+            {
+              entry: { type: "stats", value: makeStats() },
+              version: 1,
+              modelClaim: "claim",
+            },
+          ],
+          expect: [],
+        }),
+      ).rejects.toThrow(RangeError);
     });
 
     it("refuses a commit larger than DynamoDB's transaction limit", async () => {

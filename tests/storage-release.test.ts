@@ -305,3 +305,22 @@ it("refuses the archived v1 binary before it can discard cap2 round adoption sta
     StorageCompatibilityError,
   );
 });
+
+it("refuses the archived v2 binary before it can discard cap3 model claims", async () => {
+  const current = policy();
+  const previous = current.releases.find((release) => release.id === "storage-v2");
+  if (previous === undefined) throw new TypeError("Archived v2 certificate required.");
+  expect(previous.reads).toStrictEqual([0, 1, 2]);
+  expect(previous.preserves).toStrictEqual([0, 1, 2]);
+  expect(previous.schemaFingerprint).toBe(
+    "38bc539f80947b14fe2167ed3b8f8c12863ab96e76c0a965195b2dedbe3b87fe",
+  );
+  expect(() =>
+    assertStorageArtifact(current, {
+      storage: { contract: previous.id, schemaFingerprint: previous.schemaFingerprint },
+    }),
+  ).toThrow(StorageCompatibilityError);
+  await expect(main([previous.id], root)).rejects.toBeInstanceOf(
+    StorageCompatibilityError,
+  );
+});

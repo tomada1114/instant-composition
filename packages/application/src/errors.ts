@@ -1,7 +1,7 @@
 import type { PracticeError, TalkError, VocabError } from "@instant-composition/domain";
 
 import type { CatalogUnreadable } from "./catalog";
-import type { ModelFailure } from "./language-model";
+import type { ModelTaskError } from "./talk-model-task";
 import type { CommitConflict } from "./store";
 
 /**
@@ -34,4 +34,4 @@ export type ApplicationErrorCode = ApplicationError["code"];
  * contract's code list. A `ModelFailure`'s `reason` may reach a log, never a
  * response.
  */
-export type TalkCommandError = ApplicationError | TalkError | ModelFailure;
+export type TalkCommandError = ApplicationError | TalkError | ModelTaskError;

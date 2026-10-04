@@ -15,7 +15,8 @@ import type { RequestContext } from "./context";
 import type { TalkCommandError } from "./errors";
 import { committed, storeFor } from "./execute";
 import type { LearnerStore } from "./store";
-import { ask, type TalkDeps } from "./talk-model";
+import { type TalkDeps } from "./talk-model";
+import { askReserved, reserveModels } from "./talk-model-task";
 import { partnerRequest } from "./talk-partner";
 import { teacherRequest } from "./talk-teacher";
 import { turnResultOf, type PartnerReply, type TurnResult } from "./talk-views";
@@ -46,7 +47,7 @@ export async function sendTurn(
     return bound;
   }
   const store = bound.value;
-  const { live } = await readTalk(store, command.talkId, context.now);
+  const { stored: before, live } = await readTalk(store, command.talkId, context.now);
   const decided = decideTurn(live, command);
   if (!decided.ok) {
     return decided;
@@ -55,10 +56,33 @@ export async function sendTurn(
     return ok(turnResultOf(decided.value.turn));
   }
   const { talk, partnerLine, n } = decided.value;
+  const teacherAsked = teacherRequest({ scene: talk.scene, partnerLine, ...command });
+  const partnerAsked = partnerRequest(talk, { n, ...command });
+  const reserved = await reserveModels(
+    store,
+    context,
+    [teacherAsked, partnerAsked].map((request) => ({
+      key: {
+        talkId: command.talkId,
+        task: request.task,
+        turn: n,
+        promptVersion: request.promptVersion,
+        generation: talk.startedAt,
+      },
+      request,
+    })),
+    [{ key: { type: "talk", id: command.talkId }, version: before?.version ?? null }],
+  );
+  if (!reserved.ok) return reserved;
+  const [teacherClaim, partnerClaim] = reserved.value;
+  if (teacherClaim === undefined || partnerClaim === undefined)
+    return err({ code: "ERR_CONFLICT" });
   const [teacher, partner] = await Promise.all([
-    ask(deps, teacherRequest({ scene: talk.scene, partnerLine, ...command })),
-    ask(deps, partnerRequest(talk, { n, ...command })),
+    askReserved(deps, store, teacherClaim, teacherAsked),
+    askReserved(deps, store, partnerClaim, partnerAsked),
   ]);
+  if (!teacher.ok && teacher.error.code === "ERR_CONFLICT") return teacher;
+  if (!partner.ok && partner.error.code === "ERR_CONFLICT") return partner;
   const answers = {
     teacher: teacher.ok ? teacher.value.value : undefined,
     reply: partner.ok ? partner.value.value : undefined,
@@ -69,6 +93,8 @@ export async function sendTurn(
       command.talkId,
       context.now,
     );
+    if (current !== undefined && current.startedAt !== talk.startedAt)
+      return err({ code: "ERR_CONFLICT" });
     const again = decideTurn(current, command);
     if (!again.ok) {
       return again;
@@ -99,7 +125,7 @@ export async function retryReply(
     return bound;
   }
   const store = bound.value;
-  const { live } = await readTalk(store, command.talkId, context.now);
+  const { stored: before, live } = await readTalk(store, command.talkId, context.now);
   const decided = decideReply(live);
   if (!decided.ok) {
     return decided;
@@ -108,7 +134,29 @@ export async function retryReply(
     return ok({ line: decided.value.line, closing: decided.value.closing });
   }
   const asked = decided.value.turn;
-  const reply = await ask(deps, partnerRequest(decided.value.talk, asked));
+  const generation = decided.value.talk.startedAt;
+  const request = partnerRequest(decided.value.talk, asked);
+  const reserved = await reserveModels(
+    store,
+    context,
+    [
+      {
+        key: {
+          talkId: command.talkId,
+          task: request.task,
+          turn: asked.n,
+          promptVersion: request.promptVersion,
+          generation,
+        },
+        request,
+      },
+    ],
+    [{ key: { type: "talk", id: command.talkId }, version: before?.version ?? null }],
+  );
+  if (!reserved.ok) return reserved;
+  const reservation = reserved.value[0];
+  if (reservation === undefined) return err({ code: "ERR_CONFLICT" });
+  const reply = await askReserved(deps, store, reservation, request);
   if (!reply.ok) {
     return err(reply.error);
   }
@@ -119,6 +167,8 @@ export async function retryReply(
       command.talkId,
       context.now,
     );
+    if (current !== undefined && current.startedAt !== generation)
+      return err({ code: "ERR_CONFLICT" });
     const again = decideReply(current);
     if (!again.ok) {
       return again;

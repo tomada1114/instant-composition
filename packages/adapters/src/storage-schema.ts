@@ -1,15 +1,11 @@
 import { z } from "zod";
 import type { Entry } from "@instant-composition/application";
 import { withoutRetired } from "./storage-retired";
-import { compositionReadModelSchemas } from "./storage-calendar";
-import { readModelSchemas } from "./storage-projections";
-import { modelTaskSchema } from "./storage-model-task";
-import { compositionSchemas } from "./storage-composition";
-import { talkSchema, vocabularySchemas } from "./storage-vocabulary";
-import { readModelBootstrapSchema } from "./storage-bootstrap-schema";
+import { storageSchemasAt } from "./storage-history";
+import { modelTaskStorageKeyMatches } from "./storage-model-task";
 
 /** Optimistic `version` counts writes; this identifies the storage contract. */
-export const STORAGE_SCHEMA_VERSION = 2;
+export const STORAGE_SCHEMA_VERSION = 3;
 export type StorageFamily = Entry["type"] | "identity" | "readModelBootstrap";
 export const STORAGE_FAMILIES = [
   "identity",
@@ -26,6 +22,7 @@ export const STORAGE_FAMILIES = [
   "vocabSession",
   "vocabReview",
   "card",
+  "modelTask",
 ] as const satisfies readonly StorageFamily[];
 const family = z.enum(STORAGE_FAMILIES);
 export type StorageErrorCode = "ERR_STORAGE_SCHEMA_UNKNOWN" | "ERR_STORAGE_SHAPE";
@@ -41,40 +38,8 @@ export class StorageSchemaError extends Error {
   }
 }
 
-/** JSON decoding omits absent optional fields; zod permits explicit undefined. */
-type WireCompatible<T> = T extends readonly (infer V)[]
-  ? readonly WireCompatible<V>[]
-  : T extends object
-    ? {
-        readonly [K in keyof T]:
-          WireCompatible<T[K]> | (undefined extends T[K] ? undefined : never);
-      }
-    : T;
-type FamilyValue<K extends StorageFamily> = K extends "identity"
-  ? { readonly learnerId: string }
-  : K extends "stats"
-    ? Omit<Extract<Entry, { type: "stats" }>["value"], "completedDays"> & {
-        readonly completedDays?: readonly string[];
-        readonly streak?: { readonly schema: 1; readonly longest: number };
-      }
-    : K extends Entry["type"]
-      ? Extract<Entry, { type: K }>["value"]
-      : unknown;
-type StorageSchemas = {
-  readonly [K in StorageFamily]: z.ZodType<WireCompatible<FamilyValue<K>>>;
-};
-const schemas = (strict: boolean, schemaVersion: number) => ({
-  readModelBootstrap: readModelBootstrapSchema(),
-  ...compositionSchemas(strict, schemaVersion),
-  ...vocabularySchemas(strict),
-  talk: talkSchema(strict),
-  modelTask: modelTaskSchema(strict),
-  ...readModelSchemas(strict),
-  ...compositionReadModelSchemas(strict),
-});
-const CURRENT = schemas(true, STORAGE_SCHEMA_VERSION) satisfies StorageSchemas;
 const DECLARED = Array.from({ length: STORAGE_SCHEMA_VERSION + 1 }, (_, version) =>
-  version === STORAGE_SCHEMA_VERSION ? CURRENT : schemas(true, version),
+  storageSchemasAt(version),
 );
 const envelope = z.strictObject({
   type: z.string(),
@@ -102,7 +67,10 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
     throw new StorageSchemaError("ERR_STORAGE_SHAPE", "row");
   }
   const { version, schemaVersion = 0, value } = parsed.data;
-  if (schemaVersion > STORAGE_SCHEMA_VERSION) {
+  if (
+    schemaVersion > STORAGE_SCHEMA_VERSION ||
+    (type === "modelTask" && schemaVersion < 3)
+  ) {
     throw new StorageSchemaError("ERR_STORAGE_SCHEMA_UNKNOWN", "schemaVersion");
   }
   const declared = DECLARED[schemaVersion];
@@ -118,15 +86,23 @@ export function decodeStorageRow(type: StorageFamily, row: unknown): DecodedStor
     );
   }
   if (
+    type === "modelTask" &&
+    !modelTaskStorageKeyMatches(decoded.data, parsed.data.PK, parsed.data.SK)
+  )
+    throw new StorageSchemaError("ERR_STORAGE_SHAPE", "key");
+  if (
     parsed.data.expiresAt !== undefined &&
     (![
       "talk",
+      "modelTask",
       "vocabReadModel",
       "vocabCandidate",
       "compositionReadModel",
       "compositionBuild",
       "compositionCandidate",
     ].includes(type) ||
+      typeof decoded.data !== "object" ||
+      decoded.data === null ||
       Reflect.get(decoded.data, "expiresAt") !== parsed.data.expiresAt)
   )
     throw new StorageSchemaError("ERR_STORAGE_SHAPE", "expiresAt");
@@ -154,10 +130,15 @@ export function encodeStorageValue(type: StorageFamily, value: unknown): unknown
 /** Source fences enumerate supported integer versions. Raising the global storage
  * version preserves prior guarded rows while every older binary refuses future rows.
  */
-export function storageSchemaFence(): {
+export function storageSchemaFence(type?: StorageFamily): {
   readonly condition: string;
   readonly values: Readonly<Record<string, number>>;
 } {
+  if (type === "modelTask")
+    return {
+      condition: "(#schema = :schema)",
+      values: { ":schema": STORAGE_SCHEMA_VERSION },
+    };
   const values: Record<string, number> = {
     ":legacy": 0,
     ":schema": STORAGE_SCHEMA_VERSION,

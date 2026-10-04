@@ -11,7 +11,8 @@ import {
 import type { RequestContext } from "./context";
 import type { TalkCommandError } from "./errors";
 import { committed, storeFor } from "./execute";
-import { ask, TALK_PROMPTS, type TalkDeps } from "./talk-model";
+import { TALK_PROMPTS, type TalkDeps } from "./talk-model";
+import { askReserved, reserveModels } from "./talk-model-task";
 import { sceneRequest } from "./talk-scene";
 import { openedOf, type TalkOpened } from "./talk-views";
 
@@ -43,7 +44,32 @@ export async function startTalk(
     return ok(openedOf(before.live));
   }
   const kind = sceneKindOf(seededRandom(`talk:${command.talkId}`));
-  const scene = await ask(deps, sceneRequest(kind));
+  const request = sceneRequest(kind);
+  const reserved = await reserveModels(
+    store,
+    context,
+    [
+      {
+        key: {
+          talkId: command.talkId,
+          task: request.task,
+          turn: 0,
+          promptVersion: request.promptVersion,
+        },
+        request,
+      },
+    ],
+    [
+      {
+        key: { type: "talk", id: command.talkId },
+        version: before.stored?.version ?? null,
+      },
+    ],
+  );
+  if (!reserved.ok) return reserved;
+  const reservation = reserved.value[0];
+  if (reservation === undefined) return err({ code: "ERR_CONFLICT" });
+  const scene = await askReserved(deps, store, reservation, request);
   if (!scene.ok) {
     return err(scene.error);
   }

@@ -67,7 +67,12 @@ export const TALK_ROUTES: readonly Route[] = [
       "Keeps the next turn, judged by the teacher and answered by the partner in parallel: a teacher that answered nothing keeps the verdict failed, a partner that answered nothing keeps reply null. A resent kept turn answers as kept, without a model call; any turn but the next is ERR_CONFLICT.",
     requestBody: turnRequestSchema,
     success: { status: 200, body: turnResultSchema },
-    errors: [...TALK_ERRORS, "ERR_PAYLOAD_TOO_LARGE", "ERR_TALK_CLOSED"],
+    errors: [
+      ...TALK_ERRORS,
+      "ERR_PAYLOAD_TOO_LARGE",
+      "ERR_TALK_CLOSED",
+      "ERR_MODEL_UNAVAILABLE",
+    ],
   },
   {
     method: "post",

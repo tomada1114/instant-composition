@@ -54,6 +54,11 @@ export interface ModelRequest<T> {
   readonly task: string;
   /** The task's prompt version, such as `talk-teacher@1`, bumped with any prompt or schema change. */
   readonly promptVersion: string;
+  /** Durable attempt metadata for privacy-safe logs; never sent to the provider. */
+  readonly execution?: {
+    readonly attempt: number;
+    readonly duplicatePossible: boolean;
+  };
   readonly system: string;
   readonly messages: readonly ModelMessage[];
   readonly output: {

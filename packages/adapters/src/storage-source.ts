@@ -1,6 +1,42 @@
-import type { Commit, Key } from "@instant-composition/application";
+import type { Commit, Entry, Key } from "@instant-composition/application";
 import { keyOf } from "@instant-composition/application";
-import { decodeStorageRow, StorageSchemaError } from "./storage-schema";
+import {
+  decodeStorageRow,
+  STORAGE_SCHEMA_VERSION,
+  StorageSchemaError,
+} from "./storage-schema";
+
+/** The memory adapter uses the same family birth/current schema bounds as the wire. */
+function supportedSourceSchema(type: Key["type"], schemaVersion: number): boolean {
+  return (
+    Number.isInteger(schemaVersion) &&
+    schemaVersion >= (type === "modelTask" ? 3 : 0) &&
+    schemaVersion <= STORAGE_SCHEMA_VERSION
+  );
+}
+
+/** A memory source must still hold both its version and supported family schema. */
+export function sourceVersionHolds(
+  key: Key,
+  source: { readonly version: number; readonly schemaVersion: number } | undefined,
+  version: number | null,
+): boolean {
+  return (
+    (source?.version ?? null) === version &&
+    (source === undefined || supportedSourceSchema(key.type, source.schemaVersion))
+  );
+}
+
+/** A source claim token survives a delete/recreate even when its version restarts. */
+export function matchesModelClaim(
+  entry: Entry | undefined,
+  claim: string | undefined,
+): boolean {
+  return (
+    claim === undefined ||
+    (entry?.type === "modelTask" && entry.value.claimId === claim)
+  );
+}
 
 /** Whole-row updates/deletions must decode their source, including unversioned
  * legacy rows. The transaction's version/schema fence still closes the read race.

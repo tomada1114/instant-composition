@@ -166,9 +166,10 @@ describe("openApiDocument", () => {
     expect(operation?.responses["403"]?.description).toMatch(/ERR_CARD_NOT_PERSONAL: /);
   });
 
-  it("answers a scene, a reply or candidates that could not be had with 503 ERR_MODEL_UNAVAILABLE", () => {
+  it("answers unavailable scenes, turn claims, replies or candidates with 503 ERR_MODEL_UNAVAILABLE", () => {
     for (const path of [
       "/v1/talks",
+      "/v1/talks/{talkId}/turns",
       "/v1/talks/{talkId}/reply",
       "/v1/talks/{talkId}/candidates",
     ]) {

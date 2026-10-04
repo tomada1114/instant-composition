@@ -1286,6 +1286,14 @@
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
               }
             }
+          },
+          "503": {
+            "description": "ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
           }
         }
       }

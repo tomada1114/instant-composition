@@ -76,6 +76,48 @@ describe("storage maintenance operator", () => {
     expect(existsSync(checkpoint)).toBe(false);
     expect(existsSync(`${checkpoint}.lock`)).toBe(false);
   });
+  it.each(
+    ["legacy-to-storage-v1", "expand-to-storage-v2"].flatMap((plan) =>
+      ["dry-run", "apply", "resume"].map((mode) => ({ plan, mode })),
+    ),
+  )(
+    "refuses archived $plan in $mode before creating child, lock or checkpoint",
+    async ({ plan, mode }) => {
+      const checkpoint = path.join(folder(), "archived.json");
+      await expect(
+        main([
+          "--plan",
+          plan,
+          "--table",
+          "fixture",
+          "--endpoint",
+          "http://127.0.0.1:1",
+          "--checkpoint",
+          checkpoint,
+          ...(mode === "dry-run" ? ["--dry-run"] : ["--apply", "--writers-stopped"]),
+          ...(mode === "resume" ? ["--resume"] : []),
+        ]),
+      ).rejects.toMatchObject({ code: "ERR_STORAGE_RELEASE_UNSAFE" });
+      expect(existsSync(checkpoint)).toBe(false);
+      expect(existsSync(`${checkpoint}.lock`)).toBe(false);
+    },
+  );
+  it("admits only the explicit v3 expansion before attempting data access", async () => {
+    const checkpoint = path.join(folder(), "v3.json");
+    await expect(
+      main([
+        "--plan",
+        "expand-to-storage-v3",
+        "--table",
+        "fixture",
+        "--endpoint",
+        "http://127.0.0.1:1",
+        "--checkpoint",
+        checkpoint,
+      ]),
+    ).rejects.toThrow("ERR_STORAGE_VALIDATOR_REFUSED");
+    expect(existsSync(checkpoint)).toBe(false);
+  });
   it("refuses an unreviewed plan before opening a checkpoint or making a request", async () => {
     const checkpoint = path.join(folder(), "future.json");
     await expect(

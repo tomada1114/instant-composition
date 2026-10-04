@@ -4,6 +4,7 @@ import {
   type Key,
   type LearnerId,
 } from "@instant-composition/application";
+import { modelTaskSortKey } from "./storage-model-task";
 
 /**
  * The attribute names of the learner table's primary key: one partition per
@@ -77,6 +78,8 @@ export function sortKeyOf(key: Key): string {
       return `${itemsPrefix(key.item.kind)}${part(key.item.id)}`;
     case "talk":
       return `TALK#${part(key.id)}`;
+    case "modelTask":
+      return modelTaskSortKey(key.task);
     case "vocabItem":
       return `${itemsPrefix("vocab")}${part(key.cardId)}`;
     case "vocabSession":
@@ -112,6 +115,13 @@ export function itemsPrefix(kind: string): string {
  * returning `ERR_CONFLICT`: nothing a retry could fix.
  */
 export function checkShape(commit: Commit): void {
+  if (
+    commit.updates.some(
+      ({ entry, modelClaim }) => modelClaim !== undefined && entry.type !== "modelTask",
+    )
+  ) {
+    throw new RangeError("A claim token condition applies only to a model task.");
+  }
   const deletes = commit.deletes ?? [];
   const keys = [
     ...commit.puts.map((entry) => sortKeyOf(keyOf(entry))),

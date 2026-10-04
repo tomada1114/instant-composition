@@ -16,7 +16,8 @@ import { committed, storeFor, type Write } from "./execute";
 import type { Stored } from "./store";
 import { viewOf, vocabularyOf } from "./talk-candidate-view";
 import { cardsRequest } from "./talk-cards";
-import { ask, TALK_PROMPTS, type TalkDeps } from "./talk-model";
+import { TALK_PROMPTS, type TalkDeps } from "./talk-model";
+import { askReserved, reserveModels } from "./talk-model-task";
 import type { CardCandidates } from "./talk-views";
 import { knownHeadwords, shownCards } from "./vocab-shown";
 
@@ -54,7 +55,7 @@ export async function makeCandidates(
     const stored = await store.talk(command.talkId);
     return { stored, decided: decideCandidates(liveTalk(stored?.value, context.now)) };
   };
-  const { decided } = await read();
+  const { stored: before, decided } = await read();
   if (!decided.ok) {
     return decided;
   }
@@ -64,7 +65,29 @@ export async function makeCandidates(
   if (decided.value.kind === "kept") {
     return ok(viewOf(decided.value.cards, await vocabularyOf(store, snapshot.value)));
   }
-  const reply = await ask(deps, cardsRequest(decided.value.turns));
+  const request = cardsRequest(decided.value.turns);
+  const generation = decided.value.talk.startedAt;
+  const reserved = await reserveModels(
+    store,
+    context,
+    [
+      {
+        key: {
+          talkId: command.talkId,
+          task: request.task,
+          turn: 0,
+          promptVersion: request.promptVersion,
+          generation,
+        },
+        request,
+      },
+    ],
+    [{ key: { type: "talk", id: command.talkId }, version: before?.version ?? null }],
+  );
+  if (!reserved.ok) return reserved;
+  const reservation = reserved.value[0];
+  if (reservation === undefined) return err({ code: "ERR_CONFLICT" });
+  const reply = await askReserved(deps, store, reservation, request);
   if (!reply.ok) {
     return err(reply.error);
   }
@@ -75,6 +98,8 @@ export async function makeCandidates(
   };
   return committed(store, async () => {
     const { stored, decided: again } = await read();
+    if (stored !== undefined && stored.value.startedAt !== generation)
+      return err({ code: "ERR_CONFLICT" });
     if (!again.ok) {
       return again;
     }

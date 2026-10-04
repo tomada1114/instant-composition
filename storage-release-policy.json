@@ -1,7 +1,17 @@
 {
-  "current": "storage-v2",
-  "emittedSchemas": [0, 1, 2],
+  "current": "storage-v3",
+  "emittedSchemas": [0, 1, 2, 3],
   "releases": [
+    {
+      "id": "storage-v3",
+      "guarded": true,
+      "reads": [0, 1, 2, 3],
+      "preserves": [0, 1, 2, 3],
+      "fixture": "tests/fixtures/storage-v3.json",
+      "sha256": "687882c556a1acd0fbcdb870d372c95a7f91b1f3d18a87e20875ac34f3952054",
+      "schemaFingerprint": "794827d4b15b79628ff23a6ec4d9a8b16c2cd6d4e51ee500f100c4f838577187",
+      "writes": 3
+    },
     {
       "id": "storage-v2",
       "guarded": true,
@@ -60,6 +70,7 @@
     "package.json",
     "packages/adapters/package.json",
     "packages/adapters/src/catalog-schema.ts",
+    "packages/adapters/src/declared-model-task.ts",
     "packages/adapters/src/declared.ts",
     "packages/adapters/src/dynamodb-client.ts",
     "packages/adapters/src/dynamodb-commit.ts",
@@ -83,6 +94,7 @@
     "packages/adapters/src/storage-calendar.ts",
     "packages/adapters/src/storage-common.ts",
     "packages/adapters/src/storage-composition.ts",
+    "packages/adapters/src/storage-history.ts",
     "packages/adapters/src/storage-maintenance.ts",
     "packages/adapters/src/storage-memory.ts",
     "packages/adapters/src/storage-model-task.ts",
@@ -128,6 +140,7 @@
     "packages/application/src/talk-candidate-view.ts",
     "packages/application/src/talk-candidates.ts",
     "packages/application/src/talk-cards.ts",
+    "packages/application/src/talk-model-task.ts",
     "packages/application/src/talk-model.ts",
     "packages/application/src/talk-partner.ts",
     "packages/application/src/talk-scene.ts",
@@ -165,6 +178,7 @@
     "packages/domain/src/level.ts",
     "packages/domain/src/mastery.ts",
     "packages/domain/src/milestones.ts",
+    "packages/domain/src/model-task.ts",
     "packages/domain/src/placement.ts",
     "packages/domain/src/points.ts",
     "packages/domain/src/queue.ts",

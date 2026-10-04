@@ -14,6 +14,7 @@ import { copyEntry, readMemorySlot, type Slot, type ValueOf } from "./storage-me
 import { checkShape, sortKeyOf } from "./keys";
 import { keyedReads } from "./keyed-reads";
 import { memoryReviewPage } from "./memory-review-page";
+import { matchesModelClaim, sourceVersionHolds } from "./storage-source";
 
 /** The fields both logs sort by. */
 type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
@@ -36,16 +37,8 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       .map((slot) => readMemorySlot(type, slot));
   }
 
-  function holds(key: Key, version: number | null): boolean {
-    const slot = slots.get(sortKeyOf(key));
-    return (
-      (slot?.version ?? null) === version &&
-      (slot === undefined ||
-        (Number.isInteger(slot.schemaVersion) &&
-          slot.schemaVersion >= 0 &&
-          slot.schemaVersion <= STORAGE_SCHEMA_VERSION))
-    );
-  }
+  const holds = (key: Key, version: number | null): boolean =>
+    sourceVersionHolds(key, slots.get(sortKeyOf(key)), version);
 
   function reviews(sessionId?: string): readonly ReviewEntry[] {
     counted();
@@ -111,6 +104,10 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       counted();
       return Promise.resolve(read({ type: "talk", id }));
     },
+    modelTask(task) {
+      counted();
+      return Promise.resolve(read({ type: "modelTask", task }));
+    },
     vocabItems() {
       counted();
       return Promise.resolve(
@@ -149,6 +146,10 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       const deletes = commit.deletes ?? [];
       const conflict =
         writes.some(({ entry, version }) => !holds(keyOf(entry), version)) ||
+        commit.updates.some(
+          ({ entry, modelClaim }) =>
+            !matchesModelClaim(slots.get(sortKeyOf(keyOf(entry)))?.entry, modelClaim),
+        ) ||
         [...commit.expect, ...deletes].some(({ key, version }) => !holds(key, version));
       if (conflict) {
         return Promise.resolve(err({ code: "ERR_CONFLICT" }));
