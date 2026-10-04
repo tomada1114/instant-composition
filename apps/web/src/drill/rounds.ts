@@ -82,3 +82,11 @@ export async function requestFinish(
 export function sendAnswer(answer: AnswerInput): Promise<SendOutcome> {
   return recordAnswers(answer.roundId, [answerOf(answer)]);
 }
+
+/** Pending answers of one round, each keeping its id across a resend. */
+export function sendAnswers(answers: readonly AnswerInput[]): Promise<SendOutcome> {
+  const first = answers[0];
+  return first === undefined
+    ? Promise.resolve("sent")
+    : recordAnswers(first.roundId, answers.map(answerOf));
+}

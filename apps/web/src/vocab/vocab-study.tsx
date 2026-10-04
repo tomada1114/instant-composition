@@ -3,7 +3,6 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
-import { createAnswerQueue, sessionStore } from "../study/answer-queue";
 import { useQueuedStudy } from "../study/answer-sync";
 import { studyReducer } from "../study/study-machine";
 import { initVocab } from "./vocab-init";
@@ -14,7 +13,7 @@ import { useStudyClock, useStudyKeys, type StudyAction } from "../study/use-stud
 import { useLeaveGuard } from "../study/use-leave-guard";
 import type { GradeKeyTrio, VocabSession, VocabSummary } from "../openapi";
 import { Button } from "../ui/button";
-import { requestVocabFinish, VOCAB_QUEUE_PREFIX, sendVocabAnswer } from "./sessions";
+import { createVocabQueue, requestVocabFinish } from "./sessions";
 import { VocabCard } from "./vocab-card";
 import { VocabDialog } from "./vocab-dialog";
 import { useVocabDelete } from "./use-vocab-delete";
@@ -39,13 +38,7 @@ export function VocabStudy({
   const vocab = useTranslations("Vocab");
   const cache = useQueryClient();
   const navigate = useNavigate();
-  const [queue] = useState(() =>
-    createAnswerQueue({
-      key: `${VOCAB_QUEUE_PREFIX}${session.sessionId}`,
-      send: sendVocabAnswer,
-      storage: sessionStore(),
-    }),
-  );
+  const [queue] = useState(() => createVocabQueue(session.sessionId));
   const [failures, setFailures] = useState(0);
   const [state, dispatch] = useQueuedStudy(
     queue,

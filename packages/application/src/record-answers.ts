@@ -12,6 +12,7 @@ import { cardFacts } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
+import { initializeRoundAnswers } from "./initialize-round-answers";
 import { itemValues, statsOf } from "./practice";
 import type { LearnerStore } from "./store";
 
@@ -38,13 +39,12 @@ function recordChunk(
     if (round === undefined) {
       return err({ code: "ERR_ROUND_NOT_FOUND" });
     }
-    const reviews = await store.reviewsOf(round.value.id);
-    const recorded = new Set(reviews.map((review) => review.id));
-    const firstCards = new Set(
-      reviews
-        .filter((review) => review.detail.pass === "first")
-        .map((review) => review.item.id),
+    const reviews = await store.reviewsByIds(
+      round.value.id,
+      command.answers.map((answer) => answer.id),
     );
+    const recorded = new Set(reviews.keys());
+    const firstCards = new Set(round.value.answerState?.firstCards ?? []);
     const checked = checkAnswers(round.value, command.answers, facts, recorded);
     if (!checked.ok) {
       return checked;
@@ -52,7 +52,7 @@ function recordChunk(
     const { portionDay, day } = round.value;
     const [stats, items, portion, tallies] = await Promise.all([
       store.stats(),
-      store.items(),
+      store.itemsByIds(chunk.map((answer) => answer.cardId)),
       portionDay === null ? undefined : store.portion(portionDay),
       store.days([day]),
     ]);
@@ -87,7 +87,14 @@ function recordChunk(
     if (change.portion !== undefined) {
       writes.push([{ type: "portion", value: change.portion }, portion]);
     }
-    return ok({ value: undefined, writes });
+    const moved = new Set(change.items.map((item) => item.item.id));
+    const expect = [...new Set(change.entries.map((entry) => entry.item.id))]
+      .filter((id) => !moved.has(id))
+      .map((id) => ({
+        key: { type: "item" as const, item: { kind: "composition" as const, id } },
+        version: items.get(id)?.version ?? null,
+      }));
+    return ok({ value: undefined, writes, expect });
   });
 }
 
@@ -98,6 +105,8 @@ export async function recordInto(
   context: RequestContext,
   command: RecordAnswersCommand,
 ): Promise<Result<undefined, ApplicationError>> {
+  const initialized = await initializeRoundAnswers(store, command.roundId);
+  if (!initialized.ok) return initialized;
   const chunks: AnswerInput[][] = [];
   for (let start = 0; start < command.answers.length; start += ANSWERS_PER_COMMIT) {
     chunks.push(command.answers.slice(start, start + ANSWERS_PER_COMMIT));

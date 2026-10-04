@@ -9,7 +9,7 @@ import { talkSchema, vocabularySchemas } from "./storage-vocabulary";
 import { readModelBootstrapSchema } from "./storage-bootstrap-schema";
 
 /** Optimistic `version` counts writes; this identifies the storage contract. */
-export const STORAGE_SCHEMA_VERSION = 1;
+export const STORAGE_SCHEMA_VERSION = 2;
 export type StorageFamily = Entry["type"] | "identity" | "readModelBootstrap";
 export const STORAGE_FAMILIES = [
   "identity",

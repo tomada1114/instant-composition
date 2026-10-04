@@ -2,7 +2,6 @@ import {
   decideVocabAnswers,
   err,
   ok,
-  vocabFigures,
   type Result,
   type VocabAnswer,
 } from "@instant-composition/domain";
@@ -10,11 +9,10 @@ import {
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
-import type { LearnerStore } from "./store";
+import type { Commit, LearnerStore } from "./store";
 import type { CatalogSnapshot } from "./catalog";
-import { loadVocab, summaryOf, vocabSnapshots } from "./vocab-load";
+import { vocabSnapshots } from "./vocab-load";
 import { shownCards } from "./vocab-shown";
-import type { VocabSummary } from "./vocab-views";
 
 export interface VocabAnswersCommand {
   readonly sessionId: string;
@@ -41,15 +39,25 @@ function recordChunk(
       return err({ code: "ERR_SESSION_NOT_FOUND" });
     }
     const [reviews, items, cards] = await Promise.all([
-      store.vocabReviewsOf(command.sessionId),
-      store.vocabItems(),
-      store.cards(),
+      store.vocabReviewsByIds(
+        command.sessionId,
+        command.answers.map((answer) => answer.id),
+      ),
+      store.vocabItemsByIds(chunk.map((answer) => answer.cardId)),
+      store.cardsByIds(chunk.map((answer) => answer.cardId)),
     ]);
-    const snapshots = vocabSnapshots(shownCards(snapshot, cards));
+    const wanted = new Set(chunk.map((answer) => answer.cardId));
+    const vocab = new Map(
+      [...wanted].flatMap((id) => {
+        const card = snapshot.vocab.get(id);
+        return card === undefined ? [] : [[id, card] as const];
+      }),
+    );
+    const snapshots = vocabSnapshots(shownCards({ ...snapshot, vocab }, cards));
     const state = {
       session: session.value,
       progress: new Map([...items].map(([id, stored]) => [id, stored.value])),
-      recorded: new Set(reviews.map((review) => review.id)),
+      recorded: new Set(reviews.keys()),
     };
     // The whole batch is checked before its first chunk is written.
     const checked = decideVocabAnswers(state, command.answers, snapshots, context.now);
@@ -72,17 +80,27 @@ function recordChunk(
       // Written unchanged, so a finish racing these answers makes one of them load again.
       [{ type: "vocabSession", value: session.value }, session],
     ];
-    const expect = [...new Set(entries.map((entry) => entry.cardId))].flatMap((id) => {
+    const changed = new Set(moved.map((item) => item.cardId));
+    const held = [...new Set(entries.map((entry) => entry.cardId))];
+    const expect: Commit["expect"][number][] = held.flatMap((id) => {
       const card = cards.get(id);
       return card === undefined
         ? []
         : [{ key: { type: "card" as const, id }, version: card.version }];
     });
+    expect.push(
+      ...held
+        .filter((id) => !changed.has(id))
+        .map((cardId) => ({
+          key: { type: "vocabItem" as const, cardId },
+          version: items.get(cardId)?.version ?? null,
+        })),
+    );
     return ok({ value: undefined, writes, expect });
   });
 }
 
-async function recordInto(
+export async function recordVocabInto(
   store: LearnerStore,
   snapshot: CatalogSnapshot,
   context: RequestContext,
@@ -120,70 +138,5 @@ export async function recordVocabAnswers(
   if (!snapshot.ok) {
     return snapshot;
   }
-  return recordInto(bound.value, snapshot.value, context, command);
-}
-
-/**
- * Takes in the session's last answers, then closes it and keeps tomorrow's
- * count. A finished session answers with the summary it kept, so finishing
- * twice is safe.
- */
-export async function finishVocabSession(
-  deps: ApplicationDeps,
-  context: RequestContext,
-  command: VocabAnswersCommand,
-): Promise<Result<VocabSummary, ApplicationError>> {
-  const bound = storeFor(deps, context, "finishVocabSession");
-  if (!bound.ok) {
-    return bound;
-  }
-  const store = bound.value;
-  const kept = async (): Promise<
-    Result<VocabSummary, ApplicationError> | undefined
-  > => {
-    const session = await store.vocabSession(command.sessionId);
-    if (session === undefined) {
-      return err({ code: "ERR_SESSION_NOT_FOUND" });
-    }
-    return session.value.finishedAt === null
-      ? undefined
-      : ok(summaryOf(session.value, await store.vocabReviewsOf(command.sessionId)));
-  };
-  const before = await kept();
-  if (before !== undefined) {
-    return before;
-  }
-  const snapshot = await deps.catalog.snapshot();
-  if (!snapshot.ok) {
-    return snapshot;
-  }
-  const recorded = await recordInto(store, snapshot.value, context, command);
-  if (!recorded.ok) {
-    return recorded.error.code === "ERR_SESSION_CLOSED"
-      ? ((await kept()) ?? recorded)
-      : recorded;
-  }
-  return committed(store, async () => {
-    const session = await store.vocabSession(command.sessionId);
-    if (session === undefined) {
-      return err({ code: "ERR_SESSION_NOT_FOUND" });
-    }
-    const reviews = await store.vocabReviewsOf(command.sessionId);
-    if (session.value.finishedAt !== null) {
-      return ok({ value: summaryOf(session.value, reviews), writes: [] });
-    }
-    const loaded = await loadVocab(store, deps.catalog, context, session.value.day);
-    if (!loaded.ok) {
-      return loaded;
-    }
-    const finished = {
-      ...session.value,
-      finishedAt: context.now,
-      tomorrow: vocabFigures(loaded.value.state).tomorrow,
-    };
-    return ok({
-      value: summaryOf(finished, reviews),
-      writes: [[{ type: "vocabSession", value: finished }, session]],
-    });
-  });
+  return recordVocabInto(bound.value, snapshot.value, context, command);
 }

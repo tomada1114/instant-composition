@@ -10,6 +10,7 @@ import {
   deleteLearnerTable,
   localDynamoDbClient,
   StorageSchemaError,
+  STORAGE_SCHEMA_VERSION,
   executeStorageMaintenance,
 } from "@instant-composition/adapters";
 import {
@@ -26,6 +27,7 @@ import {
   makeTalk,
   makePersonalCard,
   makeVocabProgress,
+  makeVocabReview,
   without,
 } from "./application-fixtures";
 
@@ -82,10 +84,36 @@ let server: Server;
 let endpoint = "";
 let calls: Call[] = [];
 let answers: Answer[] = [];
+let pointRows = new Map<string, unknown>();
+let returnedRows = 0;
+
+function wireValue(value: unknown): unknown {
+  if (value === null) return { NULL: true };
+  if (typeof value === "string") return { S: value };
+  if (typeof value === "number") return { N: String(value) };
+  if (typeof value === "boolean") return { BOOL: value };
+  if (Array.isArray(value)) return { L: value.map(wireValue) };
+  return {
+    M: Object.fromEntries(
+      Object.entries(value as object).map(([key, child]) => [key, wireValue(child)]),
+    ),
+  };
+}
+function pointRow(key: string, type: string, value: unknown): void {
+  pointRows.set(key, {
+    PK: { S: "LEARNER#learner-a" },
+    SK: { S: key },
+    type: { S: type },
+    version: { N: "1" },
+    value: wireValue(value),
+  });
+}
 
 beforeEach(async () => {
   calls = [];
   answers = [];
+  pointRows = new Map();
+  returnedRows = 0;
   server = createServer((request, response) => {
     const chunks: Buffer[] = [];
     request.on("data", (chunk: Buffer) => chunks.push(chunk));
@@ -98,7 +126,14 @@ beforeEach(async () => {
           unknown
         >,
       });
-      const answer = answers.shift() ?? { status: 200, body: {} };
+      const key = calls.at(-1)?.body["Key"] as
+        Record<string, { S: string }> | undefined;
+      const found = pointRows.get(key?.["SK"]?.S ?? "");
+      if (found !== undefined) returnedRows += 1;
+      const answer = answers.shift() ?? {
+        status: 200,
+        body: found === undefined ? {} : { Item: found },
+      };
       response.writeHead(answer.status, { "content-type": JSON_1_0 });
       response.end(JSON.stringify(answer.body));
     });
@@ -152,7 +187,7 @@ describe("a commit", () => {
       ),
     ).toStrictEqual([
       "attribute_not_exists(#pk)",
-      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema)",
+      "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1)",
       "attribute_not_exists(#pk)",
     ]);
     expect(items[0]?.["Put"]?.["Item"]).toMatchObject({
@@ -212,7 +247,7 @@ describe("a commit", () => {
       {
         Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
         ConditionExpression:
-          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema)",
+          "#version = :version AND (attribute_not_exists(#schema) OR #schema = :legacy OR #schema = :schema OR #schema = :storage1)",
         ExpressionAttributeValues: { ":version": { N: "2" } },
       },
       { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
@@ -451,7 +486,7 @@ describe("the learner directory", () => {
       PK: { S: "IDENTITY#sub%231" },
       SK: { S: "LEARNER" },
       type: { S: "identity" },
-      schemaVersion: { N: "1" },
+      schemaVersion: { N: String(STORAGE_SCHEMA_VERSION) },
       version: { N: "1" },
       value: { M: { learnerId: { S: "learner-a" } } },
     });
@@ -636,7 +671,7 @@ describe("the explicit storage maintenance adapter", () => {
         ...key,
         type: "settings",
         version: 2,
-        schemaVersion: 1,
+        schemaVersion: STORAGE_SCHEMA_VERSION,
         value: settings,
       };
       const source = {
@@ -700,7 +735,7 @@ describe("the explicit storage maintenance adapter", () => {
           ...key,
           type: "settings",
           version: 2,
-          schemaVersion: 1,
+          schemaVersion: STORAGE_SCHEMA_VERSION,
           value: settings,
         },
         version: 1,
@@ -714,7 +749,7 @@ describe("the explicit storage maintenance adapter", () => {
       ...key,
       type: "settings",
       version: 2,
-      schemaVersion: 2,
+      schemaVersion: STORAGE_SCHEMA_VERSION + 1,
       value: settings,
     };
     await expect(
@@ -732,7 +767,7 @@ describe("the explicit storage maintenance adapter", () => {
         ...options(),
         command: "replace",
         key,
-        row: { ...row, schemaVersion: 1, version: 3 },
+        row: { ...row, schemaVersion: STORAGE_SCHEMA_VERSION, version: 3 },
         version: 1,
         schema: 0,
       }),
@@ -742,7 +777,7 @@ describe("the explicit storage maintenance adapter", () => {
         ...options(),
         command: "replace",
         key,
-        row: { ...row, schemaVersion: 1, SK: "OTHER" },
+        row: { ...row, schemaVersion: STORAGE_SCHEMA_VERSION, SK: "OTHER" },
         version: 1,
         schema: 0,
       }),
@@ -752,9 +787,9 @@ describe("the explicit storage maintenance adapter", () => {
         ...options(),
         command: "replace",
         key,
-        row: { ...row, schemaVersion: 1 },
+        row: { ...row, schemaVersion: STORAGE_SCHEMA_VERSION },
         version: 1,
-        schema: 2,
+        schema: STORAGE_SCHEMA_VERSION + 1,
       }),
     ).rejects.toBeInstanceOf(StorageSchemaError);
     expect(calls).toHaveLength(0);
@@ -770,12 +805,112 @@ describe("the explicit storage maintenance adapter", () => {
           ...key,
           type: "settings",
           version: 2,
-          schemaVersion: 1,
+          schemaVersion: STORAGE_SCHEMA_VERSION,
           value: settings,
         },
         version: 1,
         schema: 0,
       }),
     ).rejects.toThrow("AccessDeniedException");
+  });
+});
+
+describe("keyed answer reads", () => {
+  it.each([0, 1_000])(
+    "issues the same point requests with %i unrelated rows outside their keys",
+    async (noise) => {
+      const unrelated = Array.from(
+        { length: noise },
+        (_, index) => `ITEM#composition#other-${String(index)}`,
+      );
+      for (const key of unrelated)
+        pointRow(key, "item", makeItem({ item: { kind: "composition", id: key } }));
+      pointRow(
+        "ITEM#composition#target",
+        "item",
+        makeItem({ item: { kind: "composition", id: "target" } }),
+      );
+      pointRow(
+        "ROUND#r%231#ANSWER#answer",
+        "review",
+        makeReview({ id: "answer", sessionId: "r#1" }),
+      );
+      pointRow(
+        "ITEM#vocab#target",
+        "vocabItem",
+        makeVocabProgress({ cardId: "target" }),
+      );
+      pointRow(
+        "VOCAB#s%231#ANSWER#answer",
+        "vocabReview",
+        makeVocabReview({ id: "answer", sessionId: "s#1", cardId: "target" }),
+      );
+      pointRow("CARD#target", "card", makePersonalCard({ id: "target" }));
+      const store = storeOf();
+      expect((await store.itemsByIds(["target", "target", "absent"])).size).toBe(1);
+      expect(
+        (await store.reviewsByIds("r#1", ["answer", "answer", "absent"])).size,
+      ).toBe(1);
+      expect((await store.vocabItemsByIds(["target", "target", "absent"])).size).toBe(
+        1,
+      );
+      expect(
+        (await store.vocabReviewsByIds("s#1", ["answer", "answer", "absent"])).size,
+      ).toBe(1);
+      expect((await store.cardsByIds(["target", "target", "absent"])).size).toBe(1);
+      expect(calls.map((call) => call.operation)).toStrictEqual(
+        Array<string>(10).fill("GetItem"),
+      );
+      const keys = calls.map(
+        (call) => (call.body["Key"] as Record<string, { S: string }>)["SK"]?.S,
+      );
+      expect(keys).toStrictEqual([
+        "ITEM#composition#target",
+        "ITEM#composition#absent",
+        "ROUND#r%231#ANSWER#answer",
+        "ROUND#r%231#ANSWER#absent",
+        "ITEM#vocab#target",
+        "ITEM#vocab#absent",
+        "VOCAB#s%231#ANSWER#answer",
+        "VOCAB#s%231#ANSWER#absent",
+        "CARD#target",
+        "CARD#absent",
+      ]);
+      expect(keys.some((key) => unrelated.includes(key ?? ""))).toBe(false);
+      expect(returnedRows).toBe(5);
+      expect(calls.filter((call) => call.operation === "Query")).toHaveLength(0);
+      expect(calls.every((call) => call.body["ConsistentRead"] === true)).toBe(true);
+    },
+  );
+  it("reads one bounded legacy page and returns its opaque checkpoint without following it", async () => {
+    answers.push({
+      status: 200,
+      body: {
+        Items: [],
+        LastEvaluatedKey: {
+          PK: { S: "LEARNER#learner-a" },
+          SK: { S: "ROUND#r1#ANSWER#next" },
+        },
+      },
+    });
+    expect(await storeOf().reviewPage("r1", null)).toStrictEqual({
+      entries: [],
+      cursor: "ROUND#r1#ANSWER#next",
+    });
+    expect(calls).toHaveLength(1);
+    expect(calls[0]?.body).toMatchObject({
+      Limit: 32,
+      ConsistentRead: true,
+      ExpressionAttributeValues: { ":prefix": { S: "ROUND#r1#ANSWER#" } },
+    });
+    await storeOf().reviewPage("r1", "ROUND#r1#ANSWER#next");
+    expect(calls[1]?.body["ExclusiveStartKey"]).toStrictEqual({
+      PK: { S: "LEARNER#learner-a" },
+      SK: { S: "ROUND#r1#ANSWER#next" },
+    });
+    await expect(storeOf().reviewPage("r1", "ROUND#other#ANSWER#next")).rejects.toThrow(
+      RangeError,
+    );
+    expect(calls).toHaveLength(2);
   });
 });

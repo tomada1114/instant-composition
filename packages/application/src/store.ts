@@ -110,6 +110,13 @@ export interface CommitConflict {
   readonly code: "ERR_CONFLICT";
 }
 
+/** A bounded page in storage-key order, used only to initialize legacy adoption. */
+export interface ReviewPage {
+  readonly entries: readonly ReviewEntry[];
+  /** The last storage key, or null when the log has no next page. */
+  readonly cursor: string | null;
+}
+
 /**
  * One learner's data, and nobody else's: no method takes a learner id, so no
  * caller can express a read or a write of another learner's entries.
@@ -122,6 +129,13 @@ export interface LearnerStore {
   round(id: string): Promise<Stored<Round> | undefined>;
   /** A session's reviews, ordered by `answeredAt` and then by id. */
   reviewsOf(sessionId: string): Promise<readonly ReviewEntry[]>;
+  /** Only the named answer ids of this round, without reading its other answers. */
+  reviewsByIds(
+    sessionId: string,
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<ReviewEntry>>>;
+  /** At most 32 legacy log entries; cursor is opaque and bound to this round. */
+  reviewPage(sessionId: string, cursor: string | null): Promise<ReviewPage>;
   /** The whole review log in the same order, for rebuilding projections. */
   reviews(): Promise<readonly ReviewEntry[]>;
   portion(day: DayKey): Promise<Stored<Portion> | undefined>;
@@ -129,6 +143,10 @@ export interface LearnerStore {
   days(days: readonly DayKey[]): Promise<ReadonlyMap<DayKey, Stored<DayTally>>>;
   /** Every item the learner has progress on, keyed by item id. */
   items(): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
+  /** Only progress for the named composition cards. */
+  itemsByIds(
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
   /**
    * The talk with that id, as stored: one past its `expiresAt` is still
    * returned until the table's TTL deletes it, so a command reads it through
@@ -137,13 +155,26 @@ export interface LearnerStore {
   talk(id: string): Promise<Stored<Talk> | undefined>;
   /** Every vocabulary card the learner has progress on, keyed by card id. */
   vocabItems(): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
+  /** Only progress for the named vocabulary cards. */
+  vocabItemsByIds(
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
   vocabSession(id: string): Promise<Stored<VocabSession> | undefined>;
   /** A vocabulary session's answers, ordered by `answeredAt` and then by id. */
   vocabReviewsOf(sessionId: string): Promise<readonly VocabReview[]>;
+  /** Only the named answer ids of this vocabulary session. */
+  vocabReviewsByIds(
+    sessionId: string,
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<VocabReview>>>;
   /** One of the learner's personal vocabulary cards. */
   card(id: string): Promise<Stored<PersonalCard> | undefined>;
   /** Every personal vocabulary card the learner has, keyed by id. */
   cards(): Promise<ReadonlyMap<string, Stored<PersonalCard>>>;
+  /** Only personal cards with the named ids, in this learner's partition. */
+  cardsByIds(
+    ids: readonly string[],
+  ): Promise<ReadonlyMap<string, Stored<PersonalCard>>>;
   commit(commit: Commit): Promise<Result<undefined, CommitConflict>>;
 }
 

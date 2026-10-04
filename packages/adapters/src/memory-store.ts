@@ -12,6 +12,8 @@ import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 import { encodeStorageValue, STORAGE_SCHEMA_VERSION } from "./storage-schema";
 import { copyEntry, readMemorySlot, type Slot, type ValueOf } from "./storage-memory";
 import { checkShape, sortKeyOf } from "./keys";
+import { keyedReads } from "./keyed-reads";
+import { memoryReviewPage } from "./memory-review-page";
 
 /** The fields both logs sort by. */
 type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
@@ -22,7 +24,7 @@ function byTime(a: Timed, b: Timed): number {
 
 function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStore {
   function read<T extends Entry["type"]>(
-    key: Key & { readonly type: T },
+    key: Extract<Key, { readonly type: T }>,
   ): Stored<ValueOf<T>> | undefined {
     const slot = slots.get(sortKeyOf(key));
     return slot === undefined ? undefined : readMemorySlot(key.type, slot);
@@ -53,7 +55,18 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
       .sort(byTime);
   }
 
+  function get<T extends Entry["type"]>(
+    key: Extract<Key, { readonly type: T }>,
+  ): Promise<Stored<ValueOf<T>> | undefined> {
+    counted();
+    return Promise.resolve(read<T>(key));
+  }
   return {
+    ...keyedReads(get),
+    reviewPage(sessionId, cursor) {
+      counted();
+      return Promise.resolve(memoryReviewPage(slots, sessionId, cursor));
+    },
     profile() {
       counted();
       return Promise.resolve(read({ type: "profile" }));

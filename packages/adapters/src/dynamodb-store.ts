@@ -14,6 +14,8 @@ import type {
 } from "@instant-composition/application";
 import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
+import { keyedReads } from "./keyed-reads";
+import { dynamoReviewPage } from "./review-page";
 import { isConflict, transactItemsOf } from "./dynamodb-commit";
 import { validateStorageSources } from "./storage-source";
 import { byTime, storedOf, type Row, type ValueOf } from "./dynamodb-rows";
@@ -58,7 +60,7 @@ function dynamoDbStore(
   }
 
   async function get<T extends Entry["type"]>(
-    key: Key & { readonly type: T },
+    key: Extract<Key, { readonly type: T }>,
   ): Promise<Stored<ValueOf<T>> | undefined> {
     const row = await rawGet(key);
     return row === undefined ? undefined : storedOf(key.type, row);
@@ -102,6 +104,9 @@ function dynamoDbStore(
   }
 
   return {
+    ...keyedReads(get),
+    reviewPage: (sessionId, cursor) =>
+      dynamoReviewPage(documents, table, partition, sessionId, cursor),
     profile: () => get({ type: "profile" }),
     settings: () => get({ type: "settings" }),
     stats: () => get({ type: "stats" }),
@@ -164,9 +169,7 @@ function dynamoDbStore(
     async commit(commit) {
       checkShape(commit);
       const items = transactItemsOf(table, partition, commit);
-      if (items.length === 0) {
-        return ok(undefined);
-      }
+      if (items.length === 0) return ok(undefined);
       if (!(await validateStorageSources(commit, rawGet)))
         return err({ code: "ERR_CONFLICT" });
       try {

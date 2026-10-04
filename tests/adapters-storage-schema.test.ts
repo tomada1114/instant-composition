@@ -4,6 +4,7 @@ import {
   decodeStorageRecord,
   encodeStorageValue,
   STORAGE_FAMILIES,
+  STORAGE_SCHEMA_VERSION,
   StorageSchemaError,
   decodeReadModelBootstrapState,
   createDynamoDbReadModelBootstrapStorage,
@@ -42,7 +43,7 @@ describe("storage decoders and subsequent writes", () => {
       const current = decodeStorageRecord({
         type: decoded.type,
         version: decoded.version + 1,
-        schemaVersion: 1,
+        schemaVersion: STORAGE_SCHEMA_VERSION,
         value: written,
       });
       expect(current.value).toStrictEqual(expected);
@@ -62,7 +63,7 @@ describe("storage decoders and subsequent writes", () => {
   ])("rejects malformed stored shape %j", (row) => {
     expect(() => decodeStorageRecord(row)).toThrow(StorageSchemaError);
   });
-  it.each([2, -1, 0.5, Number.MAX_SAFE_INTEGER])(
+  it.each([STORAGE_SCHEMA_VERSION + 1, -1, 0.5, Number.MAX_SAFE_INTEGER])(
     "fails closed on schema %s",
     (schemaVersion) => {
       const fixture = fixtures[2];
@@ -76,7 +77,7 @@ describe("storage decoders and subsequent writes", () => {
     const row = fixture?.row as Record<string, unknown>;
     const next = {
       ...row,
-      schemaVersion: 1,
+      schemaVersion: STORAGE_SCHEMA_VERSION,
       value: { ...(fixture?.expected as object), futureRequired: "must survive" },
     };
     expect(() => decodeStorageRecord(next)).toThrow(StorageSchemaError);
@@ -188,7 +189,7 @@ describe("storage decoders and subsequent writes", () => {
       {
         type: "talk",
         version: 1,
-        schemaVersion: 2,
+        schemaVersion: STORAGE_SCHEMA_VERSION + 1,
         value: { english: "private fixture text" },
       },
     ]);
@@ -202,15 +203,18 @@ describe("storage decoders and subsequent writes", () => {
 
 const reserved = readKey(data, "reservedFutureFixtures");
 if (!Array.isArray(reserved)) throw new TypeError("Future fixtures required.");
-it.each(reserved)(
-  "initial guard refuses future expansion $name before any next write",
-  (fixture) => {
-    expect(() => decodeStorageRecord(readKey(fixture, "row"))).toThrow(
-      StorageSchemaError,
-    );
-  },
-);
-it.each([2, 3, 4, 5])(
+it.each(
+  reserved.filter(
+    (fixture) =>
+      Number(readKey(readKey(fixture, "row"), "schemaVersion")) >
+      STORAGE_SCHEMA_VERSION,
+  ),
+)("initial guard refuses future expansion $name before any next write", (fixture) => {
+  expect(() => decodeStorageRecord(readKey(fixture, "row"))).toThrow(
+    StorageSchemaError,
+  );
+});
+it.each([STORAGE_SCHEMA_VERSION + 1, STORAGE_SCHEMA_VERSION + 2])(
   "initial guard refuses storage generation %s even for a known family",
   (schemaVersion) => {
     expect(() =>
@@ -218,13 +222,12 @@ it.each([2, 3, 4, 5])(
     ).toThrow(StorageSchemaError);
   },
 );
-it("initial guard cannot accept future round checkpoints or compact stats on version one", () => {
-  expect(() =>
-    encodeStorageValue("round", {
-      ...(fixtures[4]?.expected as object),
-      answerState: { firstCards: [], cursor: null, complete: true },
-    }),
-  ).toThrow(StorageSchemaError);
+it("admits the reviewed round checkpoint expansion and keeps compact stats inactive", () => {
+  const round = {
+    ...(fixtures[4]?.expected as object),
+    answerState: { firstCards: [], cursor: null, complete: true },
+  };
+  expect(encodeStorageValue("round", round)).toStrictEqual(round);
   expect(() =>
     encodeStorageValue("stats", {
       ...(fixtures[3]?.expected as object),
@@ -290,5 +293,22 @@ it("prepares a strictly bound future durable checkpoint without admitting the fa
     ).rejects.toMatchObject({ code: "ERR_STORAGE_SCHEMA_UNKNOWN" });
   } finally {
     client.destroy();
+  }
+});
+
+it("preserves every cap2 checkpoint and guarded-v1 row through the actual maintenance next write", () => {
+  const document = parseJson(
+    readFileSync(new URL("./fixtures/storage-v2.json", import.meta.url), "utf8"),
+  );
+  const rows = readKey(document, "fixtures");
+  if (!Array.isArray(rows)) throw new TypeError("Cap2 fixtures required.");
+  for (const fixture of rows) {
+    const result = validateStoredRecords([readKey(fixture, "row")]);
+    expect(result.ok).toBe(true);
+    if (!result.ok) throw new TypeError("Supported fixture refused.");
+    expect(readKey(result.rows[0], "targetSchema")).toBe(STORAGE_SCHEMA_VERSION);
+    expect(readKey(result.rows[0], "targetValue")).toStrictEqual(
+      readKey(fixture, "expected"),
+    );
   }
 });

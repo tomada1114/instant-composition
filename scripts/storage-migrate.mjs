@@ -8,7 +8,7 @@ import { readCheckpoint, saveCheckpoint } from "./lib/storage-checkpoint.mjs";
 import { migrateStorage, StorageMigrationError } from "./lib/storage-migration.mjs";
 import { createStorageValidator } from "./lib/storage-validator.mjs";
 
-/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, apply: boolean, resume: boolean, maxPages?: number}} Options */
+/** @typedef {{table: string, endpoint?: string, profile?: string, checkpoint: string, plan: "legacy-to-storage-v1" | "expand-to-storage-v2", apply: boolean, resume: boolean, maxPages?: number}} Options */
 
 /** @param {string[]} args @returns {Options} */
 function optionsOf(args) {
@@ -23,9 +23,14 @@ function optionsOf(args) {
     else {
       const value = args[index + 1];
       if (
-        !["--table", "--endpoint", "--profile", "--checkpoint", "--max-pages"].includes(
-          flag,
-        ) ||
+        ![
+          "--table",
+          "--endpoint",
+          "--profile",
+          "--checkpoint",
+          "--max-pages",
+          "--plan",
+        ].includes(flag) ||
         value === undefined ||
         value.startsWith("--")
       )
@@ -58,6 +63,9 @@ function optionsOf(args) {
     (typeof profile !== "string" || !table.startsWith("instant-composition-dev-"))
   )
     throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
+  const plan = pairs.get("--plan") ?? "legacy-to-storage-v1";
+  if (plan !== "legacy-to-storage-v1" && plan !== "expand-to-storage-v2")
+    throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
   const pages = pairs.get("--max-pages"),
     maxPages = pages === undefined ? undefined : Number(pages);
   if (maxPages !== undefined && (!Number.isSafeInteger(maxPages) || maxPages < 1))
@@ -65,6 +73,7 @@ function optionsOf(args) {
   return {
     table,
     checkpoint,
+    plan,
     apply: pairs.has("--apply"),
     resume: pairs.has("--resume"),
     ...(typeof endpoint === "string" ? { endpoint } : {}),
@@ -97,7 +106,8 @@ function rowOf(value) {
 export async function main(args) {
   const options = optionsOf(args);
   const root = fileURLToPath(new URL("../", import.meta.url));
-  preflightStorageRelease(root, "storage-v1");
+  const targetSchema = options.plan === "legacy-to-storage-v1" ? 1 : 2;
+  preflightStorageRelease(root, `storage-v${String(targetSchema)}`);
   const file = path.resolve(options.checkpoint),
     lock = `${file}.lock`;
   if (!options.resume && existsSync(file))
@@ -140,22 +150,24 @@ export async function main(args) {
         },
       },
       {
-        id: "legacy-to-storage-v1",
+        id: options.plan,
         target: JSON.stringify(target),
-        sourceSchemas: [0],
-        targetSchema: 1,
+        sourceSchemas: targetSchema === 1 ? [0] : [0, 1],
+        targetSchema,
         async transform(row) {
           const decoded = readKey(await validator.request([row]), "rows");
           if (!Array.isArray(decoded))
             throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
           /** @type {unknown} */ const record = decoded[0];
+          if (readKey(record, "targetSchema") !== targetSchema)
+            throw new StorageMigrationError("ERR_STORAGE_MIGRATION_FORMAT");
           const value = readKey(record, "targetValue");
           return {
             PK: readString(row, "PK"),
             SK: readString(row, "SK"),
             type: readString(record, "type"),
             version: readKey(record, "version"),
-            schemaVersion: 1,
+            schemaVersion: targetSchema,
             value,
             ...(["talk", "vocabReadModel", "vocabCandidate"].includes(
               readString(record, "type") ?? "",

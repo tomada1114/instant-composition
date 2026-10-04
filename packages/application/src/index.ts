@@ -36,11 +36,7 @@ export {
   type WithdrawnItem,
 } from "./catalog-document";
 export type { VocabCategory, VocabItem } from "./vocab-item";
-export {
-  finishVocabSession,
-  recordVocabAnswers,
-  type VocabAnswersCommand,
-} from "./vocab-answers";
+export { recordVocabAnswers, type VocabAnswersCommand } from "./vocab-answers";
 export {
   startVocabSession,
   vocabHub,
@@ -94,6 +90,7 @@ export type {
   ModelReply,
   ModelRequest,
 } from "./language-model";
+export { finishVocabSession } from "./finish-vocab-session";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
 export { records } from "./records";
 export {
@@ -114,6 +111,7 @@ export {
   type Key,
   type LearnerStore,
   type LearnerStores,
+  type ReviewPage,
   type Stored,
 } from "./store";
 export {

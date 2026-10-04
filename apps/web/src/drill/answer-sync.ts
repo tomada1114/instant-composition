@@ -12,7 +12,7 @@ import {
 import { useQueuedStudy } from "../study/answer-sync";
 import { drillReducer } from "./drill-machine";
 import type { AnswerInput, DrillEvent, DrillState } from "./drill-state";
-import { sendAnswer } from "./rounds";
+import { sendAnswer, sendAnswers } from "./rounds";
 
 export interface ArrivedQueue {
   readonly queue: AnswerQueue;
@@ -31,6 +31,7 @@ export function useAnswerQueue(
     const queue = createAnswerQueue({
       key: queueKey(round.id),
       send: sendAnswer,
+      sendBatch: sendAnswers,
       storage: sessionStore(),
     });
     return { queue, unsaved: unsavedAnswers(queue.pending(), round) };
@@ -39,6 +40,7 @@ export function useAnswerQueue(
     void flushEarlierRounds({
       currentId: round.id,
       send: sendAnswer,
+      sendBatch: sendAnswers,
       storage: sessionStore(),
     });
   }, [round.id]);
