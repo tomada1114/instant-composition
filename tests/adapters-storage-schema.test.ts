@@ -51,6 +51,32 @@ describe("storage decoders and subsequent writes", () => {
       expect(JSON.stringify(current.value)).not.toContain("retired answer");
     },
   );
+  it.each([undefined, 0, 1])(
+    "rejects cap2 round checkpoints in a row declaring schema %s",
+    (schemaVersion) => {
+      const fixture = fixtures.find((item) => readKey(item.row, "type") === "round");
+      if (!fixture) throw new TypeError("Round fixture required.");
+      const expected = fixture.expected;
+      if (typeof expected !== "object" || expected === null || Array.isArray(expected))
+        throw new TypeError("Round value required.");
+      const row = {
+        type: "round",
+        version: 1,
+        ...(schemaVersion === undefined ? {} : { schemaVersion }),
+        value: {
+          ...expected,
+          answerState: { firstCards: [], cursor: null, complete: true },
+        },
+      };
+      const original = JSON.stringify(row);
+      expect(() => decodeStorageRecord(row)).toThrow(StorageSchemaError);
+      expect(validateStoredRecords([row])).toMatchObject({
+        ok: false,
+        code: "ERR_STORAGE_SHAPE",
+      });
+      expect(JSON.stringify(row)).toBe(original);
+    },
+  );
   it.each([
     null,
     [],
