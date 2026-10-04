@@ -53,6 +53,49 @@ against DynamoDB local. Both need Docker: run them with `pnpm db:up`, then
 `pnpm check:source` runs all of them once `pnpm db:up` has, and `pnpm db:down` stops the
 container afterwards.
 
+## Codex Cloud checkouts
+
+This checkout uses pnpm scripts; it has no justfile and needs no `just` installation.
+For test-driven iteration, use `pnpm exec vitest run tests/<name>.test.ts` or
+`pnpm test:watch`, then the everyday gate above. Unit, component and repository-script
+tests use local fixtures and stand-ins for authentication and model calls.
+
+The saved environment checked on 2026-10-04 supplied Node 24, pnpm, Corepack, Python 3,
+Git, GitHub CLI and a working Docker daemon with Compose, but no installed project
+dependencies or AWS CLI. A setup script only needs to install the locked dependencies;
+it should not log in to AWS or create credentials. If the home cache directories are
+unavailable, use writable cache paths for the install:
+
+```sh
+export COREPACK_HOME=/tmp/instant-composition-corepack
+export PNPM_HOME=/tmp/instant-composition-pnpm
+export XDG_DATA_HOME=/tmp/instant-composition-xdg/data
+export XDG_CACHE_HOME=/tmp/instant-composition-xdg/cache
+export XDG_STATE_HOME=/tmp/instant-composition-xdg/state
+corepack pnpm@11.18.0 install --frozen-lockfile
+```
+
+Keep these exports available to subsequent commands in that task. The install must
+retain the dependency policy and Git hooks. Cache paths are disposable; a fresh task may
+need another install. The setup script itself and saved environment settings were not
+changed during this check.
+
+AWS login is unnecessary for `pnpm check:quick`, `pnpm web:build`, the local Docker
+checks described above, or `pnpm cdk synth -c stage=dev --no-lookups`. Local DynamoDB
+tests create and delete fixture tables in the container, not in AWS. CDK synthesis
+writes templates and bundles locally; it does not verify live account permissions. Live
+Cognito, hosted DynamoDB, Parameter Store, cloud deployment and storage-transition
+operations need appropriate AWS access and a separate request to run them. Do not put an
+AWS login, access keys or deployment commands in environment setup.
+
+Git transport and GitHub API access must be checked separately. In the checked
+environment, Git remote access worked while `gh repo view`, `gh issue list` and
+`gh pr list` returned `Forbidden`; the connected GitHub app could read issues and PRs.
+Use that app for API operations when available, or arrange authorized GitHub API access
+before relying on `gh`. Create an isolated branch and a draft PR for environment probes,
+and inspect checks for its exact head commit. PR CI runs without AWS credentials; the
+dev deployment workflow only deploys after successful CI for a trusted `main` push.
+
 ## Dependency cooldown
 
 The seven-day dependency cooldown in `pnpm-workspace.yaml` is fail-closed. If an urgent
