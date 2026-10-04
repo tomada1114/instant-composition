@@ -553,6 +553,156 @@ describe("batched answer sends", () => {
   const single = (): never => {
     throw new Error("This activity sends batches.");
   };
+  it("sends valid restored answers individually around a permanently rejected answer", async () => {
+    const answers = [answer("before"), answer("stale"), answer("after")];
+    const storage = memoryStorage({ k: JSON.stringify(answers) });
+    const sent: AnswerInput[] = [];
+    const batches: AnswerInput[][] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      storage,
+      send: (item) => {
+        sent.push(item);
+        return Promise.resolve(item.cardId === "stale" ? "rejected" : "sent");
+      },
+      sendBatch: (batch) => {
+        batches.push([...batch]);
+        return Promise.resolve("rejected");
+      },
+    });
+    expect(await queue.flush()).toBe(true);
+    expect(batches).toStrictEqual([answers]);
+    expect(sent).toStrictEqual(answers);
+    expect(queue.pending()).toStrictEqual([]);
+    expect(storage.data.has("k")).toBe(false);
+  });
+
+  it("preserves the failed fallback answer and unsent tail with their deadline across reload", async () => {
+    let now = 10_000;
+    vi.spyOn(Date, "now").mockImplementation(() => now);
+    const answers = [
+      answer("before"),
+      answer("stale"),
+      answer("failed"),
+      answer("tail"),
+    ];
+    const storage = memoryStorage({ k: JSON.stringify(answers) });
+    const sent: AnswerInput[] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      storage,
+      send: (item) => {
+        sent.push(item);
+        return Promise.resolve(
+          item.cardId === "stale"
+            ? "rejected"
+            : item.cardId === "failed"
+              ? { status: "failed", retryAt: 20_000 }
+              : "sent",
+        );
+      },
+      sendBatch: () => Promise.resolve("rejected"),
+    });
+    expect(await queue.flush()).toBe(false);
+    expect(sent).toStrictEqual([answer("before"), answer("stale"), answer("failed")]);
+    expect(queue.pending()).toStrictEqual([answer("failed"), answer("tail")]);
+    const batches: AnswerInput[][] = [];
+    const reloaded = createAnswerQueue({
+      key: "k",
+      storage,
+      send: single,
+      sendBatch: (batch) => {
+        batches.push([...batch]);
+        return Promise.resolve("sent");
+      },
+    });
+    expect(reloaded.pending()).toStrictEqual([answer("failed"), answer("tail")]);
+    expect(reloaded.retryAt()).toBe(20_000);
+    expect(await reloaded.flush()).toBe(false);
+    expect(batches).toStrictEqual([]);
+    now = 20_000;
+    expect(await reloaded.flush()).toBe(true);
+    expect(batches).toStrictEqual([[answer("failed"), answer("tail")]]);
+    expect(storage.data.has("k")).toBe(false);
+    vi.restoreAllMocks();
+  });
+
+  it("skips a deleted answer when an active batch is rejected and batches new arrivals afterward", async () => {
+    let release: (outcome: SendOutcome) => void = () => undefined;
+    const waiting = new Promise<SendOutcome>((done) => {
+      release = done;
+    });
+    const storage = memoryStorage({
+      k: JSON.stringify([answer("deleted"), answer("kept")]),
+    });
+    const sent: AnswerInput[] = [];
+    const batches: AnswerInput[][] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      storage,
+      send: (item) => {
+        sent.push(item);
+        return Promise.resolve("sent");
+      },
+      sendBatch: (batch) => {
+        batches.push([...batch]);
+        return batches.length === 1 ? waiting : Promise.resolve("sent");
+      },
+    });
+    const flushing = queue.flush();
+    await Promise.resolve();
+    queue.removeCard("deleted");
+    const arriving = queue.enqueue(answer("new"));
+    release("rejected");
+    expect(await flushing).toBe(true);
+    expect(await arriving).toBe(true);
+    expect(sent).toStrictEqual([answer("kept")]);
+    expect(batches).toStrictEqual([
+      [answer("deleted"), answer("kept")],
+      [answer("new")],
+    ]);
+    expect(queue.pending()).toStrictEqual([]);
+    expect(storage.data.has("k")).toBe(false);
+  });
+
+  it("does not restore cleared answers or a late deadline while a fallback send is pending", async () => {
+    let release: (outcome: SendOutcome) => void = () => undefined;
+    const waiting = new Promise<SendOutcome>((done) => {
+      release = done;
+    });
+    const storage = memoryStorage({
+      k: JSON.stringify([answer("old"), answer("tail")]),
+    });
+    const sent: AnswerInput[] = [];
+    const batches: AnswerInput[][] = [];
+    const queue = createAnswerQueue({
+      key: "k",
+      storage,
+      send: (item) => {
+        sent.push(item);
+        return waiting;
+      },
+      sendBatch: (batch) => {
+        batches.push([...batch]);
+        return Promise.resolve(batches.length === 1 ? "rejected" : "sent");
+      },
+    });
+    const flushing = queue.flush();
+    await Promise.resolve();
+    await Promise.resolve();
+    expect(sent).toStrictEqual([answer("old")]);
+    queue.clear();
+    const arriving = queue.enqueue(answer("new"));
+    release({ status: "failed", retryAt: Date.now() + 10_000 });
+    expect(await flushing).toBe(true);
+    expect(await arriving).toBe(true);
+    expect(sent).toStrictEqual([answer("old")]);
+    expect(batches).toStrictEqual([[answer("old"), answer("tail")], [answer("new")]]);
+    expect(queue.pending()).toStrictEqual([]);
+    expect(queue.retryAt()).toBe(0);
+    expect(storage.data.has("k")).toBe(false);
+  });
+
   it("drains a restored queue in ordered batches of at most 20 with its original ids", async () => {
     const answers = Array.from({ length: 45 }, (_, index) =>
       answer(`c${String(index)}`),

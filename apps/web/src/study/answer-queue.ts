@@ -64,19 +64,25 @@ export function createAnswerQueue(options: {
   }
 
   async function drain(): Promise<boolean> {
+    const fallbackIds = new Set<string>();
     while (pending[0] !== undefined) {
       if (Date.now() < retryAt) return false;
       const answer = pending[0];
-      const batch =
-        sendBatch === undefined
-          ? [answer]
-          : pending
-              .slice(0, ANSWERS_PER_SEND)
-              .filter((value) => value.roundId === answer.roundId);
+      const batching = sendBatch !== undefined && !fallbackIds.has(answer.id);
+      const batch = !batching
+        ? [answer]
+        : pending
+            .slice(0, ANSWERS_PER_SEND)
+            .filter((value) => value.roundId === answer.roundId);
       const ids = new Set(batch.map((value) => value.id));
       const epoch = generation;
-      const outcome = await (sendBatch === undefined ? send(answer) : sendBatch(batch));
+      const outcome = await (batching ? sendBatch(batch) : send(answer));
       if (epoch !== generation) continue;
+      if (batching && outcome === "rejected") {
+        // A batch refusal cannot identify which answers are permanently invalid.
+        for (const id of ids) fallbackIds.add(id);
+        continue;
+      }
       if (outcome === "failed" || typeof outcome === "object") {
         retryAt = typeof outcome === "object" ? outcome.retryAt : 0;
         persist();
