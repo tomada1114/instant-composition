@@ -26,8 +26,6 @@ const HOSTED = {
   API_COGNITO_DOMAIN: "https://example.auth.ap-northeast-1.amazoncognito.com",
   API_COGNITO_CLIENT_SECRET_PARAMETER: "/instant-composition/dev/web-client-secret",
   API_WEB_ORIGINS: "https://app.example.com",
-  API_WEB_CALLBACK_URL: "https://app.example.com/api/v1/auth/callback",
-  API_WEB_SIGN_OUT_URL: "https://app.example.com/",
   API_MODEL_PROVIDER: "openrouter",
   API_MODEL_ID: "anthropic/claude-haiku-4.5",
   API_OPENROUTER_KEY_PARAMETER: "/instant-composition/dev/app/openrouter-api-key",

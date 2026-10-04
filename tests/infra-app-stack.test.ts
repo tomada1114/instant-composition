@@ -473,8 +473,6 @@ describe("the dev app stack's function", () => {
       API_COGNITO_CLIENT_SECRET_PARAMETER:
         "/instant-composition/dev/app/web-client-secret",
       API_WEB_ORIGINS: webUrl(),
-      API_WEB_CALLBACK_URL: webUrl("/api/v1/auth/callback"),
-      API_WEB_SIGN_OUT_URL: webUrl("/"),
       PARAMETERS_SECRETS_EXTENSION_HTTP_PORT: "2773",
       API_MODEL_PROVIDER: "openrouter",
       API_MODEL_ID: "anthropic/claude-haiku-4.5",
@@ -487,6 +485,9 @@ describe("the dev app stack's function", () => {
     );
     // The secret enters through the extension alone; readHostedEnv refuses it.
     expect(variables).not.toHaveProperty("API_COGNITO_CLIENT_SECRET");
+    // The API redirects to no managed login, so it is told no callback or sign-out URL.
+    expect(variables).not.toHaveProperty("API_WEB_CALLBACK_URL");
+    expect(variables).not.toHaveProperty("API_WEB_SIGN_OUT_URL");
   });
 });
 

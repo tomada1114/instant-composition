@@ -51,8 +51,9 @@ Each area has its own directory under `apps/web/src/` (`home/`, `drill/`, `talk/
   renders reads the network on its own. A save made from the screen goes through a hook
   beside it (`use-settings.ts`) that calls `endpoints.ts`. A hub screen calls
   `useShellNav()` once a read has said who is signed in, which is what shows the
-  navigation; a screen that needs the focus layout renders a `FocusStrip`, which drops
-  it while the screen is mounted.
+  navigation; the sign-in page (`/login`) calls `useShellBrand()` instead, which shows
+  the same frame with the brand alone and needs no read. A screen that needs the focus
+  layout renders a `FocusStrip`, which drops it while the screen is mounted.
 
 Links and navigation are TanStack Router's `Link`, `Navigate` and `useNavigate`. The
 router registers its tree through `declare module "@tanstack/react-router"`, so a path

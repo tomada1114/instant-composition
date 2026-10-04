@@ -131,8 +131,6 @@ process.stderr.write(JSON.stringify({ status: answer.statusCode }));`,
           API_COGNITO_CLIENT_SECRET_PARAMETER:
             "/instant-composition/dev/app/web-client-secret",
           API_WEB_ORIGINS: "https://example.cloudfront.net",
-          API_WEB_CALLBACK_URL: "https://example.cloudfront.net/api/v1/auth/callback",
-          API_WEB_SIGN_OUT_URL: "https://example.cloudfront.net/",
           API_MODEL_PROVIDER: "openrouter",
           API_MODEL_ID: "anthropic/claude-haiku-4.5",
           API_OPENROUTER_KEY_PARAMETER:

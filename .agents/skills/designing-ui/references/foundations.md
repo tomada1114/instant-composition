@@ -163,7 +163,7 @@ and touch cannot reach. Focus stays the global 2px outline at a 2px offset, in `
 | Between blocks         | 24, the grid's gutter; a section inside a card 24 above and below a hairline                                                                                                                                                           |
 | Dialog                 | Centered at every width, max 440, over the scrim                                                                                                                                                                                       |
 | Toast                  | Bottom center of the viewport, 24 up; in the shell, centered on the content area                                                                                                                                                       |
-| Which screens use what | Shell: home, talk start, records, settings. Focus: all of `/drill` (start, card, done, error), `/recap`, the talk session. Neither: the landing, the welcome, a path with no screen                                                    |
+| Which screens use what | Shell: home, talk start, records, settings; the sign-in page with the brand alone. Focus: all of `/drill` (start, card, done, error), `/recap`, the talk session. Neither: the landing, the welcome, a path with no screen             |
 
 One layout route renders the shell's navigation once; a screen renders its content only,
 in the one `main`. The navigation appears only once a read has said who is signed in —

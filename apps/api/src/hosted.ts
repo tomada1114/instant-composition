@@ -50,13 +50,12 @@ function hostedWebSession(env: HostedEnv, fetch: Fetch): WebSession {
       throw new SecretParameterError(null, "the parameter holds no app client secret");
     }
     return cognitoWebSession({
+      userPoolId: env.cognito.userPoolId,
       clientId: env.cognito.clientId,
       clientSecret: secret,
       domain: env.cognito.domain,
       fetch,
       webOrigins: env.web.origins,
-      callbackUrl: env.web.callbackUrl,
-      signOutUrl: env.web.signOutUrl,
     });
   }
   const endpoint =
@@ -64,8 +63,7 @@ function hostedWebSession(env: HostedEnv, fetch: Fetch): WebSession {
     async (request: Request): Promise<WebSessionAnswer> =>
       (await session())[operation](request);
   return {
-    startSignIn: endpoint("startSignIn"),
-    finishSignIn: endpoint("finishSignIn"),
+    signIn: endpoint("signIn"),
     refreshSession: endpoint("refreshSession"),
     signOut: endpoint("signOut"),
   };

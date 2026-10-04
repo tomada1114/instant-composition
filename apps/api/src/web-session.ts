@@ -14,24 +14,21 @@ type Endpoint = (request: Request) => Promise<WebSessionAnswer>;
  * `operation`.
  */
 export interface WebSession {
-  /** Sends the browser to the managed login, with a fresh `state` and PKCE challenge. */
-  readonly startSignIn: Endpoint;
-  /** Checks the `state`, redeems the code, and keeps the tokens in cookies. */
-  readonly finishSignIn: Endpoint;
+  /** Signs the email and password the sign-in page posts in, and keeps the tokens in cookies. */
+  readonly signIn: Endpoint;
   /** Renews the access token from the refresh token cookie. */
   readonly refreshSession: Endpoint;
-  /** Revokes the refresh token, drops the cookies and signs the browser out of the managed login. */
+  /** Revokes the refresh token, drops the cookies and sends the browser to the sign-in page. */
   readonly signOut: Endpoint;
 }
 
 /** Where each web-session endpoint is served, relative to the API root. */
 export const WEB_SESSION_ROUTES = [
-  { method: "GET", path: "/v1/auth/login", operation: "startSignIn" },
-  { method: "GET", path: "/v1/auth/callback", operation: "finishSignIn" },
+  { method: "POST", path: "/v1/auth/login", operation: "signIn" },
   { method: "POST", path: "/v1/auth/refresh", operation: "refreshSession" },
   { method: "POST", path: "/v1/auth/logout", operation: "signOut" },
 ] as const satisfies readonly {
-  method: "GET" | "POST";
+  method: "POST";
   path: string;
   operation: keyof WebSession;
 }[];

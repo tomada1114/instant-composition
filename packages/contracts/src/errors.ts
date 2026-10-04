@@ -14,6 +14,9 @@ import * as z from "zod";
  * usable answer, so the same request may be sent again: `ERR_CONFLICT`,
  * `ERR_MODEL_UNAVAILABLE`. The server needs something first — cards dealt or
  * the catalog repaired: `ERR_NOT_ENOUGH_CARDS`, `ERR_CONTENT_UNREADABLE`.
+ * The account can sign in only after an administrator acts on it in the user
+ * pool — a temporary password, a reset or another challenge — so resending the
+ * same sign-in changes nothing until then: `ERR_SIGN_IN_ACTION_REQUIRED`.
  *
  * New codes may appear within `/v1`, which is why the envelope's
  * `code` is a string rather than this list as an enum: a client generated from
@@ -23,6 +26,7 @@ export const STATUS_BY_CODE = {
   ERR_BAD_REQUEST: 400,
   ERR_UNAUTHENTICATED: 401,
   ERR_FORBIDDEN: 403,
+  ERR_SIGN_IN_ACTION_REQUIRED: 403,
   ERR_CARD_NOT_PERSONAL: 403,
   ERR_ROUND_NOT_FOUND: 404,
   ERR_TALK_NOT_FOUND: 404,
@@ -48,6 +52,8 @@ export const MESSAGE_BY_CODE = {
     "The request does not fit the round, the talk, the settings or the profile it names.",
   ERR_UNAUTHENTICATED: "The request carries no valid access token.",
   ERR_FORBIDDEN: "The caller may not run this operation.",
+  ERR_SIGN_IN_ACTION_REQUIRED:
+    "The account needs an administrator's action in the user pool before it can sign in.",
   ERR_CARD_NOT_PERSONAL:
     "That card is the catalog's; only a card made from a talk can be deleted.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",

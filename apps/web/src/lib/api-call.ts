@@ -58,13 +58,16 @@ export function operationUrl(data: OperationData): string {
   return `${API_ROOT}${filled}`;
 }
 
-/** Where the browser goes to sign in: a full-page navigation to the API's managed-login redirect. */
-export const LOGIN_URL = `${API_ROOT}/v1/auth/login`;
+/** The web client's own sign-in page, where a session that ran out sends the browser. */
+export const LOGIN_URL = "/login";
+
+/** Signs an email and password in; outside the contract's routes, so called by path. */
+export const SIGN_IN_URL = `${API_ROOT}/v1/auth/login`;
 
 /** Renews the session cookies from the refresh cookie; outside the contract's routes, so called by path. */
 export const REFRESH_URL = `${API_ROOT}/v1/auth/refresh`;
 
-/** Signs out: posted by a top-level form, since the answer is a 303 to another origin. */
+/** Signs out: posted by a top-level form, since the answer is a 303 to the sign-in page. */
 export const LOGOUT_URL = `${API_ROOT}/v1/auth/logout`;
 
 function request(method: Method, data: OperationData): Promise<Response> {

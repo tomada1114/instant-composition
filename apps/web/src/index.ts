@@ -71,6 +71,7 @@ export {
   LOGOUT_URL,
   operationUrl,
   REFRESH_URL,
+  SIGN_IN_URL,
   recordAnswers,
   startRound,
   updateLevel,
@@ -79,6 +80,7 @@ export {
   type ApiError,
   type SendOutcome,
 } from "./lib/endpoints";
+export { signInWith, type SignInOutcome } from "./lib/sign-in";
 export { GRADES, isDefaultGradeKeys, isGradeKey, keyLabel } from "./lib/grade-keys";
 export { KeyMode } from "./lib/key-mode";
 export { TUNING } from "./lib/tuning";

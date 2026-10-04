@@ -44,11 +44,11 @@ export class TokenEndpointError extends Error {
   }
 }
 
-/** A grant the endpoint refused: the code or refresh token is spent, expired or not this client's. */
+/** A grant the endpoint refused: the refresh token is spent, expired, revoked or not this client's. */
 export type GrantRefused = "ERR_UNAUTHENTICATED";
 
-/** How long a call to the user pool's domain may take before the request fails. */
-const TIMEOUT_MS = 10_000;
+/** How long a call to the user pool may take before the request fails. */
+export const TIMEOUT_MS = 10_000;
 
 /**
  * A token a cookie can carry: a browser keeps no more than about 4 KiB per
@@ -74,7 +74,8 @@ function post(
   );
 }
 
-async function jsonOf(response: Response): Promise<unknown> {
+/** A response's JSON body, or `undefined` when it carries none. */
+export async function jsonOf(response: Response): Promise<unknown> {
   try {
     return await response.json();
   } catch {
@@ -82,13 +83,15 @@ async function jsonOf(response: Response): Promise<unknown> {
   }
 }
 
-function field(body: unknown, name: string): unknown {
+/** The member `name` of a JSON object, or `undefined` for any other value. */
+export function field(body: unknown, name: string): unknown {
   return typeof body === "object" && body !== null
     ? (body as Readonly<Record<string, unknown>>)[name]
     : undefined;
 }
 
-function token(value: unknown): string | undefined {
+/** `value` when it is a token a cookie can carry, or `undefined`. */
+export function token(value: unknown): string | undefined {
   return typeof value === "string" && COOKIE_SAFE_TOKEN.test(value) ? value : undefined;
 }
 
@@ -122,33 +125,6 @@ async function grant(
     throw new TokenEndpointError(null);
   }
   return ok({ accessToken, expiresIn, refreshToken });
-}
-
-/**
- * Redeems an authorization code, with the PKCE verifier its sign-in started
- * with, for the first tokens of a session: `/oauth2/token`'s
- * `authorization_code` grant, the client authenticated by its secret.
- */
-export async function exchangeCode(
-  client: CognitoClient,
-  code: string,
-  verifier: string,
-  redirectUri: string,
-): Promise<Result<IssuedTokens & { readonly refreshToken: string }, GrantRefused>> {
-  const issued = await grant(client, {
-    grant_type: "authorization_code",
-    code,
-    code_verifier: verifier,
-    redirect_uri: redirectUri,
-  });
-  if (!issued.ok) {
-    return issued;
-  }
-  const { refreshToken } = issued.value;
-  if (refreshToken === undefined) {
-    throw new TokenEndpointError(null);
-  }
-  return ok({ ...issued.value, refreshToken });
 }
 
 /**

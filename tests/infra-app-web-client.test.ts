@@ -120,11 +120,13 @@ describe("the dev URL's web app client", () => {
       EnableTokenRevocation: true,
       PreventUserExistenceErrors: "ENABLED",
     });
-    // Empty rather than absent: an absent list gets Cognito's default, which
-    // includes ALLOW_REFRESH_TOKEN_AUTH.
+    // Exactly the password flow the sign-in page uses: an absent list gets
+    // Cognito's default, which includes ALLOW_REFRESH_TOKEN_AUTH, and refresh
+    // token rotation cannot run with that.
     expect(() =>
       TEMPLATE.hasResourceProperties("AWS::Cognito::UserPoolClient", {
-        ExplicitAuthFlows: Match.exact([]),
+        ExplicitAuthFlows: Match.exact(["ALLOW_USER_PASSWORD_AUTH"]),
+        RefreshTokenRotation: { Feature: "ENABLED", RetryGracePeriodSeconds: 10 },
       }),
     ).not.toThrow();
   });

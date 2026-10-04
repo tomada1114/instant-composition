@@ -8,7 +8,6 @@ import {
   LOCAL_WEB_ORIGINS,
   REFRESH_COOKIE,
   SESSION_COOKIE,
-  SIGN_IN_COOKIE,
   hostedHandler,
   type Fetch,
   type HostedDependencies,
@@ -23,7 +22,14 @@ import { errorResponseSchema } from "@instant-composition/contracts";
 
 import { fixedCatalog, NOON } from "./application-harness";
 import { accessToken, CLIENT_ID, keySetOf, USER_POOL_ID } from "./cognito-tokens";
-import { CLIENT_SECRET, DOMAIN, fakeCognito, POOL_KEY } from "./web-session-harness";
+import {
+  CLIENT_SECRET,
+  DOMAIN,
+  expectedSecretHash,
+  fakeCognito,
+  PASSWORD,
+  POOL_KEY,
+} from "./web-session-harness";
 
 // The hosted entry's handler driven as API Gateway's HTTP API drives it: an
 // event in payload format 2.0 in, the result API Gateway answers with out. The
@@ -47,11 +53,7 @@ const ENV: HostedEnv = {
     domain: DOMAIN,
     clientSecretParameter: PARAMETER,
   },
-  web: {
-    origins: [WEB_ORIGIN],
-    callbackUrl: `${WEB_ORIGIN}/api/v1/auth/callback`,
-    signOutUrl: `${WEB_ORIGIN}/`,
-  },
+  web: { origins: [WEB_ORIGIN] },
   extension: { port: 2773, sessionToken: SESSION_TOKEN },
   model: {
     provider: "openrouter",
@@ -285,31 +287,46 @@ describe("the hosted entry's handler", () => {
 
   it("signs a browser in with the client secret read through the extension", async () => {
     const { handler, cognito, extensionCalls, lines } = hosted();
+    const email = "learner@example.com";
+    cognito.addUser(email, { subject: "subject-a" });
 
-    const login = await handler(event("GET", "/api/v1/auth/login"));
-    expect(login.statusCode).toBe(302);
-    const authorize = headerOf(login, "location") ?? "";
-    expect(new URL(authorize).searchParams.get("redirect_uri")).toBe(
-      ENV.web.callbackUrl,
-    );
-    expect(headerOf(login, "set-cookie")).toBeUndefined();
-
-    const back = cognito.signIn(authorize, "subject-a");
-    const callback = await handler(
-      event("GET", `/api/v1/auth/callback?${new URLSearchParams(back).toString()}`, {
-        cookies: [cookieOf(login.cookies, SIGN_IN_COOKIE)],
+    const login = await handler(
+      event("POST", "/api/v1/auth/login", {
+        headers: { origin: WEB_ORIGIN },
+        body: { email, password: PASSWORD },
       }),
     );
 
-    expect(callback.statusCode).toBe(302);
-    expect(headerOf(callback, "location")).toBe("/");
-    expect(cookieOf(callback.cookies, SESSION_COOKIE)).toBe(
+    expect(login.statusCode).toBe(204);
+    expect(cookieOf(login.cookies, SESSION_COOKIE)).toBe(
       `${SESSION_COOKIE}=${cognito.last().access}`,
     );
-    expect(cookieOf(callback.cookies, REFRESH_COOKIE)).toBe(
+    expect(cookieOf(login.cookies, REFRESH_COOKIE)).toBe(
       `${REFRESH_COOKIE}=${cognito.last().refresh}`,
     );
-    expect(cognito.calls.map(({ path }) => path)).toStrictEqual(["/oauth2/token"]);
+    expect(cognito.calls.map(({ target }) => target)).toStrictEqual([
+      "AWSCognitoIdentityProviderService.InitiateAuth",
+    ]);
+    expect(cognito.calls[0]?.json).toMatchObject({
+      AuthParameters: { SECRET_HASH: expectedSecretHash(email) },
+    });
+
+    const home = await handler(
+      event("GET", "/api/v1/home", {
+        cookies: [cookieOf(login.cookies, SESSION_COOKIE)],
+      }),
+    );
+    const logout = await handler(
+      event("POST", "/api/v1/auth/logout", {
+        headers: { origin: WEB_ORIGIN },
+        cookies: [cookieOf(login.cookies, REFRESH_COOKIE)],
+      }),
+    );
+
+    expect(home.statusCode).toBe(200);
+    expect(logout.statusCode).toBe(303);
+    expect(headerOf(logout, "location")).toBe("/login");
+    expect(cognito.honours(cognito.last().refresh)).toBe(false);
     expect(
       extensionCalls.map((request) => ({
         name: new URL(request.url).searchParams.get("name"),
@@ -320,8 +337,48 @@ describe("the hosted entry's handler", () => {
       { name: PARAMETER, token: SESSION_TOKEN },
     ]);
     const logged = JSON.stringify(lines);
-    expect(logged).not.toContain(CLIENT_SECRET);
-    expect(logged).not.toContain(SESSION_TOKEN);
+    for (const secret of [CLIENT_SECRET, SESSION_TOKEN, PASSWORD, email]) {
+      expect(logged).not.toContain(secret);
+      expect(login.body).not.toContain(secret);
+    }
+  });
+
+  it("refuses a sign-in the pool refuses with no cookie, and one from another origin before the pool", async () => {
+    const { handler, cognito } = hosted();
+    cognito.addUser("learner@example.com");
+    cognito.addUser("temporary@example.com", { state: "NEW_PASSWORD_REQUIRED" });
+    const login = (origin: string, email: string, password: string) =>
+      handler(
+        event("POST", "/api/v1/auth/login", {
+          headers: { origin },
+          body: { email, password },
+        }),
+      );
+
+    const wrong = await login(WEB_ORIGIN, "learner@example.com", "not it");
+    const temporary = await login(WEB_ORIGIN, "temporary@example.com", PASSWORD);
+    const foreign = await login(
+      "https://evil.example",
+      "learner@example.com",
+      PASSWORD,
+    );
+
+    expect([wrong.statusCode, codeOf(wrong.body)]).toStrictEqual([
+      401,
+      "ERR_UNAUTHENTICATED",
+    ]);
+    expect([temporary.statusCode, codeOf(temporary.body)]).toStrictEqual([
+      403,
+      "ERR_SIGN_IN_ACTION_REQUIRED",
+    ]);
+    expect([foreign.statusCode, codeOf(foreign.body)]).toStrictEqual([
+      403,
+      "ERR_FORBIDDEN",
+    ]);
+    for (const result of [wrong, temporary, foreign]) {
+      expect(result.cookies ?? []).toStrictEqual([]);
+    }
+    expect(cognito.calls).toHaveLength(2);
   });
 
   it.each([
@@ -338,7 +395,12 @@ describe("the hosted entry's handler", () => {
     const { handler, cognito, lines, answerSecretWith } = hosted();
     answerSecretWith(answer);
 
-    const login = await handler(event("GET", "/api/v1/auth/login"));
+    const login = await handler(
+      event("POST", "/api/v1/auth/login", {
+        headers: { origin: WEB_ORIGIN },
+        body: { email: "learner@example.com", password: PASSWORD },
+      }),
+    );
 
     expect(login.statusCode).toBe(500);
     expect(login.body).toBe("");
