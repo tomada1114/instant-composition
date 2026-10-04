@@ -11,12 +11,13 @@ export interface VocabReviewSummary {
   }[];
 }
 
-/** One deduplication pass retains the first entry for each card, never timestamp order. */
+/** Re-asks never replace the first-pass grade, even when they sort before it. */
 export function summarizeVocabReviews(
   reviews: readonly VocabReview[],
 ): VocabReviewSummary {
   const seen = new Set<string>();
-  const firsts = reviews.filter(({ cardId }) => {
+  const firsts = reviews.filter(({ cardId, pass }) => {
+    if (pass !== "first") return false;
     if (seen.has(cardId)) return false;
     seen.add(cardId);
     return true;

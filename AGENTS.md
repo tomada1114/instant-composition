@@ -134,6 +134,18 @@ reach for `--config.runtime-on-fail=ignore`: nothing here runs on any other Node
 Run the narrowest check that can fail, then the gate. Reaching for `pnpm check:source`
 on every edit is slow enough that it stops being run at all.
 
+Critical learning flows are connected in `tests/critical-flow-contract.ts`: the durable
+web answer queue and generated-contract endpoint types reach Hono, application commands
+and either in-memory persistence (`web-critical-flows.test.ts`) or actual DynamoDB local
+(`api-critical-flows-dynamodb.test.ts`). The DOM suite `web-critical-dom.test.tsx`
+drives keyboard grading, remount recovery, personal-card deletion, re-asks, talk resume,
+focus and leave guards over the real API with in-memory persistence. Authentication in
+`web-session-recovery.test.ts` uses locally signed tokens, a controlled OAuth provider
+and a fixture cookie map. These tests do not prove a browser's cookie jar, actual
+history or focus behavior, microphone permissions, CSS layout, viewport or light/dark
+rendering; they use no real Cognito login, paid model or learner data. The existing
+smoke and DynamoDB projects remain required by `check:source` and CI.
+
 | What you changed                                     | The narrowest check that can fail                                      |
 | ---------------------------------------------------- | ---------------------------------------------------------------------- |
 | A module under `packages/domain/` or `application/`  | `pnpm exec vitest run tests/<package>-*.test.ts`                       |
