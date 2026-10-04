@@ -15,10 +15,14 @@ credentials, authentication registration or model calls. Other requests reach th
 unchanged API handler.
 
 `pnpm release record <assembly> <sha>` writes `dist/release.json`: exact checkout, web,
-API and catalog identity plus hashes for all assembly and web files. All three stack
-deployments consume that synthesized assembly; no deploy rebuilds it. Verification fails
-on SHA or hash disagreement before deployment. The manifest is appended to the workflow
-summary, including on failure once recording succeeded.
+API and catalog identity plus hashes for all assembly and web files. The read-model
+worker's bundle carries the same release wrapper, so the API bundle is the asset the app
+template's one `ApiFunction` resource names in `aws:asset:path`, never a count of
+wrapped bundles; every wrapped bundle, the worker's included, must carry the release SHA
+and its recorded bytes. All three stack deployments consume that synthesized assembly;
+no deploy rebuilds it. Verification fails on SHA or hash disagreement before deployment.
+The manifest is appended to the workflow summary, including on failure once recording
+succeeded.
 
 The current-main guard queries GitHub with the job's read-only token just before AWS
 credentials. A superseded completion is explicitly skipped; an unavailable or malformed
