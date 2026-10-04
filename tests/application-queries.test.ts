@@ -436,6 +436,25 @@ describe("roundPayload", () => {
 });
 
 describe("records", () => {
+  it("preserves practiced totals and calendar when a previously published catalog becomes unreadable", async () => {
+    const h = makeHarness();
+    await placed(h);
+    await settleComposition(h.deps, h.context());
+    const before = await h.stores.forLearner(h.learner).stats();
+    const view = await records({ ...h.deps, catalog: unreadableCatalog }, h.context());
+    expect(view.ok && view.value).toMatchObject({
+      said: 10,
+      practicedDays: 1,
+      points: 20,
+      toeic: "",
+      reach: { topics: [], pending: 0 },
+      breakdown: [],
+      weak: { grammar: [], subtopics: [] },
+      streak: { current: 1, longest: 1 },
+    });
+    expect(view.ok && view.value.calendar).toHaveLength(12);
+    expect(await h.stores.forLearner(h.learner).stats()).toStrictEqual(before);
+  });
   it("shows the totals, the run and the calendar", async () => {
     const h = makeHarness();
     await placed(h);

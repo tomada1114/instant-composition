@@ -11,6 +11,7 @@ import path from "node:path";
 
 import { serve } from "@hono/node-server";
 import {
+  backfillReadModelLearners,
   createDynamoDbDirectory,
   createDynamoDbReadModelMaintenance,
   createDynamoDbStores,
@@ -54,6 +55,12 @@ const app = createApp({
   model,
 });
 const readable = (await catalog.snapshot()).ok;
+// Historical local profiles predate the maintenance registry. Discover them in
+// fixed pages before serving requests or enumerating the registry.
+let discovery: string | null = null;
+do {
+  discovery = (await backfillReadModelLearners(table, discovery)).cursor;
+} while (discovery !== null);
 const maintenance = createDynamoDbReadModelMaintenance(table);
 let preparing = false;
 setInterval(() => {

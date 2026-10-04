@@ -17,7 +17,12 @@ import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { z } from "zod";
 
-import { deleteLearnerTable, localDynamoDbClient } from "@instant-composition/adapters";
+import {
+  createLearnerTable,
+  createDynamoDbReadModelMaintenance,
+  deleteLearnerTable,
+  localDynamoDbClient,
+} from "@instant-composition/adapters";
 import { API_ENV_NAMES } from "@instant-composition/api";
 import {
   historySchema,
@@ -34,6 +39,7 @@ import {
   removeContentRoots,
   writeCards,
 } from "./cards-fixture";
+import { makeProfile } from "./application-fixtures";
 import { DYNAMODB_LOCAL_ENDPOINT } from "./dynamodb-local";
 
 // The only suite that asks the whole stack a question over HTTP. Every other
@@ -355,6 +361,51 @@ beforeAll(async () => {
   assertFreshBuild();
   await assertDynamoDbLocal();
 
+  // Reuse a pre-cap4 table with profiles but no read-model registry. Padding
+  // forces startup discovery to follow more than one 100-row scan page.
+  const legacyClient = localDynamoDbClient(DYNAMODB_LOCAL_ENDPOINT);
+  try {
+    await createLearnerTable(legacyClient, tableName);
+    const profile = makeProfile();
+    for (const id of [
+      "legacy-local",
+      ...Array.from({ length: 120 }, (_, index) => `padding-${String(index)}`),
+    ]) {
+      const response = await fetch(DYNAMODB_LOCAL_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "content-type": "application/x-amz-json-1.0",
+          "x-amz-target": "DynamoDB_20120810.PutItem",
+          "x-amz-date": "20261004T000000Z",
+          authorization:
+            "AWS4-HMAC-SHA256 Credential=local/20261004/local/dynamodb/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-target, Signature=" +
+            "0".repeat(64),
+        },
+        body: JSON.stringify({
+          TableName: tableName,
+          Item: {
+            PK: { S: `LEARNER#${id}` },
+            SK: { S: "PROFILE" },
+            type: { S: "profile" },
+            version: { N: "1" },
+            schemaVersion: { N: "3" },
+            value: {
+              M: {
+                timeZone: { S: profile.timeZone },
+                l1: { S: profile.l1 },
+                target: { S: profile.target },
+                uiLocale: { S: profile.uiLocale },
+              },
+            },
+          },
+        }),
+      });
+      if (!response.ok)
+        throw new Error("The owned legacy profile fixture could not be seeded.");
+    }
+  } finally {
+    legacyClient.destroy();
+  }
   const contentRoot = makeContentRoot();
   writeReviewedCards(contentRoot);
   const out = mkdtempSync(path.join(tmpdir(), "smoke-catalog-"));
@@ -529,6 +580,19 @@ describe("the built web client, served by `vite preview`", () => {
 });
 
 describe("the API behind the client's own origin", () => {
+  it("discovers an existing local learner across startup scan pages without a profile update", async () => {
+    const client = localDynamoDbClient(DYNAMODB_LOCAL_ENDPOINT);
+    try {
+      const registry = createDynamoDbReadModelMaintenance({ client, tableName });
+      const page = await registry.profiles(null);
+      expect(page.learners).toContainEqual({
+        id: "legacy-local",
+        profile: makeProfile(),
+      });
+    } finally {
+      client.destroy();
+    }
+  });
   async function send(
     route: string,
     method: string,
