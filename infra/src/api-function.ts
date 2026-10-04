@@ -111,8 +111,6 @@ export function addApiFunction(
       API_COGNITO_DOMAIN: props.signInDomainUrl,
       API_COGNITO_CLIENT_SECRET_PARAMETER: props.clientSecretParameter,
       API_WEB_ORIGINS: webUrl,
-      API_WEB_CALLBACK_URL: `${webUrl}/api/v1/auth/callback`,
-      API_WEB_SIGN_OUT_URL: `${webUrl}/`,
       API_MODEL_PROVIDER: props.talkModel.provider,
       API_MODEL_ID: props.talkModel.modelId,
       API_OPENROUTER_KEY_PARAMETER: props.talkModel.keyParameter,

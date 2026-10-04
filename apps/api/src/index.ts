@@ -16,7 +16,7 @@ export {
 export {
   cognitoWebSession,
   REFRESH_COOKIE,
-  SIGN_IN_COOKIE,
+  SIGN_IN_PAGE,
   type CognitoWebSessionOptions,
 } from "./cognito-web-session";
 export { API_ENV_NAMES, HOSTED_ENV_NAMES, readApiEnv, readHostedEnv } from "./env";
@@ -40,9 +40,15 @@ export type {
   WebSignInSettings,
 } from "./env-settings";
 export { MAX_REQUEST_BODY_BYTES } from "./http";
+export {
+  identityProviderUrl,
+  InitiateAuthError,
+  secretHash,
+  type PasswordClient,
+  type SignInRefused,
+} from "./initiate-auth";
 export { LOCAL_SUBJECT, localAuthenticator } from "./local-authenticator";
 export {
-  LOCAL_SIGN_IN_URLS,
   LOCAL_WEB_ORIGINS,
   localRunAuthenticator,
   localRunWebSession,

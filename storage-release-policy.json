@@ -1,7 +1,17 @@
 {
-  "current": "storage-v5-1",
+  "current": "storage-v5-2",
   "emittedSchemas": [0, 1, 2, 3, 4, 5],
   "releases": [
+    {
+      "id": "storage-v5-2",
+      "guarded": true,
+      "reads": [0, 1, 2, 3, 4, 5],
+      "preserves": [0, 1, 2, 3, 4, 5],
+      "fixture": "tests/fixtures/storage-v5-2.json",
+      "sha256": "954932bf06e0a7074a64b48ebb5d7f8eda47d9f5fae5f0b2f45ddab3e96a3991",
+      "schemaFingerprint": "2fa1bc0d7a386287de6a82c6b4a9c652eb09b6d01adb52938d923d4ebf1bd16f",
+      "writes": 5
+    },
     {
       "id": "storage-v5-1",
       "guarded": true,
@@ -80,6 +90,7 @@
     "apps/api/src/hosted.ts",
     "apps/api/src/http.ts",
     "apps/api/src/index.ts",
+    "apps/api/src/initiate-auth.ts",
     "apps/api/src/lambda.ts",
     "apps/api/src/local-authenticator.ts",
     "apps/api/src/local-run-authenticator.ts",
@@ -89,7 +100,6 @@
     "apps/api/src/model-log.ts",
     "apps/api/src/operations.ts",
     "apps/api/src/parameters-extension.ts",
-    "apps/api/src/pkce.ts",
     "apps/api/src/read-model-dispatch.ts",
     "apps/api/src/read-model-runner.ts",
     "apps/api/src/read-model-worker.ts",

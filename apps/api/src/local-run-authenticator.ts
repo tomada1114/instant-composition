@@ -15,16 +15,6 @@ import type { WebSession } from "./web-session";
  */
 export const LOCAL_WEB_ORIGINS = ["http://127.0.0.1:5173", "http://127.0.0.1:4173"];
 
-/**
- * Where the `dev` web app client sends a local run's browser back to, after
- * sign-in and after sign-out: the URLs registered on it in
- * `infra/src/foundation-stack.ts`, through the Vite dev server's `/api` proxy.
- */
-export const LOCAL_SIGN_IN_URLS = {
-  callbackUrl: "http://127.0.0.1:5173/api/v1/auth/callback",
-  signOutUrl: "http://127.0.0.1:5173/",
-} as const;
-
 /** The authenticator a local run wires, and which one it is, for its start-up line. */
 export interface LocalRunAuthenticator {
   readonly kind: "cognito" | "local";
@@ -62,11 +52,11 @@ export function localRunWebSession(
   return cognito === null
     ? undefined
     : cognitoWebSession({
+        userPoolId: cognito.userPoolId,
         clientId: cognito.clientId,
         clientSecret: cognito.clientSecret,
         domain: cognito.domain,
         fetch,
         webOrigins: LOCAL_WEB_ORIGINS,
-        ...LOCAL_SIGN_IN_URLS,
       });
 }

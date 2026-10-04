@@ -82,14 +82,10 @@ export interface HostedCognitoSettings {
   readonly clientSecretParameter: string;
 }
 
-/** Where the web client is served from, as the web app client registers it. */
+/** Where the web client is served from. */
 export interface WebSignInSettings {
   /** The web client's origins, which the cookie path's `Origin` check admits. */
   readonly origins: readonly string[];
-  /** The callback URL registered on the app client, as the browser reaches `/v1/auth/callback`. */
-  readonly callbackUrl: string;
-  /** The sign-out URL registered on the app client, where the browser lands after `/logout`. */
-  readonly signOutUrl: string;
 }
 
 /** How the function reaches the AWS Parameters and Secrets Lambda extension beside it. */

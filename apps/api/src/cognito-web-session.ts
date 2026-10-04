@@ -2,25 +2,16 @@ import type { ErrorCode } from "@instant-composition/contracts";
 
 import { SESSION_COOKIE } from "./cognito-authenticator";
 import { clearCookie, cookieValue, setCookie } from "./cookies";
-import { failure } from "./http";
-import { challengeOf, newSignIn, readSignIn, sameState, signInValue } from "./pkce";
-import {
-  exchangeCode,
-  refreshTokens,
-  revokeToken,
-  type CognitoClient,
-  type IssuedTokens,
-} from "./token-endpoint";
+import { failure, readJsonBody } from "./http";
+import { signInWithPassword, type PasswordClient } from "./initiate-auth";
+import { refreshTokens, revokeToken, type IssuedTokens } from "./token-endpoint";
 import type { WebSession, WebSessionAnswer } from "./web-session";
 
 /** The cookie the session's refresh token is kept in, beside {@link SESSION_COOKIE}. */
 export const REFRESH_COOKIE = "__Host-refresh-token";
 
-/** The cookie one sign-in keeps its `state` and PKCE verifier in, from login to callback. */
-export const SIGN_IN_COOKIE = "__Host-sign-in";
-
-/** How long a sign-in may take between leaving for the managed login and coming back. */
-const SIGN_IN_SECONDS = 600;
+/** The web client's own sign-in page, where `/logout` leaves the browser. */
+export const SIGN_IN_PAGE = "/login";
 
 /**
  * How long the browser keeps the refresh token: the web app client's refresh
@@ -29,17 +20,22 @@ const SIGN_IN_SECONDS = 600;
  */
 const REFRESH_SECONDS = 30 * 24 * 60 * 60;
 
-export interface CognitoWebSessionOptions extends CognitoClient {
-  /** The web client's origins: `/refresh` and `/logout` refuse a request from any other. */
+/**
+ * The longest email and password a sign-in carries to the pool: an email
+ * address is at most 320 characters and a Cognito password at most 256.
+ */
+const MAX_EMAIL = 320;
+const MAX_PASSWORD = 256;
+
+export interface CognitoWebSessionOptions extends PasswordClient {
+  /** The web client's origins: every endpoint refuses a request from any other. */
   readonly webOrigins: readonly string[];
-  /** The callback URL registered on the app client, as the browser reaches `/v1/auth/callback`. */
-  readonly callbackUrl: string;
-  /** The sign-out URL registered on the app client, where the browser lands after `/logout`. */
-  readonly signOutUrl: string;
 }
 
-/** An authorization code as the callback may carry one. */
-const CODE = /^[\w.~+/=-]{1,1024}$/u;
+interface Credentials {
+  readonly email: string;
+  readonly password: string;
+}
 
 function answer(
   response: Response,
@@ -53,14 +49,6 @@ function withCookies(response: Response, cookies: readonly string[]): Response {
     response.headers.append("set-cookie", cookie);
   }
   return response;
-}
-
-function redirect(
-  status: 302 | 303,
-  location: string,
-  cookies: readonly string[],
-): Response {
-  return withCookies(new Response(null, { status, headers: { location } }), cookies);
 }
 
 function refused(code: ErrorCode, cookies: readonly string[] = []): WebSessionAnswer {
@@ -77,24 +65,38 @@ function keep(tokens: IssuedTokens): string[] {
 }
 
 const DROP_SESSION = [clearCookie(SESSION_COOKIE), clearCookie(REFRESH_COOKIE)];
-const DROP_SIGN_IN = [clearCookie(SIGN_IN_COOKIE)];
+
+function bounded(value: unknown, max: number): value is string {
+  return typeof value === "string" && value.length > 0 && value.length <= max;
+}
+
+/** The email and password a sign-in's JSON body carries, or `undefined` for any other body. */
+function credentialsOf(body: unknown): Credentials | undefined {
+  if (typeof body !== "object" || body === null) return undefined;
+  const { email, password } = body as Readonly<Record<string, unknown>>;
+  return bounded(email, MAX_EMAIL) && bounded(password, MAX_PASSWORD)
+    ? { email, password }
+    : undefined;
+}
 
 /**
  * The web session over a Cognito user pool's confidential app client: the
- * authorization code flow with PKCE (S256), the code redeemed with the client
+ * email and password the web client's own sign-in page posts, signed in
+ * through the pool's `InitiateAuth` with a `SECRET_HASH` from the client
  * secret the server alone holds, and the tokens set as `__Host-` cookies that
- * are HttpOnly, Secure and SameSite=Lax.
+ * are HttpOnly, Secure and SameSite=Lax. The tokens never reach a page script.
  *
  * @remarks
- * The callback is a top-level navigation from the managed login, which carries
- * no `Origin`; its CSRF check is the `state`, matched against the one this
- * browser's sign-in cookie holds. `/refresh` and `/logout` change state from a
- * page, so, as on the rest of the cookie path, a missing or foreign `Origin`
- * is `ERR_FORBIDDEN` before anything is read.
+ * Every endpoint is called from a page, so, as on the rest of the cookie
+ * path, a missing or foreign `Origin` is `ERR_FORBIDDEN` before anything is
+ * read. A sign-in the pool refuses sets no cookie and leaves any it finds:
+ * `ERR_UNAUTHENTICATED` for credentials that sign nobody in,
+ * `ERR_SIGN_IN_ACTION_REQUIRED` for an account an administrator must act on
+ * first. The password reaches the pool and nothing else — no response, no log.
  *
- * A token endpoint that refuses the grant — a spent code, an expired or
- * revoked refresh token — is `ERR_UNAUTHENTICATED`; one that cannot be reached
- * or answers anything else throws, and the request answers a bare 500.
+ * A token endpoint that refuses a refresh — an expired or revoked refresh
+ * token — is `ERR_UNAUTHENTICATED`; a pool that cannot be reached or answers
+ * anything else throws, and the request answers a bare 500.
  */
 export function cognitoWebSession(options: CognitoWebSessionOptions): WebSession {
   const origins = new Set(options.webOrigins);
@@ -104,52 +106,29 @@ export function cognitoWebSession(options: CognitoWebSessionOptions): WebSession
     cookieValue(request.headers.get("cookie"), name) ?? "";
 
   return {
-    startSignIn: async () => {
-      const secrets = newSignIn();
-      const query = new URLSearchParams({
-        response_type: "code",
-        client_id: options.clientId,
-        redirect_uri: options.callbackUrl,
-        scope: "openid",
-        state: secrets.state,
-        code_challenge: await challengeOf(secrets.verifier),
-        code_challenge_method: "S256",
-      });
-      const cookies = [
-        setCookie(SIGN_IN_COOKIE, signInValue(secrets), SIGN_IN_SECONDS),
-      ];
-      return answer(
-        redirect(
-          302,
-          `${options.domain}/oauth2/authorize?${query.toString()}`,
-          cookies,
-        ),
-        "ok",
-      );
-    },
-
-    finishSignIn: async (request) => {
-      const params = new URL(request.url).searchParams;
-      const started = readSignIn(cookie(request, SIGN_IN_COOKIE));
-      if (
-        started === undefined ||
-        !sameState(params.get("state") ?? "", started.state)
-      ) {
-        return refused("ERR_FORBIDDEN", DROP_SIGN_IN);
+    signIn: async (request) => {
+      if (!fromWebClient(request)) {
+        return refused("ERR_FORBIDDEN");
       }
-      const code = params.get("code") ?? "";
-      if (!CODE.test(code)) {
-        return refused("ERR_UNAUTHENTICATED", DROP_SIGN_IN);
+      const body = await readJsonBody(request);
+      if (!body.ok) {
+        return refused(body.error);
       }
-      const issued = await exchangeCode(
+      const credentials = credentialsOf(body.value);
+      if (credentials === undefined) {
+        return refused("ERR_BAD_REQUEST");
+      }
+      const issued = await signInWithPassword(
         options,
-        code,
-        started.verifier,
-        options.callbackUrl,
+        credentials.email,
+        credentials.password,
       );
       return issued.ok
-        ? answer(redirect(302, "/", [...DROP_SIGN_IN, ...keep(issued.value)]), "ok")
-        : refused(issued.error, DROP_SIGN_IN);
+        ? answer(
+            withCookies(new Response(null, { status: 204 }), keep(issued.value)),
+            "ok",
+          )
+        : refused(issued.error);
     },
 
     refreshSession: async (request) => {
@@ -180,12 +159,11 @@ export function cognitoWebSession(options: CognitoWebSessionOptions): WebSession
         // reached: the token then lives out its validity, but no browser holds it.
         await revokeToken(options, refreshToken).catch(() => undefined);
       }
-      const query = new URLSearchParams({
-        client_id: options.clientId,
-        logout_uri: options.signOutUrl,
-      });
       return answer(
-        redirect(303, `${options.domain}/logout?${query.toString()}`, DROP_SESSION),
+        withCookies(
+          new Response(null, { status: 303, headers: { location: SIGN_IN_PAGE } }),
+          DROP_SESSION,
+        ),
         "ok",
       );
     },

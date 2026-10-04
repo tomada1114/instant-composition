@@ -7,7 +7,6 @@ import {
   domain,
   envReader,
   httpsOrigins,
-  httpsUrl,
   httpUrl,
   parameterName,
   port,
@@ -124,8 +123,6 @@ export const HOSTED_ENV_NAMES = [
   "API_COGNITO_CLIENT_SECRET_PARAMETER",
   "API_COGNITO_CLIENT_SECRET",
   "API_WEB_ORIGINS",
-  "API_WEB_CALLBACK_URL",
-  "API_WEB_SIGN_OUT_URL",
   ...HOSTED_MODEL_NAMES,
 ] as const;
 
@@ -159,8 +156,6 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     invalid.push("API_COGNITO_CLIENT_SECRET");
   }
   const origins = required("API_WEB_ORIGINS", httpsOrigins);
-  const callbackUrl = required("API_WEB_CALLBACK_URL", httpsUrl);
-  const signOutUrl = required("API_WEB_SIGN_OUT_URL", httpsUrl);
   const model = hostedModelSettings(source, reader);
   if (
     invalid.length > 0 ||
@@ -173,8 +168,6 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     at === undefined ||
     secretParameter === undefined ||
     origins === undefined ||
-    callbackUrl === undefined ||
-    signOutUrl === undefined ||
     model === undefined
   ) {
     throw invalidVariables(invalid);
@@ -189,7 +182,7 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
       domain: at,
       clientSecretParameter: secretParameter,
     },
-    web: { origins, callbackUrl, signOutUrl },
+    web: { origins },
     extension: { port: extensionPort, sessionToken },
     model,
   };
