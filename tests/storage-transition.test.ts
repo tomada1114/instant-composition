@@ -130,6 +130,30 @@ afterEach(() => {
 });
 
 describe("storage deployment admission", () => {
+  it.each([
+    [new StorageTransitionError("installed file"), "installed file"],
+    [new Error("private-provider-response-with-signed-url"), "unexpected failure"],
+  ])(
+    "retains a safe failure stage without exposing dependency content: %s",
+    async (failure, stage) => {
+      const { port, paused } = fixture();
+      const records: unknown[] = [];
+      port.verify = () => Promise.reject(failure);
+      port.record = (state) => {
+        records.push(state);
+        return Promise.resolve();
+      };
+      await expect(transitionStorageWriters(port)).rejects.toBe(failure);
+      expect(records.at(-1)).toMatchObject({
+        phase: "paused-forward-fix",
+        failure: stage,
+      });
+      expect(JSON.stringify(records)).not.toContain(
+        "private-provider-response-with-signed-url",
+      );
+      expect(paused.size).toBe(2);
+    },
+  );
   it("keeps the API paused through code update and creates its worker paused before certifying both", async () => {
     const { port, calls, paused } = fixture();
     await transitionStorageWriters(port);

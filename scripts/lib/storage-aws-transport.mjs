@@ -17,8 +17,36 @@ export function awsJson(args, env) {
         timeout: 60000,
       }) || "null",
     );
-  } catch {
-    throw new StorageTransitionError("AWS operation");
+  } catch (error) {
+    const operation = args.slice(0, 2).join(" ");
+    const owned = [
+      "sts get-caller-identity",
+      "sts assume-role",
+      "cloudformation list-stack-resources",
+      "cloudformation describe-stacks",
+      "lambda get-function",
+      "lambda get-function-configuration",
+      "lambda get-function-concurrency",
+      "lambda put-function-concurrency",
+      "lambda delete-function-concurrency",
+    ].includes(operation);
+    const stderr =
+      error instanceof Error && "stderr" in error ? String(error.stderr) : "";
+    const outcome = [
+      "AccessDeniedException",
+      "ResourceConflictException",
+      "ThrottlingException",
+      "TooManyRequestsException",
+      "ExpiredToken",
+      "UnrecognizedClientException",
+      "ResourceNotFoundException",
+      "InvalidParameterValueException",
+    ].find((code) => stderr.includes(code));
+    throw new StorageTransitionError(
+      owned
+        ? `AWS ${operation}${outcome === undefined ? "" : ` ${outcome}`}`
+        : "AWS operation",
+    );
   }
 }
 /** @param {string[]} args @param {string} root @returns {Promise<void>} */

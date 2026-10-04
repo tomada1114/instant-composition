@@ -95,6 +95,8 @@ export async function transitionStorageWriters(port) {
     await port.record({
       phase: recovered ? "recovered-certified-predecessor" : "paused-forward-fix",
       writers: remaining,
+      failure:
+        error instanceof StorageTransitionError ? error.part : "unexpected failure",
     });
     throw error;
   }
