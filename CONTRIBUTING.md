@@ -53,6 +53,61 @@ against DynamoDB local. Both need Docker: run them with `pnpm db:up`, then
 `pnpm check:source` runs all of them once `pnpm db:up` has, and `pnpm db:down` stops the
 container afterwards.
 
+## Codex Cloud checkouts
+
+This checkout uses pnpm scripts; it has no justfile and needs no `just` installation.
+For test-driven iteration, use `pnpm exec vitest run tests/<name>.test.ts` or
+`pnpm test:watch --watch tests/<name>.test.ts`, then the everyday gate above. Explicit
+`--watch` keeps Vitest watching even when the environment defaults to CI mode. Unit,
+component and repository-script tests use local fixtures and stand-ins for
+authentication and model calls.
+
+The saved environment checked on 2026-10-04 supplied Node 24, pnpm, Corepack, Python 3,
+Git, GitHub CLI and a working Docker daemon with Compose, but no installed project
+dependencies or AWS CLI. The checked-in install helper prepares locked dependencies with
+writable caches when home directories are unavailable. Run it from the checkout root:
+
+```sh
+bash .agents/skills/cloud-shipping-one-issue/scripts/install.sh
+```
+
+The helper reads the pnpm pin from `package.json`, preserves the dependency policy and
+Git hooks, and starts no service. Its cache exports apply only to the install process;
+repeat them in a task shell if needed. Cache paths are disposable, so a fresh task may
+need another install. Saved environment settings and secrets were not changed.
+
+Leave the environment's Start skill unset for ordinary tasks. Start DynamoDB Local with
+`pnpm db:up` only for DB checks or `pnpm check:source`; Compose waits for readiness.
+Stop only a container this task started. If a dev server is needed, use
+`API_OPENROUTER_API_KEY= pnpm dev` to select the free stand-in while preserving the
+saved key. Installation/startup should not select issues or run the full test suite.
+
+To implement one issue in Cloud, ask `$cloud-shipping-one-issue` to select one eligible
+open issue, implement it, obtain completed Codex review and current-head required CI,
+and merge it. Add "stop at the PR" or "do not merge" to keep a reviewed PR instead. The
+bare invocation `$cloud-shipping-one-issue` uses the implement-and-merge default; an
+explicit analysis-only request remains read-only. The
+[repository skill](.agents/skills/cloud-shipping-one-issue/SKILL.md) owns selection,
+review evidence and the caller's merge/stop boundary; its
+[environment reference](.agents/skills/cloud-shipping-one-issue/references/environment.md)
+includes the complete Install script launcher and on-demand service guidance.
+
+AWS login is unnecessary for `pnpm check:quick`, `pnpm web:build`, the local Docker
+checks described above, or `pnpm cdk synth -c stage=dev --no-lookups`. Local DynamoDB
+tests create and delete fixture tables in the container, not in AWS. CDK synthesis
+writes templates and bundles locally; it does not verify live account permissions. Live
+Cognito, hosted DynamoDB, Parameter Store, cloud deployment and storage-transition
+operations need appropriate AWS access and a separate request to run them. Do not put an
+AWS login, access keys or deployment commands in environment setup.
+
+Git transport and GitHub API access must be checked separately. In the checked
+environment, Git remote access worked while `gh repo view`, `gh issue list` and
+`gh pr list` returned `Forbidden`; the connected GitHub app could read issues and PRs.
+Use that app for API operations when available, or arrange authorized GitHub API access
+before relying on `gh`. Create an isolated branch and a draft PR for environment probes,
+and inspect checks for its exact head commit. PR CI runs without AWS credentials; the
+dev deployment workflow only deploys after successful CI for a trusted `main` push.
+
 ## Dependency cooldown
 
 The seven-day dependency cooldown in `pnpm-workspace.yaml` is fail-closed. If an urgent

@@ -352,35 +352,36 @@ with `ERR_CARDS_BUSY`. The tag lists and guides are edited by hand, and
 Each skill owns one kind of change. Load the one whose subject you are working on; each
 names its own boundary with its neighbours.
 
-| Skill                        | Load it when you are working on                                                                                                                        |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `building-web-screens`       | a screen, route, query or API call under `apps/web/src/`, or regenerating the client after a contract change                                           |
-| `localizing-ui`              | a catalog under `messages/`, a module under `apps/web/src/i18n/`, or adding a UI string                                                                |
-| `writing-typescript`         | a `.ts` module or a `.tsx` component under `packages/*/src/` or `apps/*/src/`                                                                          |
-| `designing-errors`           | an error type or an `ERR_*` code, in `packages/`, `apps/` or `scripts/`                                                                                |
-| `writing-tests`              | the body of a test under `tests/`                                                                                                                      |
-| `placing-tests`              | a new test file, a vitest project, or a coverage floor                                                                                                 |
-| `type-testing`               | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                                      |
-| `writing-repo-scripts`       | a `.mjs` under `scripts/`                                                                                                                              |
-| `authoring-skills`           | a skill under `.agents/skills/`                                                                                                                        |
-| `changing-gates`             | a CI workflow, `lefthook.yml`, or a tool config                                                                                                        |
-| `managing-dependencies`      | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)                    |
-| `merge-dependabot`           | landing open Dependabot or Renovate pull requests                                                                                                      |
-| `updating-docs`              | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                                     |
-| `triaging-issues`            | filing, labelling, or ranking a GitHub issue                                                                                                           |
-| `designing-ui`               | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                                     |
-| `shipping-issues`            | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                                        |
-| `generating-cards`           | writing new cards into `content/cards/`, or vocabulary cards into `content/vocab/` with `kind=vocab`; filling thin cells, or adding a subtopic         |
-| `reviewing-cards`            | reviewing, fixing, deleting or stamping cards, vocabulary cards with `kind=vocab`; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`          |
-| `backfilling-card-fields`    | filling a newly declared optional card field across existing cards, or a new language's `meanings.<lang>` on vocabulary cards with `kind=vocab`        |
-| `starting-an-app`            | turning this template into a new app: the rename, the locales, the design direction                                                                    |
-| `mapping-the-architecture`   | the architecture as it stands and the patterns it adopts, or a change to a boundary, persistence shape, external contract, provider, or security model |
-| `designing-application-core` | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                              |
-| `isolating-learner-data`     | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                                 |
-| `authenticating-learners`    | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                             |
-| `serving-the-api`            | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                                    |
-| `writing-infrastructure`     | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                                 |
-| `building-the-talk-activity` | the talk activity: its requirements, screens, `/v1/talks` operations, stored talks, model prompts, or the language-model port and its providers        |
+| Skill                        | Load it when you are working on                                                                                                                            |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `building-web-screens`       | a screen, route, query or API call under `apps/web/src/`, or regenerating the client after a contract change                                               |
+| `localizing-ui`              | a catalog under `messages/`, a module under `apps/web/src/i18n/`, or adding a UI string                                                                    |
+| `writing-typescript`         | a `.ts` module or a `.tsx` component under `packages/*/src/` or `apps/*/src/`                                                                              |
+| `designing-errors`           | an error type or an `ERR_*` code, in `packages/`, `apps/` or `scripts/`                                                                                    |
+| `writing-tests`              | the body of a test under `tests/`                                                                                                                          |
+| `placing-tests`              | a new test file, a vitest project, or a coverage floor                                                                                                     |
+| `type-testing`               | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                                          |
+| `writing-repo-scripts`       | a `.mjs` under `scripts/`                                                                                                                                  |
+| `authoring-skills`           | a skill under `.agents/skills/`                                                                                                                            |
+| `changing-gates`             | a CI workflow, `lefthook.yml`, or a tool config                                                                                                            |
+| `managing-dependencies`      | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)                        |
+| `merge-dependabot`           | landing open Dependabot or Renovate pull requests                                                                                                          |
+| `updating-docs`              | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                                         |
+| `triaging-issues`            | filing, labelling, or ranking a GitHub issue                                                                                                               |
+| `designing-ui`               | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                                         |
+| `shipping-issues`            | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                                            |
+| `cloud-shipping-one-issue`   | implementing one Cloud-verifiable issue in the main session through Codex review, current-head CI and merge, unless the caller requests stopping at the PR |
+| `generating-cards`           | writing new cards into `content/cards/`, or vocabulary cards into `content/vocab/` with `kind=vocab`; filling thin cells, or adding a subtopic             |
+| `reviewing-cards`            | reviewing, fixing, deleting or stamping cards, vocabulary cards with `kind=vocab`; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`              |
+| `backfilling-card-fields`    | filling a newly declared optional card field across existing cards, or a new language's `meanings.<lang>` on vocabulary cards with `kind=vocab`            |
+| `starting-an-app`            | turning this template into a new app: the rename, the locales, the design direction                                                                        |
+| `mapping-the-architecture`   | the architecture as it stands and the patterns it adopts, or a change to a boundary, persistence shape, external contract, provider, or security model     |
+| `designing-application-core` | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                                  |
+| `isolating-learner-data`     | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                                     |
+| `authenticating-learners`    | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                                 |
+| `serving-the-api`            | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                                        |
+| `writing-infrastructure`     | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                                     |
+| `building-the-talk-activity` | the talk activity: its requirements, screens, `/v1/talks` operations, stored talks, model prompts, or the language-model port and its providers            |
 
 ## Security and human approval
 
@@ -392,10 +393,16 @@ names its own boundary with its neighbours.
   (a Claude Code session's own `~/.claude/settings.json` or the gitignored
   `.claude/settings.local.json`), but that list is a choice made outside this
   repository, not something it ships or requires.
-- The one standing exception to that: invoking `generating-cards`, `reviewing-cards` or
+- For card workflows, invoking `generating-cards`, `reviewing-cards` or
   `backfilling-card-fields` is the owner's authorization to **commit** on a `cards/*`
   branch, and only there. It never authorizes a push, a pull request, or a merge, and
   never `--no-verify`.
+- Explicitly invoking `cloud-shipping-one-issue` to implement an issue is the owner's
+  authorization for its one branch's commit, push, PR, targeted Codex review and merge
+  after clear current-diff review and successful required CI. A caller's PR-only or
+  no-merge instruction overrides that default. Analysis or automatic skill discovery
+  supplies no such authorization; the skill never bypasses gates or takes a second
+  issue.
 - In the `dev` AWS account, creating and deploying the resources an issue or the owner's
   request already calls for needs no further ask; the owner prefers speed there. A
   resource with a fixed monthly cost of about $10 or more (an RDS instance, a NAT
