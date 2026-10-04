@@ -90,3 +90,12 @@ export {
   vocabSessionSchema,
   vocabSummarySchema,
 } from "./vocab";
+
+export {
+  vocabPageRequestSchema,
+  vocabPreparationSchema,
+  vocabPageSchema,
+  vocabPagedAnswerSchema,
+  vocabPagedAnswersRequestSchema,
+  vocabPagedSummarySchema,
+} from "./vocab-pages";

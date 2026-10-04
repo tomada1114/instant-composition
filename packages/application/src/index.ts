@@ -1,9 +1,49 @@
 // Commands, queries and the ports they need, written over `@instant-composition/domain`.
-export type {
-  StorageBootstrapRelease,
-  ReadModelBootstrapState,
-  ReadModelBootstrapStorage,
-} from "./storage-bootstrap";
+export {
+  type StorageBootstrapRelease,
+  type ReadModelBootstrapState,
+  type ReadModelBootstrapStorage,
+  advanceReadModelBootstrap,
+  type ReadModelBootstrapDriver,
+  type ReadModelBootstrapResult,
+  vocabReadModelsReady,
+  compositionSchemaSupported,
+  type CompositionBuild,
+  type CompositionReadModel,
+  type CompositionSource,
+  type CompositionMaintenanceStep,
+  type ItemPageRequest,
+  type PortionRange,
+  type StorePage,
+  type StreakMigration,
+  rebuildCompositionReadModel,
+  compositionReadModelsReady,
+  compositionReadModelsValidity,
+  compositionCandidateId,
+  type CompositionCandidate,
+  type CompositionCandidateRequest,
+  READ_MODEL_PAGE_SIZE,
+  CANDIDATE_PAGE_SIZE,
+  vocabCandidateId,
+  type CandidateMode,
+  type CandidatePage,
+  type CandidatePageRequest,
+  type PersonalCardPage,
+  type ReadModelSource,
+  type ReadModelStep,
+  type VocabCandidate,
+  type VocabCounts,
+  type VocabReadModel,
+  type VocabReadModelRequest,
+  type VocabReadModelRequestPage,
+  rebuildVocabReadModel,
+  advanceReadModelMaintenance,
+  type MaintenanceCheckpoint,
+  type MaintenanceLearner,
+  type MaintenanceResult,
+  type ReadModelMaintenance,
+  advanceStoredReadModelBootstrap,
+} from "./read-models";
 export {
   learnerId,
   requestContext,
@@ -60,34 +100,7 @@ export { deleteVocabCard } from "./delete-card";
 export { endTalk, recordRecital, type RecitalCommand } from "./end-talk";
 export { getTalk } from "./get-talk";
 export { finishRound } from "./finish-round";
-export {
-  advanceReadModelBootstrap,
-  type ReadModelBootstrapDriver,
-  type ReadModelBootstrapResult,
-} from "./read-model-bootstrap";
-export { vocabReadModelsReady } from "./read-model-bootstrap-ready";
 export { home } from "./home";
-export {
-  compositionSchemaSupported,
-  type CompositionBuild,
-  type CompositionReadModel,
-  type CompositionSource,
-  type CompositionMaintenanceStep,
-  type ItemPageRequest,
-  type PortionRange,
-  type StorePage,
-  type StreakMigration,
-} from "./composition-model";
-export { rebuildCompositionReadModel } from "./composition-maintenance";
-export {
-  compositionReadModelsReady,
-  compositionReadModelsValidity,
-} from "./composition-ready";
-export {
-  compositionCandidateId,
-  type CompositionCandidate,
-  type CompositionCandidateRequest,
-} from "./composition-candidate";
 export {
   authorize,
   LEARNER_OPERATIONS,
@@ -171,30 +184,15 @@ export type {
   SettingsView,
   TotalsView,
 } from "./views";
+export { startPagedVocabSession, preparePagedVocabSession } from "./vocab-page-prepare";
+export { getPagedVocabPage } from "./vocab-page-read";
 export {
-  READ_MODEL_PAGE_SIZE,
-  CANDIDATE_PAGE_SIZE,
-  vocabCandidateId,
-} from "./read-model";
+  recordPagedVocabAnswers,
+  type VocabPagedAnswersCommand,
+} from "./vocab-page-answers";
+export { finishPagedVocabSession } from "./vocab-page-finish";
 export type {
-  CandidateMode,
-  CandidatePage,
-  CandidatePageRequest,
-  PersonalCardPage,
-  ReadModelSource,
-  ReadModelStep,
-  VocabCandidate,
-  VocabCounts,
-  VocabReadModel,
-  VocabReadModelRequest,
-  VocabReadModelRequestPage,
-} from "./read-model";
-export { rebuildVocabReadModel } from "./rebuild-read-model";
-export { advanceReadModelMaintenance } from "./read-model-maintenance";
-export type {
-  MaintenanceCheckpoint,
-  MaintenanceLearner,
-  MaintenanceResult,
-  ReadModelMaintenance,
-} from "./read-model-maintenance";
-export { advanceStoredReadModelBootstrap } from "./stored-read-model-bootstrap";
+  VocabPreparation,
+  VocabPageView,
+  VocabPagedSummary,
+} from "./vocab-page-views";

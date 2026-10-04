@@ -468,7 +468,7 @@
     "dueTomorrow": "明日の復習",
     "againTitle": "復習に回った語",
     "againNone": "0 語",
-    "reloadHint": "回答は保存され、次は今日の残りから始めます",
+    "reloadHint": "回答と進捗は保持され、同じセッションから再開できます。",
     "categories": {
       "word": "単語",
       "idiom": "熟語",
@@ -484,6 +484,9 @@
       "confirm": "削除する",
       "keep": "残す",
       "failed": "削除できませんでした"
-    }
+    },
+    "loadFailed": "続きのカードを読み込めませんでした。回答と進捗は保持されています。",
+    "retryLoad": "もう一度読み込む",
+    "againPreview": "最初の{count}件を表示しています"
   }
 }

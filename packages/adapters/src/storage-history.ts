@@ -1,4 +1,5 @@
 import type { z } from "zod";
+import { vocabPageSchemas } from "./vocab-page-schema";
 import type {
   Entry,
   MaintenanceCheckpoint,
@@ -48,6 +49,7 @@ type StorageSchemas = {
 export function storageSchemasAt(schemaVersion: number): StorageSchemas {
   return {
     readModelBootstrap: readModelBootstrapSchema(),
+    ...vocabPageSchemas(),
     ...compositionSchemas(true, schemaVersion),
     ...vocabularySchemas(true),
     talk: talkSchema(true),

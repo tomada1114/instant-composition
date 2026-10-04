@@ -1,3 +1,8 @@
+import {
+  vocabPagedKeyOf,
+  type VocabPagedEntry,
+  type VocabPagedKey,
+} from "./vocab-page-store";
 import type {
   DayKey,
   DayTally,
@@ -34,6 +39,7 @@ import type { CompositionCandidate } from "./composition-candidate";
 
 /** One record of a learner's data. Its key is derived from its value (`keyOf`). */
 export type Entry =
+  | VocabPagedEntry
   | { readonly type: "modelTask"; readonly value: ModelTask }
   | { readonly type: "compositionCandidate"; readonly value: CompositionCandidate }
   | { readonly type: "compositionSource"; readonly value: CompositionSource }
@@ -61,6 +67,7 @@ export type Entry =
 
 /** Where an entry lives inside the learner's own data; no key names a learner. */
 export type Key =
+  | VocabPagedKey
   | { readonly type: "modelTask"; readonly task: ModelTaskKey }
   | { readonly type: "compositionCandidate"; readonly candidate: CompositionCandidate }
   | { readonly type: "compositionSource" }
@@ -88,6 +95,11 @@ export type Key =
 
 export function keyOf(entry: Entry): Key {
   switch (entry.type) {
+    case "vocabPagedSession":
+    case "vocabDeckPage":
+    case "vocabPageProgress":
+    case "vocabSessionGuard":
+      return vocabPagedKeyOf(entry);
     case "modelTask":
       return { type: entry.type, task: entry.value.key };
     case "compositionCandidate":

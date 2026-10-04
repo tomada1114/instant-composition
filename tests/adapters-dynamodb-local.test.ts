@@ -1,4 +1,5 @@
 import { describeRawReadModelContract } from "./raw-read-model-contract";
+import { describePagedVocabStore } from "./vocab-paged-store-contract";
 import { describeReadModelStoreContract } from "./read-model-store-contract";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { randomUUID } from "node:crypto";
@@ -11,6 +12,7 @@ import {
   deleteLearnerTable,
   localDynamoDbClient,
   StorageSchemaError,
+  STORAGE_SCHEMA_VERSION,
 } from "@instant-composition/adapters";
 
 import {
@@ -32,6 +34,7 @@ import {
   makeSettings,
   makeTalk,
   makeReview,
+  makeVocabPagedSession,
 } from "./application-fixtures";
 import {
   createReadModelWorkerHandler,
@@ -91,7 +94,11 @@ async function rawLocal(
 // application.
 // Needs `pnpm db:up`; `pnpm test:dynamodb` runs it, never the default suite.
 
-const tables = localTables();
+const pagedWire: string[] = [];
+const tables = localTables((operation, body) => {
+  if (operation.includes("TransactWrite") || body.includes('"TransactItems"'))
+    pagedWire.push(body);
+});
 
 beforeAll(async () => {
   await tables.reachable();
@@ -502,7 +509,7 @@ describe("raw global preimage races with DynamoDB", () => {
             endpoint: "http://127.0.0.1:8000",
             command: "replace",
             key,
-            row: { ...source, version: 2, schemaVersion: 4 },
+            row: { ...source, version: 2, schemaVersion: STORAGE_SCHEMA_VERSION },
             version: 1,
             schema: 3,
           }),
@@ -516,7 +523,9 @@ describe("raw global preimage races with DynamoDB", () => {
             }),
             "Item",
           ),
-        ).toStrictEqual(wireRow({ ...source, version: 2, schemaVersion: 4 }));
+        ).toStrictEqual(
+          wireRow({ ...source, version: 2, schemaVersion: STORAGE_SCHEMA_VERSION }),
+        );
       } finally {
         await deleteLearnerTable(client, tableName);
         client.destroy();
@@ -584,4 +593,104 @@ describe("raw global preimage races with DynamoDB", () => {
       client.destroy();
     }
   });
+});
+
+describePagedVocabStore("DynamoDB Local", () => tables.fresh(), pagedWire);
+
+describe("paged immutable deck preimage fences with DynamoDB", () => {
+  it.each(["schema", "membership"] as const)(
+    "preserves every sibling on same-version %s replacement after preflight",
+    async (change) => {
+      const client = localDynamoDbClient("http://127.0.0.1:8000");
+      const tableName = `paged-race-${randomUUID()}`;
+      await createLearnerTable(client, tableName);
+      try {
+        const store = createDynamoDbStores({ client, tableName }).forLearner(
+          learnerId("paged-race"),
+        );
+        const header = makeVocabPagedSession();
+        const deck = {
+          sessionId: "s1",
+          generation: 1,
+          page: 0,
+          cards: [{ id: "v1", isNew: false }],
+        };
+        expect(
+          (
+            await store.commit({
+              puts: [
+                { type: "vocabPagedSession", value: header },
+                { type: "vocabDeckPage", value: deck },
+              ],
+              updates: [],
+              expect: [],
+            })
+          ).ok,
+        ).toBe(true);
+        const key = { PK: "LEARNER#paged-race", SK: "VOCAB_PAGED#s1#GEN#1#DECK#0" };
+        const replacement = {
+          ...key,
+          type: "vocabDeckPage",
+          version: 1,
+          schemaVersion:
+            change === "schema" ? STORAGE_SCHEMA_VERSION + 1 : STORAGE_SCHEMA_VERSION,
+          value:
+            change === "membership"
+              ? { ...deck, cards: [{ id: "raced", isNew: false }] }
+              : deck,
+        };
+        let raced = false;
+        client.middlewareStack.add(
+          (next, context) => async (args) => {
+            if (!raced && context.commandName?.includes("TransactWrite") === true) {
+              raced = true;
+              await rawLocal("PutItem", {
+                TableName: tableName,
+                Item: wireRow(replacement),
+              });
+            }
+            return next(args);
+          },
+          { step: "finalizeRequest", name: "replaceOwnedPagedDeckAfterPreflight" },
+        );
+        expect(
+          await store.commit({
+            puts: [
+              {
+                type: "vocabSessionGuard",
+                value: { id: "companion", finishedAt: null },
+              },
+            ],
+            updates: [
+              {
+                entry: { type: "vocabPagedSession", value: { ...header, answered: 1 } },
+                version: 1,
+              },
+            ],
+            expect: [
+              {
+                key: { type: "vocabDeckPage", sessionId: "s1", generation: 1, page: 0 },
+                version: 1,
+              },
+            ],
+          }),
+        ).toStrictEqual({ ok: false, error: { code: "ERR_CONFLICT" } });
+        expect(raced).toBe(true);
+        expect(await store.vocabPagedSession("s1")).toStrictEqual({
+          value: header,
+          version: 1,
+        });
+        expect(await store.vocabSessionGuard("companion")).toBeUndefined();
+        expect(
+          readKey(
+            await rawLocal("GetItem", { TableName: tableName, Key: wireRow(key) }),
+            "Item",
+          ),
+        ).toStrictEqual(wireRow(replacement));
+      } finally {
+        await deleteLearnerTable(client, tableName);
+        client.destroy();
+      }
+    },
+  );
 });

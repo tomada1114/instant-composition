@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { StorageSchemaError } from "@instant-composition/adapters";
+import {
+  StorageSchemaError,
+  STORAGE_SCHEMA_VERSION,
+} from "@instant-composition/adapters";
 import {
   learnerId,
   type LearnerStores,
@@ -39,7 +42,7 @@ export function describeRawReadModelContract(
   ) => RawReadModelHarness | Promise<RawReadModelHarness>,
 ): void {
   describe(`${name}: strict raw read-model destinations`, () => {
-    it.each([0, 1, 2, 3, 5])(
+    it.each([0, 1, 2, 3, STORAGE_SCHEMA_VERSION + 1])(
       "refuses registry schema%s before the complete learner transaction",
       async (schema) => {
         const h = await fresh([
@@ -82,7 +85,7 @@ export function describeRawReadModelContract(
         expect(await store.settings()).toBeUndefined();
       },
     );
-    it.each([3, 5])(
+    it.each([3, STORAGE_SCHEMA_VERSION + 1])(
       "refuses checkpoint schema%s even when the supplied version expects absence",
       async (schemaVersion) => {
         const h = await fresh([

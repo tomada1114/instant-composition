@@ -51,6 +51,7 @@ async function grade(key: string) {
   press(" ");
   await settle(200);
   press(key, key);
+  await settle();
   await settle(400);
   await settle(16);
 }
@@ -150,7 +151,9 @@ describe("DOM interaction connected to actual client/API/application/persistence
     await grade("3");
     await settle(16);
     expect(screen.getByRole("button", { name: ja.Vocab.end })).toBeInTheDocument();
-    const request = wire.requests.find((value) => value.url.endsWith("/sessions"));
+    const request = wire.requests.find((value) =>
+      value.url.endsWith("/paged-sessions"),
+    );
     if (request === undefined) throw new Error("No session request");
     const body = (await request.json()) as { sessionId: string };
     expect(await store.vocabReviewsOf(body.sessionId)).toMatchObject([
@@ -158,7 +161,7 @@ describe("DOM interaction connected to actual client/API/application/persistence
       { pass: "retry", grade: "good" },
       { pass: "retry", grade: "good" },
     ]);
-    expect((await store.vocabSession(body.sessionId))?.value.finishedAt).toBe(
+    expect((await store.vocabPagedSession(body.sessionId))?.value.finishedAt).toBe(
       1790046000000,
     );
     expect((await store.vocabItems()).get("v_word-4-0")?.value.state).toMatchObject({

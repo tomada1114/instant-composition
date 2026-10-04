@@ -51,6 +51,7 @@ export const VOCAB_ROUTES: readonly Route[] = [
     requestBody: startVocabSessionRequestSchema,
     success: { status: 200, body: vocabSessionSchema },
     errors: [
+      "ERR_PAGED_SESSION_REQUIRED",
       "ERR_BAD_REQUEST",
       "ERR_PAYLOAD_TOO_LARGE",
       "ERR_UNAUTHENTICATED",

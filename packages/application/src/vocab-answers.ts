@@ -4,12 +4,13 @@ import {
   ok,
   type Result,
   type VocabAnswer,
+  type VocabError,
 } from "@instant-composition/domain";
 
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
-import type { Commit, LearnerStore } from "./store";
+import type { Commit, CommitConflict, LearnerStore } from "./store";
 import type { CatalogSnapshot } from "./catalog";
 import { vocabSnapshots } from "./vocab-load";
 import { shownCards } from "./vocab-shown";
@@ -29,19 +30,22 @@ function recordChunk(
   command: VocabAnswersCommand,
   chunk: readonly VocabAnswer[],
 ): Promise<Result<undefined, ApplicationError>> {
-  return committed(store, async () => {
+  return committed<undefined, VocabError | CommitConflict>(store, async () => {
     const session = await store.vocabSession(command.sessionId);
     if (session === undefined) {
       return err({ code: "ERR_SESSION_NOT_FOUND" });
     }
-    const [reviews, items, cards] = await Promise.all([
+    const [reviews, items, cards, guard] = await Promise.all([
       store.vocabReviewsByIds(
         command.sessionId,
         command.answers.map((answer) => answer.id),
       ),
       store.vocabItemsByIds(chunk.map((answer) => answer.cardId)),
       store.cardsByIds(chunk.map((answer) => answer.cardId)),
+      store.vocabSessionGuard(command.sessionId),
     ]);
+    if (guard !== undefined && guard.value.finishedAt !== session.value.finishedAt)
+      return err({ code: "ERR_CONFLICT" });
     const wanted = new Set(chunk.map((answer) => answer.cardId));
     const vocab = new Map(
       [...wanted].flatMap((id) => {
@@ -73,8 +77,13 @@ function recordChunk(
         { type: "vocabItem", value },
         items.get(value.cardId),
       ]),
-      // Written unchanged, so a finish racing these answers makes one of them load again.
-      [{ type: "vocabSession", value: session.value }, session],
+      [
+        {
+          type: "vocabSessionGuard",
+          value: { id: session.value.id, finishedAt: session.value.finishedAt },
+        },
+        guard,
+      ],
     ];
     const changed = new Set(moved.map((item) => item.cardId));
     const held = [...new Set(entries.map((entry) => entry.cardId))];
@@ -83,6 +92,10 @@ function recordChunk(
       return card === undefined
         ? []
         : [{ key: { type: "card" as const, id }, version: card.version }];
+    });
+    expect.push({
+      key: { type: "vocabSession", id: session.value.id },
+      version: session.version,
     });
     expect.push(
       ...held

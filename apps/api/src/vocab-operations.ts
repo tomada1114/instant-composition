@@ -1,3 +1,4 @@
+import { VOCAB_PAGED_OPERATIONS } from "./vocab-paged-operations";
 import {
   deleteVocabCard,
   finishVocabSession,
@@ -28,6 +29,7 @@ function cardAction(run: Run<[cardId: string]>): Operation {
  * context alone.
  */
 export const VOCAB_OPERATIONS: Readonly<Record<string, Operation>> = {
+  ...VOCAB_PAGED_OPERATIONS,
   getVocab: query(vocabHub),
   startVocabSession: command(
     startVocabSessionRequestSchema,

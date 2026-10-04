@@ -22,28 +22,20 @@ may reach whose data (`isolating-learner-data`); screens and API calls in the we
 (`writing-infrastructure`). This skill names where a thing lives and why; the sibling
 owns how to change it.
 
-## One API owns every rule
+## Read the current map before changing it
 
-- Every rule — which cards a round deals, the schedule, the level, the streak — runs on
-  the server behind one versioned HTTP API. A client renders what the API returns and
-  sends what the learner did; it never computes a deck, a schedule or a level. Rule
-  values a client shows or applies arrive on that screen's response: the settings
-  choices and focus cap, the home's deadline hour and talk length, a drill card's
-  fast-flip threshold, and the opened talk's planned turn count.
-- The web client is an ordinary API client with no private path into the code below the
-  API. Authentication and authorization happen once, below the transport, so a second
-  entry point (a job, a tool) would meet the same checks.
-- The server is a modular monolith: one application core behind one API function.
-  `apps/api`'s `createApp` takes every dependency as an argument; `main.ts` (`pnpm api`)
-  and `lambda.ts` (hosted) wire it. No worker, queue or second deployable exists. Only
-  the talk context calls a language model, through the `LanguageModel` port, once per
-  step — and once at a kept talk's end, for card candidates — inside the request that
-  asked; the drill calls none. The provider is OpenRouter, reached over HTTPS with the
-  key from Parameter Store when hosted and from `API_OPENROUTER_API_KEY` locally; a
-  local run with no key, and every test, gets a scripted stand-in. The edge wraps the
-  model per request and logs one line per call, never its text (`serving-the-api`).
+The [current architecture](references/architecture.md) records the running contexts,
+content model, persistence, external contract, and AWS topology. Read the relevant
+section before changing one of those seams, then update that reference in the same PR.
 
-## Layers and contexts
+The [bounded vocabulary read models](references/read-models.md) reference owns candidate
+ordering, source consistency, independent day preparation, and migration/catalog
+cutover. Read it before changing those persisted families, worker, or readiness
+response.
+
+The [continuous paged vocabulary sessions](references/vocab-pages.md) reference owns
+immutable deck preparation, continuation and offline ordering, bounds, and indefinite
+replay of already saved legacy sessions.
 
 The packages, domain contexts, and practice/vocabulary interactions are mapped in
 [Runtime contexts](references/runtime-contexts.md).

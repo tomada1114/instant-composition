@@ -28,7 +28,7 @@ export function commitMemoryStore(
   system: MemorySystemRows,
   partition: string,
 ): Result<undefined, CommitConflict> {
-  const validated = validateProjectionCommit(supplied);
+  const validated = validateProjectionCommit(supplied, partition);
   try {
     const commit = expandProjectionCommit(
       validated,

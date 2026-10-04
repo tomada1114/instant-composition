@@ -37,6 +37,11 @@ function markOf(mark: FirstPassMark | null): FirstPassMark | null {
  */
 export function declaredValue(entry: Entry): Entry["value"] {
   switch (entry.type) {
+    case "vocabPagedSession":
+    case "vocabDeckPage":
+    case "vocabPageProgress":
+    case "vocabSessionGuard":
+      return entry.value;
     case "modelTask":
       return declaredModelTask(entry.value);
     case "compositionCandidate":

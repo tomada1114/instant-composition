@@ -42,6 +42,7 @@ export type TalkError =
  * another.
  */
 export type VocabError =
+  | { readonly code: "ERR_PAGED_SESSION_REQUIRED" }
   | { readonly code: "ERR_BAD_REQUEST" }
   | { readonly code: "ERR_SESSION_NOT_FOUND" }
   | { readonly code: "ERR_SESSION_CLOSED" }

@@ -40,9 +40,29 @@ export interface LocalTables {
   close(): Promise<void>;
 }
 
-export function localTables(): LocalTables {
+export function localTables(
+  observe?: (operation: string, body: string) => void,
+): LocalTables {
   const client = localDynamoDbClient(DYNAMODB_LOCAL_ENDPOINT);
   const created: string[] = [];
+  if (observe !== undefined)
+    client.middlewareStack.add(
+      (next, context) => async (args) => {
+        const request = args.request;
+        if (typeof request === "object" && request !== null && "body" in request) {
+          const body = request.body;
+          const serialized =
+            typeof body === "string"
+              ? body
+              : body instanceof Uint8Array
+                ? new TextDecoder().decode(body)
+                : undefined;
+          if (serialized !== undefined) observe(context.commandName ?? "", serialized);
+        }
+        return next(args);
+      },
+      { step: "finalizeRequest", name: "observeLocalFixtureWire" },
+    );
 
   async function create(): Promise<string> {
     // DynamoDB local's table names are case-insensitive, so the name is lower case.

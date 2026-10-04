@@ -465,7 +465,7 @@ it("admits a strictly bound durable checkpoint only at its cap4 birth", () => {
       value,
     }).value,
   ).toStrictEqual(value);
-  for (const schemaVersion of [0, 1, 2, 3, 5])
+  for (const schemaVersion of [0, 1, 2, 3, STORAGE_SCHEMA_VERSION + 1])
     expect(() =>
       decodeStorageRecord({
         type: "readModelBootstrap",
