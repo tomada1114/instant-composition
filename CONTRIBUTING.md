@@ -64,23 +64,30 @@ authentication and model calls.
 
 The saved environment checked on 2026-10-04 supplied Node 24, pnpm, Corepack, Python 3,
 Git, GitHub CLI and a working Docker daemon with Compose, but no installed project
-dependencies or AWS CLI. A setup script only needs to install the locked dependencies;
-it should not log in to AWS or create credentials. If the home cache directories are
-unavailable, use writable cache paths for the install:
+dependencies or AWS CLI. The checked-in install helper prepares locked dependencies with
+writable caches when home directories are unavailable. Run it from the checkout root:
 
 ```sh
-export COREPACK_HOME=/tmp/instant-composition-corepack
-export PNPM_HOME=/tmp/instant-composition-pnpm
-export XDG_DATA_HOME=/tmp/instant-composition-xdg/data
-export XDG_CACHE_HOME=/tmp/instant-composition-xdg/cache
-export XDG_STATE_HOME=/tmp/instant-composition-xdg/state
-corepack pnpm@11.18.0 install --frozen-lockfile
+bash .agents/skills/cloud-shipping-one-issue/scripts/install.sh
 ```
 
-Keep these exports available to subsequent commands in that task. The install must
-retain the dependency policy and Git hooks. Cache paths are disposable; a fresh task may
-need another install. The setup script itself and saved environment settings were not
-changed during this check.
+The helper reads the pnpm pin from `package.json`, preserves the dependency policy and
+Git hooks, and starts no service. Its cache exports apply only to the install process;
+repeat them in a task shell if needed. Cache paths are disposable, so a fresh task may
+need another install. Saved environment settings and secrets were not changed.
+
+Leave the environment's Start skill unset for ordinary tasks. Start DynamoDB Local with
+`pnpm db:up` only for DB checks or `pnpm check:source`; Compose waits for readiness.
+Stop only a container this task started. If a dev server is needed, use
+`API_OPENROUTER_API_KEY= pnpm dev` to select the free stand-in while preserving the
+saved key. Installation/startup should not select issues or run the full test suite.
+
+To implement one issue in Cloud, ask `$cloud-shipping-one-issue` to select one eligible
+open issue and return a reviewed draft PR with current-head CI. The
+[repository skill](.agents/skills/cloud-shipping-one-issue/SKILL.md) owns selection,
+review evidence and the no-merge boundary; its
+[environment reference](.agents/skills/cloud-shipping-one-issue/references/environment.md)
+includes the complete Install script launcher and on-demand service guidance.
 
 AWS login is unnecessary for `pnpm check:quick`, `pnpm web:build`, the local Docker
 checks described above, or `pnpm cdk synth -c stage=dev --no-lookups`. Local DynamoDB
