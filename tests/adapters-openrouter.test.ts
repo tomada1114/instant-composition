@@ -109,9 +109,12 @@ function trackedSignal(): {
   };
 }
 
-const failure = (reason: string) => ({
+const failure = (
+  reason: string,
+  detail: { httpStatus?: number; requestFailure?: string } = {},
+) => ({
   ok: false,
-  error: { code: "ERR_MODEL_UNAVAILABLE", reason },
+  error: { code: "ERR_MODEL_UNAVAILABLE", reason, ...detail },
 });
 
 const live = (): AbortSignal => new AbortController().signal;
@@ -299,14 +302,14 @@ describe("createOpenRouterModel", () => {
     [500, "transport"],
     [502, "transport"],
     [503, "transport"],
-  ])("answers a %i with %s", async (status, reason) => {
+  ])("answers a %i with %s, carrying the status", async (status, reason) => {
     const endpoint = openRouter(() =>
       Response.json({ error: { code: status, message: "refused" } }, { status }),
     );
 
     const result = await model(endpoint.fetch).generate(makeRequest(), live());
 
-    expect(result).toStrictEqual(failure(reason));
+    expect(result).toStrictEqual(failure(reason, { httpStatus: status }));
   });
 
   it("releases the body of a refusal instead of leaving it unread", async () => {
@@ -323,22 +326,39 @@ describe("createOpenRouterModel", () => {
     expect(cancelled).toBe(true);
   });
 
-  it("answers transport when the endpoint cannot be reached", async () => {
+  it("answers transport from the network when the endpoint cannot be reached", async () => {
     const endpoint = openRouter(() => Promise.reject(new TypeError("fetch failed")));
 
     const result = await model(endpoint.fetch).generate(makeRequest(), live());
 
-    expect(result).toStrictEqual(failure("transport"));
+    expect(result).toStrictEqual(failure("transport", { requestFailure: "network" }));
   });
 
-  it("answers transport when a 200's body is not JSON", async () => {
+  it("answers transport from the request's construction, naming no key, when the key cannot be a header", async () => {
+    const badKey = "sk-or-v1-key\nwith-a-line-break";
+    const endpoint = openRouter(() => completion('{"line":"Oh, nice."}'));
+
+    const result = await model(endpoint.fetch, () => Promise.resolve(badKey)).generate(
+      makeRequest(),
+      live(),
+    );
+
+    expect(result).toStrictEqual(
+      failure("transport", { requestFailure: "request-construction" }),
+    );
+    expect(endpoint.requests).toHaveLength(0);
+  });
+
+  it("answers transport from the response body when a 200's body is not JSON", async () => {
     const endpoint = openRouter(
       () => new Response("<html>gateway</html>", { status: 200 }),
     );
 
     const result = await model(endpoint.fetch).generate(makeRequest(), live());
 
-    expect(result).toStrictEqual(failure("transport"));
+    expect(result).toStrictEqual(
+      failure("transport", { requestFailure: "response-body" }),
+    );
   });
 
   it("answers timeout without asking OpenRouter when the signal has already aborted", async () => {

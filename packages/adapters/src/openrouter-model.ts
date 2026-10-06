@@ -3,6 +3,7 @@ import type {
   ModelFailure,
   ModelReply,
   ModelRequest,
+  ModelRequestFailure,
 } from "@instant-composition/application";
 import { err, ok, type Result } from "@instant-composition/domain";
 
@@ -28,8 +29,11 @@ const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 
 type Generated<T> = Result<ModelReply<T>, ModelFailure>;
 
-const failure = (reason: ModelFailure["reason"]): Result<never, ModelFailure> =>
-  err({ code: "ERR_MODEL_UNAVAILABLE", reason });
+const failure = (
+  reason: ModelFailure["reason"],
+  detail: Pick<ModelFailure, "httpStatus" | "requestFailure"> = {},
+): Result<never, ModelFailure> =>
+  err({ code: "ERR_MODEL_UNAVAILABLE", reason, ...detail });
 
 /** The OpenAI-compatible body, routed only to an endpoint that honors the schema and keeps no data. */
 function bodyOf(modelId: string, request: ModelRequest<unknown>): string {
@@ -62,12 +66,12 @@ function refusalOf(status: number): ModelFailure["reason"] {
   return "transport";
 }
 
-/** `timeout` once the call was aborted, since an abort is what made it fail; `otherwise` before. */
+/** `timeout` once the call was aborted, since an abort is what made it fail; `transport` before. */
 function failedAs(
   signal: AbortSignal,
-  otherwise: ModelFailure["reason"],
+  requestFailure: ModelRequestFailure,
 ): Result<never, ModelFailure> {
-  return failure(signal.aborted ? "timeout" : otherwise);
+  return signal.aborted ? failure("timeout") : failure("transport", { requestFailure });
 }
 
 async function exchange<T>(
@@ -79,28 +83,34 @@ async function exchange<T>(
   if (signal.aborted) return failure("timeout");
   const now = options.now ?? (() => performance.now());
   const started = now();
+  let asked: Request;
+  try {
+    asked = new Request(ENDPOINT, {
+      method: "POST",
+      headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
+      body: bodyOf(options.modelId, request),
+      signal,
+    });
+  } catch {
+    // Kept apart from `network`: a key holding a character no header may carry
+    // throws here, and only the category reaches the log, never the key.
+    return failure("transport", { requestFailure: "request-construction" });
+  }
   let response: Response;
   try {
-    response = await options.fetch(
-      new Request(ENDPOINT, {
-        method: "POST",
-        headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
-        body: bodyOf(options.modelId, request),
-        signal,
-      }),
-    );
+    response = await options.fetch(asked);
   } catch {
-    return failedAs(signal, "transport");
+    return failedAs(signal, "network");
   }
   if (!response.ok) {
     await response.body?.cancel().catch(() => undefined);
-    return failure(refusalOf(response.status));
+    return failure(refusalOf(response.status), { httpStatus: response.status });
   }
   let body: unknown;
   try {
     body = await response.json();
   } catch {
-    return failedAs(signal, "transport");
+    return failedAs(signal, "response-body");
   }
   const latencyMs = Math.round(now() - started);
   const content = contentOf(body);
@@ -124,7 +134,8 @@ async function exchange<T>(
  *
  * @remarks
  * A 429 is `throttled`, a 401 or 403 `denied`, and an unreachable endpoint or
- * any other refusal `transport`. An answer whose content is not JSON, or that
+ * any other refusal `transport`; a refusal carries its `httpStatus`, and a call
+ * with no readable answer its `requestFailure`. An answer whose content is not JSON, or that
  * `read` refuses, is `malformed`. When `signal` aborts, the request is aborted
  * with it and the call is `timeout`. It writes no log: the call record is
  * returned, and the caller writes the line.

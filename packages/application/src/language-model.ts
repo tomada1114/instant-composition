@@ -97,13 +97,26 @@ export interface ModelReply<T> {
  * aborted) and `throttled` (the provider refused the rate) may pass on a later
  * try; `transport` (unreachable, or any other refusal) may too; `denied` (the
  * key was refused) will not until configuration changes; `malformed` (the
- * answer was not the schema's shape) is the model's. It carries nothing else —
- * never a prompt, a learner's text or the model's output.
+ * answer was not the schema's shape) is the model's. Beside it, a provider's
+ * `httpStatus` or a `requestFailure` may say which failure it was. It carries
+ * nothing else — never a key, a prompt, a learner's text or the model's output.
  */
 export interface ModelFailure {
   readonly code: "ERR_MODEL_UNAVAILABLE";
   readonly reason: "timeout" | "throttled" | "denied" | "malformed" | "transport";
+  /** The provider's HTTP status when it refused the call with one. */
+  readonly httpStatus?: number;
+  /** Where a call that got no HTTP answer it could read broke off. */
+  readonly requestFailure?: ModelRequestFailure;
 }
+
+/**
+ * Why a call got no readable answer, for an operator's log: the request could
+ * not be built (`request-construction`, such as a key no header can hold), it
+ * did not reach the provider or come back (`network`), or the answer's body
+ * could not be read as JSON (`response-body`).
+ */
+export type ModelRequestFailure = "request-construction" | "network" | "response-body";
 
 /** Every model call goes through this port, one adapter per provider. */
 export interface LanguageModel {
