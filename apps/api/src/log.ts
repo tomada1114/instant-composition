@@ -1,4 +1,8 @@
-import type { CatalogUnreadable, ModelFailure } from "@instant-composition/application";
+import type {
+  CatalogUnreadable,
+  ModelFailure,
+  ModelRequestFailure,
+} from "@instant-composition/application";
 import type { ErrorCode } from "@instant-composition/contracts";
 
 /**
@@ -52,7 +56,9 @@ export type ModelCallOutcome = "ok" | ModelFailure["reason"] | "failed";
  * learner's text or the model's output: what was asked is named by `task` and
  * `promptVersion` alone. The counts and the cost are `null` when the call
  * produced no answer; `latencyMs` is the provider's measure on an answer and
- * the edge's own otherwise.
+ * the edge's own otherwise. `httpStatus` and `requestFailure` name which
+ * failure a `transport`, `throttled` or `denied` call was, never what the
+ * provider said.
  */
 export interface ModelCallLine {
   readonly kind: "model-call";
@@ -71,6 +77,10 @@ export interface ModelCallLine {
   readonly latencyMs: number;
   /** In US dollars; `null` when the provider reported none or the call produced no answer. */
   readonly costUsd: number | null;
+  /** The status a provider refused the call with; `null` on an answer or with no status. */
+  readonly httpStatus: number | null;
+  /** Where a call with no readable answer broke off; `null` otherwise. */
+  readonly requestFailure: ModelRequestFailure | null;
 }
 
 /** Where log lines go: stdout on a local run, a recording array in a test. */

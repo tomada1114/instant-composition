@@ -1,0 +1,5819 @@
+{
+  "contract": "storage-v5-3",
+  "schemaVersion": 5,
+  "fixtures": [
+    {
+      "name": "identity",
+      "row": {
+        "PK": "IDENTITY#fixture-sub",
+        "SK": "LEARNER",
+        "type": "identity",
+        "version": 9,
+        "value": {
+          "learnerId": "fixture-owner"
+        }
+      },
+      "expected": {
+        "learnerId": "fixture-owner"
+      }
+    },
+    {
+      "name": "profile",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "PROFILE",
+        "type": "profile",
+        "version": 9,
+        "value": {
+          "timeZone": "Europe/London",
+          "l1": "ja",
+          "target": "en",
+          "uiLocale": "ja"
+        }
+      },
+      "expected": {
+        "timeZone": "Europe/London",
+        "l1": "ja",
+        "target": "en",
+        "uiLocale": "ja"
+      }
+    },
+    {
+      "name": "settings",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "SETTINGS",
+        "type": "settings",
+        "version": 9,
+        "value": {
+          "topics": [
+            "work"
+          ],
+          "focus": [],
+          "dailySize": 10,
+          "sound": true,
+          "gradeKeys": {
+            "ok": "KeyJ",
+            "ng": "KeyF",
+            "hard": "KeyK"
+          },
+          "newPerDay": 5,
+          "reviewsPerDay": null,
+          "vocabNewPerDay": 10,
+          "vocabReviewsPerDay": 100
+        }
+      },
+      "expected": {
+        "topics": [
+          "work"
+        ],
+        "focus": [],
+        "dailySize": 10,
+        "sound": true,
+        "gradeKeys": {
+          "ok": "KeyJ",
+          "ng": "KeyF",
+          "hard": "KeyK"
+        },
+        "newPerDay": 5,
+        "reviewsPerDay": null,
+        "vocabNewPerDay": 10,
+        "vocabReviewsPerDay": 100
+      }
+    },
+    {
+      "name": "stats",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "STATS",
+        "type": "stats",
+        "version": 9,
+        "value": {
+          "points": 0,
+          "completedDays": [],
+          "firstDay": null,
+          "said": 0,
+          "practicedDays": 0,
+          "level": null,
+          "levelWindow": [],
+          "openRound": null,
+          "titles": [],
+          "levelMode": "manual"
+        }
+      },
+      "expected": {
+        "points": 0,
+        "completedDays": [],
+        "firstDay": null,
+        "said": 0,
+        "practicedDays": 0,
+        "level": null,
+        "levelWindow": [],
+        "openRound": null,
+        "titles": [],
+        "levelMode": "manual"
+      }
+    },
+    {
+      "name": "round",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1",
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null
+        }
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null
+      }
+    },
+    {
+      "name": "review",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1#ANSWER#a1",
+        "type": "review",
+        "version": 9,
+        "value": {
+          "id": "a1",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "outcome": "good",
+          "before": null,
+          "after": null,
+          "fsrs": {
+            "before": null,
+            "after": {
+              "stability": 2.3065,
+              "difficulty": 2.118,
+              "reps": 1,
+              "lapses": 0,
+              "lastDay": "2026-09-22",
+              "dueDay": "2026-09-25"
+            }
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "grade": "good",
+            "timedOut": false,
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000
+          },
+          "revision": 7
+        }
+      },
+      "expected": {
+        "id": "a1",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "outcome": "good",
+        "before": null,
+        "after": null,
+        "fsrs": {
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          }
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "grade": "good",
+          "timedOut": false,
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        },
+        "revision": 7
+      }
+    },
+    {
+      "name": "portion",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "PORTION#2026-09-22",
+        "type": "portion",
+        "version": 9,
+        "value": {
+          "day": "2026-09-22",
+          "target": 10,
+          "progress": 0,
+          "completedAt": null,
+          "completedRound": null
+        }
+      },
+      "expected": {
+        "day": "2026-09-22",
+        "target": 10,
+        "progress": 0,
+        "completedAt": null,
+        "completedRound": null
+      }
+    },
+    {
+      "name": "day",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "DAY#2026-09-22",
+        "type": "day",
+        "version": 9,
+        "value": {
+          "day": "2026-09-22",
+          "answers": 0,
+          "firstPass": 0,
+          "roundsStarted": 1,
+          "roundsFinished": 0,
+          "lastFinishedRound": null
+        }
+      },
+      "expected": {
+        "day": "2026-09-22",
+        "answers": 0,
+        "firstPass": 0,
+        "roundsStarted": 1,
+        "roundsFinished": 0,
+        "lastFinishedRound": null
+      }
+    },
+    {
+      "name": "item",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ITEM#composition#c1",
+        "type": "item",
+        "version": 9,
+        "value": {
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "fsrs": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "okDays": [
+            "2026-09-22"
+          ],
+          "mastered": null,
+          "placement": {
+            "topic": "work",
+            "subtopic": "meetings"
+          },
+          "last": {
+            "sessionId": "r1",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "answeredAt": 2000
+          },
+          "previous": null,
+          "revision": 7
+        }
+      },
+      "expected": {
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "fsrs": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "okDays": [
+          "2026-09-22"
+        ],
+        "mastered": null,
+        "placement": {
+          "topic": "work",
+          "subtopic": "meetings"
+        },
+        "last": {
+          "sessionId": "r1",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "answeredAt": 2000
+        },
+        "previous": null,
+        "revision": 7
+      }
+    },
+    {
+      "name": "talk",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "TALK#t1",
+        "type": "talk",
+        "version": 9,
+        "value": {
+          "id": "t1",
+          "status": "open",
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "scene": {
+            "partner": "近所の人",
+            "place": "マンションのエレベーター",
+            "relation": "初対面の隣人",
+            "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+          },
+          "opening": "Hi! Are you new around here?",
+          "turns": [
+            {
+              "n": 1,
+              "partnerLine": "Hi! Are you new around here?",
+              "japanese": "先週引っ越してきました。",
+              "english": "I moved here last week.",
+              "judgment": {
+                "verdict": "corrected",
+                "modelAnswer": "I just moved here last week.",
+                "point": "「引っ越してきた」→ just moved here"
+              },
+              "reply": "Oh, welcome! How do you like it so far?",
+              "revealCount": 2
+            }
+          ],
+          "model": {
+            "provider": "stand-in",
+            "modelId": "stand-in",
+            "prompts": {
+              "talk-scene": "talk-scene@1",
+              "talk-teacher": "talk-teacher@1",
+              "talk-partner": "talk-partner@1"
+            }
+          }
+        }
+      },
+      "expected": {
+        "id": "t1",
+        "status": "open",
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "scene": {
+          "partner": "近所の人",
+          "place": "マンションのエレベーター",
+          "relation": "初対面の隣人",
+          "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+        },
+        "opening": "Hi! Are you new around here?",
+        "turns": [
+          {
+            "n": 1,
+            "partnerLine": "Hi! Are you new around here?",
+            "japanese": "先週引っ越してきました。",
+            "english": "I moved here last week.",
+            "judgment": {
+              "verdict": "corrected",
+              "modelAnswer": "I just moved here last week.",
+              "point": "「引っ越してきた」→ just moved here"
+            },
+            "reply": "Oh, welcome! How do you like it so far?",
+            "revealCount": 2
+          }
+        ],
+        "model": {
+          "provider": "stand-in",
+          "modelId": "stand-in",
+          "prompts": {
+            "talk-scene": "talk-scene@1",
+            "talk-teacher": "talk-teacher@1",
+            "talk-partner": "talk-partner@1"
+          }
+        }
+      }
+    },
+    {
+      "name": "vocabItem",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ITEM#vocab#v1",
+        "type": "vocabItem",
+        "version": 9,
+        "value": {
+          "cardId": "v1",
+          "source": {
+            "kind": "catalog"
+          },
+          "state": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "firstDay": "2026-09-22"
+        }
+      },
+      "expected": {
+        "cardId": "v1",
+        "source": {
+          "kind": "catalog"
+        },
+        "state": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "firstDay": "2026-09-22"
+      }
+    },
+    {
+      "name": "vocabSession",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#s1",
+        "type": "vocabSession",
+        "version": 9,
+        "value": {
+          "id": "s1",
+          "kind": "today",
+          "category": null,
+          "day": "2026-09-22",
+          "deck": [
+            "v1",
+            "v2"
+          ],
+          "startedAt": 1000,
+          "finishedAt": null,
+          "tomorrow": null
+        }
+      },
+      "expected": {
+        "id": "s1",
+        "kind": "today",
+        "category": null,
+        "day": "2026-09-22",
+        "deck": [
+          "v1",
+          "v2"
+        ],
+        "startedAt": 1000,
+        "finishedAt": null,
+        "tomorrow": null
+      }
+    },
+    {
+      "name": "vocabReview",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#s1#ANSWER#va1",
+        "type": "vocabReview",
+        "version": 9,
+        "value": {
+          "id": "va1",
+          "sessionId": "s1",
+          "cardId": "v1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "pass": "first",
+          "grade": "good",
+          "elapsedMs": 4000,
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          },
+          "snapshot": {
+            "headword": "give up",
+            "meaning": "あきらめる",
+            "category": "phrasal-verb",
+            "level": 4
+          }
+        }
+      },
+      "expected": {
+        "id": "va1",
+        "sessionId": "s1",
+        "cardId": "v1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "pass": "first",
+        "grade": "good",
+        "elapsedMs": 4000,
+        "before": null,
+        "after": {
+          "stability": 2.3065,
+          "difficulty": 2.118,
+          "reps": 1,
+          "lapses": 0,
+          "lastDay": "2026-09-22",
+          "dueDay": "2026-09-25"
+        },
+        "snapshot": {
+          "headword": "give up",
+          "meaning": "あきらめる",
+          "category": "phrasal-verb",
+          "level": 4
+        }
+      }
+    },
+    {
+      "name": "card",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "CARD#p_card00000001",
+        "type": "card",
+        "version": 9,
+        "value": {
+          "id": "p_card00000001",
+          "target": "en",
+          "l1": "ja",
+          "category": "idiom",
+          "level": 4,
+          "headword": "catch up",
+          "definition": "To talk about what has happened since you last met.",
+          "example": "Let's {{catch}} {{up}} over coffee soon.",
+          "example2": "We caught up at the station.",
+          "meaning": "近況を話す",
+          "source": {
+            "kind": "talk",
+            "talkId": "t1",
+            "turn": 2
+          },
+          "createdAt": 5000
+        }
+      },
+      "expected": {
+        "id": "p_card00000001",
+        "target": "en",
+        "l1": "ja",
+        "category": "idiom",
+        "level": 4,
+        "headword": "catch up",
+        "definition": "To talk about what has happened since you last met.",
+        "example": "Let's {{catch}} {{up}} over coffee soon.",
+        "example2": "We caught up at the station.",
+        "meaning": "近況を話す",
+        "source": {
+          "kind": "talk",
+          "talkId": "t1",
+          "turn": 2
+        },
+        "createdAt": 5000
+      }
+    },
+    {
+      "name": "pre-fsrs",
+      "row": {
+        "type": "review",
+        "version": 5,
+        "value": {
+          "id": "a0",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r0",
+          "answeredAt": 1000,
+          "day": "2026-09-20",
+          "outcome": "good",
+          "before": null,
+          "after": {
+            "box": 1,
+            "dueDay": "2026-09-22",
+            "lastDay": "2026-09-20",
+            "seenCount": 1
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000
+          }
+        }
+      },
+      "expected": {
+        "id": "a0",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r0",
+        "answeredAt": 1000,
+        "day": "2026-09-20",
+        "outcome": "good",
+        "before": null,
+        "after": {
+          "box": 1,
+          "dueDay": "2026-09-22",
+          "lastDay": "2026-09-20",
+          "seenCount": 1
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        }
+      }
+    },
+    {
+      "name": "leitner-item",
+      "row": {
+        "type": "item",
+        "version": 3,
+        "value": {
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "okDays": [
+            "2026-09-22"
+          ],
+          "mastered": null,
+          "placement": {
+            "topic": "work",
+            "subtopic": "meetings"
+          },
+          "last": {
+            "sessionId": "r1",
+            "result": "ok",
+            "elapsedMs": 8000,
+            "answeredAt": 2000
+          },
+          "previous": null,
+          "memory": {
+            "box": 1,
+            "dueDay": "2026-09-22",
+            "lastDay": "2026-09-20",
+            "seenCount": 1
+          }
+        }
+      },
+      "expected": {
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "okDays": [
+          "2026-09-22"
+        ],
+        "mastered": null,
+        "placement": {
+          "topic": "work",
+          "subtopic": "meetings"
+        },
+        "last": {
+          "sessionId": "r1",
+          "result": "ok",
+          "elapsedMs": 8000,
+          "answeredAt": 2000
+        },
+        "previous": null,
+        "memory": {
+          "box": 1,
+          "dueDay": "2026-09-22",
+          "lastDay": "2026-09-20",
+          "seenCount": 1
+        }
+      }
+    },
+    {
+      "name": "old-settings",
+      "row": {
+        "type": "settings",
+        "version": 2,
+        "value": {
+          "topics": [
+            "work"
+          ],
+          "focus": [],
+          "dailySize": 10,
+          "sound": true,
+          "answerMode": "typed"
+        }
+      },
+      "expected": {
+        "topics": [
+          "work"
+        ],
+        "focus": [],
+        "dailySize": 10,
+        "sound": true
+      }
+    },
+    {
+      "name": "typed-round",
+      "row": {
+        "type": "round",
+        "version": 4,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null,
+          "answerMode": "typed"
+        }
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null
+      }
+    },
+    {
+      "name": "typed-review",
+      "row": {
+        "type": "review",
+        "version": 6,
+        "value": {
+          "id": "a1",
+          "item": {
+            "kind": "composition",
+            "id": "c1"
+          },
+          "sessionId": "r1",
+          "answeredAt": 2000,
+          "day": "2026-09-22",
+          "outcome": "good",
+          "before": null,
+          "after": null,
+          "fsrs": {
+            "before": null,
+            "after": {
+              "stability": 2.3065,
+              "difficulty": 2.118,
+              "reps": 1,
+              "lapses": 0,
+              "lastDay": "2026-09-22",
+              "dueDay": "2026-09-25"
+            }
+          },
+          "snapshot": {
+            "topic": "work",
+            "subtopic": "meetings",
+            "level": 5,
+            "prompt": "会議を始めましょう。"
+          },
+          "detail": {
+            "activity": "composition",
+            "pass": "first",
+            "result": "ok",
+            "grade": "good",
+            "timedOut": false,
+            "elapsedMs": 8000,
+            "limitMs": 10000,
+            "paceMs": 10000,
+            "answerMode": "typed",
+            "text": "retired answer"
+          }
+        }
+      },
+      "expected": {
+        "id": "a1",
+        "item": {
+          "kind": "composition",
+          "id": "c1"
+        },
+        "sessionId": "r1",
+        "answeredAt": 2000,
+        "day": "2026-09-22",
+        "outcome": "good",
+        "before": null,
+        "after": null,
+        "fsrs": {
+          "before": null,
+          "after": {
+            "stability": 2.3065,
+            "difficulty": 2.118,
+            "reps": 1,
+            "lapses": 0,
+            "lastDay": "2026-09-22",
+            "dueDay": "2026-09-25"
+          }
+        },
+        "snapshot": {
+          "topic": "work",
+          "subtopic": "meetings",
+          "level": 5,
+          "prompt": "会議を始めましょう。"
+        },
+        "detail": {
+          "activity": "composition",
+          "pass": "first",
+          "result": "ok",
+          "grade": "good",
+          "timedOut": false,
+          "elapsedMs": 8000,
+          "limitMs": 10000,
+          "paceMs": 10000
+        }
+      }
+    },
+    {
+      "name": "guarded-v1-round",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1",
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 0,
+          "outcome": null
+        },
+        "schemaVersion": 1
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 0,
+        "outcome": null
+      }
+    },
+    {
+      "name": "in-progress-adoption",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1",
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 2,
+          "outcome": null,
+          "answerState": {
+            "firstCards": [
+              "c1",
+              "c2"
+            ],
+            "cursor": "answer-032",
+            "complete": false
+          }
+        },
+        "schemaVersion": 2
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 2,
+        "outcome": null,
+        "answerState": {
+          "firstCards": [
+            "c1",
+            "c2"
+          ],
+          "cursor": "answer-032",
+          "complete": false
+        }
+      }
+    },
+    {
+      "name": "complete-adoption",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "ROUND#r1",
+        "type": "round",
+        "version": 9,
+        "value": {
+          "id": "r1",
+          "kind": "today",
+          "day": "2026-09-22",
+          "portionDay": "2026-09-22",
+          "deck": [
+            "c1",
+            "c2",
+            "c3",
+            "c4",
+            "c5"
+          ],
+          "limitMs": 30000,
+          "startedAt": 1000,
+          "finishedAt": null,
+          "abandonedAt": null,
+          "firstPass": 2,
+          "outcome": null,
+          "answerState": {
+            "firstCards": [
+              "c1",
+              "c2"
+            ],
+            "cursor": null,
+            "complete": true
+          }
+        },
+        "schemaVersion": 2
+      },
+      "expected": {
+        "id": "r1",
+        "kind": "today",
+        "day": "2026-09-22",
+        "portionDay": "2026-09-22",
+        "deck": [
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5"
+        ],
+        "limitMs": 30000,
+        "startedAt": 1000,
+        "finishedAt": null,
+        "abandonedAt": null,
+        "firstPass": 2,
+        "outcome": null,
+        "answerState": {
+          "firstCards": [
+            "c1",
+            "c2"
+          ],
+          "cursor": null,
+          "complete": true
+        }
+      }
+    },
+    {
+      "name": "model-task-result-scene-generation-absent",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-scene#0#talk-scene%401",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-scene",
+            "turn": 0,
+            "promptVersion": "talk-scene@1"
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": {
+              "scene": {
+                "partner": "店員",
+                "place": "カフェ",
+                "relation": "客と店員",
+                "description": "コーヒーを注文します。"
+              },
+              "opening": "What would you like?"
+            },
+            "call": {
+              "provider": "scripted",
+              "modelId": "scripted@1",
+              "inputTokens": 10,
+              "outputTokens": 20,
+              "latencyMs": 100,
+              "costUsd": null
+            }
+          }
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-scene",
+          "turn": 0,
+          "promptVersion": "talk-scene@1"
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": {
+            "scene": {
+              "partner": "店員",
+              "place": "カフェ",
+              "relation": "客と店員",
+              "description": "コーヒーを注文します。"
+            },
+            "opening": "What would you like?"
+          },
+          "call": {
+            "provider": "scripted",
+            "modelId": "scripted@1",
+            "inputTokens": 10,
+            "outputTokens": 20,
+            "latencyMs": 100,
+            "costUsd": null
+          }
+        }
+      }
+    },
+    {
+      "name": "model-task-result-teacher-generation-zero",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-teacher#1#talk-teacher%401#0",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-teacher",
+            "turn": 1,
+            "promptVersion": "talk-teacher@1",
+            "generation": 0
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_teacher\",\"schema\":{\"type\":\"object\",\"properties\":{\"verdict\":{\"type\":\"string\",\"enum\":[\"fine\",\"corrected\"]},\"modelAnswer\":{\"type\":\"string\"},\"point\":{\"type\":\"string\"}},\"required\":[\"verdict\",\"modelAnswer\",\"point\"],\"additionalProperties\":false}},\"temperature\":0.2,\"maxOutputTokens\":300}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": {
+              "verdict": "corrected",
+              "modelAnswer": "I would like a coffee.",
+              "point": "「コーヒーをください」→ I would like a coffee."
+            },
+            "call": {
+              "provider": "scripted",
+              "modelId": "scripted@1",
+              "inputTokens": 10,
+              "outputTokens": 20,
+              "latencyMs": 100,
+              "costUsd": 0
+            }
+          }
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-teacher",
+          "turn": 1,
+          "promptVersion": "talk-teacher@1",
+          "generation": 0
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_teacher\",\"schema\":{\"type\":\"object\",\"properties\":{\"verdict\":{\"type\":\"string\",\"enum\":[\"fine\",\"corrected\"]},\"modelAnswer\":{\"type\":\"string\"},\"point\":{\"type\":\"string\"}},\"required\":[\"verdict\",\"modelAnswer\",\"point\"],\"additionalProperties\":false}},\"temperature\":0.2,\"maxOutputTokens\":300}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": {
+            "verdict": "corrected",
+            "modelAnswer": "I would like a coffee.",
+            "point": "「コーヒーをください」→ I would like a coffee."
+          },
+          "call": {
+            "provider": "scripted",
+            "modelId": "scripted@1",
+            "inputTokens": 10,
+            "outputTokens": 20,
+            "latencyMs": 100,
+            "costUsd": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "model-task-result-partner-generation-positive",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-partner#1#talk-partner%401#1000",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-partner",
+            "turn": 1,
+            "promptVersion": "talk-partner@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_partner\",\"schema\":{\"type\":\"object\",\"properties\":{\"line\":{\"type\":\"string\"}},\"required\":[\"line\"],\"additionalProperties\":false}},\"temperature\":0.7,\"maxOutputTokens\":150}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": "Of course. Would you like milk?",
+            "call": {
+              "provider": "scripted",
+              "modelId": "scripted@1",
+              "inputTokens": 10,
+              "outputTokens": 20,
+              "latencyMs": 100,
+              "costUsd": 0.0001
+            }
+          }
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-partner",
+          "turn": 1,
+          "promptVersion": "talk-partner@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_partner\",\"schema\":{\"type\":\"object\",\"properties\":{\"line\":{\"type\":\"string\"}},\"required\":[\"line\"],\"additionalProperties\":false}},\"temperature\":0.7,\"maxOutputTokens\":150}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": "Of course. Would you like milk?",
+          "call": {
+            "provider": "scripted",
+            "modelId": "scripted@1",
+            "inputTokens": 10,
+            "outputTokens": 20,
+            "latencyMs": 100,
+            "costUsd": 0.0001
+          }
+        }
+      }
+    },
+    {
+      "name": "model-task-result-cards",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-cards#0#talk-cards%401#1000",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-cards",
+            "turn": 0,
+            "promptVersion": "talk-cards@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_cards\",\"schema\":{\"type\":\"object\",\"properties\":{\"candidates\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"turn\":{\"type\":\"integer\"},\"category\":{\"type\":\"string\",\"enum\":[\"word\",\"idiom\",\"phrasal-verb\",\"phrase\"]},\"headword\":{\"type\":\"string\"},\"definition\":{\"type\":\"string\"},\"example\":{\"type\":\"string\"},\"example2\":{\"type\":\"string\"},\"meaning\":{\"type\":\"string\"}},\"required\":[\"turn\",\"category\",\"headword\",\"definition\",\"example\",\"example2\",\"meaning\"],\"additionalProperties\":false}}},\"required\":[\"candidates\"],\"additionalProperties\":false}},\"temperature\":0.3,\"maxOutputTokens\":1200}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": [
+              {
+                "category": "phrase",
+                "headword": "I would like",
+                "definition": "A polite way to ask for something.",
+                "example": "{{I}} {{would}} {{like}} a coffee.",
+                "example2": "I would like some water.",
+                "meaning": "〜をください",
+                "turn": 1
+              }
+            ],
+            "call": {
+              "provider": "scripted",
+              "modelId": "scripted@1",
+              "inputTokens": 10,
+              "outputTokens": 20,
+              "latencyMs": 100,
+              "costUsd": null
+            }
+          }
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-cards",
+          "turn": 0,
+          "promptVersion": "talk-cards@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_cards\",\"schema\":{\"type\":\"object\",\"properties\":{\"candidates\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"turn\":{\"type\":\"integer\"},\"category\":{\"type\":\"string\",\"enum\":[\"word\",\"idiom\",\"phrasal-verb\",\"phrase\"]},\"headword\":{\"type\":\"string\"},\"definition\":{\"type\":\"string\"},\"example\":{\"type\":\"string\"},\"example2\":{\"type\":\"string\"},\"meaning\":{\"type\":\"string\"}},\"required\":[\"turn\",\"category\",\"headword\",\"definition\",\"example\",\"example2\",\"meaning\"],\"additionalProperties\":false}}},\"required\":[\"candidates\"],\"additionalProperties\":false}},\"temperature\":0.3,\"maxOutputTokens\":1200}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": [
+            {
+              "category": "phrase",
+              "headword": "I would like",
+              "definition": "A polite way to ask for something.",
+              "example": "{{I}} {{would}} {{like}} a coffee.",
+              "example2": "I would like some water.",
+              "meaning": "〜をください",
+              "turn": 1
+            }
+          ],
+          "call": {
+            "provider": "scripted",
+            "modelId": "scripted@1",
+            "inputTokens": 10,
+            "outputTokens": 20,
+            "latencyMs": 100,
+            "costUsd": null
+          }
+        }
+      }
+    },
+    {
+      "name": "model-task-in-flight-lease-zero-generation-absent",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-scene#0#talk-scene%401",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-scene",
+            "turn": 0,
+            "promptVersion": "talk-scene@1"
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "in-flight",
+          "leaseUntil": 0
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-scene",
+          "turn": 0,
+          "promptVersion": "talk-scene@1"
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "in-flight",
+        "leaseUntil": 0
+      }
+    },
+    {
+      "name": "model-task-in-flight-lease-positive-generation-zero",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-scene#0#talk-scene%401#0",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-scene",
+            "turn": 0,
+            "promptVersion": "talk-scene@1",
+            "generation": 0
+          },
+          "claimId": "fixture-request:2",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+          "attempt": 2,
+          "duplicatePossible": true,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "in-flight",
+          "leaseUntil": 61000
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-scene",
+          "turn": 0,
+          "promptVersion": "talk-scene@1",
+          "generation": 0
+        },
+        "claimId": "fixture-request:2",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+        "attempt": 2,
+        "duplicatePossible": true,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "in-flight",
+        "leaseUntil": 61000
+      }
+    },
+    {
+      "name": "model-task-failed-known",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-teacher#1#talk-teacher%401#1000",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-teacher",
+            "turn": 1,
+            "promptVersion": "talk-teacher@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_teacher\",\"schema\":{\"type\":\"object\",\"properties\":{\"verdict\":{\"type\":\"string\",\"enum\":[\"fine\",\"corrected\"]},\"modelAnswer\":{\"type\":\"string\"},\"point\":{\"type\":\"string\"}},\"required\":[\"verdict\",\"modelAnswer\",\"point\"],\"additionalProperties\":false}},\"temperature\":0.2,\"maxOutputTokens\":300}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "failed",
+          "outcome": "known",
+          "reason": "denied"
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-teacher",
+          "turn": 1,
+          "promptVersion": "talk-teacher@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_teacher\",\"schema\":{\"type\":\"object\",\"properties\":{\"verdict\":{\"type\":\"string\",\"enum\":[\"fine\",\"corrected\"]},\"modelAnswer\":{\"type\":\"string\"},\"point\":{\"type\":\"string\"}},\"required\":[\"verdict\",\"modelAnswer\",\"point\"],\"additionalProperties\":false}},\"temperature\":0.2,\"maxOutputTokens\":300}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "failed",
+        "outcome": "known",
+        "reason": "denied"
+      }
+    },
+    {
+      "name": "model-task-failed-unknown",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-partner#1#talk-partner%401#1000",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 3,
+        "expiresAt": 86401,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-partner",
+            "turn": 1,
+            "promptVersion": "talk-partner@1",
+            "generation": 1000
+          },
+          "claimId": "fixture-request:2",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_partner\",\"schema\":{\"type\":\"object\",\"properties\":{\"line\":{\"type\":\"string\"}},\"required\":[\"line\"],\"additionalProperties\":false}},\"temperature\":0.7,\"maxOutputTokens\":150}",
+          "attempt": 2,
+          "duplicatePossible": true,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "failed",
+          "outcome": "unknown",
+          "reason": "transport"
+        }
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-partner",
+          "turn": 1,
+          "promptVersion": "talk-partner@1",
+          "generation": 1000
+        },
+        "claimId": "fixture-request:2",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_partner\",\"schema\":{\"type\":\"object\",\"properties\":{\"line\":{\"type\":\"string\"}},\"required\":[\"line\"],\"additionalProperties\":false}},\"temperature\":0.7,\"maxOutputTokens\":150}",
+        "attempt": 2,
+        "duplicatePossible": true,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "failed",
+        "outcome": "unknown",
+        "reason": "transport"
+      }
+    },
+    {
+      "name": "v4-vocabulary-source",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#SOURCE",
+        "type": "readModelSource",
+        "version": 7,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1
+        }
+      },
+      "expected": {
+        "schema": 1
+      }
+    },
+    {
+      "name": "v4-vocabulary-ready",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#2026-09-22#STATE",
+        "type": "vocabReadModel",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "catalog": "fixture-catalog",
+          "generation": "2026-09-22:fixture-catalog:7:1",
+          "sourceVersion": 7,
+          "expiresAt": 1790035200,
+          "status": "ready",
+          "phase": "personal",
+          "offset": 1,
+          "cursor": null,
+          "counts": [
+            {
+              "category": "word",
+              "total": 1,
+              "learning": 0,
+              "due": 0,
+              "fresh": 1,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "idiom",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrasal-verb",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrase",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            }
+          ]
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "catalog": "fixture-catalog",
+        "generation": "2026-09-22:fixture-catalog:7:1",
+        "sourceVersion": 7,
+        "expiresAt": 1790035200,
+        "status": "ready",
+        "phase": "personal",
+        "offset": 1,
+        "cursor": null,
+        "counts": [
+          {
+            "category": "word",
+            "total": 1,
+            "learning": 0,
+            "due": 0,
+            "fresh": 1,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "idiom",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrasal-verb",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrase",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "v4-vocabulary-building",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#2026-09-22#STATE",
+        "type": "vocabReadModel",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "catalog": "fixture-catalog",
+          "generation": "2026-09-22:fixture-catalog:7:1",
+          "sourceVersion": 7,
+          "expiresAt": 1790035200,
+          "status": "building",
+          "phase": "catalog",
+          "offset": 0,
+          "cursor": null,
+          "counts": [
+            {
+              "category": "word",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "idiom",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrasal-verb",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            },
+            {
+              "category": "phrase",
+              "total": 0,
+              "learning": 0,
+              "due": 0,
+              "fresh": 0,
+              "weak": 0,
+              "tomorrow": 0,
+              "introduced": 0,
+              "reviewed": 0
+            }
+          ]
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "catalog": "fixture-catalog",
+        "generation": "2026-09-22:fixture-catalog:7:1",
+        "sourceVersion": 7,
+        "expiresAt": 1790035200,
+        "status": "building",
+        "phase": "catalog",
+        "offset": 0,
+        "cursor": null,
+        "counts": [
+          {
+            "category": "word",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "idiom",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrasal-verb",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          },
+          {
+            "category": "phrase",
+            "total": 0,
+            "learning": 0,
+            "due": 0,
+            "fresh": 0,
+            "weak": 0,
+            "tomorrow": 0,
+            "introduced": 0,
+            "reviewed": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "v4-vocabulary-fresh-candidate",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#2026-09-22#2026-09-22%3Afixture-catalog%3A7%3A1#fresh#word#all#4000000000000000#0000000000000#v%23fixture%251",
+        "type": "vocabCandidate",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "2026-09-22:fixture-catalog:7:1",
+          "mode": "fresh",
+          "category": "word",
+          "level": null,
+          "order": "4000000000000000#0000000000000",
+          "cardId": "v#fixture%1",
+          "cardCategory": "word",
+          "cardLevel": 2,
+          "expiresAt": 1790035200,
+          "kind": "new"
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "2026-09-22:fixture-catalog:7:1",
+        "mode": "fresh",
+        "category": "word",
+        "level": null,
+        "order": "4000000000000000#0000000000000",
+        "cardId": "v#fixture%1",
+        "cardCategory": "word",
+        "cardLevel": 2,
+        "expiresAt": 1790035200,
+        "kind": "new"
+      }
+    },
+    {
+      "name": "v4-vocabulary-due-all-candidate",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB#2026-09-22#2026-09-22%3Afixture-catalog%3A7%3A1#due#all#all#13fe0000000000000#0000000000000#v%23fixture%251",
+        "type": "vocabCandidate",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "2026-09-22:fixture-catalog:7:1",
+          "mode": "due",
+          "category": null,
+          "level": null,
+          "order": "13fe0000000000000#0000000000000",
+          "cardId": "v#fixture%1",
+          "cardCategory": "word",
+          "cardLevel": 2,
+          "expiresAt": 1790035200,
+          "kind": "review"
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "2026-09-22:fixture-catalog:7:1",
+        "mode": "due",
+        "category": null,
+        "level": null,
+        "order": "13fe0000000000000#0000000000000",
+        "cardId": "v#fixture%1",
+        "cardCategory": "word",
+        "cardLevel": 2,
+        "expiresAt": 1790035200,
+        "kind": "review"
+      }
+    },
+    {
+      "name": "v4-requested-vocabulary-day",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#VOCAB_REQUEST#2026-09-22",
+        "type": "vocabReadModelRequest",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "day": "2026-09-22"
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "day": "2026-09-22"
+      }
+    },
+    {
+      "name": "v4-composition-source",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#SOURCE",
+        "type": "compositionSource",
+        "version": 4,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "epoch": 4
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "epoch": 4
+      }
+    },
+    {
+      "name": "v4-composition-ready-shortage",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#STATE",
+        "type": "compositionReadModel",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "expiresAt": 1790035200,
+          "day": "2026-09-22",
+          "epoch": 4,
+          "catalogVersion": "fixture-catalog",
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "available": 1,
+          "preview": null,
+          "reach": {},
+          "breakdown": {},
+          "pending": 0,
+          "weak": {
+            "grammar": [],
+            "subtopics": []
+          }
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "expiresAt": 1790035200,
+        "day": "2026-09-22",
+        "epoch": 4,
+        "catalogVersion": "fixture-catalog",
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "available": 1,
+        "preview": null,
+        "reach": {},
+        "breakdown": {},
+        "pending": 0,
+        "weak": {
+          "grammar": [],
+          "subtopics": []
+        }
+      }
+    },
+    {
+      "name": "v4-composition-preview",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#STATE",
+        "type": "compositionReadModel",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "expiresAt": 1790035200,
+          "day": "2026-09-22",
+          "epoch": 4,
+          "catalogVersion": "fixture-catalog",
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "available": 5,
+          "preview": {
+            "size": 5,
+            "setting": 5,
+            "shortage": false,
+            "reviewCount": 1,
+            "newCount": 4,
+            "focusNames": [],
+            "weakNames": [],
+            "minutes": 2.5
+          },
+          "reach": {},
+          "breakdown": {},
+          "pending": 0,
+          "weak": {
+            "grammar": [],
+            "subtopics": []
+          }
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "expiresAt": 1790035200,
+        "day": "2026-09-22",
+        "epoch": 4,
+        "catalogVersion": "fixture-catalog",
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "available": 5,
+        "preview": {
+          "size": 5,
+          "setting": 5,
+          "shortage": false,
+          "reviewCount": 1,
+          "newCount": 4,
+          "focusNames": [],
+          "weakNames": [],
+          "minutes": 2.5
+        },
+        "reach": {},
+        "breakdown": {},
+        "pending": 0,
+        "weak": {
+          "grammar": [],
+          "subtopics": []
+        }
+      }
+    },
+    {
+      "name": "v4-composition-build-negative-first",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#BUILD",
+        "type": "compositionBuild",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "expiresAt": 1790035200,
+          "day": "2026-09-22",
+          "epoch": 4,
+          "catalogVersion": "fixture-catalog",
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "phase": "ranks",
+          "cursor": null,
+          "known": "1",
+          "answered": 0,
+          "newAnswered": 0,
+          "due": 1,
+          "notDue": 0,
+          "notDueTop": [],
+          "conceptFirst": {
+            "en:grammar/present": {
+              "id": "c#fixture%1",
+              "scheduled": false,
+              "recall": 0,
+              "at": -1
+            }
+          },
+          "conceptRanks": {},
+          "notDueConceptFirst": {},
+          "notDueConceptRanks": {},
+          "concepts": {
+            "en:grammar/present": {
+              "seen": 1,
+              "misses": 0
+            }
+          },
+          "subtopics": {
+            "everyday/coffee": {
+              "seen": 1,
+              "misses": 0
+            }
+          },
+          "reach": {},
+          "breakdown": {},
+          "pending": 0
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "expiresAt": 1790035200,
+        "day": "2026-09-22",
+        "epoch": 4,
+        "catalogVersion": "fixture-catalog",
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "phase": "ranks",
+        "cursor": null,
+        "known": "1",
+        "answered": 0,
+        "newAnswered": 0,
+        "due": 1,
+        "notDue": 0,
+        "notDueTop": [],
+        "conceptFirst": {
+          "en:grammar/present": {
+            "id": "c#fixture%1",
+            "scheduled": false,
+            "recall": 0,
+            "at": -1
+          }
+        },
+        "conceptRanks": {},
+        "notDueConceptFirst": {},
+        "notDueConceptRanks": {},
+        "concepts": {
+          "en:grammar/present": {
+            "seen": 1,
+            "misses": 0
+          }
+        },
+        "subtopics": {
+          "everyday/coffee": {
+            "seen": 1,
+            "misses": 0
+          }
+        },
+        "reach": {},
+        "breakdown": {},
+        "pending": 0
+      }
+    },
+    {
+      "name": "v4-composition-build-negative-topup",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#BUILD",
+        "type": "compositionBuild",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "expiresAt": 1790035200,
+          "day": "2026-09-22",
+          "epoch": 4,
+          "catalogVersion": "fixture-catalog",
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "portionVersion": null,
+          "tallyVersion": null,
+          "phase": "ranks",
+          "cursor": null,
+          "known": "1",
+          "answered": 0,
+          "newAnswered": 0,
+          "due": 0,
+          "notDue": 1,
+          "notDueTop": [
+            {
+              "id": "c#fixture%1",
+              "scheduled": true,
+              "recall": 0.5,
+              "at": -0.5
+            }
+          ],
+          "conceptFirst": {},
+          "conceptRanks": {},
+          "notDueConceptFirst": {
+            "en:grammar/present": {
+              "id": "c#fixture%1",
+              "scheduled": true,
+              "recall": 0.5,
+              "at": -0.5
+            }
+          },
+          "notDueConceptRanks": {},
+          "concepts": {
+            "en:grammar/present": {
+              "seen": 1,
+              "misses": 0
+            }
+          },
+          "subtopics": {
+            "everyday/coffee": {
+              "seen": 1,
+              "misses": 0
+            }
+          },
+          "reach": {},
+          "breakdown": {},
+          "pending": 0
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "schema": 1,
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "expiresAt": 1790035200,
+        "day": "2026-09-22",
+        "epoch": 4,
+        "catalogVersion": "fixture-catalog",
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "portionVersion": null,
+        "tallyVersion": null,
+        "phase": "ranks",
+        "cursor": null,
+        "known": "1",
+        "answered": 0,
+        "newAnswered": 0,
+        "due": 0,
+        "notDue": 1,
+        "notDueTop": [
+          {
+            "id": "c#fixture%1",
+            "scheduled": true,
+            "recall": 0.5,
+            "at": -0.5
+          }
+        ],
+        "conceptFirst": {},
+        "conceptRanks": {},
+        "notDueConceptFirst": {
+          "en:grammar/present": {
+            "id": "c#fixture%1",
+            "scheduled": true,
+            "recall": 0.5,
+            "at": -0.5
+          }
+        },
+        "notDueConceptRanks": {},
+        "concepts": {
+          "en:grammar/present": {
+            "seen": 1,
+            "misses": 0
+          }
+        },
+        "subtopics": {
+          "everyday/coffee": {
+            "seen": 1,
+            "misses": 0
+          }
+        },
+        "reach": {},
+        "breakdown": {},
+        "pending": 0
+      }
+    },
+    {
+      "name": "v4-composition-candidate-negative",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#2026-09-22%3Afixture-catalog%3A4%3A1#CANDIDATE#due#1#8000000000000000#400fffffffffffff#000000000000#c%23fixture%251",
+        "type": "compositionCandidate",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "id": "c#fixture%1",
+          "scheduled": false,
+          "recall": 0,
+          "at": -1,
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "mode": "due",
+          "order": "1#8000000000000000#400fffffffffffff#000000000000",
+          "expiresAt": 1790035200
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "id": "c#fixture%1",
+        "scheduled": false,
+        "recall": 0,
+        "at": -1,
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "mode": "due",
+        "order": "1#8000000000000000#400fffffffffffff#000000000000",
+        "expiresAt": 1790035200
+      }
+    },
+    {
+      "name": "v4-composition-candidate-zero",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#COMPOSITION#2026-09-22#2026-09-22%3Afixture-catalog%3A4%3A1#CANDIDATE#due#1#8000000000000000#8000000000000000#000000000000#c%23fixture%251",
+        "type": "compositionCandidate",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "id": "c#fixture%1",
+          "scheduled": false,
+          "recall": 0,
+          "at": 0,
+          "schema": 1,
+          "day": "2026-09-22",
+          "generation": "2026-09-22:fixture-catalog:4:1",
+          "mode": "due",
+          "order": "1#8000000000000000#8000000000000000#000000000000",
+          "expiresAt": 1790035200
+        },
+        "expiresAt": 1790035200
+      },
+      "expected": {
+        "id": "c#fixture%1",
+        "scheduled": false,
+        "recall": 0,
+        "at": 0,
+        "schema": 1,
+        "day": "2026-09-22",
+        "generation": "2026-09-22:fixture-catalog:4:1",
+        "mode": "due",
+        "order": "1#8000000000000000#8000000000000000#000000000000",
+        "expiresAt": 1790035200
+      }
+    },
+    {
+      "name": "v4-streak-run",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "STREAK#2026-09-20",
+        "type": "streakRun",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "start": "2026-09-20",
+          "end": "2026-09-22"
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "start": "2026-09-20",
+        "end": "2026-09-22"
+      }
+    },
+    {
+      "name": "v4-streak-migration",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "READMODEL#STREAK#MIGRATION",
+        "type": "streakMigration",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "statsVersion": 9,
+          "legacyCursor": 1,
+          "cursor": null,
+          "open": {
+            "schema": 1,
+            "start": "2026-09-20",
+            "end": "2026-09-20"
+          },
+          "longest": 1
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "statsVersion": 9,
+        "legacyCursor": 1,
+        "cursor": null,
+        "open": {
+          "schema": 1,
+          "start": "2026-09-20",
+          "end": "2026-09-20"
+        },
+        "longest": 1
+      }
+    },
+    {
+      "name": "v4-registry-encoded-learner",
+      "row": {
+        "PK": "SYSTEM#READMODEL_LEARNERS",
+        "SK": "fixture%23owner%251",
+        "type": "readModelLearner",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "id": "fixture#owner%1",
+          "profile": {
+            "timeZone": "Asia/Tokyo",
+            "l1": "ja",
+            "target": "en",
+            "uiLocale": "ja"
+          }
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "id": "fixture#owner%1",
+        "profile": {
+          "timeZone": "Asia/Tokyo",
+          "l1": "ja",
+          "target": "en",
+          "uiLocale": "ja"
+        }
+      }
+    },
+    {
+      "name": "v4-maintenance-completed-empty-page",
+      "row": {
+        "PK": "SYSTEM#READMODEL",
+        "SK": "CHECKPOINT",
+        "type": "readModelMaintenance",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "cursor": null,
+          "pending": [],
+          "index": 1,
+          "passCompletedAt": 1000
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "cursor": null,
+        "pending": [],
+        "index": 1,
+        "passCompletedAt": 1000
+      }
+    },
+    {
+      "name": "v4-maintenance-full-registry-page",
+      "row": {
+        "PK": "SYSTEM#READMODEL",
+        "SK": "CHECKPOINT",
+        "type": "readModelMaintenance",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "cursor": "{\"PK\":\"SYSTEM#READMODEL_LEARNERS\",\"SK\":\"fixture-099\"}",
+          "pending": [
+            {
+              "id": "fixture-000",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-001",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-002",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-003",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-004",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-005",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-006",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-007",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-008",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-009",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-010",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-011",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-012",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-013",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-014",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-015",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-016",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-017",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-018",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-019",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-020",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-021",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-022",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-023",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-024",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-025",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-026",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-027",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-028",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-029",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-030",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-031",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-032",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-033",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-034",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-035",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-036",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-037",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-038",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-039",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-040",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-041",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-042",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-043",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-044",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-045",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-046",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-047",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-048",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-049",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-050",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-051",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-052",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-053",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-054",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-055",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-056",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-057",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-058",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-059",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-060",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-061",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-062",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-063",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-064",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-065",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-066",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-067",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-068",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-069",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-070",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-071",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-072",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-073",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-074",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-075",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-076",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-077",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-078",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-079",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-080",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-081",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-082",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-083",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-084",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-085",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-086",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-087",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-088",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-089",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-090",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-091",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-092",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-093",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-094",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-095",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-096",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-097",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-098",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            },
+            {
+              "id": "fixture-099",
+              "profile": {
+                "timeZone": "Asia/Tokyo",
+                "l1": "ja",
+                "target": "en",
+                "uiLocale": "ja"
+              }
+            }
+          ],
+          "index": 100,
+          "passCompletedAt": null
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "cursor": "{\"PK\":\"SYSTEM#READMODEL_LEARNERS\",\"SK\":\"fixture-099\"}",
+        "pending": [
+          {
+            "id": "fixture-000",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-001",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-002",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-003",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-004",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-005",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-006",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-007",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-008",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-009",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-010",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-011",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-012",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-013",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-014",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-015",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-016",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-017",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-018",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-019",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-020",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-021",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-022",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-023",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-024",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-025",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-026",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-027",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-028",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-029",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-030",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-031",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-032",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-033",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-034",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-035",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-036",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-037",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-038",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-039",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-040",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-041",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-042",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-043",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-044",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-045",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-046",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-047",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-048",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-049",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-050",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-051",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-052",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-053",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-054",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-055",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-056",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-057",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-058",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-059",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-060",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-061",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-062",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-063",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-064",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-065",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-066",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-067",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-068",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-069",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-070",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-071",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-072",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-073",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-074",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-075",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-076",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-077",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-078",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-079",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-080",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-081",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-082",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-083",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-084",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-085",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-086",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-087",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-088",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-089",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-090",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-091",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-092",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-093",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-094",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-095",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-096",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-097",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-098",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          },
+          {
+            "id": "fixture-099",
+            "profile": {
+              "timeZone": "Asia/Tokyo",
+              "l1": "ja",
+              "target": "en",
+              "uiLocale": "ja"
+            }
+          }
+        ],
+        "index": 100,
+        "passCompletedAt": null
+      }
+    },
+    {
+      "name": "v4-bootstrap-complete",
+      "row": {
+        "PK": "SYSTEM#READMODEL",
+        "SK": "BOOTSTRAP",
+        "type": "readModelBootstrap",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "release": {
+            "sha": "1111111111111111111111111111111111111111",
+            "contract": "storage-v4",
+            "schemaFingerprint": "2222222222222222222222222222222222222222222222222222222222222222"
+          },
+          "catalog": "fixture-catalog",
+          "checkpoint": null,
+          "validUntil": 1790035200000,
+          "maintenanceVersion": 9,
+          "complete": true,
+          "phase": "verification",
+          "rows": 22,
+          "learners": 1
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "release": {
+          "sha": "1111111111111111111111111111111111111111",
+          "contract": "storage-v4",
+          "schemaFingerprint": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        "catalog": "fixture-catalog",
+        "checkpoint": null,
+        "validUntil": 1790035200000,
+        "maintenanceVersion": 9,
+        "complete": true,
+        "phase": "verification",
+        "rows": 22,
+        "learners": 1
+      }
+    },
+    {
+      "name": "v4-bootstrap-verification-position",
+      "row": {
+        "PK": "SYSTEM#READMODEL",
+        "SK": "BOOTSTRAP",
+        "type": "readModelBootstrap",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "schema": 1,
+          "release": {
+            "sha": "1111111111111111111111111111111111111111",
+            "contract": "storage-v4",
+            "schemaFingerprint": "2222222222222222222222222222222222222222222222222222222222222222"
+          },
+          "catalog": "fixture-catalog",
+          "checkpoint": "{\"schema\":1,\"phase\":\"verification\",\"catalog\":\"fixture-catalog\",\"cursor\":\"{\\\"PK\\\":\\\"SYSTEM#READMODEL_LEARNERS\\\",\\\"SK\\\":\\\"fixture%23owner%251\\\"}\",\"validUntil\":1790035200000}",
+          "validUntil": 1790035200000,
+          "maintenanceVersion": 9,
+          "complete": false,
+          "phase": "verification",
+          "rows": 22,
+          "learners": 1
+        }
+      },
+      "expected": {
+        "schema": 1,
+        "release": {
+          "sha": "1111111111111111111111111111111111111111",
+          "contract": "storage-v4",
+          "schemaFingerprint": "2222222222222222222222222222222222222222222222222222222222222222"
+        },
+        "catalog": "fixture-catalog",
+        "checkpoint": "{\"schema\":1,\"phase\":\"verification\",\"catalog\":\"fixture-catalog\",\"cursor\":\"{\\\"PK\\\":\\\"SYSTEM#READMODEL_LEARNERS\\\",\\\"SK\\\":\\\"fixture%23owner%251\\\"}\",\"validUntil\":1790035200000}",
+        "validUntil": 1790035200000,
+        "maintenanceVersion": 9,
+        "complete": false,
+        "phase": "verification",
+        "rows": 22,
+        "learners": 1
+      }
+    },
+    {
+      "name": "v4-stats-legacy-completed-days",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "STATS",
+        "type": "stats",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "points": 0,
+          "completedDays": [
+            "2026-09-20",
+            "2026-09-21",
+            "2026-09-22"
+          ],
+          "firstDay": "2026-09-20",
+          "said": 0,
+          "practicedDays": 3,
+          "level": null,
+          "levelWindow": [],
+          "openRound": null,
+          "titles": [],
+          "levelMode": "manual"
+        }
+      },
+      "expected": {
+        "points": 0,
+        "completedDays": [
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22"
+        ],
+        "firstDay": "2026-09-20",
+        "said": 0,
+        "practicedDays": 3,
+        "level": null,
+        "levelWindow": [],
+        "openRound": null,
+        "titles": [],
+        "levelMode": "manual"
+      }
+    },
+    {
+      "name": "v4-stats-compact-streak",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "STATS",
+        "type": "stats",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "points": 0,
+          "firstDay": null,
+          "said": 0,
+          "practicedDays": 0,
+          "level": null,
+          "levelWindow": [],
+          "openRound": null,
+          "titles": [],
+          "levelMode": "manual",
+          "streak": {
+            "schema": 1,
+            "longest": 0
+          }
+        }
+      },
+      "expected": {
+        "points": 0,
+        "firstDay": null,
+        "said": 0,
+        "practicedDays": 0,
+        "level": null,
+        "levelWindow": [],
+        "openRound": null,
+        "titles": [],
+        "levelMode": "manual",
+        "streak": {
+          "schema": 1,
+          "longest": 0
+        }
+      }
+    },
+    {
+      "name": "v4-ended-kept-talk-no-ttl",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "TALK#t1",
+        "type": "talk",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "id": "t1",
+          "status": "ended",
+          "startedAt": 1000,
+          "scene": {
+            "partner": "近所の人",
+            "place": "マンションのエレベーター",
+            "relation": "初対面の隣人",
+            "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+          },
+          "opening": "Hi! Are you new around here?",
+          "turns": [
+            {
+              "n": 1,
+              "partnerLine": "Hi! Are you new around here?",
+              "japanese": "先週引っ越してきました。",
+              "english": "I moved here last week.",
+              "judgment": {
+                "verdict": "corrected",
+                "modelAnswer": "I just moved here last week.",
+                "point": "「引っ越してきた」→ just moved here"
+              },
+              "reply": "Oh, welcome! How do you like it so far?",
+              "revealCount": 2
+            }
+          ],
+          "model": {
+            "provider": "stand-in",
+            "modelId": "stand-in",
+            "prompts": {
+              "talk-scene": "talk-scene@1",
+              "talk-teacher": "talk-teacher@1",
+              "talk-partner": "talk-partner@1"
+            }
+          },
+          "endedAt": 2000
+        }
+      },
+      "expected": {
+        "id": "t1",
+        "status": "ended",
+        "startedAt": 1000,
+        "scene": {
+          "partner": "近所の人",
+          "place": "マンションのエレベーター",
+          "relation": "初対面の隣人",
+          "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+        },
+        "opening": "Hi! Are you new around here?",
+        "turns": [
+          {
+            "n": 1,
+            "partnerLine": "Hi! Are you new around here?",
+            "japanese": "先週引っ越してきました。",
+            "english": "I moved here last week.",
+            "judgment": {
+              "verdict": "corrected",
+              "modelAnswer": "I just moved here last week.",
+              "point": "「引っ越してきた」→ just moved here"
+            },
+            "reply": "Oh, welcome! How do you like it so far?",
+            "revealCount": 2
+          }
+        ],
+        "model": {
+          "provider": "stand-in",
+          "modelId": "stand-in",
+          "prompts": {
+            "talk-scene": "talk-scene@1",
+            "talk-teacher": "talk-teacher@1",
+            "talk-partner": "talk-partner@1"
+          }
+        },
+        "endedAt": 2000
+      }
+    },
+    {
+      "name": "v4-discarded-talk-ttl",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "TALK#t1",
+        "type": "talk",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "id": "t1",
+          "status": "discarded",
+          "startedAt": 1000,
+          "scene": {
+            "partner": "近所の人",
+            "place": "マンションのエレベーター",
+            "relation": "初対面の隣人",
+            "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+          },
+          "opening": "Hi! Are you new around here?",
+          "turns": [
+            {
+              "n": 1,
+              "partnerLine": "Hi! Are you new around here?",
+              "japanese": "先週引っ越してきました。",
+              "english": "I moved here last week.",
+              "judgment": {
+                "verdict": "corrected",
+                "modelAnswer": "I just moved here last week.",
+                "point": "「引っ越してきた」→ just moved here"
+              },
+              "reply": "Oh, welcome! How do you like it so far?",
+              "revealCount": 2
+            }
+          ],
+          "model": {
+            "provider": "stand-in",
+            "modelId": "stand-in",
+            "prompts": {
+              "talk-scene": "talk-scene@1",
+              "talk-teacher": "talk-teacher@1",
+              "talk-partner": "talk-partner@1"
+            }
+          },
+          "endedAt": 2000,
+          "expiresAt": 86401
+        },
+        "expiresAt": 86401
+      },
+      "expected": {
+        "id": "t1",
+        "status": "discarded",
+        "startedAt": 1000,
+        "scene": {
+          "partner": "近所の人",
+          "place": "マンションのエレベーター",
+          "relation": "初対面の隣人",
+          "description": "引っ越してきたばかりのあなたに、隣人が話しかけてきた。"
+        },
+        "opening": "Hi! Are you new around here?",
+        "turns": [
+          {
+            "n": 1,
+            "partnerLine": "Hi! Are you new around here?",
+            "japanese": "先週引っ越してきました。",
+            "english": "I moved here last week.",
+            "judgment": {
+              "verdict": "corrected",
+              "modelAnswer": "I just moved here last week.",
+              "point": "「引っ越してきた」→ just moved here"
+            },
+            "reply": "Oh, welcome! How do you like it so far?",
+            "revealCount": 2
+          }
+        ],
+        "model": {
+          "provider": "stand-in",
+          "modelId": "stand-in",
+          "prompts": {
+            "talk-scene": "talk-scene@1",
+            "talk-teacher": "talk-teacher@1",
+            "talk-partner": "talk-partner@1"
+          }
+        },
+        "endedAt": 2000,
+        "expiresAt": 86401
+      }
+    },
+    {
+      "name": "v4-model-task-result-ttl-independent-of-kept-talk",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "MODEL_TASK#t%23fixture%251#talk-scene#0#talk-scene%401",
+        "type": "modelTask",
+        "version": 9,
+        "schemaVersion": 4,
+        "value": {
+          "key": {
+            "talkId": "t#fixture%1",
+            "task": "talk-scene",
+            "turn": 0,
+            "promptVersion": "talk-scene@1"
+          },
+          "claimId": "fixture-request:1",
+          "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+          "attempt": 1,
+          "duplicatePossible": false,
+          "startedAt": 1000,
+          "expiresAt": 86401,
+          "state": "result",
+          "result": {
+            "value": {
+              "scene": {
+                "partner": "店員",
+                "place": "カフェ",
+                "relation": "客と店員",
+                "description": "コーヒーを注文します。"
+              },
+              "opening": "What would you like?"
+            },
+            "call": {
+              "provider": "scripted",
+              "modelId": "scripted@1",
+              "inputTokens": 10,
+              "outputTokens": 20,
+              "latencyMs": 100,
+              "costUsd": null
+            }
+          }
+        },
+        "expiresAt": 86401
+      },
+      "expected": {
+        "key": {
+          "talkId": "t#fixture%1",
+          "task": "talk-scene",
+          "turn": 0,
+          "promptVersion": "talk-scene@1"
+        },
+        "claimId": "fixture-request:1",
+        "input": "{\"system\":\"Synthetic public fixture: practice ordering a coffee.\",\"messages\":[{\"role\":\"user\",\"text\":\"コーヒーをください。\"}],\"output\":{\"name\":\"talk_scene\",\"schema\":{\"type\":\"object\",\"properties\":{\"partner\":{\"type\":\"string\"},\"place\":{\"type\":\"string\"},\"relation\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"opening\":{\"type\":\"string\"}},\"required\":[\"partner\",\"place\",\"relation\",\"description\",\"opening\"],\"additionalProperties\":false}},\"temperature\":1,\"maxOutputTokens\":300}",
+        "attempt": 1,
+        "duplicatePossible": false,
+        "startedAt": 1000,
+        "expiresAt": 86401,
+        "state": "result",
+        "result": {
+          "value": {
+            "scene": {
+              "partner": "店員",
+              "place": "カフェ",
+              "relation": "客と店員",
+              "description": "コーヒーを注文します。"
+            },
+            "opening": "What would you like?"
+          },
+          "call": {
+            "provider": "scripted",
+            "modelId": "scripted@1",
+            "inputTokens": 10,
+            "outputTokens": 20,
+            "latencyMs": 100,
+            "costUsd": null
+          }
+        }
+      }
+    },
+    {
+      "name": "v5-ready-session-filtered-pages",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251",
+        "type": "vocabPagedSession",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "paged#ready%1",
+          "kind": "today",
+          "category": "word",
+          "day": "2026-09-22",
+          "startedAt": 1000,
+          "finishedAt": null,
+          "tomorrow": null,
+          "status": "ready",
+          "generation": 2,
+          "catalog": "fixture-catalog",
+          "sourceVersion": 7,
+          "modelVersion": 9,
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+          "dueCount": 65,
+          "fresh": [],
+          "dueCursor": null,
+          "dueRead": 65,
+          "freshRead": 0,
+          "pages": 2,
+          "total": 2,
+          "answered": 1,
+          "introduced": 0,
+          "againCount": 1,
+          "again": [
+            {
+              "cardId": "v#ready%1",
+              "headword": "coffee",
+              "meaning": "コーヒー",
+              "category": "word",
+              "level": 2
+            }
+          ]
+        }
+      },
+      "expected": {
+        "id": "paged#ready%1",
+        "kind": "today",
+        "category": "word",
+        "day": "2026-09-22",
+        "startedAt": 1000,
+        "finishedAt": null,
+        "tomorrow": null,
+        "status": "ready",
+        "generation": 2,
+        "catalog": "fixture-catalog",
+        "sourceVersion": 7,
+        "modelVersion": 9,
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+        "dueCount": 65,
+        "fresh": [],
+        "dueCursor": null,
+        "dueRead": 65,
+        "freshRead": 0,
+        "pages": 2,
+        "total": 2,
+        "answered": 1,
+        "introduced": 0,
+        "againCount": 1,
+        "again": [
+          {
+            "cardId": "v#ready%1",
+            "headword": "coffee",
+            "meaning": "コーヒー",
+            "category": "word",
+            "level": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "v5-ready-deck-page0",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251#GEN#2#DECK#0",
+        "type": "vocabDeckPage",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#ready%1",
+          "generation": 2,
+          "page": 0,
+          "cards": [
+            {
+              "id": "v#ready%1",
+              "isNew": false
+            },
+            {
+              "id": "v#ready%2",
+              "isNew": false
+            }
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#ready%1",
+        "generation": 2,
+        "page": 0,
+        "cards": [
+          {
+            "id": "v#ready%1",
+            "isNew": false
+          },
+          {
+            "id": "v#ready%2",
+            "isNew": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "v5-ready-deck-filtered-empty-page1",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251#GEN#2#DECK#1",
+        "type": "vocabDeckPage",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#ready%1",
+          "generation": 2,
+          "page": 1,
+          "cards": []
+        }
+      },
+      "expected": {
+        "sessionId": "paged#ready%1",
+        "generation": 2,
+        "page": 1,
+        "cards": []
+      }
+    },
+    {
+      "name": "v5-ready-progress-page0",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251#GEN#2#PROGRESS#0",
+        "type": "vocabPageProgress",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#ready%1",
+          "generation": 2,
+          "page": 0,
+          "answered": [
+            "v#ready%1"
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#ready%1",
+        "generation": 2,
+        "page": 0,
+        "answered": [
+          "v#ready%1"
+        ]
+      }
+    },
+    {
+      "name": "v5-abandoned-generation-deck",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251#GEN#1#DECK#0",
+        "type": "vocabDeckPage",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#ready%1",
+          "generation": 1,
+          "page": 0,
+          "cards": [
+            {
+              "id": "v#withdrawn%1",
+              "isNew": true
+            }
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#ready%1",
+        "generation": 1,
+        "page": 0,
+        "cards": [
+          {
+            "id": "v#withdrawn%1",
+            "isNew": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "v5-building-session-published-prefix",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23building%251",
+        "type": "vocabPagedSession",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "paged#building%1",
+          "kind": "today",
+          "category": null,
+          "day": "2026-09-22",
+          "startedAt": 1000,
+          "finishedAt": null,
+          "tomorrow": null,
+          "status": "building",
+          "generation": 1,
+          "catalog": "fixture-catalog",
+          "sourceVersion": 8,
+          "modelVersion": 10,
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "candidateGeneration": "2026-09-22:fixture-catalog:8:1",
+          "dueCount": 130,
+          "fresh": [],
+          "dueCursor": "LEARNER%23fixture-owner|READMODEL%23VOCAB%232026-09-22%232026-09-22%253Afixture-catalog%253A8%253A1%23due%23all%23all%23|READMODEL#VOCAB#2026-09-22#2026-09-22%3Afixture-catalog%3A8%3A1#due#all#all#13fe0000000000000#0000000000063#v_build_063",
+          "dueRead": 64,
+          "freshRead": 0,
+          "pages": 1,
+          "total": 130,
+          "answered": 0,
+          "introduced": 0,
+          "againCount": 0,
+          "again": []
+        }
+      },
+      "expected": {
+        "id": "paged#building%1",
+        "kind": "today",
+        "category": null,
+        "day": "2026-09-22",
+        "startedAt": 1000,
+        "finishedAt": null,
+        "tomorrow": null,
+        "status": "building",
+        "generation": 1,
+        "catalog": "fixture-catalog",
+        "sourceVersion": 8,
+        "modelVersion": 10,
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "candidateGeneration": "2026-09-22:fixture-catalog:8:1",
+        "dueCount": 130,
+        "fresh": [],
+        "dueCursor": "LEARNER%23fixture-owner|READMODEL%23VOCAB%232026-09-22%232026-09-22%253Afixture-catalog%253A8%253A1%23due%23all%23all%23|READMODEL#VOCAB#2026-09-22#2026-09-22%3Afixture-catalog%3A8%3A1#due#all#all#13fe0000000000000#0000000000063#v_build_063",
+        "dueRead": 64,
+        "freshRead": 0,
+        "pages": 1,
+        "total": 130,
+        "answered": 0,
+        "introduced": 0,
+        "againCount": 0,
+        "again": []
+      }
+    },
+    {
+      "name": "v5-building-immutable-full-page0",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23building%251#GEN#1#DECK#0",
+        "type": "vocabDeckPage",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#building%1",
+          "generation": 1,
+          "page": 0,
+          "cards": [
+            {
+              "id": "v_build_000",
+              "isNew": false
+            },
+            {
+              "id": "v_build_001",
+              "isNew": false
+            },
+            {
+              "id": "v_build_002",
+              "isNew": false
+            },
+            {
+              "id": "v_build_003",
+              "isNew": false
+            },
+            {
+              "id": "v_build_004",
+              "isNew": false
+            },
+            {
+              "id": "v_build_005",
+              "isNew": false
+            },
+            {
+              "id": "v_build_006",
+              "isNew": false
+            },
+            {
+              "id": "v_build_007",
+              "isNew": false
+            },
+            {
+              "id": "v_build_008",
+              "isNew": false
+            },
+            {
+              "id": "v_build_009",
+              "isNew": false
+            },
+            {
+              "id": "v_build_010",
+              "isNew": false
+            },
+            {
+              "id": "v_build_011",
+              "isNew": false
+            },
+            {
+              "id": "v_build_012",
+              "isNew": false
+            },
+            {
+              "id": "v_build_013",
+              "isNew": false
+            },
+            {
+              "id": "v_build_014",
+              "isNew": false
+            },
+            {
+              "id": "v_build_015",
+              "isNew": false
+            },
+            {
+              "id": "v_build_016",
+              "isNew": false
+            },
+            {
+              "id": "v_build_017",
+              "isNew": false
+            },
+            {
+              "id": "v_build_018",
+              "isNew": false
+            },
+            {
+              "id": "v_build_019",
+              "isNew": false
+            },
+            {
+              "id": "v_build_020",
+              "isNew": false
+            },
+            {
+              "id": "v_build_021",
+              "isNew": false
+            },
+            {
+              "id": "v_build_022",
+              "isNew": false
+            },
+            {
+              "id": "v_build_023",
+              "isNew": false
+            },
+            {
+              "id": "v_build_024",
+              "isNew": false
+            },
+            {
+              "id": "v_build_025",
+              "isNew": false
+            },
+            {
+              "id": "v_build_026",
+              "isNew": false
+            },
+            {
+              "id": "v_build_027",
+              "isNew": false
+            },
+            {
+              "id": "v_build_028",
+              "isNew": false
+            },
+            {
+              "id": "v_build_029",
+              "isNew": false
+            },
+            {
+              "id": "v_build_030",
+              "isNew": false
+            },
+            {
+              "id": "v_build_031",
+              "isNew": false
+            },
+            {
+              "id": "v_build_032",
+              "isNew": false
+            },
+            {
+              "id": "v_build_033",
+              "isNew": false
+            },
+            {
+              "id": "v_build_034",
+              "isNew": false
+            },
+            {
+              "id": "v_build_035",
+              "isNew": false
+            },
+            {
+              "id": "v_build_036",
+              "isNew": false
+            },
+            {
+              "id": "v_build_037",
+              "isNew": false
+            },
+            {
+              "id": "v_build_038",
+              "isNew": false
+            },
+            {
+              "id": "v_build_039",
+              "isNew": false
+            },
+            {
+              "id": "v_build_040",
+              "isNew": false
+            },
+            {
+              "id": "v_build_041",
+              "isNew": false
+            },
+            {
+              "id": "v_build_042",
+              "isNew": false
+            },
+            {
+              "id": "v_build_043",
+              "isNew": false
+            },
+            {
+              "id": "v_build_044",
+              "isNew": false
+            },
+            {
+              "id": "v_build_045",
+              "isNew": false
+            },
+            {
+              "id": "v_build_046",
+              "isNew": false
+            },
+            {
+              "id": "v_build_047",
+              "isNew": false
+            },
+            {
+              "id": "v_build_048",
+              "isNew": false
+            },
+            {
+              "id": "v_build_049",
+              "isNew": false
+            },
+            {
+              "id": "v_build_050",
+              "isNew": false
+            },
+            {
+              "id": "v_build_051",
+              "isNew": false
+            },
+            {
+              "id": "v_build_052",
+              "isNew": false
+            },
+            {
+              "id": "v_build_053",
+              "isNew": false
+            },
+            {
+              "id": "v_build_054",
+              "isNew": false
+            },
+            {
+              "id": "v_build_055",
+              "isNew": false
+            },
+            {
+              "id": "v_build_056",
+              "isNew": false
+            },
+            {
+              "id": "v_build_057",
+              "isNew": false
+            },
+            {
+              "id": "v_build_058",
+              "isNew": false
+            },
+            {
+              "id": "v_build_059",
+              "isNew": false
+            },
+            {
+              "id": "v_build_060",
+              "isNew": false
+            },
+            {
+              "id": "v_build_061",
+              "isNew": false
+            },
+            {
+              "id": "v_build_062",
+              "isNew": false
+            },
+            {
+              "id": "v_build_063",
+              "isNew": false
+            }
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#building%1",
+        "generation": 1,
+        "page": 0,
+        "cards": [
+          {
+            "id": "v_build_000",
+            "isNew": false
+          },
+          {
+            "id": "v_build_001",
+            "isNew": false
+          },
+          {
+            "id": "v_build_002",
+            "isNew": false
+          },
+          {
+            "id": "v_build_003",
+            "isNew": false
+          },
+          {
+            "id": "v_build_004",
+            "isNew": false
+          },
+          {
+            "id": "v_build_005",
+            "isNew": false
+          },
+          {
+            "id": "v_build_006",
+            "isNew": false
+          },
+          {
+            "id": "v_build_007",
+            "isNew": false
+          },
+          {
+            "id": "v_build_008",
+            "isNew": false
+          },
+          {
+            "id": "v_build_009",
+            "isNew": false
+          },
+          {
+            "id": "v_build_010",
+            "isNew": false
+          },
+          {
+            "id": "v_build_011",
+            "isNew": false
+          },
+          {
+            "id": "v_build_012",
+            "isNew": false
+          },
+          {
+            "id": "v_build_013",
+            "isNew": false
+          },
+          {
+            "id": "v_build_014",
+            "isNew": false
+          },
+          {
+            "id": "v_build_015",
+            "isNew": false
+          },
+          {
+            "id": "v_build_016",
+            "isNew": false
+          },
+          {
+            "id": "v_build_017",
+            "isNew": false
+          },
+          {
+            "id": "v_build_018",
+            "isNew": false
+          },
+          {
+            "id": "v_build_019",
+            "isNew": false
+          },
+          {
+            "id": "v_build_020",
+            "isNew": false
+          },
+          {
+            "id": "v_build_021",
+            "isNew": false
+          },
+          {
+            "id": "v_build_022",
+            "isNew": false
+          },
+          {
+            "id": "v_build_023",
+            "isNew": false
+          },
+          {
+            "id": "v_build_024",
+            "isNew": false
+          },
+          {
+            "id": "v_build_025",
+            "isNew": false
+          },
+          {
+            "id": "v_build_026",
+            "isNew": false
+          },
+          {
+            "id": "v_build_027",
+            "isNew": false
+          },
+          {
+            "id": "v_build_028",
+            "isNew": false
+          },
+          {
+            "id": "v_build_029",
+            "isNew": false
+          },
+          {
+            "id": "v_build_030",
+            "isNew": false
+          },
+          {
+            "id": "v_build_031",
+            "isNew": false
+          },
+          {
+            "id": "v_build_032",
+            "isNew": false
+          },
+          {
+            "id": "v_build_033",
+            "isNew": false
+          },
+          {
+            "id": "v_build_034",
+            "isNew": false
+          },
+          {
+            "id": "v_build_035",
+            "isNew": false
+          },
+          {
+            "id": "v_build_036",
+            "isNew": false
+          },
+          {
+            "id": "v_build_037",
+            "isNew": false
+          },
+          {
+            "id": "v_build_038",
+            "isNew": false
+          },
+          {
+            "id": "v_build_039",
+            "isNew": false
+          },
+          {
+            "id": "v_build_040",
+            "isNew": false
+          },
+          {
+            "id": "v_build_041",
+            "isNew": false
+          },
+          {
+            "id": "v_build_042",
+            "isNew": false
+          },
+          {
+            "id": "v_build_043",
+            "isNew": false
+          },
+          {
+            "id": "v_build_044",
+            "isNew": false
+          },
+          {
+            "id": "v_build_045",
+            "isNew": false
+          },
+          {
+            "id": "v_build_046",
+            "isNew": false
+          },
+          {
+            "id": "v_build_047",
+            "isNew": false
+          },
+          {
+            "id": "v_build_048",
+            "isNew": false
+          },
+          {
+            "id": "v_build_049",
+            "isNew": false
+          },
+          {
+            "id": "v_build_050",
+            "isNew": false
+          },
+          {
+            "id": "v_build_051",
+            "isNew": false
+          },
+          {
+            "id": "v_build_052",
+            "isNew": false
+          },
+          {
+            "id": "v_build_053",
+            "isNew": false
+          },
+          {
+            "id": "v_build_054",
+            "isNew": false
+          },
+          {
+            "id": "v_build_055",
+            "isNew": false
+          },
+          {
+            "id": "v_build_056",
+            "isNew": false
+          },
+          {
+            "id": "v_build_057",
+            "isNew": false
+          },
+          {
+            "id": "v_build_058",
+            "isNew": false
+          },
+          {
+            "id": "v_build_059",
+            "isNew": false
+          },
+          {
+            "id": "v_build_060",
+            "isNew": false
+          },
+          {
+            "id": "v_build_061",
+            "isNew": false
+          },
+          {
+            "id": "v_build_062",
+            "isNew": false
+          },
+          {
+            "id": "v_build_063",
+            "isNew": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "v5-zero-card-session-no-pages",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23zero%251",
+        "type": "vocabPagedSession",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "paged#zero%1",
+          "kind": "today",
+          "category": null,
+          "day": "2026-09-22",
+          "startedAt": 1000,
+          "finishedAt": null,
+          "tomorrow": null,
+          "status": "ready",
+          "generation": 1,
+          "catalog": "fixture-catalog",
+          "sourceVersion": 7,
+          "modelVersion": 9,
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+          "dueCount": 0,
+          "fresh": [],
+          "dueCursor": null,
+          "dueRead": 0,
+          "freshRead": 0,
+          "pages": 0,
+          "total": 0,
+          "answered": 0,
+          "introduced": 0,
+          "againCount": 0,
+          "again": []
+        }
+      },
+      "expected": {
+        "id": "paged#zero%1",
+        "kind": "today",
+        "category": null,
+        "day": "2026-09-22",
+        "startedAt": 1000,
+        "finishedAt": null,
+        "tomorrow": null,
+        "status": "ready",
+        "generation": 1,
+        "catalog": "fixture-catalog",
+        "sourceVersion": 7,
+        "modelVersion": 9,
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+        "dueCount": 0,
+        "fresh": [],
+        "dueCursor": null,
+        "dueRead": 0,
+        "freshRead": 0,
+        "pages": 0,
+        "total": 0,
+        "answered": 0,
+        "introduced": 0,
+        "againCount": 0,
+        "again": []
+      }
+    },
+    {
+      "name": "v5-finished-paged-session",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23closed%251",
+        "type": "vocabPagedSession",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "paged#closed%1",
+          "kind": "extra",
+          "category": null,
+          "day": "2026-09-22",
+          "startedAt": 1000,
+          "finishedAt": 2000,
+          "tomorrow": 1,
+          "status": "ready",
+          "generation": 1,
+          "catalog": "fixture-catalog",
+          "sourceVersion": 7,
+          "modelVersion": 9,
+          "settingsVersion": 1,
+          "statsVersion": 9,
+          "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+          "dueCount": 0,
+          "fresh": [],
+          "dueCursor": null,
+          "dueRead": 0,
+          "freshRead": 1,
+          "pages": 1,
+          "total": 1,
+          "answered": 1,
+          "introduced": 1,
+          "againCount": 0,
+          "again": []
+        }
+      },
+      "expected": {
+        "id": "paged#closed%1",
+        "kind": "extra",
+        "category": null,
+        "day": "2026-09-22",
+        "startedAt": 1000,
+        "finishedAt": 2000,
+        "tomorrow": 1,
+        "status": "ready",
+        "generation": 1,
+        "catalog": "fixture-catalog",
+        "sourceVersion": 7,
+        "modelVersion": 9,
+        "settingsVersion": 1,
+        "statsVersion": 9,
+        "candidateGeneration": "2026-09-22:fixture-catalog:7:1",
+        "dueCount": 0,
+        "fresh": [],
+        "dueCursor": null,
+        "dueRead": 0,
+        "freshRead": 1,
+        "pages": 1,
+        "total": 1,
+        "answered": 1,
+        "introduced": 1,
+        "againCount": 0,
+        "again": []
+      }
+    },
+    {
+      "name": "v5-finished-deck-page0",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23closed%251#GEN#1#DECK#0",
+        "type": "vocabDeckPage",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#closed%1",
+          "generation": 1,
+          "page": 0,
+          "cards": [
+            {
+              "id": "v#closed%1",
+              "isNew": true
+            }
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#closed%1",
+        "generation": 1,
+        "page": 0,
+        "cards": [
+          {
+            "id": "v#closed%1",
+            "isNew": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "v5-finished-progress-page0",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23closed%251#GEN#1#PROGRESS#0",
+        "type": "vocabPageProgress",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#closed%1",
+          "generation": 1,
+          "page": 0,
+          "answered": [
+            "v#closed%1"
+          ]
+        }
+      },
+      "expected": {
+        "sessionId": "paged#closed%1",
+        "generation": 1,
+        "page": 0,
+        "answered": [
+          "v#closed%1"
+        ]
+      }
+    },
+    {
+      "name": "v5-legacy-open-session-guard",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#s1#GUARD",
+        "type": "vocabSessionGuard",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "s1",
+          "finishedAt": null
+        }
+      },
+      "expected": {
+        "id": "s1",
+        "finishedAt": null
+      }
+    },
+    {
+      "name": "v5-legacy-closed-session",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#legacy%23closed%251",
+        "type": "vocabSession",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "legacy#closed%1",
+          "kind": "today",
+          "category": null,
+          "day": "2026-09-22",
+          "deck": [
+            "v1",
+            "v2"
+          ],
+          "startedAt": 1000,
+          "finishedAt": 2000,
+          "tomorrow": 1
+        }
+      },
+      "expected": {
+        "id": "legacy#closed%1",
+        "kind": "today",
+        "category": null,
+        "day": "2026-09-22",
+        "deck": [
+          "v1",
+          "v2"
+        ],
+        "startedAt": 1000,
+        "finishedAt": 2000,
+        "tomorrow": 1
+      }
+    },
+    {
+      "name": "v5-legacy-closed-session-guard",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB#legacy%23closed%251#GUARD",
+        "type": "vocabSessionGuard",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "id": "legacy#closed%1",
+          "finishedAt": 2000
+        }
+      },
+      "expected": {
+        "id": "legacy#closed%1",
+        "finishedAt": 2000
+      }
+    },
+    {
+      "name": "v5-filtered-empty-page-progress",
+      "row": {
+        "PK": "LEARNER#fixture-owner",
+        "SK": "VOCAB_PAGED#paged%23ready%251#GEN#2#PROGRESS#1",
+        "type": "vocabPageProgress",
+        "version": 9,
+        "schemaVersion": 5,
+        "value": {
+          "sessionId": "paged#ready%1",
+          "generation": 2,
+          "page": 1,
+          "answered": []
+        }
+      },
+      "expected": {
+        "sessionId": "paged#ready%1",
+        "generation": 2,
+        "page": 1,
+        "answered": []
+      }
+    }
+  ]
+}

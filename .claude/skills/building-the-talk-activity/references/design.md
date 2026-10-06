@@ -232,6 +232,8 @@ interface ModelReply<T> {
 interface ModelFailure {
   code: "ERR_MODEL_UNAVAILABLE";
   reason: "timeout" | "throttled" | "denied" | "malformed" | "transport";
+  httpStatus?: number; // a provider's refusal
+  requestFailure?: "request-construction" | "network" | "response-body";
 }
 ```
 
@@ -257,8 +259,8 @@ interface ModelFailure {
 - **Telemetry.** Every call writes one log line of its own, beside the request line:
   `kind: "model-call"`, `requestId`, `task`, `promptVersion`, `provider`, `modelId`,
   `outcome`, `attempt`, `duplicatePossible`, `providerOutcome`, `inputTokens`,
-  `outputTokens`, `latencyMs`, `costUsd`. Never a prompt, a learner's text or the
-  model's output.
+  `outputTokens`, `latencyMs`, `costUsd`, `httpStatus`, `requestFailure`. Never a key, a
+  prompt, a learner's text, the model's output or a provider's error text.
 - **Learner text is data.** It reaches the model only inside the user messages, each
   part in its own delimiter (`<japanese>…</japanese>`), never in the system prompt; the
   system prompt says to treat what is inside as the learner's words, not instructions.

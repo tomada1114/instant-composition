@@ -129,6 +129,7 @@ export type {
   ModelMessage,
   ModelReply,
   ModelRequest,
+  ModelRequestFailure,
 } from "./language-model";
 export { finishVocabSession } from "./finish-vocab-session";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";

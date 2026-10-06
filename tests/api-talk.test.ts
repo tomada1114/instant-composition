@@ -5,7 +5,11 @@ import {
   standInTalkModel,
   type ModelCallLine,
 } from "@instant-composition/api";
-import { learnerId, type LanguageModel } from "@instant-composition/application";
+import {
+  learnerId,
+  type LanguageModel,
+  type ModelFailure,
+} from "@instant-composition/application";
 import {
   cardCandidatesSchema,
   errorResponseSchema,
@@ -564,8 +568,41 @@ describe("the model-call line", () => {
         outputTokens: 0,
         latencyMs: 0,
         costUsd: 0,
+        httpStatus: null,
+        requestFailure: null,
       })),
     );
+  });
+
+  it.each<[string, ModelFailure, Pick<ModelCallLine, "httpStatus" | "requestFailure">]>(
+    [
+      [
+        "a provider's refusal by its status",
+        { code: "ERR_MODEL_UNAVAILABLE", reason: "transport", httpStatus: 402 },
+        { httpStatus: 402, requestFailure: null },
+      ],
+      [
+        "a request that never got an answer by where it broke off",
+        {
+          code: "ERR_MODEL_UNAVAILABLE",
+          reason: "transport",
+          requestFailure: "network",
+        },
+        { httpStatus: null, requestFailure: "network" },
+      ],
+    ],
+  )("names %s, and the response only its code", async (_label, failed, named) => {
+    const refusing: LanguageModel = {
+      generate: () => Promise.resolve(err(failed)),
+    };
+    const api = makeApi({
+      servedModel: { provider: "probe", modelId: "probe", model: refusing },
+    });
+
+    const answer = await api.call("POST", "/v1/talks", { talkId: "t1" });
+
+    expect(api.modelCalls).toMatchObject([{ outcome: "transport", ...named }]);
+    expect(await refusal(answer)).toStrictEqual([503, "ERR_MODEL_UNAVAILABLE"]);
   });
 
   it("carries none of the talk's text: no prompt, no learner's words, no model output", async () => {

@@ -41,6 +41,7 @@ export function loggedModel(served: ServedModel, request: ModelCallLog): Languag
     outcome: ModelCallOutcome,
     started: number,
     call?: ModelCall,
+    failed?: ModelFailure,
   ): void {
     request.log({
       kind: "model-call",
@@ -60,6 +61,8 @@ export function loggedModel(served: ServedModel, request: ModelCallLog): Languag
       outputTokens: call?.outputTokens ?? null,
       latencyMs: call?.latencyMs ?? request.now() - started,
       costUsd: call?.costUsd ?? null,
+      httpStatus: failed?.httpStatus ?? null,
+      requestFailure: failed?.requestFailure ?? null,
     });
   }
 
@@ -79,7 +82,7 @@ export function loggedModel(served: ServedModel, request: ModelCallLog): Languag
       if (result.ok) {
         write(asked, "ok", started, result.value.call);
       } else {
-        write(asked, result.error.reason, started);
+        write(asked, result.error.reason, started, undefined, result.error);
       }
       return result;
     },

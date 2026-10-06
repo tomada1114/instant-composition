@@ -448,6 +448,8 @@ describe("the hosted entry's handler", () => {
         outputTokens: 40,
         latencyMs: expect.any(Number) as number,
         costUsd: 0.0002,
+        httpStatus: null,
+        requestFailure: null,
       },
     ]);
     expect(JSON.stringify([...lines, ...calls])).not.toContain(MODEL_KEY);
