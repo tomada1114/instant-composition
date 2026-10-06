@@ -98,7 +98,8 @@ export interface ModelReply<T> {
  * try; `transport` (unreachable, or any other refusal) may too; `denied` (the
  * key was refused) will not until configuration changes; `malformed` (the
  * answer was not the schema's shape) is the model's. Beside it, a provider's
- * `httpStatus` or a `requestFailure` may say which failure it was. It carries
+ * `httpStatus`, or a `requestFailure` and its `causeCode`, may say which
+ * failure it was. It carries
  * nothing else — never a key, a prompt, a learner's text or the model's output.
  */
 export interface ModelFailure {
@@ -108,6 +109,11 @@ export interface ModelFailure {
   readonly httpStatus?: number;
   /** Where a call that got no HTTP answer it could read broke off. */
   readonly requestFailure?: ModelRequestFailure;
+  /**
+   * The runtime's code for that break, such as `ENOTFOUND` or
+   * `CERT_HAS_EXPIRED`: an identifier alone, never an error's message.
+   */
+  readonly causeCode?: string;
 }
 
 /**

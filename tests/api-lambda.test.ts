@@ -450,6 +450,7 @@ describe("the hosted entry's handler", () => {
         costUsd: 0.0002,
         httpStatus: null,
         requestFailure: null,
+        causeCode: null,
       },
     ]);
     expect(JSON.stringify([...lines, ...calls])).not.toContain(MODEL_KEY);

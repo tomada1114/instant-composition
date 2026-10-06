@@ -570,28 +570,34 @@ describe("the model-call line", () => {
         costUsd: 0,
         httpStatus: null,
         requestFailure: null,
+        causeCode: null,
       })),
     );
   });
 
-  it.each<[string, ModelFailure, Pick<ModelCallLine, "httpStatus" | "requestFailure">]>(
+  it.each<
     [
-      [
-        "a provider's refusal by its status",
-        { code: "ERR_MODEL_UNAVAILABLE", reason: "transport", httpStatus: 402 },
-        { httpStatus: 402, requestFailure: null },
-      ],
-      [
-        "a request that never got an answer by where it broke off",
-        {
-          code: "ERR_MODEL_UNAVAILABLE",
-          reason: "transport",
-          requestFailure: "network",
-        },
-        { httpStatus: null, requestFailure: "network" },
-      ],
+      string,
+      ModelFailure,
+      Pick<ModelCallLine, "httpStatus" | "requestFailure" | "causeCode">,
+    ]
+  >([
+    [
+      "a provider's refusal by its status",
+      { code: "ERR_MODEL_UNAVAILABLE", reason: "transport", httpStatus: 402 },
+      { httpStatus: 402, requestFailure: null, causeCode: null },
     ],
-  )("names %s, and the response only its code", async (_label, failed, named) => {
+    [
+      "a request that never got an answer by where it broke off and why",
+      {
+        code: "ERR_MODEL_UNAVAILABLE",
+        reason: "transport",
+        requestFailure: "network",
+        causeCode: "ENOTFOUND",
+      },
+      { httpStatus: null, requestFailure: "network", causeCode: "ENOTFOUND" },
+    ],
+  ])("names %s, and the response only its code", async (_label, failed, named) => {
     const refusing: LanguageModel = {
       generate: () => Promise.resolve(err(failed)),
     };

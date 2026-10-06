@@ -56,9 +56,9 @@ export type ModelCallOutcome = "ok" | ModelFailure["reason"] | "failed";
  * learner's text or the model's output: what was asked is named by `task` and
  * `promptVersion` alone. The counts and the cost are `null` when the call
  * produced no answer; `latencyMs` is the provider's measure on an answer and
- * the edge's own otherwise. `httpStatus` and `requestFailure` name which
- * failure a `transport`, `throttled` or `denied` call was, never what the
- * provider said.
+ * the edge's own otherwise. `httpStatus`, `requestFailure` and `causeCode`
+ * name which failure a `transport`, `throttled` or `denied` call was, never
+ * what the provider or the runtime said.
  */
 export interface ModelCallLine {
   readonly kind: "model-call";
@@ -81,6 +81,8 @@ export interface ModelCallLine {
   readonly httpStatus: number | null;
   /** Where a call with no readable answer broke off; `null` otherwise. */
   readonly requestFailure: ModelRequestFailure | null;
+  /** The runtime's code for that break (`ENOTFOUND`, …); `null` when it gave none. */
+  readonly causeCode: string | null;
 }
 
 /** Where log lines go: stdout on a local run, a recording array in a test. */
