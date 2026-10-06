@@ -111,7 +111,7 @@ function trackedSignal(): {
 
 const failure = (
   reason: string,
-  detail: { httpStatus?: number; requestFailure?: string } = {},
+  detail: { httpStatus?: number; requestFailure?: string; causeCode?: string } = {},
 ) => ({
   ok: false,
   error: { code: "ERR_MODEL_UNAVAILABLE", reason, ...detail },
@@ -332,6 +332,47 @@ describe("createOpenRouterModel", () => {
     const result = await model(endpoint.fetch).generate(makeRequest(), live());
 
     expect(result).toStrictEqual(failure("transport", { requestFailure: "network" }));
+  });
+
+  it.each<[string, Error, { causeCode?: string }]>([
+    [
+      "the code undici puts on its cause",
+      new TypeError("fetch failed", {
+        cause: Object.assign(new Error("getaddrinfo ENOTFOUND openrouter.ai"), {
+          code: "ENOTFOUND",
+        }),
+      }),
+      { causeCode: "ENOTFOUND" },
+    ],
+    [
+      "the first code of an AggregateError cause",
+      new TypeError("fetch failed", {
+        cause: new AggregateError([
+          Object.assign(new Error("connect ETIMEDOUT"), { code: "ETIMEDOUT" }),
+        ]),
+      }),
+      { causeCode: "ETIMEDOUT" },
+    ],
+    [
+      "no code when the cause carries none",
+      new TypeError("fetch failed", { cause: new Error("bad port") }),
+      {},
+    ],
+    [
+      "no code when it is not an identifier",
+      new TypeError("fetch failed", {
+        cause: Object.assign(new Error("x"), { code: "Bearer sk-or-v1-secret" }),
+      }),
+      {},
+    ],
+  ])("answers a network failure with %s", async (_label, thrown, code) => {
+    const endpoint = openRouter(() => Promise.reject(thrown));
+
+    const result = await model(endpoint.fetch).generate(makeRequest(), live());
+
+    expect(result).toStrictEqual(
+      failure("transport", { requestFailure: "network", ...code }),
+    );
   });
 
   it("answers transport from the request's construction, naming no key, when the key cannot be a header", async () => {

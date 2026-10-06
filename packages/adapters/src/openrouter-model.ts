@@ -31,7 +31,7 @@ type Generated<T> = Result<ModelReply<T>, ModelFailure>;
 
 const failure = (
   reason: ModelFailure["reason"],
-  detail: Pick<ModelFailure, "httpStatus" | "requestFailure"> = {},
+  detail: Pick<ModelFailure, "httpStatus" | "requestFailure" | "causeCode"> = {},
 ): Result<never, ModelFailure> =>
   err({ code: "ERR_MODEL_UNAVAILABLE", reason, ...detail });
 
@@ -66,12 +66,49 @@ function refusalOf(status: number): ModelFailure["reason"] {
   return "transport";
 }
 
+const CODE = /^[A-Z][A-Z0-9_]{1,63}$/;
+
+/**
+ * The code `fetch` put on what it threw — undici's `TypeError` carries it on
+ * `cause`, or on the first of an `AggregateError`'s `errors` — when it has the
+ * shape of an identifier. Only that shape is kept: a message, which can quote
+ * a header or a host, never reaches the failure.
+ */
+function causeCodeOf(thrown: unknown): string | undefined {
+  for (const candidate of [thrown, causeOf(thrown), firstOf(causeOf(thrown))]) {
+    const code = codeOf(candidate);
+    if (code !== undefined) return code;
+  }
+  return undefined;
+}
+
+function causeOf(value: unknown): unknown {
+  return value instanceof Error ? value.cause : undefined;
+}
+
+function firstOf(value: unknown): unknown {
+  return value instanceof AggregateError ? (value.errors[0] as unknown) : undefined;
+}
+
+function codeOf(value: unknown): string | undefined {
+  if (typeof value !== "object" || value === null || !("code" in value))
+    return undefined;
+  const { code } = value;
+  return typeof code === "string" && CODE.test(code) ? code : undefined;
+}
+
 /** `timeout` once the call was aborted, since an abort is what made it fail; `transport` before. */
 function failedAs(
   signal: AbortSignal,
   requestFailure: ModelRequestFailure,
+  thrown: unknown,
 ): Result<never, ModelFailure> {
-  return signal.aborted ? failure("timeout") : failure("transport", { requestFailure });
+  if (signal.aborted) return failure("timeout");
+  const causeCode = causeCodeOf(thrown);
+  return failure("transport", {
+    requestFailure,
+    ...(causeCode === undefined ? {} : { causeCode }),
+  });
 }
 
 async function exchange<T>(
@@ -99,8 +136,8 @@ async function exchange<T>(
   let response: Response;
   try {
     response = await options.fetch(asked);
-  } catch {
-    return failedAs(signal, "network");
+  } catch (error) {
+    return failedAs(signal, "network", error);
   }
   if (!response.ok) {
     await response.body?.cancel().catch(() => undefined);
@@ -109,8 +146,8 @@ async function exchange<T>(
   let body: unknown;
   try {
     body = await response.json();
-  } catch {
-    return failedAs(signal, "response-body");
+  } catch (error) {
+    return failedAs(signal, "response-body", error);
   }
   const latencyMs = Math.round(now() - started);
   const content = contentOf(body);
@@ -135,7 +172,8 @@ async function exchange<T>(
  * @remarks
  * A 429 is `throttled`, a 401 or 403 `denied`, and an unreachable endpoint or
  * any other refusal `transport`; a refusal carries its `httpStatus`, and a call
- * with no readable answer its `requestFailure`. An answer whose content is not JSON, or that
+ * with no readable answer its `requestFailure` and, when the runtime gave one,
+ * its `causeCode`. An answer whose content is not JSON, or that
  * `read` refuses, is `malformed`. When `signal` aborts, the request is aborted
  * with it and the call is `timeout`. It writes no log: the call record is
  * returned, and the caller writes the line.

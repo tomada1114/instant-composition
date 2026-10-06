@@ -234,6 +234,7 @@ interface ModelFailure {
   reason: "timeout" | "throttled" | "denied" | "malformed" | "transport";
   httpStatus?: number; // a provider's refusal
   requestFailure?: "request-construction" | "network" | "response-body";
+  causeCode?: string; // the runtime's identifier for that break, e.g. ENOTFOUND
 }
 ```
 
@@ -259,8 +260,9 @@ interface ModelFailure {
 - **Telemetry.** Every call writes one log line of its own, beside the request line:
   `kind: "model-call"`, `requestId`, `task`, `promptVersion`, `provider`, `modelId`,
   `outcome`, `attempt`, `duplicatePossible`, `providerOutcome`, `inputTokens`,
-  `outputTokens`, `latencyMs`, `costUsd`, `httpStatus`, `requestFailure`. Never a key, a
-  prompt, a learner's text, the model's output or a provider's error text.
+  `outputTokens`, `latencyMs`, `costUsd`, `httpStatus`, `requestFailure`, `causeCode`.
+  Never a key, a prompt, a learner's text, the model's output or a provider's error
+  text.
 - **Learner text is data.** It reaches the model only inside the user messages, each
   part in its own delimiter (`<japanese>…</japanese>`), never in the system prompt; the
   system prompt says to treat what is inside as the learner's words, not instructions.

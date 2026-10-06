@@ -98,20 +98,21 @@ Each model call a talk operation makes writes one more line to the same sink, be
 request's, from `loggedModel` in `apps/api/src/model-log.ts`, which wraps the configured
 model per request (the commands log nothing):
 
-| Field                          | Value                                                                                              |
-| ------------------------------ | -------------------------------------------------------------------------------------------------- |
-| `kind`                         | Always `model-call`; a request line has no `kind`                                                  |
-| `requestId`                    | The request's, which joins the line to its request line                                            |
-| `task`, `promptVersion`        | `talk-scene`, `talk-teacher` or `talk-partner`, and its version (`…@1`)                            |
-| `provider`, `modelId`          | Who served the call, or who was configured to when it produced no answer                           |
-| `outcome`                      | `ok`, the `ModelFailure` reason (`timeout`, `throttled`, …), or `failed`                           |
-| `attempt`, `duplicatePossible` | Durable attempt number; whether a previous attempt may have reached the provider without a result  |
-| `providerOutcome`              | `unknown` for timeout, transport or a thrown adapter error, `known` otherwise                      |
-| `inputTokens`, `outputTokens`  | The provider's counts; `null` when the call produced no answer                                     |
-| `latencyMs`                    | The provider adapter's measure on an answer, the edge's clock otherwise                            |
-| `costUsd`                      | The provider's reported cost; `null` when it reported none or none answered                        |
-| `httpStatus`                   | The status a provider refused the call with (`402`, `404`, …); `null` otherwise                    |
-| `requestFailure`               | `request-construction`, `network` or `response-body` for a call with no readable answer, or `null` |
+| Field                          | Value                                                                                                 |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| `kind`                         | Always `model-call`; a request line has no `kind`                                                     |
+| `requestId`                    | The request's, which joins the line to its request line                                               |
+| `task`, `promptVersion`        | `talk-scene`, `talk-teacher` or `talk-partner`, and its version (`…@1`)                               |
+| `provider`, `modelId`          | Who served the call, or who was configured to when it produced no answer                              |
+| `outcome`                      | `ok`, the `ModelFailure` reason (`timeout`, `throttled`, …), or `failed`                              |
+| `attempt`, `duplicatePossible` | Durable attempt number; whether a previous attempt may have reached the provider without a result     |
+| `providerOutcome`              | `unknown` for timeout, transport or a thrown adapter error, `known` otherwise                         |
+| `inputTokens`, `outputTokens`  | The provider's counts; `null` when the call produced no answer                                        |
+| `latencyMs`                    | The provider adapter's measure on an answer, the edge's clock otherwise                               |
+| `costUsd`                      | The provider's reported cost; `null` when it reported none or none answered                           |
+| `httpStatus`                   | The status a provider refused the call with (`402`, `404`, …); `null` otherwise                       |
+| `requestFailure`               | `request-construction`, `network` or `response-body` for a call with no readable answer, or `null`    |
+| `causeCode`                    | The runtime's code for that break (`ENOTFOUND`, `CERT_HAS_EXPIRED`, …), an identifier only; or `null` |
 
 A model-call line never carries a prompt, a learner's text or the model's output; the
 task and its version name what was asked. `failed` means the adapter threw — a key that

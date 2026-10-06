@@ -63,6 +63,7 @@ export function loggedModel(served: ServedModel, request: ModelCallLog): Languag
       costUsd: call?.costUsd ?? null,
       httpStatus: failed?.httpStatus ?? null,
       requestFailure: failed?.requestFailure ?? null,
+      causeCode: failed?.causeCode ?? null,
     });
   }
 
