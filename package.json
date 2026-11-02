@@ -61,6 +61,7 @@
     "fix": "eslint . --fix && prettier --write .",
     "prepare": "node scripts/verify-hooks.mjs",
     "hooks:install": "lefthook install",
+    "storage:backup": "node scripts/storage-backup.mjs",
     "release": "node scripts/release.mjs"
   },
   "devDependencies": {

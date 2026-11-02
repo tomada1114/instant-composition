@@ -94,6 +94,7 @@ const dynamodbTests = [
   "tests/api-critical-flows-dynamodb.test.ts",
   "tests/adapters-dynamodb-local.test.ts",
   "tests/storage-migration-local.test.ts",
+  "tests/storage-backup-local.test.ts",
   "tests/api-dynamodb-local.test.ts",
 ];
 
