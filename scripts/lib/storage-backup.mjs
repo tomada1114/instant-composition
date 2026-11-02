@@ -98,7 +98,8 @@ function canonical(value) {
   if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
   if (typeof value === "object" && value !== null)
     return `{${Object.entries(value)
-      .sort(([a], [b]) => a.localeCompare(b))
+      // Locale collation can equate distinct stored Unicode keys.
+      .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
       .map(([key, field]) => `${JSON.stringify(key)}:${canonical(field)}`)
       .join(",")}}`;
   return JSON.stringify(value);

@@ -182,6 +182,24 @@ describe("storage backup operator", () => {
       runBackup(options("verify", ["--restored", restored]), p),
     ).rejects.toMatchObject({ code: "ERR_STORAGE_BACKUP_MISMATCH" });
   });
+  it("compares distinct Unicode keys independently of their insertion order", async () => {
+    const sourceMap = { "\u00e9": { N: "1" }, "e\u0301": { N: "2" } };
+    const restoredMap = { "e\u0301": { N: "2" }, "\u00e9": { N: "1" } };
+    const p = port((_operation, input) =>
+      Promise.resolve({
+        Items: [
+          {
+            type: { S: "compositionBuild" },
+            value: { M: input["TableName"] === table ? sourceMap : restoredMap },
+          },
+        ],
+      }),
+    );
+
+    await expect(
+      runBackup(options("verify", ["--restored", restored]), p),
+    ).resolves.toMatchObject({ verified: true, count: 1 });
+  });
   it.each(["Items", "shape", "decoder", "cursor", "failure"])(
     "fails closed on %s without exposing data",
     async (failure) => {
