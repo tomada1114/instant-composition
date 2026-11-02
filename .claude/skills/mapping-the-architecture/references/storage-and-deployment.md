@@ -204,3 +204,51 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   settings, rounds, review details, item progress, talks and personal cards through the
   fields their types declare (`packages/adapters/src/declared.ts`), so it is neither
   returned nor written back.
+
+## Backup before an incompatible migration
+
+Before the next incompatible migration (#509), stop all writers and keep them stopped
+through verification. Do not substitute a live-table comparison: writes or TTL expiry
+between scans invalidate the digest. Allow no expired TTL rows to disappear during the
+exercise. Cognito is excluded: its retained user pool is managed separately from this
+DynamoDB backup.
+
+Use an explicit dev profile and the exact source table name from the dev foundation.
+`storage:backup` refuses production names, non-loopback custom endpoints, an ARN from
+another source table, and restore targets outside its generated UTC naming convention.
+It never deletes a table or writes a row. The AWS CLI must be installed; all tool output
+is captured privately and only fixed errors, backup metadata and verification counters
+leave the command. Runtime decoding reuses the migration dry-run validator, preserving
+legacy rows without migration. The digest covers canonical raw AttributeValues,
+including all learner and system rows; item order and map-key order do not affect it.
+
+```sh
+pnpm storage:backup create --profile default --table instant-composition-dev-TABLE
+pnpm storage:backup restore --profile default --table instant-composition-dev-TABLE --backup BACKUP_ARN
+pnpm storage:backup verify --profile default --table instant-composition-dev-TABLE --restored RESTORED_TABLE
+```
+
+Record the returned backup ARN and creation time outside the checkout, together with the
+exact restored table name and successful verification output. `create` waits for
+AVAILABLE; `restore` chooses `SOURCE-restore-YYYYMMDDTHHmmssSSSZ` and waits for ACTIVE.
+`verify` performs two read-only dry runs and requires equal total count, family counts
+and raw digest; an unknown runtime shape or any mismatch exits nonzero. Keep the backup
+and writers paused on failure; investigate and repeat verification before migration.
+Backup availability is not evidence of a verified restoration.
+
+After successful verification, delete only the disposable table name returned by that
+restore invocation. Copy the recorded name into `RESTORED_TABLE` below; keep the
+original source and backup. This guarded cleanup validates the exact generated suffix
+against the source before calling DeleteTable; it is not a general deletion command. Run
+with Node 24 and the same explicit dev profile, then wait for deletion:
+
+```sh
+SOURCE_TABLE=instant-composition-dev-TABLE
+RESTORED_TABLE=instant-composition-dev-TABLE-restore-YYYYMMDDTHHmmssSSSZ
+node --input-type=module -e 'import { backupOptions } from "./scripts/lib/storage-backup.mjs"; backupOptions(["verify", "--profile", "default", "--table", process.argv[1], "--restored", process.argv[2]]);' "$SOURCE_TABLE" "$RESTORED_TABLE" &&
+aws dynamodb delete-table --profile default --region ap-northeast-1 --table-name "$RESTORED_TABLE" --query TableDescription.TableStatus --output text &&
+aws dynamodb wait table-not-exists --profile default --region ap-northeast-1 --table-name "$RESTORED_TABLE"
+```
+
+Confirm the recorded disposable table is absent before resuming the migration. Do not
+remove the source table, a differently named table, or the backup as part of cleanup.

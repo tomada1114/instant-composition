@@ -1,4 +1,6 @@
-import { mkdtempSync, readFileSync, existsSync, rmSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import process from "node:process";
+import { mkdtempSync, readFileSync, existsSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
@@ -223,5 +225,42 @@ describe("storage maintenance operator", () => {
     } finally {
       await validator.close();
     }
+  });
+});
+
+describe("backup command public output", () => {
+  it("returns nonzero and hides learner and credential sentinels from a failed tool", () => {
+    const bin = folder();
+    writeFileSync(
+      path.join(bin, "aws"),
+      "#!/bin/sh\nprintf 'LEARNER_TEXT_SENTINEL'\nprintf 'CREDENTIAL_SENTINEL' >&2\nexit 1\n",
+      { mode: 0o700 },
+    );
+    const result = spawnSync(
+      process.execPath,
+      [
+        "scripts/storage-backup.mjs",
+        "create",
+        "--table",
+        "instant-composition-dev-fixture",
+        "--profile",
+        "fixture",
+      ],
+      {
+        cwd: path.resolve(import.meta.dirname, ".."),
+        encoding: "utf8",
+        env: {
+          ...process.env,
+          PATH: `${bin}${path.delimiter}${process.env["PATH"] ?? ""}`,
+          AWS_SECRET_ACCESS_KEY: "CREDENTIAL_SENTINEL",
+        },
+      },
+    );
+    expect(result.status).toBe(1);
+    expect(result.stdout).toBe("");
+    expect(result.stderr).toContain("ERR_STORAGE_BACKUP_FAILED");
+    expect(`${result.stdout}${result.stderr}`).not.toMatch(
+      /LEARNER_TEXT_SENTINEL|CREDENTIAL_SENTINEL/,
+    );
   });
 });
